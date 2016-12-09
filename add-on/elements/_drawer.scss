@@ -1,0 +1,90 @@
+@keyframes drawer-animation {
+  from {
+    width: 10%;
+  }
+  to {
+    width: 30%;
+  }
+}
+
+@keyframes drawer-animation-top {
+  from {
+    height: 10%;
+  }
+  to {
+    height: 30%;
+  }
+}
+
+@keyframes drawer-animation-right {
+  from {
+    width: 10%;
+  }
+  to {
+    width: 30%;
+  }
+}
+
+.drawer {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  height:100%;
+  box-shadow: $drawer-box-shadown;
+  background-color: #ffffff;
+  animation-name: drawer-animation;
+  animation-duration: 1s;
+
+  &.active {
+    display: inline-block;
+    width: 30%;
+
+    >.content{
+      display: block;
+    }
+  }
+
+  > .content {
+    display: none;
+    transition: display 4s ease;
+  }
+
+
+  &.top{
+    width:100%;
+    height:30%;
+    animation-name: drawer-animation-top;
+    animation-duration: 1s;
+
+    &.active{
+      display: inline-block;
+      height: 30%;
+
+      >.content{
+        display: block;
+      }
+    }
+  }
+
+  &.right{
+    left: unset;
+    right:0;
+    top:0;
+    width:30%;
+    height:100%;
+    animation-name: drawer-animation-right;
+    animation-duration: 1s;
+
+    &.active{
+      display: inline-block;
+      width: 30%;
+
+      >.content{
+        display: block;
+      }
+    }
+  }
+
+}

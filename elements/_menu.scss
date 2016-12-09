@@ -1,0 +1,52 @@
+.menu {
+  @extend %inline-block-style;
+  outline: none;
+  border: $menu-border;
+  list-style: none;
+  @extend .clear-fix;
+  @include border-radius($menu-border-radius);
+
+  &.float {
+    > .item {
+      float: left;
+    }
+  }
+
+  &.inverted {
+    > .item {
+      background-color: $menu-item-background-color-inverted;
+      color: $menu-item-text-color-inverted;
+
+      &:not(.active):hover {
+        background-color: rgba($menu-item-background-color-inverted, .6);
+      }
+
+      &.active, &:active {
+        background-color: rgba($menu-item-background-color-inverted, .8);
+      }
+    }
+  }
+
+  > .item {
+    @extend %block-style;
+    padding: $menu-item-padding;
+    margin: 0;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    min-width: $menu-item-min-width;
+
+    &:not(.active):hover {
+      background-color: $menu-item-background-color;
+    }
+
+    &.active, &:active {
+      background-color: darken($menu-item-background-color, 5%);
+    }
+
+  }
+
+  &.block {
+      width: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+.divider {
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 1px;
+  background-color: #ccc;
+
+  &.inverted {
+    background-color: #fff;
+  }
+}

@@ -1,0 +1,64 @@
+
+.input-group {
+  display: inline-block;
+  overflow: auto;
+  box-sizing: border-box;
+
+  & > .label {
+    float: left;
+    line-height: 1.25rem;
+    @include padding(0.5rem, 1rem);
+    border: $input-border;
+    background-color: $input-label-background-color;
+
+    &:not(:last-child):not(:first-child) {
+      @include border-radius(0);
+      border-right-width: 1px;
+      border-left: 0;
+    }
+  }
+
+  & > .element {
+    float: left;
+    line-height: 1.25rem;
+    border: $input-border;
+
+    &:not(:last-child):not(:first-child) {
+      @include border-radius(0);
+      border-right: 0;
+      border-left: 0;
+    }
+
+    > * {
+      border: 0 !important;
+    }
+  }
+
+  &.block {
+    display: block;
+    width: 100%;
+  }
+
+  & > .label, & > .element {
+    @include input-group-child();
+  }
+
+  //占据整行
+  &.flexible {
+    display: block;
+    width: 100%;
+    display: table;
+
+    & > .element {
+      display: table-cell;
+      float: none;
+      width: 100%;
+    }
+
+    & > .label {
+      display: table-cell;
+      float: none;
+      width: 1%;
+    }
+  }
+}

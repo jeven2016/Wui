@@ -1,0 +1,21 @@
+2016-12-08:
+1. 圆形button, large,small 不生效；
+2. 圆形button显示icon不居中。
+3. button group如果block显示时，使用a和button的显示不一样
+4. button group add-ons  多个色彩的按钮组合时，需要添加clear-border,且高度与其他的类型不一致
+5. button group没有最小宽带，如果文字少些显示的宽带不一致
+
+2016-12-09:
+1. bootstrap 多个input在一个div里时会有margin-top设置，wui没有，边缘会重叠。
+2. input group， large,small 不生效
+3. input group, focus边框没有变色
+4. input group 左边多个label时没有右边border
+5. input group 与dropdown集成的问题
+6. primary button 没有边框
+
+
+todo:
+1. 比较http://amazeui.org/getting-started
+http://frozenui.github.io/components.html#
+http://semantic-ui.com/elements/button.html
+找出更好的设计

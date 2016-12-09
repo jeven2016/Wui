@@ -1,0 +1,67 @@
+.navbar {
+  position: relative;
+  display: block;
+  @extend .clear-fix;
+  @include border-radius($navbar-border-radius);
+  border: $navbar-body-border;
+  background-color: $navbar-background-color;
+  box-sizing: border-box;
+
+  &.large {
+    > .item {
+      font-size: map-get($font-size, 'large');
+      line-height: map-get($font-size, 'large') * 1.5;
+    }
+  }
+
+  > .item {
+    position: relative;
+    color: $navbar-item-inactive-color;
+    height: 100%;
+    display: inline-block;
+    padding: 0.5rem 0.5rem;
+    margin: 0.25rem auto;
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+    cursor: pointer;
+
+    &.title, & > .title {
+      font-size: 2rem;
+      font-weight: 500;
+      color: rgba(0, 0, 0, .6);
+    }
+
+    > .link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar-icon {
+      font-size: 1.25rem;
+      padding-top: 0.4375rem;
+    }
+
+    &:hover,
+    &.active {
+      color: $navbar-item-active-color;
+      //background-color: darken($navbar-background-color, 20%);
+    }
+  }
+
+  &.primary {
+    background-color: $navbar-background-color-primary;
+
+    > .item {
+      color: $navbar-item-inactive-color-primary;
+
+      &:hover,
+      &.active {
+        color: $navbar-item-active-color-primary;
+        @include linear-gradient(lighten($navbar-background-color-primary, 10%), $navbar-background-color-primary 70%, lighten($navbar-background-color-primary, 10%));
+      }
+    }
+
+  }
+
+}

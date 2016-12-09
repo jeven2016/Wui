@@ -1,0 +1,119 @@
+%menu-item {
+  display: none;
+  position: absolute;
+  background-color: $dp-background-color;
+  border: $dp-item-border;
+  z-index: 100;
+  @include full-border-radius(0, 0, $dp-border-radius, $dp-border-radius);
+}
+
+.dropdown {
+  @extend %button-style;
+  min-width: $dp-min-width;
+
+  &.without-min-width {
+    min-width: 0;
+  }
+
+  &.disabled {
+    @extend %not-allowed;
+
+  }
+
+  > .icon {
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: 0.5rem;
+    top: 0.6875rem;
+    @extend .clear-fix;
+  }
+
+  > .info {
+    margin-right: .5rem;
+  }
+
+  &:not(.disabled):not([disabled]) {
+    &:hover, &.active {
+      border-color: $menu-border-active;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+
+      & > .menu {
+        display: block;
+        border-top-width: 0;
+        border-color: $menu-border-active;
+        transition: all .2s ease;
+      }
+    }
+  }
+
+  &.simple {
+    border: 0;
+    min-width: $dp-simple-min-width;
+    text-align: left;
+
+    & > .menu {
+      border-top-width: 1px;
+    }
+  }
+
+  > .menu {
+    @extend %menu-item;
+    width: calc(100% + 2px);
+    left: -1px;
+    top: 100%;
+
+    &.active {
+      display: block;
+      border-top-width: 0;
+      border-color: $menu-border-active;
+    }
+
+    & > .item {
+      display: block;
+      width: 100%;
+      padding: $dp-item-padding;
+      text-align: left;
+      border-width: 0;
+      overflow: hidden;
+
+      &:hover, &:focus, &.active {
+        //font-weight: map-get($font-weight, 'normal');
+        text-decoration: none;
+        background-color: $menu-item-active-background-color;
+      }
+    }
+  }
+}
+
+.button-dropdown {
+  @extend %inline-block-style;
+
+  &.disabled {
+    > .button {
+      @extend %not-allowed;
+    }
+  }
+
+  > .button {
+    min-width: $dp-min-width;
+  }
+
+  > .menu {
+    @extend %menu-item;
+    min-width: $dp-min-width;
+    width: auto;
+    left: 0;
+    box-shadow: $default-box-shadow;
+    border-width: 0;
+  }
+
+  &:not(.disabled):not([disabled]) {
+    &:active, &.active, &:focus, &:hover {
+      > .menu {
+        display: inline-block;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+.button {
+  @extend %button-style;
+  color: $btn-default-text-color;
+
+  //同级的button但不是block button的，默认margin-left:0.5rem
+  + .button:not(.block){
+    margin-left:0.5rem;
+  }
+
+  > .icon-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 100%;
+    background-color: darken($btn-background-color, 15%);
+    @extend .clear-fix;
+  }
+
+  //add pseudo classes if no class .disabled or property disabled configured for <button/> element
+  &:not(.disabled):not([disabled]) {
+    &:focus, &:hover, &:active, &.active {
+      background-color: $btn-background-color;
+      color: $btn-default-text-color;
+    }
+  }
+
+  &.shadow-on-hover:hover {
+    box-shadow: $shadow;
+  }
+
+  &.primary {
+    background-color: $btn-primary-color;
+    border-color: lighten($btn-primary-color, 20%);
+    color: $white;
+
+    &:not(.disabled):not([disabled]) {
+      &:focus, &:hover, &:active, &.active {
+        background: darken($btn-primary-color, 20%) none;
+        color: $btn-primary-text-color-active;
+      }
+    }
+
+    &.shadow {
+      box-shadow: $btn-primary-box-shadow;
+    }
+
+    &.shadow-on-hover:hover {
+      box-shadow: $btn-primary-box-shadow;
+    }
+
+    &.inverted {
+      background: $btn-primary-inverted-background-color;
+      border-color: $btn-primary-color;
+      color: $btn-primary-color;
+    }
+
+    &.effect {
+      @include linear-gradient($btn-primary-effect-color-begin, $btn-primary-color 60%, $btn-primary-effect-color-end);
+    }
+  }
+
+  &.large {
+    font-size: map-get($font-size, 'large');
+    padding: $btn-large-padding;
+  }
+
+  &.medium {
+    font-size: map-get($font-size, 'normal');
+  }
+
+  &.small {
+    font-size: map-get($font-size, 'small');
+    padding: $btn-small-padding;
+  }
+
+  //同级的block button，margin-top:0.5rem
+  &.block {
+    width: 100%;
+    display: block;
+
+    + .block {
+      margin-top: 0.5rem;
+    }
+  }
+
+  &.inverted {
+    background-color: $btn-inverted-background;
+    border-color: $btn-inverted-border-color;
+    color: $btn-inverted-text-color;
+  }
+
+  &.circle {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 2rem;
+    height: 2rem;
+    line-height: 1rem;
+    @include border-radius(50%);
+  }
+
+  &[disabled], &.disabled {
+    @extend %not-allowed;
+  }
+
+}

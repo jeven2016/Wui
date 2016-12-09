@@ -1,0 +1,88 @@
+%content-spacing {
+  min-height: 1rem;
+  padding: 1rem;
+}
+
+.dialog {
+  @extend .mask;
+  display: none;
+  transition: display .4s;
+
+  &.show {
+    display: block;
+  }
+
+  > .content {
+    position: relative;
+    margin: $dialog-content-margin;
+    border: $dialog-content-border;
+    width: 95%;
+    min-height: 1rem;
+    z-index: 101;
+    background-color: $dialog-content-background-color;
+    @include border-radius($dialog-border-radius);
+    box-shadow: $default-box-shadow;
+
+    @include adapter-width('min-width', map-get($bs-layout, 'sm')) {
+      & {
+        width: 75%;
+      }
+    }
+
+    @include adapter-width('min-width', map-get($bs-layout, 'md')) {
+      & {
+        width: 65%;
+      }
+    }
+
+    @include adapter-width('min-width', map-get($bs-layout, 'lg')) {
+      & {
+        width: 55%;
+      }
+    }
+
+    > .header {
+      @extend %content-spacing;
+      font-size: map-get($font-size, 'large');
+      font-weight: map-get($font-weight, 'normal');
+
+      > .title {
+        @extend %inline-block-style;
+        float: left;
+      }
+
+      > .icon {
+        @extend %inline-block-style;
+        float: right;
+        font-size: map-get($font-size, 'normal');
+        color: $dialog-icon-color;
+        cursor: pointer;
+
+        &:hover {
+          color: $dialog-icon-color-hover;
+        }
+      }
+      @extend .clear-fix;
+    }
+
+    > .body {
+      @extend %content-spacing;
+      @include border($dialog-body-border);
+      border-left-width: 0;
+      border-right-width: 0;
+    }
+
+    > .footer {
+      @extend %content-spacing;
+    }
+  }
+
+  &.no-background {
+    background-color: transparent;
+  }
+
+  &.primary > .content > .header {
+    background-color: $dialog-header-primary-background-color;
+  }
+
+}

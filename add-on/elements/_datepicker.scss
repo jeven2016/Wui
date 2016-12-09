@@ -1,0 +1,82 @@
+//calendar widget depends on dialog
+.data-picker {
+  display: inline-block;
+  position: absolute;
+  width: 300px;
+  z-index: 100;
+  box-shadow: $datapicker-box-shadown;
+  left: 0;
+  top: 100%;
+  background-color: $datepicker-default-background-color;
+
+  > .title {
+    height: 5rem;
+    padding: 0.5rem 1rem;
+    background-color: $datapicker-title-backgournd-color;
+
+    > .year-info {
+      color: $datapicker-title-year-text-color;
+      font-size: 1.5rem;
+    }
+
+    > .detail-info {
+      color: $datapicker-title-year-text-color;
+      font-size: 2.25rem;
+    }
+  }
+
+  > .info {
+    padding: 0.25rem 0.25rem;
+    font-size: 1rem;
+    text-align: center;
+
+    > .previous {
+      width: 20%;
+    }
+
+    > .content {
+      width: 60%;
+    }
+
+    > .next {
+      width: 20%;
+    }
+
+    > .previous .button, > .content .button, > .next .button {
+      border: 0;
+    }
+  }
+
+  > .data-picker-table {
+    width: 100%;
+
+    td {
+      text-align: center;
+      vertical-align: middle;
+
+      .button {
+        @extend .button.circle;
+        border: 0;
+        outline: none;
+        transition: background-color .2s;
+
+        &:hover, &:focus {
+          color: $white;
+          background-color: $datapicker-day-selected-background-color !important;
+        }
+
+        &:active, &.active {
+          color: $white;
+          background-color: $blue !important;
+        }
+
+      }
+    }
+  }
+
+  > .footer {
+    height: 3rem;
+    text-align: center;
+    padding: 0.5rem auto;
+  }
+}

@@ -1,0 +1,63 @@
+@mixin generate-button($className, $background-color:'transparent', $default-text-color:'inherit', $border-color:$background-color) {
+  &.#{$className} {
+    background-color: $background-color;
+    color: $default-text-color;
+    border: 0.09625rem solid lighten($border-color, 10%);
+
+    &.inverted {
+      color: $background-color;
+      background-color: $black;
+      border: 0.15625rem solid lighten($border-color, 10%);
+
+      &:not(.disabled):not([disabled]) {
+        &:active, &.active, &:focus, &:hover {
+          background-color: $background-color;
+          color: $white;
+        }
+      }
+    }
+
+    &:not(.disabled):not([disabled]) {
+      &:active, &.active, &:focus, &:hover {
+        background-color: darken($background-color, 10%);
+        color: lighten($default-text-color, 10%);
+      }
+    }
+  }
+}
+
+.button {
+
+  &.outline {
+    background-color: #ffffff;
+    @include generate-button('black', $white, $black, $black);
+    @include generate-button('brown', $white, $brown, $brown);
+    @include generate-button('pink', $white, $pink, $pink);
+    @include generate-button('purple', $white, $purple, $purple);
+    @include generate-button('violet', $white, $violet, $violet);
+    @include generate-button('blue', $white, $blue, $blue);
+    @include generate-button('teal', $white, $teal, $teal);
+    @include generate-button('green', $white, $green, $green);
+    @include generate-button('yellow', $white, $yellow, $yellow);
+    @include generate-button('orange', $white, $orange, $orange);
+    @include generate-button('red', $white, $red, $red);
+  }
+  &.black {
+    background-color: $black;
+    color: $white;
+
+    &.inverted {
+      border-color: $white
+    }
+  }
+  @include generate-button('brown', $brown, $white);
+  @include generate-button('pink', $pink, $white);
+  @include generate-button('purple', $purple, $white);
+  @include generate-button('violet', $violet, $white);
+  @include generate-button('blue', $blue, $white);
+  @include generate-button('teal', $teal, $white);
+  @include generate-button('green', $green, $white);
+  @include generate-button('yellow', $yellow, $white);
+  @include generate-button('orange', $orange, $white);
+  @include generate-button('red', $red, $white);
+}

@@ -1,0 +1,10 @@
+.button-group {
+
+  > .button {
+    &.outline{
+      &:not(:last-child){
+        border-right:0;
+      }
+    }
+  }
+}

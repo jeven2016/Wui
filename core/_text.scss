@@ -1,0 +1,38 @@
+//Text classes
+.text {
+  &.bold {
+    font-weight: map-get($font-weight, 'normal');
+  }
+
+  &.align-left {
+    text-align: left !important;
+  }
+  &.align-center {
+    text-align: center !important;;
+  }
+  &.align-right {
+    text-align: right !important;;
+  }
+
+  &.comment {
+    color: $text-comment-color;
+  }
+
+  &.ok {
+    color: $text-ok-color;
+  }
+
+  &.warning {
+    color: $text-warning-color;
+  }
+
+  &.error {
+    color: $text-error-color;
+  }
+
+  @each $name, $color in $colors {
+    &.#{$name} {
+      color: $color;
+    }
+  }
+}

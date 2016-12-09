@@ -1,0 +1,177 @@
+//Global
+$default-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.25);
+$default-border-radius: 0.25rem;
+$body-background-color: #fff;
+$border-color: #ccc;
+
+//Colors
+$white: #fff;
+$black: #000000;
+$gray: #ccc;
+$brown: #a57036;
+$pink: #e02c94;
+$purple: #9a2ec8;
+$violet: #5f33c9;
+$blue: #277ed0;
+$teal: #06806C;
+$green: #4BB84F;
+$yellow: #fbb80b;
+$orange: #f26b11;
+$red: #ff350e;
+
+$colors: (
+        color-white:$white,
+        color-black:$black,
+        color-gray:$gray,
+        color-brown:$brown,
+        color-pink:$pink,
+        color-purple:$purple,
+        color-violet:$violet,
+        color-blue:$blue,
+        color-teal:$teal,
+        color-green:$green,
+        color-yellow:$yellow,
+        color-orange:$orange,
+        color-red:$red);
+
+//text
+$font-weight: (
+        'normal': 600,
+        'bold': 700
+);
+$font-size: (
+        'large':1.5rem,
+        'normal': 1rem,
+        'small':0.75rem
+);
+
+$text-color: rgba(51, 51, 51, 1);
+$text-disabled-color: rgba(0, 0, 0, .4);
+$text-comment-color: #818a91;
+$text-ok-color: $green;
+$text-warning-color: $yellow;
+$text-error-color: $red;
+
+//for <a/> link
+$link-color: #3d8bea;
+
+//background color
+
+//font color
+
+//for blockquota
+$bq-margin: 0 0 0.5rem 0;
+$bq-default-padding: 0.5rem 1rem;
+$bq-left-border: 0.4rem solid $gray;
+$bq-other-border: 1px solid $gray;
+$bq-left-border-primary: 0.4rem solid $blue;
+$bq-other-border-primary: 1px solid $gray;
+$bq-border-radius: $default-border-radius;
+
+//For buttons
+$btn-border-color: #adadad;
+$btn-default-text-color: $text-color;
+$btn-text-color-active: #fff;
+$btn-default-padding: 0.5rem 1rem;
+$btn-large-padding: 0.75rem 1.5rem;
+$btn-small-padding: 0.25rem 0.5rem;
+$btn-default-background-color: transparent;
+$btn-background-color: #eee;
+$btn-primary-color: #3d8bea;
+//$btn-primary-box-shadow: 0 12px 16px 0 rgba(61, 139, 234, 0.24), 0 17px 50px 0 rgba(61, 139, 234, 0.19);
+$btn-primary-box-shadow: 0 2px 5px 0 rgba(61, 139, 234, 0.24);
+$btn-primary-inverted-background-color: transparent;
+$btn-primary-text-color-active: #fff;
+$btn-primary-effect-color-begin: #97C2EA;
+$btn-primary-effect-color-end: #97C2EA;
+$btn-inverted-background: linear-gradient(#020202, #101112 40%, #191b1d);
+$btn-inverted-border-color: #ccc;
+$btn-inverted-text-color: #ccc;
+
+$layout-col-padding: .5rem .25rem;
+
+//for button group
+$btn-group-border-radius: $default-border-radius;
+
+//For Card
+$card-border: 1px solid $btn-border-color;
+$card-header-bottom-bolder: 1px solid $btn-border-color;
+$card-border-radius: $default-border-radius;
+$card-header-background-color-gray: #f5f5f5;
+$card-header-background-color-primary: #3d8bea;
+$card-header-padding: 0.5rem;
+$card-row-padding: 0.5rem;
+$card-body-padding: 0.5rem;
+$card-footer-padding: 0.5rem;
+$card-width-default: 20rem;
+$card-margin-bottom: 0.5rem;
+
+//For input 
+$input-placeholder-color: lighten(#ccc, 10%);
+$input-line-height: 1.25rem;
+$input-border: 1px solid #ccc;
+$input-border-radius: $default-border-radius;
+$input-default-padding: 0.5rem 1rem;
+$input-large-padding: 0.75rem 1.5rem;
+$input-small-padding: 0.25rem 0.5rem;
+$input-border-active-color: darken(#85B7D9, 20%);
+$input-label-background-color: #eceeef;
+$input-box-shadow: 0 2px 6px 0 rgba(61, 139, 234, 0.24);
+
+//For menu
+$menu-item-active-background-color: #f5f5f5;
+$menu-border: 1px solid #ccc;
+$menu-border-active: #96C8DA;
+$menu-border-radius: $default-border-radius;
+$menu-item-background-color: #eee;
+$menu-item-background-color-inverted: #000;
+$menu-item-text-color-inverted: #fff;
+$menu-item-active-text-color-inverted: $text-color;
+$menu-item-padding: 0.5rem 1rem;
+$menu-item-min-width: 4rem;
+
+//for drop down
+$dp-background-color: #fff;
+$dp-item-border: 1px solid #ccc;
+$dp-border-radius: $default-border-radius;
+$dp-min-width: 10rem;
+$dp-simple-min-width: 3rem;
+$dp-item-padding: 0.5rem 1rem;
+
+// For dialog
+$dialog-content-background-color: #fff;
+$dialog-content-border: 1px solid #ccc;
+$dialog-content-margin: 40px auto;
+$dialog-header-primary-background-color: #3d8bea;
+$dialog-border-radius: $default-border-radius;
+$dialog-body-border: 1px solid #ccc;
+$dialog-icon-color: rgba(0, 0, 0, .4);
+$dialog-icon-color-hover: rgb(0, 0, 0);
+
+//stop..........................
+
+//for Navbar
+$navbar-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.24);
+$navbar-border-radius: $default-border-radius;
+$navbar-body-border: 1px solid #ccc;
+$navbar-background-color: #f5f5f5;
+$navbar-background-color-primary: #3d8bea;
+$navbar-item-inactive-color: darken(#f5f5f5, 20%);
+$navbar-item-active-color: rgba(0, 0, 0, .7);
+$navbar-item-inactive-color-primary: lighten(#ccc, 10%);
+$navbar-item-active-color-primary: $white;
+
+//for popover
+$popover-arrow-border-color: #ccc;
+$popover-arrow-overlap-background-color: #fff;
+
+//for breadcrumb
+$bd-wrapper-background-color: #f5f5f5;
+
+//for table
+$table-default-border: 1px solid #ccc;
+$table-th-background-color: #f5f5f5;
+
+//For responsive layout
+$grid-column-count: 24;
+$grid-column-padding: 0;

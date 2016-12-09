@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="fa/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../dist/wui-bundle-min.css" rel="stylesheet">
+    <style type="text/css">
+        .area-example {
+            margin: 10px auto;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        .row {
+            border: 1px solid rgba(86, 61, 124, 0.2);
+        }
+
+        .row > div[class^=col-] {
+            background-color: #ccc;
+            padding: 0.75rem;
+            border: 1px solid rgba(86, 61, 124, 0.2);
+            background-color: rgba(86, 61, 124, 0.15);
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="area-example">
+    <div class="row">
+        <div class="col-xs-24 col-sm-24 col-md-24 col-lg-24">col-xs-24 col-sm-24 col-md-24 col-lg-24</div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-1 col-md-4 col-lg-2">col-xs-2 col-md-8 col-lg-4</div>
+        <div class="col-xs-10 col-md-4 col-lg-8">col-xs-20 col-md-8 col-lg-16</div>
+        <div class="col-xs-1 col-md-4 col-lg-2">col-xs-2 col-md-8 col-lg-4</div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+        <div class="col-md-1 col-lg-1">col-md-1 col-lg-1</div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-24 col-sm-12 col-md-16">.col-xs-24 .col-sm-12 .col-md-16</div>
+        <div class="col-xs-12 col-md-8">.col-xs-12 .col-md-8</div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-12 col-sm-8">col-xs-12 col-sm-8</div>
+        <div class="col-xs-12 col-sm-8">col-xs-12 col-sm-8</div>
+        <!-- Optional: clear the XS cols if their content doesn't match in height -->
+        <div class="clearfix hidden-sm-up"></div>
+        <div class="col-xs-12 col-sm-8">col-xs-12 col-sm-8</div>
+    </div>
+    <br/>
+
+    <div class="row">
+        <div class="col-xs-18">.col-xs-18</div>
+        <div class="col-xs-8">.col-xs-8<br>Since sdkfsd lfksd fjls this 4-column-wide div gets wrapped onto a new line
+            as one contiguous unit.
+        </div>
+        <div class="col-xs-12">.col-xs-12<br>Subsequent columns continue along the new line.</div>
+    </div>
+    <br/>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-10 col-lg-12">.col.col-sm-6.col-md-5.col-lg-6</div>
+        <div class="col-sm-12 col-md-10 offset-md-4 col-lg-12 offset-lg-0">col-sm-12 col-md-10 offset-md-4 col-lg-12
+            offset-lg-0
+        </div>
+    </div>
+    <br/>
+
+    <div class="row">
+        <div class="col-md-8">.col-md-8</div>
+        <div class="col-md-8 offset-md-8">.col-md-8 .offset-md-8</div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-6 offset-md-6">.col-md-6 .offset-md-6</div>
+        <div class="col-md-6 offset-md-6">.col-md-6 .offset-md-6</div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-md-12 offset-md-6">.col-md-12 .offset-md-6</div>
+    </div>
+
+    <br/>
+    嵌套:
+    <div class="row">
+        <div class="col-sm-18">
+            Level 1: .col-sm-18
+            <div class="row">
+                <div class="col-xs-16 col-sm-12">
+                    Level 2: .col-xs-16 .col-sm-12
+                </div>
+                <div class="col-xs-8 col-sm-12">
+                    Level 2: .col-xs-8 .col-sm-12
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br/>
+
+</div>
+
+</body>
+</html>

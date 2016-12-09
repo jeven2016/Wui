@@ -1,0 +1,70 @@
+.navbar {
+  position: relative;
+  display: block;
+  @extend .clear-fix;
+  @include border-radius($navbar-border-radius);
+  border: $navbar-body-border;
+  background-color: $navbar-background-color;
+  box-sizing: border-box;
+  margin:0;
+  padding-left: 0;
+  padding-top: 0;
+
+  > .item {
+    position: relative;
+    display: inline-block;
+    color: $navbar-item-inactive-color;
+    padding: 1rem 1rem;
+    margin: 0;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+    align-items: center;
+    line-height: 1.5rem; // a very important setting needs to dig out
+
+    &.title {
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: rgba(0, 0, 0, .5);
+    }
+
+    > .link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar-icon {
+      padding-top: 0.4375rem;
+    }
+
+    &:hover,
+    &.active {
+      color: $navbar-item-active-color;
+      //background-color: darken($navbar-background-color, 20%);
+    }
+  }
+
+  &.primary {
+    background-color: $navbar-background-color-primary;
+
+    > .item {
+      color: $navbar-item-inactive-color-primary;
+
+      a {
+        color: $navbar-item-inactive-color-primary;
+      }
+
+      &:hover,
+      &.active {
+        color: $navbar-item-active-color-primary;
+        @include linear-gradient(lighten($navbar-background-color-primary, 10%), $navbar-background-color-primary 70%, lighten($navbar-background-color-primary, 10%));
+
+        a {
+          color: $navbar-item-active-color-primary;
+        }
+      }
+    }
+
+  }
+
+}

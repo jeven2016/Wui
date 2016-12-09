@@ -1,0 +1,93 @@
+.input {
+  position: relative;
+  padding: $input-default-padding;
+  border: $input-border;
+  @include border-radius($input-border-radius);
+  outline: 0;
+  line-height: $input-line-height;
+
+  &.large {
+    font-size: map-get($font-size, 'large');
+    padding: $input-large-padding;
+  }
+
+  &.medium {
+    font-size: map-get($font-size, 'normal');
+    padding: $input-default-padding;
+  }
+
+  &.small {
+    font-size: map-get($font-size, 'small');
+    padding: $input-small-padding;
+  }
+
+  &.block {
+    width: 100%;
+    display: block;
+  }
+
+  &.simple {
+    @include border-radius(0);
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    transition: all .2s;
+
+    &:active, &:focus {
+      border-bottom-width: 1px;
+    }
+  }
+
+  &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
+    color: $input-placeholder-color;
+    opacity: 1;
+  }
+
+  &:active, &:focus {
+    border-color: $input-border-active-color;
+    box-shadow: $input-box-shadow;
+  }
+}
+
+.icon-input {
+  @extend %inline-block-style;
+
+  &.block {
+    width: 100%;
+    > .input {
+      width: 100%;
+    }
+  }
+
+  &.left-icon {
+    & > .input {
+      padding-right: 1rem;
+      padding-left: 2rem;
+    }
+
+    & > .icon {
+      position: absolute;
+      left: 0.5rem;
+      top: 0.6875rem;
+      width: 0.9275rem;
+      line-height: 1rem;
+    }
+  }
+
+  & > .input {
+    padding-right: 2rem;
+  }
+
+  & > .icon {
+    color: $gray;
+    position: absolute;
+    right: 0.5rem;
+    top: 0.6875rem;
+    //line-height: 1rem;
+    cursor: pointer;
+
+    &:hover, &:focus {
+      color: $text-color;
+    }
+  }
+}

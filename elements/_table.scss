@@ -1,0 +1,28 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: $table-default-border;
+  padding: 0.25rem;
+  table-layout: fixed;
+
+  tbody {
+
+  }
+
+  th {
+    background-color: $table-th-background-color;
+    border: $table-default-border;
+    padding: 0.5rem;
+  }
+
+  td {
+    @extend th;
+    background-color: transparent;
+  }
+}
+
+.pagination {
+  position: relative;
+  display: inline-block;
+  margin-top: 0.5rem;
+}

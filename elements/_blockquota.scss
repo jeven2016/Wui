@@ -1,0 +1,29 @@
+blockquote {
+  display: block;
+  border-left: $bq-left-border;
+  margin: $bq-margin;
+  padding: $bq-default-padding;
+  @include border-radius($bq-border-radius);
+
+  &.primary {
+    border-left: $bq-left-border-primary;
+
+    &.border {
+      border-top: $bq-other-border-primary;
+      border-right: $bq-other-border-primary;
+      border-bottom: $bq-other-border-primary;
+    }
+  }
+
+  &.border {
+    border-top: $bq-other-border;
+    border-right: $bq-other-border;
+    border-bottom: $bq-other-border;
+
+  }
+
+}
+
+.blockquote {
+  @extend blockquote;
+}

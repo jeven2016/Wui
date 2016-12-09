@@ -1,0 +1,51 @@
+.card {
+  @extend %inline-block-style;
+  width: $card-width-default;
+  margin-bottom: $card-margin-bottom;
+  border: $card-border;
+  @include border-radius($card-border-radius);
+
+  & > .card-header {
+    padding: $card-header-padding;
+    //overflow: auto;
+    @include full-border-radius($card-border-radius, $card-border-radius, 0, 0);
+
+    & > .title {
+      font-weight: 700;
+    }
+
+    &.gray {
+      background-color: $card-header-background-color-gray;
+    }
+  }
+
+  & > .card-row {
+    padding: $card-row-padding;
+  }
+
+  & > .card-body {
+    padding: $card-body-padding;
+    //overflow: auto;
+  }
+
+  & > .card-footer {
+    padding: $card-footer-padding;
+    //overflow: auto;
+    @include full-border-radius(0, 0, $card-border-radius, $card-border-radius);
+  }
+
+  &.block {
+    width: 100%;
+    display: block;
+
+    > .card-header, > .card-body, > .card-footer, > .card-row {
+      display: block;
+    }
+  }
+
+  &.border {
+    & > .card-header {
+      border-bottom: $card-header-bottom-bolder;
+    }
+  }
+}

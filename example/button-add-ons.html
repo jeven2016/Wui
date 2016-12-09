@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="fa/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../dist/wui-bundle-min.css" rel="stylesheet">
+    <style type="text/css">
+
+        .area-example {
+            margin: 10px auto;
+            padding: 20px;
+            overflow: auto;
+        }
+
+        .list-container {
+            position: relative;
+        }
+
+        .list-container .buttons, .list-container .button-group {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .code-container {
+            margin: 20px;
+            background-color: #ccc;
+            display: block;
+            width: 80%;
+            border: 1px solid;
+            color: black;
+        }
+
+        .title {
+            font-size: 20px;
+            padding: 5px;
+            font-weight: 700;
+            color: blue;
+            box-shadow: 0 0 8px rgba(0, 0, 0, .5);
+        }
+
+    </style>
+</head>
+<body>
+<div class="area-example">
+    <div>
+        <h1>Button add-ons示例:</h1>
+    </div>
+    <div class="list-container">
+        <h3>buttons with different color</h3><br/>
+        <div>
+            <button class="button black">Black</button>
+            <button class="button brown">brown</button>
+            <button class="button pink">pink</button>
+            <button class="button purple">purple</button>
+            <button class="button violet">violet</button>
+            <button class="button blue">blue</button>
+            <button class="button teal">teal</button>
+            <button class="button green">green</button>
+            <button class="button yellow">yellow</button>
+            <button class="button orange">orange</button>
+            <button class="button red">red</button>
+        </div>
+
+        <br/>
+        <h3>disabled buttons with different color</h3><br/>
+        <div>
+            <button class="button black disabled">Black</button>
+            <button class="button brown disabled">brown</button>
+            <button class="button pink disabled">pink</button>
+            <button class="button purple disabled">purple</button>
+            <button class="button violet disabled">violet</button>
+            <button class="button blue disabled">blue</button>
+            <button class="button teal disabled">teal</button>
+            <button class="button green disabled">green</button>
+            <button class="button yellow disabled">yellow</button>
+            <button class="button orange disabled">orange</button>
+            <button class="button red disabled">red</button>
+        </div>
+
+        <br/>
+        <h3>inverted buttons with different color</h3><br/>
+        <div style="height:120px; margin:5px;background-color: #000;padding-top:20px;">
+            <button class="button black inverted">Black</button>
+            <button class="active button brown inverted">brown</button>
+            <button class="button pink inverted">pink</button>
+            <button class="button purple inverted">purple</button>
+            <button class="button violet inverted">violet</button>
+            <button class="button blue inverted">blue</button>
+            <button class="button teal inverted">teal</button>
+            <button class="button green inverted">green</button>
+            <button class="button yellow inverted">yellow</button>
+            <button class="button orange inverted">orange</button>
+            <button class="button red inverted">red</button>
+        </div>
+
+        <br/>
+        <h3>outline buttons</h3><br/>
+        <div>
+            <button class="button black outline">Black</button>
+            <button class="button brown outline">brown</button>
+            <button class="button pink outline">pink</button>
+            <button class="button purple outline">purple</button>
+            <button class="button violet outline">violet</button>
+            <button class="button blue outline">blue</button>
+            <button class="button teal outline">teal</button>
+            <button class="button green outline">green</button>
+            <button class="button yellow outline">yellow</button>
+            <button class="button orange outline">orange</button>
+            <button class="button red outline">red</button>
+        </div>
+
+        <br/>
+        <h3>circular buttons</h3><br/>
+        <div style="display: inline-block;">
+            <button class="circle button blue outline">
+                <i class="fa fa-google"></i>
+            </button>
+            <button class="circle button brown outline">
+                <i class="fa fa-facebook"></i>
+            </button>
+            <button class="circle button green outline">
+                <i class="fa fa-amazon"></i>
+            </button>
+            <button class="circle button orange outline">
+                <i class="fa fa-microphone"></i>
+            </button>
+        </div>
+        <div style="display: inline-block;background-color: #000000; height:60px;
+                width: 300px;margin-left:50px;padding: 10px">
+            <button class="inverted circle button blue outline">
+                <i class="fa fa-google"></i>
+            </button>
+            <button class="inverted circle button brown outline">
+                <i class="fa fa-facebook"></i>
+            </button>
+            <button class="inverted circle button green outline">
+                <i class="fa fa-amazon"></i>
+            </button>
+            <button class="inverted circle button orange outline">
+                <i class="fa fa-microphone"></i>
+            </button>
+        </div>
+    </div>
+
+    <br/>
+    <div>
+        <h1>Button group add-ons示例:</h1>
+    </div>
+    <div class="list-container">
+        <div class="button-group">
+            <button class="button black clear-border">Black</button>
+            <button class="button brown clear-border">brown</button>
+            <button class="button pink clear-border">pink</button>
+            <button class="button purple clear-border">purple</button>
+            <button class="button violet clear-border">violet</button>
+            <button class="button blue clear-border">blue</button>
+            <button class="button teal clear-border">teal</button>
+            <button class="button green clear-border">green</button>
+            <button class="button yellow clear-border">yellow</button>
+            <button class="button orange clear-border">orange</button>
+            <button class="button red clear-border">red</button>
+        </div>
+
+        <div class="button-group">
+            <button class="button black inverted clear-border">Black</button>
+            <button class="active button brown inverted clear-border">brown</button>
+            <button class="button pink inverted clear-border">pink</button>
+            <button class="button purple inverted clear-border">purple</button>
+            <button class="button violet inverted clear-border">violet</button>
+            <button class="button blue inverted clear-border">blue</button>
+            <button class="button teal inverted clear-border">teal</button>
+            <button class="button green inverted clear-border">green</button>
+            <button class="button yellow inverted clear-border">yellow</button>
+            <button class="button orange inverted clear-border">orange</button>
+            <button class="button red inverted clear-border">red</button>
+        </div>
+
+        <div class="button-group">
+            <button class="button black  outline">Black</button>
+            <button class="active button brown  outline">brown</button>
+            <button class="button pink  outline">pink</button>
+            <button class="button purple  outline">purple</button>
+            <button class="button violet  outline">violet</button>
+            <button class="button blue  outline">blue</button>
+            <button class="button teal  outline">teal</button>
+            <button class="button green  outline">green</button>
+            <button class="button yellow  outline">yellow</button>
+            <button class="button orange  outline">orange</button>
+            <button class="button red  outline">red</button>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+</div>
+</body>
+</html>

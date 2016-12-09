@@ -1,0 +1,60 @@
+//this widget depends on menu element
+.search.select {
+  display: block;
+  position: relative;
+
+  > .content {
+    padding: 0.25rem;
+    border: $ss-border;
+    min-height: 2rem;
+    @include border-radius($input-border-radius);
+
+    .info-text {
+      border: 0;
+      outline: 0;
+      padding:.25rem .11rem;
+    }
+
+    > .tag {
+      @extend %inline-block-style;
+      background-color: $ss-tag-background-color;
+      padding: 0 0.5rem;
+      @include border-radius(0.75rem);
+      border: $ss-border;
+
+      > .text {
+        font-weight: map-get($font-weight, 'heavy');
+        margin-right: 0.25rem;
+      }
+
+      > .icon {
+        color: darken($gray, 20%);
+        cursor: pointer;
+      }
+
+      &:not(:last-child) {
+        margin-right: 0.25rem;
+      }
+    }
+  }
+
+  > .menu {
+    position: absolute;
+    height: 20rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    left: 0;
+    top: 100%;
+    display: none;
+    transition: display 0.2s;
+    z-index: 100;
+    box-shadow: $ss-menu-box-shadown;
+    background-color: $ss-background-color;
+
+    > .input-item {
+      //position: fixed;
+      padding: 0.5rem .5rem;
+    }
+  }
+
+}

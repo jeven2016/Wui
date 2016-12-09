@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="fa/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../dist/wui-bundle-min.css" rel="stylesheet">
+    <script src="jquery-3.1.0.js" type="application/javascript"></script>
+    <style type="text/css">
+        body {
+            /*background-color: #ccc;*/
+        }
+
+        .area-example {
+            margin: 10px auto;
+            padding: 20px;
+            overflow: auto;
+        }
+
+    </style>
+
+    <script language="javascript">
+        $(function () {
+
+        });
+
+
+        function show(loaderId) {
+            $("#" + loaderId).toggleClass("active");
+        }
+
+        function showInline(cntId, loaderId) {
+            $("#" + cntId).css('display', '');
+            $("#" + loaderId).toggleClass("active");
+        }
+    </script>
+</head>
+<body>
+<div class="area-example">
+    <button class="button" onclick="show('loader1')">
+        Normal Loader
+    </button>
+    <button class="button" onclick="show('loader2')">
+        Large Loader
+    </button>
+    <button class="button" onclick="show('loader3')">
+        Small Loader
+    </button>
+    <br/>
+    <button class="button" onclick="show('loader5')">
+        Loader with background
+    </button>
+    <!-- <button class="button" onclick="showInline('inlineLoader','loader4')">
+         Inine Loader
+     </button>-->
+
+    <div id="loader1" class="loader">
+        Loading...
+    </div>
+    <div id="loader2" class="large loader">
+        Loading...
+    </div>
+    <div id="loader3" class="loader small">
+        Loading...
+    </div>
+
+    <!-- <button class="button" id="inlineLoader">
+         <div id="loader4" class="small inline loader">
+         </div>
+         Inline loader
+     </button>-->
+
+    <div>
+        <div id="loader5" class="loader">
+            Loading...
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

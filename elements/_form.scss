@@ -1,0 +1,69 @@
+.form {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+
+  .input-ok {
+    &, > .input {
+      border-color: $text-ok-color;
+    }
+    > .icon {
+      color: $text-ok-color;
+    }
+  }
+
+  .input-warning {
+    &, > .input {
+      border-color: $text-warning-color;
+    }
+    > .icon {
+      color: $text-warning-color;
+    }
+  }
+
+  .input-error {
+    &, > .input {
+      border-color: $text-error-color;
+    }
+    > .icon {
+      color: $text-error-color;
+    }
+  }
+
+  .form-item {
+    margin-bottom: 0.75rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .label-col {
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-line {
+      width: 100%;
+    }
+
+    .info {
+      display: block;
+      line-height: 1rem;
+      margin: 0.25rem 0;
+    }
+
+    &.inline {
+      > * {
+        display: inline-block;
+        margin-right: 0.5rem;
+      }
+
+      .form-line {
+        width: auto;
+      }
+
+    }
+  }
+
+}

@@ -1,0 +1,34 @@
+.button-group {
+  @extend %inline-block-style;
+
+  > .button {
+    margin: 0 !important;
+    @include border-radius(0);
+    float: left;
+
+    &:first-child {
+      @include full-border-radius($btn-group-border-radius, 0, $btn-group-border-radius, 0);
+    }
+
+    &:last-child {
+      @include full-border-radius(0rem, $btn-group-border-radius, 0rem, $btn-group-border-radius);
+    }
+
+    &:not(:first-child) {
+      border-left-width: 0;
+    }
+  }
+
+  &.block {
+    table-layout: fixed;
+
+    //display:table-cell属性指让标签元素以表格单元格的形式呈现，类似于td标签。
+    //table-cell同样会被其他一些CSS属性破坏，例如float, position:absolute，
+    //所以，在使用display:table-cell与float:left或是position:absolute属性尽量不用同用。
+    > .button {
+      display: table-cell;
+      float: none;
+      width: 1%;
+    }
+  }
+}

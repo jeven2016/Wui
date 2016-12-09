@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="fa/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../dist/wui-bundle-min.css" rel="stylesheet">
+    <script src="jquery-3.1.0.js" type="application/javascript"></script>
+    <style type="text/css">
+        .area-example {
+            margin: 10px auto;
+            padding: 20px;
+            overflow: auto;
+        }
+    </style>
+
+    <script language="JavaScript">
+        $(function () {
+            $("#simpleBtn").click(function () {
+                $("#simpleBtn_dialog").addClass("show");
+            });
+
+            $("#primaryBtn").click(function () {
+                $("#primaryBtn_dialog").addClass("show");
+            });
+        });
+
+        function closeDialog(id) {
+            $(id).removeClass("show");
+        }
+    </script>
+</head>
+<body>
+<div class="area-example">
+    Dialog示例：<br/>
+    <button id="simpleBtn" class="button">普通对话框</button>
+    <button id="primaryBtn" class="primary button">Primary色系对话框</button>
+
+    <div id="simpleBtn_dialog" class="dialog">
+        <div class="content">
+            <div class="header">
+                <div class="title">Modal Dialog</div>
+                <div class="icon">
+                    <i class="fa fa-close" onclick="closeDialog('#simpleBtn_dialog')"></i>
+                </div>
+            </div>
+            <div class="body">
+                <div>This is a modal dialog</div>
+                <div>This is a modal dialog</div>
+                <div>This is a modal dialog</div>
+                <div>This is a modal dialog</div>
+                <div>This is a modal dialog</div>
+                <div>This is a modal dialog</div>
+            </div>
+            <div class="footer">
+                <div align="right">
+                    <button class="button primary" onclick="closeDialog('#simpleBtn_dialog')">
+                        <i class="fa fa-yelp"></i>
+                        Save
+                    </button>
+                    <button class="button" onclick="closeDialog('#simpleBtn_dialog')">
+                        <i class="fa fa-backward"></i>
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="primaryBtn_dialog" class="dialog primary">
+        <div class="content clear-radius">
+            <div class="header">
+                <div class="title">Modal Dialog2</div>
+                <div class="icon">
+                    <i class="fa fa-close" onclick="closeDialog('#primaryBtn_dialog')"></i>
+                </div>
+            </div>
+            <div class="body">
+                <div>This is a modal dialog</div>
+                <div>With primary color , no background , no radius</div>
+                <div>With primary color , no background , no radius</div>
+            </div>
+            <div class="footer">
+                <div align="right">
+                    <button class="button primary" onclick="closeDialog('#primaryBtn_dialog')">
+                        <i class="fa fa-yelp"></i>
+                        Save
+                    </button>
+                    <button class="button">
+                        <i class="fa fa-backward" onclick="closeDialog('#primaryBtn_dialog')"></i>
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
