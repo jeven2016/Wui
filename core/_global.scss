@@ -39,6 +39,11 @@ body {
   display: block;
 }
 
+%block-width {
+  display: block;
+  width: 100%;
+}
+
 .clear-fix {
   &::after {
     content: '';
@@ -60,7 +65,7 @@ body {
   overflow: hidden;
 }
 
-%not-allowed{
+%not-allowed {
   cursor: not-allowed;
   //pointer-events: none !important; //this impacts 'cursor' and causes no icon would display
   opacity: 0.7;
@@ -73,8 +78,6 @@ $global: (
   //import css reset file
         'importCssResetFile': true
 );
-
-
 
 //from bootstrap:
 // xs < 768

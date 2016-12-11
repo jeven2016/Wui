@@ -9,6 +9,7 @@
 
 .dropdown {
   @extend %button-style;
+  position: relative;
   min-width: $dp-min-width;
 
   &.without-min-width {

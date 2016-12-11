@@ -19,3 +19,8 @@ todo:
 http://frozenui.github.io/components.html#
 http://semantic-ui.com/elements/button.html
 找出更好的设计
+
+INFO:
+1. background
+    background-clip指定了背景可以覆盖到什么范围。
+    background-origin指定了背景从什么位置开始。

@@ -22,8 +22,7 @@
   }
 
   &.block {
-    width: 100%;
-    display: block;
+    @extend %block-width;
   }
 
   &.simple {
@@ -53,9 +52,9 @@
   @extend %inline-block-style;
 
   &.block {
-    width: 100%;
+    @extend %block-width;
     > .input {
-      width: 100%;
+      @extend %block-width;
     }
   }
 
@@ -76,6 +75,12 @@
 
   & > .input {
     padding-right: 2rem;
+
+    &:active, &:focus {
+      .icon {
+        color: $input-border-active-color;
+      }
+    }
   }
 
   & > .icon {
@@ -87,7 +92,7 @@
     cursor: pointer;
 
     &:hover, &:focus {
-      color: $text-color;
+      color: $input-border-active-color;
     }
   }
 }

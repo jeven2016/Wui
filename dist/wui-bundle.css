@@ -472,6 +472,11 @@ body {
   display: block;
 }
 
+.input.block, .icon-input.block, .icon-input.block > .input {
+  display: block;
+  width: 100%;
+}
+
 .clear-fix::after, .dropdown > .icon::after, .button > .icon-label::after, .row::after, .dialog > .content > .header::after, .navbar::after, .menu::after, .tab::after {
   content: '';
   display: table;
@@ -770,10 +775,6 @@ h6 {
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
 }
-.input.block {
-  width: 100%;
-  display: block;
-}
 .input.simple {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -795,12 +796,6 @@ h6 {
   box-shadow: 0 2px 6px 0 rgba(61, 139, 234, 0.24);
 }
 
-.icon-input.block {
-  width: 100%;
-}
-.icon-input.block > .input {
-  width: 100%;
-}
 .icon-input.left-icon > .input {
   padding-right: 1rem;
   padding-left: 2rem;
@@ -815,6 +810,9 @@ h6 {
 .icon-input > .input {
   padding-right: 2rem;
 }
+.icon-input > .input:active .icon, .icon-input > .input:focus .icon {
+  color: #3b88bd;
+}
 .icon-input > .icon {
   color: #ccc;
   position: absolute;
@@ -823,12 +821,11 @@ h6 {
   cursor: pointer;
 }
 .icon-input > .icon:hover, .icon-input > .icon:focus {
-  color: #333333;
+  color: #3b88bd;
 }
 
 .input-group {
   display: inline-block;
-  overflow: auto;
   box-sizing: border-box;
 }
 .input-group > .label {
@@ -900,6 +897,7 @@ h6 {
 }
 
 .dropdown {
+  position: relative;
   min-width: 10rem;
 }
 .dropdown.without-min-width {
@@ -916,14 +914,14 @@ h6 {
   margin-right: .5rem;
 }
 .dropdown:not(.disabled):not([disabled]):hover, .dropdown:not(.disabled):not([disabled]).active {
-  border-color: #96C8DA;
+  border-color: #3d8bea;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 .dropdown:not(.disabled):not([disabled]):hover > .menu, .dropdown:not(.disabled):not([disabled]).active > .menu {
   display: block;
   border-top-width: 0;
-  border-color: #96C8DA;
+  border-color: #3d8bea;
   transition: all .2s ease;
 }
 .dropdown.simple {
@@ -942,7 +940,7 @@ h6 {
 .dropdown > .menu.active {
   display: block;
   border-top-width: 0;
-  border-color: #96C8DA;
+  border-color: #3d8bea;
 }
 .dropdown > .menu > .item {
   display: block;
@@ -2840,6 +2838,11 @@ body {
 .menu > .item {
   position: relative;
   display: block;
+}
+
+.input.block, .icon-input.block, .icon-input.block > .input {
+  display: block;
+  width: 100%;
 }
 
 .clear-fix::after, .dropdown > .icon::after, .button > .icon-label::after, .row::after, .dialog > .content > .header::after, .navbar::after, .menu::after, .tab::after {
