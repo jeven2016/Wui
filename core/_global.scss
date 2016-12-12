@@ -1,55 +1,16 @@
 body {
   font-size: 16px;
-  font-family: "Times New Roman", Times, serif;
+  font-family: Microsoft YaHei, tahoma, arial, sans-serif;
   line-height: 1.5rem;
   color: $text-color;
   background-color: $body-background-color;
-}
 
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
+  text-rendering: optimizeLegibility;
 
-//default button's style
-%button-style {
-  //position: relative;
-  display: inline-block;
-  //font-weight: map-get($font-weight, 'normal');
-  cursor: pointer;
-  outline: 0;
-  padding: $btn-default-padding;
-  line-height: 1.25rem;
-  vertical-align: middle;
-  text-align: center;
-  text-decoration: none;
-  background-color: $btn-default-background-color;
-  border: 1px solid $btn-border-color;
-  @include border-radius();
-}
-
-%inline-block-style {
-  position: relative;
-  display: inline-block;
-}
-
-%block-style {
-  position: relative;
-  display: block;
-}
-
-%block-width {
-  display: block;
-  width: 100%;
-}
-
-.clear-fix {
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
+  //for  anti-aliasing
+  font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .mask {
@@ -65,12 +26,6 @@ body {
   overflow: hidden;
 }
 
-%not-allowed {
-  cursor: not-allowed;
-  //pointer-events: none !important; //this impacts 'cursor' and causes no icon would display
-  opacity: 0.7;
-}
-
 //////////////////////////////////////////////////////////////////////////////////
 
 //Global configuration
@@ -78,38 +33,6 @@ $global: (
   //import css reset file
         'importCssResetFile': true
 );
-
-//from bootstrap:
-// xs < 768
-// 768=< sm < 992
-// 992 =< md <1200
-// 1200 =< lg
-$bs-layout: (
-        xs: 767px, // xs < 768
-        sm :768px, // 768=< sm < 992
-        md : 992px, // 992 =< md <1200
-        lg : 1200px // 1200 =< lg
-);
-
-//shadow
-//$shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.24), 0 7px 50px 0 rgba(0, 0, 0, 0.19);
-$shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24);
-
-.display-block {
-  display: block !important;
-}
-
-.shadow {
-  box-shadow: $shadow;
-}
-
-.clear-padding {
-  padding: 0 !important;
-}
-
-.clear-radius {
-  @include border-radius(0 !important);
-}
 
 .pull-left {
   float: left !important;
@@ -123,27 +46,6 @@ $shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24);
   margin: auto;
   text-align: center;
   vertical-align: middle;
-}
-
-/*.large {
-  font-size: map-get($font-size, 'large') !important;
-}
-
-.medium {
-  font-size: map-get($font-size, 'normal') !important;
-}
-
-.small {
-  font-size: map-get($font-size, 'small') !important;
-}*/
-
-.with-border {
-  @include border-radius(0.25rem);
-  border: 1px solid $border-color;
-}
-
-.clear-border {
-  border: 0 !important;
 }
 
 .fixed {
@@ -161,24 +63,10 @@ $shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.24);
 
 a {
   color: $link-color;
-  text-decoration: none;
-  cursor: pointer;
+  text-decoration: $link-text-decoration;
+  cursor: $link-cursor;
 
-  &:hover, &:focus {
-    color: #23527c;
-    text-decoration: none;
+  &:active, &.active, &:hover, &:focus {
+    color: $link-active-color;
   }
-}
-
-.disabled {
-  /*color: $text-disabled-color;
-  cursor: not-allowed;
-  background-color: transparent;
-  border: transparent;
-
-  &:hover, &:focus, &:active {
-    color: $text-disabled-color;
-    background-color: transparent;
-    border-color: transparent;
-  }*/
 }

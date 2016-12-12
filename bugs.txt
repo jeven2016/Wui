@@ -13,6 +13,8 @@
 5. input group 与dropdown集成的问题
 6. primary button 没有边框
 
+2016-12-11:
+1. .input.large, .button.large  内部由于继承了input的line-height，导致高度不一样
 
 todo:
 1. 比较http://amazeui.org/getting-started
@@ -24,3 +26,7 @@ INFO:
 1. background
     background-clip指定了背景可以覆盖到什么范围。
     background-origin指定了背景从什么位置开始。
+
+
+1. 2016-12-12: version 0.5.1
+    1. add text font smoothing.

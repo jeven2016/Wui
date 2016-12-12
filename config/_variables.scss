@@ -4,6 +4,10 @@ $default-border-radius: 0.25rem;
 $body-background-color: #fff;
 $border-color: #ccc;
 
+$elem-default-padding: 0.5rem 1rem;
+$elem-large-padding: 0.75rem 1.5rem;
+$elem-small-padding: 0.25rem 0.5rem;
+
 //Colors
 $white: #fff;
 $black: #000000;
@@ -53,7 +57,10 @@ $text-warning-color: $yellow;
 $text-error-color: $red;
 
 //for <a/> link
-$link-color: #3d8bea;
+$link-color: $text-color;
+$link-active-color: $blue;
+$link-text-decoration: none;
+$link-cursor: pointer;
 
 //background color
 
@@ -69,13 +76,21 @@ $bq-other-border-primary: 1px solid $gray;
 $bq-border-radius: $default-border-radius;
 
 //For buttons
-$btn-border-color: #adadad;
-$btn-default-text-color: $text-color;
+$btn-cursor: pointer;
+$btn-line-height: 1.25rem;
+$btn-text-align: center;
+$btn-text-decoration: none;
 $btn-text-color-active: #fff;
+$btn-text-vertical-align: middle;
+$btn-margin-left-button: 0.5rem;
+$btn-margin-top-button: 0.5rem;
+$btn-border-color: #acacac;
+$btn-border: 1px solid $btn-border-color; //todo:deprecated
+$btn-default-text-color: $text-color;
 $btn-default-padding: 0.5rem 1rem;
 $btn-large-padding: 0.75rem 1.5rem;
 $btn-small-padding: 0.25rem 0.5rem;
-$btn-default-background-color: transparent;
+$btn-default-background-color: $white;
 $btn-background-color: #eee;
 $btn-primary-color: #3d8bea;
 //$btn-primary-box-shadow: 0 12px 16px 0 rgba(61, 139, 234, 0.24), 0 17px 50px 0 rgba(61, 139, 234, 0.19);
@@ -84,7 +99,7 @@ $btn-primary-inverted-background-color: transparent;
 $btn-primary-text-color-active: #fff;
 $btn-primary-effect-color-begin: #97C2EA;
 $btn-primary-effect-color-end: #97C2EA;
-$btn-inverted-background: linear-gradient(#020202, #101112 40%, #191b1d);
+$btn-inverted-background: $black;
 $btn-inverted-border-color: #ccc;
 $btn-inverted-text-color: #ccc;
 
@@ -173,5 +188,16 @@ $table-default-border: 1px solid #ccc;
 $table-th-background-color: #f5f5f5;
 
 //For responsive layout
+//from bootstrap:
+// xs < 768
+// 768=< sm < 992
+// 992 =< md <1200
+// 1200 =< lg
+$bs-layout: (
+        xs: 767px, // xs < 768
+        sm :768px, // 768=< sm < 992
+        md : 992px, // 992 =< md <1200
+        lg : 1200px // 1200 =< lg
+);
 $grid-column-count: 24;
 $grid-column-padding: 0;

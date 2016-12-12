@@ -1,0 +1,27 @@
+%not-allowed {
+  cursor: not-allowed;
+  //pointer-events: none !important; //this impacts 'cursor' and causes no icon would display
+  opacity: 0.7;
+}
+
+@mixin disabled-color($bg-color, $text-color) {
+  &:disabled, &.disabled {
+    opacity: 0.7;
+    @extend %not-allowed;
+
+    &:focus, &:hover {
+      background-color: $bg-color;
+      border-color:darken($bg-color,10%);
+      color: $text-color;
+    }
+
+  }
+}
+
+@mixin activate-color($bg-color,$text-color) {
+  &:active, &.active, &:focus, &:hover {
+    background-color: $bg-color;
+    border-color:darken($bg-color,10%);
+    color: $text-color;
+  }
+}

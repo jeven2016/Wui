@@ -1,0 +1,32 @@
+{
+  "name": "wheel-ui",
+  "version": "0.5.1",
+  "description": "A new web UI framework.",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "analyze-css --file dist/wui-bundle.css",
+    "bs": "analyze-css --file example/bootstrap.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeven2016/wheel-ui.git"
+  },
+  "keywords": [
+    "Wheel",
+    "UI"
+  ],
+  "author": "Jeven Wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeven2016/wheel-ui/issues"
+  },
+  "homepage": "https://github.com/jeven2016/wheel-ui#readme",
+  "devDependencies": {
+    "analyze-css": "^0.12.4"
+  }
+}

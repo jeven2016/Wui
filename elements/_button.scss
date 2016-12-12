@@ -1,93 +1,30 @@
 .button {
-  @extend %button-style;
-  color: $btn-default-text-color;
+  @extend %inline-block-style;
+  cursor: $btn-cursor;
+  outline: 0;
+  padding: $btn-default-padding;
+  line-height: $btn-line-height;
+  vertical-align: $btn-text-vertical-align;
+  text-align: $btn-text-align;
+  text-decoration: $btn-text-decoration;
+  @include border-radius();
+  transition: all .2s ease-in-out;
+
+  @include generate-button-content($btn-default-background-color,
+          $btn-default-text-color, $btn-border-color, $btn-inverted-background, $btn-border-color);
 
   //同级的button但不是block button的，默认margin-left:0.5rem
-  + .button:not(.block){
-    margin-left:0.5rem;
-  }
-
-  > .icon-label {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2rem;
-    height: 100%;
-    background-color: darken($btn-background-color, 15%);
-    @extend .clear-fix;
-  }
-
-  //add pseudo classes if no class .disabled or property disabled configured for <button/> element
-  &:not(.disabled):not([disabled]) {
-    &:focus, &:hover, &:active, &.active {
-      background-color: $btn-background-color;
-      color: $btn-default-text-color;
-    }
-  }
-
-  &.shadow-on-hover:hover {
-    box-shadow: $shadow;
-  }
-
-  &.primary {
-    background-color: $btn-primary-color;
-    border-color: lighten($btn-primary-color, 20%);
-    color: $white;
-
-    &:not(.disabled):not([disabled]) {
-      &:focus, &:hover, &:active, &.active {
-        background: darken($btn-primary-color, 20%) none;
-        color: $btn-primary-text-color-active;
-      }
-    }
-
-    &.shadow {
-      box-shadow: $btn-primary-box-shadow;
-    }
-
-    &.shadow-on-hover:hover {
-      box-shadow: $btn-primary-box-shadow;
-    }
-
-    &.inverted {
-      background: $btn-primary-inverted-background-color;
-      border-color: $btn-primary-color;
-      color: $btn-primary-color;
-    }
-
-    &.effect {
-      @include linear-gradient($btn-primary-effect-color-begin, $btn-primary-color 60%, $btn-primary-effect-color-end);
-    }
-  }
-
-  &.large {
-    font-size: map-get($font-size, 'large');
-    padding: $btn-large-padding;
-  }
-
-  &.medium {
-    font-size: map-get($font-size, 'normal');
-  }
-
-  &.small {
-    font-size: map-get($font-size, 'small');
-    padding: $btn-small-padding;
+  + .button:not(.block) {
+    margin-left: $btn-margin-left-button;
   }
 
   //同级的block button，margin-top:0.5rem
   &.block {
-    width: 100%;
-    display: block;
+    @extend %block-width;
 
     + .block {
-      margin-top: 0.5rem;
+      margin-top: $btn-margin-top-button;
     }
-  }
-
-  &.inverted {
-    background-color: $btn-inverted-background;
-    border-color: $btn-inverted-border-color;
-    color: $btn-inverted-text-color;
   }
 
   &.circle {
@@ -99,8 +36,23 @@
     @include border-radius(50%);
   }
 
-  &[disabled], &.disabled {
-    @extend %not-allowed;
+  @include variant-size();
+
+  @include active($btn-background-color, $btn-default-text-color);
+
+  @include disabled-color($btn-default-background-color, $btn-default-text-color);
+
+  //generate primary button
+  @include generate-button-add-ons('primary', $btn-primary-color, $white, lighten($btn-primary-color, 20%), $btn-primary-inverted-background-color);
+
+  > .icon-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 100%;
+    background-color: darken($btn-background-color, 15%);
+    @extend .clear-fix;
   }
 
 }

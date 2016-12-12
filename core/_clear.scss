@@ -1,0 +1,12 @@
+.clear-radius {
+  border-radius: 0 !important;
+}
+
+.clear-fix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
