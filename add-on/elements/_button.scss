@@ -1,35 +1,36 @@
+$border-color-increase-ratio: $default-color-increase-ratio;
 .button {
+  @include generate-simple-button('black', $black, $white, $btn-border-color);
+  @include generate-simple-button('brown', $brown, $white, darken($brown, $border-color-increase-ratio));
+  @include generate-simple-button('pink', $pink, $white, darken($pink, $border-color-increase-ratio));
+  @include generate-simple-button('purple', $purple, $white, darken($purple, $border-color-increase-ratio));
+  @include generate-simple-button('violet', $violet, $white, darken($purple, $border-color-increase-ratio));
+  &.blue {
+    @extend .primary;
+  }
+  @include generate-simple-button('teal', $teal, $white, darken($teal, $border-color-increase-ratio));
+  &.green {
+    @extend .info;
+  }
+  &.yellow {
+    @extend .warning;
+  }
+  @include generate-simple-button('orange', $orange, $white, darken($orange, $border-color-increase-ratio));
+  &.red {
+    @extend .danger;
+  }
 
   &.outline {
-    background-color: #ffffff;
-    @include generate-button-add-ons('black', $white, $black, $black);
-    @include generate-button-add-ons('brown', $white, $brown, $brown);
-    @include generate-button-add-ons('pink', $white, $pink, $pink);
-    @include generate-button-add-ons('purple', $white, $purple, $purple);
-    @include generate-button-add-ons('violet', $white, $violet, $violet);
-    @include generate-button-add-ons('blue', $white, $blue, $blue);
-    @include generate-button-add-ons('teal', $white, $teal, $teal);
-    @include generate-button-add-ons('green', $white, $green, $green);
-    @include generate-button-add-ons('yellow', $white, $yellow, $yellow);
-    @include generate-button-add-ons('orange', $white, $orange, $orange);
-    @include generate-button-add-ons('red', $white, $red, $red);
+    @include generate-outline-button('black', $white, $black);
+    @include generate-outline-button('brown', $white, $brown);
+    @include generate-outline-button('pink', $white, $pink);
+    @include generate-outline-button('purple', $white, $purple);
+    @include generate-outline-button('violet', $white, $violet);
+    @include generate-outline-button('blue', $white, $blue);
+    @include generate-outline-button('teal', $white, $teal);
+    @include generate-outline-button('green', $white, $green);
+    @include generate-outline-button('yellow', $white, $yellow);
+    @include generate-outline-button('orange', $white, $orange);
+    @include generate-outline-button('red', $white, $red);
   }
-  &.black {
-    background-color: $black;
-    color: $white;
-
-    &.inverted {
-      border-color: $white
-    }
-  }
-  @include generate-button-add-ons('brown', $brown, $white);
-  @include generate-button-add-ons('pink', $pink, $white);
-  @include generate-button-add-ons('purple', $purple, $white);
-  @include generate-button-add-ons('violet', $violet, $white);
-  @include generate-button-add-ons('blue', $blue, $white);
-  @include generate-button-add-ons('teal', $teal, $white);
-  @include generate-button-add-ons('green', $green, $white);
-  @include generate-button-add-ons('yellow', $yellow, $white);
-  @include generate-button-add-ons('orange', $orange, $white);
-  @include generate-button-add-ons('red', $red, $white);
 }

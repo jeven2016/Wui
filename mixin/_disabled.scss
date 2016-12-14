@@ -4,24 +4,34 @@
   opacity: 0.7;
 }
 
-@mixin disabled-color($bg-color, $text-color) {
+@mixin disabled-color($bg-color, $text-color, $border-color: darken($bg-color, 10%)) {
   &:disabled, &.disabled {
-    opacity: 0.7;
-    @extend %not-allowed;
-
     &:focus, &:hover {
       background-color: $bg-color;
-      border-color:darken($bg-color,10%);
+      border-color: $border-color;
       color: $text-color;
     }
 
   }
 }
 
-@mixin activate-color($bg-color,$text-color) {
+@mixin activate-color($bg-color,$text-color, $border-color,
+        $disabled-bg-color,$disabled-text-color,$disabled-border-color) {
+
+  @if $border-color == null {
+    $border-color: darken($text-color, 10%);
+  }
+
   &:active, &.active, &:focus, &:hover {
     background-color: $bg-color;
-    border-color:darken($bg-color,10%);
+    border-color: $border-color;
     color: $text-color;
+
+    &:disabled, &.disabled {
+      background-color: $disabled-bg-color;
+      border-color: $disabled-border-color;
+      color: $disabled-text-color;
+    }
   }
+
 }

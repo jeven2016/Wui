@@ -1,34 +1,63 @@
-@mixin generate-button-add-ons($className,
-                                $background-color:'transparent',
-                                $default-text-color:'inherit',
-                                $border-color:$background-color,
-                                $inverted-background-color:$black) {
-  &.#{$className} {
-    @include generate-button-content($background-color, $default-text-color, $border-color, $inverted-background-color);
+@mixin generate-simple-button($className,$btn-bg-color, $btn-color:$text-color, $btn-bdr-color: darken($btn-bg-color, 10%)) {
+  @if $className == null {
+    @include add-simple-button-content($btn-bg-color, $btn-color, $btn-bdr-color);
+  } @else {
+    &.#{$className} {
+      @include add-simple-button-content($btn-bg-color, $btn-color, $btn-bdr-color);
+    }
   }
 }
 
-@mixin generate-button-content($background-color:'transparent',
-                                $default-text-color:'inherit',
-                                $border-color:$background-color,
-                                $inverted-background-color:$black,
-                                $active-inverted-text-color:$white) {
-  background-color: $background-color;
-  color: $default-text-color;
-  border: 1px solid $border-color;
+@mixin add-simple-button-content($btn-bg-color, $btn-color, $btn-bdr-color) {
+  @include generate-local($btn-bg-color, $btn-color, $btn-bdr-color);
+  @include generate-active(
+                  darken($btn-bg-color, $default-color-increase-ratio),
+                  $btn-color,
+                  darken($btn-bdr-color, $default-color-increase-ratio));
+  @include generate-disabled(
+                  $btn-bg-color,
+                  $btn-color,
+                  $btn-bdr-color
+  );
+}
 
-  &.inverted {
-    color: $background-color;
-    background-color: $inverted-background-color;
-    //border: 0.15625rem solid lighten($border-color, 10%);
-    border: 1px solid lighten($border-color, 10%);
+@mixin generate-outline-button($className,$btn-bg-color,$btn-color) {
+  &.#{$className} {
+    @include generate-local($btn-bg-color, $btn-color, $btn-color);
+    @include generate-active(
+                    $btn-color,
+                    $white,
+                    $btn-color);
+    @include generate-disabled(
+                    $white,
+                    $btn-color,
+                    $btn-color
+    );
+  }
+}
 
-    @include disabled-color($background-color, $default-text-color);
+@mixin generate-local($bg-color,$color,$bdr-color) {
+  background-color: $bg-color;
+  color: $color;
+  border: 1px solid $bdr-color;
+}
 
-    @include activate-color($background-color, $active-inverted-text-color);
+@mixin generate-active($active-bg-color,$active-color,$active-bdr-color) {
+  &:active, &.active, &:focus, &:hover {
+    background-color: $active-bg-color;
+    color: $active-color;
+    border-color: $active-bdr-color;
   }
 
-  @include disabled-color($background-color, $default-text-color);
+}
 
-  @include activate-color(darken($background-color, 10%), lighten($default-text-color, 10%));
+@mixin generate-disabled($disabled-focus-bg-color,$disabled-focus-color,$disabled-focus-bdr-color ) {
+  &:disabled, &.disabled {
+    &:focus, &:hover {
+      background-color: $disabled-focus-bg-color;
+      color: $disabled-focus-color;
+      border-color: $disabled-focus-bdr-color;
+      //opacity: .7;
+    }
+  }
 }

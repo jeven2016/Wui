@@ -10,8 +10,26 @@
   @include border-radius();
   transition: all .2s ease-in-out;
 
-  @include generate-button-content($btn-default-background-color,
-          $btn-default-text-color, $btn-border-color, $btn-inverted-background, $btn-border-color);
+  //only apply on <a/>
+  a.button.disabled {
+    pointer-events: none !important;
+  }
+
+  &:disabled, &.disabled {
+    cursor: not-allowed;
+    //pointer-events: none !important; //this impacts 'cursor' and causes no icon would display
+    opacity: 0.7;
+  }
+
+  //add button content
+  @include generate-simple-button(null, $btn-default-background-color, $btn-default-text-color, $btn-border-color);
+
+  //generate primary button
+  @include generate-simple-button('primary', $btn-primary-background-color, $btn-primary-text-color, $btn-primary-border-color);
+  @include generate-simple-button('danger', $btn-danger-background-color, $btn-danger-text-color, $btn-danger-border-color);
+  @include generate-simple-button('warning', $btn-warning-background-color, $btn-warning-text-color, $btn-warning-border-color);
+  @include generate-simple-button('info', $btn-info-background-color, $btn-info-text-color, $btn-info-border-color);
+  @include generate-simple-button('success', $btn-success-background-color, $btn-success-text-color, $btn-success-border-color);
 
   //同级的button但不是block button的，默认margin-left:0.5rem
   + .button:not(.block) {
@@ -38,12 +56,12 @@
 
   @include variant-size();
 
-  @include active($btn-background-color, $btn-default-text-color);
-
-  @include disabled-color($btn-default-background-color, $btn-default-text-color);
-
   //generate primary button
-  @include generate-button-add-ons('primary', $btn-primary-color, $white, lighten($btn-primary-color, 20%), $btn-primary-inverted-background-color);
+  /*  @include generate-button-add-ons('primary',
+            $btn-primary-color,
+            $white,
+            lighten($btn-primary-color, 20%),
+            $btn-primary-inverted-background-color);*/
 
   > .icon-label {
     position: absolute;
