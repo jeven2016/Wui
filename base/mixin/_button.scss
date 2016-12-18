@@ -11,9 +11,9 @@
 @mixin add-simple-button-content($btn-bg-color, $btn-color, $btn-bdr-color) {
   @include generate-local($btn-bg-color, $btn-color, $btn-bdr-color);
   @include generate-active(
-                  darken($btn-bg-color, $default-color-increase-ratio),
+                  $btn-bg-color,
                   $btn-color,
-                  darken($btn-bdr-color, $default-color-increase-ratio));
+                  $btn-bdr-color);
   @include generate-disabled(
                   $btn-bg-color,
                   $btn-color,
@@ -43,10 +43,16 @@
 }
 
 @mixin generate-active($active-bg-color,$active-color,$active-bdr-color) {
-  &:active, &.active, &:focus, &:hover {
-    background-color: $active-bg-color;
+  &:focus, &:hover {
+    background-color: darken($active-bg-color, 8%);
     color: $active-color;
-    border-color: $active-bdr-color;
+    border-color: darken($active-bdr-color, 8%);
+  }
+
+  &:active, &.active {
+    background-color: darken($active-bg-color, $default-color-increase-ratio);
+    color: $active-color;
+    border-color: darken($active-bdr-color, $default-color-increase-ratio);
   }
 
 }

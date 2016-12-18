@@ -55,7 +55,13 @@
       vertical-align: middle;
 
       .button {
-        @extend .button.circle;
+        padding: 0.5rem;
+        font-size: 1rem;
+        width: 2rem;
+        height: 2rem;
+        line-height: 1rem;
+        @include border-radius(50%);
+
         border: 0;
         outline: none;
         transition: background-color .2s;

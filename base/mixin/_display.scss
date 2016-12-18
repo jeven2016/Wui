@@ -1,0 +1,13 @@
+@mixin make-inline-block {
+  position: relative;
+  display: inline-block;
+
+  @content;
+}
+
+@mixin make-block {
+  position: relative;
+  display: block;
+
+  @content;
+}

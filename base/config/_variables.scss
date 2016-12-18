@@ -3,7 +3,7 @@ $default-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.25);
 $default-border-radius: 0.25rem;
 $body-background-color: #fff;
 $border-color: #ccc;
-$default-color-increase-ratio: 15%;
+$default-color-increase-ratio: 20%;
 
 $elem-default-padding: 0.5rem 1rem;
 $elem-large-padding: 0.75rem 1.5rem;
@@ -78,7 +78,7 @@ $bq-border-radius: $default-border-radius;
 
 //For buttons
 $btn-cursor: pointer;
-$btn-line-height: 1.25rem;
+$btn-line-height: 1.25em;
 $btn-text-align: center;
 $btn-text-decoration: none;
 $btn-text-color-active: #fff;
@@ -93,8 +93,8 @@ $btn-large-padding: 0.75rem 1.5rem;
 $btn-small-padding: 0.25rem 0.5rem;
 $btn-default-background-color: $white;
 
-$btn-background-color: #eee;
-$btn-primary-background-color: #3d8bea;
+$btn-background-color: $gray;
+$btn-primary-background-color: $blue;
 $btn-primary-text-color: $white;
 $btn-primary-border-color: darken($btn-primary-background-color, $default-color-increase-ratio);
 

@@ -1,15 +1,7 @@
 /*! wui | MIT License | github.com/wheel-ui */
-@import "reset/normalize";
-@import "reset/reset";
-@import "config/variables";
-@import "mixin/index";
-/*core*/
-@import "core/clear";
-@import "core/common";
-@import "core/global";
-@import "core/background-colors";
-@import "core/text";
 /*import global configuration files */
+@import "base/base-index";
+@import "elements/common/_common-index.scss";
 @import "elements/blockquota";
 @import "elements/headings";
 @import "elements/input";

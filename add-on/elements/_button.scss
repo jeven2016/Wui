@@ -5,20 +5,12 @@ $border-color-increase-ratio: $default-color-increase-ratio;
   @include generate-simple-button('pink', $pink, $white, darken($pink, $border-color-increase-ratio));
   @include generate-simple-button('purple', $purple, $white, darken($purple, $border-color-increase-ratio));
   @include generate-simple-button('violet', $violet, $white, darken($purple, $border-color-increase-ratio));
-  &.blue {
-    @extend .primary;
-  }
+  @include generate-simple-button('blue', $blue, $white, darken($blue, $border-color-increase-ratio));
   @include generate-simple-button('teal', $teal, $white, darken($teal, $border-color-increase-ratio));
-  &.green {
-    @extend .info;
-  }
-  &.yellow {
-    @extend .warning;
-  }
+  @include generate-simple-button('green', $green, $white, darken($green, $border-color-increase-ratio));
+  @include generate-simple-button('yellow', $yellow, $white, darken($yellow, $border-color-increase-ratio));
   @include generate-simple-button('orange', $orange, $white, darken($orange, $border-color-increase-ratio));
-  &.red {
-    @extend .danger;
-  }
+  @include generate-simple-button('red', $red, $white, darken($red, $border-color-increase-ratio));
 
   &.outline {
     @include generate-outline-button('black', $white, $black);

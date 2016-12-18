@@ -4,6 +4,14 @@
   opacity: 0.7;
 }
 
+@mixin add-disabled-conf {
+  &:disabled, &.disabled {
+    @extend %not-allowed;
+  }
+
+  @content;
+}
+
 @mixin disabled-color($bg-color, $text-color, $border-color: darken($bg-color, 10%)) {
   &:disabled, &.disabled {
     &:focus, &:hover {
@@ -11,7 +19,6 @@
       border-color: $border-color;
       color: $text-color;
     }
-
   }
 }
 

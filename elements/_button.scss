@@ -1,24 +1,21 @@
 .button {
-  @extend %inline-block-style;
+  @include make-inline-block();
   cursor: $btn-cursor;
-  outline: 0;
+  outline: none;
   padding: $btn-default-padding;
   line-height: $btn-line-height;
   vertical-align: $btn-text-vertical-align;
   text-align: $btn-text-align;
   text-decoration: $btn-text-decoration;
   @include border-radius();
+  overflow: visible;
+  -webkit-tap-highlight-color: transparent;
   transition: all .2s ease-in-out;
 
-  //only apply on <a/>
-  a.button.disabled {
-    pointer-events: none !important;
-  }
-
-  &:disabled, &.disabled {
-    cursor: not-allowed;
-    //pointer-events: none !important; //this impacts 'cursor' and causes no icon would display
-    opacity: 0.7;
+  @include add-disabled-conf {
+    a.button.disabled {
+      pointer-events: none !important;
+    }
   }
 
   //add button content
@@ -31,18 +28,21 @@
   @include generate-simple-button('info', $btn-info-background-color, $btn-info-text-color, $btn-info-border-color);
   @include generate-simple-button('success', $btn-success-background-color, $btn-success-text-color, $btn-success-border-color);
 
-  //同级的button但不是block button的，默认margin-left:0.5rem
-  + .button:not(.block) {
-    margin-left: $btn-margin-left-button;
-  }
-
   //同级的block button，margin-top:0.5rem
   &.block {
-    @extend %block-width;
+    @include make-block {
+      width: 100%
+    }
+  ;
 
     + .block {
       margin-top: $btn-margin-top-button;
     }
+  }
+
+  //同级的button但不是block button的，默认margin-left:0.5rem
+  + .button:not(.block) {
+    margin-left: $btn-margin-left-button;
   }
 
   &.circle {

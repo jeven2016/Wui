@@ -16,6 +16,13 @@
 2016-12-11:
 1. .input.large, .button.large  内部由于继承了input的line-height，导致高度不一样
 
+2016-12-15:
+1. body 的font-size更改后，button大小无变化: 试试white-space: nowrap;
+
+2016-12-16:
+1. 出现两处css定义： .input.medium, .button.medium， html {
+
+
 todo:
 1. 比较http://amazeui.org/getting-started
 http://frozenui.github.io/components.html#
