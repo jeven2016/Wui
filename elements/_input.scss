@@ -2,11 +2,16 @@
   padding: $input-default-padding;
   border: $input-border;
   @include border-radius($input-border-radius);
-  outline: 0;
+  outline: $input-outline;
   line-height: $input-line-height;
+  vertical-align: $input-vertical-align;
+  -webkit-appearance: none;
+  transition: all .2s ease-in-out;
 
   &.block {
-    @extend %block-width;
+    @include make-block {
+      width: 100%;
+    }
   }
 
   &.simple {
@@ -18,49 +23,86 @@
 
     &:active, &:focus {
       border-bottom-width: 1px;
+      box-shadow: $input-simple-box-shadow;
     }
   }
 
   @include variant-size();
 
-  &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
+  @include make-placeholder {
     color: $input-placeholder-color;
-    opacity: 1;
+    opacity: $input-placeholder-opacity;
   }
 
-  &:active, &:focus {
+  //add 'disabled' and 'active' related settings
+  &:disabled, &.disabled {
+    @extend %not-allowed;
+    pointer-events: none;
+  }
+  //only add 'active' related settings, and the 'disabled‘ settings don't need to add since no need
+  //to change the default background color , text color and border color, and 'pointer-events' setting would prevent
+  //any other default events from being triggered.
+  &:focus, &:active, &.active {
     border-color: $input-border-active-color;
     box-shadow: $input-box-shadow;
   }
+
 }
 
 .icon-input {
-  @extend %inline-block-style;
+  @include make-inline-block;
 
-  &.block {
-    @extend %block-width;
+  &.block, & > .input {
+    @include make-block {
+      width: 100%;
+    }
+  }
+
+  &.large {
     > .input {
-      @extend %block-width;
+      font-size: map-get($font-size, 'large');
+      padding: 0.75rem 2.5rem 0.75rem 1rem;
+    }
+
+    > .icon {
+      font-size: map-get($font-size, 'large');
+      line-height: 1.5rem;
+      width: 1.5rem;
+      top: 0.9375rem;
+    }
+  }
+
+  &.medium {
+  }
+
+  &.small {
+    > .input {
+      font-size: map-get($font-size, 'small');
+      padding: 0.25rem 1.5rem 0.25rem 0.75rem;
+    }
+
+    > .icon {
+      font-size: map-get($font-size, 'small');
+      line-height: map-get($font-size, 'small');
+      width: 0.75rem;
+      top: 0.5625rem;
     }
   }
 
   &.left-icon {
     & > .input {
-      padding-right: 1rem;
-      padding-left: 2rem;
+      padding-right: $icon-input-left-icon-input-padding-right;
+      padding-left: $icon-input-left-icon-input-padding-left;
     }
 
     & > .icon {
-      position: absolute;
-      left: 0.5rem;
-      top: 0.6875rem;
-      width: 0.9275rem;
-      line-height: 1rem;
+      left: $icon-input-left-icon-left;
+      top: $icon-input-left-icon-top;
     }
   }
 
   & > .input {
-    padding-right: 2rem;
+    padding-right: $icon-input-right-icon-input-padding-right;
 
     &:active, &:focus {
       ~ .icon {
@@ -70,12 +112,13 @@
   }
 
   & > .icon {
-    color: $gray;
-    position: absolute;
-    right: 0.5rem;
-    top: 0.6875rem;
-    //line-height: 1rem;
-    cursor: pointer;
+    color: $icon-input-icon-text-color;
+    position: $icon-input-icon-position;
+    right: $icon-input-right-icon-right;
+    top: $icon-input-right-icon-top;
+    line-height: $icon-input-icon-line-height;
+    cursor: $icon-input-icon-cursor;
+    width: $icon-input-left-icon-width;
 
     &:hover, &:focus {
       color: $input-border-active-color;

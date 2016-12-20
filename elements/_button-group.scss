@@ -1,34 +1,50 @@
 .button-group {
-  @extend %inline-block-style;
+  @include make-inline-block();
 
   > .button {
-    margin: 0 !important;
-    @include border-radius(0);
-    float: left;
+    margin: $btn-group-buttons-margin;
+    float: $btn-group-buttons-float;
 
-    &:first-child {
-      @include full-border-radius($btn-group-border-radius, 0, $btn-group-border-radius, 0);
-    }
-
-    &:last-child {
-      @include full-border-radius(0rem, $btn-group-border-radius, 0rem, $btn-group-border-radius);
-    }
-
-    &:not(:first-child) {
-      border-left-width: 0;
-    }
+    @include group-border-radius($btn-group-border-radius);
   }
 
   &.block {
     table-layout: fixed;
 
-    //display:table-cell属性指让标签元素以表格单元格的形式呈现，类似于td标签。
-    //table-cell同样会被其他一些CSS属性破坏，例如float, position:absolute，
-    //所以，在使用display:table-cell与float:left或是position:absolute属性尽量不用同用。
+    //display:table-cell 以表格单元格的形式呈现，可看做td标签。
+    //table-cell同样会被其他属性破坏，例如float, position:absolute，
+    //所以，在使用display:table-cell与float:left或是position:absolute属性尽量不用同时使用。
     > .button {
       display: table-cell;
       float: none;
       width: 1%;
     }
   }
+
+  &.vertical {
+    > .button {
+      display: block;
+      width: 100%;
+
+      &:first-child {
+        @include full-border-radius($btn-group-border-radius, $btn-group-border-radius, 0, 0);
+        border-bottom-width: 0;
+      }
+
+      &:last-child {
+        border-left-width: $btn-border-width;
+        @include full-border-radius(0, 0, $btn-group-border-radius, $btn-group-border-radius);
+      }
+
+      &:not(:first-child):not(:last-child) {
+        border-left-width: $btn-border-width;
+        border-bottom-width: 0;
+        @include border-radius(0);
+      }
+    }
+  }
+
+  @include button-group-variant-size();
+
+  @include button-group-disabled();
 }

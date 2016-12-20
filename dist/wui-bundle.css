@@ -10,22 +10,25 @@
   position: relative;
 }
 
-.dropdown.disabled, .button-dropdown.disabled > .button, .button:disabled, .button.disabled {
+/**
+* set the group's border radius property
+ */
+.input:disabled, .input.disabled, .dropdown.disabled, .button-dropdown.disabled > .button, .button:disabled, .button.disabled, .button-group:disabled > .button, .button-group.disabled > .button {
   cursor: not-allowed;
   opacity: 0.7;
 }
 
-.input.large, .button.large {
+.input.large, .button.large, .button-group.large > .button {
   font-size: 1.5rem;
   padding: 0.75rem 1.5rem;
 }
 
-.input.medium, .button.medium {
+.input.medium, .button, .button.medium, .button-group.medium > .button {
   font-size: 1rem;
   padding: 0.5rem 1rem;
 }
 
-.input.small, .button.small {
+.input.small, .button.small, .button-group.small > .button {
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
 }
@@ -42,13 +45,11 @@
   text-decoration: none;
   background-color: #fff;
   border: 1px solid #acacac;
-  -webkit-border-radius: 0.25rem;
-  -moz-border-radius: 0.25rem;
   border-radius: 0.25rem;
   transition: all .3s ease-in-out;
 }
 
-.icon-input, .button-dropdown, .button-group, .card, .dialog > .content > .header > .title, .dialog > .content > .header > .icon, .menu, .search.select > .content > .tag, .date-time-picker {
+.button-dropdown, .card, .dialog > .content > .header > .title, .dialog > .content > .header > .icon, .menu, .search.select > .content > .tag, .date-time-picker {
   position: relative;
   display: inline-block;
 }
@@ -56,11 +57,6 @@
 .menu > .item {
   position: relative;
   display: block;
-}
-
-.input.block, .icon-input.block, .icon-input.block > .input {
-  display: block;
-  width: 100%;
 }
 
 .clear-radius {
@@ -205,6 +201,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .mask, .dialog {
   position: absolute;
   top: 0;
@@ -257,8 +257,6 @@ blockquote, .blockquote {
   border-left: 0.4rem solid #ccc;
   margin: 0 0 0.5rem 0;
   padding: 0.5rem 1rem;
-  -webkit-border-radius: 0.25rem;
-  -moz-border-radius: 0.25rem;
   border-radius: 0.25rem;
 }
 blockquote.primary, .primary.blockquote {
@@ -302,15 +300,19 @@ h6 {
 .input {
   padding: 0.5rem 1rem;
   border: 1px solid #ccc;
-  -webkit-border-radius: 0.25rem;
-  -moz-border-radius: 0.25rem;
   border-radius: 0.25rem;
   outline: 0;
   line-height: 1.25rem;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  transition: all .2s ease-in-out;
+}
+.input.block {
+  position: relative;
+  display: block;
+  width: 100%;
 }
 .input.simple {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
   border-radius: 0;
   border-left: none;
   border-top: none;
@@ -319,42 +321,74 @@ h6 {
 }
 .input.simple:active, .input.simple:focus {
   border-bottom-width: 1px;
+  box-shadow: 0 1px 0 0 rgba(61, 139, 234, 0.24);
 }
 .input::-webkit-input-placeholder, .input::-moz-placeholder, .input:-ms-input-placeholder {
   color: #e6e6e6;
   opacity: 1;
 }
-.input:active, .input:focus {
-  border-color: #3b88bd;
+.input:disabled, .input.disabled {
+  pointer-events: none;
+}
+.input:focus, .input:active, .input.active {
+  border-color: #277ed0;
   box-shadow: 0 2px 6px 0 rgba(61, 139, 234, 0.24);
 }
 
+.icon-input {
+  position: relative;
+  display: inline-block;
+}
+.icon-input.block, .icon-input > .input {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.icon-input.large > .input {
+  font-size: 1.5rem;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+}
+.icon-input.large > .icon {
+  font-size: 1.5rem;
+  line-height: 1.25rem;
+  width: 1.5rem;
+  top: 0.9375rem;
+}
+.icon-input.small > .input {
+  font-size: 0.75rem;
+  padding: 0.25rem 1.5rem 0.25rem 0.75rem;
+}
+.icon-input.small > .icon {
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+  width: 0.75rem;
+  top: 0.5625rem;
+}
 .icon-input.left-icon > .input {
   padding-right: 1rem;
   padding-left: 2rem;
 }
 .icon-input.left-icon > .icon {
-  position: absolute;
   left: 0.5rem;
   top: 0.6875rem;
-  width: 0.9275rem;
-  line-height: 1rem;
 }
 .icon-input > .input {
   padding-right: 2rem;
 }
 .icon-input > .input:active ~ .icon, .icon-input > .input:focus ~ .icon {
-  color: #3b88bd;
+  color: #277ed0;
 }
 .icon-input > .icon {
   color: #ccc;
   position: absolute;
   right: 0.5rem;
   top: 0.6875rem;
+  line-height: 1rem;
   cursor: pointer;
+  width: 1rem;
 }
 .icon-input > .icon:hover, .icon-input > .icon:focus {
-  color: #3b88bd;
+  color: #277ed0;
 }
 
 .input-group {
@@ -369,8 +403,6 @@ h6 {
   background-color: #eceeef;
 }
 .input-group > .label:not(:last-child):not(:first-child) {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
   border-radius: 0;
   border-right-width: 1px;
   border-left: 0;
@@ -381,8 +413,6 @@ h6 {
   border: 1px solid #ccc;
 }
 .input-group > .element:not(:last-child):not(:first-child) {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
   border-radius: 0;
   border-right: 0;
   border-left: 0;
@@ -424,8 +454,6 @@ h6 {
   background-color: #fff;
   border: 1px solid #ccc;
   z-index: 100;
-  -webkit-border-radius: 0 0 0.25rem 0.25rem;
-  -moz-border-radius: 0 0 0.25rem 0.25rem;
   border-radius: 0 0 0.25rem 0.25rem;
 }
 
@@ -507,16 +535,14 @@ h6 {
   display: inline-block;
   cursor: pointer;
   outline: none;
-  padding: 0.5rem 1rem;
   line-height: 1.25em;
   vertical-align: middle;
   text-align: center;
   text-decoration: none;
-  -webkit-border-radius: 0.25rem;
-  -moz-border-radius: 0.25rem;
   border-radius: 0.25rem;
   overflow: visible;
   -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
   transition: all .2s ease-in-out;
   background-color: #fff;
   color: #333333;
@@ -527,7 +553,7 @@ h6 {
             lighten($btn-primary-color, 20%),
             $btn-primary-inverted-background-color);*/
 }
-.button a.button.disabled {
+.button a.button.disabled, .button .button-group:disabled > a.button, .button .button-group.disabled > a.button {
   pointer-events: none !important;
 }
 .button:focus, .button:hover {
@@ -540,7 +566,7 @@ h6 {
   color: #333333;
   border-color: #797979;
 }
-.button:disabled:focus, .button:disabled:hover, .button.disabled:focus, .button.disabled:hover {
+.button:disabled:focus, .button:disabled:hover, .button.disabled:focus, .button-group:disabled > .button:focus, .button-group.disabled > .button:focus, .button.disabled:hover, .button-group:disabled > .button:hover, .button-group.disabled > .button:hover {
   background-color: #fff;
   color: #333333;
   border-color: #acacac;
@@ -560,7 +586,7 @@ h6 {
   color: #fff;
   border-color: #071624;
 }
-.button.primary:disabled:focus, .button.primary:disabled:hover, .button.primary.disabled:focus, .button.primary.disabled:hover {
+.button.primary:disabled:focus, .button.primary:disabled:hover, .button.primary.disabled:focus, .button-group:disabled > .primary.button:focus, .button-group.disabled > .primary.button:focus, .button.primary.disabled:hover, .button-group:disabled > .primary.button:hover, .button-group.disabled > .primary.button:hover {
   background-color: #277ed0;
   color: #fff;
   border-color: #174a7a;
@@ -580,7 +606,7 @@ h6 {
   color: #fff;
   border-color: #410b00;
 }
-.button.danger:disabled:focus, .button.danger:disabled:hover, .button.danger.disabled:focus, .button.danger.disabled:hover {
+.button.danger:disabled:focus, .button.danger:disabled:hover, .button.danger.disabled:focus, .button-group:disabled > .danger.button:focus, .button-group.disabled > .danger.button:focus, .button.danger.disabled:hover, .button-group:disabled > .danger.button:hover, .button-group.disabled > .danger.button:hover {
   background-color: #ff350e;
   color: #fff;
   border-color: #a71b00;
@@ -600,7 +626,7 @@ h6 {
   color: #fff;
   border-color: #392901;
 }
-.button.warning:disabled:focus, .button.warning:disabled:hover, .button.warning.disabled:focus, .button.warning.disabled:hover {
+.button.warning:disabled:focus, .button.warning:disabled:hover, .button.warning.disabled:focus, .button-group:disabled > .warning.button:focus, .button-group.disabled > .warning.button:focus, .button.warning.disabled:hover, .button-group:disabled > .warning.button:hover, .button-group.disabled > .warning.button:hover {
   background-color: #fbb80b;
   color: #fff;
   border-color: #9d7203;
@@ -620,7 +646,7 @@ h6 {
   color: #fff;
   border-color: #102710;
 }
-.button.info:disabled:focus, .button.info:disabled:hover, .button.info.disabled:focus, .button.info.disabled:hover {
+.button.info:disabled:focus, .button.info:disabled:hover, .button.info.disabled:focus, .button-group:disabled > .info.button:focus, .button-group.disabled > .info.button:focus, .button.info.disabled:hover, .button-group:disabled > .info.button:hover, .button-group.disabled > .info.button:hover {
   background-color: #4BB84F;
   color: #fff;
   border-color: #2c712f;
@@ -640,7 +666,7 @@ h6 {
   color: #fff;
   border-color: #102710;
 }
-.button.success:disabled:focus, .button.success:disabled:hover, .button.success.disabled:focus, .button.success.disabled:hover {
+.button.success:disabled:focus, .button.success:disabled:hover, .button.success.disabled:focus, .button-group:disabled > .success.button:focus, .button-group.disabled > .success.button:focus, .button.success.disabled:hover, .button-group:disabled > .success.button:hover, .button-group.disabled > .success.button:hover {
   background-color: #4BB84F;
   color: #fff;
   border-color: #2c712f;
@@ -662,9 +688,7 @@ h6 {
   width: 2rem;
   height: 2rem;
   line-height: 1rem;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
+  border-radius: 70%;
 }
 .button > .icon-label {
   position: absolute;
@@ -675,25 +699,24 @@ h6 {
   background-color: #a6a6a6;
 }
 
+.button-group {
+  position: relative;
+  display: inline-block;
+}
 .button-group > .button {
   margin: 0 !important;
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
   float: left;
 }
 .button-group > .button:first-child {
-  -webkit-border-radius: 0.25rem 0 0 0.25rem;
-  -moz-border-radius: 0.25rem 0 0 0.25rem;
   border-radius: 0.25rem 0 0 0.25rem;
 }
 .button-group > .button:last-child {
-  -webkit-border-radius: 0rem 0.25rem 0.25rem 0rem;
-  -moz-border-radius: 0rem 0.25rem 0.25rem 0rem;
-  border-radius: 0rem 0.25rem 0.25rem 0rem;
-}
-.button-group > .button:not(:first-child) {
+  border-radius: 0 0.25rem 0.25rem 0;
   border-left-width: 0;
+}
+.button-group > .button:not(:first-child):not(:last-child) {
+  border-left-width: 0;
+  border-radius: 0;
 }
 .button-group.block {
   table-layout: fixed;
@@ -703,19 +726,32 @@ h6 {
   float: none;
   width: 1%;
 }
+.button-group.vertical > .button {
+  display: block;
+  width: 100%;
+}
+.button-group.vertical > .button:first-child {
+  border-radius: 0.25rem 0.25rem 0 0;
+  border-bottom-width: 0;
+}
+.button-group.vertical > .button:last-child {
+  border-left-width: 1px;
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+.button-group.vertical > .button:not(:first-child):not(:last-child) {
+  border-left-width: 1px;
+  border-bottom-width: 0;
+  border-radius: 0;
+}
 
 .card {
   width: 20rem;
   margin-bottom: 0.5rem;
   border: 1px solid #acacac;
-  -webkit-border-radius: 0.25rem;
-  -moz-border-radius: 0.25rem;
   border-radius: 0.25rem;
 }
 .card > .card-header {
   padding: 0.5rem;
-  -webkit-border-radius: 0.25rem 0.25rem 0 0;
-  -moz-border-radius: 0.25rem 0.25rem 0 0;
   border-radius: 0.25rem 0.25rem 0 0;
 }
 .card > .card-header > .title {
@@ -732,8 +768,6 @@ h6 {
 }
 .card > .card-footer {
   padding: 0.5rem;
-  -webkit-border-radius: 0 0 0.25rem 0.25rem;
-  -moz-border-radius: 0 0 0.25rem 0.25rem;
   border-radius: 0 0 0.25rem 0.25rem;
 }
 .card.block {
@@ -1998,8 +2032,6 @@ h6 {
   min-height: 1rem;
   z-index: 101;
   background-color: #fff;
-  -webkit-border-radius: 0.25rem;
-  -moz-border-radius: 0.25rem;
   border-radius: 0.25rem;
   box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.25);
 }
@@ -2049,8 +2081,6 @@ h6 {
 .navbar {
   position: relative;
   display: block;
-  -webkit-border-radius: 0.25rem;
-  -moz-border-radius: 0.25rem;
   border-radius: 0.25rem;
   border: 1px solid #ccc;
   background-color: #f5f5f5;
@@ -2110,8 +2140,6 @@ h6 {
   outline: none;
   border: 1px solid #ccc;
   list-style: none;
-  -webkit-border-radius: 0.25rem;
-  -moz-border-radius: 0.25rem;
   border-radius: 0.25rem;
 }
 .menu.float > .item {
@@ -2173,8 +2201,6 @@ h6 {
 .tab > .menu.top > .item {
   display: inline-block;
   float: left;
-  -webkit-border-radius: 0.25rem 0.25rem 0 0;
-  -moz-border-radius: 0.25rem 0.25rem 0 0;
   border-radius: 0.25rem 0.25rem 0 0;
 }
 .tab > .menu.top > .item.active {
@@ -2201,8 +2227,6 @@ h6 {
 }
 .tab > .menu.left > .item {
   display: block;
-  -webkit-border-radius: 0.25rem 0 0 0.25rem;
-  -moz-border-radius: 0.25rem 0 0 0.25rem;
   border-radius: 0.25rem 0 0 0.25rem;
 }
 .tab > .menu.left > .item.active {
@@ -2219,8 +2243,6 @@ h6 {
 .tab > .menu.bottom > .item {
   display: inline-block;
   float: left;
-  -webkit-border-radius: 0 0 0.25rem 0.25rem;
-  -moz-border-radius: 0 0 0.25rem 0.25rem;
   border-radius: 0 0 0.25rem 0.25rem;
 }
 .tab > .menu.bottom > .item.active {
@@ -2236,8 +2258,6 @@ h6 {
 }
 .tab > .menu.right > .item {
   display: block;
-  -webkit-border-radius: 0 0.25rem 0.25rem 0;
-  -moz-border-radius: 0 0.25rem 0.25rem 0;
   border-radius: 0 0.25rem 0.25rem 0;
 }
 .tab > .menu.right > .item.active {
@@ -2438,7 +2458,7 @@ h6 {
   color: #fff;
   border-color: #797979;
 }
-.button.black:disabled:focus, .button.black:disabled:hover, .button.black.disabled:focus, .button.black.disabled:hover {
+.button.black:disabled:focus, .button.black:disabled:hover, .button.black.disabled:focus, .button-group:disabled > .black.button:focus, .button-group.disabled > .black.button:focus, .button.black.disabled:hover, .button-group:disabled > .black.button:hover, .button-group.disabled > .black.button:hover {
   background-color: #000000;
   color: #fff;
   border-color: #acacac;
@@ -2458,7 +2478,7 @@ h6 {
   color: #fff;
   border-color: #0b0804;
 }
-.button.brown:disabled:focus, .button.brown:disabled:hover, .button.brown.disabled:focus, .button.brown.disabled:hover {
+.button.brown:disabled:focus, .button.brown:disabled:hover, .button.brown.disabled:focus, .button-group:disabled > .brown.button:focus, .button-group.disabled > .brown.button:focus, .button.brown.disabled:hover, .button-group:disabled > .brown.button:hover, .button-group.disabled > .brown.button:hover {
   background-color: #a57036;
   color: #fff;
   border-color: #583c1d;
@@ -2478,7 +2498,7 @@ h6 {
   color: #fff;
   border-color: #380824;
 }
-.button.pink:disabled:focus, .button.pink:disabled:hover, .button.pink.disabled:focus, .button.pink.disabled:hover {
+.button.pink:disabled:focus, .button.pink:disabled:hover, .button.pink.disabled:focus, .button-group:disabled > .pink.button:focus, .button-group.disabled > .pink.button:focus, .button.pink.disabled:hover, .button-group:disabled > .pink.button:hover, .button-group.disabled > .pink.button:hover {
   background-color: #e02c94;
   color: #fff;
   border-color: #91155d;
@@ -2498,7 +2518,7 @@ h6 {
   color: #fff;
   border-color: #1a0822;
 }
-.button.purple:disabled:focus, .button.purple:disabled:hover, .button.purple.disabled:focus, .button.purple.disabled:hover {
+.button.purple:disabled:focus, .button.purple:disabled:hover, .button.purple.disabled:focus, .button-group:disabled > .purple.button:focus, .button-group.disabled > .purple.button:focus, .button.purple.disabled:hover, .button-group:disabled > .purple.button:hover, .button-group.disabled > .purple.button:hover {
   background-color: #9a2ec8;
   color: #fff;
   border-color: #5a1b75;
@@ -2518,7 +2538,7 @@ h6 {
   color: #fff;
   border-color: #1a0822;
 }
-.button.violet:disabled:focus, .button.violet:disabled:hover, .button.violet.disabled:focus, .button.violet.disabled:hover {
+.button.violet:disabled:focus, .button.violet:disabled:hover, .button.violet.disabled:focus, .button-group:disabled > .violet.button:focus, .button-group.disabled > .violet.button:focus, .button.violet.disabled:hover, .button-group:disabled > .violet.button:hover, .button-group.disabled > .violet.button:hover {
   background-color: #5f33c9;
   color: #fff;
   border-color: #5a1b75;
@@ -2538,7 +2558,7 @@ h6 {
   color: #fff;
   border-color: #071624;
 }
-.button.blue:disabled:focus, .button.blue:disabled:hover, .button.blue.disabled:focus, .button.blue.disabled:hover {
+.button.blue:disabled:focus, .button.blue:disabled:hover, .button.blue.disabled:focus, .button-group:disabled > .blue.button:focus, .button-group.disabled > .blue.button:focus, .button.blue.disabled:hover, .button-group:disabled > .blue.button:hover, .button-group.disabled > .blue.button:hover {
   background-color: #277ed0;
   color: #fff;
   border-color: #174a7a;
@@ -2558,7 +2578,7 @@ h6 {
   color: #fff;
   border-color: black;
 }
-.button.teal:disabled:focus, .button.teal:disabled:hover, .button.teal.disabled:focus, .button.teal.disabled:hover {
+.button.teal:disabled:focus, .button.teal:disabled:hover, .button.teal.disabled:focus, .button-group:disabled > .teal.button:focus, .button-group.disabled > .teal.button:focus, .button.teal.disabled:hover, .button-group:disabled > .teal.button:hover, .button-group.disabled > .teal.button:hover {
   background-color: #06806C;
   color: #fff;
   border-color: #011f1a;
@@ -2578,7 +2598,7 @@ h6 {
   color: #fff;
   border-color: #102710;
 }
-.button.green:disabled:focus, .button.green:disabled:hover, .button.green.disabled:focus, .button.green.disabled:hover {
+.button.green:disabled:focus, .button.green:disabled:hover, .button.green.disabled:focus, .button-group:disabled > .green.button:focus, .button-group.disabled > .green.button:focus, .button.green.disabled:hover, .button-group:disabled > .green.button:hover, .button-group.disabled > .green.button:hover {
   background-color: #4BB84F;
   color: #fff;
   border-color: #2c712f;
@@ -2598,7 +2618,7 @@ h6 {
   color: #fff;
   border-color: #392901;
 }
-.button.yellow:disabled:focus, .button.yellow:disabled:hover, .button.yellow.disabled:focus, .button.yellow.disabled:hover {
+.button.yellow:disabled:focus, .button.yellow:disabled:hover, .button.yellow.disabled:focus, .button-group:disabled > .yellow.button:focus, .button-group.disabled > .yellow.button:focus, .button.yellow.disabled:hover, .button-group:disabled > .yellow.button:hover, .button-group.disabled > .yellow.button:hover {
   background-color: #fbb80b;
   color: #fff;
   border-color: #9d7203;
@@ -2618,7 +2638,7 @@ h6 {
   color: #fff;
   border-color: #341703;
 }
-.button.orange:disabled:focus, .button.orange:disabled:hover, .button.orange.disabled:focus, .button.orange.disabled:hover {
+.button.orange:disabled:focus, .button.orange:disabled:hover, .button.orange.disabled:focus, .button-group:disabled > .orange.button:focus, .button-group.disabled > .orange.button:focus, .button.orange.disabled:hover, .button-group:disabled > .orange.button:hover, .button-group.disabled > .orange.button:hover {
   background-color: #f26b11;
   color: #fff;
   border-color: #954008;
@@ -2638,234 +2658,242 @@ h6 {
   color: #fff;
   border-color: #410b00;
 }
-.button.red:disabled:focus, .button.red:disabled:hover, .button.red.disabled:focus, .button.red.disabled:hover {
+.button.red:disabled:focus, .button.red:disabled:hover, .button.red.disabled:focus, .button-group:disabled > .red.button:focus, .button-group.disabled > .red.button:focus, .button.red.disabled:hover, .button-group:disabled > .red.button:hover, .button-group.disabled > .red.button:hover {
   background-color: #ff350e;
   color: #fff;
   border-color: #a71b00;
 }
-.button.outline.black {
+.button.outline.black, .button-group.outline > .black.button {
   background-color: #fff;
   color: #000000;
   border: 1px solid #000000;
 }
-.button.outline.black:focus, .button.outline.black:hover {
+.button.outline.black:focus, .button-group.outline > .black.button:focus, .button.outline.black:hover, .button-group.outline > .black.button:hover {
   background-color: black;
   color: #fff;
   border-color: black;
 }
-.button.outline.black:active, .button.outline.black.active {
+.button.outline.black:active, .button-group.outline > .black.button:active, .button.outline.black.active, .button-group.outline > .black.active.button {
   background-color: black;
   color: #fff;
   border-color: black;
 }
-.button.outline.black:disabled:focus, .button.outline.black:disabled:hover, .button.outline.black.disabled:focus, .button.outline.black.disabled:hover {
+.button.outline.black:disabled:focus, .button-group.outline > .black.button:disabled:focus, .button.outline.black:disabled:hover, .button-group.outline > .black.button:disabled:hover, .button.outline.black.disabled:focus, .button-group:disabled > .outline.black.button:focus, .button-group.outline:disabled > .black.button:focus, .button-group.disabled > .outline.black.button:focus, .button-group.outline.disabled > .black.button:focus, .button-group.outline > .black.disabled.button:focus, .button.outline.black.disabled:hover, .button-group:disabled > .outline.black.button:hover, .button-group.outline:disabled > .black.button:hover, .button-group.disabled > .outline.black.button:hover, .button-group.outline.disabled > .black.button:hover, .button-group.outline > .black.disabled.button:hover {
   background-color: #fff;
   color: #000000;
   border-color: #000000;
 }
-.button.outline.brown {
+.button.outline.brown, .button-group.outline > .brown.button {
   background-color: #fff;
   color: #a57036;
   border: 1px solid #a57036;
 }
-.button.outline.brown:focus, .button.outline.brown:hover {
+.button.outline.brown:focus, .button-group.outline > .brown.button:focus, .button.outline.brown:hover, .button-group.outline > .brown.button:hover {
   background-color: #865b2c;
   color: #fff;
   border-color: #865b2c;
 }
-.button.outline.brown:active, .button.outline.brown.active {
+.button.outline.brown:active, .button-group.outline > .brown.button:active, .button.outline.brown.active, .button-group.outline > .brown.active.button {
   background-color: #583c1d;
   color: #fff;
   border-color: #583c1d;
 }
-.button.outline.brown:disabled:focus, .button.outline.brown:disabled:hover, .button.outline.brown.disabled:focus, .button.outline.brown.disabled:hover {
+.button.outline.brown:disabled:focus, .button-group.outline > .brown.button:disabled:focus, .button.outline.brown:disabled:hover, .button-group.outline > .brown.button:disabled:hover, .button.outline.brown.disabled:focus, .button-group:disabled > .outline.brown.button:focus, .button-group.outline:disabled > .brown.button:focus, .button-group.disabled > .outline.brown.button:focus, .button-group.outline.disabled > .brown.button:focus, .button-group.outline > .brown.disabled.button:focus, .button.outline.brown.disabled:hover, .button-group:disabled > .outline.brown.button:hover, .button-group.outline:disabled > .brown.button:hover, .button-group.disabled > .outline.brown.button:hover, .button-group.outline.disabled > .brown.button:hover, .button-group.outline > .brown.disabled.button:hover {
   background-color: #fff;
   color: #a57036;
   border-color: #a57036;
 }
-.button.outline.pink {
+.button.outline.pink, .button-group.outline > .pink.button {
   background-color: #fff;
   color: #e02c94;
   border: 1px solid #e02c94;
 }
-.button.outline.pink:focus, .button.outline.pink:hover {
+.button.outline.pink:focus, .button-group.outline > .pink.button:focus, .button.outline.pink:hover, .button-group.outline > .pink.button:hover {
   background-color: #c61d7f;
   color: #fff;
   border-color: #c61d7f;
 }
-.button.outline.pink:active, .button.outline.pink.active {
+.button.outline.pink:active, .button-group.outline > .pink.button:active, .button.outline.pink.active, .button-group.outline > .pink.active.button {
   background-color: #91155d;
   color: #fff;
   border-color: #91155d;
 }
-.button.outline.pink:disabled:focus, .button.outline.pink:disabled:hover, .button.outline.pink.disabled:focus, .button.outline.pink.disabled:hover {
+.button.outline.pink:disabled:focus, .button-group.outline > .pink.button:disabled:focus, .button.outline.pink:disabled:hover, .button-group.outline > .pink.button:disabled:hover, .button.outline.pink.disabled:focus, .button-group:disabled > .outline.pink.button:focus, .button-group.outline:disabled > .pink.button:focus, .button-group.disabled > .outline.pink.button:focus, .button-group.outline.disabled > .pink.button:focus, .button-group.outline > .pink.disabled.button:focus, .button.outline.pink.disabled:hover, .button-group:disabled > .outline.pink.button:hover, .button-group.outline:disabled > .pink.button:hover, .button-group.disabled > .outline.pink.button:hover, .button-group.outline.disabled > .pink.button:hover, .button-group.outline > .pink.disabled.button:hover {
   background-color: #fff;
   color: #e02c94;
   border-color: #e02c94;
 }
-.button.outline.purple {
+.button.outline.purple, .button-group.outline > .purple.button {
   background-color: #fff;
   color: #9a2ec8;
   border: 1px solid #9a2ec8;
 }
-.button.outline.purple:focus, .button.outline.purple:hover {
+.button.outline.purple:focus, .button-group.outline > .purple.button:focus, .button.outline.purple:hover, .button-group.outline > .purple.button:hover {
   background-color: #8026a7;
   color: #fff;
   border-color: #8026a7;
 }
-.button.outline.purple:active, .button.outline.purple.active {
+.button.outline.purple:active, .button-group.outline > .purple.button:active, .button.outline.purple.active, .button-group.outline > .purple.active.button {
   background-color: #5a1b75;
   color: #fff;
   border-color: #5a1b75;
 }
-.button.outline.purple:disabled:focus, .button.outline.purple:disabled:hover, .button.outline.purple.disabled:focus, .button.outline.purple.disabled:hover {
+.button.outline.purple:disabled:focus, .button-group.outline > .purple.button:disabled:focus, .button.outline.purple:disabled:hover, .button-group.outline > .purple.button:disabled:hover, .button.outline.purple.disabled:focus, .button-group:disabled > .outline.purple.button:focus, .button-group.outline:disabled > .purple.button:focus, .button-group.disabled > .outline.purple.button:focus, .button-group.outline.disabled > .purple.button:focus, .button-group.outline > .purple.disabled.button:focus, .button.outline.purple.disabled:hover, .button-group:disabled > .outline.purple.button:hover, .button-group.outline:disabled > .purple.button:hover, .button-group.disabled > .outline.purple.button:hover, .button-group.outline.disabled > .purple.button:hover, .button-group.outline > .purple.disabled.button:hover {
   background-color: #fff;
   color: #9a2ec8;
   border-color: #9a2ec8;
 }
-.button.outline.violet {
+.button.outline.violet, .button-group.outline > .violet.button {
   background-color: #fff;
   color: #5f33c9;
   border: 1px solid #5f33c9;
 }
-.button.outline.violet:focus, .button.outline.violet:hover {
+.button.outline.violet:focus, .button-group.outline > .violet.button:focus, .button.outline.violet:hover, .button-group.outline > .violet.button:hover {
   background-color: #502ba8;
   color: #fff;
   border-color: #502ba8;
 }
-.button.outline.violet:active, .button.outline.violet.active {
+.button.outline.violet:active, .button-group.outline > .violet.button:active, .button.outline.violet.active, .button-group.outline > .violet.active.button {
   background-color: #391e78;
   color: #fff;
   border-color: #391e78;
 }
-.button.outline.violet:disabled:focus, .button.outline.violet:disabled:hover, .button.outline.violet.disabled:focus, .button.outline.violet.disabled:hover {
+.button.outline.violet:disabled:focus, .button-group.outline > .violet.button:disabled:focus, .button.outline.violet:disabled:hover, .button-group.outline > .violet.button:disabled:hover, .button.outline.violet.disabled:focus, .button-group:disabled > .outline.violet.button:focus, .button-group.outline:disabled > .violet.button:focus, .button-group.disabled > .outline.violet.button:focus, .button-group.outline.disabled > .violet.button:focus, .button-group.outline > .violet.disabled.button:focus, .button.outline.violet.disabled:hover, .button-group:disabled > .outline.violet.button:hover, .button-group.outline:disabled > .violet.button:hover, .button-group.disabled > .outline.violet.button:hover, .button-group.outline.disabled > .violet.button:hover, .button-group.outline > .violet.disabled.button:hover {
   background-color: #fff;
   color: #5f33c9;
   border-color: #5f33c9;
 }
-.button.outline.blue {
+.button.outline.blue, .button-group.outline > .blue.button {
   background-color: #fff;
   color: #277ed0;
   border: 1px solid #277ed0;
 }
-.button.outline.blue:focus, .button.outline.blue:hover {
+.button.outline.blue:focus, .button-group.outline > .blue.button:focus, .button.outline.blue:hover, .button-group.outline > .blue.button:hover {
   background-color: #2169ae;
   color: #fff;
   border-color: #2169ae;
 }
-.button.outline.blue:active, .button.outline.blue.active {
+.button.outline.blue:active, .button-group.outline > .blue.button:active, .button.outline.blue.active, .button-group.outline > .blue.active.button {
   background-color: #174a7a;
   color: #fff;
   border-color: #174a7a;
 }
-.button.outline.blue:disabled:focus, .button.outline.blue:disabled:hover, .button.outline.blue.disabled:focus, .button.outline.blue.disabled:hover {
+.button.outline.blue:disabled:focus, .button-group.outline > .blue.button:disabled:focus, .button.outline.blue:disabled:hover, .button-group.outline > .blue.button:disabled:hover, .button.outline.blue.disabled:focus, .button-group:disabled > .outline.blue.button:focus, .button-group.outline:disabled > .blue.button:focus, .button-group.disabled > .outline.blue.button:focus, .button-group.outline.disabled > .blue.button:focus, .button-group.outline > .blue.disabled.button:focus, .button.outline.blue.disabled:hover, .button-group:disabled > .outline.blue.button:hover, .button-group.outline:disabled > .blue.button:hover, .button-group.disabled > .outline.blue.button:hover, .button-group.outline.disabled > .blue.button:hover, .button-group.outline > .blue.disabled.button:hover {
   background-color: #fff;
   color: #277ed0;
   border-color: #277ed0;
 }
-.button.outline.teal {
+.button.outline.teal, .button-group.outline > .teal.button {
   background-color: #fff;
   color: #06806C;
   border: 1px solid #06806C;
 }
-.button.outline.teal:focus, .button.outline.teal:hover {
+.button.outline.teal:focus, .button-group.outline > .teal.button:focus, .button.outline.teal:hover, .button-group.outline > .teal.button:hover {
   background-color: #04594b;
   color: #fff;
   border-color: #04594b;
 }
-.button.outline.teal:active, .button.outline.teal.active {
+.button.outline.teal:active, .button-group.outline > .teal.button:active, .button.outline.teal.active, .button-group.outline > .teal.active.button {
   background-color: #011f1a;
   color: #fff;
   border-color: #011f1a;
 }
-.button.outline.teal:disabled:focus, .button.outline.teal:disabled:hover, .button.outline.teal.disabled:focus, .button.outline.teal.disabled:hover {
+.button.outline.teal:disabled:focus, .button-group.outline > .teal.button:disabled:focus, .button.outline.teal:disabled:hover, .button-group.outline > .teal.button:disabled:hover, .button.outline.teal.disabled:focus, .button-group:disabled > .outline.teal.button:focus, .button-group.outline:disabled > .teal.button:focus, .button-group.disabled > .outline.teal.button:focus, .button-group.outline.disabled > .teal.button:focus, .button-group.outline > .teal.disabled.button:focus, .button.outline.teal.disabled:hover, .button-group:disabled > .outline.teal.button:hover, .button-group.outline:disabled > .teal.button:hover, .button-group.disabled > .outline.teal.button:hover, .button-group.outline.disabled > .teal.button:hover, .button-group.outline > .teal.disabled.button:hover {
   background-color: #fff;
   color: #06806C;
   border-color: #06806C;
 }
-.button.outline.green {
+.button.outline.green, .button-group.outline > .green.button {
   background-color: #fff;
   color: #4BB84F;
   border: 1px solid #4BB84F;
 }
-.button.outline.green:focus, .button.outline.green:hover {
+.button.outline.green:focus, .button-group.outline > .green.button:focus, .button.outline.green:hover, .button-group.outline > .green.button:hover {
   background-color: #3e9c41;
   color: #fff;
   border-color: #3e9c41;
 }
-.button.outline.green:active, .button.outline.green.active {
+.button.outline.green:active, .button-group.outline > .green.button:active, .button.outline.green.active, .button-group.outline > .green.active.button {
   background-color: #2c712f;
   color: #fff;
   border-color: #2c712f;
 }
-.button.outline.green:disabled:focus, .button.outline.green:disabled:hover, .button.outline.green.disabled:focus, .button.outline.green.disabled:hover {
+.button.outline.green:disabled:focus, .button-group.outline > .green.button:disabled:focus, .button.outline.green:disabled:hover, .button-group.outline > .green.button:disabled:hover, .button.outline.green.disabled:focus, .button-group:disabled > .outline.green.button:focus, .button-group.outline:disabled > .green.button:focus, .button-group.disabled > .outline.green.button:focus, .button-group.outline.disabled > .green.button:focus, .button-group.outline > .green.disabled.button:focus, .button.outline.green.disabled:hover, .button-group:disabled > .outline.green.button:hover, .button-group.outline:disabled > .green.button:hover, .button-group.disabled > .outline.green.button:hover, .button-group.outline.disabled > .green.button:hover, .button-group.outline > .green.disabled.button:hover {
   background-color: #fff;
   color: #4BB84F;
   border-color: #4BB84F;
 }
-.button.outline.yellow {
+.button.outline.yellow, .button-group.outline > .yellow.button {
   background-color: #fff;
   color: #fbb80b;
   border: 1px solid #fbb80b;
 }
-.button.outline.yellow:focus, .button.outline.yellow:hover {
+.button.outline.yellow:focus, .button-group.outline > .yellow.button:focus, .button.outline.yellow:hover, .button-group.outline > .yellow.button:hover {
   background-color: #da9e04;
   color: #fff;
   border-color: #da9e04;
 }
-.button.outline.yellow:active, .button.outline.yellow.active {
+.button.outline.yellow:active, .button-group.outline > .yellow.button:active, .button.outline.yellow.active, .button-group.outline > .yellow.active.button {
   background-color: #9d7203;
   color: #fff;
   border-color: #9d7203;
 }
-.button.outline.yellow:disabled:focus, .button.outline.yellow:disabled:hover, .button.outline.yellow.disabled:focus, .button.outline.yellow.disabled:hover {
+.button.outline.yellow:disabled:focus, .button-group.outline > .yellow.button:disabled:focus, .button.outline.yellow:disabled:hover, .button-group.outline > .yellow.button:disabled:hover, .button.outline.yellow.disabled:focus, .button-group:disabled > .outline.yellow.button:focus, .button-group.outline:disabled > .yellow.button:focus, .button-group.disabled > .outline.yellow.button:focus, .button-group.outline.disabled > .yellow.button:focus, .button-group.outline > .yellow.disabled.button:focus, .button.outline.yellow.disabled:hover, .button-group:disabled > .outline.yellow.button:hover, .button-group.outline:disabled > .yellow.button:hover, .button-group.disabled > .outline.yellow.button:hover, .button-group.outline.disabled > .yellow.button:hover, .button-group.outline > .yellow.disabled.button:hover {
   background-color: #fff;
   color: #fbb80b;
   border-color: #fbb80b;
 }
-.button.outline.orange {
+.button.outline.orange, .button-group.outline > .orange.button {
   background-color: #fff;
   color: #f26b11;
   border: 1px solid #f26b11;
 }
-.button.outline.orange:focus, .button.outline.orange:hover {
+.button.outline.orange:focus, .button-group.outline > .orange.button:focus, .button.outline.orange:hover, .button-group.outline > .orange.button:hover {
   background-color: #cf5a0b;
   color: #fff;
   border-color: #cf5a0b;
 }
-.button.outline.orange:active, .button.outline.orange.active {
+.button.outline.orange:active, .button-group.outline > .orange.button:active, .button.outline.orange.active, .button-group.outline > .orange.active.button {
   background-color: #954008;
   color: #fff;
   border-color: #954008;
 }
-.button.outline.orange:disabled:focus, .button.outline.orange:disabled:hover, .button.outline.orange.disabled:focus, .button.outline.orange.disabled:hover {
+.button.outline.orange:disabled:focus, .button-group.outline > .orange.button:disabled:focus, .button.outline.orange:disabled:hover, .button-group.outline > .orange.button:disabled:hover, .button.outline.orange.disabled:focus, .button-group:disabled > .outline.orange.button:focus, .button-group.outline:disabled > .orange.button:focus, .button-group.disabled > .outline.orange.button:focus, .button-group.outline.disabled > .orange.button:focus, .button-group.outline > .orange.disabled.button:focus, .button.outline.orange.disabled:hover, .button-group:disabled > .outline.orange.button:hover, .button-group.outline:disabled > .orange.button:hover, .button-group.disabled > .outline.orange.button:hover, .button-group.outline.disabled > .orange.button:hover, .button-group.outline > .orange.disabled.button:hover {
   background-color: #fff;
   color: #f26b11;
   border-color: #f26b11;
 }
-.button.outline.red {
+.button.outline.red, .button-group.outline > .red.button {
   background-color: #fff;
   color: #ff350e;
   border: 1px solid #ff350e;
 }
-.button.outline.red:focus, .button.outline.red:hover {
+.button.outline.red:focus, .button-group.outline > .red.button:focus, .button.outline.red:hover, .button-group.outline > .red.button:hover {
   background-color: #e42500;
   color: #fff;
   border-color: #e42500;
 }
-.button.outline.red:active, .button.outline.red.active {
+.button.outline.red:active, .button-group.outline > .red.button:active, .button.outline.red.active, .button-group.outline > .red.active.button {
   background-color: #a71b00;
   color: #fff;
   border-color: #a71b00;
 }
-.button.outline.red:disabled:focus, .button.outline.red:disabled:hover, .button.outline.red.disabled:focus, .button.outline.red.disabled:hover {
+.button.outline.red:disabled:focus, .button-group.outline > .red.button:disabled:focus, .button.outline.red:disabled:hover, .button-group.outline > .red.button:disabled:hover, .button.outline.red.disabled:focus, .button-group:disabled > .outline.red.button:focus, .button-group.outline:disabled > .red.button:focus, .button-group.disabled > .outline.red.button:focus, .button-group.outline.disabled > .red.button:focus, .button-group.outline > .red.disabled.button:focus, .button.outline.red.disabled:hover, .button-group:disabled > .outline.red.button:hover, .button-group.outline:disabled > .red.button:hover, .button-group.disabled > .outline.red.button:hover, .button-group.outline.disabled > .red.button:hover, .button-group.outline > .red.disabled.button:hover {
   background-color: #fff;
   color: #ff350e;
   border-color: #ff350e;
 }
 
-.button-group > .button.outline:not(:last-child) {
-  border-right: 0;
+.button-group.outline > .button:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+.button-group.outline > .button:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+  border-left-width: 0;
+}
+.button-group.outline > .button:not(:first-child):not(:last-child) {
+  border-left-width: 0;
+  border-radius: 0;
 }
 
 .search.select {
@@ -2876,8 +2904,6 @@ h6 {
   padding: 0.25rem;
   border: 1px solid #ccc;
   min-height: 2rem;
-  -webkit-border-radius: 0.25rem;
-  -moz-border-radius: 0.25rem;
   border-radius: 0.25rem;
 }
 .search.select > .content .info-text {
@@ -2888,8 +2914,6 @@ h6 {
 .search.select > .content > .tag {
   background-color: #eee;
   padding: 0 0.5rem;
-  -webkit-border-radius: 0.75rem;
-  -moz-border-radius: 0.75rem;
   border-radius: 0.75rem;
   border: 1px solid #ccc;
 }
@@ -2973,8 +2997,6 @@ h6 {
   width: 2rem;
   height: 2rem;
   line-height: 1rem;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
   border-radius: 50%;
   border: 0;
   outline: none;
@@ -3052,7 +3074,7 @@ h6 {
   color: #333333;
 }
 .date-time-picker > .time-container > .input:active .date-time-picker > .date-container > .input, .date-time-picker > .time-container > .input:focus .date-time-picker > .date-container > .input {
-  border-color: #3b88bd;
+  border-color: #277ed0;
 }
 
 @keyframes drawer-animation {
@@ -3166,8 +3188,6 @@ h6 {
 .loader:before, .loader:after {
   content: '';
   position: absolute;
-  -webkit-border-radius: 100%;
-  -moz-border-radius: 100%;
   border-radius: 100%;
   border: 0.3rem solid #ccc;
   width: 3rem;

@@ -1,10 +1,8 @@
 .button-group {
-
-  > .button {
-    &.outline{
-      &:not(:last-child){
-        border-right:0;
-      }
+  &.outline {
+    > .button {
+      @extend .button.outline;
+      @include group-border-radius($btn-group-border-radius);
     }
   }
 }

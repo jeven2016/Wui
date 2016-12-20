@@ -26,3 +26,24 @@
     @extend %small;
   }
 }
+
+@mixin button-group-variant-size() {
+  &.large {
+    > .button {
+      @extend %large;
+    }
+  }
+
+  &.medium {
+    > .button {
+      @extend %medium;
+    }
+  }
+
+  &.small {
+    > .button {
+      @extend %small;
+    }
+  }
+
+}

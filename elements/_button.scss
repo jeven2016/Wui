@@ -2,7 +2,6 @@
   @include make-inline-block();
   cursor: $btn-cursor;
   outline: none;
-  padding: $btn-default-padding;
   line-height: $btn-line-height;
   vertical-align: $btn-text-vertical-align;
   text-align: $btn-text-align;
@@ -10,7 +9,10 @@
   @include border-radius();
   overflow: visible;
   -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
   transition: all .2s ease-in-out;
+
+  @extend %medium;
 
   @include add-disabled-conf {
     a.button.disabled {
@@ -51,7 +53,7 @@
     width: 2rem;
     height: 2rem;
     line-height: 1rem;
-    @include border-radius(50%);
+    @include border-radius(70%);
   }
 
   @include variant-size();

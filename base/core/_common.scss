@@ -1,4 +1,5 @@
 //default button's style
+//todo:Deprecated
 %button-style {
   //position: relative;
   display: inline-block;
@@ -16,16 +17,19 @@
   transition: all .3s ease-in-out;
 }
 
+//todo:Deprecated
 %inline-block-style {
   position: relative;
   display: inline-block;
 }
 
+//todo:Deprecated
 %block-style {
   position: relative;
   display: block;
 }
 
+//todo:Deprecated
 %block-width {
   display: block;
   width: 100%;

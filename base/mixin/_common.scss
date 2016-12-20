@@ -1,22 +1,6 @@
-@mixin padding($y,$x) {
-  padding: $y $x;
-}
-
-@mixin border($border) {
-  border: $border;
-}
-
-@mixin border-radius($border-radius :$default-border-radius) {
-  @if $border-radius != null {
-    -webkit-border-radius: $border-radius;
-    -moz-border-radius: $border-radius;
-    border-radius: $border-radius;
-  }
-}
-
 @mixin full-border-radius($top-left:0,$top-right:0,$bottom-left:0,$bottom-right:0) {
-  -webkit-border-radius: $top-left $top-right $bottom-right $bottom-left;
-  -moz-border-radius: $top-left $top-right $bottom-right $bottom-left;
+  //-webkit-border-radius: $top-left $top-right $bottom-right $bottom-left;
+  //-moz-border-radius: $top-left $top-right $bottom-right $bottom-left;
   border-radius: $top-left $top-right $bottom-right $bottom-left;
 }
 
@@ -25,6 +9,24 @@
   background: -o-linear-gradient($arguments...);
   background: -moz-linear-gradient($arguments...);
   background: linear-gradient($arguments...);
+}
+
+@mixin border-radius($border-radius :$default-border-radius) {
+  @if $border-radius != null {
+    //-webkit-border-radius: $border-radius;
+    //-moz-border-radius: $border-radius;
+    border-radius: $border-radius;
+  }
+}
+
+//=================================================================================
+
+@mixin padding($y,$x) {
+  padding: $y $x;
+}
+
+@mixin border($border) {
+  border: $border;
 }
 
 @mixin input-group-child() {
