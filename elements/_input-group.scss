@@ -1,36 +1,27 @@
 
 .input-group {
-  display: inline-block;
-  box-sizing: border-box;
+  @include make-inline-block;
 
   & > .label {
-    float: left;
-    line-height: 1.25rem;
-    @include padding(0.5rem, 1rem);
+    float: $input-group-label-float;
+    line-height: $input-group-label-line-height;
+    height: $input-group-label-height;
+    padding: $input-group-label-padding;
     border: $input-border;
     background-color: $input-label-background-color;
-
-    &:not(:last-child):not(:first-child) {
-      @include border-radius(0);
-      border-right-width: 1px;
-      border-left: 0;
-    }
   }
 
   & > .element {
-    float: left;
-    line-height: 1.25rem;
-    border: $input-border;
+    float: $input-group-element-float;
+    line-height: $input-group-element-line-height;
+  }
 
-    &:not(:last-child):not(:first-child) {
-      @include border-radius(0);
-      border-right: 0;
-      border-left: 0;
-    }
+  & > .label, & > .element {
+    @include input-group-child();
+  }
 
-    > * {
-      border: 0 !important;
-    }
+  & > .element + .label:not(:first-child) {
+    border-left: 0;
   }
 
   &.block {
@@ -38,13 +29,8 @@
     width: 100%;
   }
 
-  & > .label, & > .element {
-    @include input-group-child();
-  }
-
   //占据整行
   &.flexible {
-    display: block;
     width: 100%;
     display: table;
 

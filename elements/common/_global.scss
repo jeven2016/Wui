@@ -15,9 +15,11 @@ body {
   font-smooth: antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  -webkit-text-size-adjust: none;
 }
 
-* {
+*, ::after, ::before {
   box-sizing: border-box;
 }
 
