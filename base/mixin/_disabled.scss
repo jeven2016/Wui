@@ -4,14 +4,18 @@
   opacity: 0.7;
 }
 
-@mixin add-disabled-conf {
+@mixin add-disabled-conf($append-sibling:true) {
   &:disabled, &.disabled {
     @extend %not-allowed;
+    @if not $append-sibling {
+      @content;
+    }
   }
 
-  @content;
+  @if ($append-sibling) {
+    @content;
+  }
 }
-
 
 @mixin button-group-disabled() {
   &:disabled, &.disabled {

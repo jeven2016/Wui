@@ -198,7 +198,8 @@ $input-group-label-height: 100%;
 $input-group-label-padding: 0.5rem 1rem;
 
 $input-group-element-float: left;
-$input-group-element-line-height:  1.25rem;;
+$input-group-element-line-height: 1.25rem;
+;
 
 //For menu
 $menu-item-active-background-color: #f5f5f5;
@@ -213,10 +214,20 @@ $menu-item-padding: 0.5rem 1rem;
 $menu-item-min-width: 4rem;
 
 //for drop down
-$dp-background-color: #fff;
+$dp-cursor: pointer;
+$dp-outline: 0;
+$dp-line-height: 1.25rem;
+$dp-text-vertical-align: middle;
+$dp-text-align: center;
+$dp-border-radius: $default-border-radius;
+$dp-padding: 0.5rem 1rem;
+$dp-border-width: 1px;
+$dp-border: $dp-border-width solid $btn-border-color;
+$dp-min-width: 10rem;
+$dp-background-color: $white;
+
 $dp-item-border: 1px solid #ccc;
 $dp-border-radius: $default-border-radius;
-$dp-min-width: 10rem;
 $dp-simple-min-width: 3rem;
 $dp-item-padding: 0.5rem 1rem;
 

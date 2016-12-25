@@ -407,6 +407,26 @@ textarea {
   /* 2 */
 }
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, .blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, .table td, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+
 .row {
   display: block;
   position: relative;
@@ -415,7 +435,7 @@ textarea {
 /**
 * set the group's border radius property
  */
-.input:disabled, .input.disabled, .icon-input:disabled, .icon-input.disabled, .dropdown.disabled, .button-dropdown.disabled > .button, .button:disabled, .button.disabled, .button-group:disabled > .button, .button-group.disabled > .button {
+.input:disabled, .input.disabled, .icon-input:disabled, .icon-input.disabled, .dropdown:disabled, .dropdown.disabled, .button-dropdown.disabled > .button, .button:disabled, .button.disabled, .button-group:disabled > .button, .button-group.disabled > .button {
   cursor: not-allowed;
   opacity: 0.7;
 }
@@ -436,21 +456,6 @@ textarea {
 }
 
 /*core*/
-.dropdown {
-  display: inline-block;
-  cursor: pointer;
-  outline: 0;
-  padding: 0.5rem 1rem;
-  line-height: 1.25rem;
-  vertical-align: middle;
-  text-align: center;
-  text-decoration: none;
-  background-color: #fff;
-  border: 1px solid #acacac;
-  border-radius: 0.25rem;
-  transition: all .3s ease-in-out;
-}
-
 .button-dropdown, .card, .dialog > .content > .header > .title, .dialog > .content > .header > .icon, .menu {
   position: relative;
   display: inline-block;
@@ -885,6 +890,15 @@ h6 {
 
 .dropdown {
   position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: 0;
+  line-height: 1.25rem;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #acacac;
   min-width: 10rem;
 }
 .dropdown.without-min-width {
@@ -923,6 +937,7 @@ h6 {
   width: calc(100% + 2px);
   left: -1px;
   top: 100%;
+  transition: all .2s ease-in-out;
 }
 .dropdown > .menu.active {
   display: block;

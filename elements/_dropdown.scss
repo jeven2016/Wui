@@ -8,18 +8,23 @@
 }
 
 .dropdown {
-  @extend %button-style;
-  position: relative;
+  @include make-inline-block();
+  cursor: $dp-cursor;
+  outline: $dp-outline;
+  line-height: $dp-line-height;
+  vertical-align: $dp-text-vertical-align;
+  text-align: $dp-text-align;
+
+  @include border-radius($dp-border-radius);
+  padding: $dp-padding;
+  border: $dp-border;
   min-width: $dp-min-width;
 
   &.without-min-width {
     min-width: 0;
   }
 
-  &.disabled {
-    @extend %not-allowed;
-
-  }
+  @include add-disabled-conf;
 
   > .icon {
     position: absolute;
@@ -64,6 +69,7 @@
     width: calc(100% + 2px);
     left: -1px;
     top: 100%;
+    transition: all .2s ease-in-out;
 
     &.active {
       display: block;
