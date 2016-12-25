@@ -470,7 +470,7 @@ time, mark, audio, video {
   border-radius: 0 !important;
 }
 
-.clear-fix::after, .dropdown > .icon::after, .button > .icon-label::after, .row::after, .dialog > .content > .header::after, .navbar::after, .menu::after, .tab::after {
+.clear-fix::after, .dropdown > .icon::after, .button > .icon-label::after, .row::after, .dialog > .content > .header::after, .menu::after, .tab::after {
   content: '';
   display: table;
   clear: both;
@@ -2522,59 +2522,30 @@ h6 {
 .navbar {
   position: relative;
   display: block;
+  padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   border: 1px solid #ccc;
   background-color: #f5f5f5;
-  box-sizing: border-box;
-  margin: 0;
-  padding-left: 0;
-  padding-top: 0;
 }
-.navbar > .item {
+.navbar > .list {
+  list-style: none;
   position: relative;
   display: inline-block;
-  color: #c2c2c2;
-  padding: 1rem 1rem;
-  margin: 0;
+}
+.navbar > .list > .item {
+  padding: 0;
   text-align: center;
+  vertical-align: middle;
   float: left;
   cursor: pointer;
   align-items: center;
   line-height: 1.5rem;
 }
-.navbar > .item.title {
-  font-weight: 500;
-  font-size: 1.5rem;
-  color: rgba(0, 0, 0, 0.5);
+.navbar > .list > .item.title {
+  font-size: 2rem;
 }
-.navbar > .item > .link {
-  text-decoration: none;
-  color: inherit;
-}
-.navbar > .item .navbar-icon {
-  padding-top: 0.4375rem;
-}
-.navbar > .item:hover, .navbar > .item.active {
-  color: rgba(0, 0, 0, 0.7);
-}
-.navbar.primary {
-  background-color: #3d8bea;
-}
-.navbar.primary > .item {
-  color: #e6e6e6;
-}
-.navbar.primary > .item a {
-  color: #e6e6e6;
-}
-.navbar.primary > .item:hover, .navbar.primary > .item.active {
-  color: #fff;
-  background: -webkit-linear-gradient(#6ba7ef, #3d8bea 70%, #6ba7ef);
-  background: -o-linear-gradient(#6ba7ef, #3d8bea 70%, #6ba7ef);
-  background: -moz-linear-gradient(#6ba7ef, #3d8bea 70%, #6ba7ef);
-  background: linear-gradient(#6ba7ef, #3d8bea 70%, #6ba7ef);
-}
-.navbar.primary > .item:hover a, .navbar.primary > .item.active a {
-  color: #fff;
+.navbar > .list > .item:not(:first-child) {
+  margin-left: 0.5rem;
 }
 
 .menu {
