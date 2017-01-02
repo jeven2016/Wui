@@ -470,7 +470,7 @@ time, mark, audio, video {
   border-radius: 0 !important;
 }
 
-.clear-fix::after, .dropdown > .icon::after, .button > .icon-label::after, .row::after, .dialog > .content > .header::after, .menu::after, .tab::after {
+.clear-fix::after, .dropdown > .icon::after, .button > .icon-label::after, .row::after, .dialog > .content > .header::after, .navbar::after, .navbar > .list::after, .menu::after, .tab::after {
   content: '';
   display: table;
   clear: both;
@@ -2522,30 +2522,59 @@ h6 {
 .navbar {
   position: relative;
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0;
   border-radius: 0.25rem;
-  border: 1px solid #ccc;
   background-color: #f5f5f5;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  list-style: none;
 }
 .navbar > .list {
   list-style: none;
-  position: relative;
-  display: inline-block;
 }
-.navbar > .list > .item {
-  padding: 0;
+.navbar .item {
   text-align: center;
-  vertical-align: middle;
   float: left;
+  vertical-align: middle;
   cursor: pointer;
   align-items: center;
-  line-height: 1.5rem;
+  line-height: 3rem;
+  color: #999999;
+  padding: 0 0.5rem;
 }
-.navbar > .list > .item.title {
-  font-size: 2rem;
+.navbar .item.title {
+  font-size: 1.5rem;
+  color: #333333;
 }
-.navbar > .list > .item:not(:first-child) {
-  margin-left: 0.5rem;
+.navbar .item > .link {
+  position: relative;
+  display: block;
+  color: inherit;
+}
+.navbar .item:not(.title).active, .navbar .item:not(.title):hover {
+  color: #333333;
+}
+.navbar.simple {
+  border-width: 0;
+}
+.navbar.simple > .item {
+  border-bottom: 0.1875rem solid transparent;
+}
+.navbar.simple > .item:not(.title).active, .navbar.simple > .item:not(.title):hover {
+  border-bottom-color: #277ed0;
+}
+.navbar.simple.primary {
+  background-color: #3d8bea;
+  border-bottom: 0;
+}
+.navbar.simple.primary .item {
+  color: #e6e6e6;
+}
+.navbar.simple.primary .item.title {
+  color: #fff;
+}
+.navbar.simple.primary .item:not(.title).active, .navbar.simple.primary .item:not(.title):hover {
+  color: #fff;
 }
 
 .menu {

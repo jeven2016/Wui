@@ -199,7 +199,26 @@ $input-group-label-padding: 0.5rem 1rem;
 
 $input-group-element-float: left;
 $input-group-element-line-height: 1.25rem;
-;
+
+//for Navbar
+$navbar-padding:0;
+$navbar-border: 1px solid #ccc;
+$navbar-margin-bottom: 1rem;
+$navbar-list-style: none;
+$navbar-inactive-text-color: lighten($text-color, 40%);
+$navbar-title-font-size: 1.5rem;
+$navbar-title-color: $text-color;
+$navbar-item-line-height: 3rem;
+$navbar-background-color: #f5f5f5;
+$navbar-background-color-primary: #3d8bea;
+
+
+$navbar-item-inactive-color: #848181;
+$navbar-item-active-color: rgba(0, 0, 0, .7);
+$navbar-item-inactive-color-primary: lighten(#ccc, 10%);
+$navbar-item-active-color-primary: $white;
+
+//=======================================================================
 
 //For menu
 $menu-item-active-background-color: #f5f5f5;
@@ -240,19 +259,6 @@ $dialog-border-radius: $default-border-radius;
 $dialog-body-border: 1px solid #ccc;
 $dialog-icon-color: rgba(0, 0, 0, .4);
 $dialog-icon-color-hover: rgb(0, 0, 0);
-
-//stop..........................
-
-//for Navbar
-$navbar-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.24);
-$navbar-border-radius: $default-border-radius;
-$navbar-body-border: 1px solid #ccc;
-$navbar-background-color: #f5f5f5;
-$navbar-background-color-primary: #3d8bea;
-$navbar-item-inactive-color: #848181;
-$navbar-item-active-color: rgba(0, 0, 0, .7);
-$navbar-item-inactive-color-primary: lighten(#ccc, 10%);
-$navbar-item-active-color-primary: $white;
 
 //for popover
 $popover-arrow-border-color: #ccc;

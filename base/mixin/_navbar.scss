@@ -1,0 +1,23 @@
+@mixin make-navbar($padding,$bd-radius:$default-border-radius) {
+  @include make-block;
+  padding: $padding;
+  @include border-radius($bd-radius);
+  background-color: $navbar-background-color;
+  margin-bottom: $navbar-margin-bottom;
+  @content
+}
+
+@mixin make-navbar-item($item-text-color:$text-color) {
+  text-align: center;
+  float: left;
+  vertical-align: middle;
+  cursor: pointer;
+  align-items: center;
+  line-height: $navbar-item-line-height;
+  color: $item-text-color;
+}
+
+@mixin make-navbar-list {
+  list-style: $navbar-list-style;
+  @extend .clear-fix;
+}

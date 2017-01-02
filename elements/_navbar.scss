@@ -1,32 +1,66 @@
 .navbar {
-  @include make-block;
-  padding: 0.5rem 1rem;
-  @include border-radius($navbar-border-radius);
-  border: $navbar-body-border;
-  background-color: $navbar-background-color;
+  @include make-navbar($navbar-padding) {
+    border: $navbar-border;
+  }
+  @include make-navbar-list;
 
   > .list {
-    list-style: none;
-    @include make-inline-block;
+    @include make-navbar-list;
+  }
 
-    > .item {
-      padding: 0;
-      text-align: center;
-      vertical-align: middle;
-      float: left;
-      cursor: pointer;
-      align-items: center;
-      line-height: 1.5rem;
+  .item {
+    @include make-navbar-item($navbar-inactive-text-color);
+    padding: 0 0.5rem;
 
-      &.title{
-        font-size: 2rem;
-      }
-
-      &:not(:first-child) {
-        margin-left: 0.5rem;
-      }
+    &.title {
+      font-size: $navbar-title-font-size;
+      color: $navbar-title-color;
     }
 
+    > .link {
+      @include make-block;
+      color: inherit;
+    }
+
+    &:not(.title) {
+      &.active, &:hover {
+        color: $text-color;
+      }
+    }
+  }
+
+  //simple navbar
+  &.simple {
+    border-width: 0;
+
+    > .item {
+      border-bottom: 0.1875rem solid transparent;
+
+      &:not(.title) {
+        &.active, &:hover {
+          border-bottom-color: $blue;
+        }
+      }
+
+    }
+
+    &.primary {
+      background-color: $navbar-background-color-primary;
+      border-bottom:0;
+
+      .item {
+        color: darken($white, 10%);
+        &.title {
+          color: $white;
+        }
+
+        &:not(.title) {
+          &.active, &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
   }
 
 }

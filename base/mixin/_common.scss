@@ -12,11 +12,9 @@
 }
 
 @mixin border-radius($border-radius :$default-border-radius) {
-  @if $border-radius != null {
-    //-webkit-border-radius: $border-radius;
-    //-moz-border-radius: $border-radius;
-    border-radius: $border-radius;
-  }
+  //-webkit-border-radius: $border-radius;
+  //-moz-border-radius: $border-radius;
+  border-radius: $border-radius;
 }
 
 //=================================================================================
@@ -28,7 +26,6 @@
 @mixin border($border) {
   border: $border;
 }
-
 
 @mixin adapter-width($key,$value) {
   @media ($key: $value) {
