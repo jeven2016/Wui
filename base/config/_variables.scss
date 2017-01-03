@@ -82,7 +82,6 @@ $btn-line-height: 1.25em;
 $btn-text-align: center;
 $btn-text-decoration: none;
 $btn-text-color-active: #fff;
-$btn-text-vertical-align: middle;
 $btn-margin-left-button: 0.5rem;
 $btn-margin-top-button: 0.5rem;
 $btn-border-color: #acacac;
@@ -150,7 +149,6 @@ $card-margin-bottom: 0.5rem;
 $input-placeholder-color: lighten(#ccc, 10%);
 $input-placeholder-opacity: 1;
 $input-line-height: 1.25rem;
-$input-vertical-align: middle;
 $input-outline: 0;
 $input-border-width: 1px;
 $input-border: $input-border-width solid #ccc;
@@ -201,17 +199,17 @@ $input-group-element-float: left;
 $input-group-element-line-height: 1.25rem;
 
 //for Navbar
-$navbar-padding:0;
+$navbar-padding: 0;
 $navbar-border: 1px solid #ccc;
-$navbar-margin-bottom: 1rem;
+$navbar-margin-bottom: 0;
 $navbar-list-style: none;
 $navbar-inactive-text-color: lighten($text-color, 40%);
 $navbar-title-font-size: 1.5rem;
 $navbar-title-color: $text-color;
 $navbar-item-line-height: 3rem;
+$navbar-item-min-width: 3rem;
 $navbar-background-color: #f5f5f5;
 $navbar-background-color-primary: #3d8bea;
-
 
 $navbar-item-inactive-color: #848181;
 $navbar-item-active-color: rgba(0, 0, 0, .7);

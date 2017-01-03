@@ -19,5 +19,4 @@
 
 @mixin make-navbar-list {
   list-style: $navbar-list-style;
-  @extend .clear-fix;
 }

@@ -36,14 +36,6 @@ body {
   overflow: hidden;
 }
 
-//////////////////////////////////////////////////////////////////////////////////
-
-//Global configuration
-$global: (
-  //import css reset file
-        'importCssResetFile': true
-);
-
 .pull-left {
   float: left !important;
 }
@@ -58,6 +50,44 @@ $global: (
   vertical-align: middle;
 }
 
+a {
+  color: $link-color;
+  text-decoration: $link-text-decoration;
+  cursor: $link-cursor;
+
+  &:active, &.active, &:hover, &:focus {
+    color: $link-active-color;
+  }
+}
+
+.clear-radius {
+  border-radius: 0 !important;
+}
+
+.clear-fix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.clear-border {
+  border-width: 0 !important;
+}
+
+.clear-min-width {
+  min-width: 0 !important;
+}
+
+//////////////////////////////////////////////////////////////////////////////////
+
+//Global configuration
+$global: (
+  //import css reset file
+        'importCssResetFile': true
+);
+
 .fixed {
   position: fixed !important;
   z-index: 1000;
@@ -68,15 +98,5 @@ $global: (
 
   &.bottom {
     bottom: 0 !important;
-  }
-}
-
-a {
-  color: $link-color;
-  text-decoration: $link-text-decoration;
-  cursor: $link-cursor;
-
-  &:active, &.active, &:hover, &:focus {
-    color: $link-active-color;
   }
 }

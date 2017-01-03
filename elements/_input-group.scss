@@ -1,5 +1,6 @@
 
 .input-group {
+  vertical-align: middle;
   @include make-inline-block;
 
   & > .label {

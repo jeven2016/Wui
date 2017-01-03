@@ -2,22 +2,25 @@
   @include make-navbar($navbar-padding) {
     border: $navbar-border;
   }
+
+  @extend .clear-fix;
   @include make-navbar-list;
 
-  > .list {
-    @include make-navbar-list;
-  }
-
-  .item {
+  > .item {
     @include make-navbar-item($navbar-inactive-text-color);
-    padding: 0 0.5rem;
+
+    &.special {
+      padding: 0 .5rem;
+    }
 
     &.title {
       font-size: $navbar-title-font-size;
       color: $navbar-title-color;
+      padding: 0 0.5rem;
     }
 
     > .link {
+      padding: 0 .5rem;
       @include make-block;
       color: inherit;
     }
@@ -29,27 +32,55 @@
     }
   }
 
+  &.primary {
+    background-color: $navbar-background-color-primary;
+
+    > .item {
+      color: darken($white, 10%);
+
+      &.title {
+        color: $white;
+      }
+
+      &:not(.title) {
+        &.active, &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
   //simple navbar
   &.simple {
     border-width: 0;
 
     > .item {
-      border-bottom: 0.1875rem solid transparent;
-
-      &:not(.title) {
-        &.active, &:hover {
-          border-bottom-color: $blue;
+      &.active, &:focus, &:hover {
+        &:not(.title):not(.special) {
+          > .link {
+            &:after {
+              @include make-block(absolute) {
+                left: 0;
+                bottom: 0;
+                content: '';
+                height: 3px;
+                width: 100%;
+                background-color: $blue;
+              }
+            }
+          }
         }
       }
-
     }
 
     &.primary {
       background-color: $navbar-background-color-primary;
-      border-bottom:0;
+      border-bottom: 0;
 
       .item {
         color: darken($white, 10%);
+        border-bottom-width: 0;
+
         &.title {
           color: $white;
         }
@@ -59,8 +90,22 @@
             color: $white;
           }
         }
+
+        &.active, &:focus, &:hover {
+          &:not(.title):not(.special) {
+            > .link {
+              &:after {
+                @include make-block(absolute) {
+                  background-color: $green;
+                }
+              }
+            }
+          }
+        }
       }
+
     }
+
   }
 
 }

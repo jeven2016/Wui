@@ -13,16 +13,16 @@ $border-color-increase-ratio: $default-color-increase-ratio;
   @include generate-simple-button('red', $red, $white, darken($red, $border-color-increase-ratio));
 
   &.outline {
-    @include generate-outline-button('black', $white, $black);
-    @include generate-outline-button('brown', $white, $brown);
-    @include generate-outline-button('pink', $white, $pink);
-    @include generate-outline-button('purple', $white, $purple);
-    @include generate-outline-button('violet', $white, $violet);
-    @include generate-outline-button('blue', $white, $blue);
-    @include generate-outline-button('teal', $white, $teal);
-    @include generate-outline-button('green', $white, $green);
-    @include generate-outline-button('yellow', $white, $yellow);
-    @include generate-outline-button('orange', $white, $orange);
-    @include generate-outline-button('red', $white, $red);
+    @include generate-outline-button('black', transparent, $black);
+    @include generate-outline-button('brown', transparent, $brown);
+    @include generate-outline-button('pink', transparent, $pink);
+    @include generate-outline-button('purple', transparent, $purple);
+    @include generate-outline-button('violet', transparent, $violet);
+    @include generate-outline-button('blue', transparent, $blue);
+    @include generate-outline-button('teal', transparent, $teal);
+    @include generate-outline-button('green', transparent, $green);
+    @include generate-outline-button('yellow', transparent, $yellow);
+    @include generate-outline-button('orange', transparent, $orange);
+    @include generate-outline-button('red', transparent, $red);
   }
 }

@@ -23,85 +23,157 @@
 <div class="area-example">
     Navbar示例：<br/><br/>
 
-    <div class="navbar">
-        <ul class="list">
-            <li class="item title">
-                <a class="link"><i class="fa fa-question"></i>Stats Query System</a></li>
-            <li class="item">
-                <a class="link">电视节目</a>
-            </li>
-            <li class="item">
-                <a class="link">电视节目</a>
-            </li>
-            <li class="item">
-                <a class="link">电视节目</a>
-            </li>
-            <li class="item">
-                <a class="link">电视节目</a>
-            </li>
-            <li class="item pull-right">
-                <a class="link">
-                    <i class="fa fa-user">&nbsp;用户</i>
-                </a>
-
-            </li>
-        </ul>
-        <!-- <div type="text" class="item icon-input">
-             <input type="text" class="input" placeholder="medium icon input..."/>
-             <i class="fa fa-search icon"></i>
-         </div>
-         <div class="item">
-             <input class="input" placeholder="input"/>
-             <button class="button">Button</button>
-         </div>-->
-    </div>
-
-    <ul class="simple navbar ">
-        <li class="item title">Title</li>
-        <li class="item"><a class="link">电视节目</a></li>
-        <li class="item"><a class="link">电视节目</a></li>
-        <li class="item"><a class="link">电视节目</a></li>
-        <li class="item"><a class="link">电视节目</a></li>
-    </ul>
-
-    <ul class="navbar simple primary ">
-        <li class="item title">Title</li>
-        <li class="item"><a class="link">电视节目</a></li>
-        <li class="item"><a class="link">电视节目</a></li>
-        <li class="item"><a class="link">电视节目</a></li>
-        <li class="item"><a class="link">电视节目</a></li>
-    </ul>
-    <br/>
-    <br/>
-
-    <ul class=" navbar primary">
-
-        <li class="item title">Form</li>
-        <li class="item">
-            <button class="button outline green">Button</button>
-        </li>
-
-        <li class="item">
-            <div class="input-group">
-                <div class="label">$</div>
-                <input type="text" class="input element" placeholder="input...">
-                <div class="label">
-                    <i class="fa fa-calculator"></i>
+    navbar:
+    <ul class="navbar">
+        <li class="item title"><a class="link"> Title</a></li>
+        <li class="item"><a class="link">Item</a></li>
+        <li class="item"><a class="link">Item</a></li>
+        <li class="item special">
+            <div class="simple dropdown  ">
+                <i class="icon fa fa-angle-down"></i>
+                <div class="info">Country</div>
+                <div class="menu">
+                    <div class="item" data-value="0">China</div>
+                    <div class="item" data-value="1">USA</div>
+                    <a class="item" data-value="1" href="#"> Link</a>
+                    <div class="item active" data-value="2">Russian</div>
                 </div>
             </div>
         </li>
-        <form>
-            <li class="item pull-right">
-                <div type="text" class="icon-input left-icon">
-                    <input type="text" class="input " placeholder="icon input...">
-                    <i class="fa fa-question-circle icon"></i>
-                </div>
-                <button class="button">Submit</button>
-            </li>
-        </form>
     </ul>
     <br/>
+
+    simple navbar:
+    <ul class="simple navbar">
+        <li class="item title"><a class="link"> Title</a></li>
+        <li class="item"><a class="link">Item</a></li>
+        <li class="item"><a class="link">Item</a></li>
+    </ul>
     <br/>
+    navbar primary:
+    <ul class="navbar primary">
+        <li class="item title"><a class="link"> Title</a></li>
+        <li class="item"><a class="link">Item</a></li>
+        <li class="item"><a class="link">Item</a></li>
+    </ul>
+    <br/>
+    navbar simple primary:
+    <ul class="navbar simple primary">
+        <li class="item title"><a class="link"> Title</a></li>
+        <li class="item"><a class="link">Item</a></li>
+        <li class="item"><a class="link">Item</a></li>
+    </ul>
+    <br/>
+
+    Navbar without &lt;ul/&gt;
+    <div class="navbar">
+        <span class="item title">
+            <a class="link">System</a>
+        </span>
+        <span class="item">
+            <a class="link">Item</a>
+        </span>
+        <span class="item">
+            <a class="link">Item</a>
+        </span>
+        <span class="item special">
+            <input type="text" class="input"/>
+        </span>
+    </div>
+    <br/>
+
+    Simple Navbar without &lt;ul/&gt;
+    <div class="navbar simple">
+        <span class="item title">
+            <a class="link"> System</a>
+        </span>
+        <span class="item">
+            <a class="link">Item</a>
+        </span>
+        <span class="item">
+            <a class="link">Item</a>
+        </span>
+        <span class="item special">
+            <input type="text" class="input"/>
+        </span>
+    </div>
+    <br/>
+
+    Navbar with special items
+    <ul class="navbar">
+        <li class="item title"><a class="link"> Title</a></li>
+        <li class="item special">
+            <button class="button">Button</button>
+        </li>
+        <li class="item special">
+            <button class="button outline green">Button2</button>
+        </li>
+        <li class="item special">
+            <button class="button purple">Button2</button>
+        </li>
+        <li class="item special">
+            <input type="text" class="input" placeholder="input..."/>
+        </li>
+        <li class="item special">
+            <div type="text" class="icon-input left-icon">
+                <input type="text" class="input " placeholder="icon input...">
+                <i class="fa fa-search icon"></i>
+            </div>
+            <button class="button">Search</button>
+        </li>
+    </ul>
+    <br/>
+
+    Simple navbar with special items
+    <ul class="navbar simple">
+        <li class="item title"><a class="link"> Title</a></li>
+        <li class="item special">
+            <button class="button">Button</button>
+        </li>
+        <li class="item special">
+            <button class="button outline green">Button2</button>
+        </li>
+        <li class="item special">
+            <button class="button purple">Button2</button>
+        </li>
+        <li class="item special">
+            <div type="text" class="icon-input left-icon">
+                <input type="text" class="input " placeholder="icon input...">
+                <i class="fa fa-search icon"></i>
+            </div>
+            <button class="button">Search</button>
+        </li>
+    </ul>
+    <br/>
+
+    <ul class="navbar">
+        <li class="item title"><a class="link"> Title</a></li>
+        <li class="item special">
+              <div class="input-group">
+                  <div class="label">$</div>
+                  <div class="label">
+                      <i class="fa fa-calculator"></i>
+                  </div>
+                  <input type="text" class="input element" placeholder="input..."/>
+              </div>
+
+            <div class="dropdown">
+                <i class="icon fa fa-angle-down"></i>
+                <div class="info">交流工具</div>
+                <div class="menu">
+                    <div class="item" data-value="0">
+                        <i class="fa fa-weibo"></i> 微博
+                    </div>
+                    <div class="item" data-value="0">
+                        <i class="fa fa-weixin"></i> 微信
+                    </div>
+                    <div class="item" data-value="0">
+                        <i class="fa fa-qq"></i> QQ
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
 
 
 </div>
