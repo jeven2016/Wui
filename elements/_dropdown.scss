@@ -69,6 +69,7 @@
     left: -1px;
     top: 100%;
     transition: all .2s ease-in-out;
+    z-index:100;
 
     &.active {
       display: block;

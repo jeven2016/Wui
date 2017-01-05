@@ -10,24 +10,24 @@
     @include make-navbar-item($navbar-inactive-text-color);
 
     &.special {
-      padding: 0 .5rem;
+      padding: $navbar-item-special-padding;
     }
 
     &.title {
       font-size: $navbar-title-font-size;
       color: $navbar-title-color;
-      padding: 0 0.5rem;
+      padding: $navbar-title-padding;
     }
 
     > .link {
-      padding: 0 .5rem;
+      padding: $navbar-link-padding;
       @include make-block;
-      color: inherit;
+      color: $navbar-link-color;
     }
 
     &:not(.title) {
       &.active, &:hover {
-        color: $text-color;
+        color: $navbar-item-active-color;
       }
     }
   }
@@ -36,15 +36,15 @@
     background-color: $navbar-background-color-primary;
 
     > .item {
-      color: darken($white, 10%);
+      color: $navbar-primary-item-color;
 
       &.title {
-        color: $white;
+        color: $navbar-primary-title-color;
       }
 
       &:not(.title) {
         &.active, &:hover {
-          color: $white;
+          color: $navbar-primary-active-color;
         }
       }
     }
@@ -63,9 +63,9 @@
                 left: 0;
                 bottom: 0;
                 content: '';
-                height: 3px;
-                width: 100%;
-                background-color: $blue;
+                height: $navbar-simple-item-link-border-height;
+                width: $navbar-simple-item-link-border-width;
+                background-color: $navbar-simple-item-link-background-colorh;
               }
             }
           }
@@ -75,19 +75,19 @@
 
     &.primary {
       background-color: $navbar-background-color-primary;
-      border-bottom: 0;
+      border-bottom: $navbar-simple-primary-border-botom;
 
       .item {
-        color: darken($white, 10%);
-        border-bottom-width: 0;
+        color: $navbar-simple-primary-item-color;
+        border-bottom-width: $navbar-simple-primary-item-border-bottom-width;
 
         &.title {
-          color: $white;
+          color: $navbar-simple-primary-title-color;
         }
 
         &:not(.title) {
           &.active, &:hover {
-            color: $white;
+            color: $navbar-simple-primary-item-active-color;
           }
         }
 
@@ -96,7 +96,7 @@
             > .link {
               &:after {
                 @include make-block(absolute) {
-                  background-color: $green;
+                  background-color: $navbar-simple-primary-item-link-active-background-color;
                 }
               }
             }
