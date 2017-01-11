@@ -3,6 +3,18 @@
     border: $navbar-border;
   }
 
+  &.fixed {
+    @include fixed(null, true, 100%);
+
+    &.top {
+      top: 0;
+    }
+
+    &.bottom {
+      bottom: 0;
+    }
+  }
+
   @extend .clear-fix;
   @include make-navbar-list;
 

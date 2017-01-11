@@ -7,17 +7,49 @@
   @include full-border-radius(0, 0, $dp-border-radius, $dp-border-radius);
 }
 
+%menu {
+  > .menu {
+    @extend %menu-item;
+    width: calc(100% + 2px);
+    left: -1px;
+    top: 100%;
+    z-index: 100;
+    min-width: $dp-min-width;
+
+    &.active {
+      display: block;
+      border-top-width: 0;
+      border-color: $menu-border-active;
+    }
+
+    & > .item {
+      display: block;
+      width: 100%;
+      padding: $dp-item-padding;
+      text-align: left;
+      border-width: 0;
+      overflow: hidden;
+
+      &:hover, &:focus, &.active {
+        text-decoration: none;
+        background-color: $dp-menu-item-active-background-color;
+      }
+    }
+  }
+}
+
 .dropdown {
   @include make-inline-block();
   cursor: $dp-cursor;
-  outline: $dp-outline;
+  outline: none;
   line-height: $dp-line-height;
   text-align: $dp-text-align;
-
   @include border-radius($dp-border-radius);
   padding: $dp-padding;
   border: $dp-border;
   min-width: $dp-min-width;
+
+  @extend %menu;
 
   &.without-min-width {
     min-width: 0;
@@ -25,19 +57,11 @@
 
   @include add-disabled-conf;
 
-  > .icon {
-    position: absolute;
-    width: auto;
-    height: auto;
-    right: 0.5rem;
-    top: 0.6875rem;
-    @extend .clear-fix;
-  }
-
   > .info {
-    margin-right: .5rem;
+    @include make-arrow(4px solid transparent, $black);
   }
 
+  //todo
   &:not(.disabled):not([disabled]) {
     &:hover, &.active {
       border-color: $menu-border-active;
@@ -63,39 +87,12 @@
     }
   }
 
-  > .menu {
-    @extend %menu-item;
-    width: calc(100% + 2px);
-    left: -1px;
-    top: 100%;
-    transition: all .2s ease-in-out;
-    z-index:100;
-
-    &.active {
-      display: block;
-      border-top-width: 0;
-      border-color: $menu-border-active;
-    }
-
-    & > .item {
-      display: block;
-      width: 100%;
-      padding: $dp-item-padding;
-      text-align: left;
-      border-width: 0;
-      overflow: hidden;
-
-      &:hover, &:focus, &.active {
-        //font-weight: map-get($font-weight, 'normal');
-        text-decoration: none;
-        background-color: $menu-item-active-background-color;
-      }
-    }
-  }
 }
 
 .button-dropdown {
   @extend %inline-block-style;
+  vertical-align: middle;
+  text-align: center;
 
   &.disabled {
     > .button {
@@ -103,24 +100,20 @@
     }
   }
 
-  > .button {
-    min-width: $dp-min-width;
-  }
+  .button {
 
-  > .menu {
-    @extend %menu-item;
-    min-width: $dp-min-width;
-    width: auto;
-    left: 0;
-    box-shadow: $default-box-shadow;
-    border-width: 0;
-  }
-
-  &:not(.disabled):not([disabled]) {
-    &:active, &.active, &:focus, &:hover {
-      > .menu {
-        display: inline-block;
+    &:focus, &.active {
+      ~ .menu {
+        display: block;
       }
     }
+
   }
+
+  @extend %menu;
+  > .menu {
+    margin-top: 0.2rem;
+    @include border-radius($dp-border-radius);
+  }
+
 }

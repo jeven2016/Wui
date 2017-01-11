@@ -81,22 +81,3 @@ a {
 }
 
 //////////////////////////////////////////////////////////////////////////////////
-
-//Global configuration
-$global: (
-  //import css reset file
-        'importCssResetFile': true
-);
-
-.fixed {
-  position: fixed !important;
-  z-index: 1000;
-
-  &.top {
-    top: 0 !important;
-  }
-
-  &.bottom {
-    bottom: 0 !important;
-  }
-}

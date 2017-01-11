@@ -17,6 +17,37 @@
   border-radius: $border-radius;
 }
 
+@mixin fixed($z-Index:1000,$is-block:true, $width: 100%) {
+  position: fixed;
+  z-index: $z-Index;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  @include border-radius(0);
+
+  @if $is-block {
+    display: block;
+  }
+
+  @if $width != null {
+    width: $width;
+  }
+}
+
+@mixin make-arrow($border, $bdr-color:$border-default-color) {
+  &:after {
+    content: '';
+    width: 0;
+    height: 0;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    display: inline-block;
+    border: $border;
+    border-top-color: $bdr-color;
+    @content
+  }
+}
+
 //=================================================================================
 
 @mixin padding($y,$x) {
