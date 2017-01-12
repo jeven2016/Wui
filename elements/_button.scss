@@ -3,6 +3,7 @@
   cursor: $btn-cursor;
   outline: none;
   line-height: $btn-line-height;
+  vertical-align: middle;
   text-align: $btn-text-align;
   text-decoration: $btn-text-decoration;
   @include border-radius();

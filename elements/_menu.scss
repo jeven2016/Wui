@@ -1,13 +1,12 @@
 .menu {
-  @extend %inline-block-style;
-  outline: none;
-  border: $menu-border;
-  list-style: none;
-  @extend .clear-fix;
-  @include border-radius($menu-border-radius);
+  @include make-menu($menu-border, $white) {
+    @include make-inline-block;
+    @include border-radius($menu-border-radius);
+  }
 
   &.float {
     > .item {
+      display: inline-block;
       float: left;
     }
   }
@@ -28,25 +27,10 @@
   }
 
   > .item {
-    @extend %block-style;
-    padding: $menu-item-padding;
-    margin: 0;
-    text-align: center;
-    cursor: pointer;
-    align-items: center;
-    min-width: $menu-item-min-width;
-
-    &:not(.active):hover {
-      background-color: $menu-item-background-color;
-    }
-
-    &.active, &:active {
-      background-color: darken($menu-item-background-color, 5%);
-    }
-
+    @include make-menu-item;
   }
 
   &.block {
-      width: 100%;
+    width: 100%;
   }
 }

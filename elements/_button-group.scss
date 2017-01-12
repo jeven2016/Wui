@@ -1,5 +1,7 @@
 .button-group {
-  @include make-inline-block();
+  //@include make-inline-block();
+  display: table;
+  vertical-align: middle;
 
   > .button {
     margin: $btn-group-buttons-margin;

@@ -50,9 +50,6 @@
 
 //=================================================================================
 
-@mixin padding($y,$x) {
-  padding: $y $x;
-}
 
 @mixin border($border) {
   border: $border;

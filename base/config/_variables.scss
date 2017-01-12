@@ -1,14 +1,3 @@
-//Global
-$default-box-shadow: 1px 1px 20px 0 rgba(0, 0, 0, 0.25);
-$default-border-radius: 0.25rem;
-$body-background-color: #fff;
-$border-color: #ccc;
-$default-color-increase-ratio: 20%;
-
-$elem-default-padding: 0.5rem 1rem;
-$elem-large-padding: 0.75rem 1.5rem;
-$elem-small-padding: 0.25rem 0.5rem;
-
 //Colors
 $white: #fff;
 $black: #000000;
@@ -39,11 +28,25 @@ $colors: (
         color-orange:$orange,
         color-red:$red);
 
+//Global
+$default-box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.25);
+$default-border-radius: 0.25rem;
+$default-arrow-border: 4px solid transparent;
+$default-arrow-active-border: $black;
+$body-background-color: #fff;
+$border-color: #ccc;
+$default-color-increase-ratio: 20%;
+
+$elem-default-padding: 0.5rem 1rem;
+$elem-large-padding: 0.75rem 1.5rem;
+$elem-small-padding: 0.25rem 0.5rem;
+
 //text
 $font-weight: (
         'normal': 600,
         'bold': 700
 );
+
 $font-size: (
         'large':1.5rem,
         'normal': 1rem,
@@ -231,22 +234,18 @@ $navbar-simple-primary-item-link-active-background-color: $green;
 //for drop down
 $dp-cursor: pointer;
 $dp-outline: 0;
-$dp-line-height: 1.25rem;
-$dp-text-vertical-align: middle;
 $dp-text-align: center;
+$dp-line-height: 1.25rem;
+$dp-vertical-align: middle;
 $dp-border-radius: $default-border-radius;
 $dp-padding: 0.5rem 1rem;
 $dp-border-width: 1px;
 $dp-border: $dp-border-width solid $btn-border-color;
 $dp-min-width: 10rem;
 $dp-background-color: $white;
-
 $dp-item-border: 1px solid #ccc;
 $dp-border-radius: $default-border-radius;
-$dp-simple-min-width: 3rem;
-$dp-item-padding: 0.5rem 1rem;
-
-$dp-menu-item-active-background-color: lighten($gray, 60%);
+$dp-button-dp-menu-margin: 0.2rem;
 
 //=======================================================================
 

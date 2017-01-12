@@ -1,39 +1,20 @@
-%menu-item {
-  display: none;
-  position: absolute;
-  background-color: $dp-background-color;
-  border: $dp-item-border;
-  z-index: 100;
-  @include full-border-radius(0, 0, $dp-border-radius, $dp-border-radius);
-}
 
-%menu {
-  > .menu {
-    @extend %menu-item;
-    width: calc(100% + 2px);
-    left: -1px;
-    top: 100%;
-    z-index: 100;
-    min-width: $dp-min-width;
+%block-menu-style {
+  @include dp-menu {
+    box-shadow: $default-box-shadow;
+    margin-top: $dp-button-dp-menu-margin;
+    @include border-radius($dp-border-radius);
+    width: auto;
 
-    &.active {
-      display: block;
-      border-top-width: 0;
-      border-color: $menu-border-active;
+    &.up {
+      top: auto;
+      bottom: 100%;
+      margin-bottom: $dp-button-dp-menu-margin;
     }
 
-    & > .item {
-      display: block;
-      width: 100%;
-      padding: $dp-item-padding;
-      text-align: left;
-      border-width: 0;
-      overflow: hidden;
-
-      &:hover, &:focus, &.active {
-        text-decoration: none;
-        background-color: $dp-menu-item-active-background-color;
-      }
+    &.right {
+      left: auto;
+      right: 0;
     }
   }
 }
@@ -41,7 +22,7 @@
 .dropdown {
   @include make-inline-block();
   cursor: $dp-cursor;
-  outline: none;
+  outline: $dp-outline;
   line-height: $dp-line-height;
   text-align: $dp-text-align;
   @include border-radius($dp-border-radius);
@@ -49,7 +30,12 @@
   border: $dp-border;
   min-width: $dp-min-width;
 
-  @extend %menu;
+  > .menu {
+    @include dp-menu {
+      width: calc(100% + 2px);
+      @include full-border-radius(0, 0, $dp-border-radius, $dp-border-radius);
+    }
+  }
 
   &.without-min-width {
     min-width: 0;
@@ -58,41 +44,41 @@
   @include add-disabled-conf;
 
   > .info {
-    @include make-arrow(4px solid transparent, $black);
+    @include make-arrow($default-arrow-border, $default-arrow-active-border);
   }
 
-  //todo
-  &:not(.disabled):not([disabled]) {
-    &:hover, &.active {
-      border-color: $menu-border-active;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+  &:hover, &.active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-width: 0;
 
-      & > .menu {
-        display: block;
-        border-top-width: 0;
-        border-color: $menu-border-active;
-        transition: all .2s ease;
-      }
+    & > .menu {
+      display: block;
+      border-top-width: 0;
     }
   }
 
   &.simple {
     border: 0;
-    min-width: $dp-simple-min-width;
-    text-align: left;
+    padding: 0;
+    min-width: 0;
 
-    & > .menu {
-      border-top-width: 1px;
+    & > .info {
+      @include make-inline-block;
     }
+
+    .menu {
+      @extend %block-menu-style;
+    }
+
   }
 
 }
 
 .button-dropdown {
-  @extend %inline-block-style;
-  vertical-align: middle;
-  text-align: center;
+  @include make-inline-block {
+    vertical-align: $dp-vertical-align;
+  }
 
   &.disabled {
     > .button {
@@ -101,19 +87,15 @@
   }
 
   .button {
-
     &:focus, &.active {
       ~ .menu {
         display: block;
       }
     }
-
   }
 
-  @extend %menu;
-  > .menu {
-    margin-top: 0.2rem;
-    @include border-radius($dp-border-radius);
+  .menu {
+    @extend %block-menu-style;
   }
 
 }

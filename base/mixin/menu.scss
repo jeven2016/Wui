@@ -1,0 +1,50 @@
+//normal menu
+@mixin make-menu($bd-style, $bg-color) {
+  outline: none;
+  border: $bd-style;
+  list-style: none;
+  background-color: $bg-color;
+  @extend .clear-fix;
+  @content;
+}
+
+@mixin make-menu-item() {
+  @include make-block;
+  padding: $menu-item-padding;
+  margin: 0;
+  text-align: left;
+  cursor: pointer;
+  border-width: 0;
+  align-items: center;
+  overflow: hidden;
+  min-width: $menu-item-min-width;
+  white-space: nowrap;
+
+  @content;
+
+  &:focus, &:hover, &.active {
+    background-color: $menu-item-background-color;
+  }
+
+  @include add-disabled-conf(false) {
+    color: $text-color;
+    background-color: transparent;
+  }
+}
+
+//dropdown menu
+@mixin dp-menu() {
+  @include make-menu($dp-item-border, $dp-background-color) {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    left: -1px;
+    top: 100%;
+    min-width: $dp-min-width;
+  }
+  @content;
+
+  &.active {
+    display: block;
+  }
+}
