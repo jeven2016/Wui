@@ -970,6 +970,11 @@ h6 {
   display: inline-block;
   vertical-align: middle;
 }
+.button-dropdown.active .menu {
+  display: block;
+  left: auto;
+  right: 0;
+}
 .button-dropdown .button:focus ~ .menu, .button-dropdown .button.active ~ .menu {
   display: block;
 }

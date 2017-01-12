@@ -86,6 +86,14 @@
     }
   }
 
+  &.active {
+    .menu {
+      display: block;
+      left: auto;
+      right: 0;
+    }
+  }
+
   .button {
     &:focus, &.active {
       ~ .menu {
