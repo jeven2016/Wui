@@ -41,6 +41,8 @@ INFO:
 1. 2016-12-12: version 0.5.1
     1. add text font smoothing.
 
+3. 2017-1-13:
+    border-color 需要统一
 
 
 specification:

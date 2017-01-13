@@ -1,21 +1,21 @@
 .card {
-  @extend %inline-block-style;
-  width: $card-width-default;
+  @include make-inline-block;
+  min-width: $card-min-width;
+  max-width: $card-max-width;
   margin-bottom: $card-margin-bottom;
   border: $card-border;
   @include border-radius($card-border-radius);
 
   & > .card-header {
     padding: $card-header-padding;
-    //overflow: auto;
-    @include full-border-radius($card-border-radius, $card-border-radius, 0, 0);
+    @include border-radius(calc(#{$card-border-radius} - #{$card-border-width}) calc(#{$card-border-radius} - #{$card-border-width}) 0 0);
 
     & > .title {
-      font-weight: 700;
+      font-weight: map_get($font-weight, 'normal');
     }
 
     &.gray {
-      background-color: $card-header-background-color-gray;
+      background-color: $card-header-background-color;
     }
   }
 
@@ -25,7 +25,6 @@
 
   & > .card-body {
     padding: $card-body-padding;
-    //overflow: auto;
   }
 
   & > .card-footer {
@@ -43,9 +42,7 @@
     }
   }
 
-  &.border {
-    & > .card-header {
-      border-bottom: $card-header-bottom-bolder;
-    }
+  &:not(:first-child) {
+    margin-left: 1rem;
   }
 }

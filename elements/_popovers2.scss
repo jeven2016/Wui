@@ -11,11 +11,8 @@
   @include make-inline-block;
   position: absolute;
   z-index: $po-z-index;
-  display: none;
 
-  &.active {
-    display: inline-block;
-  }
+
 
   > .card {
     position: relative;

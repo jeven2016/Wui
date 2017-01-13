@@ -23,6 +23,12 @@
 
     &.special {
       padding: $navbar-item-special-padding;
+
+      .dropdown {
+        .item {
+          color: $btn-default-text-color;
+        }
+      }
     }
 
     &.title {
@@ -116,6 +122,28 @@
         }
       }
 
+    }
+
+    &.large {
+      > .item {
+        font-size: 1.5rem;
+        line-height: 5rem;
+
+        &.title {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    &.small {
+      > .item {
+        font-size: 0.75rem;
+        line-height: 2rem;
+
+        &.title {
+          font-size: 1rem;
+        }
+      }
     }
 
   }

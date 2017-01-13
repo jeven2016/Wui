@@ -2,6 +2,7 @@
 $white: #fff;
 $black: #000000;
 $gray: #ccc;
+$light-gray: #f5f5f5;
 $brown: #a57036;
 $pink: #e02c94;
 $purple: #9a2ec8;
@@ -32,9 +33,10 @@ $colors: (
 $default-box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.25);
 $default-border-radius: 0.25rem;
 $default-arrow-border: 4px solid transparent;
-$default-arrow-active-border: $black;
+$default-border-color: #acacac;
+$default-arrow-active-border: #acacac;
 $body-background-color: #fff;
-$border-color: #ccc;
+$border-color: #acacac;
 $default-color-increase-ratio: 20%;
 
 $elem-default-padding: 0.5rem 1rem;
@@ -56,6 +58,7 @@ $font-size: (
 $text-color: rgba(51, 51, 51, 1);
 $text-disabled-color: rgba(0, 0, 0, .4);
 $text-comment-color: #818a91;
+$text-light: $white;
 $text-ok-color: $green;
 $text-warning-color: $yellow;
 $text-error-color: $red;
@@ -87,7 +90,7 @@ $btn-text-decoration: none;
 $btn-text-color-active: #fff;
 $btn-margin-left-button: 0.5rem;
 $btn-margin-top-button: 0.5rem;
-$btn-border-color: #acacac;
+$btn-border-color: $default-border-color;
 $btn-border-width: 1px;
 $btn-border: $btn-border-width solid $btn-border-color; //todo:deprecated
 $btn-default-text-color: $text-color;
@@ -99,7 +102,7 @@ $btn-default-background-color: $white;
 $btn-background-color: $gray;
 $btn-primary-background-color: $blue;
 $btn-primary-text-color: $white;
-$btn-primary-border-color: darken($btn-primary-background-color, $default-color-increase-ratio);
+$btn-primary-border-color: $default-border-color;
 
 $btn-danger-background-color: $red;
 $btn-danger-text-color: $white;
@@ -124,9 +127,9 @@ $btn-primary-text-color-active: #fff;
 $btn-primary-effect-color-begin: #97C2EA;
 $btn-primary-effect-color-end: #97C2EA;
 $btn-inverted-background: $black;
-$btn-inverted-border-color: $black;
+$btn-inverted-border-color: #acacac;
 $btn-inverted-text-color: $white;
-$btn-active-inverted-border-color: $black;
+$btn-active-inverted-border-color: #acacac;
 
 $layout-col-padding: .5rem .25rem;
 
@@ -134,19 +137,6 @@ $layout-col-padding: .5rem .25rem;
 $btn-group-border-radius: $default-border-radius;
 $btn-group-buttons-margin: 0 !important;
 $btn-group-buttons-float: left;
-
-//For Card
-$card-border: 1px solid $btn-border-color;
-$card-header-bottom-bolder: 1px solid $btn-border-color;
-$card-border-radius: $default-border-radius;
-$card-header-background-color-gray: #f5f5f5;
-$card-header-background-color-primary: #3d8bea;
-$card-header-padding: 0.5rem;
-$card-row-padding: 0.5rem;
-$card-body-padding: 0.5rem;
-$card-footer-padding: 0.5rem;
-$card-width-default: 20rem;
-$card-margin-bottom: 0.5rem;
 
 //For input 
 $input-placeholder-color: lighten(#ccc, 10%);
@@ -247,6 +237,26 @@ $dp-item-border: 1px solid #ccc;
 $dp-border-radius: $default-border-radius;
 $dp-button-dp-menu-margin: 0.2rem;
 
+//for popover
+$po-z-index: 100;
+$popover-arrow-border-color: $default-border-color;
+$popover-arrow-overlap-background-color: #fff;
+
+//For Card
+$card-border-width:1px;
+$card-border: $card-border-width solid $default-border-color;
+$card-header-bottom-bolder: 1px solid $btn-border-color;
+$card-border-radius: $default-border-radius;
+$card-header-background-color: $light-gray;
+$card-header-background-color-primary: #3d8bea;
+$card-header-padding: 0.5rem;
+$card-row-padding: 0.5rem;
+$card-body-padding: 0.5rem;
+$card-footer-padding: 0.5rem;
+$card-min-width: 10rem;
+$card-max-width: 20rem;
+$card-margin-bottom: 0.5rem;
+
 //=======================================================================
 
 //For menu
@@ -270,10 +280,6 @@ $dialog-border-radius: $default-border-radius;
 $dialog-body-border: 1px solid #ccc;
 $dialog-icon-color: rgba(0, 0, 0, .4);
 $dialog-icon-color-hover: rgb(0, 0, 0);
-
-//for popover
-$popover-arrow-border-color: #ccc;
-$popover-arrow-overlap-background-color: #fff;
 
 //for breadcrumb
 $bd-wrapper-background-color: #f5f5f5;

@@ -15,24 +15,24 @@
   }
 
   &.comment {
-    color: $text-comment-color;
+    color: $text-comment-color !important;
   }
 
   &.ok {
-    color: $text-ok-color;
+    color: $text-ok-color !important;
   }
 
   &.warning {
-    color: $text-warning-color;
+    color: $text-warning-color !important;
   }
 
   &.error {
-    color: $text-error-color;
+    color: $text-error-color !important;
   }
 
   @each $name, $color in $colors {
     &.#{$name} {
-      color: $color;
+      color: $color !important;
     }
   }
 }
