@@ -1199,7 +1199,7 @@ h6 {
   border-radius: 0.25rem;
 }
 .card > .card-header {
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
 }
 .card > .card-header > .title {
@@ -1209,14 +1209,30 @@ h6 {
   background-color: #f5f5f5;
 }
 .card > .card-row {
-  padding: 0.5rem;
+  padding: 1rem;
 }
 .card > .card-body {
-  padding: 0.5rem;
+  padding: 1rem;
 }
 .card > .card-footer {
-  padding: 0.5rem;
+  padding: 1rem;
   border-radius: 0 0 0.25rem 0.25rem;
+}
+.card > .card-img {
+  position: relative;
+}
+.card > .card-img > .img {
+  border-radius: calc(0.25rem - 1px);
+  vertical-align: middle;
+}
+.card > .card-img > .overlay-title {
+  display: block;
+  padding: 1rem;
+  position: absolute;
+  color: #fff;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .card.block {
   width: 100%;

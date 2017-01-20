@@ -33,6 +33,28 @@
     @include full-border-radius(0, 0, $card-border-radius, $card-border-radius);
   }
 
+  & > .card-img {
+    position: relative;
+
+    > .img {
+      @include border-radius(calc(#{$card-border-radius} - #{$card-border-width}));
+      display: block;
+      width: 100%;
+      vertical-align: middle;
+    }
+
+    > .overlay-title {
+      display: block;
+      padding: $card-body-padding;
+      position: absolute;
+      color: $white;
+      bottom: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, .4);
+    }
+
+  }
+
   &.block {
     width: 100%;
     display: block;
