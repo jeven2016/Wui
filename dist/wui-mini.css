@@ -1192,11 +1192,12 @@ h6 {
 .card {
   position: relative;
   display: inline-block;
-  min-width: 10rem;
-  max-width: 20rem;
-  margin-bottom: 0.5rem;
+  width: 20rem;
   border: 1px solid #acacac;
   border-radius: 0.25rem;
+}
+.card.block {
+  width: 100%;
 }
 .card > .card-header {
   padding: 1rem;
@@ -1208,7 +1209,13 @@ h6 {
 .card > .card-header.gray {
   background-color: #f5f5f5;
 }
+.card > .menu {
+  width: 100%;
+  display: block;
+  border-width: 0;
+}
 .card > .card-row {
+  display: block;
   padding: 1rem;
 }
 .card > .card-body {
@@ -1223,7 +1230,15 @@ h6 {
 }
 .card > .card-img > .img {
   border-radius: calc(0.25rem - 1px);
+  display: block;
+  width: 100%;
   vertical-align: middle;
+}
+.card > .card-img.top > .img {
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+}
+.card > .card-img.bottom > .img {
+  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
 }
 .card > .card-img > .overlay-title {
   display: block;

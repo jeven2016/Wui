@@ -1,14 +1,12 @@
 .card {
   @include make-inline-block;
-  min-width: $card-min-width;
-  max-width: $card-max-width;
-  margin-bottom: $card-margin-bottom;
+  width: $card-width;
   border: $card-border;
   @include border-radius($card-border-radius);
 
   & > .card-header {
     padding: $card-header-padding;
-    @include border-radius(calc(#{$card-border-radius} - #{$card-border-width}) calc(#{$card-border-radius} - #{$card-border-width}) 0 0);
+    @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
 
     & > .title {
       font-weight: map_get($font-weight, 'normal');
@@ -19,7 +17,14 @@
     }
   }
 
+  > .menu {
+    width: 100%;
+    display: block;
+    border-width: 0;
+  }
+
   & > .card-row {
+    display: block;
     padding: $card-row-padding;
   }
 
@@ -37,20 +42,32 @@
     position: relative;
 
     > .img {
-      @include border-radius(calc(#{$card-border-radius} - #{$card-border-width}));
+      @include border-radius($card-inner-border-radius);
       display: block;
       width: 100%;
       vertical-align: middle;
     }
 
+    &.top {
+      > .img {
+        @include full-border-radius($card-inner-border-radius, $card-inner-border-radius, 0, 0);
+      }
+    }
+
+    &.bottom {
+      > .img {
+        @include full-border-radius(0, 0, $card-inner-border-radius, $card-inner-border-radius);
+      }
+    }
+
     > .overlay-title {
-      display: block;
+      display: $card-overlay-title-display;
       padding: $card-body-padding;
-      position: absolute;
+      position: $card-overlay-title-position;
       color: $white;
       bottom: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, .4);
+      width: $card-overlay-title-width;
+      background-color: $card-overlay-title-background-color
     }
 
   }

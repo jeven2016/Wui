@@ -243,7 +243,7 @@ $popover-arrow-border-color: $default-border-color;
 $popover-arrow-overlap-background-color: #fff;
 
 //For Card
-$card-border-width:1px;
+$card-border-width: 1px;
 $card-border: $card-border-width solid $default-border-color;
 $card-header-bottom-bolder: 1px solid $btn-border-color;
 $card-border-radius: $default-border-radius;
@@ -253,9 +253,12 @@ $card-header-padding: 1rem;
 $card-row-padding: 1rem;
 $card-body-padding: 1rem;
 $card-footer-padding: 1rem;
-$card-min-width: 10rem;
-$card-max-width: 20rem;
-$card-margin-bottom: 0.5rem;
+$card-width: 20rem;
+$card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width});
+$card-overlay-title-display: block;
+$card-overlay-title-position: absolute;
+$card-overlay-title-width: 100%;
+$card-overlay-title-background-color: rgba(0, 0, 0, .4);
 
 //=======================================================================
 
