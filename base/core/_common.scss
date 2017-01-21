@@ -1,18 +1,53 @@
-
 //todo:Deprecated
 %inline-block-style {
   position: relative;
   display: inline-block;
 }
 
-//todo:Deprecated
-%block-style {
-  position: relative;
-  display: block;
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: map_get($z-index, 'mask');
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
-//todo:Deprecated
-%block-width {
-  display: block;
-  width: 100%;
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-center {
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.clear-radius {
+  border-radius: 0 !important;
+}
+
+.clear-fix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.clear-border {
+  border-width: 0 !important;
+}
+
+.clear-min-width {
+  min-width: 0 !important;
 }

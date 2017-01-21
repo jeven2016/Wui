@@ -23,33 +23,6 @@ body {
   box-sizing: border-box;
 }
 
-.mask {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: rgba(0, 0, 0, .5);
-  z-index: 100;
-  overflow: hidden;
-}
-
-.pull-left {
-  float: left !important;
-}
-
-.pull-right {
-  float: right !important;
-}
-
-.pull-center {
-  margin: auto;
-  text-align: center;
-  vertical-align: middle;
-}
-
 a {
   color: $link-color;
   text-decoration: $link-text-decoration;
@@ -59,25 +32,3 @@ a {
     color: $link-active-color;
   }
 }
-
-.clear-radius {
-  border-radius: 0 !important;
-}
-
-.clear-fix {
-  &::after {
-    content: '';
-    display: table;
-    clear: both;
-  }
-}
-
-.clear-border {
-  border-width: 0 !important;
-}
-
-.clear-min-width {
-  min-width: 0 !important;
-}
-
-//////////////////////////////////////////////////////////////////////////////////

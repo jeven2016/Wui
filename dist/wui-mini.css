@@ -461,6 +461,52 @@ time, mark, audio, video {
   display: inline-block;
 }
 
+.mask, .dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-center {
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.clear-radius {
+  border-radius: 0 !important;
+}
+
+.clear-fix::after, .dropdown.simple .menu::after, .button-dropdown .menu::after, .dropdown > .menu::after, .button > .icon-label::after, .row::after, .dialog > .content > .header::after, .navbar::after, .menu::after, .tab::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.clear-border {
+  border-width: 0 !important;
+}
+
+.clear-min-width {
+  min-width: 0 !important;
+}
+
 .text.bold {
   font-weight: 600;
 }
@@ -598,33 +644,6 @@ body {
   box-sizing: border-box;
 }
 
-.mask, .dialog {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 100;
-  overflow: hidden;
-}
-
-.pull-left {
-  float: left !important;
-}
-
-.pull-right {
-  float: right !important;
-}
-
-.pull-center {
-  margin: auto;
-  text-align: center;
-  vertical-align: middle;
-}
-
 a {
   color: #333333;
   text-decoration: none;
@@ -632,24 +651,6 @@ a {
 }
 a:active, a.active, a:hover, a:focus {
   color: #277ed0;
-}
-
-.clear-radius {
-  border-radius: 0 !important;
-}
-
-.clear-fix::after, .dropdown.simple .menu::after, .button-dropdown .menu::after, .dropdown > .menu::after, .button > .icon-label::after, .row::after, .dialog > .content > .header::after, .navbar::after, .menu::after, .tab::after {
-  content: '';
-  display: table;
-  clear: both;
-}
-
-.clear-border {
-  border-width: 0 !important;
-}
-
-.clear-min-width {
-  min-width: 0 !important;
 }
 
 blockquote, .blockquote {
@@ -1195,9 +1196,6 @@ h6 {
   width: 20rem;
   border: 1px solid #acacac;
   border-radius: 0.25rem;
-}
-.card.block {
-  width: 100%;
 }
 .card > .card-header {
   padding: 1rem;
@@ -2498,15 +2496,15 @@ h6 {
 
 .dialog {
   display: none;
-  transition: display .4s;
+  transition: all .4s;
 }
 .dialog.show {
   display: block;
 }
 .dialog > .content {
   position: relative;
-  margin: 40px auto;
-  border: 1px solid #ccc;
+  margin: 3rem auto;
+  border: 1px solid #acacac;
   width: 95%;
   min-height: 1rem;
   z-index: 101;
@@ -2546,15 +2544,30 @@ h6 {
   color: black;
 }
 .dialog > .content > .body {
-  border: 1px solid #ccc;
+  border: 1px solid #acacac;
   border-left-width: 0;
   border-right-width: 0;
 }
-.dialog.no-background {
+.dialog > .content > .footer {
+  border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+}
+.dialog.simple {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.dialog.simple > .content {
+  border-width: 0;
+  box-shadow: none;
+  color: #fff;
   background-color: transparent;
 }
+.dialog.simple > .content > .header, .dialog.simple > .content > .body, .dialog.simple > .content > .footer {
+  border-width: 0;
+  border-radius: 0;
+  color: inherit;
+}
 .dialog.primary > .content > .header {
-  background-color: #3d8bea;
+  background-color: #277ed0;
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
 }
 
 .navbar {

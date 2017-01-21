@@ -6,7 +6,7 @@
 .dialog {
   @extend .mask;
   display: none;
-  transition: display .4s;
+  transition: all .4s;
 
   &.show {
     display: block;
@@ -74,15 +74,31 @@
 
     > .footer {
       @extend %content-spacing;
+      @include full-border-radius(0, 0, $dialog-inner-border-radius, $dialog-inner-border-radius);
     }
   }
 
-  &.no-background {
-    background-color: transparent;
+  &.simple {
+    background-color: rgba(0, 0, 0, .85);
+
+    > .content {
+      border-width: 0;
+      box-shadow: none;
+      color: $white;
+      background-color: transparent;
+
+      > .header, > .body, > .footer {
+        border-width: 0;
+        border-radius: 0;
+        color: inherit;
+      }
+    }
+
   }
 
   &.primary > .content > .header {
     background-color: $dialog-header-primary-background-color;
+    @include full-border-radius($dialog-inner-border-radius, $dialog-inner-border-radius, 0, 0);
   }
 
 }

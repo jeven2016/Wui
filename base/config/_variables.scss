@@ -43,6 +43,13 @@ $elem-default-padding: 0.5rem 1rem;
 $elem-large-padding: 0.75rem 1.5rem;
 $elem-small-padding: 0.25rem 0.5rem;
 
+//z-index
+$z-index: (
+        mask: 100,
+        overlay: 101,
+        top:1000
+);
+
 //text
 $font-weight: (
         'normal': 600,
@@ -260,6 +267,18 @@ $card-overlay-title-position: absolute;
 $card-overlay-title-width: 100%;
 $card-overlay-title-background-color: rgba(0, 0, 0, .4);
 
+// For dialog
+$dialog-content-background-color: #fff;
+$dialog-border-width: 1px;
+$dialog-content-border: $dialog-border-width solid $default-border-color;
+$dialog-content-margin: 3rem auto;
+$dialog-header-primary-background-color: $blue;
+$dialog-border-radius: $default-border-radius;
+$dialog-body-border: $dialog-border-width solid $default-border-color;
+$dialog-icon-color: rgba(0, 0, 0, .4);
+$dialog-icon-color-hover: rgb(0, 0, 0);
+$dialog-inner-border-radius: calc(#{$dialog-border-radius} - #{$dialog-border-width});
+
 //=======================================================================
 
 //For menu
@@ -273,16 +292,6 @@ $menu-item-text-color-inverted: #fff;
 $menu-item-active-text-color-inverted: $text-color;
 $menu-item-padding: 0.5rem 1rem;
 $menu-item-min-width: 4rem;
-
-// For dialog
-$dialog-content-background-color: #fff;
-$dialog-content-border: 1px solid #ccc;
-$dialog-content-margin: 40px auto;
-$dialog-header-primary-background-color: #3d8bea;
-$dialog-border-radius: $default-border-radius;
-$dialog-body-border: 1px solid #ccc;
-$dialog-icon-color: rgba(0, 0, 0, .4);
-$dialog-icon-color-hover: rgb(0, 0, 0);
 
 //for breadcrumb
 $bd-wrapper-background-color: #f5f5f5;
