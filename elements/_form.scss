@@ -1,62 +1,37 @@
 .form {
-  position: relative;
-  display: block;
-  box-sizing: border-box;
+  @include make-block;
 
-  .input-ok {
-    &, > .input {
-      border-color: $text-ok-color;
-    }
-    > .icon {
-      color: $text-ok-color;
-    }
-  }
-
-  .input-warning {
-    &, > .input {
-      border-color: $text-warning-color;
-    }
-    > .icon {
-      color: $text-warning-color;
-    }
-  }
-
-  .input-error {
-    &, > .input {
-      border-color: $text-error-color;
-    }
-    > .icon {
-      color: $text-error-color;
-    }
-  }
+  @include make-special-input('ok', $text-ok-color);
+  @include make-special-input('warning', $text-warning-color);
+  @include make-special-input('error', $text-error-color);
 
   .form-item {
-    margin-bottom: 0.75rem;
+    margin-bottom: $form-form-item-margin-bottom;
 
     label {
-      display: block;
-      margin-bottom: 0.25rem;
+      @include make-block;
+      margin-bottom: $form-form-item-label-margin-bottom;
     }
 
     .label-col {
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
+      margin-top: $form-form-item-label-col-margin-top;
+      margin-bottom: $form-form-item-label-col-margin-bottom;
     }
 
     .form-line {
-      width: 100%;
+      width: $form-form-item-form-line-width;
     }
 
     .info {
-      display: block;
-      line-height: 1rem;
-      margin: 0.25rem 0;
+      @include make-block;
+      line-height: $form-form-item-info-line-height;
+      margin: $form-form-item-info-margin;
     }
 
     &.inline {
       > * {
-        display: inline-block;
-        margin-right: 0.5rem;
+        @include make-inline-block;
+        margin-right: $form-form-item-inline-margin-right;
       }
 
       .form-line {

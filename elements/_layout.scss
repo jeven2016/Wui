@@ -1,25 +1,26 @@
-//Four column types defined here to ensure our grid system is compatible with bootstrap.
+//Only four column types defined here to ensure our grid system is compatible with bootstrap.
 $types: ('xs', 'sm', 'md', 'lg');
 
 // The grid system definition.
-// it separates one row into 24 columns in order to meet some special requirements. if you prefer 12 or 16 columns grid system,
+// it separates one row into 12 columns in order to meet some special requirements. if you prefer 12 or 16 columns grid system,
 // you can change the value of $grid-column-count, and you can get what you want.
 .row {
-  @extend %block-level;
+  @include make-block();
   @extend .clear-fix;
 
-  @each $col-type in $types {
-    @for $i from 1 to $grid-column-count +1 {
-      & > .col-#{$col-type}-#{$i} {
-        @include float-elem(left, null, $grid-column-padding);
-      }
+  > *[class^=col-] {
+    @include make-block {
+      padding: $grid-column-padding;
+      float: left;
     }
+  }
 
+  @each $col-type in $types {
     @if $col-type == 'xs' {
       //the xs related class is applied in default
       @include generate-grid-columns($grid-column-count, 'xs');
     } @else {
-      //once the screen width exceeds a specified value, apply the corresponding classes by checking min-width
+      //once the screen width exceeds a specified value, apply the corresponding classes by checking min-width and media query
       @include generate-media-grid-columns($grid-column-count, $col-type, (key:'min-width', value: map-get($bs-layout, $col-type)));
     }
   }

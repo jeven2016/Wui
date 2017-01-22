@@ -1,9 +1,9 @@
 .tab {
   @extend .clear-fix;
-  margin-bottom: 1rem;
+  margin-bottom: $tab-margin-bottom;
 
   > .menu {
-    display: block;
+    @include make-block;
 
     > .item {
       &.disabled {

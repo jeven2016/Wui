@@ -66,18 +66,3 @@
   display: block;
   position: relative;
 }
-
-//float a element
-@mixin float-elem($floatDirection, $margin:null, $padding:null) {
-  float: $floatDirection;
-  display: inline-block;
-
-  @if $margin != null {
-    margin: $margin;
-  }
-
-  @if $padding != null {
-    padding: $padding;
-  }
-}
-

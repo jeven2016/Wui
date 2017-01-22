@@ -57,3 +57,35 @@
     }
   }
 }
+
+//for input-ok, input-warning, input-error
+@mixin make-special-input($type, $color) {
+  .input-#{$type} {
+
+    &.input, &.icon-input > .input {
+      border-color: $color;
+    }
+
+    &.input {
+      &:active, &:focus {
+        box-shadow: 0 2px 6px 0 rgba($color, 0.24);
+      }
+    }
+
+    &.icon-input .icon {
+      color: $color;
+    }
+
+    &.icon-input {
+      > .input {
+        &:active, &:focus {
+          box-shadow: 0 2px 6px 0 rgba($color, 0.24);
+
+          ~ .icon {
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+}

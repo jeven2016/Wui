@@ -138,8 +138,6 @@ $btn-inverted-border-color: #acacac;
 $btn-inverted-text-color: $white;
 $btn-active-inverted-border-color: #acacac;
 
-$layout-col-padding: .5rem .25rem;
-
 //for button group
 $btn-group-border-radius: $default-border-radius;
 $btn-group-buttons-margin: 0 !important;
@@ -279,6 +277,34 @@ $dialog-icon-color: rgba(0, 0, 0, .4);
 $dialog-icon-color-hover: rgb(0, 0, 0);
 $dialog-inner-border-radius: calc(#{$dialog-border-radius} - #{$dialog-border-width});
 
+//For responsive layout
+//from bootstrap:
+// xs < 768
+// 768=< sm < 992
+// 992 =< md <1200
+// 1200 =< lg
+$bs-layout: (
+        xs: 767px, // xs < 768
+        sm :768px, // 768=< sm < 992
+        md : 992px, // 992 =< md <1200
+        lg : 1200px // 1200 =< lg
+);
+$grid-column-count: 12;
+$grid-column-padding: .5rem .25rem;
+
+//for form
+$form-form-item-margin-bottom: 0.75rem;
+$form-form-item-label-margin-bottom: 0.25rem;
+$form-form-item-label-col-margin-top: 0.5rem;
+$form-form-item-label-col-margin-bottom: 0.5rem;
+$form-form-item-form-line-width: 100%;
+$form-form-item-info-line-height: 1rem;
+$form-form-item-info-margin: 0.25rem 0;
+$form-form-item-inline-margin-right: 0.5rem;
+
+//for tab
+$tab-margin-bottom: 0.5rem;
+
 //=======================================================================
 
 //For menu
@@ -299,18 +325,3 @@ $bd-wrapper-background-color: #f5f5f5;
 //for table
 $table-default-border: 1px solid #ccc;
 $table-th-background-color: #f5f5f5;
-
-//For responsive layout
-//from bootstrap:
-// xs < 768
-// 768=< sm < 992
-// 992 =< md <1200
-// 1200 =< lg
-$bs-layout: (
-        xs: 767px, // xs < 768
-        sm :768px, // 768=< sm < 992
-        md : 992px, // 992 =< md <1200
-        lg : 1200px // 1200 =< lg
-);
-$grid-column-count: 24;
-$grid-column-padding: 0;

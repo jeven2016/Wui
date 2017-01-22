@@ -1,3 +1,4 @@
+
 // Generate grid columns with media query definition
 @mixin generate-media-grid-columns($colCount,$type,$condition) {
   @media screen and (map-get($condition, 'key'): map-get($condition, 'value')) {
@@ -9,11 +10,7 @@
 @mixin generate-grid-columns($colCount,$type, $extend-column-setting: true) {
   @for $i from 1 to $colCount +1 {
     & > .col-#{$type}-#{$i} {
-      @if $extend-column-setting {
-        @include float-elem(left, null, $grid-column-padding);
-      }
       width: percentage($i / ($colCount));
-      padding:$layout-col-padding;
     }
   }
 
