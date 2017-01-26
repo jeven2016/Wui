@@ -18,7 +18,7 @@
     border: $dialog-content-border;
     width: 95%;
     min-height: 1rem;
-    z-index: 101;
+    z-index: map_get($z-index, 'overlay');
     background-color: $dialog-content-background-color;
     @include border-radius($dialog-border-radius);
     box-shadow: $default-box-shadow;

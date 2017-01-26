@@ -46,7 +46,7 @@ $elem-small-padding: 0.25rem 0.5rem;
 //z-index
 $z-index: (
         mask: 100,
-        overlay: 101,
+        overlay: 110,
         top:1000
 );
 
@@ -302,6 +302,25 @@ $form-form-item-info-line-height: 1rem;
 $form-form-item-info-margin: 0.25rem 0;
 $form-form-item-inline-margin-right: 0.5rem;
 
+//for table
+$table-width: 100%;
+$table-border-spacing: 0;
+$table-border-collapse: collapse;
+$table-default-border: 1px solid $gray;
+$table-th-background-color: #f5f5f5;
+$table-layout: fixed;
+$table-margin-bottom: 1rem;
+$table-white-space: nowrap;
+$table-border-width: 1px;
+$table-row-hover-background-color: lighten($gray, 15%);
+
+
+//for loader
+$loader-size-large: 5rem;
+$loader-size-normal: 3rem;
+$loader-size-small: 1rem;
+$border-default-color: #ccc;
+
 //for tab
 $tab-margin-bottom: 0.5rem;
 
@@ -321,7 +340,3 @@ $menu-item-min-width: 4rem;
 
 //for breadcrumb
 $bd-wrapper-background-color: #f5f5f5;
-
-//for table
-$table-default-border: 1px solid #ccc;
-$table-th-background-color: #f5f5f5;

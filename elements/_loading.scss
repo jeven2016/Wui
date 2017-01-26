@@ -31,7 +31,7 @@
   padding-top: $loader-size-normal + 0.25rem;
   text-align: center;
   font-weight: 400;
-  z-index:100;
+  z-index: map_get($z-index, 'top');
 
   &.active {
     display: block;
@@ -75,6 +75,33 @@
     &:before, &:after {
       width: $loader-size-small;
       height: $loader-size-small;
+    }
+  }
+
+  &.primary {
+    &:before {
+      border-color: $border-default-color;
+    }
+
+    &:after {
+      border-color: $blue transparent transparent;
+    }
+  }
+}
+
+.loader-container {
+  .loader {
+    color: $white;
+
+  }
+
+  &, > .mask, > .loader {
+    display: none;
+  }
+
+  &.active {
+    &, > .mask, > .loader {
+      display: block;
     }
   }
 }

@@ -2,5 +2,18 @@
   .bg-#{$name} {
     background-color: $color !important;
   }
+
+  .bg-ok {
+    background-color: $green !important;
+  }
+
+  .bg-warning {
+    color: $yellow !important;
+  }
+
+  .bg-error {
+    color: $red !important;
+  }
+
 }
 

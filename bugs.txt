@@ -17,7 +17,7 @@
 1. .input.large, .button.large  内部由于继承了input的line-height，导致高度不一样  --ok
 
 2016-12-15:
-1. body 的font-size更改后，button大小无变化: 试试white-space: nowrap;  --ok
+1. body 的font-size更改后，button大小无变化: 试试white-space: nowrap;
 
 2016-12-16:
 1. 出现两处css定义： .input.medium, .button.medium， html {  -- ok
@@ -31,6 +31,8 @@ http://frozenui.github.io/components.html#
 http://semantic-ui.com/elements/button.html
 找出更好的设计
 
+2. flexbox 改造，取消浮动布局  --- 》 only support IE10+
+
 
 INFO:
 1. background
@@ -43,6 +45,8 @@ INFO:
 
 3. 2017-1-13:
     border-color 需要统一
+
+4. table, 响应式布局
 
 
 specification:
