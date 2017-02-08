@@ -2304,76 +2304,39 @@ h6 {
 }
 
 @keyframes default-loader {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-  25% {
-    transform: rotate(90deg);
-  }
-  50% {
-    transform: rotate(180deg);
-  }
-  75% {
-    transform: rotate(270deg);
-  }
-  100% {
+  to {
     transform: rotate(360deg);
   }
 }
 .loader {
   display: none;
   position: absolute;
+  width: 3rem;
+  height: 3rem;
+  border: 0.3rem solid #ccc;
+  border-right-color: #277ed0;
+  animation: default-loader 1s linear infinite;
+  border-radius: 50%;
   left: calc((100% - 3rem) / 2);
   top: calc((100% - 3rem) / 2);
-  width: 3rem;
-  padding-top: 3.25rem;
-  text-align: center;
-  font-weight: 400;
-  z-index: 1000;
 }
 .loader.active {
   display: block;
 }
-.loader:before, .loader:after {
-  content: '';
-  position: absolute;
-  border-radius: 100%;
-  border: 0.3rem solid #ccc;
-  width: 3rem;
-  height: 3rem;
-  left: 0;
-  top: 0;
-}
-.loader:after {
-  border-color: gray transparent transparent;
-  animation: default-loader 1s linear infinite;
-}
 .loader.large {
+  left: calc((100% - 5rem) / 2);
   top: calc((100% - 5rem) / 2);
-  width: 5rem;
-  padding-top: 5.25rem;
-  border-width: 0.5rem;
-}
-.loader.large:before, .loader.large:after {
   width: 5rem;
   height: 5rem;
 }
 .loader.small {
-  left: calc((100% - 1rem) / 2);
-  top: calc((100% - 1rem) / 2);
-  width: 1rem;
-  padding-top: 1.25rem;
-  border-width: 0.3rem;
-}
-.loader.small:before, .loader.small:after {
-  width: 1rem;
-  height: 1rem;
-}
-.loader.primary:before {
-  border-color: #ccc;
-}
-.loader.primary:after {
-  border-color: #277ed0 transparent transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  left: calc((100% - 1.5rem) / 2);
+  top: calc((100% - 1.5rem) / 2);
 }
 
 .loader-container .loader {
