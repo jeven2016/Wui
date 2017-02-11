@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="../dist/wui-bundle-min.css" rel="stylesheet">
     <link href="fa/css/font-awesome.min.css" rel="stylesheet">
+    <script src="jquery-3.1.0.js" type="application/javascript"></script>
+    <script language="JavaScript">
+        $(function () {
+            $(".dropdown > .info").click(function (evt) {
+                $(this).parent().toggleClass("active");
+            });
+
+
+        });
+    </script>
     <style type="text/css">
         .area-example {
             margin: 10px auto;
@@ -37,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="dropdown">
+            <div class="dropdown active">
                 <div class="info">Simple</div>
                 <div class="menu">
                     <div class="item" data-value="0">Item1</div>
@@ -135,8 +145,8 @@
 
         <br/><br/>
         <div>
-            <div class="simple dropdown">
-                <div class="info">Text</div>
+            <div class="simple dropdown active">
+                <a class="info">Text</a>
                 <ul class="menu">
                     <li class="item" data-value="0">Item1</li>
                     <li class="item" data-value="1">Item2</li>

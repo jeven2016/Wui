@@ -1,6 +1,12 @@
 .navbar {
   @include make-navbar($navbar-padding) {
     border: $navbar-border;
+    display: table;
+    width: 100%;
+
+    //using flexbox as a alternative
+    //display:flex;
+    //align-items: center;
   }
 
   &.fixed {
@@ -18,8 +24,31 @@
   @extend .clear-fix;
   @include make-navbar-list;
 
+  &.special {
+    padding: 0 0.5rem;
+
+    //> .item {
+    //  line-height: normal;
+    //
+    //  > .link {
+    //    padding: 0.5rem 0;
+    //  }
+    //}
+  }
+
   > .item {
     @include make-navbar-item($navbar-inactive-text-color);
+    display: table-cell;
+    vertical-align: middle;
+
+    &.with-bg {
+      &.active {
+        background-color: darken($navbar-background-color, 10%);
+      }
+      &:focus, &:hover {
+        background-color: darken($navbar-background-color, 5%);
+      }
+    }
 
     &.special {
       padding: $navbar-item-special-padding;
@@ -44,7 +73,7 @@
     }
 
     &:not(.title) {
-      &.active, &:hover {
+      &.active, &:focus, &:hover {
         color: $navbar-item-active-color;
       }
     }
@@ -63,6 +92,15 @@
       &:not(.title) {
         &.active, &:hover {
           color: $navbar-primary-active-color;
+        }
+      }
+
+      &.with-bg {
+        &.active {
+          background-color: lighten($navbar-background-color-primary, 10%);
+        }
+        &:focus, &:hover {
+          background-color: lighten($navbar-background-color-primary, 5%);
         }
       }
     }
@@ -104,7 +142,7 @@
         }
 
         &:not(.title) {
-          &.active, &:hover {
+          &.active, &:focus, &:hover {
             color: $navbar-simple-primary-item-active-color;
           }
         }

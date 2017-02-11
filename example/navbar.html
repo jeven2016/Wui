@@ -10,262 +10,156 @@
     <style type="text/css">
         .area-example {
             margin: 10px auto;
-            padding: 20px;
-            overflow: auto;
+            /*padding: 20px;*/
+            /*overflow: auto;*/
         }
+
+        .example-container {
+            padding: 0 10px;
+        }
+
+
     </style>
 
     <script language="JavaScript">
+        $(function () {
+            $(".dropdown > .info").click(function (evt) {
+                $(this).parent().toggleClass("active");
+            });
 
+
+        });
     </script>
 </head>
 <body>
 <div class="area-example">
     Navbar示例：<br/><br/>
 
-    navbar:
-    <ul class="navbar">
-        <li class="item title"><a class="link"> Title</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item special">
-            <div class="simple dropdown  ">
-                <i class="icon fa fa-angle-down"></i>
-                <div class="info">Country</div>
-                <div class="menu">
-                    <div class="item" data-value="0">China</div>
-                    <div class="item" data-value="1">USA</div>
-                    <a class="item" data-value="1" href="#"> Link</a>
-                    <div class="item active" data-value="2">Russian</div>
+    <div class="example-container">
+        <ul class="navbar">
+            <li class="item title"><a class="link"> Title</a></li>
+            <li class="item"><a class="link">Item</a></li>
+            <li class="item active"><a class="link">Item</a></li>
+            <li class="item special">
+                <div class="simple dropdown  ">
+                    <div class="info">Country</div>
+                    <div class="menu">
+                        <div class="item" data-value="0">China</div>
+                        <div class="item" data-value="1">USA</div>
+                        <a class="item" data-value="1" href="#"> Link</a>
+                    </div>
                 </div>
-            </div>
-        </li>
-    </ul>
-    <br/>
+            </li>
+        </ul>
+        <br/>
 
-    simple navbar:
-    <ul class="simple navbar">
-        <li class="item title"><a class="link"> Title</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-    </ul>
-    <br/>
-    navbar primary:
-    <ul class="navbar primary">
-        <li class="item title"><a class="link"> Title</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-    </ul>
+        <ul class="navbar primary">
+            <li class="item title"><a class="link"> Title</a></li>
+            <li class="item"><a class="link">Item</a></li>
+            <li class="item active"><a class="link">Item</a></li>
+            <li class="item special">
+                <div class="simple dropdown  ">
+                    <div class="info">Country</div>
+                    <div class="menu">
+                        <div class="item" data-value="0">China</div>
+                        <div class="item" data-value="1">USA</div>
+                        <a class="item" data-value="1" href="#"> Link</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <ul class="navbar primary bg-color-black">
+            <li class="item title"><a class="link"> Title</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg active"><a class="link">Item</a></li>
+        </ul>
+        <br/>
 
-    <ul class="navbar primary bg-color-brown">
-        <li class="item title"><a class="link"> Title</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-    </ul>
+        <ul class="navbar">
+            <li class="item title"><a class="link"> Title</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg active"><a class="link">Item</a></li>
 
-    <ul class="navbar primary bg-color-purple">
-        <li class="item title"><a class="link"> Title</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-    </ul>
+        </ul>
+        <br/>
 
-    <ul class="navbar primary bg-color-pink">
-        <li class="item title"><a class="link"> Title</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-    </ul>
+        <ul class="navbar primary">
+            <li class="item title"><a class="link"> Title</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg active"><a class="link">Item</a></li>
 
-    <br/>
-    navbar simple primary:
-    <ul class="navbar simple primary">
-        <li class="item title"><a class="link"> Title</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-    </ul>
-    <ul class="navbar simple primary bg-color-brown">
-        <li class="item title"><a class="link"> Title</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-    </ul>
+        </ul>
+        <br/>
 
-    <ul class="navbar simple primary bg-color-purple">
-        <li class="item title"><a class="link"> Title</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-    </ul>
+        <ul class="navbar primary bg-color-brown">
+            <li class="item title"><a class="link"> Title</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg active"><a class="link">Item</a></li>
+        </ul>
+        <ul class="navbar primary bg-color-purple">
+            <li class="item title"><a class="link"> Title</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg"><a class="link">Item</a></li>
+            <li class="item with-bg active"><a class="link">Item</a></li>
+        </ul>
+        <br/>
 
-    <ul class="navbar simple primary bg-color-pink">
-        <li class="item title"><a class="link"> Title</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-    </ul>
+        <ul class="navbar simple">
+            <li class="item title"><a class="link"> Title</a></li>
+            <li class="item"><a class="link">Item</a></li>
+            <li class="item"><a class="link">Item</a></li>
+            <li class="item"><a class="link">Item</a></li>
+        </ul>
+        <br/>
 
-    <ul class="navbar simple primary bg-color-black">
-        <li class="item title"><a class="link"> Title</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-    </ul>
-    <br/>
+        <ul class="navbar">
+            <li class="item title"><a class="link"> Title</a></li>
+            <li class="item"><a class="link">Item</a></li>
+            <li class="item"><a class="link">Item</a></li>
+            <li class="item"><a class="link">Item</a></li>
+            <li class="item special">
+                <button class="button">Button</button>
+            </li>
+            <li class="item special">
+                <input type="text" class="input" placeholder="input..."/>
+            </li>
+            <li class="item special">
+                <div type="text" class="icon-input left-icon">
+                    <input type="text" class="input " placeholder="icon input...">
+                    <i class="fa fa-search icon"></i>
+                </div>
+                <button class="button">Search</button>
+            </li>
+        </ul>
+        <br/>
 
-    Size:
-    <ul class="navbar large simple primary">
-        <li class="item title"><a class="link"> Large</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-    </ul>
-    <br/>
-    <ul class="navbar simple primary bg-color-brown">
-        <li class="item title"><a class="link"> Medium</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-    </ul>
-    <br/>
-    <ul class="navbar small simple primary bg-color-purple">
-        <li class="item title"><a class="link"> Small</a></li>
-        <li class="item"><a class="link">Item</a></li>
-        <li class="item"><a class="link">Item</a></li>
-    </ul>
-    <br/>
-    <br/>
 
-    Navbar without &lt;ul/&gt;
-    <div class="navbar">
-        <span class="item title">
-            <a class="link">System</a>
-        </span>
-        <span class="item">
-            <a class="link">Item</a>
-        </span>
-        <span class="item">
-            <a class="link">Item</a>
-        </span>
-        <span class="item special">
-            <input type="text" class="input"/>
-        </span>
     </div>
-    <br/>
 
-    Simple Navbar without &lt;ul/&gt;
-    <div class="navbar simple">
-        <span class="item title">
-            <a class="link"> System</a>
-        </span>
-        <span class="item">
-            <a class="link">Item</a>
-        </span>
-        <span class="item">
-            <a class="link">Item</a>
-        </span>
-        <span class="item special">
-            <input type="text" class="input"/>
-        </span>
+    <div style="margin-top: 50px">
+
     </div>
-    <br/>
 
-    Navbar with special items
-    <ul class="navbar">
+    <ul class="primary navbar fixed bottom">
         <li class="item title"><a class="link"> Title</a></li>
-        <li class="item special">
-            <button class="button">Button</button>
-        </li>
-        <li class="item special">
-            <button class="button outline green">Button2</button>
-        </li>
-        <li class="item special">
-            <button class="button purple">Button2</button>
-        </li>
-        <li class="item special">
-            <input type="text" class="input" placeholder="input..."/>
-        </li>
-        <li class="item special">
-            <div type="text" class="icon-input left-icon">
-                <input type="text" class="input " placeholder="icon input...">
-                <i class="fa fa-search icon"></i>
-            </div>
-            <button class="button">Search</button>
-        </li>
+        <li class="item"><a class="link">Item</a></li>
+        <li class="item"><a class="link">Item</a></li>
     </ul>
-    <br/>
 
-    Simple navbar with special items
-    <ul class="navbar simple">
-        <li class="item title"><a class="link"> Title</a></li>
-        <li class="item special">
-            <button class="button">Button</button>
-        </li>
-        <li class="item special">
-            <button class="button outline green">Button2</button>
-        </li>
-        <li class="item special">
-            <button class="button purple">Button2</button>
-        </li>
-        <li class="item special">
-            <div type="text" class="icon-input left-icon">
-                <input type="text" class="input " placeholder="icon input...">
-                <i class="fa fa-search icon"></i>
-            </div>
-            <button class="button">Search</button>
-        </li>
-    </ul>
-    <br/>
-
-    <ul class="navbar">
-        <li class="item title"><a class="link"> Title</a></li>
-        <li class="item special">
-            <div class="input-group">
-                <div class="label">$</div>
-                <div class="label">
-                    <i class="fa fa-calculator"></i>
-                </div>
-                <input type="text" class="input element" placeholder="input..."/>
-            </div>
-
-            <div class="dropdown">
-                <div class="info">交流工具</div>
-                <div class="menu">
-                    <div class="item" data-value="0">
-                        微博
-                    </div>
-                    <div class="item" data-value="0">
-                        微信
-                    </div>
-                    <div class="item" data-value="0">
-                        QQ
-                    </div>
-                </div>
-            </div>
-        </li>
-    </ul>
-</div>
-
-
-<ul class="primary navbar fixed top">
-    <li class="item title"><a class="link"> Title</a></li>
-    <li class="item"><a class="link">Item</a></li>
-    <li class="item"><a class="link">Item</a></li>
-    <li class="item special">
-        <div class="simple dropdown">
-            <div class="info">交流工具</div>
-            <div class="menu">
-                <div class="item" data-value="0">
-                    微博
-                </div>
-                <div class="item" data-value="0">
-                    微信
-                </div>
-                <div class="item" data-value="0">
-                    QQ
-                </div>
-            </div>
-        </div>
-    </li>
-</ul>
-
-<ul class="primary navbar fixed bottom">
-    <li class="item title"><a class="link"> Title</a></li>
-    <li class="item"><a class="link">Item</a></li>
-    <li class="item"><a class="link">Item</a></li>
-</ul>
 
 </body>
 </html>

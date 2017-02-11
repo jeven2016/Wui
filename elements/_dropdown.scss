@@ -29,6 +29,7 @@
   padding: $dp-padding;
   border: $dp-border;
   min-width: $dp-min-width;
+  vertical-align: $dp-vertical-align;
 
   > .menu {
     @include dp-menu {
@@ -47,7 +48,7 @@
     @include make-arrow($default-arrow-border, $default-arrow-active-border);
   }
 
-  &:hover, &.active {
+  &.active {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-bottom-width: 0;

@@ -6,6 +6,7 @@
   line-height: $input-line-height;
   -webkit-appearance: none;
   transition: all .2s ease-in-out;
+  vertical-align: middle;
 
   &.block {
     @include make-block {
@@ -49,7 +50,9 @@
 }
 
 .icon-input {
-  @include make-inline-block;
+  @include make-inline-block {
+    vertical-align: $icon-input-vertical-align;
+  }
 
   &.block, & > .input {
     @include make-block {

@@ -160,6 +160,7 @@ $input-box-shadow: 0 2px 6px 0 rgba(61, 139, 234, 0.24);
 $input-simple-box-shadow: 0 $input-border-width 0 0 rgba(61, 139, 234, 0.24);
 
 $icon-input-icon-cursor: pointer;
+$icon-input-vertical-align: middle;
 $icon-input-icon-text-color: $gray;
 $icon-input-icon-position: absolute;
 $icon-input-left-icon-left: 0.5rem;
@@ -237,6 +238,7 @@ $dp-padding: 0.5rem 1rem;
 $dp-border-width: 1px;
 $dp-border: $dp-border-width solid $btn-border-color;
 $dp-min-width: 10rem;
+$dp-vertical-align: middle;
 $dp-background-color: $white;
 $dp-item-border: 1px solid #ccc;
 $dp-border-radius: $default-border-radius;

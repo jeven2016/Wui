@@ -1,27 +1,33 @@
 @keyframes drawer-animation {
   from {
     width: 10%;
+    opacity: 0.2;
   }
   to {
     width: 30%;
+    opacity: 1;
   }
 }
 
 @keyframes drawer-animation-top {
   from {
     height: 10%;
+    opacity: 0.2;
   }
   to {
     height: 30%;
+    opacity: 1;
   }
 }
 
 @keyframes drawer-animation-right {
   from {
     width: 10%;
+    opacity: 0.2;
   }
   to {
     width: 30%;
+    opacity: 1;
   }
 }
 

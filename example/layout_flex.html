@@ -24,11 +24,71 @@
             background-color: rgba(86, 61, 124, 0.15);
         }
 
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            border: 1px solid green;
+            justify-content: center;
+        }
+
+        .flex-container > .item {
+            border: 1px solid blue;
+            vertical-align: middle;
+        }
+
+        .flex-container > .item:not(last-child) {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        .flex-container > .item:last-child {
+            flex-grow: 2;
+        }
+
+        /*==========================================*/
+        .flex-container > .basics-item{
+            border: 1px solid blue;
+            vertical-align: middle;
+            flex-basis: 7rem; /*default width*/
+        }
+
+        .link{
+            display: block;
+        }
 
     </style>
 </head>
 <body>
 <div class="area-example">
+
+    <div class="flex-container">
+        <div class="item">
+            <a class="link" href="#">Link</a>
+        </div>
+        <div class="item">
+            <button class="button">Button</button>
+        </div>
+
+        <div class="item">
+            <button class="button">Button</button>
+        </div>
+
+    </div>
+    <br/>
+
+    <div class="flex-container">
+        <div class="basics-item">
+            <a class="link" href="#">Link</a>
+        </div>
+        <div class="basics-item">
+            <button class="button">Button</button>
+        </div>
+
+        <div class="basics-item">
+            <button class="button">Button</button>
+        </div>
+
+    </div>
 
 
 </div>
