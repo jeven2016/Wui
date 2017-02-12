@@ -7,6 +7,7 @@
   -webkit-appearance: none;
   transition: all .2s ease-in-out;
   vertical-align: middle;
+  font-size: $input-font-size;
 
   &.block {
     @include make-block {

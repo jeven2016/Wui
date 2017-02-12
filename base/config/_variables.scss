@@ -91,6 +91,7 @@ $bq-border-radius: $default-border-radius;
 
 //For buttons
 $btn-cursor: pointer;
+$btn-font-size: 1rem;
 $btn-line-height: 1.25em;
 $btn-text-align: center;
 $btn-text-decoration: none;
@@ -143,7 +144,8 @@ $btn-group-border-radius: $default-border-radius;
 $btn-group-buttons-margin: 0 !important;
 $btn-group-buttons-float: left;
 
-//For input 
+//For input
+$input-font-size: 1rem;
 $input-placeholder-color: lighten(#ccc, 10%);
 $input-placeholder-opacity: 1;
 $input-line-height: 1.25rem;
@@ -208,7 +210,7 @@ $navbar-inactive-text-color: lighten($text-color, 40%);
 $navbar-title-font-size: 1.5rem;
 $navbar-title-color: $text-color;
 $navbar-title-padding: 0 0.5rem;
-$navbar-link-padding: 0 .5rem;
+$navbar-link-padding: 0.4375rem .5rem;
 $navbar-link-color: inherit;
 $navbar-item-line-height: 3rem;
 $navbar-item-active-color: $text-color;
@@ -315,7 +317,6 @@ $table-margin-bottom: 1rem;
 $table-white-space: nowrap;
 $table-border-width: 1px;
 $table-row-hover-background-color: lighten($gray, 15%);
-
 
 //for loader
 $loader-size-large: 5rem;

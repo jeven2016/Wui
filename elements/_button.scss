@@ -8,6 +8,7 @@
   text-decoration: $btn-text-decoration;
   @include border-radius();
   overflow: visible;
+  font-size: $btn-font-size;
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: none;
   transition: all .2s ease-in-out;
