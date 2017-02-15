@@ -46,14 +46,30 @@
         }
 
         /*==========================================*/
-        .flex-container > .basics-item{
+        .flex-container > .basics-item {
             border: 1px solid blue;
             vertical-align: middle;
             flex-basis: 7rem; /*default width*/
         }
 
-        .link{
+        .link {
             display: block;
+        }
+
+
+        /*************************/
+        .flex-container2 {
+            display: flex;
+            height:3rem;
+            flex-direction: row;
+            border: 1px solid green;
+            justify-content: center;
+            align-items: center;
+        }
+        .flex-item{
+            background-color: yellow;
+            vertical-align: middle;
+            justify-content: center;
         }
 
     </style>
@@ -86,6 +102,20 @@
 
         <div class="basics-item">
             <button class="button">Button</button>
+        </div>
+
+    </div>
+
+
+    <div class="flex-container2">
+        <div class="flex-item">
+            <button class="button">Button</button>
+        </div>
+        <div class="flex-item">
+            <input type="text" class="input"/>
+        </div>
+        <div>
+            <a href="#" style="font-size: 5rem;white-space: nowrap">Link</a>
         </div>
 
     </div>

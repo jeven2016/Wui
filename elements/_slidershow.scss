@@ -1,0 +1,59 @@
+.slidershow {
+  position: relative;
+
+  > .content {
+    @include make-block;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    > .item {
+      display: none;
+      flex-direction: row;
+
+      .img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .info {
+        position: absolute;
+        bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+
+  > .indicators {
+    list-style: none;
+    display: flex;
+    position: absolute;
+    bottom: 0.5rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .circle {
+      cursor: pointer;
+      margin-right: 0.5rem;
+      @include border-radius(50%);
+      height: 1rem;
+      width: 1rem;
+      background-color: $gray;
+
+      &.active {
+        background-color: $white;
+      }
+    }
+  }
+}
