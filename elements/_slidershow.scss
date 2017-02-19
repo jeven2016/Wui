@@ -13,18 +13,34 @@
     > .item {
       display: none;
       flex-direction: row;
+      color: $white;
 
-      .img {
+      > .block {
         display: block;
-        width: 100%;
+        max-width: 100%;
         height: auto;
       }
 
-      .info {
+      > .info {
         position: absolute;
-        bottom: 3rem;
+        bottom: 2rem;
         display: flex;
+        width: 100%;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        > .title {
+          vertical-align: middle;
+          text-align: center;
+          font-family: map_get($font-weight, 'bold');
+        }
+
+        > .description {
+          vertical-align: middle;
+          text-align: center;
+          padding: 0 0.5rem;
+        }
       }
 
       &.active {

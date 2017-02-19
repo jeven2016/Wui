@@ -19,15 +19,9 @@
 
         .slider-example {
             position: relative;
-            width: 600px;
-            height: 400px;
-        }
-
-        .img {
-            width: 100%;
-            height: auto;
-            display: block;
-            vertical-align: middle;
+            width: 400px;
+            display: inline-block;
+            /*height: 200px;*/
         }
 
     </style>
@@ -39,29 +33,21 @@
     </div>
 
     <div class="slider-example">
-        <div class="slidershow">
+        <div class="slidershow" style="width: 200px;height: 200px;background: gray">
             <div class="content">
                 <div class="item active">
-                    <img class="img" src="pic.jpg" class="img"/>
+                    <div class="block">&nbsp;</div>
                     <div class="info">
-                        <div class="title">
+                        <h2 class="title">
                             Picture Title
-                        </div>
-                        <div class="description">
-                            some description, some description.....
-                        </div>
+                        </h2>
+                        <p class="description">
+                            some description, some description..... some description, some description..... some
+                            description, some description.....
+                        </p>
                     </div>
                 </div>
-                <div class="item">
-                    <img class="img" src="pic.jpg"/>
-                </div>
-                <div class="item">
-                    <img class="img" src="pic.jpg"/>
-                </div>
 
-                <div class="item">
-                    <img class="img" src="pic.jpg"/>
-                </div>
             </div>
 
             <ul class="indicators">
@@ -70,6 +56,34 @@
                 <li class="circle"></li>
             </ul>
         </div>
+    </div>
+
+    <div class="slider-example">
+
+        <div class="slidershow" style="width: 200px;height: 200px;background: gray">
+            <div class="content">
+                <div class="item active">
+                    <div class="block">&nbsp;</div>
+                    <div class="info">
+                        <h2 class="title">
+                            Picture Title
+                        </h2>
+                        <p class="description">
+                            some description, some description..... some description, some description..... some
+                            description, some description.....
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <ul class="indicators">
+                <li class="circle"></li>
+                <li class="circle active"></li>
+                <li class="circle"></li>
+            </ul>
+        </div>
+
     </div>
 
     <div style="margin-top: 50px">

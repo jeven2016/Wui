@@ -2387,6 +2387,73 @@ h6 {
   display: block;
 }
 
+.slidershow {
+  position: relative;
+}
+.slidershow > .content {
+  position: relative;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.slidershow > .content > .item {
+  display: none;
+  flex-direction: row;
+  color: #fff;
+}
+.slidershow > .content > .item > .block {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.slidershow > .content > .item > .info {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slidershow > .content > .item > .info > .title {
+  vertical-align: middle;
+  text-align: center;
+  font-family: 700;
+}
+.slidershow > .content > .item > .info > .description {
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+.slidershow > .content > .item.active {
+  display: flex;
+}
+.slidershow > .indicators {
+  list-style: none;
+  display: flex;
+  position: absolute;
+  bottom: 0.5rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.slidershow > .indicators .circle {
+  cursor: pointer;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  background-color: #ccc;
+}
+.slidershow > .indicators .circle.active {
+  background-color: #fff;
+}
+
 /**
 * Generate add-ons
  */
@@ -2844,19 +2911,19 @@ h6 {
 }
 
 .search.select {
-  display: block;
+  display: inline-block;
   position: relative;
 }
 .search.select > .content {
-  padding: 0.25rem;
+  padding-left: 0.25rem;
   border: 1px solid #ccc;
-  min-height: 2rem;
   border-radius: 0.25rem;
 }
-.search.select > .content .info-text {
-  border: 0;
-  outline: 0;
-  padding: .25rem .11rem;
+.search.select > .content .input {
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  box-shadow: none;
 }
 .search.select > .content > .tag {
   background-color: #eee;
