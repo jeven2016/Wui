@@ -1,24 +1,40 @@
-
 .input-group {
-  vertical-align: middle;
-  @include make-inline-block;
+  @include make-inline-flex();
+
+  & > .label, & > .element {
+    @include make-flex();
+    line-height: $input-group-label-line-height;
+    justify-content: center;
+    align-items: center;
+    @include input-group-child();
+  }
 
   & > .label {
-    float: $input-group-label-float;
-    line-height: $input-group-label-line-height;
-    height: $input-group-label-height;
     padding: $input-group-label-padding;
     border: $input-border;
     background-color: $input-label-background-color;
-  }
 
-  & > .element {
-    float: $input-group-element-float;
-    line-height: $input-group-element-line-height;
-  }
+    &.inset {
+      padding: 0;
+      background-color: transparent;
 
-  & > .label, & > .element {
-    @include input-group-child();
+      &.button-dropdown {
+        > .button {
+          border-width: 0;
+        }
+      }
+    }
+
+    &:not(:first-child):not(:last-child) {
+      &.inset {
+        &.button-dropdown {
+          > .button {
+            @include border-radius(0);
+          }
+        }
+      }
+    }
+
   }
 
   & > .element + .label:not(:first-child) {
@@ -26,25 +42,13 @@
   }
 
   &.block {
-    display: block;
-    width: 100%;
-  }
-
-  //占据整行
-  &.flexible {
-    width: 100%;
-    display: table;
-
-    & > .element {
-      display: table-cell;
-      float: none;
+    @include make-flex {
       width: 100%;
     }
 
-    & > .label {
-      display: table-cell;
-      float: none;
-      width: 1%;
+    & > .element {
+      @include flex-grow(1);
     }
+
   }
 }

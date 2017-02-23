@@ -19,9 +19,20 @@
 
         .slider-example {
             position: relative;
-            width: 400px;
-            display: inline-block;
+            /*width: 400px;*/
+            display: block;
             /*height: 200px;*/
+        }
+
+
+        .slider-example_inline {
+            position: relative;
+            display: inline-block;
+        }
+
+        .block_img {
+         /*   background-image: url('pic.jpg');
+            background-size: cover*/
         }
 
     </style>
@@ -33,17 +44,16 @@
     </div>
 
     <div class="slider-example">
-        <div class="slidershow" style="width: 200px;height: 200px;background: gray">
+        <div class="slidershow">
             <div class="content">
                 <div class="item active">
-                    <div class="block">&nbsp;</div>
+                    <img src="pic.jpg" class="block image"/>
                     <div class="info">
                         <h2 class="title">
                             Picture Title
                         </h2>
                         <p class="description">
-                            some description, some description..... some description, some description..... some
-                            description, some description.....
+                            some description, some description
                         </p>
                     </div>
                 </div>
@@ -58,19 +68,20 @@
         </div>
     </div>
 
+    <br/>
+
     <div class="slider-example">
 
-        <div class="slidershow" style="width: 200px;height: 200px;background: gray">
+        <div class="slidershow" style="width:100%;height: 300px;background: gray">
             <div class="content">
                 <div class="item active">
-                    <div class="block">&nbsp;</div>
+                    <div class="block block_img">&nbsp;</div>
                     <div class="info">
                         <h2 class="title">
-                            Picture Title
+                            旅游圣地
                         </h2>
                         <p class="description">
-                            some description, some description..... some description, some description..... some
-                            description, some description.....
+                            冬夏旅游的必选之地，还犹豫什么？
                         </p>
                     </div>
                 </div>
@@ -81,6 +92,56 @@
                 <li class="circle"></li>
                 <li class="circle active"></li>
                 <li class="circle"></li>
+            </ul>
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="slider-example_inline">
+
+        <div class="slidershow" style="width:400px;height: 300px;background: gray">
+            <div class="content">
+                <div class="item active">
+                    <div class="block block_img">&nbsp;</div>
+                    <div class="info">
+                        <h2 class="title">
+                            旅游圣地
+                        </h2>
+                        <p class="description">
+                            冬夏旅游的必选之地，还犹豫什么？
+                        </p>
+                    </div>
+                </div>
+                <div class="item active">
+                    <div class="block block_img">&nbsp;</div>
+                    <div class="info">
+                        <h2 class="title">
+                            旅游圣地
+                        </h2>
+                        <p class="description">
+                            冬夏旅游的必选之地，还犹豫什么？
+                        </p>
+                    </div>
+                </div>
+                <div class="item active">
+                    <div class="block block_img">&nbsp;</div>
+                    <div class="info">
+                        <h2 class="title">
+                            旅游圣地
+                        </h2>
+                        <p class="description">
+                            冬夏旅游的必选之地，还犹豫什么？
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <ul class="indicators">
+                <li class="line"></li>
+                <li class="line active"></li>
+                <li class="line"></li>
             </ul>
         </div>
 

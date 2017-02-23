@@ -22,10 +22,7 @@
 
 @mixin input-group-child() {
   &:last-child {
-    &.input, & .input {
-      @include border-radius(0 $default-border-radius $default-border-radius 0);
-    }
-
+    @include set-border-radius(0 $default-border-radius $default-border-radius 0);
     &:not(.element) {
       border-left-width: $input-border-width;
     }
@@ -34,9 +31,7 @@
   }
 
   &:first-child {
-    &.input, & .input {
-      @include border-radius($default-border-radius 0 0 $default-border-radius);
-    }
+    @include set-border-radius($default-border-radius 0 0 $default-border-radius);
 
     &:not(.element) {
       border-right-width: 0;
@@ -56,6 +51,14 @@
       @include border-radius(0);
     }
   }
+}
+
+@mixin set-border-radius($bdr-radius) {
+  &.input, & .input,
+  &.button, &.dropdown, &.button-dropdown > .button {
+    @include border-radius($bdr-radius);//todo
+  }
+
 }
 
 //for input-ok, input-warning, input-error
