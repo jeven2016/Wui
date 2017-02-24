@@ -8,7 +8,7 @@ Current version: 0.6
 for demo, Currently the documentation hasn't finished yet, an alternative is by refering to the following examples:
 <ul>
     <li>
-        <a href="examples/blockquota.html">Blockquota</a>
+        <a href="http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/blockquota.html">Blockquota</a>
     </li>
     <li>
         <a href="button.html">Button</a> (<a href="button-add-ons.html">add-ons</a>)
