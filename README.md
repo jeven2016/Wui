@@ -1,4 +1,5 @@
-MIT License:
+Wui web framework with MIT License:
+-------------------------------
 This is a web UI framwork like bootstrap , semantic UI,
 we design it with some personal reasons and hope it looks cool to implement a modern web site.
 
