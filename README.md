@@ -7,8 +7,8 @@ Current version: 0.6
 
 for demo, Currently the documentation hasn't finished yet, an alternative is by refering to the following examples:
 ##Wui common components
-	[Blockquota](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/blockquota.html)
-	[Button](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/button.html) 
+	[Blockquota](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/blockquota.html "Blockquota")
+	[Button](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/button.html "Button") 
 	[add-ons](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/button-add-ons.html) 
 	[Input](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/input.html)
 	[dropdown](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/dropdown.html)
