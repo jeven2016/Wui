@@ -2,10 +2,8 @@
   @include make-inline-flex();
 
   & > .label, & > .element {
-    @include make-flex();
+    @include make-flex-center();
     line-height: $input-group-label-line-height;
-    justify-content: center;
-    align-items: center;
     @include input-group-child();
   }
 
@@ -13,28 +11,23 @@
     padding: $input-group-label-padding;
     border: $input-border;
     background-color: $input-label-background-color;
+  }
 
+  & > .element {
     &.inset {
-      padding: 0;
-      background-color: transparent;
+      padding: $input-group-element-inset-padding;
+      background-color: $input-group-element-background-color;
 
-      &.button-dropdown {
-        > .button {
-          border-width: 0;
-        }
-      }
-    }
-
-    &:not(:first-child):not(:last-child) {
-      &.inset {
-        &.button-dropdown {
-          > .button {
-            @include border-radius(0);
+      &:not(:first-child):not(:last-child) {
+        &.inset {
+          &.button-dropdown, &.dropdown {
+            > .button {
+              @include border-radius(0);
+            }
           }
         }
       }
     }
-
   }
 
   & > .element + .label:not(:first-child) {
@@ -46,9 +39,8 @@
       width: 100%;
     }
 
-    & > .element {
+    & > .expanded {
       @include flex-grow(1);
     }
-
   }
 }

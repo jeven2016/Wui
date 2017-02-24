@@ -1,45 +1,8 @@
 .navbar {
-  @include make-navbar($navbar-padding) {
-    border: $navbar-border;
-    display: table;
-    width: 100%;
-
-    //using flexbox as a alternative
-    //display:flex;
-    //align-items: center;
-  }
-
-  &.fixed {
-    @include fixed(null, true, 100%);
-
-    &.top {
-      top: 0;
-    }
-
-    &.bottom {
-      bottom: 0;
-    }
-  }
-
-  @extend .clear-fix;
-  @include make-navbar-list;
-
-  &.special {
-    padding: 0 0.5rem;
-
-    //> .item {
-    //  line-height: normal;
-    //
-    //  > .link {
-    //    padding: 0.5rem 0;
-    //  }
-    //}
-  }
+  @include make-navbar;
 
   > .item {
     @include make-navbar-item($navbar-inactive-text-color);
-    display: table-cell;
-    vertical-align: middle;
 
     &.with-bg {
       &.active {
@@ -50,20 +13,9 @@
       }
     }
 
-    &.special {
-      padding: $navbar-item-special-padding;
-
-      .dropdown {
-        .item {
-          color: $btn-default-text-color;
-        }
-      }
-    }
-
     &.title {
       font-size: $navbar-title-font-size;
       color: $navbar-title-color;
-      padding: $navbar-title-padding;
     }
 
     > .link {
@@ -76,6 +28,34 @@
       &.active, &:focus, &:hover {
         color: $navbar-item-active-color;
       }
+    }
+
+    &.special {
+      padding: $navbar-item-special-padding-left;
+
+      .dropdown {
+        .item {
+          color: $btn-default-text-color;
+        }
+      }
+    }
+  }
+
+  &.fixed {
+    @include fixed(null, false, null);
+
+    &.top {
+      top: 0;
+      border-left-width: 0;
+      border-top-width: 0;
+      border-bottom-right: 0;
+    }
+
+    &.bottom {
+      bottom: 0;
+      border-left-width: 0;
+      border-bottom-right: 0;
+      border-right-width: 0;
     }
   }
 
@@ -185,5 +165,6 @@
     }
 
   }
+
 
 }

@@ -13,15 +13,14 @@
     @include full-border-radius(0, $default-border-radius, 0, $default-border-radius);
   }
 
-  // border: $input-border;
-
   &:not(:last-child):not(:first-child) {
     @include border-radius(0);
   }
 }
 
 @mixin input-group-child() {
-  &:last-child {
+  //for dropdown, if it isn't the first or last child, the border radius cannot reset. Because dropdown.active could change the border radius if necessary.
+  &:last-child:not(.dropdown) {
     @include set-border-radius(0 $default-border-radius $default-border-radius 0);
     &:not(.element) {
       border-left-width: $input-border-width;
@@ -30,7 +29,12 @@
     @include border-radius(0 $default-border-radius $default-border-radius 0);
   }
 
-  &:first-child {
+  &:last-child.dropdown {
+    @include border-radius-variable("top", "left", 0);
+    @include border-radius-variable("bottom", "left", 0);
+  }
+
+  &:first-child:not(.dropdown) {
     @include set-border-radius($default-border-radius 0 0 $default-border-radius);
 
     &:not(.element) {
@@ -38,6 +42,11 @@
     }
 
     @include border-radius($default-border-radius 0 0 $default-border-radius);
+  }
+
+  &:first-child.dropdown {
+    @include border-radius-variable("top", "right", 0);
+    @include border-radius-variable("bottom", "right", 0);
   }
 
   &:not(:first-child):not(:last-child) {
@@ -55,10 +64,9 @@
 
 @mixin set-border-radius($bdr-radius) {
   &.input, & .input,
-  &.button, &.dropdown, &.button-dropdown > .button {
-    @include border-radius($bdr-radius);//todo
+  &.button, &.button-dropdown > .button {
+    @include border-radius($bdr-radius);
   }
-
 }
 
 //for input-ok, input-warning, input-error
@@ -71,7 +79,7 @@
 
     &.input {
       &:active, &:focus {
-        box-shadow: 0 2px 6px 0 rgba($color, 0.24);
+        box-shadow: $input-special-active-box-shadow-partial rgba($color, 0.24);
       }
     }
 
@@ -82,7 +90,7 @@
     &.icon-input {
       > .input {
         &:active, &:focus {
-          box-shadow: 0 2px 6px 0 rgba($color, 0.24);
+          box-shadow: $input-special-active-box-shadow-partial rgba($color, 0.24);
 
           ~ .icon {
             color: $color;

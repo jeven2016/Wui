@@ -1,22 +1,24 @@
-@mixin make-navbar($padding,$bd-radius:$default-border-radius) {
-  @include make-block;
-  padding: $padding;
-  @include border-radius($bd-radius);
-  background-color: $navbar-background-color;
-  margin-bottom: $navbar-margin-bottom;
-  @content
+@mixin make-navbar($bd-radius:$default-border-radius) {
+  @include make-flex {
+    width: 100%;
+    border: $navbar-border;
+    justify-content: flex-start;
+    @include border-radius($bd-radius);
+    background-color: $navbar-background-color;
+    margin-bottom: $navbar-margin-bottom;
+    @content
+  }
 }
 
 @mixin make-navbar-item($item-text-color:$text-color) {
-  text-align: center;
-  float: left;
-  vertical-align: middle;
-  cursor: pointer;
-  align-items: center;
-  //line-height: $navbar-item-line-height;
-  color: $item-text-color;
-}
-
-@mixin make-navbar-list {
-  list-style: $navbar-list-style;
+  @include make-flex {
+    text-align: center;
+    vertical-align: middle;
+    line-height: $navbar-item-line-height;
+    cursor: pointer;
+    align-items: center;
+    color: $item-text-color;
+    align-items: center;
+    font-weight: map_get($font-weight, 'normal');
+  }
 }

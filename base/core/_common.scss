@@ -20,10 +20,12 @@
 
 .pull-left {
   float: left !important;
+  margin-right: auto; //for flexbox alignment
 }
 
 .pull-right {
   float: right !important;
+  margin-left: auto; //for flexbox alignment
 }
 
 .pull-center {

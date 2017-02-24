@@ -5,6 +5,7 @@
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="../dist/wui-bundle-min.css" rel="stylesheet">
+    <script src="jquery-3.1.0.js" type="application/javascript"></script>
     <link href="fa/css/font-awesome.min.css" rel="stylesheet">
     <style type="text/css">
         .area-example {
@@ -19,6 +20,16 @@
 
 
     </style>
+
+    <script language="JavaScript">
+        $(function () {
+            $(".dropdown > .info").click(function (evt) {
+                $(this).parent().toggleClass("active");
+            });
+
+
+        });
+    </script>
 </head>
 <body>
 <div class="area-example">
@@ -165,8 +176,8 @@
     <br/>
     <br/>
     <div class="input-group block">
-        <div class="label inset button-dropdown">
-            <button class="button">
+        <div class="element inset button-dropdown">
+            <button class="button outline green">
                 Dropdown
             </button>
 
@@ -181,7 +192,20 @@
         <div class="label">
             <i class="fa fa-calculator"></i>
         </div>
-        <div class="label inset button-dropdown">
+        <div class="element inset button-dropdown">
+            <button class="button green">
+                Dropdown
+            </button>
+
+            <ul class="menu">
+                <li class="item disabled" data-value="0">Item1</li>
+                <li class="divider"></li>
+                <li class="item disabled" data-value="1">Item2</li>
+                <li class="divider"></li>
+                <li class="item disabled" data-value="2">Item4</li>
+            </ul>
+        </div>
+        <div class="element inset button-dropdown">
             <button class="button">
                 Dropdown
             </button>
@@ -194,24 +218,11 @@
                 <li class="item disabled" data-value="2">Item4</li>
             </ul>
         </div>
-        <div class="label inset button-dropdown">
-            <button class="button">
-                Dropdown
-            </button>
-
-            <ul class="menu">
-                <li class="item disabled" data-value="0">Item1</li>
-                <li class="divider"></li>
-                <li class="item disabled" data-value="1">Item2</li>
-                <li class="divider"></li>
-                <li class="item disabled" data-value="2">Item4</li>
-            </ul>
-        </div>
-        <input type="text" class="input element" placeholder="input..."/>
+        <input type="text" class="input element expanded" placeholder="input..."/>
         <div class="label">
             <i class="fa fa-calculator"></i>
         </div>
-        <div class="label inset button-dropdown">
+        <div class="element inset button-dropdown">
             <button class="button">
                 Dropdown
             </button>
@@ -231,27 +242,44 @@
         <div class="label">
             <i class="fa fa-calculator"></i>
         </div>
-        <input type="text" class="input element" placeholder="input..."/>
-        <input type="text" class="input element" placeholder="input..."/>
+        <input type="text" class="input element expanded" placeholder="input..."/>
+        <input type="text" class="input element expanded" placeholder="input..."/>
         <div class="label">
             <i class="fa fa-calculator"></i>
         </div>
     </div>
 
+
+    <br/><br/>
+    <div class="input-group block">
+        <div class="element inset dropdown">
+            <div class="info">Country</div>
+            <div class="menu">
+                <div class="item" data-value="0">China</div>
+                <div class="item" data-value="1">USA</div>
+                <a class="item" data-value="1" href="#"> Link</a>
+                <div class="item" data-value="2">Russian</div>
+            </div>
+        </div>
+        <div class="label">
+            <i class="fa fa-calculator"></i>
+        </div>
+        <input type="text" class="input element expanded" placeholder="input..."/>
+        <div class="element inset dropdown">
+            <div class="info">Country</div>
+            <div class="menu">
+                <div class="item" data-value="0">China</div>
+                <div class="item" data-value="1">USA</div>
+                <a class="item" data-value="1" href="#"> Link</a>
+                <div class="item" data-value="2">Russian</div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
-<div>
-    <input class="input"/>
-    <button class="button">button</button>
-</div>
 
-<ul class="navbar simple primary">
-    <li class="item title"><a class="link"> Title</a></li>
-    <li class="item special">
-        <input class="input"/>
-        <button class="button">button</button>
-    </li>
-</ul>
 
 <input type="number" class="input"/>
 <input type="date" class="input"/>

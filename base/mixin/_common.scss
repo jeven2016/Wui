@@ -17,13 +17,15 @@
   border-radius: $border-radius;
 }
 
+@mixin border-radius-variable($var-y, $var-x,$border-radius) {
+  border-#{$var-y}-#{$var-x}-radius: $border-radius;
+}
+
 @mixin fixed($z-Index:1000,$is-block:true, $width: 100%) {
   position: fixed;
   z-index: $z-Index;
-  border-left-width: 0;
-  border-right-width: 0;
-  border-top-width: 0;
   @include border-radius(0);
+  box-shadow: $navbar-fixed-box-shadow;
 
   @if $is-block {
     display: block;
@@ -53,6 +55,14 @@
   display: -webkit-flex;
   display: flex;
   @content;
+}
+
+@mixin make-flex-center() {
+  @include make-flex {
+    align-items: center;
+    justify-content: center;
+  }
+  @content
 }
 
 @mixin make-inline-flex() {
