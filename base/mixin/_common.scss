@@ -21,7 +21,7 @@
   border-#{$var-y}-#{$var-x}-radius: $border-radius;
 }
 
-@mixin fixed($z-Index:1000,$is-block:true, $width: 100%) {
+@mixin fixed($z-Index:100,$is-block:true, $width: 100%) {
   position: fixed;
   z-index: $z-Index;
   @include border-radius(0);
@@ -41,7 +41,7 @@
     content: '';
     width: 0;
     height: 0;
-    margin-left: 0.4rem;
+    margin-left: 0.2rem;
     vertical-align: middle;
     display: inline-block;
     border: $border;
@@ -75,6 +75,13 @@
 @mixin flex-grow($value) {
   -webkit-flex-grow: $value;
   flex-grow: $value;
+}
+
+//@$condition: format (key:'min-width', value:'xs' )
+@mixin media-query($condition) {
+  @media screen and (map-get($condition, 'key'): map-get($condition, 'value')) {
+    @content
+  }
 }
 
 //=================================================================================

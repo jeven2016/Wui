@@ -1,7 +1,6 @@
-
 // Generate grid columns with media query definition
 @mixin generate-media-grid-columns($colCount,$type,$condition) {
-  @media screen and (map-get($condition, 'key'): map-get($condition, 'value')) {
+  @include media-query($condition) {
     @include generate-grid-columns($colCount, $type, false);
   }
 }

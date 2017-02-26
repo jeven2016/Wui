@@ -472,6 +472,7 @@ time, mark, audio, video {
 
 .pull-left {
   float: left !important;
+  margin-right: auto;
 }
 
 .pull-right {
@@ -1101,7 +1102,7 @@ h6 {
   content: '';
   width: 0;
   height: 0;
-  margin-left: 0.4rem;
+  margin-left: 0.2rem;
   vertical-align: middle;
   display: inline-block;
   border: 4px solid transparent;
@@ -1830,10 +1831,29 @@ h6 {
   background-color: #f5f5f5;
   margin-bottom: 0;
 }
-.navbar > .item {
+.navbar > .title {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #333333;
+  padding: 0 0.5rem;
+  font-weight: 500;
+}
+.navbar > .list {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+}
+.navbar > .list > .item {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
   text-align: center;
   vertical-align: middle;
   line-height: 3rem;
@@ -1843,29 +1863,49 @@ h6 {
   align-items: center;
   font-weight: 500;
 }
-.navbar > .item.with-bg.active {
+.navbar > .list > .item.with-bg.active {
   background-color: gainsboro;
 }
-.navbar > .item.with-bg:focus, .navbar > .item.with-bg:hover {
+.navbar > .list > .item.with-bg:focus, .navbar > .list > .item.with-bg:hover {
   background-color: #e8e8e8;
 }
-.navbar > .item.title {
-  font-size: 1.5rem;
-  color: #333333;
-}
-.navbar > .item > .link {
-  padding: 0 0.5rem;
+.navbar > .list > .item > .link {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
   position: relative;
   display: block;
   color: inherit;
 }
-.navbar > .item:not(.title).active, .navbar > .item:not(.title):focus, .navbar > .item:not(.title):hover {
+.navbar > .list > .item.switch {
+  display: none;
+  right: 1rem;
+  align-self: flex-end;
+}
+.navbar > .list > .item.switch > .button {
+  /* @include border-radius(0);
+   font-size: 1.5rem;
+   background-color: $light-gray;
+   color: darken($gray, 10%);
+   padding: 0.25rem;
+   margin: 0.25rem 0.25rem;*/
+}
+@media screen and (max-width: 767px) {
+  .navbar > .list > .item:not(.switch) {
+    display: none;
+  }
+  .navbar > .list > .item.switch {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+}
+.navbar > .list > .item.active, .navbar > .list > .item:focus, .navbar > .list > .item:hover {
   color: #333333;
 }
-.navbar > .item.special {
+.navbar > .list > .item.special {
   padding: 0.5rem;
 }
-.navbar > .item.special .dropdown .item {
+.navbar > .list > .item.special .dropdown .item {
   color: #333333;
 }
 .navbar.fixed {
@@ -1888,25 +1928,22 @@ h6 {
 .navbar.primary {
   background-color: #3d8bea;
 }
-.navbar.primary > .item {
+.navbar.primary > .list > .item, .navbar.primary > .title {
   color: #e6e6e6;
 }
-.navbar.primary > .item.title {
+.navbar.primary > .list > .item.active, .navbar.primary > .list > .item:hover, .navbar.primary > .title.active, .navbar.primary > .title:hover {
   color: #fff;
 }
-.navbar.primary > .item:not(.title).active, .navbar.primary > .item:not(.title):hover {
-  color: #fff;
-}
-.navbar.primary > .item.with-bg.active {
+.navbar.primary > .list > .item.with-bg.active, .navbar.primary > .title.with-bg.active {
   background-color: #6ba7ef;
 }
-.navbar.primary > .item.with-bg:focus, .navbar.primary > .item.with-bg:hover {
+.navbar.primary > .list > .item.with-bg:focus, .navbar.primary > .list > .item.with-bg:hover, .navbar.primary > .title.with-bg:focus, .navbar.primary > .title.with-bg:hover {
   background-color: #5499ec;
 }
 .navbar.simple {
   border-width: 0;
 }
-.navbar.simple > .item.active:not(.title):not(.special) > .link:after, .navbar.simple > .item:focus:not(.title):not(.special) > .link:after, .navbar.simple > .item:hover:not(.title):not(.special) > .link:after {
+.navbar.simple > .list > .item.active:not(.special) > .link:after, .navbar.simple > .list > .item:focus:not(.special) > .link:after, .navbar.simple > .list > .item:hover:not(.special) > .link:after {
   position: absolute;
   display: block;
   left: 0;
@@ -1920,34 +1957,20 @@ h6 {
   background-color: #3d8bea;
   border-bottom: 0;
 }
+.navbar.simple.primary > .title {
+  color: #e6e6e6;
+}
 .navbar.simple.primary .item {
   color: #e6e6e6;
   border-bottom-width: 0;
 }
-.navbar.simple.primary .item.title {
+.navbar.simple.primary .item.active, .navbar.simple.primary .item:focus, .navbar.simple.primary .item:hover {
   color: #fff;
 }
-.navbar.simple.primary .item:not(.title).active, .navbar.simple.primary .item:not(.title):focus, .navbar.simple.primary .item:not(.title):hover {
-  color: #fff;
-}
-.navbar.simple.primary .item.active:not(.title):not(.special) > .link:after, .navbar.simple.primary .item:focus:not(.title):not(.special) > .link:after, .navbar.simple.primary .item:hover:not(.title):not(.special) > .link:after {
+.navbar.simple.primary .item.active:not(.special) > .link:after, .navbar.simple.primary .item:focus:not(.special) > .link:after, .navbar.simple.primary .item:hover:not(.special) > .link:after {
   position: absolute;
   display: block;
   background-color: #4BB84F;
-}
-.navbar.simple.large > .item {
-  font-size: 1.5rem;
-  line-height: 5rem;
-}
-.navbar.simple.large > .item.title {
-  font-size: 3rem;
-}
-.navbar.simple.small > .item {
-  font-size: 0.75rem;
-  line-height: 2rem;
-}
-.navbar.simple.small > .item.title {
-  font-size: 1rem;
 }
 
 .menu {

@@ -1,41 +1,75 @@
 .navbar {
   @include make-navbar;
 
-  > .item {
-    @include make-navbar-item($navbar-inactive-text-color);
-
-    &.with-bg {
-      &.active {
-        background-color: darken($navbar-background-color, 10%);
-      }
-      &:focus, &:hover {
-        background-color: darken($navbar-background-color, 5%);
-      }
-    }
-
-    &.title {
+  > .title {
+    @include make-flex-center {
       font-size: $navbar-title-font-size;
       color: $navbar-title-color;
+      padding: $navbar-title-padding;
+      font-weight: map_get($font-weight, 'normal');
+    }
+  }
+
+  > .list {
+    @include make-flex {
+      align-items: center;
+      flex: 1 1 auto;
     }
 
-    > .link {
-      padding: $navbar-link-padding;
-      @include make-block;
-      color: $navbar-link-color;
-    }
+    > .item {
+      @include make-navbar-item($navbar-inactive-text-color);
 
-    &:not(.title) {
+      &.with-bg {
+        &.active {
+          background-color: darken($navbar-background-color, 10%);
+        }
+        &:focus, &:hover {
+          background-color: darken($navbar-background-color, 5%);
+        }
+      }
+
+      > .link {
+        padding-left: $navbar-link-padding;
+        padding-right: $navbar-link-padding;
+        @include make-block;
+        color: $navbar-link-color;
+      }
+
+      &.switch {
+        display: none;
+        right: 1rem;
+        align-self: flex-end;
+
+        > .button {
+          /* @include border-radius(0);
+           font-size: 1.5rem;
+           background-color: $light-gray;
+           color: darken($gray, 10%);
+           padding: 0.25rem;
+           margin: 0.25rem 0.25rem;*/
+        }
+      }
+
+      @include media-query((key:'max-width', value: map-get($bs-layout, 'xs'))) {
+        &:not(.switch) {
+          display: none;
+        }
+        &.switch {
+          @include make-flex;
+        }
+      }
+
       &.active, &:focus, &:hover {
         color: $navbar-item-active-color;
       }
-    }
 
-    &.special {
-      padding: $navbar-item-special-padding-left;
+      &.special {
+        padding: $navbar-item-special-padding-left;
 
-      .dropdown {
-        .item {
-          color: $btn-default-text-color;
+        .dropdown {
+          .item {
+            color: $btn-default-text-color;
+          }
         }
       }
     }
@@ -62,17 +96,15 @@
   &.primary {
     background-color: $navbar-background-color-primary;
 
-    > .item {
+    >.title{
+      color: $navbar-primary-item-color;
+    }
+
+    > .list > .item {
       color: $navbar-primary-item-color;
 
-      &.title {
-        color: $navbar-primary-title-color;
-      }
-
-      &:not(.title) {
-        &.active, &:hover {
-          color: $navbar-primary-active-color;
-        }
+      &.active, &:hover {
+        color: $navbar-primary-active-color;
       }
 
       &.with-bg {
@@ -90,10 +122,11 @@
   &.simple {
     border-width: 0;
 
-    > .item {
+    > .list > .item {
       &.active, &:focus, &:hover {
-        &:not(.title):not(.special) {
+        &:not(.special) {
           > .link {
+            //create the bottom border
             &:after {
               @include make-block(absolute) {
                 left: 0;
@@ -113,22 +146,20 @@
       background-color: $navbar-background-color-primary;
       border-bottom: $navbar-simple-primary-border-botom;
 
+      > .title {
+        color: $navbar-simple-primary-item-color;
+      }
+
       .item {
         color: $navbar-simple-primary-item-color;
         border-bottom-width: $navbar-simple-primary-item-border-bottom-width;
 
-        &.title {
-          color: $navbar-simple-primary-title-color;
-        }
-
-        &:not(.title) {
-          &.active, &:focus, &:hover {
-            color: $navbar-simple-primary-item-active-color;
-          }
+        &.active, &:focus, &:hover {
+          color: $navbar-simple-primary-item-active-color;
         }
 
         &.active, &:focus, &:hover {
-          &:not(.title):not(.special) {
+          &:not(.special) {
             > .link {
               &:after {
                 @include make-block(absolute) {
@@ -142,29 +173,6 @@
 
     }
 
-    &.large {
-      > .item {
-        font-size: 1.5rem;
-        line-height: 5rem;
-
-        &.title {
-          font-size: 3rem;
-        }
-      }
-    }
-
-    &.small {
-      > .item {
-        font-size: 0.75rem;
-        line-height: 2rem;
-
-        &.title {
-          font-size: 1rem;
-        }
-      }
-    }
-
   }
-
 
 }

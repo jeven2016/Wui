@@ -201,25 +201,21 @@ $input-group-element-background-color: transparent;
 
 //for Navbar
 $navbar-border-radius: $default-border-radius;
+$navbar-title-padding:0 0.5rem;
 $navbar-background-color: #f5f5f5;
 $navbar-fixed-box-shadow: $default-box-shadow;
-
-$navbar-padding: 0;
 $navbar-border: 1px solid #ccc;
 $navbar-margin-bottom: 0;
 $navbar-background-color-primary: #3d8bea;
-$navbar-list-style: none;
 $navbar-inactive-text-color: lighten($text-color, 40%);
 $navbar-title-font-size: 1.5rem;
 $navbar-title-color: $text-color;
-$navbar-link-padding: 0 .5rem;
+$navbar-link-padding: .5rem;
 $navbar-link-color: inherit;
 $navbar-item-line-height: 3rem;
 $navbar-item-active-color: $text-color;
-$navbar-item-min-width: 3rem;
 $navbar-item-special-padding-left: 0.5rem;
 $navbar-primary-item-color: darken($white, 10%);
-$navbar-primary-title-color: $white;
 $navbar-primary-active-color: $white;
 $navbar-simple-item-link-border-height: 3px;
 $navbar-simple-item-link-border-width: 100%;
@@ -227,7 +223,6 @@ $navbar-simple-item-link-background-colorh: $blue;
 $navbar-simple-primary-border-botom: 0;
 $navbar-simple-primary-item-color: darken($white, 10%);
 $navbar-simple-primary-item-border-bottom-width: 0;
-$navbar-simple-primary-title-color: $white;
 $navbar-simple-primary-item-active-color: $white;
 $navbar-simple-primary-item-link-active-background-color: $green;
 
