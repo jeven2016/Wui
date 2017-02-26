@@ -24,11 +24,7 @@ body {
 }
 
 a {
-  color: $link-color;
+  color: inherit;
   text-decoration: $link-text-decoration;
   cursor: $link-cursor;
-
-  &:active, &.active, &:hover, &:focus {
-    color: $link-active-color;
-  }
 }

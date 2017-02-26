@@ -26,6 +26,9 @@
                 $(this).parent().toggleClass("active");
             });
 
+            $(".switch.button").click(function () {
+                $(this).parent(".navbar").toggleClass("expand")
+            })
 
         });
     </script>
@@ -51,6 +54,30 @@
                             <div class="item" data-value="1">USA</div>
                             <a class="item" data-value="1" href="#"> Link</a>
                         </div>
+                    </div>
+                </li>
+                <li class="item special">
+                    <div class="dropdown">
+                        <div class="info">Country</div>
+                        <div class="menu">
+                            <div class="item" data-value="0">China</div>
+                            <div class="item" data-value="1">USA</div>
+                            <a class="item" data-value="1" href="#"> Link</a>
+                            <div class="item" data-value="2">Russian</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="item">
+                    <div class="button-dropdown">
+                        <button class="button primary">Button</button>
+                        <ul class="menu">
+                            <li class="divider"></li>
+                            <li class="item" data-value="0">Item1</li>
+                            <li class="divider"></li>
+                            <li class="item" data-value="1">Item2</li>
+                            <li class="divider"></li>
+                            <li class="item" data-value="2">Item4</li>
+                        </ul>
                     </div>
                 </li>
             </ul>
@@ -171,24 +198,23 @@
         </ul>
         <br/>
 
-        <ul class="navbar ">
-            <li class="title"><a class="link"> Title</a></li>
-            <ul class="list">
-                <li class="item"><a class="link">Item</a></li>
-                <li class="item"><a class="link">Item</a></li>
-                <li class="item"><a class="link">Item</a></li>
-                <li class="item">
+        <div class="navbar ">
+            <div class="title"><a class="link"> Title</a></div>
+            <button class="button switch pull-right"><i class="fa fa-align-justify"></i></button>
+            <div class="list">
+                <div class="item"><a class="link">Item</a></div>
+                <div class="item"><a class="link">Item</a></div>
+                <div class="item"><a class="link">Item</a></div>
+                <div class="item">
                     <button class="button">Button</button>
-                </li>
-                <li class="item special pull-right">
+                </div>
+                <div class="item special pull-right">
                     <button class="button outline red">Button</button>
                     <button class="button  green">Button</button>
-                </li>
-                <li class="item switch pull-right">
-                    <button class="button"><i class="fa fa-list"></i></button>
-                </li>
-            </ul>
-        </ul>
+                </div>
+            </div>
+
+        </div>
         <br/>
 
 

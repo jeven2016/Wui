@@ -12,9 +12,6 @@
 
 @mixin make-navbar-item($item-text-color:$text-color) {
   @include make-flex {
-    position: relative;
-    text-align: center;
-    vertical-align: middle;
     line-height: $navbar-item-line-height;
     cursor: pointer;
     align-items: center;

@@ -2,8 +2,9 @@
   @include make-navbar;
 
   > .title {
-    @include make-flex-center {
+    @include make-flex {
       font-size: $navbar-title-font-size;
+      line-height: $navbar-item-line-height;
       color: $navbar-title-color;
       padding: $navbar-title-padding;
       font-weight: map_get($font-weight, 'normal');
@@ -38,7 +39,6 @@
       &.switch {
         display: none;
         right: 1rem;
-        align-self: flex-end;
 
         > .button {
           /* @include border-radius(0);
@@ -47,15 +47,6 @@
            color: darken($gray, 10%);
            padding: 0.25rem;
            margin: 0.25rem 0.25rem;*/
-        }
-      }
-
-      @include media-query((key:'max-width', value: map-get($bs-layout, 'xs'))) {
-        &:not(.switch) {
-          display: none;
-        }
-        &.switch {
-          @include make-flex;
         }
       }
 
@@ -72,6 +63,18 @@
           }
         }
       }
+    }
+  }
+
+  &.expand {
+    display: block;
+
+    > .title, > .switch {
+      display: inline-block;
+    }
+
+    > .list {
+      display: block;
     }
   }
 
@@ -96,8 +99,8 @@
   &.primary {
     background-color: $navbar-background-color-primary;
 
-    >.title{
-      color: $navbar-primary-item-color;
+    > .title {
+      color: $navbar-primary-active-color;
     }
 
     > .list > .item {
@@ -147,10 +150,10 @@
       border-bottom: $navbar-simple-primary-border-botom;
 
       > .title {
-        color: $navbar-simple-primary-item-color;
+        color: $navbar-primary-active-color;
       }
 
-      .item {
+      > .list > .item {
         color: $navbar-simple-primary-item-color;
         border-bottom-width: $navbar-simple-primary-item-border-bottom-width;
 
@@ -175,4 +178,19 @@
 
   }
 
+}
+
+@include media-query((key:'min-width', value: map-get($bs-layout, 'xs'))) {
+  .navbar > .switch {
+    display: none;
+  }
+}
+
+@include media-query((key:'max-width', value: map-get($bs-layout, 'xs'))) {
+  .navbar > .list {
+    display: none;
+  }
+  .navbar > .switch {
+    @include make-flex;
+  }
 }

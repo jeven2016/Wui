@@ -802,12 +802,9 @@ body {
 }
 
 a {
-  color: #333333;
+  color: inherit;
   text-decoration: none;
   cursor: pointer;
-}
-a:active, a.active, a:hover, a:focus {
-  color: #277ed0;
 }
 
 blockquote, .blockquote {
@@ -1149,7 +1146,7 @@ h6 {
   display: inline-block;
   cursor: pointer;
   outline: none;
-  line-height: 1.25em;
+  line-height: 1.25rem;
   vertical-align: middle;
   text-align: center;
   text-decoration: none;
@@ -1839,9 +1836,8 @@ h6 {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 1.5rem;
+  line-height: 3rem;
   color: #333333;
   padding: 0 0.5rem;
   font-weight: 500;
@@ -1857,9 +1853,6 @@ h6 {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  position: relative;
-  text-align: center;
-  vertical-align: middle;
   line-height: 3rem;
   cursor: pointer;
   align-items: center;
@@ -1883,7 +1876,6 @@ h6 {
 .navbar > .list > .item.switch {
   display: none;
   right: 1rem;
-  align-self: flex-end;
 }
 .navbar > .list > .item.switch > .button {
   /* @include border-radius(0);
@@ -1893,16 +1885,6 @@ h6 {
    padding: 0.25rem;
    margin: 0.25rem 0.25rem;*/
 }
-@media screen and (max-width: 767px) {
-  .navbar > .list > .item:not(.switch) {
-    display: none;
-  }
-  .navbar > .list > .item.switch {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-  }
-}
 .navbar > .list > .item.active, .navbar > .list > .item:focus, .navbar > .list > .item:hover {
   color: #333333;
 }
@@ -1911,6 +1893,15 @@ h6 {
 }
 .navbar > .list > .item.special .dropdown .item {
   color: #333333;
+}
+.navbar.expand {
+  display: block;
+}
+.navbar.expand > .title, .navbar.expand > .switch {
+  display: inline-block;
+}
+.navbar.expand > .list {
+  display: block;
 }
 .navbar.fixed {
   position: fixed;
@@ -1932,16 +1923,19 @@ h6 {
 .navbar.primary {
   background-color: #3d8bea;
 }
-.navbar.primary > .list > .item, .navbar.primary > .title {
-  color: #e6e6e6;
-}
-.navbar.primary > .list > .item.active, .navbar.primary > .list > .item:hover, .navbar.primary > .title.active, .navbar.primary > .title:hover {
+.navbar.primary > .title {
   color: #fff;
 }
-.navbar.primary > .list > .item.with-bg.active, .navbar.primary > .title.with-bg.active {
+.navbar.primary > .list > .item {
+  color: #e6e6e6;
+}
+.navbar.primary > .list > .item.active, .navbar.primary > .list > .item:hover {
+  color: #fff;
+}
+.navbar.primary > .list > .item.with-bg.active {
   background-color: #6ba7ef;
 }
-.navbar.primary > .list > .item.with-bg:focus, .navbar.primary > .list > .item.with-bg:hover, .navbar.primary > .title.with-bg:focus, .navbar.primary > .title.with-bg:hover {
+.navbar.primary > .list > .item.with-bg:focus, .navbar.primary > .list > .item.with-bg:hover {
   background-color: #5499ec;
 }
 .navbar.simple {
@@ -1962,21 +1956,37 @@ h6 {
   border-bottom: 0;
 }
 .navbar.simple.primary > .title {
-  color: #e6e6e6;
+  color: #fff;
 }
-.navbar.simple.primary .item {
+.navbar.simple.primary > .list > .item {
   color: #e6e6e6;
   border-bottom-width: 0;
 }
-.navbar.simple.primary .item.active, .navbar.simple.primary .item:focus, .navbar.simple.primary .item:hover {
+.navbar.simple.primary > .list > .item.active, .navbar.simple.primary > .list > .item:focus, .navbar.simple.primary > .list > .item:hover {
   color: #fff;
 }
-.navbar.simple.primary .item.active:not(.special) > .link:after, .navbar.simple.primary .item:focus:not(.special) > .link:after, .navbar.simple.primary .item:hover:not(.special) > .link:after {
+.navbar.simple.primary > .list > .item.active:not(.special) > .link:after, .navbar.simple.primary > .list > .item:focus:not(.special) > .link:after, .navbar.simple.primary > .list > .item:hover:not(.special) > .link:after {
   position: absolute;
   display: block;
   background-color: #4BB84F;
 }
 
+@media screen and (min-width: 767px) {
+  .navbar > .switch {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .navbar > .list {
+    display: none;
+  }
+
+  .navbar > .switch {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+  }
+}
 .menu {
   outline: none;
   border: 1px solid #ccc;
