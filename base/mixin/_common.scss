@@ -36,16 +36,34 @@
   }
 }
 
-@mixin make-arrow($border, $bdr-color:$border-default-color) {
-  &:after {
+//the $arrow-direction could be : up down left right;
+@mixin make-arrow($border,
+              $bdr-color:$border-default-color,
+              $margin: 0 0 0 0.2rem,
+              $pseudo-class-name: 'after',
+              $direction: map_get($arrow-direction, 'bottom')) {
+  &:#{$pseudo-class-name} {
     content: '';
     width: 0;
     height: 0;
-    margin-left: 0.2rem;
+    margin: $margin;
     vertical-align: middle;
     display: inline-block;
     border: $border;
-    border-top-color: $bdr-color;
+
+    @if ($direction == map_get($arrow-direction, 'bottom')) {
+      border-top-color: $bdr-color;
+    }
+    @if ($direction == map_get($arrow-direction, 'up')) {
+      border-bottom-color: $bdr-color;
+    }
+    @if ($direction == map_get($arrow-direction, 'left')) {
+      border-right-color: $bdr-color;
+    }
+    @if ($direction == map_get($arrow-direction, 'right')) {
+      border-left-color: $bdr-color;
+    }
+
     @content
   }
 }

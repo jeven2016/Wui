@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="fa/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../dist/wui-bundle-min.css" rel="stylesheet">
+    <script src="jquery-3.1.0.js" type="application/javascript"></script>
+    <style type="text/css">
+        .area-example {
+            margin: 10px auto;
+            padding: 20px;
+            overflow: auto;
+        }
+
+    </style>
+
+    <script language="JavaScript">
+        $(function () {
+            $(".card .title  a").click(function () {
+                var card = $(this).parents(".card");
+                card.toggleClass("active");
+
+            });
+
+        })
+    </script>
+</head>
+<body>
+
+<div class="area-example">
+    <div class="accordion">
+        <div class="card">
+            <div class="card-header gray">
+                <span class="title">
+                    <a href="#"> Header</a>
+                </span>
+            </div>
+            <div class="divider"></div>
+            <div class="card-body">
+                <button class="button">Button</button>
+                <button class="button">Button</button>
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header gray">
+                <span class="title">
+                    <a href="#"> Header</a>
+                </span>
+            </div>
+            <div class="divider"></div>
+            <div class="card-body">
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header gray">
+                <span class="title">
+                    <a href="#"> Header</a>
+                </span>
+            </div>
+            <div class="divider"></div>
+            <div class="card-body">
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+                <p>create an accordion</p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

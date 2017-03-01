@@ -917,7 +917,6 @@ h6 {
 }
 .icon-input.small > .icon {
   font-size: 0.75rem;
-  line-height: 0.75rem;
   width: 0.75rem;
   top: 0.5625rem;
 }
@@ -1103,7 +1102,7 @@ h6 {
   content: '';
   width: 0;
   height: 0;
-  margin-left: 0.2rem;
+  margin: 0 0 0 0.2rem;
   vertical-align: middle;
   display: inline-block;
   border: 4px solid transparent;
@@ -1364,7 +1363,7 @@ h6 {
   border-radius: 0.25rem;
 }
 .card > .card-header {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
 }
 .card > .card-header > .title {
@@ -1380,13 +1379,13 @@ h6 {
 }
 .card > .card-row {
   display: block;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 .card > .card-body {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
 .card > .card-footer {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 0 0 0.25rem 0.25rem;
 }
 .card > .card-img {
@@ -1406,7 +1405,7 @@ h6 {
 }
 .card > .card-img > .overlay-title {
   display: block;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   position: absolute;
   color: #fff;
   bottom: 0;
@@ -2501,6 +2500,46 @@ h6 {
 .slidershow > .indicators .line {
   height: 0.1875rem;
   width: 1.5rem;
+}
+
+.accordion {
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  flex-flow: column;
+}
+.accordion > .card > .card-header > .title:before {
+  content: '';
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  display: inline-block;
+  border: 4px solid transparent;
+  border-left-color: #acacac;
+}
+.accordion > .card > .card-body, .accordion > .card > .card-footer, .accordion > .card > .card-row, .accordion > .card > .card-img, .accordion > .card > .card-header + .divider {
+  overflow: hidden;
+}
+.accordion > .card > .card-body, .accordion > .card > .card-footer, .accordion > .card > .card-row, .accordion > .card > .card-img {
+  transform: translateY(0px);
+  transform-origin: top;
+  transition: transform 2s ease;
+}
+.accordion > .card:not(:first-child) {
+  margin-left: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.accordion > .card:not(:last-child) {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-width: 0;
+}
+.accordion > .card.active > .card-body, .accordion > .card.active > .card-footer, .accordion > .card.active > .card-row, .accordion > .card.active > .card-img, .accordion > .card.active > .card-header + .divider {
+  display: block;
+}
+.accordion > .card.active > .card-body, .accordion > .card.active > .card-footer, .accordion > .card.active > .card-row {
+  transform: translateY(200px);
 }
 
 /**
