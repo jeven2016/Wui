@@ -3,20 +3,28 @@
     flex-flow: column;
   }
 
+  .accordion-content {
+    display: none;
+    position: relative;
+
+    &.transition {
+      position: relative;
+      height: 0;
+      overflow: hidden;
+      transition: all .6s ease;
+    }
+
+
+    &.show{
+      display: block;
+    }
+  }
+
+
   > .card {
 
     > .card-header > .title {
       @include make-arrow($default-arrow-border, $default-arrow-active-border, null, 'before', map_get($arrow-direction, 'right'));
-    }
-
-    > .card-body, > .card-footer, > .card-row, > .card-img, > .card-header + .divider {
-      overflow: hidden;
-    }
-
-    > .card-body, > .card-footer, > .card-row, > .card-img {
-      transform: translateY(0px);
-      transform-origin: top;
-      transition: transform 2s ease;
     }
 
     &:not(:first-child) {
@@ -29,16 +37,6 @@
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       border-bottom-width: 0;
-    }
-
-    &.active {
-      > .card-body, > .card-footer, > .card-row, > .card-img, > .card-header + .divider {
-        display: block;
-      }
-
-      > .card-body, > .card-footer, > .card-row {
-        transform: translateY(200px);
-      }
     }
 
   }

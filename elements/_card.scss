@@ -4,11 +4,11 @@
   border: $card-border;
   @include border-radius($card-border-radius);
 
-  & > .card-header {
+  .card-header {
     padding: $card-header-padding;
     @include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
 
-    & > .title {
+    .title {
       font-weight: map_get($font-weight, 'normal');
     }
 
@@ -17,28 +17,28 @@
     }
   }
 
-  > .menu {
+  .menu {
     width: 100%;
     display: block;
     border-width: 0;
   }
 
-  & > .card-row {
+  .card-row {
     display: block;
     padding: $card-row-padding;
   }
 
-  & > .card-body {
+  .card-body {
     padding: $card-body-padding;
   }
 
-  & > .card-footer {
+  .card-footer {
     padding: $card-footer-padding;
     //overflow: auto;
     @include full-border-radius(0, 0, $card-border-radius, $card-border-radius);
   }
 
-  & > .card-img {
+  .card-img {
     position: relative;
 
     > .img {
@@ -76,7 +76,7 @@
     width: 100%;
     display: block;
 
-    > .card-header, > .card-body, > .card-footer, > .card-row {
+    .card-header, .card-body, .card-footer, .card-row {
       display: block;
     }
   }
