@@ -87,6 +87,15 @@ $link-cursor: pointer;
 
 //font color
 
+//Accordion
+$ad-max-height: 0;
+$ad-active-max-height: 60rem;
+$ad-overflow: hidden;
+$ad-transition: max-height .7s ease-in-out;
+$ad-card-card-header-active-title-transform:rotate(90deg);
+$ad-card-card-header-active-title-transition:transform .7s ease-in-out;
+
+
 //for blockquota
 $bq-margin: 0 0 0.5rem 0;
 $bq-default-padding: 0.5rem 1rem;

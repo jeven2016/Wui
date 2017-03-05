@@ -50,6 +50,7 @@
     vertical-align: middle;
     display: inline-block;
     border: $border;
+    transition: transform .4s ease-in-out;
 
     @if ($direction == map_get($arrow-direction, 'bottom')) {
       border-top-color: $bdr-color;

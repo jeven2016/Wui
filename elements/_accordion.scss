@@ -3,28 +3,41 @@
     flex-flow: column;
   }
 
-  .accordion-content {
-    display: none;
-    position: relative;
+  &.block {
+    @include make-flex {
+      width: 100%;
 
-    &.transition {
-      position: relative;
-      height: 0;
-      overflow: hidden;
-      transition: all .6s ease;
-    }
-
-
-    &.show{
-      display: block;
+      > .card {
+        width: 100%;
+        display: block;
+      }
     }
   }
 
+  .accordion-content {
+    max-height: $ad-max-height;
+    overflow: $ad-overflow;
+    transition: $ad-transition;
+
+    &.active {
+      display: block;
+      max-height: $ad-active-max-height;
+    }
+  }
 
   > .card {
 
-    > .card-header > .title {
-      @include make-arrow($default-arrow-border, $default-arrow-active-border, null, 'before', map_get($arrow-direction, 'right'));
+    .card-header {
+      > .title {
+        @include make-arrow($default-arrow-border, $default-arrow-active-border, null, 'before', map_get($arrow-direction, 'right'));
+      }
+
+      &.active {
+        > .title:before {
+          transform: $ad-card-card-header-active-title-transform;
+          transition: $ad-card-card-header-active-title-transition;
+        }
+      }
     }
 
     &:not(:first-child) {

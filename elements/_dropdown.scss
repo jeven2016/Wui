@@ -35,6 +35,8 @@
     @include dp-menu {
       width: calc(100% + 2px);
       @include full-border-radius(0, 0, $dp-border-radius, $dp-border-radius);
+
+      transition: display .5s ease;
     }
   }
 

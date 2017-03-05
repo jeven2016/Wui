@@ -1,9 +1,6 @@
 .tab {
-  @include make-flex {
-    width:100%;
-    flex-direction: column;
-    margin-bottom: $tab-margin-bottom;
-  }
+  @extend .clear-fix;
+  margin-bottom: $tab-margin-bottom;
 
   > .menu {
     @include make-block;

@@ -4,26 +4,30 @@
   border: $bd-style;
   list-style: none;
   background-color: $bg-color;
-  @extend .clear-fix;
   @content;
 }
 
 @mixin make-menu-item() {
-  @include make-block;
-  padding: $menu-item-padding;
-  margin: 0;
-  text-align: left;
-  cursor: pointer;
-  border-width: 0;
-  align-items: center;
-  overflow: hidden;
-  min-width: $menu-item-min-width;
-  white-space: nowrap;
+  @include make-flex {
+    line-height: 1.25rem;
+    padding: $menu-item-padding;
+    margin: 0;
+    text-align: left;
+    cursor: pointer;
+    border-width: 0;
+    align-items: center;
+    min-width: 10rem;
+    white-space: nowrap;
 
-  @content;
+    @content;
+  }
 
-  &:focus, &:hover, &.active {
+  &:hover:not(.special):not(.disabled) {
     background-color: $menu-item-background-color;
+  }
+
+  &.active:not(.special) {
+    background-color: darken($menu-item-background-color, 5%);
   }
 
   @include add-disabled-conf(false) {

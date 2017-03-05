@@ -494,7 +494,7 @@ time, mark, audio, video {
   border-radius: 0 !important;
 }
 
-.clear-fix::after, .dropdown.simple .menu::after, .button-dropdown .menu::after, .dropdown > .menu::after, .button > .icon-label::after, .row::after, .dialog > .content > .header::after, .menu::after, .tab::after {
+.clear-fix::after, .button > .icon-label::after, .row::after, .dialog > .content > .header::after {
   content: '';
   display: table;
   clear: both;
@@ -1091,6 +1091,7 @@ h6 {
   min-width: 10rem;
   width: calc(100% + 2px);
   border-radius: 0 0 0.25rem 0.25rem;
+  transition: display .5s ease;
 }
 .dropdown > .menu.active {
   display: block;
@@ -1106,6 +1107,7 @@ h6 {
   vertical-align: middle;
   display: inline-block;
   border: 4px solid transparent;
+  transition: transform .4s ease-in-out;
   border-top-color: #acacac;
 }
 .dropdown.active {
@@ -1991,13 +1993,47 @@ h6 {
   border: 1px solid #ccc;
   list-style: none;
   background-color: #fff;
-  position: relative;
-  display: inline-block;
   border-radius: 0.25rem;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.menu.simple {
+  border-width: 0;
+}
+.menu.simple > .divider {
+  display: none;
+}
+.menu.float {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 .menu.float > .item {
-  display: inline-block;
-  float: left;
+  flex: 0 0 auto;
+  min-width: unset;
+  align-self: center;
+  align-items: stretch;
+}
+.menu.float > .item.right {
+  margin-left: auto !important;
+  flex-grow: 1;
+  text-align: right;
+  justify-content: flex-end;
+}
+.menu.float > .item.left {
+  margin-right: auto !important;
+  flex-grow: 1;
+}
+.menu.float > .divider {
+  display: none;
+}
+.menu.float > .divider + .item {
+  border-left: 1px solid #ccc;
 }
 .menu.inverted > .item {
   background-color: #000;
@@ -2010,24 +2046,32 @@ h6 {
   background-color: rgba(0, 0, 0, 0.8);
 }
 .menu > .item {
-  position: relative;
-  display: block;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  line-height: 1.25rem;
   padding: 0.5rem 1rem;
   margin: 0;
   text-align: left;
   cursor: pointer;
   border-width: 0;
   align-items: center;
-  overflow: hidden;
-  min-width: 4rem;
+  min-width: 10rem;
   white-space: nowrap;
 }
-.menu > .item:focus, .menu > .item:hover, .menu > .item.active {
+.menu > .item:hover:not(.special):not(.disabled) {
   background-color: #eee;
+}
+.menu > .item.active:not(.special) {
+  background-color: #e1e1e1;
 }
 .menu > .item:disabled, .menu > .item.disabled {
   color: #333333;
   background-color: transparent;
+}
+.menu > .item.special {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .menu.block {
   width: 100%;
@@ -2045,6 +2089,11 @@ h6 {
 }
 
 .tab {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
   margin-bottom: 0.5rem;
 }
 .tab > .menu {
@@ -2508,27 +2557,38 @@ h6 {
   display: inline-flex;
   flex-flow: column;
 }
-.accordion .accordion-content {
-  display: none;
-  position: relative;
+.accordion.block {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
 }
-.accordion .accordion-content.transition {
-  position: relative;
-  height: 0;
-  overflow: hidden;
-  transition: all .6s ease;
-}
-.accordion .accordion-content.show {
+.accordion.block > .card {
+  width: 100%;
   display: block;
 }
-.accordion > .card > .card-header > .title:before {
+.accordion .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.7s ease-in-out;
+}
+.accordion .accordion-content.active {
+  display: block;
+  max-height: 60rem;
+}
+.accordion > .card .card-header > .title:before {
   content: '';
   width: 0;
   height: 0;
   vertical-align: middle;
   display: inline-block;
   border: 4px solid transparent;
+  transition: transform .4s ease-in-out;
   border-left-color: #acacac;
+}
+.accordion > .card .card-header.active > .title:before {
+  transform: rotate(90deg);
+  transition: transform 0.7s ease-in-out;
 }
 .accordion > .card:not(:first-child) {
   margin-left: 0;

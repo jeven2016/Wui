@@ -1,13 +1,56 @@
 .menu {
   @include make-menu($menu-border, $white) {
-    @include make-inline-block;
     @include border-radius($menu-border-radius);
+    @include make-inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  &.arrow {
+    > .item, .menu > .item {
+      //arrow
+    }
+  }
+
+  &.simple {
+    border-width: 0;
+
+    > .divider {
+      display: none;
+    }
   }
 
   &.float {
+    @include make-flex {
+      flex-direction: row;
+      width: 100%;
+    }
+
     > .item {
-      display: inline-block;
-      float: left;
+      flex: 0 0 auto;
+      min-width: unset;
+      align-self: center;
+      align-items: stretch;
+
+      &.right {
+        margin-left: auto !important;
+        flex-grow: 1;
+        text-align: right;
+        justify-content: flex-end;
+      }
+
+      &.left {
+        margin-right: auto !important;
+        flex-grow: 1;
+      }
+    }
+
+    > .divider {
+      display: none;
+
+      & + .item {
+        border-left: 1px solid #ccc;
+      }
     }
   }
 

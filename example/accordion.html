@@ -14,21 +14,15 @@
             overflow: auto;
         }
 
-        .max-height {
-            max-height: 500px;
-        }
-
     </style>
 
     <script language="JavaScript">
         $(function () {
-            $(".card .title > a").click(function () {
+            $(".card .card-header").click(function () {
                 var card = $(this).parents(".card").children(".accordion-content");
-                card.addClass("show").addClass("transition");
+                card.toggleClass("active");
+                card.siblings(".card-header").toggleClass("active");
 
-                height = card.get(0).style.scrollHeight;
-                alert(height)
-                card.height(height)
             });
 
         })
@@ -40,16 +34,14 @@
 
     <div class="accordion">
         <div class="card">
-            <div class="card-header gray">
+            <div class="card-header gray active">
                 <span class="title">
                     <a href="#"> Header</a>
                 </span>
             </div>
-            <div class="accordion-content">
+            <div class="accordion-content active">
                 <div class="divider"></div>
                 <div class="card-body">
-                    <button class="button">Button</button>
-                    <button class="button">Button</button>
                     <p>create an accordion</p>
                     <p>create an accordion</p>
                     <p>create an accordion</p>
@@ -68,8 +60,24 @@
             <div class="accordion-content">
                 <div class="divider"></div>
                 <div class="card-body">
-                    <button class="button">Button</button>
-                    <button class="button">Button</button>
+                    <p>create an accordion</p>
+                    <p>create an accordion</p>
+                    <p>create an accordion</p>
+                    <p>create an accordion</p>
+                    <p>create an accordion</p>
+                    <p>create an accordion</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header gray">
+                <span class="title">
+                    <a href="#"> Header</a>
+                </span>
+            </div>
+            <div class="accordion-content">
+                <div class="divider"></div>
+                <div class="card-body">
                     <p>create an accordion</p>
                     <p>create an accordion</p>
                     <p>create an accordion</p>
@@ -80,6 +88,28 @@
             </div>
         </div>
 
+    </div>
+
+    <br/><br/>
+    <div class="accordion block">
+        <div class="card">
+            <div class="card-header gray active">
+                <span class="title">
+                    <a href="#"> Header</a>
+                </span>
+            </div>
+            <div class="accordion-content active">
+                <div class="divider"></div>
+                <div class="card-body">
+                    <p>create an accordion</p>
+                    <p>create an accordion</p>
+                    <p>create an accordion</p>
+                    <p>create an accordion</p>
+                    <p>create an accordion</p>
+                    <p>create an accordion</p>
+                </div>
+            </div>
+        </div>
     </div>
 
 

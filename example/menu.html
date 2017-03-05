@@ -11,7 +11,6 @@
         .area-example {
             margin: 10px auto;
             padding: 20px;
-            overflow: auto;
         }
     </style>
 
@@ -24,12 +23,10 @@
     Menu示例：<br/><br/>
 
     <ul class="menu">
-        <li class="item disabled">One</li>
-        <li class="divider"></li>
-        <li class="item">Two</li>
-        <li class="item">There</li>
-        <li class="divider"></li>
-        <li class="item ">Looooooooooooooger</li>
+        <li class="item disabled">Item1</li>
+        <li class="item">Item2</li>
+        <li class="item">Item3</li>
+        <li class="item ">Item4</li>
     </ul>
 
     <ul class="menu">
@@ -39,89 +36,46 @@
         <li class="item">default</li>
     </ul>
 
-    <ul class="menu">
-        <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
-        <div class="divider"></div>
-        <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
-        <li class="divider"></li>
-        <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
-        <div class="divider"></div>
-        <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
-    </ul>
-
-    <ul class="menu">
-        <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
-        <div class="divider"></div>
-        <li class="item">
-            <button class="button clear-border" onclick="alert('hello');">按钮1</button>
-        </li>
-        <li class="divider"></li>
-        <li class="item">
-            <button class="primary button clear-border" onclick="alert('hello');">按钮2</button>
-        </li>
-        <li class="divider"></li>
-    </ul>
-
     <br/><br/>
-
-    <ul class=" menu float">
-        <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
-        <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
-        <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
-        <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
-    </ul>
-    <br/><br/>
-
-    <ul class="menu">
-        <li class="item">
-            <div><i class="fa fa-file-movie-o fa-1x"></i></div>
-            <div>Movie</div>
-        </li>
-        <li class="item">
-            <div><i class="fa fa-file-movie-o fa-1x"></i></div>
-            <div>Movie</div>
-        </li>
-        <li class="item">
-            <div><i class="fa fa-file-movie-o fa-1x"></i></div>
-            <div>Movie</div>
-        </li>
-        <li class="item">
-            <div><i class="fa fa-plus fa-1x"></i></div>
-            <div>More...</div>
-        </li>
-    </ul>
-    <br/><br/>
-    <ul class="float menu inverted">
-        <li class="item">
-            <div><i class="fa fa-file-movie-o fa-1x"></i></div>
-            <div>Movie</div>
-        </li>
-        <li class="item">
-            <div><i class="fa fa-file-movie-o fa-1x"></i></div>
-            <div>Movie</div>
-        </li>
-        <li class="item">
-            <div><i class="fa fa-file-movie-o fa-1x"></i></div>
-            <div>Movie</div>
-        </li>
-        <li class="item">
-            <div><i class="fa fa-plus fa-1x"></i></div>
-            <div>More...</div>
+    <ul class="menu float">
+        <li class="item">Home</li>
+        <li class="item">Store</li>
+        <li class="item">Shopping</li>
+        <li class="item right ">
+            Item aligns right
         </li>
     </ul>
 
     <br/><br/>
-    <ul class="menu inverted text bold">
-        <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
-        <li class="divider"></li>
-        <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
-        <li class="divider"></li>
-        <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
-        <li class="divider"></li>
-        <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+    <ul class="menu float">
+        <li class="item left">Item aligns left</li>
+        <li class="item">Home</li>
+        <li class="item">Store</li>
+        <li class="item">Shopping</li>
     </ul>
 
     <br/><br/>
+    <ul class="simple menu float">
+        <li class="item ">
+            <div class="button-dropdown">
+                <button class="button">Button</button>
+                <ul class="menu">
+                    <li class="item" data-value="0">Item1</li>
+                    <li class="item" data-value="1">Item2</li>
+                    <li class="item" data-value="2">Item4</li>
+                </ul>
+            </div>
+        </li>
+        <li class="item"><a href="#">Home</a></li>
+        <li class="item right">
+            <div type="text" class="icon-input left-icon">
+                <input type="text" class="input" placeholder="large input..."/>
+                <i class="fa fa-search icon"></i>
+            </div>
+        </li>
+    </ul>
+
+    <br/>
 
 
 </div>

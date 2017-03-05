@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="fa/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../dist/wui-bundle-min.css" rel="stylesheet">
+    <script src="jquery-3.1.0.js" type="application/javascript"></script>
+    <style type="text/css">
+        .area-example {
+            margin: 10px auto;
+            padding: 20px;
+            overflow: auto;
+        }
+    </style>
+
+    <script language="JavaScript">
+
+    </script>
+</head>
+<body>
+<div class="area-example">
+    Menu示例：<br/><br/>
+
+    <div id="tab1" class="tab">
+        <ul class="top menu ">
+            <li class="item" onclick="select('tab1','cnt1')"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+            <li class="item" onclick="select('tab1','cnt2')"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+            <li class="item active" onclick="select('tab1','cnt3')"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+            <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+        </ul>
+    </div>
+
+    <br/><br/>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div id="tab2" class="tab">
+                <ul class="left menu ">
+                    <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博微博微</li>
+                    <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+                    <li class="item active"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+                    <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="tab5" class="tab">
+                <ul class="right menu ">
+                    <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博微博微</li>
+                    <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+                    <li class="item active"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+                    <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <br/><br/>
+    <div id="tab3" class="tab">
+        <ul class="bottom menu ">
+            <li class="item">
+                <div class="dropdown">
+                    <i class="icon fa fa-angle-down"></i>
+                    <div class="info">Country</div>
+                    <div class="menu">
+                        <div class="item" data-value="0">China</div>
+                        <div class="item" data-value="1">USA</div>
+                        <div class="item" data-value="2">Russian</div>
+                    </div>
+                </div>
+            </li>
+            <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+            <li class="item active"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+            <li class="item disabled"><i class="fa fa-weibo"></i>&nbsp;
+                <a href="#" class="disabled">Disabled</a>
+            </li>
+        </ul>
+    </div>
+
+    <br/><br/>
+    <div class="col-md-4">
+        <div id="tab7" class="tab">
+            <ul class="top nav-inverted menu ">
+                <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博微博微</li>
+                <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+                <li class="item active"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+                <li class="item"><i class="fa fa-weibo"></i>&nbsp;微博</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
