@@ -19,7 +19,7 @@
     <button class="button switch pull-right">Toggle</button>
     <div class="list">
         <div class="item special pull-right">
-            <div type="text" class="element icon-input left-icon">
+            <div type="text" class="element icon-input right-icon">
                 <input type="text" class="input" placeholder="搜索"/>
                 <i class="fa fa-search icon"></i>
             </div>
@@ -31,13 +31,15 @@
                     </a>
                 </div>
                 <div class="menu right">
-                    <div class="item" data-value="0">更改密码</div>
+                    <div class="item" data-value="0">
+                        <i class="fa fa-lock"></i> &nbsp;<a href="#">更改密码</a>
+                    </div>
                     <div class="item" data-value="1">
-                        修改资料
+                        <i class="fa fa-chain"></i>&nbsp; <a href="#">修改资料</a>
                     </div>
                     <div class="divider"></div>
                     <div class="item" data-value="1">
-                        <i class="fa fa-power-off"></i>&nbsp;
+                        <i class="fa fa-power-off"></i>&nbsp;&nbsp;
                         <a href="#"> Logout</a>
                     </div>
                 </div>
@@ -47,16 +49,31 @@
 </div>
 
 <div class="exp-top row">
-    <div class="col-xs-12 col-md-4">
-        <ul class="menu">
-            <li class="item disabled">权限</li>
-            <li class="item">权限组</li>
-            <li class="item">角色</li>
-            <li class="item">角色组</li>
-            <li class="item">用户</li>
-        </ul>
+    <div class="col-xs-12 col-md-2">
+        <div class="exp-accordion accordion block">
+            <div class="card">
+                <div class="card-header gray active">
+                <span class="title">
+                    <a href="#"> 权限管理</a>
+                </span>
+                </div>
+                <div class="accordion-content active">
+                    <div class="divider"></div>
+                    <div class="card-body">
+                        <ul class="menu primary">
+                            <li class="item ">权限</li>
+                            <li class="item">权限组</li>
+                            <li class="item active">角色</li>
+                            <li class="item">角色组</li>
+                            <li class="item">用户</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    <div class="col-xs-12 col-md-8">
+    <div class="col-xs-12 col-md-10">
 
     </div>
 

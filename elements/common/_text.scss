@@ -14,25 +14,19 @@
     text-align: right !important;;
   }
 
-  &.comment {
-    color: $text-comment-color !important;
-  }
-
-  &.ok {
-    color: $text-ok-color !important;
-  }
-
-  &.warning {
-    color: $text-warning-color !important;
-  }
-
-  &.error {
-    color: $text-error-color !important;
-  }
-
   @each $name, $color in $colors {
     &.#{$name} {
       color: $color !important;
+      &.hover {
+        color: inherit !important;
+        &:hover, &:focus {
+          color: $color !important;
+        }
+        &.active {
+          color: darken($color, 5%) !important;
+        }
+      }
     }
+
   }
 }

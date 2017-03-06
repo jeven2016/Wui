@@ -9,3 +9,7 @@ body {
 .exp-login {
     margin-top: 8rem;
 }
+
+.exp-accordion .card-body {
+    padding: 0;
+}

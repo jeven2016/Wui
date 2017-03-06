@@ -73,7 +73,52 @@
     @include make-menu-item;
   }
 
+  .menu-header {
+    padding: $menu-item-padding;
+    font-weight: map_get($font-weight, 'bold');
+    position: relative;
+
+    @include make-arrow($default-arrow-border, $default-arrow-active-border, null, 'after', map_get($arrow-direction, 'down')) {
+      position: absolute;
+      right: 0.5rem;
+      top: calc(50% - 2px);
+    }
+  }
+
+  > .submenu {
+    padding: 0 0 0 1rem;
+    border-width: 0;
+
+    > .menu {
+      border-width: 0;
+
+      > .item {
+        padding-right: 0;
+      }
+    }
+
+    &:not(.disabled):focus, &:not(.disabled):hover {
+      color: inherit;
+      background-color: inherit;
+    }
+  }
+
   &.block {
     width: 100%;
+  }
+
+  &.primary {
+    > .item {
+      &:not(.disabled):not(.active):focus, &:not(.disabled):not(.active):hover {
+        color: lighten($blue, 10%);
+        background-color: inherit;
+      }
+
+      &.active {
+        background-color: lighten($blue, 40%);
+        border-right: 3px solid $blue;
+        margin-right: -1px;
+      }
+    }
   }
 }

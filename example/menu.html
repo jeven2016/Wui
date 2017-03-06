@@ -23,11 +23,28 @@
     Menu示例：<br/><br/>
 
     <ul class="menu">
+        <li class="menu-header">Header</li>
         <li class="item disabled">Item1</li>
         <li class="item">Item2</li>
         <li class="item">Item3</li>
         <li class="item ">Item4</li>
     </ul>
+
+    <div class="menu primary">
+        <div class="item disabled">Item1</div>
+        <div class="item">Item2</div>
+        <div class="item active">Item3</div>
+        <div class="item ">Item4</div>
+        <div class="submenu">
+            <div class="menu-header">Header</div>
+            <div class="menu primary">
+                <li class="item">Item2</li>
+                <li class="item active">Item3</li>
+                <li class="item ">Item4</li>
+            </div>
+        </div>
+
+    </div>
 
     <ul class="menu">
         <li class="active item text align-left">left</li>
@@ -49,7 +66,7 @@
     <br/><br/>
     <ul class="menu float">
         <li class="item left">Item aligns left</li>
-        <li class="item">Home</li>
+        <li class="item text ok hover">Home</li>
         <li class="item">Store</li>
         <li class="item">Shopping</li>
     </ul>

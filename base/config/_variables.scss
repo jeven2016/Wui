@@ -14,7 +14,19 @@ $yellow: #fbb80b;
 $orange: #f26b11;
 $red: #ff350e;
 
+$text-color: rgba(51, 51, 51, 1);
+$text-disabled-color: rgba(0, 0, 0, .4);
+$text-comment-color: #818a91;
+$text-light: $white;
+$text-ok-color: $green;
+$text-warning-color: $yellow;
+$text-error-color: $red;
+
 $colors: (
+        comment:$text-comment-color,
+        ok: $text-ok-color,
+        warning: $text-warning-color,
+        error: $text-error-color,
         color-white:$white,
         color-black:$black,
         color-gray:$gray,
@@ -69,14 +81,6 @@ $arrow-direction: (
         'right':'right'
 );
 
-$text-color: rgba(51, 51, 51, 1);
-$text-disabled-color: rgba(0, 0, 0, .4);
-$text-comment-color: #818a91;
-$text-light: $white;
-$text-ok-color: $green;
-$text-warning-color: $yellow;
-$text-error-color: $red;
-
 //for <a/> link
 $link-color: $text-color;
 $link-active-color: $blue;
@@ -92,9 +96,8 @@ $ad-max-height: 0;
 $ad-active-max-height: 60rem;
 $ad-overflow: hidden;
 $ad-transition: max-height .7s ease-in-out;
-$ad-card-card-header-active-title-transform:rotate(90deg);
-$ad-card-card-header-active-title-transition:transform .7s ease-in-out;
-
+$ad-card-card-header-active-title-transform: rotate(90deg);
+$ad-card-card-header-active-title-transition: transform .7s ease-in-out;
 
 //for blockquota
 $bq-margin: 0 0 0.5rem 0;

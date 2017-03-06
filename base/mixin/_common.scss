@@ -52,7 +52,7 @@
     border: $border;
     transition: transform .4s ease-in-out;
 
-    @if ($direction == map_get($arrow-direction, 'bottom')) {
+    @if ($direction == map_get($arrow-direction, 'down')) {
       border-top-color: $bdr-color;
     }
     @if ($direction == map_get($arrow-direction, 'up')) {
