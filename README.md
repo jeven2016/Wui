@@ -39,5 +39,5 @@ for demo, Currently the documentation hasn't finished yet, an alternative is by 
 ## Supporters
 Thanks JetBrains for supporting this open source project with:
 
-[![Intellij IDEA](http://www.jetbrains.com/img/logos/logo_intellij_idea.png)]
+[![Intellij IDEA](http://www.jetbrains.com/img/logos/logo_intellij_idea.png)]]
 (http://www.jetbrains.com/idea/)
