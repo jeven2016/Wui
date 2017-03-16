@@ -37,7 +37,6 @@ for demo, Currently the documentation hasn't finished yet, an alternative is by 
 [Chart](#) -To be continue  
 
 ##Supporters
-Thanks JetBrains for supporting this open source project with:
+Thanks JetBrains for supporting this open source project with Webstorm:
 
-[![Intellij IDEA](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/JetBrains_Logo_2016.svg/150px-JetBrains_Logo_2016.svg.png)]]
-(http://www.jetbrains.com/idea/)
+![Jetbrains](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/JetBrains_Logo_2016.svg/150px-JetBrains_Logo_2016.svg.png)
