@@ -36,8 +36,8 @@ for demo, Currently the documentation hasn't finished yet, an alternative is by 
 [Tree](#) -To be continue  
 [Chart](#) -To be continue  
 
-## Supporters
+##Supporters
 Thanks JetBrains for supporting this open source project with:
 
-[![Intellij IDEA](http://www.jetbrains.com/img/logos/logo_intellij_idea.png)]]
+[![Intellij IDEA](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/JetBrains_Logo_2016.svg/150px-JetBrains_Logo_2016.svg.png)]]
 (http://www.jetbrains.com/idea/)
