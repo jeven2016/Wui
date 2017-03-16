@@ -27,7 +27,7 @@ for demo, Currently the documentation hasn't finished yet, an alternative is by 
 [Slidershow](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/slidershow.html)  
     
 ##Wui add-ons (To be continue)
-[Search select](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/search-select.html)  
+[Search select](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/search-select.html)
 [Date picker](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/datePicker.html)  
 [Time](#) -To be continue  
 [Drawer](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/drawer.html)  
