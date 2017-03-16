@@ -38,5 +38,4 @@ for demo, Currently the documentation hasn't finished yet, an alternative is by 
 
 ##Supporters
 Thanks JetBrains for supporting this open source project with Webstorm:
-
 ![Jetbrains](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/JetBrains_Logo_2016.svg/150px-JetBrains_Logo_2016.svg.png)
