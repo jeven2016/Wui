@@ -2360,10 +2360,14 @@ h6 {
   border-left-width: 0;
   border-top-width: 0;
   border-right-width: 0;
+  flex-direction: row;
 }
 .tab > .menu.top > .item {
-  display: inline-block;
-  float: left;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 0.25rem 0.25rem 0 0;
 }
 .tab > .menu.top > .item.active {

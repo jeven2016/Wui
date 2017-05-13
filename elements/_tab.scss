@@ -18,11 +18,12 @@
       border-left-width: 0;
       border-top-width: 0;
       border-right-width: 0;
+      flex-direction: row;
 
       > .item {
-        display: inline-block;
-        float: left;
-        @include full-border-radius(0.25rem, 0.25rem, 0, 0);
+        @include make-flex-center{
+          @include full-border-radius(0.25rem, 0.25rem, 0, 0);
+        }
 
         &.active {
           margin-bottom: -1px;
