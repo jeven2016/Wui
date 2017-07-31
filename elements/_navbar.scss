@@ -79,7 +79,7 @@
   }
 
   &.fixed {
-    @include fixed(null, false, null);
+    @include fixed(1000, false, null);
 
     &.top {
       top: 0;
