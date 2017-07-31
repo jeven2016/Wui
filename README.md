@@ -6,11 +6,11 @@ we design it with some personal reasons and hope it looks cool to implement a mo
 Current version: 0.6 (pre-release)
 
 for demo, Currently the documentation hasn't finished yet, an alternative is by refering to the following examples:
-##Wui common components
+
+##Wui common components<br/>
 [Blockquota](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/blockquota.html "Blockquota")  
 [Button](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/button.html "Button")  
 [Button add-ons](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/button-add-ons.html "Button") 
-[add-ons](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/button-add-ons.html)  
 [Input](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/input.html)  
 [dropdown](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/dropdown.html)  
 [card](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/card.html)  
@@ -36,5 +36,5 @@ for demo, Currently the documentation hasn't finished yet, an alternative is by 
 [Chart](#) -To be continue  
 
 ##Supporters
-Thanks JetBrains for supporting this open source project with Webstorm:
+Thanks JetBrains for supporting this open source project with Webstorm:<br/>
 ![Jetbrains](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/JetBrains_Logo_2016.svg/150px-JetBrains_Logo_2016.svg.png)
