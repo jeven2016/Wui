@@ -1,0 +1,34 @@
+.toggle {
+  &.secondary {
+    @include border-radius;
+    padding: 0.25rem;
+    @include make-inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+
+    &.on {
+      background-color: #277ED0;
+    }
+
+    &.off {
+      background-color: $gray;
+      flex-flow: row-reverse;
+    }
+
+    .bar {
+      @include make-flex-center;
+      width: 2rem;
+      background-color: inherit;
+    }
+
+    .ball {
+      position: relative;
+      width: 1.5rem;
+      height: 1.5rem;
+      background-color: $white;
+      @include border-radius;
+      box-shadow: none;
+    }
+  }
+}

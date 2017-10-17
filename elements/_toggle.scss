@@ -1,0 +1,95 @@
+.toggle {
+  position: relative;
+  @include make-inline-block();
+  font-size: 0.75rem;
+  color: $white;
+  font-weight: map_get($font-weight, 'bold');
+  transition: all .7s;
+
+  &.on {
+    .bar {
+      background-color: #98BFD0;
+    }
+
+    .ball {
+      background-color: #277ED0;
+      color: $white;
+    }
+  }
+
+  &.off {
+    .bar {
+      background-color: $gray;
+    }
+
+    .ball {
+      background-color: $light-gray;
+      left: 0;
+      color: $gray;
+    }
+  }
+
+  .bar {
+    margin: 0.25rem 0;
+    height: 1rem;
+    width: 3.5rem;
+    @include border-radius(1.5rem);
+    //box-shadow: $default-box-shadow;
+  }
+
+  .ball {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1.5rem;
+    width: 1.5rem;
+    @include border-radius(50%);
+    box-shadow: $default-box-shadow;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  &.primary {
+
+    &.on {
+      .bar {
+        background-color: #277ED0;
+        padding-right: 1.8rem;
+        text-align: right;
+      }
+
+      .ball {
+        background-color: $white;
+        color: #277ED0;
+        top: 0.05rem;
+        right: 0.05rem;
+      }
+    }
+
+    &.off {
+      .bar {
+        padding-left: 1.8rem;
+        text-align: left;
+      }
+
+      .ball {
+        background-color: $white;
+        top: 0.05rem;
+        left: 0.05rem;
+      }
+    }
+
+    .bar {
+      height: 1.5rem;
+      margin: 0;
+      vertical-align: middle;
+    }
+
+    .ball {
+      box-shadow: none;
+      height: 1.4rem;
+      width: 1.4rem;
+    }
+  }
+
+}

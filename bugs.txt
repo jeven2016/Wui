@@ -25,6 +25,9 @@
 2016-12-20:
 1. mixin中的变量需要排查，有些没有使用到：_common.scss, core/*,
 
+2017-10-11
+1. large＆small input 右侧的提示icon显示没有垂直居中
+
 todo:
 1. 比较http://amazeui.org/getting-started
 http://frozenui.github.io/components.html#

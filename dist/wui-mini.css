@@ -423,8 +423,6 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font: inherit;
-  vertical-align: baseline;
 }
 
 /**
@@ -998,9 +996,7 @@ html {
 }
 
 body {
-  font-size: 1rem;
-  font-family: Microsoft YaHei, tahoma, arial, sans-serif;
-  line-height: 1.5rem;
+  font: 1rem/1.5rem tahoma, arial, Microsoft YaHei, sans-serif;
   color: #333333;
   background-color: #fff;
   text-rendering: optimizeLegibility;
@@ -1073,7 +1069,6 @@ h6 {
   line-height: 1.25rem;
   -webkit-appearance: none;
   transition: all .2s ease-in-out;
-  vertical-align: middle;
   font-size: 1rem;
 }
 .input.block {
@@ -1360,7 +1355,6 @@ h6 {
   cursor: pointer;
   outline: none;
   line-height: 1.25rem;
-  vertical-align: middle;
   text-align: center;
   text-decoration: none;
   border-radius: 0.25rem;
@@ -2853,6 +2847,78 @@ h6 {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom-width: 0;
+}
+
+.toggle {
+  position: relative;
+  position: relative;
+  display: inline-block;
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: 700;
+  transition: all .7s;
+}
+.toggle.on .bar {
+  background-color: #98BFD0;
+}
+.toggle.on .ball {
+  background-color: #277ED0;
+  color: #fff;
+}
+.toggle.off .bar {
+  background-color: #ccc;
+}
+.toggle.off .ball {
+  background-color: #f5f5f5;
+  left: 0;
+  color: #ccc;
+}
+.toggle .bar {
+  margin: 0.25rem 0;
+  height: 1rem;
+  width: 3.5rem;
+  border-radius: 1.5rem;
+}
+.toggle .ball {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.25);
+  text-align: center;
+  vertical-align: middle;
+}
+.toggle.primary.on .bar {
+  background-color: #277ED0;
+  padding-right: 1.8rem;
+  text-align: right;
+}
+.toggle.primary.on .ball {
+  background-color: #fff;
+  color: #277ED0;
+  top: 0.05rem;
+  right: 0.05rem;
+}
+.toggle.primary.off .bar {
+  padding-left: 1.8rem;
+  text-align: left;
+}
+.toggle.primary.off .ball {
+  background-color: #fff;
+  top: 0.05rem;
+  left: 0.05rem;
+}
+.toggle.primary .bar {
+  height: 1.5rem;
+  margin: 0;
+  vertical-align: middle;
+}
+.toggle.primary .ball {
+  box-shadow: none;
+  height: 1.4rem;
+  width: 1.4rem;
 }
 
 /*# sourceMappingURL=wui-mini.css.map */
