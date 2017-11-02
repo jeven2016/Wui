@@ -1569,6 +1569,13 @@ h6 {
   width: 20rem;
   border: 1px solid #acacac;
   border-radius: 0.25rem;
+  margin: 0.25rem 0.25rem;
+  /*conflict with other components like dropdown*/
+  /* .menu {
+     width: 100%;
+     display: block;
+     border-width: 0;
+   }*/
 }
 .card .card-header {
   padding: 0.5rem 1rem;
@@ -1579,11 +1586,6 @@ h6 {
 }
 .card .card-header.gray {
   background-color: #f5f5f5;
-}
-.card .menu {
-  width: 100%;
-  display: block;
-  border-width: 0;
 }
 .card .card-row {
   display: block;
@@ -1626,9 +1628,6 @@ h6 {
 }
 .card.block .card-header, .card.block .card-body, .card.block .card-footer, .card.block .card-row {
   display: block;
-}
-.card:not(:first-child) {
-  margin-left: 1rem;
 }
 
 .row {

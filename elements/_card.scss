@@ -3,6 +3,7 @@
   width: $card-width;
   border: $card-border;
   @include border-radius($card-border-radius);
+  margin: 0.25rem 0.25rem;
 
   .card-header {
     padding: $card-header-padding;
@@ -17,11 +18,12 @@
     }
   }
 
-  .menu {
+  /*conflict with other components like dropdown*/
+ /* .menu {
     width: 100%;
     display: block;
     border-width: 0;
-  }
+  }*/
 
   .card-row {
     display: block;
@@ -81,7 +83,4 @@
     }
   }
 
-  &:not(:first-child) {
-    margin-left: 1rem;
-  }
 }
