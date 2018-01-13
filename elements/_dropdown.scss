@@ -6,7 +6,7 @@
     @include border-radius($dp-border-radius);
     width: auto;
 
-    &.up {
+    &.top {
       top: auto;
       bottom: 100%;
       margin-bottom: $dp-button-dp-menu-margin;
@@ -16,6 +16,16 @@
       left: auto;
       right: 0;
     }
+  }
+}
+
+%active-menu {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+  & > .menu {
+    display: block;
+    border-top-width: 0;
   }
 }
 
@@ -30,6 +40,12 @@
   border: $dp-border;
   min-width: $dp-min-width;
   vertical-align: $dp-vertical-align;
+
+  &.hover {
+    &:hover {
+      @extend %active-menu;
+    }
+  }
 
   > .menu {
     @include dp-menu {
@@ -51,13 +67,7 @@
   }
 
   &.active {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-
-    & > .menu {
-      display: block;
-      border-top-width: 0;
-    }
+    @extend %active-menu;
   }
 
   &.simple {
@@ -92,17 +102,17 @@
     .menu {
       display: block;
       left: auto;
-      right: 0;
     }
   }
 
-  .button {
-    &:focus, &.active {
-      ~ .menu {
-        display: block;
-      }
-    }
-  }
+  //display the menu by js script instead of this css style
+  /* .button {
+     &:focus, &.active {
+       ~ .menu {
+         display: block;
+       }
+     }
+   }*/
 
   .menu {
     @extend %block-menu-style;
