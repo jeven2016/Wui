@@ -42,7 +42,7 @@ $colors: (
         color-red:$red);
 
 //Global
-$default-box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.25);
+$default-box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
 $default-border-radius: 0.25rem;
 $default-arrow-border: 4px solid transparent;
 $default-border-color: #acacac;
@@ -223,11 +223,9 @@ $navbar-border-radius: $default-border-radius;
 $navbar-title-padding: 0 0.5rem;
 $navbar-background-color: #f5f5f5;
 $navbar-fixed-box-shadow: $default-box-shadow;
-$navbar-border: 1px solid #ccc;
 $navbar-margin-bottom: 0;
 $navbar-background-color-primary: #3d8bea;
 $navbar-inactive-text-color: lighten($text-color, 40%);
-$navbar-title-font-size: 1.5rem;
 $navbar-title-color: $text-color;
 $navbar-link-padding: .5rem;
 $navbar-link-color: inherit;

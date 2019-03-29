@@ -3,7 +3,7 @@
 
   > .title {
     @include make-flex {
-      font-size: $navbar-title-font-size;
+      align-items: center;
       line-height: $navbar-item-line-height;
       color: $navbar-title-color;
       padding: $navbar-title-padding;
@@ -24,6 +24,7 @@
         &.active {
           background-color: darken($navbar-background-color, 10%);
         }
+
         &:focus, &:hover {
           background-color: darken($navbar-background-color, 5%);
         }
@@ -83,16 +84,10 @@
 
     &.top {
       top: 0;
-      border-left-width: 0;
-      border-top-width: 0;
-      border-bottom-right: 0;
     }
 
     &.bottom {
       bottom: 0;
-      border-left-width: 0;
-      border-bottom-right: 0;
-      border-right-width: 0;
     }
   }
 
@@ -114,6 +109,7 @@
         &.active {
           background-color: lighten($navbar-background-color-primary, 10%);
         }
+
         &:focus, &:hover {
           background-color: lighten($navbar-background-color-primary, 5%);
         }
@@ -123,7 +119,6 @@
 
   //simple navbar
   &.simple {
-    border-width: 0;
 
     > .list > .item {
       &.active, &:focus, &:hover {
@@ -147,7 +142,6 @@
 
     &.primary {
       background-color: $navbar-background-color-primary;
-      border-bottom: $navbar-simple-primary-border-botom;
 
       > .title {
         color: $navbar-primary-active-color;
@@ -155,7 +149,6 @@
 
       > .list > .item {
         color: $navbar-simple-primary-item-color;
-        border-bottom-width: $navbar-simple-primary-item-border-bottom-width;
 
         &.active, &:focus, &:hover {
           color: $navbar-simple-primary-item-active-color;
