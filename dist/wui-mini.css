@@ -2097,12 +2097,6 @@ h6 {
 .navbar > .list > .item.active, .navbar > .list > .item:focus, .navbar > .list > .item:hover {
   color: #333333;
 }
-.navbar > .list > .item.special {
-  padding: 0.5rem;
-}
-.navbar > .list > .item.special .dropdown .item {
-  color: #333333;
-}
 .navbar.expand {
   display: block;
 }
@@ -2142,7 +2136,7 @@ h6 {
 .navbar.primary > .list > .item.with-bg:focus, .navbar.primary > .list > .item.with-bg:hover {
   background-color: #5499ec;
 }
-.navbar.simple > .list > .item.active:not(.special) > .link:after, .navbar.simple > .list > .item:focus:not(.special) > .link:after, .navbar.simple > .list > .item:hover:not(.special) > .link:after {
+.navbar.simple > .list > .item.active > .link:after, .navbar.simple > .list > .item:focus > .link:after, .navbar.simple > .list > .item:hover > .link:after {
   position: absolute;
   display: block;
   left: 0;
@@ -2164,7 +2158,7 @@ h6 {
 .navbar.simple.primary > .list > .item.active, .navbar.simple.primary > .list > .item:focus, .navbar.simple.primary > .list > .item:hover {
   color: #fff;
 }
-.navbar.simple.primary > .list > .item.active:not(.special) > .link:after, .navbar.simple.primary > .list > .item:focus:not(.special) > .link:after, .navbar.simple.primary > .list > .item:hover:not(.special) > .link:after {
+.navbar.simple.primary > .list > .item.active > .link:after, .navbar.simple.primary > .list > .item:focus > .link:after, .navbar.simple.primary > .list > .item:hover > .link:after {
   position: absolute;
   display: block;
   background-color: #4BB84F;

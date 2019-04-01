@@ -55,15 +55,6 @@
         color: $navbar-item-active-color;
       }
 
-      &.special {
-        padding: $navbar-item-special-padding-left;
-
-        .dropdown {
-          .item {
-            color: $btn-default-text-color;
-          }
-        }
-      }
     }
   }
 
@@ -122,18 +113,16 @@
 
     > .list > .item {
       &.active, &:focus, &:hover {
-        &:not(.special) {
-          > .link {
-            //create the bottom border
-            &:after {
-              @include make-block(absolute) {
-                left: 0;
-                bottom: 0;
-                content: '';
-                height: $navbar-simple-item-link-border-height;
-                width: $navbar-simple-item-link-border-width;
-                background-color: $navbar-simple-item-link-background-colorh;
-              }
+        > .link {
+          //create the bottom border
+          &:after {
+            @include make-block(absolute) {
+              left: 0;
+              bottom: 0;
+              content: '';
+              height: $navbar-simple-item-link-border-height;
+              width: $navbar-simple-item-link-border-width;
+              background-color: $navbar-simple-item-link-background-colorh;
             }
           }
         }
@@ -155,12 +144,10 @@
         }
 
         &.active, &:focus, &:hover {
-          &:not(.special) {
-            > .link {
-              &:after {
-                @include make-block(absolute) {
-                  background-color: $navbar-simple-primary-item-link-active-background-color;
-                }
+          > .link {
+            &:after {
+              @include make-block(absolute) {
+                background-color: $navbar-simple-primary-item-link-active-background-color;
               }
             }
           }
