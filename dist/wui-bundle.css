@@ -2062,6 +2062,15 @@ h6 {
   align-items: center;
   flex: 1 1 auto;
 }
+.navbar > .list.align-right {
+  justify-content: flex-end;
+}
+.navbar > .list.align-left {
+  justify-content: flex-start;
+}
+.navbar > .list.align-center {
+  justify-content: center;
+}
 .navbar > .list > .item {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -2072,6 +2081,7 @@ h6 {
   color: #999999;
   align-items: center;
   font-weight: 500;
+  padding: 0 0.5rem;
 }
 .navbar > .list > .item.with-bg.active {
   background-color: gainsboro;
@@ -2085,6 +2095,7 @@ h6 {
   position: relative;
   display: block;
   color: inherit;
+  font-weight: bold;
 }
 .navbar > .list > .item.switch {
   display: none;

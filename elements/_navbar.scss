@@ -17,6 +17,18 @@
       flex: 1 1 auto;
     }
 
+    &.align-right {
+      justify-content: flex-end;
+    }
+
+    &.align-left {
+      justify-content: flex-start;
+    }
+
+    &.align-center {
+      justify-content: center;
+    }
+
     > .item {
       @include make-navbar-item($navbar-inactive-text-color);
 
@@ -35,6 +47,7 @@
         padding-right: $navbar-link-padding;
         @include make-block;
         color: $navbar-link-color;
+        font-weight: bold;
       }
 
       &.switch {

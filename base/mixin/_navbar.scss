@@ -17,5 +17,6 @@
     color: $item-text-color;
     align-items: center;
     font-weight: map_get($font-weight, 'normal');
+    padding: $navbar-item-padding;
   }
 }
