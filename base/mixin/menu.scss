@@ -23,11 +23,25 @@
   }
 
   &:hover:not(.special):not(.disabled) {
-    background-color: $menu-item-background-color;
+    color: $menu-item-hove-text-color;
+    transition: all 0.2s;
+
+    &.with-box{
+      box-shadow: $default-box-shadow;
+      font-size: $menu-item-with-box-text-size;
+    }
+
+    &.with-bg {
+      background-color: $menu-item-background-color;
+    }
   }
 
   &.active:not(.special) {
-    background-color: darken($menu-item-background-color, 5%);
+    color: $menu-item-hove-text-color;
+
+    &.with-bg {
+      background-color: darken($menu-item-background-color, 5%);
+    }
   }
 
   @include add-disabled-conf(false) {

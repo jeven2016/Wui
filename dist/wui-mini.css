@@ -2057,6 +2057,7 @@ h6 {
   display: flex;
   align-items: center;
   flex: 1 1 auto;
+  padding: 0 1rem 0 1rem;
 }
 .navbar > .list.align-right {
   justify-content: flex-end;
@@ -2071,6 +2072,11 @@ h6 {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  justify-content: center;
+  position: relative;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
   line-height: 3rem;
   cursor: pointer;
   align-items: center;
@@ -2078,20 +2084,29 @@ h6 {
   align-items: center;
   font-weight: 500;
   padding: 0 0.5rem;
+  min-width: 5rem;
+  transition: all 0.2s;
+}
+.navbar > .list > .item.with-bar.active:after, .navbar > .list > .item.with-bar:focus:after, .navbar > .list > .item.with-bar:hover:after {
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: 0;
+  content: '';
+  height: 0.3125rem;
+  width: 100%;
+  background-color: #4BB84F;
+  transition: all 0.5s;
+  animation: change-width 0.5s;
+}
+.navbar > .list > .item.block {
+  height: 100%;
 }
 .navbar > .list > .item.with-bg.active {
   background-color: gainsboro;
 }
 .navbar > .list > .item.with-bg:focus, .navbar > .list > .item.with-bg:hover {
   background-color: #e8e8e8;
-}
-.navbar > .list > .item > .link {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  position: relative;
-  display: block;
-  color: inherit;
-  font-weight: bold;
 }
 .navbar > .list > .item.switch {
   display: none;
@@ -2142,37 +2157,10 @@ h6 {
   color: #fff;
 }
 .navbar.primary > .list > .item.with-bg.active {
-  background-color: #6ba7ef;
+  background-color: #62a1ee;
 }
 .navbar.primary > .list > .item.with-bg:focus, .navbar.primary > .list > .item.with-bg:hover {
   background-color: #5499ec;
-}
-.navbar.simple > .list > .item.active > .link:after, .navbar.simple > .list > .item:focus > .link:after, .navbar.simple > .list > .item:hover > .link:after {
-  position: absolute;
-  display: block;
-  left: 0;
-  bottom: 0;
-  content: '';
-  height: 3px;
-  width: 100%;
-  background-color: #277ed0;
-}
-.navbar.simple.primary {
-  background-color: #3d8bea;
-}
-.navbar.simple.primary > .title {
-  color: #fff;
-}
-.navbar.simple.primary > .list > .item {
-  color: #e6e6e6;
-}
-.navbar.simple.primary > .list > .item.active, .navbar.simple.primary > .list > .item:focus, .navbar.simple.primary > .list > .item:hover {
-  color: #fff;
-}
-.navbar.simple.primary > .list > .item.active > .link:after, .navbar.simple.primary > .list > .item:focus > .link:after, .navbar.simple.primary > .list > .item:hover > .link:after {
-  position: absolute;
-  display: block;
-  background-color: #4BB84F;
 }
 
 @media screen and (min-width: 767px) {
@@ -2189,6 +2177,14 @@ h6 {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+  }
+}
+@keyframes change-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
 .menu {
@@ -2238,16 +2234,6 @@ h6 {
 .menu.float > .divider + .item {
   border-left: 1px solid #ccc;
 }
-.menu.inverted > .item {
-  background-color: #000;
-  color: #fff;
-}
-.menu.inverted > .item:not(.active):hover {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-.menu.inverted > .item.active, .menu.inverted > .item:active {
-  background-color: rgba(0, 0, 0, 0.8);
-}
 .menu > .item {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -2263,14 +2249,28 @@ h6 {
   white-space: nowrap;
 }
 .menu > .item:hover:not(.special):not(.disabled) {
+  color: #277ed0;
+  transition: all 0.2s;
+}
+.menu > .item:hover:not(.special):not(.disabled).with-box {
+  box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
+  font-size: 1rem;
+}
+.menu > .item:hover:not(.special):not(.disabled).with-bg {
   background-color: #eee;
 }
 .menu > .item.active:not(.special) {
+  color: #277ed0;
+}
+.menu > .item.active:not(.special).with-bg {
   background-color: #e1e1e1;
 }
 .menu > .item:disabled, .menu > .item.disabled {
   color: #333333;
   background-color: transparent;
+}
+.menu > .item > .menu-icon {
+  margin-right: 0.25rem;
 }
 .menu .menu-header {
   padding: 0.5rem 1rem;
@@ -2289,6 +2289,9 @@ h6 {
   position: absolute;
   right: 0.5rem;
   top: calc(50% - 2px);
+}
+.menu .menu-header > .menu-icon {
+  margin-right: 0.25rem;
 }
 .menu > .submenu {
   padding: 0 0 0 1rem;

@@ -54,23 +54,13 @@
     }
   }
 
-  &.inverted {
-    > .item {
-      background-color: $menu-item-background-color-inverted;
-      color: $menu-item-text-color-inverted;
-
-      &:not(.active):hover {
-        background-color: rgba($menu-item-background-color-inverted, .6);
-      }
-
-      &.active, &:active {
-        background-color: rgba($menu-item-background-color-inverted, .8);
-      }
-    }
-  }
 
   > .item {
     @include make-menu-item;
+
+    > .menu-icon {
+      margin-right: 0.25rem;
+    }
   }
 
   .menu-header {
@@ -82,6 +72,10 @@
       position: absolute;
       right: 0.5rem;
       top: calc(50% - 2px);
+    }
+
+    > .menu-icon {
+      margin-right: 0.25rem;
     }
   }
 

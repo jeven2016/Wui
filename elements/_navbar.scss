@@ -15,6 +15,7 @@
     @include make-flex {
       align-items: center;
       flex: 1 1 auto;
+      padding: 0 1rem 0 1rem;
     }
 
     &.align-right {
@@ -30,7 +31,35 @@
     }
 
     > .item {
-      @include make-navbar-item($navbar-inactive-text-color);
+      @include make-flex {
+        justify-content: center;
+        position: $navbar-item-position;
+        @include make-navbar-item($navbar-inactive-text-color);
+        transition: all 0.2s;
+      }
+
+      &.with-bar {
+        &.active, &:focus, &:hover {
+          //create the bottom border
+          &:after {
+            @include make-block(absolute) {
+              left: 0;
+              bottom: 0;
+              content: '';
+              height: $navbar-simple-item-link-border-height;
+              width: $navbar-simple-item-link-border-width;
+              background-color: $navbar-simple-item-link-background-colorh;
+              transition: all 0.5s;
+              animation: change-width 0.5s;
+            }
+          }
+        }
+      }
+
+      //occupy the whole column
+      &.block {
+        height: 100%;
+      }
 
       &.with-bg {
         &.active {
@@ -42,13 +71,6 @@
         }
       }
 
-      > .link {
-        padding-left: $navbar-link-padding;
-        padding-right: $navbar-link-padding;
-        @include make-block;
-        color: $navbar-link-color;
-        font-weight: bold;
-      }
 
       &.switch {
         display: none;
@@ -111,7 +133,7 @@
 
       &.with-bg {
         &.active {
-          background-color: lighten($navbar-background-color-primary, 10%);
+          background-color: lighten($navbar-background-color-primary, 8%);
         }
 
         &:focus, &:hover {
@@ -119,56 +141,6 @@
         }
       }
     }
-  }
-
-  //simple navbar
-  &.simple {
-
-    > .list > .item {
-      &.active, &:focus, &:hover {
-        > .link {
-          //create the bottom border
-          &:after {
-            @include make-block(absolute) {
-              left: 0;
-              bottom: 0;
-              content: '';
-              height: $navbar-simple-item-link-border-height;
-              width: $navbar-simple-item-link-border-width;
-              background-color: $navbar-simple-item-link-background-colorh;
-            }
-          }
-        }
-      }
-    }
-
-    &.primary {
-      background-color: $navbar-background-color-primary;
-
-      > .title {
-        color: $navbar-primary-active-color;
-      }
-
-      > .list > .item {
-        color: $navbar-simple-primary-item-color;
-
-        &.active, &:focus, &:hover {
-          color: $navbar-simple-primary-item-active-color;
-        }
-
-        &.active, &:focus, &:hover {
-          > .link {
-            &:after {
-              @include make-block(absolute) {
-                background-color: $navbar-simple-primary-item-link-active-background-color;
-              }
-            }
-          }
-        }
-      }
-
-    }
-
   }
 
 }
@@ -185,5 +157,14 @@
   }
   .navbar > .switch {
     @include make-flex;
+  }
+}
+
+@keyframes change-width {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%
   }
 }
