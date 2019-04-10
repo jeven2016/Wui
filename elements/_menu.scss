@@ -6,6 +6,12 @@
     align-items: stretch;
   }
 
+  &.with-box {
+    box-shadow: $default-box-shadow;
+  }
+
+
+
   &.arrow {
     > .item, .menu > .item {
       //arrow
@@ -59,13 +65,13 @@
     @include make-menu-item;
 
     > .menu-icon {
-      margin-right: 0.25rem;
+      margin-right: $menu-icon-margin-right;
     }
   }
 
   .menu-header {
-    padding: $menu-item-padding;
-    font-weight: map_get($font-weight, 'bold');
+    padding: $menu-header-padding;
+    font-weight: map_get($font-weight, 'normal');
     position: relative;
 
     @include make-arrow($default-arrow-border, $default-arrow-active-border, null, 'after', map_get($arrow-direction, 'down')) {
@@ -75,7 +81,7 @@
     }
 
     > .menu-icon {
-      margin-right: 0.25rem;
+      margin-right: $menu-icon-margin-right;
     }
   }
 

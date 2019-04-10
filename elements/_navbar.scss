@@ -50,7 +50,7 @@
               width: $navbar-simple-item-link-border-width;
               background-color: $navbar-simple-item-link-background-colorh;
               transition: all 0.5s;
-              animation: change-width 0.5s;
+              animation: change-width-smoothly 0.3s;
             }
           }
         }
@@ -157,14 +157,5 @@
   }
   .navbar > .switch {
     @include make-flex;
-  }
-}
-
-@keyframes change-width {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%
   }
 }

@@ -9,7 +9,7 @@
 
 @mixin make-menu-item() {
   @include make-flex {
-    line-height: 1.25rem;
+    //line-height: 1.25rem;
     padding: $menu-item-padding;
     margin: 0;
     text-align: left;
@@ -26,7 +26,7 @@
     color: $menu-item-hove-text-color;
     transition: all 0.2s;
 
-    &.with-box{
+    &.with-box {
       box-shadow: $default-box-shadow;
       font-size: $menu-item-with-box-text-size;
     }
