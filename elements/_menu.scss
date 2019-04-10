@@ -1,5 +1,5 @@
-.menu {
-  @include make-menu($menu-border, $white) {
+.submenu {
+  @include make-menu(none) {
     @include border-radius($menu-border-radius);
     @include make-inline-flex;
     flex-direction: column;
@@ -11,12 +11,46 @@
   }
 
 
-
   &.arrow {
     > .item, .menu > .item {
       //arrow
     }
   }
+
+
+  > .item {
+    @include make-menu-item;
+
+    > .menu-icon {
+      margin-right: $menu-icon-margin-right;
+    }
+  }
+
+  .menu-header {
+    padding: $menu-header-padding;
+    font-weight: map_get($font-weight, 'normal');
+    position: relative;
+
+    @include make-arrow($default-arrow-border, $default-arrow-active-border, null, 'after', map_get($arrow-direction, 'down')) {
+      position: absolute;
+      right: 0.5rem;
+      top: calc(50% - 2px);
+    }
+
+    > .menu-icon {
+      margin-right: $menu-icon-margin-right;
+    }
+  }
+
+  &.block {
+    width: 100%;
+  }
+
+}
+
+.menu {
+  @extend .submenu;
+  border: $menu-border;
 
   &.simple {
     border-width: 0;
@@ -60,53 +94,6 @@
     }
   }
 
-
-  > .item {
-    @include make-menu-item;
-
-    > .menu-icon {
-      margin-right: $menu-icon-margin-right;
-    }
-  }
-
-  .menu-header {
-    padding: $menu-header-padding;
-    font-weight: map_get($font-weight, 'normal');
-    position: relative;
-
-    @include make-arrow($default-arrow-border, $default-arrow-active-border, null, 'after', map_get($arrow-direction, 'down')) {
-      position: absolute;
-      right: 0.5rem;
-      top: calc(50% - 2px);
-    }
-
-    > .menu-icon {
-      margin-right: $menu-icon-margin-right;
-    }
-  }
-
-  > .submenu {
-    padding: 0 0 0 1rem;
-    border-width: 0;
-
-    > .menu {
-      border-width: 0;
-
-      > .item {
-        padding-right: 0;
-      }
-    }
-
-    &:not(.disabled):focus, &:not(.disabled):hover {
-      color: inherit;
-      background-color: inherit;
-    }
-  }
-
-  &.block {
-    width: 100%;
-  }
-
   &.primary {
     > .item {
       &:not(.disabled):not(.active):focus, &:not(.disabled):not(.active):hover {
@@ -118,6 +105,35 @@
         background-color: lighten($blue, 40%);
         border-right: 3px solid $blue;
         margin-right: -1px;
+      }
+    }
+  }
+
+  &.dark, &.dark .submenu {
+    background-color: #343949;
+    color: darken($white, 30%);
+
+    .menu-header {
+      background-color: #5d5e63e6;
+      color: darken($white, 10%);
+
+      &:focus, &:hover {
+        color: $white;
+      }
+    }
+
+    .item {
+      &.disabled {
+        color: darken($white, 40%);
+      }
+
+      &:not(.disabled):focus, &:not(.disabled):hover {
+        color: $white;
+      }
+
+      &.active {
+        background-color: $blue;
+        color: $white;
       }
     }
   }

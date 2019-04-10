@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/jeven2016/wheel-ui#readme",
   "devDependencies": {
-    "analyze-css": "^0.12.4"
+    "analyze-css": "^0.12.4",
+    "node-sass": "^4.11.0"
   }
 }

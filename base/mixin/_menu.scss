@@ -1,9 +1,8 @@
 //normal menu
-@mixin make-menu($bd-style, $bg-color) {
+@mixin make-menu($bd-style) {
   outline: none;
   border: $bd-style;
   list-style: none;
-  background-color: $bg-color;
   @content;
 }
 
@@ -52,7 +51,7 @@
 
 //dropdown menu
 @mixin dp-menu() {
-  @include make-menu($dp-item-border, $dp-background-color) {
+  @include make-menu($dp-item-border) {
     display: none;
     position: absolute;
     z-index: 100;
