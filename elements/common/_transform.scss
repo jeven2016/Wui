@@ -34,3 +34,13 @@
     left: 0;
   }
 }
+
+@keyframes show-menu-list {
+  from {
+    top: 10rem;
+  }
+  to {
+    top: 2.625rem;
+  }
+
+}

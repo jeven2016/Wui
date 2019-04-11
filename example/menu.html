@@ -1,177 +1,241 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="fa/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../dist/wui-bundle-min.css" rel="stylesheet">
-    <script src="jquery-3.1.0.js" type="application/javascript"></script>
-    <style type="text/css">
-        .area-example {
-            margin: 10px auto;
-            padding: 20px;
-        }
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="fa/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../dist/wui-bundle-min.css" rel="stylesheet">
+  <script src="jquery-3.1.0.js" type="application/javascript"></script>
+  <style type="text/css">
+    .area-example {
+      margin: 10px auto;
+      padding: 20px;
+    }
 
-    </style>
+  </style>
 
-    <script language="JavaScript">
-
-    </script>
+  <script language="JavaScript">
+    function toggleMenu(link) {
+      $(link).parent().toggleClass("active");
+    }
+  </script>
 </head>
 <body>
 <div class="area-example">
-    Menu示例：<br/><br/>
+  Menu示例：<br/><br/>
 
-    <ul class="menu with-box" style="width:15rem;height:15rem">
-        <li class="menu-header with-bar with-box"><i class="menu-icon fa fa-calendar-times-o"></i>Background</li>
-        <li class="divider"/>
-        <li class="item  with-bg with-box" style="padding-left: 2.5rem"><a href="#">Item1</a></li>
-        <li class="item  with-bg with-box" style="padding-left: 2.5rem">Item2</li>
-        <li class="item  with-bg with-box" style="padding-left: 2.5rem">Item3</li>
+  <ul class="menu with-box" style="width:15rem;height:15rem">
+    <li class="menu-header with-bar with-box"><i class="menu-icon fa fa-calendar-times-o"></i>Background
+    </li>
+    <li class="divider"></li>
+    <ul class="menu-list">
+      <li class="item  with-bg with-box" style="padding-left: 2.5rem"><a href="#">Item1</a></li>
+      <li class="item  with-bg with-box" style="padding-left: 2.5rem">Item2</li>
+      <li class="item  with-bg with-box" style="padding-left: 2.5rem">Item3</li>
     </ul>
+  </ul>
 
-    <ul class="menu simple" style="width:15rem;height:15rem">
-        <li class="menu-header">Header</li>
-        <li class="item with-box" style="padding-left: 2.5rem"><a href="#"> Item1</a></li>
-        <li class="item with-box" style="padding-left: 2.5rem">Item2</li>
-        <li class="item with-box" style="padding-left: 2.5rem">Item3</li>
+  <ul class="menu simple" style="width:15rem;height:15rem">
+    <li class="menu-header">Header</li>
+    <ul class="menu-list">
+      <li class="item with-box" style="padding-left: 2.5rem"><a href="#"> Item1</a></li>
+      <li class="item with-box" style="padding-left: 2.5rem">Item2</li>
+      <li class="item with-box" style="padding-left: 2.5rem">Item3</li>
     </ul>
+  </ul>
 
-    <ul class="menu">
-        <li class="menu-header">Disabled Menu</li>
-        <li class="item disabled">Item1</li>
-        <li class="item disabled">Item2</li>
-        <li class="item disabled">Item3</li>
+  <ul class="menu">
+    <li class="menu-header">Disabled Menu</li>
+    <ul class="menu-list">
+      <li class="item disabled">Item1</li>
+      <li class="item disabled">Item2</li>
+      <li class="item disabled">Item3</li>
     </ul>
+  </ul>
 
-    <div class="menu primary with-box" style="width:15rem;">
-        <div class="menu-header">Main menu</div>
-        <div class="item disabled" style="padding-left: 2.5rem">Item1</div>
-        <div class="item" style="padding-left: 2.5rem">Item2</div>
-        <div class="item active" style="padding-left: 2.5rem">Item3</div>
-        <div class="item " style="padding-left: 2.5rem">Item4</div>
-        <div class="submenu">
-            <div class="menu-header" style="padding-left: 2.5rem">submenu</div>
-            <li class="item" style="padding-left: 3.5rem">Item2</li>
-            <li class="item " style="padding-left: 3.5rem">Item3</li>
-            <li class="item " style="padding-left: 3.5rem">Item4</li>
-            <div class="submenu">
-                <div class="menu-header" style="padding-left: 3.5rem">submenu2</div>
-                <li class="item" style="padding-left: 4.5rem">Item2</li>
-                <li class="item " style="padding-left: 4.5rem">Item3</li>
-                <li class="item " style="padding-left: 4.5rem">Item4</li>
+  <div class="menu primary with-box" style="width:15rem;">
+    <div class="menu-header">Main menu</div>
+    <div class="menu-list">
+      <div class="item disabled" style="padding-left: 2.5rem">Item1</div>
+      <div class="item" style="padding-left: 2.5rem">Item2</div>
+      <div class="item active" style="padding-left: 2.5rem">Item3</div>
+      <div class="item " style="padding-left: 2.5rem">Item4</div>
+      <div class="submenu">
+        <div class="menu-header" style="padding-left: 2.5rem">submenu</div>
+        <div class="menu-list">
+          <li class="item" style="padding-left: 3.5rem">Item2</li>
+          <li class="item " style="padding-left: 3.5rem">Item3</li>
+          <li class="item " style="padding-left: 3.5rem">Item4</li>
+          <div class="submenu">
+            <div class="menu-header" style="padding-left: 3.5rem">submenu2</div>
+            <div class="menu-list">
+              <li class="item" style="padding-left: 4.5rem">Item2</li>
+              <li class="item " style="padding-left: 4.5rem">Item3</li>
+              <li class="item " style="padding-left: 4.5rem">Item4</li>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
-    <div class="menu primary with-box" style="width:15rem;">
-        <div class="submenu">
-            <div class="menu-header"><i class="menu-icon fa fa-calendar-times-o"></i>Main menu</div>
-            <div class="item disabled" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item1</div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item2</div>
-            <div class="item active" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item3</div>
-            <div class="item " style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item4</div>
+  <div class="menu primary with-box" style="width:15rem;">
+    <div class="submenu">
+      <div class="menu-header"><i class="menu-icon fa fa-calendar-times-o"></i>Main menu</div>
+      <div class="menu-list">
+        <div class="item disabled" style="padding-left: 2.5rem">Item1
         </div>
-        <div class="submenu">
-            <div class="menu-header"><i class="menu-icon fa fa-calendar-times-o"></i>Main menu2</div>
-            <div class="item disabled" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item1
-            </div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item2</div>
-            <div class="item active" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item3
-            </div>
-            <div class="item " style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item4</div>
+        <div class="item" style="padding-left: 2.5rem">Item2
         </div>
+        <div class="item active" style="padding-left: 2.5rem">Item3
+        </div>
+        <div class="item " style="padding-left: 2.5rem">Item4
+        </div>
+      </div>
     </div>
-
-    <div class="menu dark" style="width:15rem;">
-        <div class="submenu">
-            <div class="menu-header"><i class="menu-icon fa fa-calendar-times-o"></i>Main menu</div>
-            <div class="item disabled" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item1</div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item2</div>
-            <div class="item active" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item3</div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item4</div>
+    <div class="submenu">
+      <div class="menu-header"><i class="menu-icon fa fa-calendar-times-o"></i>Main menu2</div>
+      <div class="menu-list">
+        <div class="item disabled" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>Item1
         </div>
-        <div class="submenu">
-            <div class="menu-header"><i class="menu-icon fa fa-calendar-times-o"></i>Main menu2</div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item1
-            </div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item2</div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item3
-            </div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item4</div>
+        <div class="item" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>Item2
         </div>
+        <div class="item active" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>Item3
+        </div>
+        <div class="item " style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>Item4
+        </div>
+      </div>
     </div>
+  </div>
 
-    <div class="menu dark float" style="width:15rem;">
-        <div class="submenu">
-            <div class="menu-header"><i class="menu-icon fa fa-calendar-times-o"></i>Main menu</div>
-            <div class="item disabled" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item1</div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item2</div>
-            <div class="item active" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item3</div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item4</div>
+  <div class="menu dark" style="width:15rem;">
+    <div class="submenu">
+      <div class="menu-header"><i class="menu-icon fa fa-calendar-times-o"></i>Main menu</div>
+      <div class="menu-list">
+        <div class="item disabled" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>Item1
         </div>
-        <div class="submenu">
-            <div class="menu-header"><i class="menu-icon fa fa-calendar-times-o"></i>Main menu2</div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item1
-            </div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item2</div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item3
-            </div>
-            <div class="item" style="padding-left: 2.5rem"><i class="menu-icon fa fa-calendar-times-o"></i>Item4</div>
+        <div class="item" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>Item2
         </div>
+        <div class="item active" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>Item3
+        </div>
+        <div class="item" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>Item4
+        </div>
+      </div>
     </div>
+    <div class="submenu">
+      <div class="menu-header"><i class="menu-icon fa fa-calendar-times-o"></i>Main menu2</div>
+      <div class="menu-list">
+        <div class="item" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>Item1
+        </div>
+        <div class="item" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>Item2
+        </div>
+        <div class="item" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>Item3
+        </div>
+        <div class="item" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>Item4
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <ul class="menu">
-        <li class="active item text align-left">left</li>
-        <li class="item text align-center">center</li>
-        <li class="item text align-right">right</li>
-        <li class="item">default</li>
-    </ul>
-
-    <br/><br/>
-    <ul class="menu float">
-        <li class="item">Home</li>
-        <li class="item">Store</li>
-        <li class="item">Shopping</li>
-        <li class="item right ">
-            Item aligns right
+  <ul class="simple menu float" style="margin-top:1rem">
+    <ul class="submenu">
+      <li class="menu-header"><i class="menu-icon fa fa-calendar-times-o"></i>
+        <a href="#" onclick="toggleMenu(this)">Main
+          menu</a></li>
+      <div class="menu-list">
+        <li class="item disabled" style="padding-left: 2.5rem">Item1
         </li>
-    </ul>
-
-    <br/><br/>
-    <ul class="menu float">
-        <li class="item left">Item aligns left</li>
-        <li class="item text ok hover">Home</li>
-        <li class="item">Store</li>
-        <li class="item">Shopping</li>
-    </ul>
-
-    <br/><br/>
-    <ul class="simple menu float">
-        <li class="item ">
-            <div class="button-dropdown">
-                <button class="button">Button</button>
-                <ul class="menu">
-                    <li class="item" data-value="0">Item1</li>
-                    <li class="item" data-value="1">Item2</li>
-                    <li class="item" data-value="2">Item4</li>
-                </ul>
-            </div>
+        <li class="item" style="padding-left: 2.5rem">Item2
         </li>
-        <li class="item"><a href="#">Home</a></li>
-        <li class="item right">
-            <div type="text" class="icon-input left-icon">
-                <input type="text" class="input" placeholder="large input..."/>
-                <i class="fa fa-search icon"></i>
-            </div>
+        <li class="item active" style="padding-left: 2.5rem">Item3
         </li>
+        <li class="item" style="padding-left: 2.5rem">Item4
+        </li>
+      </div>
     </ul>
+    <ul class="submenu">
+      <li class="menu-header"><i class="menu-icon fa fa-calendar-times-o"></i>
+        <a href="#" onclick="toggleMenu(this)">Main
+          menu2</a></li>
+      <ul class="menu-list">
+        <li class="item" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>2Item
+        </li>
+        <li class="item" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>2Item2
+        </li>
+        <li class="item" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>2Item3
+        </li>
+        <li class="item" style="padding-left: 2.5rem"><i
+            class="menu-icon fa fa-calendar-times-o"></i>Item4
+        </li>
+      </ul>
+    </ul>
+  </ul>
 
-    <br/>
+  <br/><br/>
+  <ul class="menu primary float block">
+    <ul class="menu-list">
+      <li class="item with-bar with-bg with-box">Home</li>
+      <li class="item with-bar with-bg with-box">Store</li>
+      <li class="item with-bar with-bg with-box">Shopping</li>
+      <li class="item right with-bar with-bg with-box">
+        Item aligns right
+      </li>
+    </ul>
+  </ul>
+
+  <br/><br/>
+  <ul class="menu float block">
+    <ul class="menu-list">
+      <li class="item left">Item aligns left</li>
+      <li class="item text ok hover">Home</li>
+      <li class="item">Store</li>
+      <li class="item">Shopping</li>
+    </ul>
+  </ul>
+
+  <br/><br/>
+  <ul class="simple menu float block">
+    <ul class="menu-list">
+      <li class="item ">
+        <div class="button-dropdown">
+          <button class="button">Button</button>
+          <ul class="menu">
+            <li class="item" data-value="0">Item1</li>
+            <li class="item" data-value="1">Item2</li>
+            <li class="item" data-value="2">Item4</li>
+          </ul>
+        </div>
+      </li>
+      <li class="item"><a href="#">Home</a></li>
+      <li class="item right">
+        <div type="text" class="icon-input left-icon">
+          <input type="text" class="input" placeholder="large input..."/>
+          <i class="fa fa-search icon"></i>
+        </div>
+      </li>
+    </ul>
+  </ul>
 
 
 </div>
+<div style="height:50rem;">
 
+</div>
 </body>
 </html>
