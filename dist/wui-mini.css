@@ -1893,6 +1893,8 @@ h6 {
   .menu.dark, .menu.dark .submenu, .menu.dark .menu {
     background-color: #000911;
     color: #b3b3b3; }
+    .menu.dark.float .menu-list, .menu.dark .submenu.float .menu-list, .menu.dark .float.menu .menu-list {
+      background-color: #5d5e63e6; }
     .menu.dark .menu-header, .menu.dark .submenu .menu-header, .menu.dark .menu .menu-header {
       background-color: #5d5e63e6;
       color: #e6e6e6;

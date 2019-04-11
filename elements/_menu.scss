@@ -170,6 +170,12 @@
     background-color: #000911;
     color: darken($white, 30%);
 
+    &.float{
+      .menu-list{
+        background-color: #5d5e63e6;
+      }
+    }
+
     .menu-header {
       background-color: #5d5e63e6;
       color: darken($white, 10%);
