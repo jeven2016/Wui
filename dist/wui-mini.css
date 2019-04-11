@@ -1049,6 +1049,7 @@ h6 {
   outline: none;
   border: 1px solid #ccc;
   list-style: none;
+  width: 100%;
   display: none;
   position: absolute;
   z-index: 100;
@@ -1092,6 +1093,7 @@ h6 {
     outline: none;
     border: 1px solid #ccc;
     list-style: none;
+    width: 100%;
     display: none;
     position: absolute;
     z-index: 100;
@@ -1758,6 +1760,7 @@ h6 {
   outline: none;
   border: none;
   list-style: none;
+  width: 100%;
   border-radius: 0.25rem;
   display: -ms-inline-flexbox;
   display: -webkit-inline-flex;
@@ -1859,7 +1862,7 @@ h6 {
           animation: change-width-smoothly 0.3s; }
         .menu.float .menu-header.active + .menu-list {
           display: block;
-          animation: show-menu-list .2s; }
+          animation: show-menu-list .5s; }
     .menu.float > .menu-list {
       display: -ms-flexbox;
       display: -webkit-flex;
@@ -1922,6 +1925,11 @@ h6 {
   background-color: #ccc; }
   .divider.inverted {
     background-color: #fff; }
+  .divider.vertical {
+    border-left: 1px #ccc solid;
+    height: 100%;
+    width: 0;
+    background-color: inherit; }
 
 .tab {
   display: -ms-flexbox;

@@ -8,4 +8,12 @@
   &.inverted {
     background-color: #fff;
   }
+
+  &.vertical {
+    border-left: 1px #ccc solid;
+    height: 100%;
+    width: 0;
+    background-color: inherit;
+  }
+
 }

@@ -3,6 +3,7 @@
   outline: none;
   border: $bd-style;
   list-style: none;
+  width: 100%;
   @content;
 }
 
