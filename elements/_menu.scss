@@ -169,6 +169,7 @@
   &.dark, &.dark .submenu {
     background-color: #000911;
     color: darken($white, 30%);
+    border: none;
 
     &.float{
       .menu-list{
