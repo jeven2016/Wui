@@ -1053,7 +1053,6 @@ h6 {
   outline: none;
   border: 1px solid #ccc;
   list-style: none;
-  width: 100%;
   display: none;
   position: absolute;
   z-index: 100;
@@ -1097,7 +1096,6 @@ h6 {
     outline: none;
     border: 1px solid #ccc;
     list-style: none;
-    width: 100%;
     display: none;
     position: absolute;
     z-index: 100;
@@ -1764,11 +1762,10 @@ h6 {
   outline: none;
   border: none;
   list-style: none;
-  width: 100%;
   border-radius: 0.25rem;
-  display: -ms-inline-flexbox;
-  display: -webkit-inline-flex;
-  display: inline-flex;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
   flex-direction: column;
   align-items: stretch;
   position: relative; }
@@ -1786,13 +1783,14 @@ h6 {
     align-items: center;
     min-width: 10rem;
     white-space: nowrap; }
-    .submenu > .menu-list > .item:hover:not(.special):not(.disabled), .menu > .menu-list > .item:hover:not(.special):not(.disabled) {
+    .submenu > .menu-list > .item:focus, .menu > .menu-list > .item:focus, .submenu > .menu-list > .item:hover:not(.special):not(.disabled), .menu > .menu-list > .item:hover:not(.special):not(.disabled) {
       color: #277ed0;
+      background-color: #3e9c41;
       transition: all 0.2s; }
-      .submenu > .menu-list > .item:hover:not(.special):not(.disabled).with-box, .menu > .menu-list > .item:hover:not(.special):not(.disabled).with-box {
+      .submenu > .menu-list > .item:focus.with-box, .menu > .menu-list > .item:focus.with-box, .submenu > .menu-list > .item:hover:not(.special):not(.disabled).with-box, .menu > .menu-list > .item:hover:not(.special):not(.disabled).with-box {
         box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
         font-size: 1rem; }
-      .submenu > .menu-list > .item:hover:not(.special):not(.disabled).with-bg, .menu > .menu-list > .item:hover:not(.special):not(.disabled).with-bg {
+      .submenu > .menu-list > .item:focus.with-bg, .menu > .menu-list > .item:focus.with-bg, .submenu > .menu-list > .item:hover:not(.special):not(.disabled).with-bg, .menu > .menu-list > .item:hover:not(.special):not(.disabled).with-bg {
         background-color: #fafafa; }
     .submenu > .menu-list > .item.active:not(.special), .menu > .menu-list > .item.active:not(.special) {
       color: #277ed0; }
@@ -1825,6 +1823,9 @@ h6 {
     display: flex; }
 
 .menu {
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
   border: 1px solid #ccc; }
   .menu.simple {
     border-width: 0; }

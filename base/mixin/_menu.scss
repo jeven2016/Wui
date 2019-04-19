@@ -3,13 +3,11 @@
   outline: none;
   border: $bd-style;
   list-style: none;
-  width: 100%;
   @content;
 }
 
 @mixin make-menu-item() {
   @include make-flex {
-    //line-height: 1.25rem;
     padding: $menu-item-padding;
     margin: 0;
     text-align: left;
@@ -18,12 +16,11 @@
     align-items: center;
     min-width: 10rem;
     white-space: nowrap;
-
-    @content;
   }
 
-  &:hover:not(.special):not(.disabled) {
+  &:focus, &:hover:not(.special):not(.disabled) {
     color: $menu-item-hove-text-color;
+    background-color: #3e9c41;
     transition: all 0.2s;
 
     &.with-box {
