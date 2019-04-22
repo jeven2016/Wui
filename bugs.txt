@@ -51,6 +51,7 @@ INFO:
 
 4. table, 响应式布局
 
+5. menu-> list : add open and active class
 
 specification:
 

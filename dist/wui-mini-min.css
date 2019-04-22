@@ -448,6 +448,9 @@ time, mark, audio, video {
 .clear-min-width {
   min-width: 0 !important; }
 
+.hide {
+  display: none; }
+
 .text.bold {
   font-weight: 500; }
 
