@@ -14,20 +14,26 @@
 
   &.open {
     > .menu-list {
-      display: flex;
+      display: block;
+      height: unset;
+      transition: display 2s linear, height 2s linear;
       //https://css-tricks.com/using-css-transitions-auto-dimensions/
     }
   }
 
   &.close {
     > .menu-list {
-      border: 1px solid red;
-      flex: 0;
-      //animation: open-menu 1s ease-in-out;
+      display: none;
+      height: 0;
+      transition: display 2s linear, height 2s linear;
+      //animation: close-menu .5s ease-in-out;
+      //animation-fill-mode: forwards; //keep the last state
     }
   }
 
   > .menu-list {
+    transition: all .3s linear;
+
     > .item {
       @include make-menu-item;
 

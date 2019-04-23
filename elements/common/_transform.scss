@@ -44,12 +44,12 @@
   }
 }
 
-@keyframes open-menu {
+@keyframes close-menu {
   from {
-    height: 100%;
+    max-height: 20rem;
   }
   to {
-    height: 0;
-    display: none;
+    max-height: 0;
+    opacity: 0;
   }
 }

@@ -877,12 +877,12 @@ a {
   to {
     top: 2.625rem; } }
 
-@keyframes open-menu {
+@keyframes close-menu {
   from {
-    height: 100%; }
+    max-height: 20rem; }
   to {
-    height: 0;
-    display: none; } }
+    max-height: 0;
+    opacity: 0; } }
 
 blockquote, .blockquote {
   display: block;
@@ -1782,39 +1782,44 @@ h6 {
   .submenu.with-box, .with-box.menu {
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45); }
   .submenu.open > .menu-list, .open.menu > .menu-list {
-    display: flex; }
+    display: block;
+    height: unset;
+    transition: display 2s linear, height 2s linear; }
   .submenu.close > .menu-list, .close.menu > .menu-list {
-    border: 1px solid red;
-    flex: 0; }
-  .submenu > .menu-list > .item, .menu > .menu-list > .item {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    margin: 0;
-    text-align: left;
-    cursor: pointer;
-    border-width: 0;
-    align-items: center;
-    min-width: 10rem;
-    white-space: nowrap; }
-    .submenu > .menu-list > .item:focus, .menu > .menu-list > .item:focus, .submenu > .menu-list > .item:hover:not(.special):not(.disabled), .menu > .menu-list > .item:hover:not(.special):not(.disabled) {
-      color: #277ed0;
-      transition: all 0.2s; }
-      .submenu > .menu-list > .item:focus.with-box, .menu > .menu-list > .item:focus.with-box, .submenu > .menu-list > .item:hover:not(.special):not(.disabled).with-box, .menu > .menu-list > .item:hover:not(.special):not(.disabled).with-box {
-        box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
-        font-size: 1rem; }
-      .submenu > .menu-list > .item:focus.with-bg, .menu > .menu-list > .item:focus.with-bg, .submenu > .menu-list > .item:hover:not(.special):not(.disabled).with-bg, .menu > .menu-list > .item:hover:not(.special):not(.disabled).with-bg {
-        background-color: #fafafa; }
-    .submenu > .menu-list > .item.active:not(.special), .menu > .menu-list > .item.active:not(.special) {
-      color: #277ed0; }
-      .submenu > .menu-list > .item.active:not(.special).with-bg, .menu > .menu-list > .item.active:not(.special).with-bg {
-        background-color: #ededed; }
-    .submenu > .menu-list > .item:disabled, .menu > .menu-list > .item:disabled, .submenu > .menu-list > .item.disabled, .menu > .menu-list > .item.disabled {
-      color: #333333;
-      background-color: transparent; }
-    .submenu > .menu-list > .item > .menu-icon, .menu > .menu-list > .item > .menu-icon {
-      margin-right: 0.5rem; }
+    display: none;
+    height: 0;
+    transition: display 2s linear, height 2s linear; }
+  .submenu > .menu-list, .menu > .menu-list {
+    transition: all .3s linear; }
+    .submenu > .menu-list > .item, .menu > .menu-list > .item {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      padding: 0.5rem 1rem 0.5rem 1rem;
+      margin: 0;
+      text-align: left;
+      cursor: pointer;
+      border-width: 0;
+      align-items: center;
+      min-width: 10rem;
+      white-space: nowrap; }
+      .submenu > .menu-list > .item:focus, .menu > .menu-list > .item:focus, .submenu > .menu-list > .item:hover:not(.special):not(.disabled), .menu > .menu-list > .item:hover:not(.special):not(.disabled) {
+        color: #277ed0;
+        transition: all 0.2s; }
+        .submenu > .menu-list > .item:focus.with-box, .menu > .menu-list > .item:focus.with-box, .submenu > .menu-list > .item:hover:not(.special):not(.disabled).with-box, .menu > .menu-list > .item:hover:not(.special):not(.disabled).with-box {
+          box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
+          font-size: 1rem; }
+        .submenu > .menu-list > .item:focus.with-bg, .menu > .menu-list > .item:focus.with-bg, .submenu > .menu-list > .item:hover:not(.special):not(.disabled).with-bg, .menu > .menu-list > .item:hover:not(.special):not(.disabled).with-bg {
+          background-color: #fafafa; }
+      .submenu > .menu-list > .item.active:not(.special), .menu > .menu-list > .item.active:not(.special) {
+        color: #277ed0; }
+        .submenu > .menu-list > .item.active:not(.special).with-bg, .menu > .menu-list > .item.active:not(.special).with-bg {
+          background-color: #ededed; }
+      .submenu > .menu-list > .item:disabled, .menu > .menu-list > .item:disabled, .submenu > .menu-list > .item.disabled, .menu > .menu-list > .item.disabled {
+        color: #333333;
+        background-color: transparent; }
+      .submenu > .menu-list > .item > .menu-icon, .menu > .menu-list > .item > .menu-icon {
+        margin-right: 0.5rem; }
   .submenu .menu-header, .menu .menu-header {
     padding: 0.5rem 1rem 0.5rem 1rem;
     font-weight: 500;
