@@ -42,5 +42,14 @@
   to {
     top: 2.625rem;
   }
+}
 
+@keyframes open-menu {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0;
+    display: none;
+  }
 }

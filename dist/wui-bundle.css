@@ -877,6 +877,13 @@ a {
   to {
     top: 2.625rem; } }
 
+@keyframes open-menu {
+  from {
+    height: 100%; }
+  to {
+    height: 0;
+    display: none; } }
+
 blockquote, .blockquote {
   display: block;
   border-left: 0.4rem solid #ccc;
@@ -1774,6 +1781,11 @@ h6 {
   position: relative; }
   .submenu.with-box, .with-box.menu {
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45); }
+  .submenu.open > .menu-list, .open.menu > .menu-list {
+    display: flex; }
+  .submenu.close > .menu-list, .close.menu > .menu-list {
+    border: 1px solid red;
+    flex: 0; }
   .submenu > .menu-list > .item, .menu > .menu-list > .item {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1788,7 +1800,6 @@ h6 {
     white-space: nowrap; }
     .submenu > .menu-list > .item:focus, .menu > .menu-list > .item:focus, .submenu > .menu-list > .item:hover:not(.special):not(.disabled), .menu > .menu-list > .item:hover:not(.special):not(.disabled) {
       color: #277ed0;
-      background-color: #3e9c41;
       transition: all 0.2s; }
       .submenu > .menu-list > .item:focus.with-box, .menu > .menu-list > .item:focus.with-box, .submenu > .menu-list > .item:hover:not(.special):not(.disabled).with-box, .menu > .menu-list > .item:hover:not(.special):not(.disabled).with-box {
         box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
@@ -1853,7 +1864,7 @@ h6 {
         z-index: 100;
         left: 0;
         top: 2.625rem;
-        background-color: #fff;
+        background-color: inherit;
         box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45); }
       .menu.float .menu-header.active {
         color: #277ed0; }

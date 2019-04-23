@@ -12,6 +12,20 @@
     box-shadow: $default-box-shadow;
   }
 
+  &.open {
+    > .menu-list {
+      display: flex;
+      //https://css-tricks.com/using-css-transitions-auto-dimensions/
+    }
+  }
+
+  &.close {
+    > .menu-list {
+      border: 1px solid red;
+      flex: 0;
+      //animation: open-menu 1s ease-in-out;
+    }
+  }
 
   > .menu-list {
     > .item {
@@ -89,7 +103,7 @@
         z-index: map_get($z-index, 'mask');
         left: 0;
         top: 2.625rem;
-        background-color: #fff;
+        background-color: inherit;
         box-shadow: $default-box-shadow;
       }
 

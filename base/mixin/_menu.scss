@@ -20,7 +20,6 @@
 
   &:focus, &:hover:not(.special):not(.disabled) {
     color: $menu-item-hove-text-color;
-    background-color: #3e9c41;
     transition: all 0.2s;
 
     &.with-box {
