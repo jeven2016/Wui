@@ -12,27 +12,23 @@
     box-shadow: $default-box-shadow;
   }
 
-  &.open {
-    > .menu-list {
-      display: block;
-      height: unset;
-      transition: display 2s linear, height 2s linear;
-      //https://css-tricks.com/using-css-transitions-auto-dimensions/
-    }
-  }
-
   &.close {
+    > .menu-header:after {
+      transform: rotate(90deg);
+
+    }
+
     > .menu-list {
       display: none;
       height: 0;
-      transition: display 2s linear, height 2s linear;
+      //transition: display 2s linear, height 2s linear;
       //animation: close-menu .5s ease-in-out;
       //animation-fill-mode: forwards; //keep the last state
     }
   }
 
   > .menu-list {
-    transition: all .3s linear;
+    transition: all .2s linear;
 
     > .item {
       @include make-menu-item;
@@ -174,7 +170,7 @@
   }
 
   &.primary {
-    > .menu-list > .item {
+    .menu-list > .item {
       &:not(.disabled):not(.active):focus, &:not(.disabled):not(.active):hover {
         color: lighten($blue, 10%);
         background-color: inherit;

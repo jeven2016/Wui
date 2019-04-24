@@ -1781,16 +1781,13 @@ h6 {
   position: relative; }
   .submenu.with-box, .with-box.menu {
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45); }
-  .submenu.open > .menu-list, .open.menu > .menu-list {
-    display: block;
-    height: unset;
-    transition: display 2s linear, height 2s linear; }
+  .submenu.close > .menu-header:after, .close.menu > .menu-header:after {
+    transform: rotate(90deg); }
   .submenu.close > .menu-list, .close.menu > .menu-list {
     display: none;
-    height: 0;
-    transition: display 2s linear, height 2s linear; }
+    height: 0; }
   .submenu > .menu-list, .menu > .menu-list {
-    transition: all .3s linear; }
+    transition: all .2s linear; }
     .submenu > .menu-list > .item, .menu > .menu-list > .item {
       display: -ms-flexbox;
       display: -webkit-flex;
@@ -1910,10 +1907,10 @@ h6 {
       display: none; }
       .menu.float > .divider + .menu-list > .item {
         border-left: 1px solid #ccc; }
-  .menu.primary > .menu-list > .item:not(.disabled):not(.active):focus, .menu.primary > .menu-list > .item:not(.disabled):not(.active):hover {
+  .menu.primary .menu-list > .item:not(.disabled):not(.active):focus, .menu.primary .menu-list > .item:not(.disabled):not(.active):hover {
     color: #4c97de;
     background-color: inherit; }
-  .menu.primary > .menu-list > .item.active {
+  .menu.primary .menu-list > .item.active {
     background-color: #cde2f6;
     border-right: 3px solid #277ed0;
     margin-right: -1px; }
