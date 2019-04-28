@@ -3,7 +3,7 @@
   width: $card-width;
   border: $card-border;
   @include border-radius($card-border-radius);
-  margin: 0.25rem 0.25rem;
+  //margin: 0.25rem 0.25rem;
 
   .card-header {
     padding: $card-header-padding;
