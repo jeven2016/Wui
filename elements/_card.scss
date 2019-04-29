@@ -3,6 +3,7 @@
   width: $card-width;
   border: $card-border;
   @include border-radius($card-border-radius);
+  box-shadow: $default-box-shadow;
   //margin: 0.25rem 0.25rem;
 
   .card-header {

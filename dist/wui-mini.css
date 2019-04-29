@@ -1326,6 +1326,7 @@ h6 {
   width: 20rem;
   border: 1px solid #acacac;
   border-radius: 0.25rem;
+  box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
   /*conflict with other components like dropdown*/
   /* .menu {
     width: 100%;
