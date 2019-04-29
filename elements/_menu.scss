@@ -33,7 +33,7 @@
     > .item {
       @include make-menu-item;
 
-      > .menu-icon {
+      > .icon {
         margin-right: $menu-icon-margin-right;
       }
     }
@@ -45,7 +45,7 @@
     position: relative;
 
 
-    > .menu-icon {
+    > .icon {
       margin-right: $menu-icon-margin-right;
     }
   }
