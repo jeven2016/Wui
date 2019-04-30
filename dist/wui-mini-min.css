@@ -1811,13 +1811,13 @@ h6 {
       .submenu > .menu-list > .item:disabled, .menu > .menu-list > .item:disabled, .submenu > .menu-list > .item.disabled, .menu > .menu-list > .item.disabled {
         color: #333333;
         background-color: transparent; }
-      .submenu > .menu-list > .item > .menu-icon, .menu > .menu-list > .item > .menu-icon {
+      .submenu > .menu-list > .item > .icon, .menu > .menu-list > .item > .icon {
         margin-right: 0.5rem; }
   .submenu .menu-header, .menu .menu-header {
     padding: 0.5rem 1rem 0.5rem 1rem;
     font-weight: 500;
     position: relative; }
-    .submenu .menu-header > .menu-icon, .menu .menu-header > .menu-icon {
+    .submenu .menu-header > .icon, .menu .menu-header > .icon {
       margin-right: 0.5rem; }
   .submenu:not(.float) .menu-header:after, .menu:not(.float) .menu-header:after {
     content: '';
@@ -1845,6 +1845,22 @@ h6 {
       display: none; }
   .menu.float {
     flex-direction: row; }
+    .menu.float .submenu.active, .menu.float .active.menu {
+      color: #277ed0; }
+      .menu.float .submenu.active > .menu-header:after, .menu.float .active.menu > .menu-header:after {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 100%;
+        content: '';
+        height: 0.1875rem;
+        width: 100%;
+        background-color: #277ed0;
+        transition: width 0.5s;
+        animation: change-width-smoothly 0.3s; }
+      .menu.float .submenu.active > .menu-list, .menu.float .active.menu > .menu-list {
+        display: block;
+        animation: show-menu-list .5s; }
     .menu.float .menu-header {
       flex: 0 0 auto;
       min-width: unset;
@@ -1864,22 +1880,6 @@ h6 {
         top: 2.625rem;
         background-color: inherit;
         box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45); }
-      .menu.float .menu-header.active {
-        color: #277ed0; }
-        .menu.float .menu-header.active:after {
-          position: absolute;
-          display: block;
-          left: 0;
-          top: 100%;
-          content: '';
-          height: 0.1875rem;
-          width: 100%;
-          background-color: #277ed0;
-          transition: width 0.5s;
-          animation: change-width-smoothly 0.3s; }
-        .menu.float .menu-header.active + .menu-list {
-          display: block;
-          animation: show-menu-list .5s; }
     .menu.float > .menu-list {
       display: -ms-flexbox;
       display: -webkit-flex;

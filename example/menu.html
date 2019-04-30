@@ -17,7 +17,7 @@
 
   <script language="JavaScript">
     function toggleMenu(link) {
-      $(link).parent().toggleClass("active");
+      $(link).parentsUntil(".submenu").parent().toggleClass("active");
     }
 
     $(function () {
