@@ -1845,6 +1845,44 @@ h6 {
       display: none; }
   .menu.float {
     flex-direction: row; }
+    .menu.float .submenu .menu-header, .menu.float .menu .menu-header {
+      flex: 0 0 auto;
+      min-width: unset;
+      align-self: center;
+      align-items: stretch;
+      flex-direction: row;
+      transition: all .3s; }
+      .menu.float .submenu .menu-header:after, .menu.float .menu .menu-header:after {
+        content: none;
+        border: none; }
+      .menu.float .submenu .menu-header + .menu-list, .menu.float .menu .menu-header + .menu-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        z-index: 100;
+        left: 0;
+        top: 2.625rem;
+        background-color: inherit;
+        box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45); }
+    .menu.float .submenu > .menu-list, .menu.float .menu > .menu-list {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      flex: 1 0 auto; }
+      .menu.float .submenu > .menu-list > .item, .menu.float .menu > .menu-list > .item {
+        flex: 0 0 auto;
+        min-width: unset;
+        align-self: center;
+        align-items: stretch; }
+        .menu.float .submenu > .menu-list > .item.right, .menu.float .menu > .menu-list > .item.right {
+          margin-left: auto !important;
+          flex-grow: 1;
+          text-align: right;
+          justify-content: flex-end; }
+        .menu.float .submenu > .menu-list > .item.left, .menu.float .menu > .menu-list > .item.left {
+          margin-right: auto !important;
+          flex-grow: 1; }
     .menu.float .submenu.active, .menu.float .active.menu {
       color: #277ed0; }
       .menu.float .submenu.active > .menu-header:after, .menu.float .active.menu > .menu-header:after {
@@ -1861,44 +1899,6 @@ h6 {
       .menu.float .submenu.active > .menu-list, .menu.float .active.menu > .menu-list {
         display: block;
         animation: show-menu-list .5s; }
-    .menu.float .menu-header {
-      flex: 0 0 auto;
-      min-width: unset;
-      align-self: center;
-      align-items: stretch;
-      flex-direction: row;
-      transition: all .3s; }
-      .menu.float .menu-header:after {
-        content: none;
-        border: none; }
-      .menu.float .menu-header + .menu-list {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        z-index: 100;
-        left: 0;
-        top: 2.625rem;
-        background-color: inherit;
-        box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45); }
-    .menu.float > .menu-list {
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      flex-direction: row;
-      flex: 1 0 auto; }
-      .menu.float > .menu-list > .item {
-        flex: 0 0 auto;
-        min-width: unset;
-        align-self: center;
-        align-items: stretch; }
-        .menu.float > .menu-list > .item.right {
-          margin-left: auto !important;
-          flex-grow: 1;
-          text-align: right;
-          justify-content: flex-end; }
-        .menu.float > .menu-list > .item.left {
-          margin-right: auto !important;
-          flex-grow: 1; }
     .menu.float > .divider {
       display: none; }
       .menu.float > .divider + .menu-list > .item {
