@@ -15,7 +15,6 @@
   &.close {
     > .menu-header:after {
       transform: rotate(90deg);
-
     }
 
     > .menu-list {
@@ -83,9 +82,34 @@
   &.float {
     flex-direction: row;
 
-    .submenu {
+    > .submenu {
+
+      .menu-header {
+        flex: 0 0 auto;
+        align-self: center;
+        align-items: stretch;
+        flex-direction: row;
+        transition: all .3s;
+
+        //remove arrow
+        &:after {
+          content: none;
+          border: none;
+        }
+      }
+
+      > .menu-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        z-index: map_get($z-index, 'mask');
+        left: 0;
+        top: 2.625rem;
+        background-color: $white;
+        box-shadow: $default-box-shadow;
+      }
+
       &.active {
-        color: $blue;
 
         //create the bottom border
         > .menu-header {
@@ -108,34 +132,6 @@
           animation: show-menu-list .5s;
         }
       }
-    }
-
-    //hide the menu list while menu header is placed
-    .menu-header {
-      flex: 0 0 auto;
-      min-width: unset;
-      align-self: center;
-      align-items: stretch;
-      flex-direction: row;
-      transition: all .3s;
-
-      //remove after
-      &:after {
-        content: none;
-        border: none;
-      }
-
-      + .menu-list {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        z-index: map_get($z-index, 'mask');
-        left: 0;
-        top: 2.625rem;
-        background-color: inherit;
-        box-shadow: $default-box-shadow;
-      }
-
     }
 
     > .menu-list {
