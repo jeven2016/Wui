@@ -28,6 +28,7 @@
 
   > .menu-list {
     transition: all .2s linear;
+    background: $white;
 
     > .item {
       @include make-menu-item;
@@ -189,16 +190,13 @@
     color: darken($white, 30%);
     border: none;
 
-    &.float {
-      .menu-list {
-        background-color: #5d5e63e6;
-      }
-
-
+    > .menu-list {
+      background-color: #5d5e63e6;
     }
 
+
     .menu-header {
-      background-color: #5d5e63e6;
+      background-color: rgba(74, 75, 79, 0.9);
       color: darken($white, 10%);
       transition: all .2s;
 

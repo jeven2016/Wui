@@ -1783,7 +1783,8 @@ h6 {
     display: none;
     height: 0; }
   .submenu > .menu-list, .menu > .menu-list {
-    transition: all .2s linear; }
+    transition: all .2s linear;
+    background: #fff; }
     .submenu > .menu-list > .item, .menu > .menu-list > .item {
       display: -ms-flexbox;
       display: -webkit-flex;
@@ -1911,10 +1912,10 @@ h6 {
     background-color: #000911;
     color: #b3b3b3;
     border: none; }
-    .menu.dark.float .menu-list, .menu.dark .submenu.float .menu-list, .menu.dark .float.menu .menu-list {
+    .menu.dark > .menu-list, .menu.dark .submenu > .menu-list, .menu.dark .menu > .menu-list {
       background-color: #5d5e63e6; }
     .menu.dark .menu-header, .menu.dark .submenu .menu-header, .menu.dark .menu .menu-header {
-      background-color: #5d5e63e6;
+      background-color: rgba(74, 75, 79, 0.9);
       color: #e6e6e6;
       transition: all .2s; }
       .menu.dark .menu-header:focus, .menu.dark .menu-header:hover, .menu.dark .submenu .menu-header:focus, .menu.dark .menu .menu-header:focus, .menu.dark .submenu .menu-header:hover, .menu.dark .menu .menu-header:hover {
