@@ -1851,8 +1851,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: row; }
     .menu.float > .submenu .menu-header, .menu.float > .menu .menu-header {
       flex: 0 0 auto;
-      align-self: center;
-      align-items: stretch;
+      align-items: center;
       flex-direction: row;
       transition: all .3s; }
       .menu.float > .submenu .menu-header:after, .menu.float > .menu .menu-header:after {
