@@ -41,12 +41,6 @@
   min-width: $dp-min-width;
   vertical-align: $dp-vertical-align;
 
-  &.hover {
-    &:hover {
-      @extend %active-menu;
-    }
-  }
-
   > .menu {
     @include dp-menu {
       width: calc(100% + 2px);

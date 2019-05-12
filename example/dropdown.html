@@ -1,243 +1,273 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="../dist/wui-bundle-min.css" rel="stylesheet">
-    <link href="fa/css/font-awesome.min.css" rel="stylesheet">
-    <script src="jquery-3.1.0.js" type="application/javascript"></script>
-    <script language="JavaScript">
-        $(function () {
-            $(".dropdown > .info").click(function (evt) {
-                $(this).parent().toggleClass("active");
-            });
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="../dist/wui-bundle-min.css" rel="stylesheet">
+  <link href="fa/css/font-awesome.min.css" rel="stylesheet">
+  <script src="jquery-3.1.0.js" type="application/javascript"></script>
+  <script language="JavaScript">
+    $(function() {
+      $('.dropdown > .info').click(function(evt) {
+        $(this).parent().toggleClass('active');
+      });
 
-        });
-    </script>
-    <style type="text/css">
-        .area-example {
-            margin: 10px auto;
-            padding: 20px;
-        }
+    });
+  </script>
+  <style type="text/css">
+    .area-example {
+      margin: 10px auto;
+      padding: 20px;
+    }
 
-        .list-container {
-            position: relative;
-            padding: 10px;
-        }
+    .list-container {
+      position: relative;
+      padding: 10px;
+    }
 
-    </style>
+  </style>
 </head>
 <body>
 <div class="area-example">
-    <h1>Dropdown示例:</h1>
-    <div>
-        <div class="list-container">
-            <button class="button">Button</button>
+  <h1>Dropdown示例:</h1>
+  <div>
+    <div class="list-container">
+      <button class="button">Button</button>
 
 
-            <div class="dropdown">
-                <div class="info">Country</div>
-                <div class="menu">
-                    <div class="item" data-value="0">China</div>
-                    <div class="item" data-value="1">USA</div>
-                    <a class="item" data-value="1" href="#"> Link</a>
-                    <div class="item" data-value="2">Russian</div>
-                </div>
-            </div>
-
-            <div class="dropdown active">
-                <div class="info">Simple</div>
-                <div class="menu">
-                    <div class="item" data-value="0">Item1</div>
-                    <div class="item" data-value="1">Item2</div>
-                    <div class="item" data-value="2">Item4</div>
-                </div>
-            </div>
-
-            <div class="dropdown">
-                <div class="info">ul & li</div>
-                <ul class="menu">
-                    <li class="item" data-value="0">Item1</li>
-                    <li class="item" data-value="1">Item2</li>
-                    <li class="item" data-value="2">Item4</li>
-                </ul>
-            </div>
-
-
+      <div class="dropdown hover">
+        <div class="info">Country</div>
+        <div class="menu">
+          <div class="menu-list">
+            <div class="item" data-value="0">China</div>
+            <div class="item" data-value="1">USA</div>
+            <a class="item" data-value="1" href="#"> Link</a>
+            <div class="item" data-value="2">Russian</div>
+          </div>
         </div>
+      </div>
 
-        <br/>
-        <br/>
-        Divider<br/>
-        <div>
-
-            <div class="dropdown hover">
-                <div class="info">Hover</div>
-                <ul class="menu">
-                    <li class="item" data-value="0">Item1</li>
-                    <li class="item" data-value="1">Item2</li>
-                    <li class="item" data-value="2">Item4</li>
-                </ul>
-            </div>
-
-            <div class="dropdown">
-                <div class="info">Divider</div>
-                <ul class="menu">
-                    <li class="divider"></li>
-                    <li class="item" data-value="0">Item1</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="1">Item2</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="2">Item4</li>
-                </ul>
-            </div>
-
+      <div class="dropdown active">
+        <div class="info">Simple</div>
+        <div class="menu">
+          <div class="menu-list">
+            <div class="item" data-value="0">Item1</div>
+            <div class="item" data-value="1">Item2</div>
+            <div class="item" data-value="2">Item4</div>
+          </div>
         </div>
+      </div>
 
-        <br/>
-        <br/>
-        Button Dropdown:<br/>
-        <div>
-            <div class="button-dropdown">
-                <button class="button primary">Button</button>
-                <ul class="menu">
-                    <li class="divider"></li>
-                    <li class="item" data-value="0">Item1</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="1">Item2</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="2">Item4</li>
-                </ul>
-            </div>
+      <div class="dropdown">
+        <div class="info">ul & li</div>
+        <ul class="menu">
+          <div class="menu-list">
+            <li class="item" data-value="0">Item1</li>
+            <li class="item" data-value="1">Item2</li>
+            <li class="item" data-value="2">Item4</li>
+          </div>
+        </ul>
+      </div>
 
-            <div class="button-dropdown">
-                <button class="button green">Button</button>
-                <ul class="menu">
-                    <li class="item" data-value="0">Item1</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="1">Item2</li>
-                    <li class="divider"></li>
-                </ul>
-            </div>
-
-            <div class="button-dropdown">
-                <button class="button yellow">
-                    <li class="fa fa-plus"/>
-                    Button
-                </button>
-                <ul class="menu">
-                    <li class="item" data-value="0">Item1</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="1">Item2</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="2">Item4</li>
-                </ul>
-            </div>
-
-            <div class="button-dropdown active">
-                <div class="button-group">
-                    <button class="button blue outline">Button Dropdown</button>
-                    <button class="button green">
-                        <li class="fa fa-arrow-right"/>
-                    </button>
-                </div>
-
-                <ul class="menu">
-                    <li class="item" data-value="0">Item1</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="1">Item2</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="2">Item4</li>
-                </ul>
-            </div>
-            <button class="button">Button</button>
-        </div>
-
-        <br/><br/>
-        <div>
-            <div class="simple dropdown">
-                <a class="info">Text</a>
-                <ul class="menu">
-                    <li class="item" data-value="0">Item1</li>
-                    <li class="item" data-value="1">Item2</li>
-                    <li class="item" data-value="2">Item4</li>
-                </ul>
-            </div>
-
-
-            <div class="button-dropdown">
-                <button class="button yellow">
-                    Left top
-                </button>
-
-                <ul class="menu top">
-                    <li class="item" data-value="0">Item1</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="1">Item2</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="2">Item4</li>
-                </ul>
-            </div>
-
-            <div class="button-dropdown">
-                <button class="button yellow">
-                    Right Down
-                </button>
-
-                <ul class="menu right">
-                    <li class="item" data-value="0">Item1</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="1">Item2</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="2">Item4</li>
-                </ul>
-            </div>
-
-            <div class="button-dropdown">
-                <button class="button yellow">
-                    Right top
-                </button>
-
-                <ul class="menu top right">
-                    <li class="item" data-value="0">Item1</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="1">Item2</li>
-                    <li class="divider"></li>
-                    <li class="item" data-value="2">Item4</li>
-                </ul>
-            </div>
-
-            <div class="simple dropdown">
-                <li class="fa fa-user"></li>
-                <div class="info">Jason Li</div>
-                <ul class="menu">
-                    <li class="item" data-value="0">Profile</li>
-                    <li class="item" data-value="1">Change Password</li>
-                    <li class="item" data-value="2">Logout</li>
-                </ul>
-            </div>
-        </div>
-
-        <br/><br/>
-        Disabled Item:
-        <div>
-            <div class="button-dropdown">
-                <button class="button yellow">
-                    Button
-                </button>
-
-                <ul class="menu">
-                    <li class="item disabled" data-value="0">Item1</li>
-                    <li class="divider"></li>
-                    <li class="item disabled" data-value="1">Item2</li>
-                    <li class="divider"></li>
-                    <li class="item disabled" data-value="2">Item4</li>
-                </ul>
-            </div>
-        </div>
 
     </div>
+
+    <br/>
+    <br/>
+    Divider<br/>
+    <div>
+
+      <div class="dropdown hover">
+        <div class="info">Hover</div>
+        <ul class="menu">
+          <div class="menu-list">
+            <li class="item" data-value="0">Item1</li>
+            <li class="item" data-value="1">Item2</li>
+            <li class="item" data-value="2">Item4</li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="dropdown">
+        <div class="info">Divider</div>
+        <ul class="menu">
+          <div class="menu-list">
+            <li class="divider"></li>
+            <li class="item" data-value="0">Item1</li>
+            <li class="divider"></li>
+            <li class="item" data-value="1">Item2</li>
+            <li class="divider"></li>
+            <li class="item" data-value="2">Item4</li>
+          </div>
+        </ul>
+      </div>
+
+    </div>
+
+    <br/>
+    <br/>
+    Button Dropdown:<br/>
+    <div>
+      <div class="button-dropdown">
+        <button class="button primary">Button</button>
+        <ul class="menu">
+          <div class="menu-list">
+            <li class="divider"></li>
+            <li class="item" data-value="0">Item1</li>
+            <li class="divider"></li>
+            <li class="item" data-value="1">Item2</li>
+            <li class="divider"></li>
+            <li class="item" data-value="2">Item4</li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="button-dropdown">
+        <button class="button green">Button</button>
+        <ul class="menu">
+          <div class="menu-list">
+            <li class="item" data-value="0">Item1</li>
+            <li class="divider"></li>
+            <li class="item" data-value="1">Item2</li>
+            <li class="divider"></li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="button-dropdown active">
+        <button class="button yellow">
+          <li class="fa fa-plus"/>
+          Button
+        </button>
+        <ul class="menu">
+          <div class="menu-list">
+            <li class="item" data-value="0">Item1</li>
+            <li class="divider"></li>
+            <li class="item" data-value="1">Item2</li>
+            <li class="divider"></li>
+            <li class="item" data-value="2">Item4</li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="button-dropdown active">
+        <div class="button-group">
+          <button class="button blue outline">Button Dropdown</button>
+          <button class="button green">
+            <li class="fa fa-arrow-right"/>
+          </button>
+        </div>
+
+        <ul class="menu">
+          <div class="menu-list">
+            <li class="item" data-value="0">Item1</li>
+            <li class="divider"></li>
+            <li class="item" data-value="1">Item2</li>
+            <li class="divider"></li>
+            <li class="item" data-value="2">Item4</li>
+          </div>
+        </ul>
+      </div>
+      <button class="button">Button</button>
+    </div>
+
+    <br/><br/>
+    <div>
+      <div class="simple dropdown">
+        <a class="info">Text</a>
+        <ul class="menu">
+          <div class="menu-list">
+            <li class="item" data-value="0">Item1</li>
+            <li class="item" data-value="1">Item2</li>
+            <li class="item" data-value="2">Item4</li>
+          </div>
+        </ul>
+      </div>
+
+
+      <div class="button-dropdown">
+        <button class="button yellow">
+          Left top
+        </button>
+
+        <ul class="menu top">
+          <div class="menu-list">
+            <li class="item" data-value="0">Item1</li>
+            <li class="divider"></li>
+            <li class="item" data-value="1">Item2</li>
+            <li class="divider"></li>
+            <li class="item" data-value="2">Item4</li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="button-dropdown">
+        <button class="button yellow">
+          Right Down
+        </button>
+
+        <ul class="menu right">
+          <div class="menu-list">
+            <li class="item" data-value="0">Item1</li>
+            <li class="divider"></li>
+            <li class="item" data-value="1">Item2</li>
+            <li class="divider"></li>
+            <li class="item" data-value="2">Item4</li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="button-dropdown">
+        <button class="button yellow">
+          Right top
+        </button>
+
+        <ul class="menu top right">
+          <div class="menu-list">
+            <li class="item" data-value="0">Item1</li>
+            <li class="divider"></li>
+            <li class="item" data-value="1">Item2</li>
+            <li class="divider"></li>
+            <li class="item" data-value="2">Item4</li>
+          </div>
+        </ul>
+      </div>
+
+      <div class="simple dropdown">
+        <li class="fa fa-user"></li>
+        <div class="info">Jason Li</div>
+        <ul class="menu">
+          <div class="menu-list">
+            <li class="item" data-value="0">Profile</li>
+            <li class="item" data-value="1">Change Password</li>
+            <li class="item" data-value="2">Logout</li>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+    <br/><br/>
+    Disabled Item:
+    <div>
+      <div class="button-dropdown">
+        <button class="button yellow">
+          Button
+        </button>
+
+        <ul class="menu">
+          <div class="menu-list">
+            <li class="item disabled" data-value="0">Item1</li>
+            <li class="divider"></li>
+            <li class="item disabled" data-value="1">Item2</li>
+            <li class="divider"></li>
+            <li class="item disabled" data-value="2">Item4</li>
+          </div>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 </div>
 
 
