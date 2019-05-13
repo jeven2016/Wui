@@ -1,13 +1,64 @@
+@mixin first-button {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right-width: 0 !important;
+}
+
+@mixin last-button {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-left-width: 0;
+}
+
+@mixin middle-button {
+  border-radius: 0;
+  border-right-width: 0;
+  border-left-width: 0;
+}
+
 .button-group {
   //@include make-inline-block();
-  display: table;
-  vertical-align: middle;
+  display: inline-block;
+  //vertical-align: middle;
 
   > .button {
     margin: $btn-group-buttons-margin;
     float: $btn-group-buttons-float;
 
     @include group-border-radius($btn-group-border-radius);
+  }
+
+  > .button-dropdown:first-child {
+    > .button, > .title > .button {
+      @include first-button;
+    }
+  }
+
+  > .button-dropdown:last-child {
+    > .button, > .title > .button {
+      @include last-button;
+    }
+  }
+
+  > .button-dropdown:not(:first-child):not(:last-child) {
+    > .button, > .title > .button {
+      @include middle-button;
+    }
+  }
+
+
+  > .button {
+    &:first-child {
+      @include first-button;
+    }
+
+    &:last-child {
+      @include last-button;
+    }
+
+    &:not(:first-child):not(:last-child) {
+      @include middle-button;
+    }
   }
 
   &.block {
