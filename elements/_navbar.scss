@@ -1,3 +1,25 @@
+@mixin update-dropdown {
+  border: unset;
+
+  > .title, > .info {
+    color: $white;
+
+    .button {
+      color: $white;
+      border: unset;
+    }
+  }
+  > .menu {
+    color: $black;
+
+    > .menu-list {
+      > .item {
+        line-height: unset;
+      }
+    }
+  }
+}
+
 .navbar {
   @include make-navbar;
 
@@ -8,6 +30,10 @@
       color: $navbar-title-color;
       padding: $navbar-title-padding;
       font-weight: map_get($font-weight, 'normal');
+    }
+
+    .dropdown, .button-dropdown {
+      @include update-dropdown;
     }
   }
 
@@ -36,6 +62,10 @@
         position: $navbar-item-position;
         @include make-navbar-item($navbar-inactive-text-color);
         transition: all 0.2s;
+      }
+
+      .dropdown, .button-dropdown {
+        @include update-dropdown;
       }
 
       &.with-bar {

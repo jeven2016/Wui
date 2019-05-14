@@ -30,7 +30,7 @@
     transition: all .2s linear;
     background: $white;
 
-    > .item {
+    > .menu-item{
       @include make-menu-item;
 
       > .icon {
@@ -140,7 +140,7 @@
         flex: 1 0 auto;
       }
 
-      > .item {
+      > .menu-item{
         flex: 0 0 auto;
         min-width: unset;
         align-self: center;
@@ -163,14 +163,14 @@
     > .divider {
       display: none;
 
-      & + .menu-list > .item {
+      & + .menu-list > .menu-item{
         border-left: 1px solid #ccc;
       }
     }
   }
 
   &.primary {
-    .menu-list > .item {
+    .menu-list > .menu-item{
       &:not(.disabled):not(.active):focus, &:not(.disabled):not(.active):hover {
         color: lighten($blue, 10%);
         background-color: inherit;
@@ -211,7 +211,7 @@
 
     }
 
-    > .menu-list > .item {
+    > .menu-list > .menu-item{
       &.disabled {
         color: darken($white, 40%);
       }
