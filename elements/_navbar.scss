@@ -1,20 +1,23 @@
+//todo: navar 不能设置height,会导致flex-direction：column时无法撑开高度
+
 @mixin update-dropdown {
-  border: unset;
+  border: none;
 
   > .title, > .info {
     color: $white;
 
     .button {
       color: $white;
-      border: unset;
+      border: none;
     }
   }
   > .menu {
     color: $black;
 
+
     > .menu-list {
-      > .item {
-        line-height: unset;
+      > .menu-item {
+        text-shadow: none;
       }
     }
   }
@@ -22,11 +25,12 @@
 
 .navbar {
   @include make-navbar;
+  height: $navbar-item-height;
 
   > .title {
     @include make-flex {
       align-items: center;
-      line-height: $navbar-item-line-height;
+      height: 100%;
       color: $navbar-title-color;
       padding: $navbar-title-padding;
       font-weight: map_get($font-weight, 'normal');
@@ -34,6 +38,17 @@
 
     .dropdown, .button-dropdown {
       @include update-dropdown;
+    }
+  }
+
+  .navbar-switch {
+    border-width: 0;
+    background: transparent;
+    color: #737070;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+
+    &:focus, &:hover {
     }
   }
 
@@ -101,23 +116,9 @@
         }
       }
 
-
-      &.switch {
-        display: none;
-        right: 1rem;
-
-        > .button {
-          /* @include border-radius(0);
-           font-size: 1.5rem;
-           background-color: $light-gray;
-           color: darken($gray, 10%);
-           padding: 0.25rem;
-           margin: 0.25rem 0.25rem;*/
-        }
-      }
-
       &.active, &:focus, &:hover {
         color: $navbar-item-active-color;
+        text-shadow: $navbar-item-active-box-shadown;
       }
 
     }
@@ -154,6 +155,11 @@
       color: $navbar-primary-active-color;
     }
 
+    .navbar-switch {
+      color: $navbar-primary-active-color;
+      border-color: $navbar-primary-active-color;
+    }
+
     > .list > .item {
       color: $navbar-primary-item-color;
 
@@ -176,16 +182,16 @@
 }
 
 @include media-query((key:'min-width', value: map-get($bs-layout, 'xs'))) {
-  .navbar > .switch {
+  .navbar > .navbar-switch {
     display: none;
   }
 }
 
 @include media-query((key:'max-width', value: map-get($bs-layout, 'xs'))) {
-  .navbar > .list {
+  .navbar .list {
     display: none;
   }
-  .navbar > .switch {
+  .navbar .navbar-switch {
     @include make-flex;
   }
 }

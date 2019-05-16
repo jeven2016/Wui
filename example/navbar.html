@@ -25,14 +25,14 @@
   </style>
 
   <script language="JavaScript">
-    $(function () {
-      $(".dropdown > .info").click(function (evt) {
-        $(this).parent().toggleClass("active");
+    $(function() {
+      $('.dropdown > .info').click(function(evt) {
+        $(this).parent().toggleClass('active');
       });
 
-      $(".switch.button").click(function () {
-        $(this).parent(".navbar").toggleClass("expand")
-      })
+      $('.switch.button').click(function() {
+        $(this).parent('.navbar').toggleClass('expand');
+      });
 
     });
   </script>
@@ -211,8 +211,13 @@
     <br/>
 
     <div class="navbar ">
-      <div class="title"> Title</div>
-      <button class="button switch pull-right"><i class="fa fa-align-justify"></i></button>
+      <div class="title">
+        <button class="button navbar-switch">
+          <i class="fa fa-align-justify"></i>
+        </button>
+        Title
+      </div>
+
       <div class="list">
         <div class="item">Item</div>
         <div class="item">Item</div>
