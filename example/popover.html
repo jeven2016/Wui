@@ -1,89 +1,141 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="fa/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../dist/wui-bundle-min.css" rel="stylesheet">
-    <script src="jquery-3.1.0.js" type="application/javascript"></script>
-    <style type="text/css">
-        .area-example {
-            margin: 10px auto;
-            padding: 20px;
-            overflow: auto;
-        }
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="fa/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../dist/wui-bundle-min.css" rel="stylesheet">
+  <script src="jquery-3.1.0.js" type="application/javascript"></script>
+  <style type="text/css">
+    .area-example {
+      margin: 10px auto;
+      padding: 20px;
+      overflow: auto;
+    }
 
-        .popover {
-            display: inline-block;
-            position: relative;
-        }
-    </style>
+    .popover {
+      display: inline-block;
+      position: relative;
+    }
+  </style>
 
-    <script language="JavaScript">
+  <script language="JavaScript">
+    $(function() {
+      $('#clickPop').click(function() {
+        var btn = $(this)[0];
+        console.log(btn.scrollTop + ',' + btn.scrollLeft);
+        console.log(btn.offsetLeft + ',' + btn.offsetTop);
+        console.log(btn.offsetWidth + ',' + btn.offsetHeight);
 
-    </script>
+        var pop = $('#clickPop_pop')[0];
+        var popWidth = pop.offsetWidth;
+
+       /* pop.style.left = (btn.offsetLeft - Math.floor((pop.offsetWidth - btn.offsetWidth) / 2)) + 'px';
+
+        +'px';
+        pop.style.top = (btn.offsetTop + btn.offsetHeight + 16) + 'px';*/
+
+
+        var pos = btn.getBoundingClientRect();
+        console.log(pos.width+"---"+pos.height);
+        console.log(pos.left+"---"+pos.top);
+
+        pop.style.left = (pos.left - (pop.offsetWidth - btn.offsetWidth) / 2) + 'px';
+
+        pop.style.top = (pos.bottom  + 16)+ btn.scrollTop+ 'px';
+
+      });
+    });
+
+  </script>
 </head>
 <body>
 <div class="area-example">
-    Menu示例：<br/><br/>
+  Menu示例：<br/><br/>
 
-    <div class="popover">
-        <div class="card">
-            <div class="top popover-arrow"></div>
-            <div class="card-body">
-                Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-                Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-            </div>
-        </div>
+  <div id="clickPop_pop" class="popover" style="position: absolute;z-index: 9999;background: white">
+    <div class="card">
+      <div class="top popover-arrow"></div>
+      <div class="card-body">
+        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
+        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
+      </div>
     </div>
+  </div>
 
-    <div class="popover">
-        <div class="card">
-            <div class="right popover-arrow"></div>
-            <div class="card-body">
-                Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-                Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-            </div>
-        </div>
+  <div align="center">
+
+  </div>
+
+  <div style="margin-top: 5rem">
+
+  </div>
+
+  <div class="popover">
+    <div class="card">
+      <div class="top popover-arrow"></div>
+      <div class="card-body">
+        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
+        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
+      </div>
     </div>
+  </div>
 
-    <br/><br/>
-    <div class="popover">
-        <div class="card">
-            <div class="left popover-arrow"></div>
-            <div class="card-body">
-                Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-                Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-            </div>
-        </div>
+  <div class="popover">
+    <div class="card">
+      <div class="right popover-arrow"></div>
+      <div class="card-body">
+        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
+        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
+      </div>
     </div>
+  </div>
 
-    <div class="popover">
-        <div class="card">
-            <div class="bottom popover-arrow"></div>
-            <div class="card-body">
-                Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-                Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-            </div>
-        </div>
+  <br/><br/>
+  <div class="popover">
+    <div class="card">
+      <div class="left popover-arrow"></div>
+      <div class="card-body">
+        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
+        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
+      </div>
     </div>
+  </div>
 
-    <br/><br/>
-    <div class="popover">
-        <div class="border card">
-            <div class="right popover-arrow"></div>
-            <div class="card-header gray">
-                Header
-            </div>
-            <div class="card-body">
-                Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-                Popover body, Popover body, Popover body,Popover body, Popover body, Popover body
-            </div>
-        </div>
+  <div class="popover">
+    <div class="card">
+      <div class="bottom popover-arrow"></div>
+      <div class="card-body">
+        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
+        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
+      </div>
     </div>
+  </div>
+
+  <br/><br/>
+  <div class="popover">
+    <div class="border card">
+      <div class="right popover-arrow"></div>
+      <div class="card-header gray">
+        Header
+      </div>
+      <div class="card-body">
+        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
+        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body
+      </div>
+    </div>
+  </div>
 
 
+
+  <div class="popover-wrapper">
+    <button id="clickPop" class="button outline blue">Click Me</button>
+
+  </div>
+
+
+  <div style="margin-top:3rem"></div>
 </div>
 
 </body>
