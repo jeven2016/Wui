@@ -25,13 +25,13 @@
   </style>
 
   <script language="JavaScript">
-    $(function() {
-      $('.dropdown > .info').click(function(evt) {
+    $(function () {
+      $('.dropdown > .info').click(function (evt) {
         $(this).parent().toggleClass('active');
       });
 
-      $('.switch.button').click(function() {
-        $(this).parent('.navbar').toggleClass('expand');
+      $("#switch-btn").click(function () {
+        $(this).parent('.navbar').children(".list").toogleClass("expand");
       });
 
     });
@@ -210,9 +210,9 @@
     </ul>
     <br/>
 
-    <div class="navbar ">
+    <div class="navbar primary ">
       <div class="title">
-        <button class="button navbar-switch">
+        <button class="button navbar-switch" id="switch-btn">
           <i class="fa fa-align-justify"></i>
         </button>
         Title

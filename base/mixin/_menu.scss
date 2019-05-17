@@ -8,6 +8,7 @@
 
 @mixin make-menu-item() {
   @include make-flex {
+    line-height: $menu-item-line-height;
     padding: $menu-item-padding;
     margin: 0;
     text-align: left;

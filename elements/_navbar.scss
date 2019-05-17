@@ -17,7 +17,7 @@
 
     > .menu-list {
       > .menu-item {
-        text-shadow: none;
+        //text-shadow: none;
       }
     }
   }
@@ -25,12 +25,13 @@
 
 .navbar {
   @include make-navbar;
-  height: $navbar-item-height;
+  flex-wrap: wrap;
+  line-height: $navbar-item-height;
 
   > .title {
     @include make-flex {
       align-items: center;
-      height: 100%;
+      //line-height: $navbar-item-height;
       color: $navbar-title-color;
       padding: $navbar-title-padding;
       font-weight: map_get($font-weight, 'normal');
@@ -44,11 +45,15 @@
   .navbar-switch {
     border-width: 0;
     background: transparent;
-    color: #737070;
     font-size: 1.5rem;
     padding: 0.5rem;
 
+    &:not(last-child) {
+      margin-right: 0.5rem;
+    }
+
     &:focus, &:hover {
+      box-shadow: $navbar-switch-box-shadow;
     }
   }
 
@@ -118,21 +123,16 @@
 
       &.active, &:focus, &:hover {
         color: $navbar-item-active-color;
-        text-shadow: $navbar-item-active-box-shadown;
+        //text-shadow: $navbar-item-active-box-shadown;
       }
 
     }
   }
 
   &.expand {
-    display: block;
-
-    > .title, > .switch {
-      display: inline-block;
-    }
-
     > .list {
-      display: block;
+      display: flex;
+      transition: all 0.2s ease-in-out;
     }
   }
 
@@ -158,6 +158,10 @@
     .navbar-switch {
       color: $navbar-primary-active-color;
       border-color: $navbar-primary-active-color;
+
+      &:focus, &:hover {
+        box-shadow: $navbar-primary-switch-box-shadow;
+      }
     }
 
     > .list > .item {
@@ -181,17 +185,42 @@
 
 }
 
-@include media-query((key:'min-width', value: map-get($bs-layout, 'xs'))) {
-  .navbar > .navbar-switch {
-    display: none;
+@include media-query((key:'min-width', value: map-get($bs-layout, 'sm'))) {
+  .navbar {
+    .navbar-switch {
+      display: none;
+    }
+
+    flex-direction: row;
+
+    > .list {
+      display: flex;
+      flex-direction: row;
+    }
   }
 }
 
-@include media-query((key:'max-width', value: map-get($bs-layout, 'xs'))) {
-  .navbar .list {
-    display: none;
-  }
-  .navbar .navbar-switch {
-    @include make-flex;
+//change the list in column style
+@include media-query((key:'max-width', value: map-get($bs-layout, 'sm'))) {
+  &.navbar {
+    flex-direction: column;
+
+    .navbar-switch {
+      display: inline-flex;
+    }
+
+    > .list {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+
+      > .item {
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%;
+        //line-height: $navbar-item-height - 1rem;
+      }
+    }
   }
 }

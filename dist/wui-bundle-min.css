@@ -1683,13 +1683,13 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0.25rem;
   background-color: #f5f5f5;
   margin-bottom: 0;
-  height: 3.5rem; }
+  flex-wrap: wrap;
+  line-height: 3.5rem; }
   .navbar > .title {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
     align-items: center;
-    height: 100%;
     color: #333333;
     padding: 0 0.5rem;
     font-weight: 500; }
@@ -1702,15 +1702,15 @@ h1, h2, h3, h4, h5, h6 {
           border: none; }
       .navbar > .title .dropdown > .menu, .navbar > .title .button-dropdown > .menu {
         color: #000000; }
-        .navbar > .title .dropdown > .menu > .menu-list > .menu-item, .navbar > .title .button-dropdown > .menu > .menu-list > .menu-item {
-          text-shadow: none; }
   .navbar .navbar-switch {
     border-width: 0;
     background: transparent;
-    color: #737070;
     font-size: 1.5rem;
-    padding: 0.5rem;
-    margin: 0 0.5rem; }
+    padding: 0.5rem; }
+    .navbar .navbar-switch:not(last-child) {
+      margin-right: 0.5rem; }
+    .navbar .navbar-switch:focus, .navbar .navbar-switch:hover {
+      box-shadow: 0px 0px 2px 0 rgba(0, 0, 0, 0.45); }
   .navbar > .list {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -1733,7 +1733,7 @@ h1, h2, h3, h4, h5, h6 {
       display: -ms-flexbox;
       display: -webkit-flex;
       display: flex;
-      height: 100%;
+      line-height: 3.5rem;
       cursor: pointer;
       align-items: center;
       color: #999999;
@@ -1751,8 +1751,6 @@ h1, h2, h3, h4, h5, h6 {
             border: none; }
         .navbar > .list > .item .dropdown > .menu, .navbar > .list > .item .button-dropdown > .menu {
           color: #000000; }
-          .navbar > .list > .item .dropdown > .menu > .menu-list > .menu-item, .navbar > .list > .item .button-dropdown > .menu > .menu-list > .menu-item {
-            text-shadow: none; }
       .navbar > .list > .item.with-bar.active:after, .navbar > .list > .item.with-bar:focus:after, .navbar > .list > .item.with-bar:hover:after {
         position: absolute;
         display: block;
@@ -1771,14 +1769,10 @@ h1, h2, h3, h4, h5, h6 {
       .navbar > .list > .item.with-bg:focus, .navbar > .list > .item.with-bg:hover {
         background-color: #e8e8e8; }
       .navbar > .list > .item.active, .navbar > .list > .item:focus, .navbar > .list > .item:hover {
-        color: #333333;
-        text-shadow: 1px 1px 2px #333, 0 0 25px #fff, 0 0 5px #277ed0; }
-  .navbar.expand {
-    display: block; }
-    .navbar.expand > .title, .navbar.expand > .switch {
-      display: inline-block; }
-    .navbar.expand > .list {
-      display: block; }
+        color: #333333; }
+  .navbar.expand > .list {
+    display: flex;
+    transition: all 0.2s ease-in-out; }
   .navbar.fixed {
     position: fixed;
     z-index: 1000;
@@ -1795,6 +1789,8 @@ h1, h2, h3, h4, h5, h6 {
     .navbar.primary .navbar-switch {
       color: #fff;
       border-color: #fff; }
+      .navbar.primary .navbar-switch:focus, .navbar.primary .navbar-switch:hover {
+        box-shadow: 0px 0px 2px 0 #fff; }
     .navbar.primary > .list > .item {
       color: #e6e6e6; }
       .navbar.primary > .list > .item.active, .navbar.primary > .list > .item:hover {
@@ -1804,17 +1800,29 @@ h1, h2, h3, h4, h5, h6 {
       .navbar.primary > .list > .item.with-bg:focus, .navbar.primary > .list > .item.with-bg:hover {
         background-color: #5499ec; }
 
-@media screen and (min-width: 767px) {
-  .navbar > .navbar-switch {
-    display: none; } }
+@media screen and (min-width: 768px) {
+  .navbar {
+    flex-direction: row; }
+    .navbar .navbar-switch {
+      display: none; }
+    .navbar > .list {
+      display: flex;
+      flex-direction: row; } }
 
-@media screen and (max-width: 767px) {
-  .navbar .list {
-    display: none; }
-  .navbar .navbar-switch {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex; } }
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column; }
+    .navbar .navbar-switch {
+      display: inline-flex; }
+    .navbar > .list {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0; }
+      .navbar > .list > .item {
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 100%; } }
 
 .submenu, .menu {
   outline: none;
@@ -1841,6 +1849,7 @@ h1, h2, h3, h4, h5, h6 {
       display: -ms-flexbox;
       display: -webkit-flex;
       display: flex;
+      line-height: 1.5rem;
       padding: 0.5rem 1rem 0.5rem 1rem;
       margin: 0;
       text-align: left;
