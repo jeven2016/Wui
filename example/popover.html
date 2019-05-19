@@ -21,30 +21,72 @@
   </style>
 
   <script language="JavaScript">
+    var borderWidth = 12;
+
+    function adjust2(popover, ctrl, type) {
+      var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+      var pos = ctrl.getBoundingClientRect();
+      if (type === 'bottom') {
+        popover.style.left = (pos.left - (popover.offsetWidth - ctrl.offsetWidth) / 2) + 'px';
+        popover.style.top = (pos.bottom + borderWidth) + scrollTop + 'px';
+      }
+
+      if (type === 'top') {
+        popover.style.left = (pos.left - (popover.offsetWidth - ctrl.offsetWidth) / 2) + 'px';
+        popover.style.top = (pos.top - popover.offsetHeight - borderWidth) + scrollTop + 'px';
+      }
+
+      if (type === 'left') {
+        popover.style.left = pos.left - popover.offsetWidth - borderWidth + 'px';
+        popover.style.top = pos.top - (popover.offsetHeight - ctrl.offsetHeight) / 2 + scrollTop + 'px';
+      }
+
+      if (type === 'right') {
+        popover.style.left = pos.right + borderWidth + 'px';
+        popover.style.top = pos.top - (popover.offsetHeight - ctrl.offsetHeight) / 2 + scrollTop + 'px';
+      }
+
+      if (type === 'topLeft') {
+        popover.style.left = pos.left + 'px';
+        popover.style.top = pos.top - popover.offsetHeight - borderWidth + scrollTop + 'px';
+      }
+
+      if (type === 'topRight') {
+        popover.style.left = pos.right - popover.offsetWidth + 'px';
+        popover.style.top = pos.top - popover.offsetHeight - borderWidth + scrollTop + 'px';
+      }
+
+    }
+
+    window.onresize = function(ev) {
+      adjust2($('#clickPop_pop')[0], $('#clickPop')[0], 'bottom');
+
+    };
+
     $(function() {
+
       $('#clickPop').click(function() {
-        var btn = $(this)[0];
-        console.log(btn.scrollTop + ',' + btn.scrollLeft);
-        console.log(btn.offsetLeft + ',' + btn.offsetTop);
-        console.log(btn.offsetWidth + ',' + btn.offsetHeight);
+        adjust2($('#clickPop_pop')[0], $('#clickPop')[0], 'bottom');
+      });
 
-        var pop = $('#clickPop_pop')[0];
-        var popWidth = pop.offsetWidth;
+      $('#clickPopTop').click(function() {
+        adjust2($('#clickPop_pop')[0], $('#clickPopTop')[0], 'top');
+      });
 
-       /* pop.style.left = (btn.offsetLeft - Math.floor((pop.offsetWidth - btn.offsetWidth) / 2)) + 'px';
+      $('#clickPopLeft').click(function() {
+        adjust2($('#clickPop_pop')[0], $('#clickPopLeft')[0], 'left');
+      });
 
-        +'px';
-        pop.style.top = (btn.offsetTop + btn.offsetHeight + 16) + 'px';*/
+      $('#clickPopRight').click(function() {
+        adjust2($('#clickPop_pop')[0], $('#clickPopRight')[0], 'right');
+      });
 
+      $('#clickPopTopLeft').click(function() {
+        adjust2($('#clickPop_pop')[0], $('#clickPopTopLeft')[0], 'topLeft');
+      });
 
-        var pos = btn.getBoundingClientRect();
-        console.log(pos.width+"---"+pos.height);
-        console.log(pos.left+"---"+pos.top);
-
-        pop.style.left = (pos.left - (pop.offsetWidth - btn.offsetWidth) / 2) + 'px';
-
-        pop.style.top = (pos.bottom  + 16)+ btn.scrollTop+ 'px';
-
+      $('#clickPopTopRight').click(function() {
+        adjust2($('#clickPop_pop')[0], $('#clickPopTopRight')[0], 'topRight');
       });
     });
 
@@ -55,8 +97,8 @@
   Menu示例：<br/><br/>
 
   <div id="clickPop_pop" class="popover" style="position: absolute;z-index: 9999;background: white">
+    <div class="bottom-left popover-arrow"></div>
     <div class="card">
-      <div class="top popover-arrow"></div>
       <div class="card-body">
         Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
         Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
@@ -72,65 +114,14 @@
 
   </div>
 
-  <div class="popover">
-    <div class="card">
-      <div class="top popover-arrow"></div>
-      <div class="card-body">
-        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-      </div>
-    </div>
-  </div>
 
-  <div class="popover">
-    <div class="card">
-      <div class="right popover-arrow"></div>
-      <div class="card-body">
-        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-      </div>
-    </div>
-  </div>
-
-  <br/><br/>
-  <div class="popover">
-    <div class="card">
-      <div class="left popover-arrow"></div>
-      <div class="card-body">
-        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-      </div>
-    </div>
-  </div>
-
-  <div class="popover">
-    <div class="card">
-      <div class="bottom popover-arrow"></div>
-      <div class="card-body">
-        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-      </div>
-    </div>
-  </div>
-
-  <br/><br/>
-  <div class="popover">
-    <div class="border card">
-      <div class="right popover-arrow"></div>
-      <div class="card-header gray">
-        Header
-      </div>
-      <div class="card-body">
-        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body,
-        Popover body, Popover body, Popover body,Popover body, Popover body, Popover body
-      </div>
-    </div>
-  </div>
-
-
-
-  <div class="popover-wrapper">
-    <button id="clickPop" class="button outline blue">Click Me</button>
+  <div class="popover-wrapper" style="padding-left: 10rem">
+    <button id="clickPop" class="button outline blue">bottom</button>
+    <button id="clickPopTop" class="button outline blue">top</button>
+    <button id="clickPopLeft" class="button outline blue">left</button>
+    <button id="clickPopRight" class="button outline blue">right</button>
+    <button id="clickPopTopLeft" class="button outline blue">topLeft</button>
+    <button id="clickPopTopRight" class="button outline blue">topRight</button>
 
   </div>
 
