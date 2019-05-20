@@ -3,7 +3,7 @@
   display: inline-block;
   width: 0;
   height: 0;
-  border: 12px solid transparent;
+  border: $popover-arrow-border-width solid transparent;
   z-index: 101;
 }
 
@@ -12,6 +12,7 @@
   position: absolute;
   z-index: $po-z-index;
   display: none;
+  background-color: $white;
 
   &.active {
     display: inline-block;
@@ -26,15 +27,15 @@
       @extend %popover-arrow-common;
       left: 50%;
       top: 100%;
-      margin-left: -12px;
+      margin-left: $popover-margin;
       border-bottom-width: 0;
       border-top-color: $popover-arrow-border-color;
 
       &::after {
         content: '';
         left: 50%;
-        top: -12px;
-        margin-left: $popover-border-width;
+        top: $popover-margin;
+        margin-left: $popover-margin;
         @extend %popover-arrow-common;
         margin-top: -1px;
         border-bottom-width: 0;
@@ -57,8 +58,8 @@
     &.bottom {
       @extend %popover-arrow-common;
       left: 50%;
-      top: $popover-border-width;
-      margin-left: $popover-border-width;
+      top: $popover-margin;
+      margin-left: $popover-margin;
       border-top-width: 0;
       border-bottom-color: $popover-arrow-border-color;
 
@@ -66,7 +67,7 @@
         content: '';
         @extend %popover-arrow-common;
         top: 1px;
-        left: $popover-border-width;
+        left: $popover-margin;
         border-top-width: 0;
         border-bottom-color: $popover-arrow-overlap-background-color;
       }
@@ -86,14 +87,14 @@
       @extend %popover-arrow-common;
       left: 100%;
       top: 50%;
-      margin-top: $popover-border-width;
+      margin-top: $popover-margin;
       border-right-width: 0;
       border-left-color: $popover-arrow-border-color;
 
       &::after {
         content: '';
-        top: $popover-border-width;
-        left: $popover-border-width;
+        top: $popover-margin;
+        left: $popover-margin;
         @extend %popover-arrow-common;
         margin-left: -1px;
         border-right-width: 0;
@@ -104,9 +105,9 @@
 
     &.right {
       @extend %popover-arrow-common;
-      left: $popover-border-width;
+      left: $popover-margin;
       top: 50%;
-      margin-top: $popover-border-width;
+      margin-top: $popover-margin;
       border-left-width: 0;
       border-right-color: $popover-arrow-border-color;
 
@@ -115,7 +116,7 @@
         @extend %popover-arrow-common;
         left: 1px;
         top: 50%;
-        margin-top: $popover-border-width;
+        margin-top: $popover-margin;
         border-left-width: 0;
         border-right-color: $popover-arrow-overlap-background-color;
       }

@@ -1,0 +1,44 @@
+.tooltip {
+  @extend .popover;
+
+  background-color: $black;
+  color: $white;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.25rem;
+  border-radius: $default-border-radius;
+
+  .popover-arrow {
+    &.top {
+      border-top-color: $black;
+
+      &::after {
+        border-top-color: $black;
+      }
+    }
+
+    &.bottom {
+      border-bottom-color: $black;
+
+      &::after {
+        border-bottom-color: $black;
+      }
+    }
+
+    &.left {
+      border-left-color: $black;
+
+      &::after {
+        border-left-color: $black;
+      }
+    }
+
+    &.right {
+      border-right-color: $black;
+
+      &::after {
+        border-right-color: $black;
+      }
+    }
+  }
+
+}
