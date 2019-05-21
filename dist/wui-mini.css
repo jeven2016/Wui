@@ -409,7 +409,7 @@ time, mark, audio, video {
   display: inline-block; }
 
 .mask, .dialog {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
@@ -418,8 +418,7 @@ time, mark, audio, video {
   padding: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 100;
-  overflow-x: hidden;
-  overflow-y: auto; }
+  overflow: hidden; }
 
 .pull-left {
   float: left !important;
@@ -1613,6 +1612,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .dialog {
   display: none;
+  z-index: 1000;
   transition: all .4s; }
   .dialog.show {
     display: block; }
@@ -1620,11 +1620,11 @@ h1, h2, h3, h4, h5, h6 {
       animation: open-dialog 0.6s; }
   .dialog > .content {
     position: relative;
-    margin: 3rem auto;
-    border: 1px solid #acacac;
+    margin: 4rem auto;
+    border: none;
     width: 95%;
     min-height: 1rem;
-    z-index: 110;
+    z-index: 1000;
     background-color: #fff;
     border-radius: 0.25rem;
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45); }
@@ -1638,13 +1638,13 @@ h1, h2, h3, h4, h5, h6 {
       .dialog > .content {
         width: 55%; } }
     .dialog > .content > .header {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 500; }
       .dialog > .content > .header > .title {
         float: left; }
       .dialog > .content > .header > .icon {
         float: right;
-        font-size: 1rem;
+        font-size: 1.5rem;
         color: rgba(0, 0, 0, 0.4);
         cursor: pointer; }
         .dialog > .content > .header > .icon:hover {
@@ -1654,6 +1654,7 @@ h1, h2, h3, h4, h5, h6 {
       border-left-width: 0;
       border-right-width: 0; }
     .dialog > .content > .footer {
+      background-color: #f5f5f5;
       border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px); }
   .dialog.simple {
     background-color: rgba(0, 0, 0, 0.85); }
