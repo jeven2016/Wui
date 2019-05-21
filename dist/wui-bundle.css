@@ -883,6 +883,16 @@ a {
     max-height: 0;
     opacity: 0; } }
 
+.flex-align {
+  display: flex;
+  align-items: center; }
+  .flex-align.left {
+    justify-content: flex-start; }
+  .flex-align.right {
+    justify-content: flex-end; }
+  .flex-align.center {
+    justify-content: center; }
+
 blockquote, .blockquote {
   display: block;
   border-left: 0.4rem solid #ccc;
@@ -1165,6 +1175,7 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: none;
   transition: all .2s ease-in-out;
+  min-width: 5rem;
   background-color: #fff;
   color: #333333;
   border: 1px solid #acacac;
@@ -1671,6 +1682,8 @@ h1, h2, h3, h4, h5, h6 {
         border-width: 0;
         border-radius: 0;
         color: inherit; }
+      .dialog.simple > .content > .footer {
+        background: transparent; }
   .dialog.primary > .content > .header {
     background-color: #277ed0;
     border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0; }
