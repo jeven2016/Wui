@@ -2479,15 +2479,18 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.75rem;
   color: #fff;
   font-weight: 700;
-  transition: all .7s;
+  transition: all .4s;
   vertical-align: middle;
-  min-width: 3.5rem; }
+  min-width: 3.5rem;
+  cursor: pointer; }
   .toggle + .toggle {
     margin-left: 0.5rem; }
+  .toggle.disabled {
+    pointer-events: none !important; }
   .toggle .bar {
     display: inline-flex;
     align-items: center;
-    margin: 0.3rem 0;
+    margin: 0.25rem 0;
     padding: 0 0.5rem 0 1.8rem;
     height: 1rem;
     width: 100%;
@@ -2496,8 +2499,8 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 0;
     right: 0;
-    height: 1.6rem;
-    width: 1.6rem;
+    height: 1.5rem;
+    width: 1.5rem;
     border-radius: 50%;
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
     text-align: center; }
@@ -2505,39 +2508,53 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #98BFD0; }
   .toggle.on .ball {
     background-color: #277ED0;
-    color: #fff; }
+    color: #333333; }
   .toggle.off .bar {
     background-color: #ccc; }
   .toggle.off .ball {
     background-color: #f5f5f5;
     left: 0;
     color: #ccc; }
-  .toggle.primary .bar {
-    height: 1.6rem;
-    line-height: 1.6rem;
-    margin: 0;
-    vertical-align: middle; }
-  .toggle.primary .ball {
-    box-shadow: none;
-    line-height: 1.4rem;
-    height: 1.4rem;
-    width: 1.4rem; }
-  .toggle.primary.on .bar {
-    background-color: #277ED0;
-    text-align: right; }
-  .toggle.primary.on .ball {
-    background-color: #fff;
-    color: #277ED0;
-    top: 0.1rem;
-    right: 0.05rem; }
-  .toggle.primary.off {
-    flex-flow: row-reverse; }
-    .toggle.primary.off .bar {
-      text-align: left; }
-    .toggle.primary.off .ball {
+  .toggle.secondary, .toggle.primary {
+    border-radius: 0.25rem;
+    padding: 0.25rem;
+    display: -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    min-height: 2rem;
+    line-height: 2rem;
+    min-width: 3.5rem; }
+    .toggle.secondary.on, .toggle.primary.on {
+      background-color: #277ED0; }
+    .toggle.secondary.off, .toggle.primary.off {
+      background-color: #ccc;
+      flex-flow: row-reverse; }
+    .toggle.secondary .bar, .toggle.primary .bar {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0 0.5rem;
+      background-color: inherit;
+      flex: 0 1 auto; }
+    .toggle.secondary .ball, .toggle.primary .ball {
+      position: relative;
+      width: 1.5rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
       background-color: #fff;
-      top: 0.1rem;
-      left: 0.05rem; }
+      border-radius: 0.25rem;
+      box-shadow: none;
+      flex: 0 0 auto; }
+  .toggle.primary {
+    border-radius: 1.5rem;
+    min-width: 4.5rem; }
+    .toggle.primary > .ball {
+      border-radius: 50%; }
 
 /**
 * Generate add-ons

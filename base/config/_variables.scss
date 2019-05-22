@@ -23,23 +23,23 @@ $text-warning-color: $yellow;
 $text-error-color: $red;
 
 $colors: (
-    comment:$text-comment-color,
-    ok: $text-ok-color,
-    warning: $text-warning-color,
-    error: $text-error-color,
-    color-white:$white,
-    color-black:$black,
-    color-gray:$gray,
-    color-brown:$brown,
-    color-pink:$pink,
-    color-purple:$purple,
-    color-violet:$violet,
-    color-blue:$blue,
-    color-teal:$teal,
-    color-green:$green,
-    color-yellow:$yellow,
-    color-orange:$orange,
-    color-red:$red);
+        comment:$text-comment-color,
+        ok: $text-ok-color,
+        warning: $text-warning-color,
+        error: $text-error-color,
+        color-white:$white,
+        color-black:$black,
+        color-gray:$gray,
+        color-brown:$brown,
+        color-pink:$pink,
+        color-purple:$purple,
+        color-violet:$violet,
+        color-blue:$blue,
+        color-teal:$teal,
+        color-green:$green,
+        color-yellow:$yellow,
+        color-orange:$orange,
+        color-red:$red);
 
 //Global
 $default-box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
@@ -57,28 +57,28 @@ $elem-small-padding: 0.25rem 0.5rem;
 
 //z-index
 $z-index: (
-    mask: 100,
-    overlay: 110,
-    top:1000
+        mask: 100,
+        overlay: 110,
+        top:1000
 );
 
 //text
 $font-weight: (
-    'normal': 500,
-    'bold': 700
+        'normal': 500,
+        'bold': 700
 );
 
 $font-size: (
-    'large':1.5rem,
-    'normal': 1rem,
-    'small':0.75rem
+        'large':1.5rem,
+        'normal': 1rem,
+        'small':0.75rem
 );
 
 $arrow-direction: (
-    'up':'up',
-    'down':'down',
-    'left':'left',
-    'right':'right'
+        'up':'up',
+        'down':'down',
+        'left':'left',
+        'right':'right'
 );
 
 //for <a/> link
@@ -313,10 +313,10 @@ $dialog-inner-border-radius: calc(#{$dialog-border-radius} - #{$dialog-border-wi
 // 992 =< md <1200
 // 1200 =< lg
 $bs-layout: (
-    xs: 767px, // xs < 768
-    sm :768px, // 768=< sm < 992
-    md : 992px, // 992 =< md <1200
-    lg : 1200px // 1200 =< lg
+        xs: 767px, // xs < 768
+        sm :768px, // 768=< sm < 992
+        md : 992px, // 992 =< md <1200
+        lg : 1200px // 1200 =< lg
 );
 $grid-column-count: 12;
 $grid-column-padding: .5rem .25rem;

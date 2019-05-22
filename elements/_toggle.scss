@@ -1,22 +1,27 @@
+
 .toggle {
   position: relative;
   @include make-inline-flex();
   font-size: 0.75rem;
   color: $white;
   font-weight: map_get($font-weight, 'bold');
-  transition: all .7s;
+  transition: all .4s;
   vertical-align: middle;
   min-width: 3.5rem;
+  cursor: pointer;
 
   + .toggle {
     margin-left: 0.5rem;
   }
 
+  &.disabled {
+    pointer-events: none !important;
+  }
 
   .bar {
     display: inline-flex;
     align-items: center;
-    margin: 0.3rem 0;
+    margin: 0.25rem 0;
     padding: 0 0.5rem 0 1.8rem;
     height: 1rem;
     width: 100%;
@@ -28,8 +33,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: 1.6rem;
-    width: 1.6rem;
+    height: 1.5rem;
+    width: 1.5rem;
     @include border-radius(50%);
     box-shadow: $default-box-shadow;
     text-align: center;
@@ -43,7 +48,7 @@
 
     .ball {
       background-color: #277ED0;
-      color: $white;
+      color: $text-color;
     }
   }
 
@@ -59,50 +64,51 @@
     }
   }
 
-
-  &.primary {
-
-
-    .bar {
-      height: 1.6rem;
-      line-height: 1.6rem;
-      margin: 0;
-      vertical-align: middle;
-    }
-
-    .ball {
-      box-shadow: none;
-      line-height: 1.4rem;
-      height: 1.4rem;
-      width: 1.4rem;
-    }
+  &.secondary, &.primary {
+    @include border-radius;
+    padding: 0.25rem;
+    @include make-inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
+    min-height: 2rem;
+    line-height: 2rem;
+    min-width: 3.5rem;
 
     &.on {
-      .bar {
-        background-color: #277ED0;
-        text-align: right;
-      }
-
-      .ball {
-        background-color: $white;
-        color: #277ED0;
-        top: 0.1rem;
-        right: 0.05rem;
-      }
+      background-color: #277ED0;
     }
 
     &.off {
+      background-color: $gray;
       flex-flow: row-reverse;
+    }
 
-      .bar {
-        text-align: left;
-      }
+    .bar {
+      @include make-flex-center;
+      margin: 0;
+      padding: 0 0.5rem;
+      background-color: inherit;
+      flex: 0 1 auto;
+    }
 
-      .ball {
-        background-color: $white;
-        top: 0.1rem;
-        left: 0.05rem;
-      }
+    .ball {
+      position: relative;
+      width: 1.5rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      background-color: $white;
+      @include border-radius;
+      box-shadow: none;
+      flex: 0 0 auto;
+    }
+  }
+
+  &.primary {
+    border-radius: 1.5rem;
+    min-width: 4.5rem;
+
+    > .ball {
+      border-radius: 50%;
     }
   }
 
