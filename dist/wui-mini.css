@@ -1171,7 +1171,6 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: none;
   transition: all .2s ease-in-out;
-  min-width: 5rem;
   background-color: #fff;
   color: #333333;
   border: 1px solid #acacac;
@@ -1180,6 +1179,8 @@ h1, h2, h3, h4, h5, h6 {
             $white,
             lighten($btn-primary-color, 20%),
             $btn-primary-inverted-background-color);*/ }
+  .button.min-width {
+    min-width: 5rem; }
   .button a.button.disabled, .button .button-group:disabled > a.button, .button .button-group.disabled > a.button {
     pointer-events: none !important; }
   .button:focus, .button:hover {
@@ -2468,12 +2469,34 @@ h1, h2, h3, h4, h5, h6 {
 
 .toggle {
   position: relative;
-  position: relative;
-  display: inline-block;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
   font-size: 0.75rem;
   color: #fff;
   font-weight: 700;
-  transition: all .7s; }
+  transition: all .7s;
+  vertical-align: middle;
+  min-width: 3.5rem; }
+  .toggle + .toggle {
+    margin-left: 0.5rem; }
+  .toggle .bar {
+    display: inline-flex;
+    align-items: center;
+    margin: 0.3rem 0;
+    padding: 0 0.5rem 0 1.8rem;
+    height: 1rem;
+    width: 100%;
+    border-radius: 1.5rem; }
+  .toggle .ball {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 1.6rem;
+    width: 1.6rem;
+    border-radius: 50%;
+    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
+    text-align: center; }
   .toggle.on .bar {
     background-color: #98BFD0; }
   .toggle.on .ball {
@@ -2485,42 +2508,29 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #f5f5f5;
     left: 0;
     color: #ccc; }
-  .toggle .bar {
-    margin: 0.25rem 0;
-    height: 1rem;
-    width: 3.5rem;
-    border-radius: 1.5rem; }
-  .toggle .ball {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 1.5rem;
-    width: 1.5rem;
-    border-radius: 50%;
-    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
-    text-align: center;
-    vertical-align: middle; }
-  .toggle.primary.on .bar {
-    background-color: #277ED0;
-    padding-right: 1.8rem;
-    text-align: right; }
-  .toggle.primary.on .ball {
-    background-color: #fff;
-    color: #277ED0;
-    top: 0.05rem;
-    right: 0.05rem; }
-  .toggle.primary.off .bar {
-    padding-left: 1.8rem;
-    text-align: left; }
-  .toggle.primary.off .ball {
-    background-color: #fff;
-    top: 0.05rem;
-    left: 0.05rem; }
   .toggle.primary .bar {
-    height: 1.5rem;
+    height: 1.6rem;
+    line-height: 1.6rem;
     margin: 0;
     vertical-align: middle; }
   .toggle.primary .ball {
     box-shadow: none;
+    line-height: 1.4rem;
     height: 1.4rem;
     width: 1.4rem; }
+  .toggle.primary.on .bar {
+    background-color: #277ED0;
+    text-align: right; }
+  .toggle.primary.on .ball {
+    background-color: #fff;
+    color: #277ED0;
+    top: 0.1rem;
+    right: 0.05rem; }
+  .toggle.primary.off {
+    flex-flow: row-reverse; }
+    .toggle.primary.off .bar {
+      text-align: left; }
+    .toggle.primary.off .ball {
+      background-color: #fff;
+      top: 0.1rem;
+      left: 0.05rem; }

@@ -4,8 +4,10 @@
     padding: 0.25rem;
     @include make-inline-flex;
     align-items: center;
-    justify-content: center;
     font-size: 0.75rem;
+    min-height: 2rem;
+    line-height: 2rem;
+    min-width: 3.5rem;
 
     &.on {
       background-color: #277ED0;
@@ -18,8 +20,10 @@
 
     .bar {
       @include make-flex-center;
-      width: 2rem;
+      margin: 0;
+      padding: 0 0.5rem;
       background-color: inherit;
+      flex: 0 1 auto;
     }
 
     .ball {
@@ -29,6 +33,7 @@
       background-color: $white;
       @include border-radius;
       box-shadow: none;
+      flex: 0 0 auto;
     }
   }
 }

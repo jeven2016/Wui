@@ -12,30 +12,6 @@
     margin-left: 0.5rem;
   }
 
-
-  .bar {
-    display: inline-flex;
-    align-items: center;
-    margin: 0.3rem 0;
-    padding: 0 0.5rem 0 1.8rem;
-    height: 1rem;
-    width: 100%;
-
-    @include border-radius(1.5rem);
-  }
-
-  .ball {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 1.6rem;
-    width: 1.6rem;
-    @include border-radius(50%);
-    box-shadow: $default-box-shadow;
-    text-align: center;
-  }
-
-
   &.on {
     .bar {
       background-color: #98BFD0;
@@ -59,23 +35,29 @@
     }
   }
 
+  .bar {
+    margin: 0.3rem 0;
+    padding: 0 0.5rem 0 1.8rem;
+    height: 1rem;
+    width: 100%;
+
+    @include border-radius(1.5rem);
+    //box-shadow: $default-box-shadow;
+  }
+
+  .ball {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 1.6rem;
+    height: 1.6rem;
+    width: 1.6rem;
+    @include border-radius(50%);
+    box-shadow: $default-box-shadow;
+    text-align: center;
+  }
 
   &.primary {
-
-
-    .bar {
-      height: 1.6rem;
-      line-height: 1.6rem;
-      margin: 0;
-      vertical-align: middle;
-    }
-
-    .ball {
-      box-shadow: none;
-      line-height: 1.4rem;
-      height: 1.4rem;
-      width: 1.4rem;
-    }
 
     &.on {
       .bar {
@@ -92,8 +74,6 @@
     }
 
     &.off {
-      flex-flow: row-reverse;
-
       .bar {
         text-align: left;
       }
@@ -103,6 +83,20 @@
         top: 0.1rem;
         left: 0.05rem;
       }
+    }
+
+    .bar {
+      height: 1.6rem;
+      line-height: 1.6rem;
+      margin: 0;
+      vertical-align: middle;
+    }
+
+    .ball {
+      box-shadow: none;
+      line-height: 1.4rem;
+      height: 1.4rem;
+      width: 1.4rem;
     }
   }
 
