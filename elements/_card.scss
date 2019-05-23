@@ -15,7 +15,7 @@
   }
 
   &.scale {
-    &:hover {
+    &:focus, &:hover {
       transform: scale(1.2, 1.2);
       transform-origin: center;
       //z-index only work on position relative, absolute & fixed.
