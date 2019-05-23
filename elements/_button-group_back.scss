@@ -18,7 +18,7 @@
 
 .button-group {
   //@include make-inline-block();
-  @include make-inline-flex;
+  display: inline-block;
   //vertical-align: middle;
 
   > .button {
@@ -62,21 +62,19 @@
   }
 
   &.block {
-    @include make-flex-center;
-    width: 100%;
+    table-layout: fixed;
 
     //display:table-cell 以表格单元格的形式呈现，可看做td标签。
     //table-cell同样会被其他属性破坏，例如float, position:absolute，
     //所以，在使用display:table-cell与float:left或是position:absolute属性尽量不用同时使用。
     > .button {
-      //float: none;
-      //width: 1%;
+      display: table-cell;
+      float: none;
+      width: 1%;
     }
   }
 
   &.vertical {
-    flex-direction: column;
-
     > .button {
       display: block;
       width: 100%;
