@@ -883,6 +883,36 @@ a {
     max-height: 0;
     opacity: 0; } }
 
+@keyframes drawer-animation {
+  from {
+    left: -100%; }
+  to {
+    left: 0; } }
+
+@keyframes drawer-animation-top {
+  from {
+    top: -100%; }
+  to {
+    top: 0; } }
+
+@keyframes drawer-animation-bottom {
+  from {
+    bottom: -100%; }
+  to {
+    bottom: 0; } }
+
+@keyframes drawer-animation-right {
+  from {
+    right: -100%; }
+  to {
+    right: 0; } }
+
+@keyframes open-dialog {
+  from {
+    transform: scale(0); }
+  to {
+    transform: scale(1); } }
+
 .flex-align {
   display: flex;
   align-items: center; }
@@ -1429,6 +1459,8 @@ h1, h2, h3, h4, h5, h6 {
       bottom: 0;
       width: 100%;
       background-color: rgba(0, 0, 0, 0.4); }
+      .card .card-img > .overlay-title:focus, .card .card-img > .overlay-title:hover {
+        text-shadow: 1px 1px 2px #333, 0 0 25px #fff, 0 0 5px #277ed0; }
   .card.block {
     width: 100%;
     display: flex; }
@@ -1642,12 +1674,6 @@ h1, h2, h3, h4, h5, h6 {
 .dialog > .content > .header, .dialog > .content > .body, .dialog > .content > .footer {
   min-height: 1rem;
   padding: 1rem; }
-
-@keyframes open-dialog {
-  from {
-    transform: scale(0); }
-  to {
-    transform: scale(1); } }
 
 .dialog {
   display: none;
@@ -3113,72 +3139,45 @@ h1, h2, h3, h4, h5, h6 {
     .date-time-picker > .time-container > .input:active .date-time-picker > .date-container > .input, .date-time-picker > .time-container > .input:focus .date-time-picker > .date-container > .input {
       border-color: #277ed0; }
 
-@keyframes drawer-animation {
-  from {
-    width: 10%;
-    opacity: 0.2; }
-  to {
-    width: 30%;
-    opacity: 1; } }
-
-@keyframes drawer-animation-top {
-  from {
-    height: 10%;
-    opacity: 0.2; }
-  to {
-    height: 30%;
-    opacity: 1; } }
-
-@keyframes drawer-animation-right {
-  from {
-    width: 10%;
-    opacity: 0.2; }
-  to {
-    width: 30%;
-    opacity: 1; } }
-
 .drawer {
   display: none;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 100;
+  position: fixed;
+  z-index: 1000;
   height: 100%;
   box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.4);
-  background-color: #ffffff;
-  animation-name: drawer-animation;
-  animation-duration: 1s; }
+  background-color: #fff; }
+  .drawer.normal {
+    width: 300px; }
+  .drawer.left {
+    left: 0;
+    top: 0;
+    animation-name: drawer-animation;
+    animation-duration: 0.5s; }
   .drawer.active {
     display: inline-block;
-    width: 30%; }
-    .drawer.active > .content {
-      display: block; }
-  .drawer > .content {
-    display: none;
-    transition: display 4s ease; }
+    width: 300px; }
   .drawer.top, .popover .drawer.popover-arrow.top-left, .tooltip .drawer.popover-arrow.top-left, .popover .drawer.popover-arrow.top-right, .tooltip .drawer.popover-arrow.top-right {
     width: 100%;
-    height: 30%;
+    height: 300px;
     animation-name: drawer-animation-top;
-    animation-duration: 1s; }
-    .drawer.top.active, .popover .drawer.active.popover-arrow.top-left, .tooltip .drawer.active.popover-arrow.top-left, .popover .drawer.active.popover-arrow.top-right, .tooltip .drawer.active.popover-arrow.top-right {
-      display: inline-block;
-      height: 30%; }
-      .drawer.top.active > .content, .popover .drawer.active.popover-arrow.top-left > .content, .tooltip .drawer.active.popover-arrow.top-left > .content, .popover .drawer.active.popover-arrow.top-right > .content, .tooltip .drawer.active.popover-arrow.top-right > .content {
-        display: block; }
+    animation-duration: 0.5s;
+    left: 0;
+    top: 0; }
   .drawer.right {
-    left: unset;
+    top: 0;
     right: 0;
     top: 0;
-    width: 30%;
+    width: 300px;
     height: 100%;
     animation-name: drawer-animation-right;
-    animation-duration: 1s; }
-    .drawer.right.active {
-      display: inline-block;
-      width: 30%; }
-      .drawer.right.active > .content {
-        display: block; }
+    animation-duration: 0.5s; }
+  .drawer.bottom, .popover .drawer.popover-arrow.bottom-left, .tooltip .drawer.popover-arrow.bottom-left, .popover .drawer.popover-arrow.bottom-right, .tooltip .drawer.popover-arrow.bottom-right {
+    left: 0;
+    bottom: 0;
+    height: 300px;
+    width: 100%;
+    animation-name: drawer-animation-bottom;
+    animation-duration: 0.5s; }
 
 .toggle.secondary {
   border-radius: 0.25rem;

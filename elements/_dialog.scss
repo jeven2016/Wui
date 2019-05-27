@@ -3,15 +3,6 @@
   padding: 1rem;
 }
 
-@keyframes open-dialog {
-  from {
-    transform: scale(0)
-  }
-  to {
-    transform: scale(1)
-  }
-}
-
 .dialog {
   @extend .mask;
   display: none;

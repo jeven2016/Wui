@@ -53,3 +53,49 @@
     opacity: 0;
   }
 }
+
+@keyframes drawer-animation {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+@keyframes drawer-animation-top {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+
+@keyframes drawer-animation-bottom {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes drawer-animation-right {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes open-dialog {
+  from {
+    transform: scale(0)
+  }
+  to {
+    transform: scale(1)
+  }
+}

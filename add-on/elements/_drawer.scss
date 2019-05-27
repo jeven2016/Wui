@@ -1,96 +1,57 @@
-@keyframes drawer-animation {
-  from {
-    width: 10%;
-    opacity: 0.2;
-  }
-  to {
-    width: 30%;
-    opacity: 1;
-  }
-}
-
-@keyframes drawer-animation-top {
-  from {
-    height: 10%;
-    opacity: 0.2;
-  }
-  to {
-    height: 30%;
-    opacity: 1;
-  }
-}
-
-@keyframes drawer-animation-right {
-  from {
-    width: 10%;
-    opacity: 0.2;
-  }
-  to {
-    width: 30%;
-    opacity: 1;
-  }
-}
 
 .drawer {
   display: none;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 100;
-  height:100%;
+  position: fixed;
+  z-index: map_get($z-index, 'top');
+  height: 100%;
   box-shadow: $drawer-box-shadown;
-  background-color: #ffffff;
-  animation-name: drawer-animation;
-  animation-duration: 1s;
+  background-color: $white;
+
+
+  &.normal {
+    width: $drawer-normal-length;
+  }
+
+  &.left {
+    left: 0;
+    top: 0;
+    animation-name: drawer-animation;
+    animation-duration: $drawer-animation-duration;
+  }
 
   &.active {
     display: inline-block;
-    width: 30%;
-
-    >.content{
-      display: block;
-    }
-  }
-
-  > .content {
-    display: none;
-    transition: display 4s ease;
+    width: $drawer-normal-length;
   }
 
 
-  &.top{
-    width:100%;
-    height:30%;
+  &.top {
+    width: 100%;
+    height: $drawer-normal-length;
     animation-name: drawer-animation-top;
-    animation-duration: 1s;
-
-    &.active{
-      display: inline-block;
-      height: 30%;
-
-      >.content{
-        display: block;
-      }
-    }
+    animation-duration: $drawer-animation-duration;
+    left: 0;
+    top: 0;
   }
 
-  &.right{
-    left: unset;
-    right:0;
-    top:0;
-    width:30%;
-    height:100%;
+  &.right {
+    top: 0;
+    right: 0;
+    top: 0;
+    width: $drawer-normal-length;
+    height: 100%;
     animation-name: drawer-animation-right;
-    animation-duration: 1s;
+    animation-duration: $drawer-animation-duration;
 
-    &.active{
-      display: inline-block;
-      width: 30%;
+  }
 
-      >.content{
-        display: block;
-      }
-    }
+  &.bottom {
+    left: 0;
+    bottom: 0;
+    height: $drawer-normal-length;
+    width: 100%;
+    animation-name: drawer-animation-bottom;
+    animation-duration: $drawer-animation-duration;
   }
 
 }
