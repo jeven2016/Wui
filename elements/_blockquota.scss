@@ -5,6 +5,20 @@ blockquote {
   padding: $bq-default-padding;
   @include border-radius($bq-border-radius);
 
+  &.with-box {
+    box-shadow: $default-box-shadow;
+  }
+
+  &.border {
+    border-top: $bq-other-border;
+    border-right: $bq-other-border;
+    border-bottom: $bq-other-border;
+  }
+
+  &.with-bg {
+    background: #f8f5f5;
+  }
+
   &.primary {
     border-left: $bq-left-border-primary;
 
@@ -13,13 +27,26 @@ blockquote {
       border-right: $bq-other-border-primary;
       border-bottom: $bq-other-border-primary;
     }
+
+    &.with-bg {
+      background: #adcfef;
+    }
   }
 
-  &.border {
-    border-top: $bq-other-border;
-    border-right: $bq-other-border;
-    border-bottom: $bq-other-border;
+  &.secondary {
+    border-top: $bq-left-border-primary;
+    border-bottom: $bq-left-border-primary;
+    border-left-width: 0;
 
+
+    &.border {
+      border-left: $bq-other-border;
+      border-right: $bq-other-border;
+    }
+
+    &.with-bg {
+      background: #adcfef;
+    }
   }
 
 }

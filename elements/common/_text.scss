@@ -1,7 +1,7 @@
 //Text classes
 .text {
   &.bold {
-    font-weight: map-get($font-weight, 'normal');
+    font-weight: map-get($font-weight, 'bold');
   }
 
   &.align-left {

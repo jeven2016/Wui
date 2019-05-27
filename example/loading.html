@@ -1,84 +1,132 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="fa/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../dist/wui-bundle-min.css" rel="stylesheet">
-    <script src="jquery-3.1.0.js" type="application/javascript"></script>
-    <style type="text/css">
-        body {
-            /*background-color: #ccc;*/
-        }
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="fa/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../dist/wui-bundle-min.css" rel="stylesheet">
+  <script src="jquery-3.1.0.js" type="application/javascript"></script>
+  <style type="text/css">
+    body {
+      /*background-color: #ccc;*/
+    }
 
-        .area-example {
-            margin: 10px auto;
-            padding: 20px;
-            overflow: auto;
-        }
+    .area-example {
+      margin: 10px auto;
+      padding: 20px;
+      overflow: auto;
+    }
 
-    </style>
+  </style>
 
-    <script language="javascript">
-        $(function () {
+  <script language="javascript">
+    $(function () {
 
-        });
+    });
 
+    function show(loaderId) {
+      $("#" + loaderId).toggleClass("active");
+    }
 
-        function show(loaderId) {
-            $("#" + loaderId).toggleClass("active");
-        }
-
-        function showInline(cntId, loaderId) {
-            $("#" + cntId).css('display', '');
-            $("#" + loaderId).toggleClass("active");
-        }
-    </script>
+    function showInline(cntId, loaderId) {
+      $("#" + cntId).css('display', '');
+      $("#" + loaderId).toggleClass("active");
+    }
+  </script>
 </head>
 <body>
 <div class="area-example">
-    <button class="button" onclick="show('loader1')">
-        Normal Loader
-    </button>
-    <button class="button" onclick="show('loader2')">
-        Large Loader
-        <div class="sk-fading-circle">
-            <div class="sk-circle1 sk-circle"></div>
-            <div class="sk-circle2 sk-circle"></div>
-            <div class="sk-circle3 sk-circle"></div>
-            <div class="sk-circle4 sk-circle"></div>
-            <div class="sk-circle5 sk-circle"></div>
-            <div class="sk-circle6 sk-circle"></div>
-            <div class="sk-circle7 sk-circle"></div>
-            <div class="sk-circle8 sk-circle"></div>
-            <div class="sk-circle9 sk-circle"></div>
-            <div class="sk-circle10 sk-circle"></div>
-            <div class="sk-circle11 sk-circle"></div>
-            <div class="sk-circle12 sk-circle"></div>
-        </div>
-    </button>
-    <button class="button" onclick="show('loader3')">
-        Small Loader
-    </button>
-
-    <div class="loader" id="loader1">
-
+  <button class="button" onclick="show('loader1')">
+    Normal Loader
+  </button>
+  <button class="button" onclick="show('loader2')">
+    Large Loader
+    <div class="sk-fading-circle">
+      <div class="sk-circle1 sk-circle"></div>
+      <div class="sk-circle2 sk-circle"></div>
+      <div class="sk-circle3 sk-circle"></div>
+      <div class="sk-circle4 sk-circle"></div>
+      <div class="sk-circle5 sk-circle"></div>
+      <div class="sk-circle6 sk-circle"></div>
+      <div class="sk-circle7 sk-circle"></div>
+      <div class="sk-circle8 sk-circle"></div>
+      <div class="sk-circle9 sk-circle"></div>
+      <div class="sk-circle10 sk-circle"></div>
+      <div class="sk-circle11 sk-circle"></div>
+      <div class="sk-circle12 sk-circle"></div>
     </div>
-    <div class="loader large" id="loader2">
+  </button>
+  <button class="button" onclick="show('loader3')">
+    Small Loader
+  </button>
+
+  <div class="loader" id="loader1">
+
+  </div>
+  <div class="loader large" id="loader2">
+  </div>
+  <div class="loader small" id="loader3">
+
+  </div>
+
+
+  <div class="loader-container">
+    <div class="loader"></div>
+    <div class="content"></div>
+
+  </div>
+
+  <div class="sk-fading-circle">
+    <div class="sk-circle1 sk-circle"></div>
+    <div class="sk-circle2 sk-circle"></div>
+    <div class="sk-circle3 sk-circle"></div>
+    <div class="sk-circle4 sk-circle"></div>
+  </div>
+
+  <div class="circle-loader normal">
+    <div class="segment1">
+      <div class="item"><div style="width: 5px;height:5px;border-radius: 100%;background:#ccc">&nbsp;</div></div>
     </div>
-    <div class="loader small" id="loader3">
+    <div class="segment2">
+      <div class="item"><div style="width: 5px;height:5px;border-radius: 100%;background:#ccc">&nbsp;</div></div>
+    </div>
+    <div class="segment3">
+      <div class="item"><div style="width: 5px;height:5px;border-radius: 100%;background:#ccc">&nbsp;</div></div>
+    </div>
 
+    <div class="segment4">
+      <div class="item"><div style="width: 5px;height:5px;border-radius: 100%;background:#ccc">&nbsp;</div></div>
+    </div>
+    <div class="segment5">
+      <div class="item"><div style="width: 5px;height:5px;border-radius: 100%;background:#ccc">&nbsp;</div></div>
+    </div>
+    <div class="segment6">
+      <div class="item"><div style="width: 5px;height:5px;border-radius: 100%;background:#ccc">&nbsp;</div></div>
+    </div>
+    <div class="segment7">
+      <div class="item"><div style="width: 5px;height:5px;border-radius: 100%;background:#ccc">&nbsp;</div></div>
+    </div>
+    <div class="segment8">
+      <div class="item"><div style="width: 5px;height:5px;border-radius: 100%;background:#ccc">&nbsp;</div></div>
+    </div>
+    <div class="segment9">
+      <div class="item"><div style="width: 5px;height:5px;border-radius: 100%;background:#ccc">&nbsp;</div></div>
+    </div>
+    <div class="segment10">
+      <div class="item"><div style="width: 5px;height:5px;border-radius: 100%;background:#ccc">&nbsp;</div></div>
+    </div>
+    <div class="segment11">
+      <div class="item"><div style="width: 5px;height:5px;border-radius: 100%;background:#ccc">&nbsp;</div></div>
+    </div>
+    <div class="segment12">
+      <div class="item"><div style="width: 5px;height:5px;border-radius: 100%;background:#ccc">&nbsp;</div></div>
     </div>
 
 
-    <div class="loader-container">
-        <div class="loader"></div>
-        <div class="content"></div>
-
-    </div>
 
 
+  </div>
 
 </div>
 

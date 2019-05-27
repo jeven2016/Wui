@@ -14,7 +14,16 @@
   padding: 0;
   background-color: rgba(0, 0, 0, .5);
   z-index: map_get($z-index, 'mask');
+  transition: display .2s ease-in-out;
   overflow: hidden;
+
+  &.active {
+    display: block;
+  }
+
+  &.inactive {
+    display: none;
+  }
 }
 
 .pull-left {

@@ -137,7 +137,7 @@
   }
 
   &.fixed {
-    @include fixed(1000, false, null);
+    @include fixed(map_get($z-index, 'mask'), false, null);
 
     &.top {
       top: 0;
