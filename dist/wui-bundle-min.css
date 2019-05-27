@@ -2436,215 +2436,124 @@ h1, h2, h3, h4, h5, h6 {
 .loader-container.active, .loader-container.active > .mask, .loader-container.active > .dialog, .loader-container.active > .loader {
   display: block; }
 
+.circle-loader > .segment1, .circle-loader > .segment2, .circle-loader > .segment3, .circle-loader > .segment4, .circle-loader > .segment5, .circle-loader > .segment6, .circle-loader > .segment7, .circle-loader > .segment8, .circle-loader > .segment9, .circle-loader > .segment10, .circle-loader > .segment11, .circle-loader > .segment12 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center; }
+
+.circle-loader > .segment1 > .item, .circle-loader > .segment2 > .item, .circle-loader > .segment3 > .item, .circle-loader > .segment4 > .item, .circle-loader > .segment5 > .item, .circle-loader > .segment6 > .item, .circle-loader > .segment7 > .item, .circle-loader > .segment8 > .item, .circle-loader > .segment9 > .item, .circle-loader > .segment10 > .item, .circle-loader > .segment11 > .item, .circle-loader > .segment12 > .item {
+  display: inline-block;
+  border-radius: 100%;
+  width: 15%;
+  height: 15%;
+  background: #277ed0; }
+
 .circle-loader {
   position: relative; }
   .circle-loader.normal {
-    width: 4rem;
-    height: 4rem; }
+    width: 3rem;
+    height: 3rem; }
   .circle-loader > .segment1 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     transform: rotate(0deg); }
     .circle-loader > .segment1 > .item {
-      display: block;
-      border-radius: 100%;
-      width: 100%;
-      height: 100%;
-      animation: item-delay 1.5s infinite ease-in-out both;
-      animation-delay: -1.375s; }
+      animation: item-delay 1.2s infinite ease-in-out both;
+      animation-delay: -1.1s; }
   .circle-loader > .segment2 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     transform: rotate(30deg); }
     .circle-loader > .segment2 > .item {
-      display: block;
-      border-radius: 100%;
-      width: 100%;
-      height: 100%;
-      animation: item-delay 1.5s infinite ease-in-out both;
-      animation-delay: -1.25s; }
+      animation: item-delay 1.2s infinite ease-in-out both;
+      animation-delay: -1s; }
   .circle-loader > .segment3 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     transform: rotate(60deg); }
     .circle-loader > .segment3 > .item {
-      display: block;
-      border-radius: 100%;
-      width: 100%;
-      height: 100%;
-      animation: item-delay 1.5s infinite ease-in-out both;
-      animation-delay: -1.125s; }
+      animation: item-delay 1.2s infinite ease-in-out both;
+      animation-delay: -0.9s; }
   .circle-loader > .segment4 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     transform: rotate(90deg); }
     .circle-loader > .segment4 > .item {
-      display: block;
-      border-radius: 100%;
-      width: 100%;
-      height: 100%;
-      animation: item-delay 1.5s infinite ease-in-out both;
-      animation-delay: -1s; }
+      animation: item-delay 1.2s infinite ease-in-out both;
+      animation-delay: -0.8s; }
   .circle-loader > .segment5 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     transform: rotate(120deg); }
     .circle-loader > .segment5 > .item {
-      display: block;
-      border-radius: 100%;
-      width: 100%;
-      height: 100%;
-      animation: item-delay 1.5s infinite ease-in-out both;
-      animation-delay: -0.875s; }
+      animation: item-delay 1.2s infinite ease-in-out both;
+      animation-delay: -0.7s; }
   .circle-loader > .segment6 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     transform: rotate(150deg); }
     .circle-loader > .segment6 > .item {
-      display: block;
-      border-radius: 100%;
-      width: 100%;
-      height: 100%;
-      animation: item-delay 1.5s infinite ease-in-out both;
-      animation-delay: -0.75s; }
+      animation: item-delay 1.2s infinite ease-in-out both;
+      animation-delay: -0.6s; }
   .circle-loader > .segment7 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     transform: rotate(180deg); }
     .circle-loader > .segment7 > .item {
-      display: block;
-      border-radius: 100%;
-      width: 100%;
-      height: 100%;
-      animation: item-delay 1.5s infinite ease-in-out both;
-      animation-delay: -0.625s; }
+      animation: item-delay 1.2s infinite ease-in-out both;
+      animation-delay: -0.5s; }
   .circle-loader > .segment8 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     transform: rotate(210deg); }
     .circle-loader > .segment8 > .item {
-      display: block;
-      border-radius: 100%;
-      width: 100%;
-      height: 100%;
-      animation: item-delay 1.5s infinite ease-in-out both;
-      animation-delay: -0.5s; }
+      animation: item-delay 1.2s infinite ease-in-out both;
+      animation-delay: -0.4s; }
   .circle-loader > .segment9 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     transform: rotate(240deg); }
     .circle-loader > .segment9 > .item {
-      display: block;
-      border-radius: 100%;
-      width: 100%;
-      height: 100%;
-      animation: item-delay 1.5s infinite ease-in-out both;
-      animation-delay: -0.375s; }
+      animation: item-delay 1.2s infinite ease-in-out both;
+      animation-delay: -0.3s; }
   .circle-loader > .segment10 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     transform: rotate(270deg); }
     .circle-loader > .segment10 > .item {
-      display: block;
-      border-radius: 100%;
-      width: 100%;
-      height: 100%;
-      animation: item-delay 1.5s infinite ease-in-out both;
-      animation-delay: -0.25s; }
+      animation: item-delay 1.2s infinite ease-in-out both;
+      animation-delay: -0.2s; }
   .circle-loader > .segment11 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     transform: rotate(300deg); }
     .circle-loader > .segment11 > .item {
-      display: block;
-      border-radius: 100%;
-      width: 100%;
-      height: 100%;
-      animation: item-delay 1.5s infinite ease-in-out both;
-      animation-delay: -0.125s; }
+      animation: item-delay 1.2s infinite ease-in-out both;
+      animation-delay: -0.1s; }
   .circle-loader > .segment12 {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
     transform: rotate(330deg); }
     .circle-loader > .segment12 > .item {
-      display: block;
-      border-radius: 100%;
-      width: 100%;
-      height: 100%;
-      animation: item-delay 1.5s infinite ease-in-out both;
+      animation: item-delay 1.2s infinite ease-in-out both;
       animation-delay: 0s; }
+  .circle-loader.long > .segment1 > .item {
+    width: 8%;
+    height: 30%; }
+  .circle-loader.long > .segment2 > .item {
+    width: 8%;
+    height: 30%; }
+  .circle-loader.long > .segment3 > .item {
+    width: 8%;
+    height: 30%; }
+  .circle-loader.long > .segment4 > .item {
+    width: 8%;
+    height: 30%; }
+  .circle-loader.long > .segment5 > .item {
+    width: 8%;
+    height: 30%; }
+  .circle-loader.long > .segment6 > .item {
+    width: 8%;
+    height: 30%; }
+  .circle-loader.long > .segment7 > .item {
+    width: 8%;
+    height: 30%; }
+  .circle-loader.long > .segment8 > .item {
+    width: 8%;
+    height: 30%; }
+  .circle-loader.long > .segment9 > .item {
+    width: 8%;
+    height: 30%; }
+  .circle-loader.long > .segment10 > .item {
+    width: 8%;
+    height: 30%; }
+  .circle-loader.long > .segment11 > .item {
+    width: 8%;
+    height: 30%; }
+  .circle-loader.long > .segment12 > .item {
+    width: 8%;
+    height: 30%; }
 
 @keyframes item-delay {
   0%, 49%, 100% {
