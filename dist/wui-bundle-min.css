@@ -445,7 +445,7 @@ time, mark, audio, video {
 .clear-radius {
   border-radius: 0 !important; }
 
-.clear-fix::after, .button > .icon-label::after, .row::after, .dialog > .content > .header::after {
+.clear-fix::after, .button > .icon-label::after, .dialog > .content > .header::after {
   content: '';
   display: table;
   clear: both; }
@@ -1534,13 +1534,18 @@ h1, h2, h3, h4, h5, h6 {
       display: block; }
 
 .row {
-  position: relative;
-  display: block; }
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap; }
   .row > *[class^=col-] {
     position: relative;
     display: block;
     padding: 0.5rem 0.25rem;
-    float: left; }
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start; }
   .row > .col-xs-1 {
     width: 8.33333%; }
   .row > .col-xs-2 {
@@ -1589,7 +1594,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 91.66667%; }
   .row > .offset-xs-12 {
     margin-left: 100%; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 576px) {
     .row > .col-sm-1 {
       width: 8.33333%; }
     .row > .col-sm-2 {
@@ -1638,7 +1643,7 @@ h1, h2, h3, h4, h5, h6 {
       margin-left: 91.66667%; }
     .row > .offset-sm-12 {
       margin-left: 100%; } }
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 768px) {
     .row > .col-md-1 {
       width: 8.33333%; }
     .row > .col-md-2 {
@@ -1687,7 +1692,7 @@ h1, h2, h3, h4, h5, h6 {
       margin-left: 91.66667%; }
     .row > .offset-md-12 {
       margin-left: 100%; } }
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 992px) {
     .row > .col-lg-1 {
       width: 8.33333%; }
     .row > .col-lg-2 {
@@ -1736,6 +1741,55 @@ h1, h2, h3, h4, h5, h6 {
       margin-left: 91.66667%; }
     .row > .offset-lg-12 {
       margin-left: 100%; } }
+  @media screen and (min-width: null) {
+    .row > .col-xl-1 {
+      width: 8.33333%; }
+    .row > .col-xl-2 {
+      width: 16.66667%; }
+    .row > .col-xl-3 {
+      width: 25%; }
+    .row > .col-xl-4 {
+      width: 33.33333%; }
+    .row > .col-xl-5 {
+      width: 41.66667%; }
+    .row > .col-xl-6 {
+      width: 50%; }
+    .row > .col-xl-7 {
+      width: 58.33333%; }
+    .row > .col-xl-8 {
+      width: 66.66667%; }
+    .row > .col-xl-9 {
+      width: 75%; }
+    .row > .col-xl-10 {
+      width: 83.33333%; }
+    .row > .col-xl-11 {
+      width: 91.66667%; }
+    .row > .col-xl-12 {
+      width: 100%; }
+    .row > .offset-xl-1 {
+      margin-left: 8.33333%; }
+    .row > .offset-xl-2 {
+      margin-left: 16.66667%; }
+    .row > .offset-xl-3 {
+      margin-left: 25%; }
+    .row > .offset-xl-4 {
+      margin-left: 33.33333%; }
+    .row > .offset-xl-5 {
+      margin-left: 41.66667%; }
+    .row > .offset-xl-6 {
+      margin-left: 50%; }
+    .row > .offset-xl-7 {
+      margin-left: 58.33333%; }
+    .row > .offset-xl-8 {
+      margin-left: 66.66667%; }
+    .row > .offset-xl-9 {
+      margin-left: 75%; }
+    .row > .offset-xl-10 {
+      margin-left: 83.33333%; }
+    .row > .offset-xl-11 {
+      margin-left: 91.66667%; }
+    .row > .offset-xl-12 {
+      margin-left: 100%; } }
 
 .dialog > .content > .header, .dialog > .content > .body, .dialog > .content > .footer {
   min-height: 1rem;
@@ -1759,13 +1813,13 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #fff;
     border-radius: 0.25rem;
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45); }
-    @media (min-width: 768px) {
+    @media (min-width: 576px) {
       .dialog > .content {
         width: 75%; } }
-    @media (min-width: 992px) {
+    @media (min-width: 768px) {
       .dialog > .content {
         width: 65%; } }
-    @media (min-width: 1200px) {
+    @media (min-width: 992px) {
       .dialog > .content {
         width: 55%; } }
     .dialog > .content > .header {
@@ -1930,7 +1984,7 @@ h1, h2, h3, h4, h5, h6 {
       .navbar.primary > .list > .item.with-bg:focus, .navbar.primary > .list > .item.with-bg:hover {
         background-color: #5499ec; }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 576px) {
   .navbar {
     flex-direction: row; }
     .navbar .navbar-switch {
@@ -1939,7 +1993,7 @@ h1, h2, h3, h4, h5, h6 {
       display: flex;
       flex-direction: row; } }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
   .navbar {
     flex-direction: column; }
     .navbar .navbar-switch {
