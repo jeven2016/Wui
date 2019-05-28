@@ -346,7 +346,7 @@ $table-row-hover-background-color: lighten($gray, 15%);
 //for loader
 $loader-size-large: 5rem;
 $loader-size-normal: 3rem;
-$loader-size-small: 1.5rem;
+$loader-size-small: 1.25rem;
 $border-default-color: #ccc;
 
 //for tab
@@ -371,6 +371,12 @@ $menu-item-hove-text-color: $blue;
 $menu-item-with-box-text-size: 1rem;
 $menu-icon-margin-right: 0.5rem;
 $menu-item-hover-text-shadow: 1px 1px 2px #333, 0 0 25px $white, 0 0 5px $blue;
+
+
+//for drawer
+$drawer-box-shadown: 0 2px 7px 0 rgba(0, 0, 0, 0.4);
+$drawer-normal-length: 30%;
+$drawer-animation-duration: 0.5s;
 
 
 //for breadcrumb
