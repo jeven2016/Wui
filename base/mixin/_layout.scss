@@ -7,14 +7,15 @@
 
 // Generate the corresponding columns via specific arguments
 @mixin generate-grid-columns($colCount,$type, $extend-column-setting: true) {
-  @for $i from 1 to $colCount +1 {
-    & > .col-#{$type}-#{$i} {
+  @for $i from 1 through $colCount {
+    & > .col#{$type}#{$i} {
       width: percentage($i / ($colCount));
+      flex-grow: 0;
     }
   }
 
-  @for $i from 1 to $colCount +1 {
-    & > .offset-#{$type}-#{$i} {
+  @for $i from 1 to $colCount {
+    & > .offset#{$type}#{$i} {
       margin-left: percentage($i / ($colCount));
     }
   }

@@ -1,5 +1,5 @@
 //Only four column types defined here to ensure our grid system is compatible with bootstrap.
-$types: ('xs', 'sm', 'md', 'lg', 'xl');
+$types: ('sm', 'md', 'lg', 'xl');
 
 // The grid system definition.
 // it separates one row into 12 columns in order to meet some special requirements. if you prefer 12 or 16 columns grid system,
@@ -7,29 +7,70 @@ $types: ('xs', 'sm', 'md', 'lg', 'xl');
 .row {
   @include make-flex {
     flex-wrap: wrap;
+    flex-grow: 1;
   }
 
+  &.justify-start {
+    justify-content: flex-start;
+  }
+
+
+  &.justify-end {
+    justify-content: flex-end;
+  }
+
+  &.justify-center {
+    justify-content: center;
+  }
+
+  &.justify-around {
+    justify-content: space-around;
+  }
+
+  &.justify-between {
+    justify-content: space-between;
+  }
+
+  &.justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  &.align-start {
+    align-items: flex-start;
+  }
+
+  &.align-end {
+    align-items: flex-end;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
 
   > *[class^=col-] {
-    @include make-block {
+    @include make-flex {
       padding: $grid-column-padding;
       width: 100%;
-      display: flex;
       justify-content: flex-start;
       align-items: flex-start;
-      //float: left;
     }
   }
 
+  //generate for xs
+  @include generate-grid-columns($grid-column-count, '-');
+
+  //generate for others
   @each $col-type in $types {
-    @if $col-type == 'xs' {
-      //the xs related class is applied in default
-      @include generate-grid-columns($grid-column-count, 'xs');
-    } @else {
-      //once the screen width exceeds a specified value, apply the corresponding classes by checking min-width and media query
-      @include generate-media-grid-columns($grid-column-count,
-              $col-type, (key:'min-width', value: map-get($bs-layout, $col-type)));
-    }
+    //once the screen width exceeds a specified value, apply the corresponding classes by checking min-width and media query
+    @include generate-media-grid-columns($grid-column-count,
+        "-"+$col-type+"-", (key:'min-width', value: map-get($bs-layout, $col-type)));
+
   }
 
+  @for $i from 1 through $grid-column-count {
+    .order-#{$i} {
+      order: $i;
+    }
+  }
 }
+
