@@ -1508,11 +1508,11 @@ h1, h2, h3, h4, h5, h6 {
   .card .card-footer {
     padding: 0.5rem 1rem; }
   .card .card-img {
-    position: relative; }
+    position: relative;
+    min-height: 1px; }
     .card .card-img > .img {
       display: block;
-      width: 100%;
-      vertical-align: middle; }
+      width: 100%; }
     .card .card-img > .overlay-title {
       display: block;
       padding: 0.5rem 1rem;
