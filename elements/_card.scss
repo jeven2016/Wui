@@ -92,12 +92,14 @@
 
   .card-img {
     position: relative;
+    line-height: 0;
 
     > .img {
       //@include border-radius($card-inner-border-radius);
       display: block;
       width: 100%;
-      vertical-align: middle;
+      height: auto;
+      //vertical-align: middle;
     }
 
     > .overlay-title {
