@@ -2628,6 +2628,7 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
     border: 0.3rem solid #ccc;
     border-right-color: #277ed0;
+    transform: translate3d(0, 0, 0);
     animation: default-loader 1.3s linear infinite;
     border-radius: 100%; }
   .loader.secondary > .content, .loader.third > .content {
