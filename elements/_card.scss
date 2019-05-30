@@ -92,14 +92,15 @@
 
   .card-img {
     position: relative;
-    line-height: 0;
+
+    //set min-height as a workaround for IE11, to fix image auto height bug.
+    min-height: 1px; // https://github.com/philipwalton/flexbugs/issues/75
+
 
     > .img {
       //@include border-radius($card-inner-border-radius);
       display: block;
       width: 100%;
-      height: auto;
-      //vertical-align: middle;
     }
 
     > .overlay-title {
