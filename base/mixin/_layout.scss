@@ -10,7 +10,6 @@
   @for $i from 1 through $colCount {
     & > .col#{$type}#{$i} {
       width: percentage($i / ($colCount));
-      flex-grow: 0;
     }
   }
 

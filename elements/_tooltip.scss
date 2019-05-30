@@ -6,6 +6,8 @@
   font-size: 0.8rem;
   padding: 0.25rem 0.25rem;
   border-radius: $default-border-radius;
+  min-width: 3rem;
+  min-height: 1.5rem;
 
   .popover-arrow {
     &.top {

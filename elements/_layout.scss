@@ -48,11 +48,9 @@ $types: ('sm', 'md', 'lg', 'xl');
   }
 
   > *[class^=col-] {
-    @include make-flex {
+    @include make-block {
       padding: $grid-column-padding;
       width: 100%;
-      justify-content: flex-start;
-      align-items: flex-start;
     }
   }
 
@@ -63,7 +61,7 @@ $types: ('sm', 'md', 'lg', 'xl');
   @each $col-type in $types {
     //once the screen width exceeds a specified value, apply the corresponding classes by checking min-width and media query
     @include generate-media-grid-columns($grid-column-count,
-        "-"+$col-type+"-", (key:'min-width', value: map-get($bs-layout, $col-type)));
+            "-"+$col-type+"-", (key:'min-width', value: map-get($bs-layout, $col-type)));
 
   }
 
