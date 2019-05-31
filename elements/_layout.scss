@@ -47,7 +47,7 @@ $types: ('sm', 'md', 'lg', 'xl');
     align-items: center;
   }
 
-  > *[class^=col-] {
+  > [class^=col-] {
     @include make-block {
       padding: $grid-column-padding;
       width: 100%;

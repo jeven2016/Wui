@@ -1553,10 +1553,10 @@ h1, h2, h3, h4, h5, h6 {
     align-items: flex-end; }
   .row.align-center {
     align-items: center; }
-  .row > *[class^=col-] {
+  .row > [class^=col-] {
     position: relative;
     display: block;
-    padding: 0.5rem 0.25rem;
+    padding: 0 0.25rem;
     width: 100%; }
   .row > .col-1 {
     width: 8.33333%; }
@@ -2880,3 +2880,53 @@ h1, h2, h3, h4, h5, h6 {
     min-width: 4.5rem; }
     .toggle.primary > .ball {
       border-radius: 50%; }
+
+.alert {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: 1 1 100%;
+  flex-flow: column wrap;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem; }
+  .alert.alert-info {
+    background-color: #d6eaff;
+    border: 1px solid #a3d0ff; }
+    .alert.alert-info:focus, .alert.alert-info:hover {
+      box-shadow: 1px 1px 6px 0 #a3d0ff; }
+  .alert.alert-ok {
+    background-color: #36e73c70;
+    border: 1px solid rgba(25, 209, 31, 0.439216); }
+    .alert.alert-ok:focus, .alert.alert-ok:hover {
+      box-shadow: 1px 1px 6px 0 rgba(25, 209, 31, 0.439216); }
+  .alert.alert-warning {
+    background-color: #ffe79a;
+    border: 1px solid #ffdb67; }
+    .alert.alert-warning:focus, .alert.alert-warning:hover {
+      box-shadow: 1px 1px 6px 0 #ffdb67; }
+  .alert.alert-error {
+    background-color: #f4c2c6;
+    border: 1px solid #e46b76; }
+    .alert.alert-error:focus, .alert.alert-error:hover {
+      box-shadow: 1px 1px 6px 0 #e8818a; }
+  .alert > .title {
+    position: relative;
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding: 0.25rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center; }
+    .alert > .title > .close-btn {
+      position: absolute;
+      right: 0;
+      border-width: 0;
+      padding: 0;
+      opacity: .6;
+      background-color: transparent;
+      align-self: center; }
+      .alert > .title > .close-btn:focus, .alert > .title > .close-btn:hover {
+        opacity: 1;
+        transform: scale(1.5, 1.5);
+        transform-origin: center; }
