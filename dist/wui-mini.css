@@ -2881,15 +2881,45 @@ h1, h2, h3, h4, h5, h6 {
     .toggle.primary > .ball {
       border-radius: 50%; }
 
+.alert > .alert-close > .close-btn {
+  position: absolute;
+  border-width: 0;
+  padding: 0;
+  opacity: .6;
+  background-color: transparent; }
+  .alert > .alert-close > .close-btn:focus, .alert > .alert-close > .close-btn:hover {
+    opacity: 1;
+    transform: scale(1.2, 1.2);
+    transform-origin: center; }
+
 .alert {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  flex: 1 1 100%;
-  flex-flow: column wrap;
-  padding: 1rem;
+  position: relative;
+  flex: 1 0 100%;
+  flex-flow: row nowrap;
+  padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   margin-bottom: 0.5rem; }
+  .alert.with-title > .alert-close {
+    align-items: flex-start; }
+  .alert > .alert-content {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: column wrap; }
+    .alert > .alert-content > .title {
+      font-weight: 500; }
+  .alert > .alert-icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 0 0 2rem; }
+  .alert > .alert-close {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 0 0 2rem; }
   .alert.alert-info {
     background-color: #d6eaff;
     border: 1px solid #a3d0ff; }
@@ -2906,27 +2936,7 @@ h1, h2, h3, h4, h5, h6 {
     .alert.alert-warning:focus, .alert.alert-warning:hover {
       box-shadow: 1px 1px 6px 0 #ffdb67; }
   .alert.alert-error {
-    background-color: #f4c2c6;
-    border: 1px solid #e46b76; }
+    background-color: #ffd9d7;
+    border: 1px solid #e8818a; }
     .alert.alert-error:focus, .alert.alert-error:hover {
       box-shadow: 1px 1px 6px 0 #e8818a; }
-  .alert > .title {
-    position: relative;
-    font-size: 1.25rem;
-    font-weight: bold;
-    padding: 0.25rem 0;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: center; }
-    .alert > .title > .close-btn {
-      position: absolute;
-      right: 0;
-      border-width: 0;
-      padding: 0;
-      opacity: .6;
-      background-color: transparent;
-      align-self: center; }
-      .alert > .title > .close-btn:focus, .alert > .title > .close-btn:hover {
-        opacity: 1;
-        transform: scale(1.5, 1.5);
-        transform-origin: center; }
