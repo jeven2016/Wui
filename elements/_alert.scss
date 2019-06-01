@@ -23,6 +23,17 @@
     margin-bottom: 0.5rem;
   }
 
+  &.normal {
+    display: inline-flex;
+    min-width: 20rem;
+    min-height: 7rem;
+  }
+
+  &.block {
+    display: flex;
+    flex-basis: 100%;
+  }
+
   &.with-title {
     > .alert-close {
       align-items: flex-start;
@@ -43,7 +54,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    flex: 0 0 2rem;
+    flex: 0 0 auto;
+    padding-right: 0.75rem;
+    font-size: 1.5rem;
   }
 
   > .alert-close {
@@ -61,6 +74,10 @@
     background-color: #d6eaff;
     border: 1px solid darken(#d6eaff, 10%);
 
+    > .alert-icon {
+      color: $blue;
+    }
+
     &:focus, &:hover {
       box-shadow: 1px 1px 6px 0 darken(#d6eaff, 10%);
     }
@@ -68,8 +85,12 @@
 
 
   &.alert-ok {
-    background-color: #36e73c70;
-    border: 1px solid darken(#36e73c70, 10%);
+    background-color: darken(#f6ffed, 10%);
+    border: 1px solid darken(#36e73c70, 20%);
+
+    > .alert-icon {
+      color: $green;
+    }
 
     &:focus, &:hover {
       box-shadow: 1px 1px 6px 0 darken(#36e73c70, 10%);
@@ -81,6 +102,10 @@
     background-color: darken(#fff3cd, 10%);
     border: 1px solid darken(#fff3cd, 20%);
 
+    > .alert-icon {
+      color: $yellow;
+    }
+
     &:focus, &:hover {
       box-shadow: 1px 1px 6px 0 darken(#fff3cd, 20%);
     }
@@ -90,6 +115,10 @@
   &.alert-error {
     background-color: #ffd9d7;
     border: 1px solid #e8818a;
+
+    > .alert-icon {
+      color: $red;
+    }
 
     &:focus, &:hover {
       box-shadow: 1px 1px 6px 0 #e8818a;
