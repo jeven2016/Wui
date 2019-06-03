@@ -24,14 +24,14 @@
   }
 
   &.leave {
-    animation-name: leave;
-    animation-duration: 2s;
+    animation-name: alert-leave;
+    animation-duration: .5s;
+    overflow: hidden;
   }
 
   &.normal {
     display: inline-flex;
     min-width: 20rem;
-    min-height: 7rem;
   }
 
   &.block {
@@ -68,7 +68,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    flex: 0 0 2rem;
+    flex: 0 0 auto;
 
     > .close-btn {
       @extend %close-btn;
@@ -78,6 +78,11 @@
   &.alert-info {
     background-color: #d6eaff;
     border: 1px solid darken(#d6eaff, 10%);
+
+    border-left-width: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-left-color: $blue;
 
     > .alert-icon {
       color: $blue;
@@ -92,6 +97,10 @@
   &.alert-ok {
     background-color: darken(#f6ffed, 10%);
     border: 1px solid darken(#36e73c70, 20%);
+    border-left-width: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-left-color: green;
 
     > .alert-icon {
       color: $green;
@@ -107,6 +116,11 @@
     background-color: darken(#fff3cd, 10%);
     border: 1px solid darken(#fff3cd, 20%);
 
+    border-left-width: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-left-color: $yellow;
+
     > .alert-icon {
       color: $yellow;
     }
@@ -121,6 +135,11 @@
     background-color: #ffd9d7;
     border: 1px solid #e8818a;
 
+    border-left-width: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+    border-left-color: $red;
+
     > .alert-icon {
       color: $red;
     }
@@ -130,43 +149,6 @@
     }
   }
 }
-
-
-@keyframes bounceInDown {
-  from,
-  60%,
-  75%,
-  90%,
-  to {
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    transform: translateY(0);
-  }
-
-  to {
-    transform: translateY(-150px);
-  }
-}
-
-@keyframes g {
-  0% {
-    opacity: 0;
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    -webkit-transform: scaleY(.8);
-    transform: scaleY(.8)
-  }
-  to {
-    opacity: 1;
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
-    -webkit-transform: scaleY(1);
-    transform: scaleY(1)
-  }
-}
-
 
 .alert-container {
   margin: 1rem auto;

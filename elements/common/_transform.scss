@@ -99,3 +99,15 @@
     transform: scale(1)
   }
 }
+
+@keyframes alert-leave {
+  from {
+    max-height: 200px;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    max-height: 0;
+  }
+
+}
