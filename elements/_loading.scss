@@ -15,7 +15,7 @@ $loader-item-duration: 1.3s;
 
 @keyframes item-delay {
   0%, 49%, 100% {
-    opacity: 0
+    opacity: 0.1
   }
   50% {
     opacity: 1
@@ -39,6 +39,7 @@ $loader-item-duration: 1.3s;
   width: 15%;
   height: 15%;
   background: $blue;
+  opacity: 0.1;
 }
 
 
