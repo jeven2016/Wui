@@ -202,9 +202,29 @@
   display: flex;
   flex-flow: row wrap;
   top: 1rem;
-  left: 30%;
   position: fixed;
-  width: 50%;
+  width: 90%;
   z-index: map_get($z-index, 'top');
+
+  @include adapter-width('min-width', map-get($bs-layout, 'sm')) {
+    & {
+      width: 90%;
+    }
+  }
+
+  @include adapter-width('min-width', map-get($bs-layout, 'md')) {
+    & {
+      width: 60%;
+    }
+  }
+
+
+  @include adapter-width('min-width', map-get($bs-layout, 'xl')) {
+    & {
+      width: 50%;
+    }
+  }
 }
+
+
 

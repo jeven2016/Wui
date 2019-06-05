@@ -3024,10 +3024,18 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-flow: row wrap;
   top: 1rem;
-  left: 30%;
   position: fixed;
-  width: 50%;
+  width: 90%;
   z-index: 1000; }
+  @media (min-width: 576px) {
+    .alert-container {
+      width: 90%; } }
+  @media (min-width: 768px) {
+    .alert-container {
+      width: 60%; } }
+  @media (min-width: null) {
+    .alert-container {
+      width: 50%; } }
 
 /**
 * Generate add-ons
