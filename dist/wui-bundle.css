@@ -918,14 +918,20 @@ a {
   to {
     transform: scale(1); } }
 
+/*
 @keyframes alert-leave {
   from {
+    transform: scaleY(1);
     max-height: 200px;
-    opacity: 1; }
+    opacity: 1;
+  }
   to {
+    max-height: 0;
     opacity: 0;
-    max-height: 0; } }
+    transform: scaleY(0);
+  }
 
+}*/
 .flex-align {
   display: flex;
   align-items: center; }
@@ -2895,7 +2901,6 @@ h1, h2, h3, h4, h5, h6 {
       border-radius: 50%; }
 
 .alert > .alert-close > .close-btn {
-  position: absolute;
   border-width: 0;
   padding: 0;
   opacity: .6;
@@ -2915,10 +2920,25 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   margin-bottom: 0.5rem; }
+  .alert.enter {
+    opacity: 0;
+    transform: scaleY(0); }
+  .alert.enter-active {
+    opacity: 1;
+    transform: scaleY(1);
+    transition: all .3s; }
   .alert.leave {
-    animation-name: alert-leave;
-    animation-duration: .5s;
-    overflow: hidden; }
+    transform: scaleY(1);
+    max-height: 200px;
+    opacity: 1; }
+  .alert.leave-active {
+    max-height: 0;
+    opacity: 0;
+    transition: all .3s; }
+  .alert.leave-done {
+    display: none;
+    opacity: 0;
+    max-height: 0; }
   .alert.normal {
     display: inline-flex;
     min-width: 20rem; }
@@ -2956,6 +2976,16 @@ h1, h2, h3, h4, h5, h6 {
       color: #277ed0; }
     .alert.alert-info:focus, .alert.alert-info:hover {
       box-shadow: 1px 1px 6px 0 #a3d0ff; }
+  .alert.alert-simple, .alert.alert-mini {
+    border: 1px solid #acacac;
+    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
+    background: #fff; }
+    .alert.alert-simple > .alert-close, .alert.alert-mini > .alert-close {
+      align-items: flex-start; }
+    .alert.alert-simple > .alert-icon, .alert.alert-mini > .alert-icon {
+      color: #277ed0; }
+  .alert.alert-simple > .alert-content > .body {
+    min-height: 4rem; }
   .alert.alert-ok {
     background-color: #ddffba;
     border: 1px solid rgba(20, 163, 24, 0.439216);
@@ -2991,10 +3021,9 @@ h1, h2, h3, h4, h5, h6 {
       box-shadow: 1px 1px 6px 0 #e8818a; }
 
 .alert-container {
-  margin: 1rem auto;
   display: flex;
-  flex-flow: column wrap;
-  top: 0;
+  flex-flow: row wrap;
+  top: 1rem;
   left: 30%;
   position: fixed;
   width: 50%;

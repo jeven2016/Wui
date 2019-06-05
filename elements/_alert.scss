@@ -1,5 +1,4 @@
 %close-btn {
-  position: absolute;
   border-width: 0;
   padding: 0;
   opacity: .6;
@@ -23,10 +22,37 @@
     margin-bottom: 0.5rem;
   }
 
+  &.enter {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+
+  &.enter-active {
+    opacity: 1;
+    transform: scaleY(1);
+    transition: all .3s;
+  }
+
   &.leave {
-    animation-name: alert-leave;
-    animation-duration: .5s;
-    overflow: hidden;
+    transform: scaleY(1);
+    max-height: 200px;
+    opacity: 1;
+    //animation: alert-leave .5s ease-in-out;
+  }
+
+  &.leave-active {
+    max-height: 0;
+    opacity: 0;
+    //transform: scaleY(0);
+    transition: all .3s;
+    //animation: alert-leave .5s ease-in-out;
+  }
+
+  &.leave-done {
+    display: none;
+    opacity: 0;
+    //transform: scaleY(0);
+    max-height: 0;
   }
 
   &.normal {
@@ -94,6 +120,28 @@
   }
 
 
+  &.alert-simple, &.alert-mini {
+    border: 1px solid $default-border-color;
+    box-shadow: $default-box-shadow;
+    background: $white;
+
+    > .alert-close {
+      align-items: flex-start;
+    }
+
+    > .alert-icon {
+      color: $blue;
+    }
+  }
+
+  &.alert-simple {
+    > .alert-content {
+      > .body {
+        min-height: 4rem;
+      }
+    }
+  }
+
   &.alert-ok {
     background-color: darken(#f6ffed, 10%);
     border: 1px solid darken(#36e73c70, 20%);
@@ -151,14 +199,12 @@
 }
 
 .alert-container {
-  margin: 1rem auto;
   display: flex;
-  flex-flow: column wrap;
-  top: 0;
+  flex-flow: row wrap;
+  top: 1rem;
   left: 30%;
   position: fixed;
   width: 50%;
   z-index: map_get($z-index, 'top');
-
-
 }
+

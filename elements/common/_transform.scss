@@ -100,14 +100,17 @@
   }
 }
 
+/*
 @keyframes alert-leave {
   from {
+    transform: scaleY(1);
     max-height: 200px;
     opacity: 1;
   }
   to {
-    opacity: 0;
     max-height: 0;
+    opacity: 0;
+    transform: scaleY(0);
   }
 
-}
+}*/
