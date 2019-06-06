@@ -970,6 +970,52 @@ blockquote, .blockquote {
     blockquote.secondary.with-bg, .secondary.with-bg.blockquote, .with-bg.blockquote.loader.third, blockquote.with-bg.loader.third {
       background: #adcfef; }
 
+.badge {
+  position: relative;
+  display: inline-block;
+  background: transparent; }
+  .badge.tag > .content, .badge.normal > .content, .badge.dot > .content {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    padding: 0.5rem;
+    color: #fff;
+    background: #ff350e; }
+  .badge.tag > .content {
+    line-height: 1rem;
+    font-size: 0.875rem;
+    padding: 0.25em 0.5em;
+    border-radius: 4rem; }
+  .badge.normal > .content, .badge.dot > .content {
+    z-index: 10;
+    position: absolute;
+    font-size: 0.75rem;
+    padding: 0 0.25rem;
+    top: 0;
+    right: 0;
+    color: #fff;
+    background: #ff350e;
+    border-radius: 100%;
+    height: 1.25rem;
+    min-width: 1.25rem;
+    transform: scale(1) translate(50%, -50%); }
+  .badge.dot > .content {
+    height: 0.5rem;
+    min-width: 0.5rem; }
+  .badge.ok > .content {
+    background: #4BB84F; }
+  .badge.info > .content {
+    background: #277ed0; }
+  .badge.warning > .content {
+    background: #fbb80b; }
+  .badge.error > .content {
+    background: #ff350e; }
+  .badge.dark > .content {
+    background: #000000; }
+  .badge.with-box > .content {
+    box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45); }
+
 h1 {
   font-size: 2em; }
 

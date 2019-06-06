@@ -57,6 +57,7 @@ $elem-small-padding: 0.25rem 0.5rem;
 
 //z-index
 $z-index: (
+        pop: 10,
         mask: 100,
         overlay: 110,
         top:1000
