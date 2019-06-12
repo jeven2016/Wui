@@ -1016,6 +1016,29 @@ blockquote, .blockquote {
   .badge.with-box > .content {
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45); }
 
+.checkbox {
+  display: inline-block;
+  position: relative;
+  vertical-align: bottom; }
+  .checkbox:not(:last-child) {
+    margin-right: 0.5rem; }
+  .checkbox.checked > .icon {
+    color: #277ed0; }
+  .checkbox.unchecked > .icon {
+    color: #ccc; }
+  .checkbox > .checkbox-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer; }
+  .checkbox > .icon {
+    font-size: 1.5rem;
+    width: 1em;
+    height: 1em; }
+
 h1 {
   font-size: 2em; }
 
