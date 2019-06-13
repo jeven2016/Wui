@@ -1,7 +1,8 @@
-.checkbox {
+.checkbox, .radio{
   display: inline-flex;
   position: relative;
   align-items: center;
+  vertical-align: middle;
 
   &:not(:last-child) {
     margin-right: 0.5rem;
@@ -21,7 +22,7 @@
   }
 
 
-  > .checkbox-input {
+  > .hidden-input {
     position: absolute;
     top: 0;
     left: 0;

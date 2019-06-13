@@ -1020,17 +1020,18 @@ blockquote, .blockquote {
   .badge.with-box > .content {
     box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45); }
 
-.checkbox {
-  display: inline-block;
+.checkbox, .radio {
+  display: inline-flex;
   position: relative;
-  vertical-align: bottom; }
-  .checkbox:not(:last-child) {
+  align-items: center;
+  vertical-align: middle; }
+  .checkbox:not(:last-child), .radio:not(:last-child) {
     margin-right: 0.5rem; }
-  .checkbox.checked > .icon {
+  .checkbox.checked > .icon, .radio.checked > .icon {
     color: #277ed0; }
-  .checkbox.unchecked > .icon {
+  .checkbox.unchecked > .icon, .radio.unchecked > .icon {
     color: #ccc; }
-  .checkbox > .checkbox-input {
+  .checkbox > .hidden-input, .radio > .hidden-input {
     position: absolute;
     top: 0;
     left: 0;
@@ -1038,7 +1039,7 @@ blockquote, .blockquote {
     height: 100%;
     opacity: 0;
     cursor: pointer; }
-  .checkbox > .icon {
+  .checkbox > .icon, .radio > .icon {
     font-size: 1.5rem;
     width: 1em;
     height: 1em; }
