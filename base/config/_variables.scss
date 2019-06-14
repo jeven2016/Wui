@@ -1,18 +1,48 @@
 //Colors
+//$white: #fff;
+//$black: #000000;
+//$gray: #ccc;
+//$light-gray: #f5f5f5;
+//$brown: #a57036;
+//$pink: #e02c94;
+//$purple: #9a2ec8;
+//$violet: #5f33c9;
+//$blue: #277ed0;
+//$teal: #06806C;
+//$green: #4BB84F;
+//$yellow: #fbb80b;
+//$orange: #f26b11;
+//$red: #ff350e;
+
+//https://flatuicolors.com/palette/defo
+//https://www.materialui.co/colors
+
 $white: #fff;
 $black: #000000;
-$gray: #ccc;
-$light-gray: #f5f5f5;
-$brown: #a57036;
+
+$gray: #ecf0f1;
+$gray-darker: #bdc3c7;
+$light-gray: $gray;
+
+$teal: #1abc9c;
+$teal-darker: #16a085;
+$green: #2ecc71;
+$green-darker: #27ae60;
+$blue: #3498db;
+$blue-darker: #2980b9;
+$purple: #9b59b6;
+$purple-darker: #8e44ad;
+$red: #e74c3c;
+$red-darker: #c0392b;
+$brown: #e67e22;
+$brown-darker: #d35400;
+$yellow: #f1c40f;
+$yellow-darker: #f39c12;
+
 $pink: #e02c94;
-$purple: #9a2ec8;
 $violet: #5f33c9;
-$blue: #277ed0;
 $teal: #06806C;
-$green: #4BB84F;
-$yellow: #fbb80b;
 $orange: #f26b11;
-$red: #ff350e;
 
 $text-color: rgba(51, 51, 51, 1);
 $text-disabled-color: rgba(0, 0, 0, .4);
@@ -23,23 +53,23 @@ $text-warning-color: $yellow;
 $text-error-color: $red;
 
 $colors: (
-        comment:$text-comment-color,
-        ok: $text-ok-color,
-        warning: $text-warning-color,
-        error: $text-error-color,
-        color-white:$white,
-        color-black:$black,
-        color-gray:$gray,
-        color-brown:$brown,
-        color-pink:$pink,
-        color-purple:$purple,
-        color-violet:$violet,
-        color-blue:$blue,
-        color-teal:$teal,
-        color-green:$green,
-        color-yellow:$yellow,
-        color-orange:$orange,
-        color-red:$red);
+    comment:$text-comment-color,
+    ok: $text-ok-color,
+    warning: $text-warning-color,
+    error: $text-error-color,
+    color-white:$white,
+    color-black:$black,
+    color-gray:$gray,
+    color-brown:$brown,
+    color-pink:$pink,
+    color-purple:$purple,
+    color-violet:$violet,
+    color-blue:$blue,
+    color-teal:$teal,
+    color-green:$green,
+    color-yellow:$yellow,
+    color-orange:$orange,
+    color-red:$red);
 
 //Global
 $default-box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
@@ -57,29 +87,29 @@ $elem-small-padding: 0.25rem 0.5rem;
 
 //z-index
 $z-index: (
-        pop: 10,
-        mask: 100,
-        overlay: 110,
-        top:1000
+    pop: 10,
+    mask: 100,
+    overlay: 110,
+    top:1000
 );
 
 //text
 $font-weight: (
-        'normal': 500,
-        'bold': 700
+    'normal': 500,
+    'bold': 700
 );
 
 $font-size: (
-        'large':1.5rem,
-        'normal': 1rem,
-        'small':0.75rem
+    'large':1.5rem,
+    'normal': 1rem,
+    'small':0.75rem
 );
 
 $arrow-direction: (
-        'up':'up',
-        'down':'down',
-        'left':'left',
-        'right':'right'
+    'up':'up',
+    'down':'down',
+    'left':'left',
+    'right':'right'
 );
 
 //for <a/> link
@@ -315,10 +345,10 @@ $dialog-inner-border-radius: calc(#{$dialog-border-radius} - #{$dialog-border-wi
 // 992 =< lg < 1200
 //  1200 =< xl
 $bs-layout: (
-        sm : 576px,
-        md : 768px,
-        lg : 992px,
-        xg: 1200px
+    sm : 576px,
+    md : 768px,
+    lg : 992px,
+    xg: 1200px
 );
 $grid-column-count: 12;
 $grid-column-padding: 0 .25rem;
