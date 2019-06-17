@@ -1299,10 +1299,6 @@ h1, h2, h3, h4, h5, h6 {
       .dropdown.simple.active > .title svg, .dropdown.simple.active > .title .icon {
         transition: all .3s;
         transform: rotateX(180deg); }
-        .dropdown.simple.active > .title svg:first-child:not(:last-child), .dropdown.simple.active > .title .icon:first-child:not(:last-child) {
-          margin-right: 0.25rem; }
-        .dropdown.simple.active > .title svg:last-child:not(:first-child), .dropdown.simple.active > .title .icon:last-child:not(:first-child) {
-          margin-left: 0.25rem; }
 
 .button-dropdown {
   position: relative;
