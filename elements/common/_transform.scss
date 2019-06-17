@@ -114,3 +114,15 @@
   }
 
 }*/
+
+@keyframes move-stripe {
+  to {
+    background-position-x: 1rem;
+  }
+}
+
+@keyframes move-stripe-2 {
+  to {
+    background-position-x: 100%;
+  }
+}

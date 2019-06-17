@@ -928,6 +928,14 @@ a {
   }
 
 }*/
+@keyframes move-stripe {
+  to {
+    background-position-x: 1rem; } }
+
+@keyframes move-stripe-2 {
+  to {
+    background-position-x: 100%; } }
+
 .flex-align {
   display: flex;
   align-items: center; }
@@ -3102,3 +3110,68 @@ h1, h2, h3, h4, h5, h6 {
   @media (min-width: null) {
     .alert-container {
       width: 50%; } }
+
+.progress {
+  display: flex;
+  height: 1rem; }
+  .progress > .bar {
+    display: inline-flex;
+    flex: 1 0 calc(100% - 2.5rem);
+    height: 100%;
+    background: #ecf0f1;
+    border-radius: 2rem; }
+    .progress > .bar > .bg {
+      display: flex;
+      height: 100%;
+      border-radius: 2rem;
+      background-color: #3498db;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: bold;
+      align-items: center;
+      justify-content: center;
+      transition: width 1s ease; }
+  .progress > .info {
+    display: inline-flex;
+    flex: 0 0 2.5rem;
+    align-items: center;
+    padding-left: 0.5rem;
+    font-size: 0.75rem; }
+  .progress.animation > .bar > .bg {
+    background-image: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.15));
+    background-size: 1rem 1rem;
+    background-repeat: no-repeat;
+    animation: move-stripe-2 2s linear infinite; }
+  .progress.with-stripe > .bar > .bg {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.13) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.13) 50%, rgba(255, 255, 255, 0.13) 75%, transparent 75%, transparent);
+    background-size: 1rem 1rem;
+    background-repeat: initial; }
+  .progress.with-stripe.animation > .bar > .bg {
+    animation: move-stripe 1s linear infinite; }
+  .progress.info > .bar > .bg {
+    background-color: #3498db; }
+  .progress.info > .info {
+    color: #3498db; }
+  .progress.ok > .bar > .bg {
+    background-color: #2ecc71; }
+  .progress.ok > .info {
+    color: #2ecc71; }
+  .progress.warning > .bar > .bg {
+    background-color: #f1c40f; }
+  .progress.warning > .info {
+    color: #f1c40f; }
+  .progress.error > .bar > .bg {
+    background-color: #e74c3c; }
+  .progress.error > .info {
+    color: #e74c3c; }
+  .progress:first-child:not(:last-child), .progress:not(first-child):not(last-child) {
+    margin-bottom: 1rem; }
+  .progress.without-info > .bar {
+    flex: 1 0 100%; }
+  .progress.without-info > .info {
+    display: none; }
+  .progress.top, .popover .progress.popover-arrow.top-left, .tooltip .progress.popover-arrow.top-left, .popover .progress.popover-arrow.top-right, .tooltip .progress.popover-arrow.top-right {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; }
