@@ -1254,6 +1254,9 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #acacac;
   min-width: 8rem;
   vertical-align: middle; }
+  .dropdown > .title {
+    display: inline-flex;
+    align-items: center; }
   .dropdown > .menu {
     outline: none;
     border: 1px solid #ccc;
@@ -1287,6 +1290,15 @@ h1, h2, h3, h4, h5, h6 {
     .dropdown.simple > .info {
       position: relative;
       display: inline-block; }
+    .dropdown.simple.active > .title {
+      color: #3498db; }
+      .dropdown.simple.active > .title svg, .dropdown.simple.active > .title .icon {
+        transition: all .3s;
+        transform: rotateX(180deg); }
+        .dropdown.simple.active > .title svg:first-child:not(:last-child), .dropdown.simple.active > .title .icon:first-child:not(:last-child) {
+          margin-right: 0.25rem; }
+        .dropdown.simple.active > .title svg:last-child:not(:first-child), .dropdown.simple.active > .title .icon:last-child:not(:first-child) {
+          margin-left: 0.25rem; }
 
 .button-dropdown {
   position: relative;

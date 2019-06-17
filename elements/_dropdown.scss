@@ -42,6 +42,11 @@
   min-width: $dp-min-width;
   vertical-align: $dp-vertical-align;
 
+  > .title {
+    display: inline-flex;
+    align-items: center;
+  }
+
   > .menu {
     @include dp-menu {
       width: calc(100% + 2px);
@@ -76,6 +81,17 @@
 
     .menu {
       @extend %block-menu-style;
+    }
+
+    &.active {
+      > .title {
+        color: $blue;
+
+        svg, .icon {
+          transition: all .3s;
+          transform: rotateX(180deg);
+        }
+      }
     }
 
   }
