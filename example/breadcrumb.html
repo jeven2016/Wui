@@ -1,129 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="fa/css/font-awesome.min.css" rel="stylesheet">
-    <link href="../dist/wui-bundle-min.css" rel="stylesheet">
-    <script src="jquery-3.1.0.js" type="application/javascript"></script>
-    <style type="text/css">
-        .area-example {
-            margin: 10px auto;
-            padding: 20px;
-            overflow: auto;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="fa/css/font-awesome.min.css" rel="stylesheet">
+  <link href="../dist/wui-bundle-min.css" rel="stylesheet">
+  <script src="jquery-3.1.0.js" type="application/javascript"></script>
+  <style type="text/css">
+    body {
+      padding: 1rem;
+    }
 
-    <script language="JavaScript">
+  </style>
 
-    </script>
+  <script language="JavaScript">
+  </script>
 </head>
 <body>
-<div class="area-example">
-    Breadcrumb示例：<br/><br/>
 
-    <div class="breadcrumb">
-        <div class="item">
-            <a href="#">Home</a>
-        </div>
-        <i class="fa fa-angle-right item"></i>
-        <div class="item">
-            <a href="#">Page1</a>
-        </div>
-        <i class="fa fa-angle-right item"></i>
-        <div class="item">
-            <a href="#">Page2</a>
-        </div>
-    </div>
-
-    <div class="breadcrumb">
-        <div class="item">
-            <a href="#">Home</a>
-        </div>
-        <div class="item">/</div>
-        <div class="item">
-            <a href="#">Page1</a>
-        </div>
-        <div class="item">/</div>
-        <div class="item">
-            <a href="#">Page2</a>
-        </div>
-    </div>
-
-    <div class="wrapper breadcrumb">
-        <div class="item">
-            <a href="#">Home</a>
-        </div>
-        <div class="item">/</div>
-        <div class="item">
-            <a href="#">Page1</a>
-        </div>
-        <div class="item">/</div>
-        <div class="item">
-            <a href="#">Page2</a>
-        </div>
-    </div>
-
-    <div class="wrapper breadcrumb with-border">
-        <div class="item">
-            <a href="#">Home</a>
-        </div>
-        <div class="item">/</div>
-        <div class="item">
-            <a href="#">Page1</a>
-        </div>
-        <div class="item">/</div>
-        <div class="item">
-            <a href="#">Page2</a>
-        </div>
-    </div>
-
-    <div class="large wrapper breadcrumb with-border">
-        <div class="item">
-            <a href="#">Large</a>
-        </div>
-        <div class="item">/</div>
-        <div class="item">
-            <a href="#">Page1</a>
-        </div>
-        <div class="item">/</div>
-        <div class="item">
-            <a href="#">Page2</a>
-        </div>
-    </div>
-
-
-    <div class="medium wrapper breadcrumb with-border">
-        <div class="item">
-            <a href="#">medium</a>
-        </div>
-        <div class="item">/</div>
-        <div class="item">
-            <a href="#">Page1</a>
-        </div>
-        <div class="item">/</div>
-        <div class="item">
-            <a href="#">Page2</a>
-        </div>
-    </div>
-
-    <div class="small wrapper breadcrumb with-border">
-        <div class="item">
-            <a href="#">medium</a>
-        </div>
-        <div class="item">/</div>
-        <div class="item">
-            <a href="#">Page1</a>
-        </div>
-        <div class="item">/</div>
-        <div class="item">
-            <a href="#">Page2</a>
-        </div>
-    </div>
-
-
+<div class="breadcrumb with-bg">
+  <div class="item">
+    <i class="fa fa-home"></i>
+  </div>
+  <div class="bc-divider">
+    /
+  </div>
+  <div class="item">
+    Application
+  </div>
+  <div class="bc-divider">
+    /
+  </div>
+  <div class="item">
+    APP1
+  </div>
+  <div class="bc-divider">
+    /
+  </div>
+  <div class="item active">
+    Details
+  </div>
 </div>
+
+
+
+<div class="breadcrumb">
+  <div class="item">
+    <i class="fa fa-home"></i>
+  </div>
+  <div class="bc-divider">
+    >
+  </div>
+  <div class="item">
+    <i class="fa fa-apple icon"></i>
+    <a href="#">Application</a>
+  </div>
+  <div class="bc-divider">
+    >
+  </div>
+  <div class="item">
+    APP1
+  </div>
+  <div class="bc-divider">
+    >
+  </div>
+  <div class="item active">
+    <div class="simple dropdown ">
+      <a class="info" href="#" onclick="$(this).parent().toggleClass('active')">Details</a>
+      <ul class="menu">
+        <div class="menu-list">
+          <li class="menu-item" data-value="0">Item1</li>
+          <li class="menu-item" data-value="1">Item2</li>
+          <li class="menu-item" data-value="2">Item4</li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="breadcrumb">
+  <div class="item">
+    <i class="fa fa-home"></i>
+  </div>
+  <div class="bc-divider">
+    >
+  </div>
+  <div class="item">
+
+    <div class="badge tag gray">
+      <div class="content">Application</div>
+    </div>
+  </div>
+  <div class="bc-divider">
+    >
+  </div>
+  <div class="item active">
+    <div class="badge tag info">
+      <div class="content">Details</div>
+    </div>
+  </div>
+</div>
+
 
 </body>
 </html>

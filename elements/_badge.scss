@@ -56,11 +56,16 @@
     }
   }
 
+  &.gray{
+    > .content {
+      background: $gray-darker;
+    }
+  }
+
   &.info {
     > .content {
       background: $blue;
     }
-
   }
 
   &.warning {

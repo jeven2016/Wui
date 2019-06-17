@@ -1017,6 +1017,8 @@ blockquote, .blockquote {
     min-width: 0.5rem; }
   .badge.ok > .content {
     background: #2ecc71; }
+  .badge.gray > .content {
+    background: #bdc3c7; }
   .badge.info > .content {
     background: #3498db; }
   .badge.warning > .content {
@@ -1222,6 +1224,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 100;
   left: -1px;
   top: 100%;
+  color: #333333;
   box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
   margin-top: 0.2rem;
   border-radius: 0.25rem;
@@ -1264,6 +1267,7 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 100;
     left: -1px;
     top: 100%;
+    color: #333333;
     width: calc(100% + 2px);
     border-radius: 0 0 0.25rem 0.25rem;
     transition: display .5s ease; }
@@ -2494,22 +2498,26 @@ h1, h2, h3, h4, h5, h6 {
       border-right-color: #000000; }
 
 .breadcrumb {
-  display: block;
+  display: flex;
   position: relative;
-  background-color: transparent;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  line-height: 2.5rem; }
-  .breadcrumb.wrapper {
-    background-color: #f5f5f5;
-    padding: 0.25rem 0.5rem; }
-  .breadcrumb.medium {
-    line-height: 1.5rem; }
-  .breadcrumb.small {
-    line-height: 1rem; }
+  list-style: none;
+  align-items: center; }
+  .breadcrumb:first-child:not(:last-child), .breadcrumb:not(first-child):not(last-child) {
+    margin-bottom: 1rem; }
+  .breadcrumb.with-bg {
+    background: #ecf0f1;
+    border-radius: 0.25rem;
+    padding: 0.5rem; }
   .breadcrumb > .item {
-    display: inline-block;
-    margin-right: 0.25rem; }
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.5); }
+    .breadcrumb > .item:hover, .breadcrumb > .item:focus, .breadcrumb > .item.active {
+      color: #3498db; }
+    .breadcrumb > .item > .icon:first-child:not(:last-child), .breadcrumb > .item > .icon:not(first-child):not(last-child) {
+      margin-right: 0.25rem; }
+  .breadcrumb > .bc-divider {
+    color: rgba(0, 0, 0, 0.5);
+    padding: 0 0.5rem; }
 
 .form {
   position: relative;
@@ -3134,7 +3142,7 @@ h1, h2, h3, h4, h5, h6 {
       font-weight: bold;
       align-items: center;
       justify-content: center;
-      transition: width 1s ease; }
+      transition: width .3s ease; }
   .progress > .info {
     display: inline-flex;
     flex: 0 0 2.5rem;
@@ -3176,6 +3184,7 @@ h1, h2, h3, h4, h5, h6 {
     display: none; }
   .progress.top, .popover .progress.popover-arrow.top-left, .tooltip .progress.popover-arrow.top-left, .popover .progress.popover-arrow.top-right, .tooltip .progress.popover-arrow.top-right {
     position: fixed;
+    height: 0.1875rem;
     top: 0;
     left: 0;
     width: 100%; }
