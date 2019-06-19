@@ -75,10 +75,10 @@ $colors: (
 $default-box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
 $default-border-radius: 0.25rem;
 $default-arrow-border: 4px solid transparent;
-$default-border-color: #acacac;
+$default-border-color: #ccc;
 $default-arrow-active-border: #acacac;
 $body-background-color: #fff;
-$border-color: #acacac;
+$border-color: #ccc;
 $default-color-increase-ratio: 20%;
 
 $elem-default-padding: 0.5rem 1rem;
@@ -287,13 +287,12 @@ $dp-cursor: pointer;
 $dp-outline: 0;
 $dp-text-align: center;
 $dp-line-height: 1.25rem;
-$dp-vertical-align: middle;
+$dp-vertical-align: baseline;
 $dp-border-radius: $default-border-radius;
 $dp-padding: 0.5rem 1rem;
 $dp-border-width: 1px;
 $dp-border: $dp-border-width solid $btn-border-color;
 $dp-min-width: 8rem;
-$dp-vertical-align: middle;
 $dp-background-color: $white;
 $dp-item-border: 1px solid #ccc;
 $dp-border-radius: $default-border-radius;
