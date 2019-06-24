@@ -11,28 +11,18 @@
 @mixin add-simple-button-content($btn-bg-color, $btn-color, $btn-bdr-color) {
   @include generate-local($btn-bg-color, $btn-color, $btn-bdr-color);
   @include generate-active(
-                  $btn-bg-color,
-                  $btn-color,
-                  $btn-bdr-color);
-  @include generate-disabled(
-                  $btn-bg-color,
-                  $btn-color,
-                  $btn-bdr-color
-  );
+          $btn-bg-color,
+          $btn-color,
+          $btn-bdr-color);
 }
 
 @mixin generate-outline-button($className,$btn-bg-color,$btn-color) {
   &.#{$className} {
     @include generate-local($btn-bg-color, $btn-color, $btn-color);
     @include generate-active(
-                    $btn-color,
-                    $white,
-                    $btn-color);
-    @include generate-disabled(
-                    $white,
-                    $btn-color,
-                    $btn-color
-    );
+            $btn-color,
+            $white,
+            $btn-color);
   }
 }
 
@@ -43,29 +33,21 @@
 }
 
 @mixin generate-active($active-bg-color,$active-color,$active-bdr-color) {
-  &:focus, &:hover {
-    background-color: darken($active-bg-color, 8%);
+  &:focus:not(.disabled), &:hover:not(.disabled) {
+    background-color: darken($active-bg-color, $default-bg-color-increase-ratio);
     color: $active-color;
-    border-color: darken($active-bdr-color, 8%);
+    border-color: darken($active-bdr-color, $default-color-increase-ratio);
+    box-shadow: 0 0 0 0.2rem lighten($active-bdr-color, 20%);
   }
 
   &:active, &.active {
-    background-color: darken($active-bg-color, $default-color-increase-ratio);
+    background-color: darken($active-bg-color, $default-bg-color-increase-ratio);
     color: $active-color;
     border-color: darken($active-bdr-color, $default-color-increase-ratio);
+    box-shadow: 0 0 0 0.2rem lighten($active-bdr-color, 20%);
+    //box-shadow: 0 0 0 0.2rem $active-bdr-color;
   }
 
-}
-
-@mixin generate-disabled($disabled-focus-bg-color,$disabled-focus-color,$disabled-focus-bdr-color ) {
-  &:disabled, &.disabled {
-    &:focus, &:hover {
-      background-color: $disabled-focus-bg-color;
-      color: $disabled-focus-color;
-      border-color: $disabled-focus-bdr-color;
-      //opacity: .7;
-    }
-  }
 }
 
 /**

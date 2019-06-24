@@ -1,0 +1,79 @@
+$border-color-increase-ratio: $default-color-increase-ratio;
+
+.button {
+  @extend .base-btn;
+
+  //add button content
+  @include generate-simple-button(null, $btn-default-background-color, $btn-default-text-color,
+      darken($btn-border-color, $border-color-increase-ratio));
+
+  @each $name, $color in $colors {
+    @if str-index($name, "color-") {
+      @include generate-simple-button(str-replace($name, "color-"), $color, $white,
+          darken($color, $border-color-increase-ratio));
+    }
+  }
+
+  &.outline {
+    @each $name, $color in $colors {
+      @if str-index($name, "color-") {
+        @include generate-outline-button(str-replace($name, "color-"), transparent, $color);
+      }
+    }
+  }
+
+  //同级的block button，margin-top:0.5rem
+  &.block {
+    @include make-block {
+      width: 100%
+    }
+  ;
+
+    + .block {
+      margin-top: $btn-margin-top-button;
+    }
+  }
+
+  //同级的button但不是block button的，默认margin-left:0.5rem
+  + .button:not(.block) {
+    margin-right: $btn-margin-left-button;
+  }
+
+  &.circle {
+    @include flex-center(inline-flex);
+    width: 2.375rem;
+    height: 2.375rem;
+    @include border-radius(100%);
+  }
+
+  @include variant-size();
+
+
+  > .icon-label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2rem;
+    height: 100%;
+    background-color: darken($btn-background-color, 15%);
+    @extend .clear-fix;
+  }
+
+  > .loader {
+    &:first-child:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+
+    &:not(first-child):last-child {
+      margin-left: 0.5rem;
+    }
+
+    &.third, &.secondary {
+      &.small {
+        vertical-align: -0.25rem;
+      }
+    }
+  }
+
+
+}

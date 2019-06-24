@@ -1,7 +1,6 @@
 /*Base components*/
 @import "reset/normalize";
 @import "reset/reset";
-@import "config/variables";
+@import "variables";
 @import "mixin/index";
-/*core*/
-@import "core/index";
+@import "common";
