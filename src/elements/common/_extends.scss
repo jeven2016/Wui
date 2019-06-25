@@ -1,22 +1,27 @@
 .base-btn {
   @include make-inline-block();
-  padding: $elem-default-padding;
+  padding: $btn-default-padding;
   cursor: $btn-cursor;
-  outline: none;
+  outline: $btn-outline;
   line-height: $btn-line-height;
   text-align: $btn-text-align;
   text-decoration: $btn-text-decoration;
-  @include border-radius();
-  overflow: visible;
+  @include border-radius($btn-border-radius);
+  overflow: $btn-overflow;
   -webkit-tap-highlight-color: transparent;
-  -webkit-appearance: button;
-  transition: all .2s ease-in-out;
+  //-webkit-appearance: button; //issue: Border-Radius doesn't work in link button on Chrome
+  -webkit-appearance: none;
+  appearance: none;
+  transition: $btn-transition;
 
   &.min-width {
-    min-width: 5rem;
+    min-width: $btn-min-width;
   }
 
-  // can be disabled
-  @include add-disabled-conf;
+  &.bold {
+    font-weight: $btn-font-bold;
+  }
 
+  // button can be disabled
+  @include add-disabled-conf;
 }

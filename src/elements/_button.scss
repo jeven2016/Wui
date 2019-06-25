@@ -1,24 +1,26 @@
-$border-color-increase-ratio: $default-color-increase-ratio;
 
 .button {
   @extend .base-btn;
 
-  //add button content
-  @include generate-simple-button(null, $btn-default-background-color, $btn-default-text-color,
-      darken($btn-border-color, $border-color-increase-ratio));
+  //default button
+  @include add-simple-button-content($btn-default-background-color, $btn-default-text-color, $btn-border-color,
+      lighten($btn-border-color, 5%));
 
-  @each $name, $color in $colors {
-    @if str-index($name, "color-") {
-      @include generate-simple-button(str-replace($name, "color-"), $color, $white,
-          darken($color, $border-color-increase-ratio));
+
+  //other buttons
+  @each $name, $color in $btn-colors {
+    &.#{$name} {
+      @include add-simple-button-content($color, $white, darken($color, $default-color-increase-ratio),
+          lighten($color, 30%));
     }
   }
 
   &.outline {
-    @each $name, $color in $colors {
-      @if str-index($name, "color-") {
+    @each $name, $color in $btn-colors {
+      @include generate-outline-button($name, transparent, $color, lighten($color, 30%));
+      /*@if str-index($name, "color-") {
         @include generate-outline-button(str-replace($name, "color-"), transparent, $color);
-      }
+      }*/
     }
   }
 
@@ -27,7 +29,6 @@ $border-color-increase-ratio: $default-color-increase-ratio;
     @include make-block {
       width: 100%
     }
-  ;
 
     + .block {
       margin-top: $btn-margin-top-button;
@@ -35,29 +36,18 @@ $border-color-increase-ratio: $default-color-increase-ratio;
   }
 
   //同级的button但不是block button的，默认margin-left:0.5rem
-  + .button:not(.block) {
-    margin-right: $btn-margin-left-button;
+  + .button:not(.block), + .button-dropdown, + .dropdown {
+    margin-left: $btn-margin-left-button;
   }
 
   &.circle {
     @include flex-center(inline-flex);
-    width: 2.375rem;
-    height: 2.375rem;
-    @include border-radius(100%);
+    width: $btn-cicle-width;
+    height: $btn-cicle-height;
+    @include border-radius($btn-cicle-border-radius);
   }
 
   @include variant-size();
-
-
-  > .icon-label {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 2rem;
-    height: 100%;
-    background-color: darken($btn-background-color, 15%);
-    @extend .clear-fix;
-  }
 
   > .loader {
     &:first-child:not(:last-child) {

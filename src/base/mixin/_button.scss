@@ -1,28 +1,12 @@
-@mixin generate-simple-button($className,$btn-bg-color, $btn-color:$text-color, $btn-bdr-color: darken($btn-bg-color, 10%)) {
-  @if $className == null {
-    @include add-simple-button-content($btn-bg-color, $btn-color, $btn-bdr-color);
-  } @else {
-    &.#{$className} {
-      @include add-simple-button-content($btn-bg-color, $btn-color, $btn-bdr-color);
-    }
-  }
-}
-
-@mixin add-simple-button-content($btn-bg-color, $btn-color, $btn-bdr-color) {
+@mixin add-simple-button-content($btn-bg-color, $btn-color, $btn-bdr-color,  $btn-boxshadow-color) {
   @include generate-local($btn-bg-color, $btn-color, $btn-bdr-color);
-  @include generate-active(
-          $btn-bg-color,
-          $btn-color,
-          $btn-bdr-color);
+  @include generate-active($btn-bg-color, $btn-color, $btn-bdr-color, $btn-boxshadow-color);
 }
 
-@mixin generate-outline-button($className,$btn-bg-color,$btn-color) {
+@mixin generate-outline-button($className,$btn-bg-color,$btn-color, $btn-boxshadow-color) {
   &.#{$className} {
     @include generate-local($btn-bg-color, $btn-color, $btn-color);
-    @include generate-active(
-            $btn-color,
-            $white,
-            $btn-color);
+    @include generate-active($btn-color, $white, $btn-color, $btn-boxshadow-color);
   }
 }
 
@@ -32,22 +16,25 @@
   border: 1px solid $bdr-color;
 }
 
-@mixin generate-active($active-bg-color,$active-color,$active-bdr-color) {
-  &:focus:not(.disabled), &:hover:not(.disabled) {
-    background-color: darken($active-bg-color, $default-bg-color-increase-ratio);
-    color: $active-color;
+@mixin generate-active($active-bg-color,$btn-text-color,$active-bdr-color, $btn-boxshadow-color) {
+
+  &:not(:disabled):not(.disabled):focus, &:not(:disabled):not(.disabled):hover {
+    background-color: lighten($active-bg-color, $default-bg-color-increase-ratio);
+    color: $btn-text-color;
     border-color: darken($active-bdr-color, $default-color-increase-ratio);
-    box-shadow: 0 0 0 0.2rem lighten($active-bdr-color, 20%);
   }
 
-  &:active, &.active {
-    background-color: darken($active-bg-color, $default-bg-color-increase-ratio);
-    color: $active-color;
-    border-color: darken($active-bdr-color, $default-color-increase-ratio);
-    box-shadow: 0 0 0 0.2rem lighten($active-bdr-color, 20%);
-    //box-shadow: 0 0 0 0.2rem $active-bdr-color;
+
+  &:not(:disabled):not(.disabled):focus, &.active {
+    text-shadow: 0 0 5rem #fff;
+    box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
+    z-index: map_get($z-index, "pop");
+    position: relative;
   }
 
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 /**
@@ -67,4 +54,22 @@
     border-left-width: 0;
     @include border-radius(0);
   }
+}
+
+@mixin first-button {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right-width: 1px !important;
+}
+
+@mixin last-button {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  border-left-width: 0;
+}
+
+@mixin middle-button {
+  border-radius: 0;
+  border-right-width: 1px !important;
+  border-left-width: 0;
 }

@@ -1,7 +1,7 @@
 %not-allowed {
-  cursor: not-allowed;
+  cursor: $btn-not-allowed;
   //pointer-events: none !important; //this impacts 'cursor' and causes no icon would display , you should set the btn to disabled
-  opacity: 0.7;
+  opacity: $btn-not-allowed-opacity;
 }
 
 @mixin add-disabled-conf($append-sibling:true) {

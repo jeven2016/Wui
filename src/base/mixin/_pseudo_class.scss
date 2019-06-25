@@ -8,3 +8,10 @@
   }
 }
 
+@mixin active-content() {
+  &:focus, &:hover, &:active, &.active {
+    //if the content part is passed into this mixin.
+    @content;
+  }
+}
+

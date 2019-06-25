@@ -25,7 +25,7 @@ $success: $green;
 $warning: $yellow;
 $danger: $red;
 
-
+//text colors
 $text-color: #333;
 $text-disabled-color: rgba(0, 0, 0, .4);
 $text-comment-color: #818a91;
@@ -65,6 +65,37 @@ $colors: (
     color-white: $white,
 );
 
+
+//there will be corresponding buttons generated if the property starts with "color-primary"
+$btn-colors: (
+    ok: $text-ok-color,
+    error: $text-error-color,
+    primary: $blue,
+    secondary: $gray-darker,
+    info: $cyan,
+    success: $green,
+    warning: $yellow,
+    danger: $red,
+    black: $black,
+    blue: $blue,
+    brown: $brown,
+    cyan: $cyan,
+    dark: $dark,
+    green: $green,
+    gray:$gray,
+    gray-darker: $gray-darker,
+    light: $light,
+    light-gray: $light-gray,
+    orange: $orange,
+    pink: $pink,
+    purple: $purple,
+    red: $red,
+    yellow: $yellow,
+    teal: $teal,
+    violet: $violet,
+    white: $white,
+);
+
 //Global
 $default-box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
 $default-border-radius: 0.25rem;
@@ -73,7 +104,7 @@ $default-border-color: #ccc;
 $default-arrow-active-border: #acacac;
 $body-background-color: #fff;
 $border-color: #ccc;
-$default-color-increase-ratio: 10%;
+$default-color-increase-ratio: 3%;
 $default-bg-color-increase-ratio: 5%;
 
 $elem-default-padding: 0.5rem 1rem;
@@ -87,6 +118,47 @@ $z-index: (
     overlay: 110,
     top:1000
 );
+
+
+//For buttons
+$btn-default-text-color: $text-color;
+$btn-cursor: pointer;
+$btn-outline: none;
+$btn-font-size: 1rem;
+$btn-line-height: 1.25rem;
+$btn-overflow: overflow;
+$btn-transition: box-shadow ease .2s, border-color ease .2s, transform ease .4s;
+$btn-min-width: 5rem;
+$btn-not-allowed: not-allowed;
+$btn-not-allowed-opacity: .7;
+$btn-font-bold: bold;
+$btn-text-align: center;
+$btn-text-decoration: none;
+$btn-text-color-active: #fff;
+$btn-margin-left-button: 0.5rem;
+$btn-margin-top-button: 0.5rem;
+$btn-border-radius: $default-border-radius;
+$btn-border-color: $default-border-color;
+$btn-border-width: 1px;
+
+$btn-default-padding: $elem-default-padding;
+$btn-large-padding: $elem-large-padding;
+$btn-small-padding: $elem-small-padding;
+$btn-default-background-color: $white;
+
+
+$btn-cicle-width: 2.375rem;
+$btn-cicle-height: 2.375rem;
+$btn-cicle-border-radius: 100%;
+
+//for button group
+$btn-group-border-radius: $default-border-radius;
+$btn-group-buttons-margin: 0 !important;
+$btn-group-buttons-float: left;
+$btn-group-buttons-min-width: unset;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
 
 //text
 $font-weight: (
@@ -134,61 +206,6 @@ $bq-left-border-primary: 0.4rem solid $blue;
 $bq-other-border-primary: 1px solid $gray;
 $bq-border-radius: 0.5rem;
 
-//For buttons
-$btn-cursor: pointer;
-$btn-font-size: 1rem;
-$btn-line-height: 1.25rem;
-$btn-text-align: center;
-$btn-text-decoration: none;
-$btn-text-color-active: #fff;
-$btn-margin-left-button: 0.5rem;
-$btn-margin-top-button: 0.5rem;
-$btn-border-color: $default-border-color;
-$btn-border-width: 1px;
-$btn-border: $btn-border-width solid $btn-border-color; //todo:deprecated
-$btn-default-text-color: $text-color;
-$btn-default-padding: 0.5rem 1rem;
-$btn-large-padding: 0.75rem 1.5rem;
-$btn-small-padding: 0.25rem 0.5rem;
-$btn-default-background-color: $white;
-
-$btn-background-color: $gray;
-$btn-primary-background-color: $blue;
-$btn-primary-text-color: $white;
-$btn-primary-border-color: $default-border-color;
-
-$btn-danger-background-color: $red;
-$btn-danger-text-color: $white;
-$btn-danger-border-color: darken($btn-danger-background-color, $default-color-increase-ratio);
-
-$btn-warning-background-color: $yellow;
-$btn-warning-text-color: $white;
-$btn-warning-border-color: darken($btn-warning-background-color, $default-color-increase-ratio);
-
-$btn-info-background-color: $green;
-$btn-info-text-color: $white;
-$btn-info-border-color: darken($btn-info-background-color, $default-color-increase-ratio);
-
-$btn-success-background-color: $green;
-$btn-success-text-color: $white;
-$btn-success-border-color: darken($btn-success-background-color, $default-color-increase-ratio);
-
-//$btn-primary-box-shadow: 0 12px 16px 0 rgba(61, 139, 234, 0.24), 0 17px 50px 0 rgba(61, 139, 234, 0.19);
-$btn-primary-box-shadow: 0 2px 5px 0 rgba(61, 139, 234, 0.24);
-$btn-primary-inverted-background-color: transparent;
-$btn-primary-text-color-active: #fff;
-$btn-primary-effect-color-begin: #97C2EA;
-$btn-primary-effect-color-end: #97C2EA;
-$btn-inverted-background: $black;
-$btn-inverted-border-color: #acacac;
-$btn-inverted-text-color: $white;
-$btn-active-inverted-border-color: #acacac;
-
-//for button group
-$btn-group-border-radius: $default-border-radius;
-$btn-group-buttons-margin: 0 !important;
-$btn-group-buttons-float: left;
-$btn-group-buttons-min-width: unset;
 
 //For input
 $input-font-size: 1rem;
