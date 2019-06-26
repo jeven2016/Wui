@@ -1,5 +1,6 @@
 .button-group {
   @include make-inline-flex;
+  flex-wrap: $btn-group-flex-wrap;
 
   > .button {
     margin: $btn-group-buttons-margin;
@@ -75,10 +76,17 @@
         @include border-radius(0);
 
         &:focus, &:hover, &:active {
-          border-left-width: 1px;
-          border-right-width: 1px;
+          border-left-width: $btn-group-border-width;
+          border-right-width: $btn-group-border-width;
         }
       }
+    }
+  }
+
+  &.outline {
+    > .button {
+      @extend .button.outline;
+      @include group-border-radius($btn-group-border-radius);
     }
   }
 
