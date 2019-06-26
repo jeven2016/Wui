@@ -1,8 +1,0 @@
-.button-group {
-  &.outline {
-    > .button {
-      @extend .button.outline;
-      @include group-border-radius($btn-group-border-radius);
-    }
-  }
-}

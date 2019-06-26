@@ -154,9 +154,8 @@ $btn-cicle-border-radius: 100%;
 //for button group
 $btn-group-border-radius: $default-border-radius;
 $btn-group-buttons-margin: 0 !important;
-$btn-group-buttons-float: left;
-$btn-group-buttons-min-width: unset;
-
+$btn-group-border-width: 1px;
+$btn-group-flex-wrap: wrap;
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 

@@ -1814,20 +1814,20 @@ h1, h2, h3, h4, h5, h6 {
         position: relative; }
       .button.outline.primary:active, .button-group.outline > .primary.button:active {
         transform: scale(0.95); }
-    .button.outline.secondary, .button.outline.loader.third, .button-group.outline > .loader.third.button, .button-group.outline > .secondary.button {
+    .button.outline.secondary, .button-group.outline > .secondary.button, .button-group.outline > .button.loader.third, .button.outline.loader.third {
       background-color: transparent;
       color: #6c757d;
       border: 1px solid #6c757d; }
-      .button.outline.secondary:not(:disabled):not(.disabled):focus, .button.outline.loader.third:not(:disabled):not(.disabled):focus, .button-group.outline > .loader.third.button:not(:disabled):not(.disabled):focus, .button-group.outline > .secondary.button:not(:disabled):not(.disabled):focus, .button.outline.secondary:not(:disabled):not(.disabled):hover, .button.outline.loader.third:not(:disabled):not(.disabled):hover, .button-group.outline > .loader.third.button:not(:disabled):not(.disabled):hover, .button-group.outline > .secondary.button:not(:disabled):not(.disabled):hover {
+      .button.outline.secondary:not(:disabled):not(.disabled):focus, .button-group.outline > .secondary.button:not(:disabled):not(.disabled):focus, .button-group.outline > .button.loader.third:not(:disabled):not(.disabled):focus, .button.outline.loader.third:not(:disabled):not(.disabled):focus, .button.outline.secondary:not(:disabled):not(.disabled):hover, .button-group.outline > .secondary.button:not(:disabled):not(.disabled):hover, .button-group.outline > .button.loader.third:not(:disabled):not(.disabled):hover, .button.outline.loader.third:not(:disabled):not(.disabled):hover {
         background-color: #78828a;
         color: #fff;
         border-color: #656d75; }
-      .button.outline.secondary:not(:disabled):not(.disabled):focus, .button.outline.loader.third:not(:disabled):not(.disabled):focus, .button-group.outline > .loader.third.button:not(:disabled):not(.disabled):focus, .button-group.outline > .secondary.button:not(:disabled):not(.disabled):focus, .button.outline.secondary.active, .button.outline.active.loader.third, .button-group.outline > .active.loader.third.button, .button-group.outline > .secondary.active.button {
+      .button.outline.secondary:not(:disabled):not(.disabled):focus, .button-group.outline > .secondary.button:not(:disabled):not(.disabled):focus, .button-group.outline > .button.loader.third:not(:disabled):not(.disabled):focus, .button.outline.loader.third:not(:disabled):not(.disabled):focus, .button.outline.secondary.active, .button-group.outline > .secondary.active.button, .button-group.outline > .active.button.loader.third, .button.outline.active.loader.third {
         text-shadow: 0 0 5rem #fff;
         box-shadow: 0 0 0 0.2rem #bcc1c6;
         z-index: 10;
         position: relative; }
-      .button.outline.secondary:active, .button.outline.loader.third:active, .button-group.outline > .loader.third.button:active, .button-group.outline > .secondary.button:active {
+      .button.outline.secondary:active, .button-group.outline > .secondary.button:active, .button-group.outline > .button.loader.third:active, .button.outline.loader.third:active {
         transform: scale(0.95); }
     .button.outline.info, .button-group.outline > .info.button {
       background-color: transparent;
@@ -2184,7 +2184,8 @@ h1, h2, h3, h4, h5, h6 {
 .button-group {
   display: -ms-inline-flexbox;
   display: -webkit-inline-flex;
-  display: inline-flex; }
+  display: inline-flex;
+  flex-wrap: wrap; }
   .button-group > .button {
     margin: 0 !important; }
     .button-group > .button:first-child {
@@ -2246,6 +2247,14 @@ h1, h2, h3, h4, h5, h6 {
         .button-group.vertical > .button:not(:first-child):not(:last-child):focus, .button-group.vertical > .button:not(:first-child):not(:last-child):hover, .button-group.vertical > .button:not(:first-child):not(:last-child):active {
           border-left-width: 1px;
           border-right-width: 1px; }
+  .button-group.outline > .button:first-child {
+    border-radius: 0.25rem 0 0 0.25rem; }
+  .button-group.outline > .button:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+    border-left-width: 0; }
+  .button-group.outline > .button:not(:first-child):not(:last-child) {
+    border-left-width: 0;
+    border-radius: 0; }
 
 .card {
   display: -ms-inline-flexbox;
@@ -3903,17 +3912,6 @@ h1, h2, h3, h4, h5, h6 {
 /**
 * Generate add-ons
  */
-.button-group.outline > .button:first-child {
-  border-radius: 0.25rem 0 0 0.25rem; }
-
-.button-group.outline > .button:last-child {
-  border-radius: 0 0.25rem 0.25rem 0;
-  border-left-width: 0; }
-
-.button-group.outline > .button:not(:first-child):not(:last-child) {
-  border-left-width: 0;
-  border-radius: 0; }
-
 .search.select {
   display: inline-block;
   position: relative; }

@@ -23,7 +23,6 @@
 
   > .button {
     margin: $btn-group-buttons-margin;
-    float: $btn-group-buttons-float;
 
     @include group-border-radius($btn-group-border-radius);
   }
