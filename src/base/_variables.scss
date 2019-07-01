@@ -99,9 +99,12 @@ $btn-colors: (
 //Global
 $default-box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
 $default-border-radius: 0.25rem;
-$default-arrow-border: 4px solid transparent;
+$default-border-width: 1px;
 $default-border-color: #ccc;
+$default-border: $default-border-width solid $default-border-color;
+$default-arrow-border: 4px solid transparent;
 $default-arrow-active-border: #acacac;
+$default-transition: all .2s ease-in-out;
 $body-background-color: #fff;
 $border-color: #ccc;
 $default-color-increase-ratio: 3%;
@@ -117,6 +120,13 @@ $z-index: (
     mask: 100,
     overlay: 110,
     top:1000
+);
+
+//text
+$font-size: (
+    'large':1.5rem,
+    'normal': 1rem,
+    'small':0.75rem
 );
 
 
@@ -157,6 +167,61 @@ $btn-group-buttons-margin: 0 !important;
 $btn-group-border-width: 1px;
 $btn-group-flex-wrap: wrap;
 
+
+//For input
+$input-font-size: 1rem;
+$input-placeholder-color: $text-comment-color;
+$input-placeholder-opacity: 1;
+$input-line-height: $btn-line-height;
+$input-outline: 0;
+$input-border-width: 1px;
+$input-border: $default-border;
+$input-border-radius: $default-border-radius;
+$input-border-active-color: $blue;
+$input-block-width: 100%;
+$input-default-padding: $elem-default-padding;
+$input-label-background-color: #eceeef;
+$input-box-shadow: 0 0 0 0.2rem lighten($blue, 40%);
+$input-active-scale: scale(0.97);
+
+$input-simple-border-left: none;
+$input-simple-border-top: none;
+$input-simple-border-right: none;
+$input-simple-transition: all .2s;
+$input-simple-box-shadow: 0 $input-border-width 0 0 rgba(61, 139, 234, 0.24);
+$input-special-active-box-shadow-partial: 0 2px 6px 0;
+
+
+$icon-input-icon-cursor: pointer;
+$icon-input-icon-scale: scale(0.8);
+$icon-input-icon-right: 0.5rem;
+$icon-input-icon-left: $icon-input-icon-right;
+$icon-input-icon-small-position: 0.375rem;
+$icon-input-icon-z-index: map_get($z-index, "pop");
+$icon-input-icon-text-color: $gray;
+$icon-input-icon-position: absolute;
+$icon-input-left-icon-width: 1rem;
+$icon-input-icon-line-height: 1rem;
+$icon-input-left-icon-input-padding-right: 1rem;
+$icon-input-left-icon-input-padding-left: 2rem;
+$icon-input-left-icon-input-large-input-padding: 0.75rem 1rem 0.75rem 2.5rem;
+$icon-input-left-icon-input-small-input-padding: 0.25rem 0.75rem 0.25rem 1.5rem;
+$icon-input-right-icon-input-padding-right: 2rem;
+$icon-input-large-padding: 0.75rem 2.5rem 0.75rem 1rem;
+$icon-input-large-icon-line-height: 1.5rem;
+$icon-input-large-icon-width: 1.5rem;
+$icon-input-small-padding: 0.25rem 1.5rem 0.25rem 0.75rem;
+$icon-input-small-icon-line-height: map-get($font-size, ' small ');
+$icon-input-small-icon-width: 0.75rem;
+
+//for input group
+$input-group-label-line-height: 1.25rem;
+$input-group-label-padding: 0.5rem 1rem;
+$input-group-label-element-justify-content: center;
+$input-group-label-element-align-items: center;
+$input-group-element-inset-padding: 0;
+$input-group-element-background-color: transparent;
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 //text
@@ -165,11 +230,6 @@ $font-weight: (
     'bold': 700
 );
 
-$font-size: (
-    'large':1.5rem,
-    'normal': 1rem,
-    'small':0.75rem
-);
 
 $arrow-direction: (
     'up':'up',
@@ -205,61 +265,6 @@ $bq-left-border-primary: 0.4rem solid $blue;
 $bq-other-border-primary: 1px solid $gray;
 $bq-border-radius: 0.5rem;
 
-
-//For input
-$input-font-size: 1rem;
-$input-placeholder-color: lighten(#ccc, 10%);
-$input-placeholder-opacity: 1;
-$input-line-height: 1.25rem;
-$input-outline: 0;
-$input-border-width: 1px;
-$input-border: $input-border-width solid #ccc;
-$input-border-radius: $default-border-radius;
-$input-default-padding: 0.5rem 1rem;
-$input-large-padding: 0.75rem 1.5rem;
-$input-small-padding: 0.25rem 0.5rem;
-$input-border-active-color: $blue;
-$input-label-background-color: #eceeef;
-$input-box-shadow: 0 2px 6px 0 rgba(61, 139, 234, 0.24);
-$input-simple-box-shadow: 0 $input-border-width 0 0 rgba(61, 139, 234, 0.24);
-$input-special-active-box-shadow-partial: 0 2px 6px 0;
-
-$icon-input-icon-cursor: pointer;
-$icon-input-vertical-align: middle;
-$icon-input-icon-text-color: $gray;
-$icon-input-icon-position: absolute;
-$icon-input-left-icon-left: 0.5rem;
-$icon-input-left-icon-top: 0.6875rem;
-$icon-input-left-icon-width: 1rem;
-$icon-input-icon-line-height: 1rem;
-$icon-input-left-icon-input-padding-right: 1rem;
-$icon-input-left-icon-input-padding-left: 2rem;
-$icon-input-left-icon-input-large-input-padding: 0.75rem 1rem 0.75rem 2.5rem;
-$icon-input-left-icon-input-large-icon-top: 0.9375rem;
-$icon-input-left-icon-input-small-input-padding: 0.25rem 0.75rem 0.25rem 1.5rem;
-$icon-input-left-icon-input-small-icon-top: 0.5625rem;
-
-$icon-input-right-icon-input-padding-right: 2rem;
-$icon-input-right-icon-right: 0.5rem;
-$icon-input-right-icon-top: 0.6875rem;
-
-$icon-input-large-padding: 0.75rem 2.5rem 0.75rem 1rem;
-$icon-input-large-icon-line-height: 1.5rem;
-$icon-input-large-icon-width: 1.5rem;
-$icon-input-large-icon-top: 0.9375rem;
-
-$icon-input-small-padding: 0.25rem 1.5rem 0.25rem 0.75rem;
-$icon-input-small-icon-line-height: map-get($font-size, ' small ');
-$icon-input-small-icon-width: 0.75rem;
-$icon-input-small-icon-top: 0.5625rem;
-
-//for input group
-$input-group-label-line-height: 1.25rem;
-$input-group-label-padding: 0.5rem 1rem;
-$input-group-label-element-justify-content: center;
-$input-group-label-element-align-items: center;
-$input-group-element-inset-padding: 0;
-$input-group-element-background-color: transparent;
 
 //for Navbar
 $navbar-border-radius: $default-border-radius;
