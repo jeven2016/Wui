@@ -1029,9 +1029,10 @@ h1, h2, h3, h4, h5, h6 {
   /**
   * Simple input
    */ }
-  .input.block {
-    position: relative;
-    display: block;
+  .input.block, .icon-input.block, .icon-input > .input {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
     width: 100%; }
   .input::-webkit-input-placeholder, .input::-moz-placeholder, .input:-ms-input-placeholder {
     color: #818a91;
@@ -1060,10 +1061,6 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   position: relative; }
-  .icon-input.block, .icon-input > .input {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex; }
   .icon-input.large > .input {
     font-size: 1.5rem;
     padding: 0.75rem 2.5rem 0.75rem 1rem; }

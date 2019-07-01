@@ -17,7 +17,7 @@
   outline: $input-outline;
 
   &.block {
-    @include make-block {
+    @include make-flex {
       width: $input-block-width;
     }
   }
@@ -70,7 +70,7 @@
   position: relative;
 
   &.block, & > .input {
-    @include make-flex;
+    @extend .input.block;
   }
 
   &.large {
