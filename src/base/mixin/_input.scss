@@ -22,6 +22,7 @@
   //for dropdown, if it isn't the first or last child, the border radius cannot reset. Because dropdown.active could change the border radius if necessary.
   &:last-child:not(.dropdown) {
     @include set-border-radius(0 $default-border-radius $default-border-radius 0);
+
     &:not(.element) {
       border-left-width: $input-border-width;
     }
@@ -64,7 +65,7 @@
 
 @mixin set-border-radius($bdr-radius) {
   &.input, & .input,
-  &.button, &.button-dropdown > .button {
+  &.button, &.button-dropdown > .title > .button {
     @include border-radius($bdr-radius);
   }
 }

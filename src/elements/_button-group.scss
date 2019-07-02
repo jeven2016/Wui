@@ -5,30 +5,7 @@
   > .button {
     margin: $btn-group-buttons-margin;
     @include group-border-radius($btn-group-border-radius);
-  }
 
-  > .button-dropdown:first-child {
-    > .button, > .title > .button {
-      @include first-button;
-    }
-  }
-
-  > .button-dropdown:last-child {
-    > .button, > .title > .button {
-      @include last-button;
-    }
-  }
-
-  > .button-dropdown:not(:first-child):not(:last-child) {
-    //for button and dropdown's button
-    > .button,
-    > .title > .button {
-      @include middle-button;
-    }
-  }
-
-
-  > .button {
     &:first-child {
       @include first-button;
     }
@@ -39,6 +16,30 @@
 
     &:not(:first-child):not(:last-child) {
       @include middle-button;
+    }
+  }
+
+  > .button-dropdown {
+    margin: $btn-group-buttons-margin;
+
+    &:first-child {
+      > .button, > .title > .button {
+        @include first-button;
+      }
+    }
+
+    &:last-child {
+      > .button, > .title > .button {
+        @include last-button;
+      }
+    }
+
+    &:not(:first-child):not(:last-child) {
+      //for button and dropdown's button
+      > .button,
+      > .title > .button {
+        @include middle-button;
+      }
     }
   }
 

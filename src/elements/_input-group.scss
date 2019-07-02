@@ -1,38 +1,77 @@
-.input-group {
-  @include make-inline-flex();
+$elements: (">.label", ">.button", ">.button-dropdown", ".dropdown", ".input", ".icon-input");
 
-  & > .label, & > .element {
-    @include make-flex-center();
-    line-height: $input-group-label-line-height;
-    @include input-group-child();
-  }
+.input-group {
+  @include make-inline-flex-center;
 
   & > .label {
+    line-height: $input-group-label-line-height;
+    align-items: stretch;
+    justify-content: center;
     padding: $input-group-label-padding;
     border: $input-border;
     background-color: $input-label-background-color;
+
+    @include border-radius($default-border-radius);
   }
 
-  & > .element {
-    &.inset {
-      padding: $input-group-element-inset-padding;
-      background-color: $input-group-element-background-color;
+  > * {
 
-      &:not(:first-child):not(:last-child) {
-        &.inset {
-          &.button-dropdown, &.dropdown {
-            > .button {
-              @include border-radius(0);
-            }
-          }
+    &:first-child:not(:last-child) {
+      @include set-border-radius($default-border-radius 0 0 $default-border-radius);
+
+      > .title {
+        > .button {
+          @include set-border-radius($default-border-radius 0 0 $default-border-radius);
+        }
+      }
+    }
+
+    &:last-child:not(:first-child) {
+      @include set-border-radius(0 $default-border-radius $default-border-radius 0);
+
+      > .title {
+        > .button {
+          @include set-border-radius(0 $default-border-radius $default-border-radius 0);
         }
       }
     }
   }
 
-  & > .element + .label:not(:first-child) {
-    border-left: 0;
-  }
+
+  /*
+    & > .label, & > .element {
+      line-height: $input-group-label-line-height;
+      align-items: stretch;
+      justify-content: center;
+      @include input-group-child();
+    }
+
+    & > .label {
+      padding: $input-group-label-padding;
+      border: $input-border;
+      background-color: $input-label-background-color;
+    }
+
+    & > .element {
+      &.inset {
+        padding: $input-group-element-inset-padding;
+        background-color: $input-group-element-background-color;
+
+        &:not(:first-child):not(:last-child) {
+          &.inset {
+            &.button-dropdown, &.dropdown {
+              > .button, > .title > .button {
+                @include border-radius(0);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    & > .element + .label:not(:first-child) {
+      border-left: 0;
+    }*/
 
   &.block {
     @include make-flex {

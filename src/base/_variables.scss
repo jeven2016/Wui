@@ -97,7 +97,7 @@ $btn-colors: (
 );
 
 //Global
-$default-box-shadow: 1px 1px 6px 0 rgba(0, 0, 0, 0.45);
+$default-box-shadow: 0 .25rem .75rem -1px darken($light-gray,5%);
 $default-border-radius: 0.25rem;
 $default-border-width: 1px;
 $default-border-color: #ccc;
@@ -215,7 +215,7 @@ $icon-input-small-icon-line-height: map-get($font-size, ' small ');
 $icon-input-small-icon-width: 0.75rem;
 
 //for input group
-$input-group-label-line-height: 1.25rem;
+$input-group-label-line-height: $btn-line-height;
 $input-group-label-padding: 0.5rem 1rem;
 $input-group-label-element-justify-content: center;
 $input-group-label-element-align-items: center;
@@ -302,7 +302,7 @@ $navbar-primary-switch-box-shadow: 0px 0px 2px 0 $white;
 $dp-cursor: pointer;
 $dp-outline: 0;
 $dp-text-align: center;
-$dp-line-height: 1.25rem;
+$dp-line-height: 1.5rem;
 $dp-vertical-align: baseline;
 $dp-border-radius: $default-border-radius;
 $dp-padding: 0.5rem 1rem;
