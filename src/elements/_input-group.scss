@@ -1,11 +1,12 @@
-$elements: (">.label", ">.button", ">.button-dropdown", ".dropdown", ".input", ".icon-input");
+//$elements: (">.label", ">.button", ">.button-dropdown", ".dropdown", ".input", ".icon-input");
 
 .input-group {
-  @include make-inline-flex-center;
+  @include make-inline-flex-center(stretch);
 
   & > .label {
+    @include make-flex;
     line-height: $input-group-label-line-height;
-    align-items: stretch;
+    align-items: center;
     justify-content: center;
     padding: $input-group-label-padding;
     border: $input-border;
@@ -15,63 +16,56 @@ $elements: (">.label", ">.button", ">.button-dropdown", ".dropdown", ".input", "
   }
 
   > * {
+    &.input, &.icon-input {
+      flex: 1 1 auto;
+      width: 1%;
+    }
 
     &:first-child:not(:last-child) {
-      @include set-border-radius($default-border-radius 0 0 $default-border-radius);
+      @include full-border-radius($default-border-radius, 0, $default-border-radius, 0);
+      margin-right: $input-group-element-margin-right;
 
-      > .title {
-        > .button {
-          @include set-border-radius($default-border-radius 0 0 $default-border-radius);
-        }
+      &.button-dropdown > .title > .button,
+      &.icon-input > .input {
+        @include full-border-radius($default-border-radius, 0, $default-border-radius, 0);
+      }
+
+      &.button-group > .button:last-child,
+      &.button-group > .button-dropdown:last-child > .title > .button {
+        @include border-radius(0);
       }
     }
 
     &:last-child:not(:first-child) {
-      @include set-border-radius(0 $default-border-radius $default-border-radius 0);
+      @include full-border-radius(0, $default-border-radius, 0, $default-border-radius);
 
-      > .title {
-        > .button {
-          @include set-border-radius(0 $default-border-radius $default-border-radius 0);
-        }
+      &.button-dropdown > .title > .button {
+        @include full-border-radius(0, $default-border-radius, 0, $default-border-radius);
+      }
+
+
+      &.button-group > .button-dropdown:last-child > .title > .button,
+      &.icon-input > .input {
+        @include full-border-radius(0, $default-border-radius, 0, $default-border-radius);
+      }
+
+      &.button-group > .button:first-child {
+        @include border-radius(0);
+      }
+    }
+
+    &:not(:first-child):not(:last-child) {
+      @include border-radius(0);
+      margin-right: $input-group-element-margin-right;
+
+      &.button-dropdown > .title > .button,
+      &.button-group > .button,
+      &.button-group > .button-dropdown:last-child > .title > .button,
+      &.icon-input > .input {
+        @include border-radius(0);
       }
     }
   }
-
-
-  /*
-    & > .label, & > .element {
-      line-height: $input-group-label-line-height;
-      align-items: stretch;
-      justify-content: center;
-      @include input-group-child();
-    }
-
-    & > .label {
-      padding: $input-group-label-padding;
-      border: $input-border;
-      background-color: $input-label-background-color;
-    }
-
-    & > .element {
-      &.inset {
-        padding: $input-group-element-inset-padding;
-        background-color: $input-group-element-background-color;
-
-        &:not(:first-child):not(:last-child) {
-          &.inset {
-            &.button-dropdown, &.dropdown {
-              > .button, > .title > .button {
-                @include border-radius(0);
-              }
-            }
-          }
-        }
-      }
-    }
-
-    & > .element + .label:not(:first-child) {
-      border-left: 0;
-    }*/
 
   &.block {
     @include make-flex {
@@ -81,5 +75,6 @@ $elements: (">.label", ">.button", ">.button-dropdown", ".dropdown", ".input", "
     & > .expanded {
       @include flex-grow(1);
     }
+
   }
 }

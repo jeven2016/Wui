@@ -16,6 +16,13 @@
   font-size: $input-font-size;
   outline: $input-outline;
 
+  &::placeholder{
+    line-height: inherit;
+    vertical-align: middle;
+  }
+
+
+
   &.block {
     @include make-flex {
       width: $input-block-width;

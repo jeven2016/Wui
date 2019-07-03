@@ -76,10 +76,6 @@
 
 //=================================================================================
 
-@mixin border($border) {
-  border: $border;
-}
-
 @mixin adapter-width($key,$value) {
   @media ($key: $value) {
     @content

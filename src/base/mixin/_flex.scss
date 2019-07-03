@@ -1,4 +1,3 @@
-
 @mixin make-flex() {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -14,10 +13,10 @@
   @content
 }
 
-@mixin make-inline-flex-center() {
+@mixin make-inline-flex-center($_align-items: center, $_justify-content:center) {
   @include make-inline-flex {
-    align-items: center;
-    justify-content: center;
+    align-items: $_align-items;
+    justify-content: $_justify-content;
   }
   @content
 }
