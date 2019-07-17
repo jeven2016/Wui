@@ -2186,6 +2186,10 @@ h1, h2, h3, h4, h5, h6 {
   .button + .button:not(.block), .button + .button-dropdown, .button + .dropdown, .button + .select {
     margin-left: 0.5rem; }
   .button.circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
     width: 2.625rem;
     height: 2.625rem;
     padding: 0;
@@ -2196,12 +2200,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-left: 0.5rem; }
   .button > .loader.third.small, .button > .loader.secondary.small, .button > .loader.small.third {
     vertical-align: -0.25rem; }
-  .button > .svg, .button > .icon {
-    vertical-align: -0.2em; }
-    .button > .svg:first-of-type:not(:last-of-type), .button > .icon:first-of-type:not(:last-of-type) {
-      margin-right: 0.5em; }
-    .button > .svg:last-of-type:not(:first-of-type), .button > .icon:last-of-type:not(:first-of-type) {
-      margin-left: 0.5em; }
+  .button > .svg, .button > svg, .button > .icon {
+    vertical-align: -0.15em; }
+    .button > .svg:first-child:not(:last-child), .button > svg:first-child:not(:last-child), .button > .icon:first-child:not(:last-child) {
+      margin-right: 0.5rem; }
+    .button > .svg:last-child:not(:first-child), .button > svg:last-child:not(:first-child), .button > .icon:last-child:not(:first-child) {
+      margin-left: 0.5rem; }
 
 .button-group {
   display: -ms-inline-flexbox;
