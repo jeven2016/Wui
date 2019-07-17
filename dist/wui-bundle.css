@@ -2186,15 +2186,13 @@ h1, h2, h3, h4, h5, h6 {
   .button + .button:not(.block), .button + .button-dropdown, .button + .dropdown, .button + .select {
     margin-left: 0.5rem; }
   .button.circle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.375rem;
-    height: 2.375rem;
+    width: 2.625rem;
+    height: 2.625rem;
+    padding: 0;
     border-radius: 100%; }
   .button > .loader:first-child:not(:last-child) {
     margin-right: 0.5rem; }
-  .button > .loader:not(first-child):last-child {
+  .button > .loader:last-child:not(:first-child) {
     margin-left: 0.5rem; }
   .button > .loader.third.small, .button > .loader.secondary.small, .button > .loader.small.third {
     vertical-align: -0.25rem; }

@@ -41,9 +41,10 @@
   }
 
   &.circle {
-    @include flex-center(inline-flex);
+    //@include flex-center(inline-flex);
     width: $btn-cicle-width;
     height: $btn-cicle-height;
+    padding: 0;
     @include border-radius($btn-cicle-border-radius);
   }
 
@@ -54,11 +55,12 @@
       margin-right: 0.5rem;
     }
 
-    &:not(first-child):last-child {
+    &:last-child:not(:first-child) {
       margin-left: 0.5rem;
     }
 
-    &.third, &.secondary {
+    &.third,
+    &.secondary {
       &.small {
         vertical-align: -0.25rem;
       }
