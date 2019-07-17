@@ -41,7 +41,8 @@
   }
 
   &.circle {
-    //@include flex-center(inline-flex);
+    @include flex-center(inline-flex);
+    vertical-align: $btn-cicle-vertical-align;
     width: $btn-cicle-width;
     height: $btn-cicle-height;
     padding: 0;
@@ -67,16 +68,16 @@
     }
   }
 
-  > .svg, > .icon {
-    vertical-align: -0.2em;
+  > .svg, > svg, > .icon {
+    vertical-align: -0.15em;
 
     //todo: not working as expected
-    &:first-of-type:not(:last-of-type) {
-      margin-right: 0.5em;
+    &:first-child:not(:last-child) {
+      margin-right: 0.5rem;
     }
 
-    &:last-of-type:not(:first-of-type) {
-      margin-left: 0.5em;
+    &:last-child:not(:first-child) {
+      margin-left: 0.5rem;
     }
   }
 
