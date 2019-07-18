@@ -7,16 +7,19 @@
 }
 
 @mixin make-menu-item() {
-  @include make-flex {
+  @include make-block {
     line-height: $menu-item-line-height;
     padding: $menu-item-padding;
+    //flex: $menu-item-flex;
+    overflow: $menu-item-overflow;
+    text-overflow: $menu-item-text-overflow;
+    white-space: $menu-item-white-space;
     margin: 0;
     text-align: left;
     cursor: pointer;
     border-width: 0;
     align-items: center;
     min-width: $dp-min-width;
-    white-space: nowrap;
   }
 
   &:focus, &:hover:not(.special):not(.disabled) {
