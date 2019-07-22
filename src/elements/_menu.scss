@@ -1,12 +1,10 @@
 .submenu {
-  @include make-menu(none) {
-    @include border-radius($menu-border-radius);
-    @include make-flex;
-
-    flex-direction: column;
-    align-items: stretch;
-    position: relative;
-  }
+  @include border-radius($menu-border-radius);
+  @include make-flex;
+  list-style: $menu-list-style;
+  flex-direction: $menu-flex-direction;
+  align-items: $menu-align-items;
+  position: $menu-position;
 
   &.with-box {
     box-shadow: $default-box-shadow;
@@ -14,12 +12,13 @@
 
   &.close {
     > .menu-header:after {
-      transform: rotate(90deg);
+      transform: $menu-close-menu-header-icon-transform;
+      transform-origin: $menu-close-menu-header-icon-transform-origin;
     }
 
     > .menu-list {
-      display: none;
-      height: 0;
+      display: $menu-menu-list-display;
+      height: $menu-menu-list-height;
       //transition: display 2s linear, height 2s linear;
       //animation: close-menu .5s ease-in-out;
       //animation-fill-mode: forwards; //keep the last state
@@ -27,10 +26,10 @@
   }
 
   > .menu-list {
-    transition: all .2s linear;
-    background: $white;
+    transition: $menu-menu-list-transition;
+    background: $menu-menu-list-background;
 
-    > .menu-item{
+    > .menu-item {
       @include make-menu-item;
 
       > .icon {
@@ -70,7 +69,17 @@
 .menu {
   @extend .submenu;
   @include make-inline-flex;
-  border: $menu-border;
+
+  &.with-border {
+    border: $menu-border;
+  }
+
+  /**
+  当menu中的嵌套不确定时,如何设置border-radius将会会相当地复杂，
+  通常的做法就是menu上下留白，不在子item中设置border-radius,如此可以极大地简化实现难度
+   */
+  padding: 0.25rem 0;
+
 
   &.simple {
     border-width: 0;
@@ -80,8 +89,17 @@
     }
   }
 
+
   &.float {
     flex-direction: row;
+    padding: 0;
+
+    // set border-radius for the first & last child
+    //only two types supported
+    //1.  menu > menu-list > menu-item , .....
+    //2. menu > submenu > menu-header
+    //                  > menu-list > menu-item ......
+
 
     > .submenu {
 
@@ -139,12 +157,23 @@
         flex-direction: row;
         flex: 1 0 auto;
       }
+      border-radius: calc(0.25rem - 1px);
 
-      > .menu-item{
+      > .menu-item {
         flex: 0 0 auto;
         min-width: unset;
         align-self: center;
         align-items: stretch;
+
+        &:first-child {
+          border-top-left-radius: calc(0.25rem - 1px);
+          border-bottom-left-radius: calc(0.25rem - 1px);
+        }
+
+        &:last-child {
+          border-top-right-radius: calc(0.25rem - 1px);
+          border-bottom-right-radius: calc(0.25rem - 1px);
+        }
 
         &.right {
           margin-left: auto !important;
@@ -163,14 +192,14 @@
     > .divider {
       display: none;
 
-      & + .menu-list > .menu-item{
+      & + .menu-list > .menu-item {
         border-left: 1px solid #ccc;
       }
     }
   }
 
   &.primary {
-    .menu-list > .menu-item{
+    .menu-list > .menu-item {
       &:not(.disabled):not(.active):focus, &:not(.disabled):not(.active):hover {
         color: lighten($blue, 10%);
         background-color: inherit;
@@ -211,7 +240,7 @@
 
     }
 
-    > .menu-list > .menu-item{
+    > .menu-list > .menu-item {
       &.disabled {
         color: darken($white, 40%);
       }
