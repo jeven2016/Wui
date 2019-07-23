@@ -65,6 +65,11 @@ $colors: (
     color-white: $white,
 );
 
+//text
+$font-weight: (
+    'normal': 500,
+    'bold': 700
+);
 
 //there will be corresponding buttons generated if the property starts with "color-primary"
 $btn-colors: (
@@ -97,7 +102,8 @@ $btn-colors: (
 );
 
 //Global
-$default-box-shadow: 0 .25rem .75rem -1px darken($light-gray,5%);
+//$default-box-shadow: 0 .25rem .75rem -1px darken($light-gray, 10%);
+$default-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.12);
 $default-border-radius: 0.25rem;
 $default-border-width: 1px;
 $default-border-color: #ccc;
@@ -174,6 +180,9 @@ $input-font-size: 1rem;
 $input-placeholder-color: $text-comment-color;
 $input-placeholder-opacity: 1;
 $input-line-height: $btn-line-height;
+$input-height: calc(#{$input-line-height}em + 1rem + 2px);
+$input-large-height: calc(#{$input-line-height}em + 1.5rem + 2px);
+$input-small-height: calc(#{$input-line-height}em + 0.5rem + 2px);
 $input-outline: 0;
 $input-border-width: 1px;
 $input-border: $default-border;
@@ -191,7 +200,6 @@ $input-simple-border-right: none;
 $input-simple-transition: all .2s;
 $input-simple-box-shadow: 0 $input-border-width 0 0 rgba(61, 139, 234, 0.24);
 $input-special-active-box-shadow-partial: 0 2px 6px 0;
-
 
 $icon-input-icon-cursor: pointer;
 $icon-input-icon-scale: scale(0.8);
@@ -224,13 +232,72 @@ $input-group-element-inset-padding: 0;
 $input-group-element-background-color: transparent;
 $input-group-element-margin-right: -1px;
 
-///////////////////////////////////////////////////////////////////////////////////////////
 
-//text
-$font-weight: (
-    'normal': 500,
-    'bold': 700
-);
+//For menu
+$menu-padding: 0.25rem 0;
+$menu-block-display: flex;
+$menu-list-style: none;
+$menu-flex-direction: column;
+$menu-align-items: stretch;
+$menu-position: relative;
+$menu-float-flex-direction: row;
+$menu-float-padding: 0;
+$menu-float-submenu-menu-header-flex: 0 0 auto;
+$menu-float-submenu-menu-header-align-items: center;
+$menu-float-submenu-menu-header-flex-direction: row;
+$menu-float-submenu-menu-header-transition: all .3s;
+$menu-float-submenu-menu-header-after-content: none;
+$menu-float-submenu-menu-header-after-border: none;
+$menu-float-submenu-menu-list-display: none;
+$menu-float-submenu-menu-list-flex-direction: column;
+$menu-float-submenu-menu-position: absolute;
+$menu-float-submenu-menu-z-index: map_get($z-index, 'mask');
+$menu-float-submenu-menu-left: 0;
+$menu-float-submenu-menu-top: 2.625rem;
+$menu-float-submenu-menu-background-color: $white;
+$menu-float-submenu-menu-box-shadow: $default-box-shadow;
+$menu-float-submenu-active-menu-header-after-left: 0;
+$menu-float-submenu-active-menu-header-after-top: 100%;
+$menu-float-submenu-active-menu-header-after-content: '';
+$menu-float-submenu-active-menu-header-after-height: 0.1875rem;
+$menu-float-submenu-active-menu-header-after-width: 100%;
+$menu-float-submenu-active-menu-header-after-background-color: $blue;
+$menu-float-submenu-active-menu-header-after-transition: width 0.5s;
+$menu-float-submenu-active-menu-header-after-animation: change-width-smoothly 0.3s;
+$menu-float-submenu-active-menu-list-display: block;
+$menu-float-submenu-active-menu-list-animation: show-menu-list .5s;
+
+
+$menu-border: $default-border;
+$menu-header-position: relative;
+$menu-header-arrow-position: relative;
+$menu-header-arrow-right: 0.5rem;
+$menu-header-arrow-top: calc(50% - 2px);
+
+$menu-close-menu-header-icon-transform: rotate(90deg);
+$menu-close-menu-header-icon-transform-origin: center;
+$menu-menu-list-display: none;
+$menu-menu-list-height: 0;
+$menu-menu-list-transition: all .2s linear;
+$menu-menu-list-background: $white;
+$menu-border-radius: $default-border-radius;
+$menu-item-cursor: pointer;
+$menu-item-border: none;
+$menu-item-transition: transition;
+$menu-item-background-color: lighten($gray, 18%);
+$menu-item-padding: 0.5rem 1rem 0.5rem 1rem;
+$menu-item-overflow: hidden;
+$menu-item-text-overflow: ellipsis;
+$menu-item-white-space: nowrap;
+$menu-item-line-height: 1.5rem;
+$menu-header-padding: 0.5rem 1rem;
+$menu-item-hove-text-color: $blue;
+$menu-item-font-weight: map_get($font-weight, 'normal');
+$menu-icon-margin-right: 0.5rem;
+$menu-item-hover-text-shadow: 1px 1px 2px #333, 0 0 25px $white, 0 0 5px $blue;
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
 
 
 $arrow-direction: (
@@ -402,25 +469,6 @@ $border-default-color: #ccc;
 $tab-margin-bottom: 0.5rem;
 
 //=======================================================================
-
-//For menu
-$menu-item-active-background-color: #f5f5f5;
-$menu-border: 1px solid #ccc;
-$menu-border-active: darken($gray, 10%);
-$menu-border-radius: $default-border-radius;
-$menu-item-background-color: lighten($gray, 18%);
-$menu-item-background-color-inverted: #000;
-$menu-item-text-color-inverted: #fff;
-$menu-item-active-text-color-inverted: $text-color;
-$menu-item-padding: 0.5rem 1rem 0.5rem 1rem;
-$menu-item-line-height: 1.5rem;
-$menu-header-padding: 0.5rem 1rem 0.5rem 1rem;
-$menu-item-min-width: 4rem;
-$menu-item-hove-text-color: $blue;
-$menu-item-with-box-text-size: 1rem;
-$menu-icon-margin-right: 0.5rem;
-$menu-item-hover-text-shadow: 1px 1px 2px #333, 0 0 25px $white, 0 0 5px $blue;
-
 
 //for drawer
 $drawer-box-shadown: 0 2px 7px 0 rgba(0, 0, 0, 0.4);
