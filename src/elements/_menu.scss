@@ -18,7 +18,6 @@
 
     > .menu-list {
       display: $menu-menu-list-display;
-      height: $menu-menu-list-height;
       //transition: display 2s linear, height 2s linear;
       //animation: close-menu .5s ease-in-out;
       //animation-fill-mode: forwards; //keep the last state
@@ -33,7 +32,7 @@
       @include make-menu-item;
 
       > .icon {
-        margin-right: $menu-icon-margin-right;
+        @include child-margin($menu-icon-margin-right);
       }
     }
   }
@@ -41,11 +40,10 @@
   .menu-header {
     padding: $menu-header-padding;
     font-weight: map_get($font-weight, 'normal');
-    position: relative;
-
+    position: $menu-header-position;
 
     > .icon {
-      margin-right: $menu-icon-margin-right;
+      @include child-margin($menu-icon-margin-right);
     }
   }
 
@@ -53,15 +51,15 @@
   &:not(.float) {
     .menu-header {
       @include make-arrow($default-arrow-border, $default-arrow-active-border, null, 'after', map_get($arrow-direction, 'down')) {
-        position: absolute;
-        right: 0.5rem;
-        top: calc(50% - 2px);
+        position: $menu-header-arrow-position;
+        right: $menu-header-arrow-right;
+        top: $menu-header-arrow-top;
       }
     }
   }
 
   &.block {
-    display: flex;
+    display: $menu-block-display;
   }
 
 }
@@ -78,11 +76,10 @@
   当menu中的嵌套不确定时,如何设置border-radius将会会相当地复杂，
   通常的做法就是menu上下留白，不在子item中设置border-radius,如此可以极大地简化实现难度
    */
-  padding: 0.25rem 0;
+  padding: $menu-padding;
 
 
   &.simple {
-    border-width: 0;
 
     > .divider {
       display: none;
@@ -91,8 +88,8 @@
 
 
   &.float {
-    flex-direction: row;
-    padding: 0;
+    flex-direction: $menu-float-flex-direction;
+    padding: $menu-float-padding;
 
     // set border-radius for the first & last child
     //only two types supported
@@ -104,27 +101,27 @@
     > .submenu {
 
       .menu-header {
-        flex: 0 0 auto;
-        align-items: center;
-        flex-direction: row;
-        transition: all .3s;
+        flex: $menu-float-submenu-menu-header-flex;
+        align-items: $menu-float-submenu-menu-header-align-items;
+        flex-direction: $menu-float-submenu-menu-header-flex-direction;
+        transition: $menu-float-submenu-menu-header-transition;
 
         //remove arrow
         &:after {
-          content: none;
-          border: none;
+          content: $menu-float-submenu-menu-header-after-content;
+          border: $menu-float-submenu-menu-header-after-border;
         }
       }
 
       > .menu-list {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        z-index: map_get($z-index, 'mask');
-        left: 0;
-        top: 2.625rem;
-        background-color: $white;
-        box-shadow: $default-box-shadow;
+        display: $menu-float-submenu-menu-list-display;
+        flex-direction: $menu-float-submenu-menu-list-flex-direction;
+        position: $menu-float-submenu-menu-position;
+        z-index: $menu-float-submenu-menu-z-index;
+        left: $menu-float-submenu-menu-left;
+        top: $menu-float-submenu-menu-top;
+        background-color: $menu-float-submenu-menu-background-color;
+        box-shadow: $menu-float-submenu-menu-box-shadow;
       }
 
       &.active {
@@ -133,21 +130,21 @@
         > .menu-header {
           &:after {
             @include make-block(absolute) {
-              left: 0;
-              top: 100%;
-              content: '';
-              height: 0.1875rem;
-              width: 100%;
-              background-color: $blue;
-              transition: width 0.5s;
-              animation: change-width-smoothly 0.3s;
+              left: $menu-float-submenu-active-menu-header-after-left;
+              top: $menu-float-submenu-active-menu-header-after-top;
+              content: $menu-float-submenu-active-menu-header-after-content;
+              height: $menu-float-submenu-active-menu-header-after-height;
+              width: $menu-float-submenu-active-menu-header-after-width;
+              background-color: $menu-float-submenu-active-menu-header-after-background-color;
+              transition: $menu-float-submenu-active-menu-header-after-transition;
+              animation: $menu-float-submenu-active-menu-header-after-animation;
             }
           }
         }
 
         > .menu-list {
-          display: block;
-          animation: show-menu-list .5s;
+          display: $menu-float-submenu-active-menu-list-display;
+          animation: $menu-float-submenu-active-menu-list-animation;
         }
       }
     }

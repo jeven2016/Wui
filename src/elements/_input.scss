@@ -10,18 +10,22 @@
   border: $input-border;
   @include border-radius($input-border-radius);
   outline: $input-outline;
+  height: $input-height; //to make the text/placeholder vertically align middle since the line-height is set
   line-height: $input-line-height;
   -webkit-appearance: none;
   transition: $default-transition;
   font-size: $input-font-size;
   outline: $input-outline;
 
-  &::placeholder{
-    line-height: inherit;
-    vertical-align: middle;
+
+  // it's better to set the width and height to 0px. Otherwise,
+  // IE10 ignores the padding defined on the field -- padding-right --
+  // which was intended to keep the text from typing over the 'X' icon
+  // that I overlayed on the input field
+  &::-ms-clear {
+    width: 0;
+    height: 0;
   }
-
-
 
   &.block {
     @include make-flex {
@@ -29,7 +33,7 @@
     }
   }
 
-  @include variant-size();
+  @include input-variant-size();
 
   @include add-disabled-conf;
 
@@ -62,11 +66,16 @@
     transform: $input-active-scale;
 
     + .icon {
-      transform: $icon-input-icon-scale;
+      //transform: $icon-input-icon-scale;
 
     }
   }
 
+}
+
+
+textarea.input {
+  max-width: 100%;
 }
 
 /**
@@ -84,6 +93,7 @@
     > .input {
       font-size: map-get($font-size, 'large');
       padding: $icon-input-large-padding;
+      height: $input-large-height;
     }
 
     > .icon {
@@ -100,6 +110,7 @@
     > .input {
       font-size: map-get($font-size, 'small');
       padding: $icon-input-small-padding;
+      height: $input-small-height;
     }
 
     > .icon {
@@ -150,6 +161,8 @@
     width: $icon-input-left-icon-width;
     right: $icon-input-icon-right;
     z-index: $icon-input-icon-z-index;
+    top: 50%; //it works for non-IE browsers
+    transform: translateY(-50%); //it works for IE
 
 
     &:hover, &:focus {

@@ -4,10 +4,8 @@
   @include make-inline-flex-center(stretch);
 
   & > .label {
-    @include make-flex;
+    @include make-flex-center();
     line-height: $input-group-label-line-height;
-    align-items: center;
-    justify-content: center;
     padding: $input-group-label-padding;
     border: $input-border;
     background-color: $input-label-background-color;

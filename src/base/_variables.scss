@@ -270,14 +270,13 @@ $menu-float-submenu-active-menu-list-animation: show-menu-list .5s;
 
 $menu-border: $default-border;
 $menu-header-position: relative;
-$menu-header-arrow-position: relative;
+$menu-header-arrow-position: absolute;
 $menu-header-arrow-right: 0.5rem;
 $menu-header-arrow-top: calc(50% - 2px);
 
 $menu-close-menu-header-icon-transform: rotate(90deg);
 $menu-close-menu-header-icon-transform-origin: center;
 $menu-menu-list-display: none;
-$menu-menu-list-height: 0;
 $menu-menu-list-transition: all .2s linear;
 $menu-menu-list-background: $white;
 $menu-border-radius: $default-border-radius;

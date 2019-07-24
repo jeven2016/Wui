@@ -52,13 +52,7 @@
   @include variant-size();
 
   > .loader {
-    &:first-child:not(:last-child) {
-      margin-right: 0.5rem;
-    }
-
-    &:last-child:not(:first-child) {
-      margin-left: 0.5rem;
-    }
+    @include child-margin(0.5rem);
 
     &.third,
     &.secondary {

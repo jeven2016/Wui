@@ -26,7 +26,7 @@
     }
   }
 
-  > * {
+  > div {
     &:first-child {
       border-top-left-radius: $card-inner-border-radius;
       border-top-right-radius: $card-inner-border-radius;

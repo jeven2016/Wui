@@ -27,6 +27,23 @@
   }
 }
 
+@mixin input-variant-size() {
+  &.large {
+    @extend %large;
+    height: $input-large-height;
+  }
+
+  &.medium {
+    @extend %medium;
+    height: $input-height;
+  }
+
+  &.small {
+    @extend %small;
+    height: $input-small-height;
+  }
+}
+
 @mixin button-group-variant-size() {
   &.large {
     > .button {

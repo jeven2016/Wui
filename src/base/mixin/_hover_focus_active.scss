@@ -1,9 +1,22 @@
 @mixin focus-active() {
-  &:not(:disabled):not(.disabled):focus, &:not(:disabled):not(.disabled):hover {
+  &:not(:disabled):not(.disabled):focus,
+  &:not(:disabled):not(.disabled):hover {
     @content;
   }
 
-  &:not(:disabled):not(.disabled):active, &.active:not(:disabled):not(.disabled) {
+  &:not(:disabled):not(.disabled):active,
+  &.active:not(:disabled):not(.disabled) {
+    @content;
+  }
+}
+
+@mixin focus-active2() {
+  &:not(:disabled):not(.disabled):focus,
+  &:not(:disabled):not(.disabled):hover {
+    @content;
+  }
+
+  &.active:not(:disabled):not(.disabled) {
     @content;
   }
 }

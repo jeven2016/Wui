@@ -1,34 +1,23 @@
 //normal menu
-@mixin make-menu($bd-style) {
-  outline: none;
-  border: $bd-style;
-  list-style: none;
-  @content;
-}
-
 @mixin make-menu-item() {
   @include make-block {
     line-height: $menu-item-line-height;
     padding: $menu-item-padding;
-    //flex: $menu-item-flex;
     overflow: $menu-item-overflow;
     text-overflow: $menu-item-text-overflow;
     white-space: $menu-item-white-space;
-    margin: 0;
-    text-align: left;
-    cursor: pointer;
-    border-width: 0;
-    align-items: center;
+    cursor: $menu-item-cursor;
+    border: $menu-item-border;
     min-width: $dp-min-width;
+    transition: $menu-item-transition;
   }
 
-  &:focus, &:hover:not(.special):not(.disabled) {
+  @include focus-active {
     color: $menu-item-hove-text-color;
-    transition: all 0.2s;
 
     &.with-box {
       box-shadow: $default-box-shadow;
-      font-size: $menu-item-with-box-text-size;
+      font-weight: $menu-item-font-weight;
     }
 
     &.with-bg {
@@ -36,13 +25,6 @@
     }
   }
 
-  &.active:not(.special) {
-    color: $menu-item-hove-text-color;
-
-    &.with-bg {
-      background-color: darken($menu-item-background-color, 5%);
-    }
-  }
 
   @include add-disabled-conf(false) {
     color: $text-color;
@@ -50,19 +32,3 @@
   }
 }
 
-//dropdown menu
-@mixin dp-menu() {
-  @include make-menu($dp-item-border) {
-    display: none;
-    position: absolute;
-    z-index: 100;
-    left: -1px;
-    top: 100%;
-    color: $text-color;
-  }
-  @content;
-
-  &.active {
-    display: block;
-  }
-}

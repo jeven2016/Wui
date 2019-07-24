@@ -1,12 +1,22 @@
+//dropdown menu
+@mixin dp-menu() {
+  display: none;
+  position: absolute;
+  border: $dp-item-border;
+  z-index: 100;
+  left: -1px;
+  top: 100%;
+  color: $text-color;
+  @content;
+
+  &.active {
+    display: block;
+  }
+}
+
 .dp-base {
-  @include make-inline-block();
-  outline: $dp-outline;
-  line-height: $dp-line-height;
-  text-align: $dp-text-align;
-  @include border-radius($dp-border-radius);
-  padding: $dp-padding;
+  @extend .base-btn;
   border: $dp-border;
-  vertical-align: $dp-vertical-align;
 
 
   > .menu {
