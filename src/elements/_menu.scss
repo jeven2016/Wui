@@ -150,10 +150,7 @@
     }
 
     > .menu-list {
-      @include make-flex {
-        flex-direction: row;
-        flex: 1 0 auto;
-      }
+      @include make-flex ;
       border-radius: calc(0.25rem - 1px);
 
       > .menu-item {
@@ -197,7 +194,8 @@
 
   &.primary {
     .menu-list > .menu-item {
-      &:not(.disabled):not(.active):focus, &:not(.disabled):not(.active):hover {
+
+      @include focus{
         color: lighten($blue, 10%);
         background-color: inherit;
       }
@@ -211,17 +209,17 @@
   }
 
   &.dark, &.dark .submenu {
-    background-color: #000911;
+    background-color: #000c17;
     color: darken($white, 30%);
     border: none;
 
     > .menu-list {
-      background-color: #5d5e63e6;
+      background-color: inherit;
     }
 
 
     .menu-header {
-      background-color: rgba(74, 75, 79, 0.9);
+      background-color: #00192D;
       color: darken($white, 10%);
       transition: all .2s;
 

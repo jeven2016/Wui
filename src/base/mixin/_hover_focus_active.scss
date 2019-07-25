@@ -1,22 +1,46 @@
-@mixin focus-active() {
+@mixin focus() {
   &:not(:disabled):not(.disabled):focus,
   &:not(:disabled):not(.disabled):hover {
     @content;
   }
+}
 
+//without :disabled
+@mixin focus2() {
+  &:not(.disabled):focus,
+  &:not(.disabled):hover {
+    @content;
+  }
+}
+
+@mixin active() {
   &:not(:disabled):not(.disabled):active,
   &.active:not(:disabled):not(.disabled) {
     @content;
   }
 }
 
-@mixin focus-active2() {
-  &:not(:disabled):not(.disabled):focus,
-  &:not(:disabled):not(.disabled):hover {
+//without :active
+@mixin active2() {
+  &.active:not(:disabled):not(.disabled) {
     @content;
   }
+}
 
-  &.active:not(:disabled):not(.disabled) {
+@mixin focus-active() {
+  @include focus {
+    @content;
+  }
+  @include active {
+    @content;
+  }
+}
+
+@mixin focus-active2() {
+  @include focus {
+    @content;
+  }
+  @include active2 {
     @content;
   }
 }

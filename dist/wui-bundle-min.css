@@ -2989,8 +2989,6 @@ textarea.input {
       display: -ms-flexbox;
       display: -webkit-flex;
       display: flex;
-      flex-direction: row;
-      flex: 1 0 auto;
       border-radius: calc(0.25rem - 1px); }
       .menu.float > .menu-list > .menu-item {
         flex: 0 0 auto;
@@ -3015,7 +3013,7 @@ textarea.input {
       display: none; }
       .menu.float > .divider + .menu-list > .menu-item {
         border-left: 1px solid #ccc; }
-  .menu.primary .menu-list > .menu-item:not(.disabled):not(.active):focus, .menu.primary .menu-list > .menu-item:not(.disabled):not(.active):hover {
+  .menu.primary .menu-list > .menu-item:not(:disabled):not(.disabled):focus, .menu.primary .menu-list > .menu-item:not(:disabled):not(.disabled):hover {
     color: #3395ff;
     background-color: inherit; }
   .menu.primary .menu-list > .menu-item.active {
@@ -3023,13 +3021,13 @@ textarea.input {
     border-right: 3px solid #007aff;
     margin-right: -1px; }
   .menu.dark, .menu.dark .submenu, .menu.dark .menu {
-    background-color: #000911;
+    background-color: #000c17;
     color: #b3b3b3;
     border: none; }
     .menu.dark > .menu-list, .menu.dark .submenu > .menu-list, .menu.dark .menu > .menu-list {
-      background-color: #5d5e63e6; }
+      background-color: inherit; }
     .menu.dark .menu-header, .menu.dark .submenu .menu-header, .menu.dark .menu .menu-header {
-      background-color: rgba(74, 75, 79, 0.9);
+      background-color: #00192D;
       color: #e6e6e6;
       transition: all .2s; }
       .menu.dark .menu-header:focus, .menu.dark .menu-header:hover, .menu.dark .submenu .menu-header:focus, .menu.dark .menu .menu-header:focus, .menu.dark .submenu .menu-header:hover, .menu.dark .menu .menu-header:hover {
