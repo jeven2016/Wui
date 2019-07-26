@@ -257,7 +257,7 @@ $menu-float-submenu-menu-top: 2.625rem;
 $menu-float-submenu-menu-background-color: $white;
 $menu-float-submenu-menu-box-shadow: $default-box-shadow;
 $menu-float-submenu-active-menu-header-after-left: 0;
-$menu-float-submenu-active-menu-header-after-top: 100%;
+$menu-float-submenu-active-menu-header-after-top: calc(100% - 0.1875rem);
 $menu-float-submenu-active-menu-header-after-content: '';
 $menu-float-submenu-active-menu-header-after-height: 0.1875rem;
 $menu-float-submenu-active-menu-header-after-width: 100%;
@@ -266,6 +266,11 @@ $menu-float-submenu-active-menu-header-after-transition: width 0.5s;
 $menu-float-submenu-active-menu-header-after-animation: change-width-smoothly 0.3s;
 $menu-float-submenu-active-menu-list-display: block;
 $menu-float-submenu-active-menu-list-animation: show-menu-list .5s;
+$menu-float-menu-list-flex: 1 0 100%;
+$menu-float-menu-list-border-radius: calc(0.25rem - 1px);
+$menu-float-menu-item-flex: 0 0 auto;
+$menu-float-menu-item-mix-width: 4rem;
+$menu-float-menu-item-child-border-radius: calc(0.25rem - 1px);
 
 
 $menu-border: $default-border;

@@ -1,3 +1,18 @@
+@mixin bottom-bar() {
+  &:after {
+    @include make-block(absolute) {
+      left: $menu-float-submenu-active-menu-header-after-left;
+      top: $menu-float-submenu-active-menu-header-after-top;
+      content: $menu-float-submenu-active-menu-header-after-content;
+      height: $menu-float-submenu-active-menu-header-after-height;
+      width: $menu-float-submenu-active-menu-header-after-width;
+      background-color: $menu-float-submenu-active-menu-header-after-background-color;
+      transition: $menu-float-submenu-active-menu-header-after-transition;
+      animation: $menu-float-submenu-active-menu-header-after-animation;
+    }
+  }
+}
+
 .submenu {
   @include border-radius($menu-border-radius);
   @include make-flex;
@@ -38,6 +53,7 @@
   }
 
   .menu-header {
+    cursor: $menu-item-cursor;
     padding: $menu-header-padding;
     font-weight: map_get($font-weight, 'normal');
     position: $menu-header-position;
@@ -128,18 +144,8 @@
 
         //create the bottom border
         > .menu-header {
-          &:after {
-            @include make-block(absolute) {
-              left: $menu-float-submenu-active-menu-header-after-left;
-              top: $menu-float-submenu-active-menu-header-after-top;
-              content: $menu-float-submenu-active-menu-header-after-content;
-              height: $menu-float-submenu-active-menu-header-after-height;
-              width: $menu-float-submenu-active-menu-header-after-width;
-              background-color: $menu-float-submenu-active-menu-header-after-background-color;
-              transition: $menu-float-submenu-active-menu-header-after-transition;
-              animation: $menu-float-submenu-active-menu-header-after-animation;
-            }
-          }
+          @include bottom-bar;
+          color: $blue;
         }
 
         > .menu-list {
@@ -151,33 +157,34 @@
 
     > .menu-list {
       @include make-flex ;
-      border-radius: calc(0.25rem - 1px);
+      flex: $menu-float-menu-list-flex;
+      border-radius: $menu-float-menu-list-border-radius;
 
       > .menu-item {
-        flex: 0 0 auto;
-        min-width: unset;
-        align-self: center;
-        align-items: stretch;
+        min-width: $menu-float-menu-item-mix-width;
+
+        @include active2 {
+          @include bottom-bar;
+          color: $blue;
+        }
 
         &:first-child {
-          border-top-left-radius: calc(0.25rem - 1px);
-          border-bottom-left-radius: calc(0.25rem - 1px);
+          border-top-left-radius: $menu-float-menu-item-child-border-radius;
+          border-bottom-left-radius: $menu-float-menu-item-child-border-radius;
         }
 
         &:last-child {
-          border-top-right-radius: calc(0.25rem - 1px);
-          border-bottom-right-radius: calc(0.25rem - 1px);
+          border-top-right-radius: $menu-float-menu-item-child-border-radius;
+          border-bottom-right-radius: $menu-float-menu-item-child-border-radius;
         }
 
         &.right {
-          margin-left: auto !important;
           flex-grow: 1;
           text-align: right;
           justify-content: flex-end;
         }
 
         &.left {
-          margin-right: auto !important;
           flex-grow: 1;
         }
       }
@@ -195,9 +202,9 @@
   &.primary {
     .menu-list > .menu-item {
 
-      @include focus{
+      @include focus {
         color: lighten($blue, 10%);
-        background-color: inherit;
+        //background-color: inherit;
       }
 
       &.active {

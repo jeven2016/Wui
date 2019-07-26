@@ -2916,6 +2916,7 @@ textarea.input {
       .submenu > .menu-list > .menu-item > .icon:last-child:not(:first-child), .menu > .menu-list > .menu-item > .icon:last-child:not(:first-child) {
         margin-left: 0.5rem; }
   .submenu .menu-header, .menu .menu-header {
+    cursor: pointer;
     padding: 0.5rem 1rem;
     font-weight: 500;
     position: relative; }
@@ -2971,17 +2972,19 @@ textarea.input {
       top: 2.625rem;
       background-color: #fff;
       box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.12); }
-    .menu.float > .submenu.active > .menu-header:after, .menu.float > .active.menu > .menu-header:after {
-      position: absolute;
-      display: block;
-      left: 0;
-      top: 100%;
-      content: "";
-      height: 0.1875rem;
-      width: 100%;
-      background-color: #007aff;
-      transition: width 0.5s;
-      animation: change-width-smoothly 0.3s; }
+    .menu.float > .submenu.active > .menu-header, .menu.float > .active.menu > .menu-header {
+      color: #007aff; }
+      .menu.float > .submenu.active > .menu-header:after, .menu.float > .active.menu > .menu-header:after {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: calc(100% - 0.1875rem);
+        content: "";
+        height: 0.1875rem;
+        width: 100%;
+        background-color: #007aff;
+        transition: width 0.5s;
+        animation: change-width-smoothly 0.3s; }
     .menu.float > .submenu.active > .menu-list, .menu.float > .active.menu > .menu-list {
       display: block;
       animation: show-menu-list 0.5s; }
@@ -2989,12 +2992,23 @@ textarea.input {
       display: -ms-flexbox;
       display: -webkit-flex;
       display: flex;
+      flex: 1 0 100%;
       border-radius: calc(0.25rem - 1px); }
       .menu.float > .menu-list > .menu-item {
-        flex: 0 0 auto;
-        min-width: unset;
-        align-self: center;
-        align-items: stretch; }
+        min-width: 4rem; }
+        .menu.float > .menu-list > .menu-item.active:not(:disabled):not(.disabled) {
+          color: #007aff; }
+          .menu.float > .menu-list > .menu-item.active:not(:disabled):not(.disabled):after {
+            position: absolute;
+            display: block;
+            left: 0;
+            top: calc(100% - 0.1875rem);
+            content: "";
+            height: 0.1875rem;
+            width: 100%;
+            background-color: #007aff;
+            transition: width 0.5s;
+            animation: change-width-smoothly 0.3s; }
         .menu.float > .menu-list > .menu-item:first-child {
           border-top-left-radius: calc(0.25rem - 1px);
           border-bottom-left-radius: calc(0.25rem - 1px); }
@@ -3002,20 +3016,17 @@ textarea.input {
           border-top-right-radius: calc(0.25rem - 1px);
           border-bottom-right-radius: calc(0.25rem - 1px); }
         .menu.float > .menu-list > .menu-item.right {
-          margin-left: auto !important;
           flex-grow: 1;
           text-align: right;
           justify-content: flex-end; }
         .menu.float > .menu-list > .menu-item.left {
-          margin-right: auto !important;
           flex-grow: 1; }
     .menu.float > .divider {
       display: none; }
       .menu.float > .divider + .menu-list > .menu-item {
         border-left: 1px solid #ccc; }
   .menu.primary .menu-list > .menu-item:not(:disabled):not(.disabled):focus, .menu.primary .menu-list > .menu-item:not(:disabled):not(.disabled):hover {
-    color: #3395ff;
-    background-color: inherit; }
+    color: #3395ff; }
   .menu.primary .menu-list > .menu-item.active {
     background-color: #cce4ff;
     border-right: 3px solid #007aff;
