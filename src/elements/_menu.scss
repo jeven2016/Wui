@@ -179,22 +179,22 @@
         }
 
         &.right {
-          flex-grow: 1;
-          text-align: right;
-          justify-content: flex-end;
+          flex-grow: $menu-float-menu-item-right-flex-grow;
+          text-align: $menu-float-menu-item-right-text-align;
+          justify-content: $menu-float-menu-item-right-justify-content;
         }
 
         &.left {
-          flex-grow: 1;
+          flex-grow: $menu-float-menu-item-left-flex-grow;
         }
       }
     }
 
     > .divider {
-      display: none;
+      display: $menu-float-divider-display;
 
       & + .menu-list > .menu-item {
-        border-left: 1px solid #ccc;
+        border-left: $menu-float-divider-menu-item-border-left;
       }
     }
   }
@@ -203,35 +203,34 @@
     .menu-list > .menu-item {
 
       @include focus {
-        color: lighten($blue, 10%);
-        //background-color: inherit;
+        color: $menu-primary-menu-item-focus-color;
       }
 
       &.active {
-        background-color: lighten($blue, 40%);
-        border-right: 3px solid $blue;
-        margin-right: -1px;
+        background-color: $menu-primary-menu-item-active-background-color;
+        border-right: $menu-primary-menu-item-active-border-right;
+        margin-right: $menu-primary-menu-item-active-margin-right;
       }
     }
   }
 
   &.dark, &.dark .submenu {
-    background-color: #000c17;
-    color: darken($white, 30%);
-    border: none;
+    background-color: $menu-dark-background-color;
+    color: $menu-dark-color;
+    border: $menu-dark-border;
 
     > .menu-list {
-      background-color: inherit;
+      background-color: $menu-dark-menu-list-background;
     }
 
 
     .menu-header {
-      background-color: #00192D;
-      color: darken($white, 10%);
-      transition: all .2s;
+      background-color: $menu-dark-menu-header-background-color;
+      color: $menu-dark-menu-header-color;
+      transition: $menu-dark-menu-header-transition;
 
       &:focus, &:hover {
-        color: $white;
+        color: $menu-dark-menu-header-focus-color;
         text-shadow: $menu-item-hover-text-shadow;
 
         &:after {
@@ -244,7 +243,7 @@
 
     > .menu-list > .menu-item {
       &.disabled {
-        color: darken($white, 40%);
+        color: $menu-dark-disabled-menu-item-color;
       }
 
       &:not(.disabled):focus, &:not(.disabled):hover {
