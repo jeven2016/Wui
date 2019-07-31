@@ -22,7 +22,7 @@
 
 //without :active
 @mixin active2() {
-  &.active:not(:disabled):not(.disabled) {
+  &.active:not(.disabled) {
     @content;
   }
 }
@@ -37,7 +37,7 @@
 }
 
 @mixin focus-active2() {
-  @include focus {
+  @include focus2 {
     @content;
   }
   @include active2 {
