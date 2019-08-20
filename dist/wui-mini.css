@@ -2890,20 +2890,31 @@ textarea.input {
       border: none;
       min-width: 8rem;
       transition: transition; }
-      .submenu > .menu-list > .menu-item:not(:disabled):not(.disabled):focus, .menu > .menu-list > .menu-item:not(:disabled):not(.disabled):focus, .submenu > .menu-list > .menu-item:not(:disabled):not(.disabled):hover, .menu > .menu-list > .menu-item:not(:disabled):not(.disabled):hover {
+      .submenu > .menu-list > .menu-item:not(.disabled):focus, .menu > .menu-list > .menu-item:not(.disabled):focus, .submenu > .menu-list > .menu-item:not(.disabled):hover, .menu > .menu-list > .menu-item:not(.disabled):hover {
         color: #007aff; }
-        .submenu > .menu-list > .menu-item:not(:disabled):not(.disabled):focus.with-box, .menu > .menu-list > .menu-item:not(:disabled):not(.disabled):focus.with-box, .submenu > .menu-list > .menu-item:not(:disabled):not(.disabled):hover.with-box, .menu > .menu-list > .menu-item:not(:disabled):not(.disabled):hover.with-box {
+        .submenu > .menu-list > .menu-item:not(.disabled):focus.with-box, .menu > .menu-list > .menu-item:not(.disabled):focus.with-box, .submenu > .menu-list > .menu-item:not(.disabled):hover.with-box, .menu > .menu-list > .menu-item:not(.disabled):hover.with-box {
           box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.12);
           font-weight: 500; }
-        .submenu > .menu-list > .menu-item:not(:disabled):not(.disabled):focus.with-bg, .menu > .menu-list > .menu-item:not(:disabled):not(.disabled):focus.with-bg, .submenu > .menu-list > .menu-item:not(:disabled):not(.disabled):hover.with-bg, .menu > .menu-list > .menu-item:not(:disabled):not(.disabled):hover.with-bg {
+        .submenu > .menu-list > .menu-item:not(.disabled):focus.with-bg, .menu > .menu-list > .menu-item:not(.disabled):focus.with-bg, .submenu > .menu-list > .menu-item:not(.disabled):hover.with-bg, .menu > .menu-list > .menu-item:not(.disabled):hover.with-bg {
           background-color: #fafafa; }
-      .submenu > .menu-list > .menu-item:not(:disabled):not(.disabled):active, .menu > .menu-list > .menu-item:not(:disabled):not(.disabled):active, .submenu > .menu-list > .menu-item.active:not(:disabled):not(.disabled), .menu > .menu-list > .menu-item.active:not(:disabled):not(.disabled) {
+      .submenu > .menu-list > .menu-item.active:not(.disabled), .menu > .menu-list > .menu-item.active:not(.disabled) {
         color: #007aff; }
-        .submenu > .menu-list > .menu-item:not(:disabled):not(.disabled):active.with-box, .menu > .menu-list > .menu-item:not(:disabled):not(.disabled):active.with-box, .submenu > .menu-list > .menu-item.active:not(:disabled):not(.disabled).with-box, .menu > .menu-list > .menu-item.active:not(:disabled):not(.disabled).with-box {
+        .submenu > .menu-list > .menu-item.active:not(.disabled).with-box, .menu > .menu-list > .menu-item.active:not(.disabled).with-box {
           box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.12);
           font-weight: 500; }
-        .submenu > .menu-list > .menu-item:not(:disabled):not(.disabled):active.with-bg, .menu > .menu-list > .menu-item:not(:disabled):not(.disabled):active.with-bg, .submenu > .menu-list > .menu-item.active:not(:disabled):not(.disabled).with-bg, .menu > .menu-list > .menu-item.active:not(:disabled):not(.disabled).with-bg {
+        .submenu > .menu-list > .menu-item.active:not(.disabled).with-bg, .menu > .menu-list > .menu-item.active:not(.disabled).with-bg {
           background-color: #fafafa; }
+      .submenu > .menu-list > .menu-item.active:not(.disabled).with-bottom-bar:after, .menu > .menu-list > .menu-item.active:not(.disabled).with-bottom-bar:after {
+        position: absolute;
+        display: block;
+        left: 0;
+        top: calc(100% - 0.1875rem);
+        content: "";
+        height: 0.1875rem;
+        width: 100%;
+        background-color: #007aff;
+        transition: width 0.5s;
+        animation: change-width-smoothly 0.3s; }
       .submenu > .menu-list > .menu-item:disabled, .menu > .menu-list > .menu-item:disabled, .submenu > .menu-list > .menu-item.disabled, .menu > .menu-list > .menu-item.disabled {
         color: #333;
         background-color: transparent; }
@@ -2950,7 +2961,8 @@ textarea.input {
     display: none; }
   .menu.float {
     flex-direction: row;
-    padding: 0; }
+    padding: 0;
+    border-bottom: 1px solid #ccc; }
     .menu.float > .submenu .menu-header, .menu.float > .menu .menu-header {
       flex: 0 0 auto;
       align-items: center;
@@ -2992,19 +3004,6 @@ textarea.input {
       border-radius: calc(0.25rem - 1px); }
       .menu.float > .menu-list > .menu-item {
         min-width: 4rem; }
-        .menu.float > .menu-list > .menu-item.active:not(:disabled):not(.disabled) {
-          color: #007aff; }
-          .menu.float > .menu-list > .menu-item.active:not(:disabled):not(.disabled):after {
-            position: absolute;
-            display: block;
-            left: 0;
-            top: calc(100% - 0.1875rem);
-            content: "";
-            height: 0.1875rem;
-            width: 100%;
-            background-color: #007aff;
-            transition: width 0.5s;
-            animation: change-width-smoothly 0.3s; }
         .menu.float > .menu-list > .menu-item:first-child {
           border-top-left-radius: calc(0.25rem - 1px);
           border-bottom-left-radius: calc(0.25rem - 1px); }
@@ -3036,7 +3035,7 @@ textarea.input {
     .menu.dark .menu-header, .menu.dark .submenu .menu-header, .menu.dark .menu .menu-header {
       background-color: #00192D;
       color: #e6e6e6;
-      transition: all .2s; }
+      transition: all 0.2s; }
       .menu.dark .menu-header:focus, .menu.dark .menu-header:hover, .menu.dark .submenu .menu-header:focus, .menu.dark .menu .menu-header:focus, .menu.dark .submenu .menu-header:hover, .menu.dark .menu .menu-header:hover {
         color: #fff;
         text-shadow: 1px 1px 2px #333, 0 0 25px #fff, 0 0 5px #007aff; }

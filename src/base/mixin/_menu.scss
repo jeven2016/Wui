@@ -12,7 +12,7 @@
     transition: $menu-item-transition;
   }
 
-  @include focus-active {
+  @include focus-active2 {
     color: $menu-item-hove-text-color;
 
     &.with-box {
@@ -23,8 +23,14 @@
     &.with-bg {
       background-color: $menu-item-background-color;
     }
+
   }
 
+  @include active2 {
+    &.with-bottom-bar {
+      @include bottom-bar;
+    }
+  }
 
   @include add-disabled-conf(false) {
     color: $text-color;

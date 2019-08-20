@@ -106,6 +106,7 @@
   &.float {
     flex-direction: $menu-float-flex-direction;
     padding: $menu-float-padding;
+    border-bottom: $default-border;
 
     // set border-radius for the first & last child
     //only two types supported
@@ -162,11 +163,6 @@
 
       > .menu-item {
         min-width: $menu-float-menu-item-mix-width;
-
-        @include active2 {
-          @include bottom-bar;
-          color: $blue;
-        }
 
         &:first-child {
           border-top-left-radius: $menu-float-menu-item-child-border-radius;
