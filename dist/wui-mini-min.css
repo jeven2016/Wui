@@ -2907,6 +2907,7 @@ textarea.input {
       .submenu > .menu-list > .menu-item.active:not(.disabled).with-bottom-bar:after, .menu > .menu-list > .menu-item.active:not(.disabled).with-bottom-bar:after {
         position: absolute;
         display: block;
+        border-radius: 50%;
         left: 0;
         top: calc(100% - 0.1875rem);
         content: "";
@@ -2964,8 +2965,7 @@ textarea.input {
     display: none; }
   .menu.float {
     flex-direction: row;
-    padding: 0;
-    border-bottom: 1px solid #ccc; }
+    padding: 0; }
     .menu.float > .submenu .menu-header, .menu.float > .menu .menu-header {
       flex: 0 0 auto;
       align-items: center;
@@ -2988,6 +2988,7 @@ textarea.input {
       .menu.float > .submenu.active > .menu-header:after, .menu.float > .active.menu > .menu-header:after {
         position: absolute;
         display: block;
+        border-radius: 50%;
         left: 0;
         top: calc(100% - 0.1875rem);
         content: "";
