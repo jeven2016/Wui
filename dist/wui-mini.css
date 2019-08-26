@@ -1248,14 +1248,7 @@ textarea.input {
 .button-dropdown {
   position: relative;
   display: inline-block;
-  vertical-align: baseline;
-  /* .button {
-     &:focus, &.active {
-       ~ .menu {
-         display: block;
-       }
-     }
-   }*/ }
+  vertical-align: baseline; }
   .button-dropdown.active .menu {
     display: block;
     left: auto; }

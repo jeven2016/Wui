@@ -316,6 +316,22 @@ $menu-dark-menu-header-transition: all .2s;
 $menu-dark-menu-header-focus-color: $white;
 $menu-dark-disabled-menu-item-color: darken($white, 40%);
 
+//for drop down
+$dp-cursor: pointer;
+$dp-outline: 0;
+$dp-text-align: center;
+$dp-line-height: 1.5rem;
+$dp-vertical-align: baseline;
+$dp-border-radius: $default-border-radius;
+$dp-padding: 0.5rem 1rem;
+$dp-border-width: 1px;
+$dp-border: $dp-border-width solid $btn-border-color;
+$dp-min-width: 8rem;
+$dp-background-color: $white;
+$dp-item-border: 1px solid #ccc;
+$dp-border-radius: $default-border-radius;
+$dp-button-dp-menu-margin: 0.2rem;
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -386,21 +402,6 @@ $navbar-simple-primary-item-link-active-background-color: $green;
 $navbar-switch-box-shadow: 0px 0px 2px 0 rgba(0, 0, 0, 0.45);
 $navbar-primary-switch-box-shadow: 0px 0px 2px 0 $white;
 
-//for drop down
-$dp-cursor: pointer;
-$dp-outline: 0;
-$dp-text-align: center;
-$dp-line-height: 1.5rem;
-$dp-vertical-align: baseline;
-$dp-border-radius: $default-border-radius;
-$dp-padding: 0.5rem 1rem;
-$dp-border-width: 1px;
-$dp-border: $dp-border-width solid $btn-border-color;
-$dp-min-width: 8rem;
-$dp-background-color: $white;
-$dp-item-border: 1px solid #ccc;
-$dp-border-radius: $default-border-radius;
-$dp-button-dp-menu-margin: 0.2rem;
 
 //for popover
 $po-z-index: 100;
