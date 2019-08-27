@@ -331,7 +331,7 @@ time, mark, audio, video {
 /**
 * set the group's border radius property
  */
-.base-btn:disabled, .dp-base:disabled, .dropdown:disabled, .select:disabled, .button:disabled, .base-btn.disabled, .disabled.dp-base, .disabled.dropdown, .disabled.select, .disabled.button, .button-group:disabled > .button, .button-group.disabled > .button, .input:disabled, .input.disabled, .icon-input:disabled, .icon-input.disabled, .button-dropdown.disabled > .button, .submenu > .menu-list > .menu-item:disabled, .menu > .menu-list > .menu-item:disabled, .submenu > .menu-list > .menu-item.disabled, .menu > .menu-list > .menu-item.disabled, .submenu .menu-header:disabled, .menu .menu-header:disabled, .submenu .menu-header.disabled, .menu .menu-header.disabled {
+.base-btn:disabled, .button:disabled, .base-btn.disabled, .disabled.button, .button-group:disabled > .button, .button-group.disabled > .button, .input:disabled, .input.disabled, .icon-input:disabled, .icon-input.disabled, .dp-base:disabled, .dropdown:disabled, .select:disabled, .dp-base.disabled, .disabled.dropdown, .disabled.select, .button-dropdown.disabled > .button, .submenu > .menu-list > .menu-item:disabled, .menu > .menu-list > .menu-item:disabled, .submenu > .menu-list > .menu-item.disabled, .menu > .menu-list > .menu-item.disabled, .submenu .menu-header:disabled, .menu .menu-header:disabled, .submenu .menu-header.disabled, .menu .menu-header.disabled {
   cursor: not-allowed;
   opacity: 0.7; }
 
@@ -866,7 +866,7 @@ a {
   .flex-align.center {
     justify-content: center; }
 
-.base-btn, .dp-base, .dropdown, .select, .button {
+.base-btn, .button {
   position: relative;
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -881,9 +881,9 @@ a {
   -webkit-appearance: none;
   appearance: none;
   transition: box-shadow ease 0.2s, border-color ease 0.2s, transform ease 0.4s; }
-  .base-btn.min-width, .min-width.dp-base, .min-width.dropdown, .min-width.select, .min-width.button {
+  .base-btn.min-width, .min-width.button {
     min-width: 5rem; }
-  .base-btn.bold, .bold.dp-base, .bold.dropdown, .bold.select, .bold.button {
+  .base-btn.bold, .bold.button {
     font-weight: bold; }
 
 blockquote, .blockquote {
@@ -1172,7 +1172,9 @@ textarea.input {
       flex-grow: 1; }
 
 .dp-base, .dropdown, .select {
-  border: 1px solid #ccc; }
+  position: relative;
+  display: inline-block;
+  position: relative; }
   .dp-base > .menu, .dropdown > .menu, .select > .menu {
     display: none;
     position: absolute;
@@ -2876,12 +2878,12 @@ textarea.input {
     transition: all 0.2s linear;
     background: #fff; }
     .submenu > .menu-list > .menu-item, .menu > .menu-list > .menu-item {
-      position: relative;
-      display: block;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
       line-height: 1.5rem;
       padding: 0.5rem 1rem 0.5rem 1rem;
-      overflow: hidden;
-      text-overflow: ellipsis;
       white-space: nowrap;
       cursor: pointer;
       border: none;

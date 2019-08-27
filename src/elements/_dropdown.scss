@@ -15,9 +15,10 @@
 }
 
 .dp-base {
-  @extend .base-btn;
-  border: $dp-border;
-
+  @include make-inline-block {
+    position: relative;
+  }
+;
 
   > .menu {
     @include dp-menu {

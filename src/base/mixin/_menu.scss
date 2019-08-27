@@ -1,10 +1,11 @@
 //normal menu
 @mixin make-menu-item() {
-  @include make-block {
+  @include make-flex-vertical-center {
     line-height: $menu-item-line-height;
     padding: $menu-item-padding;
-    overflow: $menu-item-overflow;
-    text-overflow: $menu-item-text-overflow;
+    //todo: the dropdown list failed to represent this due to the overflow is set for menu-item
+    //overflow: $menu-item-overflow;
+    //text-overflow: $menu-item-text-overflow;
     white-space: $menu-item-white-space;
     cursor: $menu-item-cursor;
     border: $menu-item-border;
