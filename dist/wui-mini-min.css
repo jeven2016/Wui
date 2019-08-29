@@ -1181,9 +1181,11 @@ textarea.input {
     color: #333;
     width: calc(100% + 2px);
     border-radius: 0 0 0.25rem 0.25rem;
-    transition: display .5s ease; }
+    transform: scaleY(0);
+    transition: transform 1s ease; }
     .dp-base > .menu.active, .dropdown > .menu.active, .select > .menu.active {
-      display: block; }
+      display: block;
+      transform: scaleY(1); }
   .dp-base > .info, .dropdown > .info, .select > .info {
     cursor: pointer;
     display: flex;
@@ -1230,7 +1232,8 @@ textarea.input {
     left: auto;
     right: 0; }
   .dp-base.simple .active.menu, .simple.dropdown .active.menu, .simple.select .active.menu, .button-dropdown .active.menu {
-    display: block; }
+    display: block;
+    transform: scaleY(1); }
 
 .dp-base.active, .active.dropdown, .active.select {
   border-bottom-left-radius: 0;
@@ -1239,13 +1242,12 @@ textarea.input {
     display: block;
     border-top-width: 0; }
 
-.dropdown, .select {
-  min-width: 8rem; }
-  .dropdown > .title, .select > .title {
-    display: inline-flex;
-    align-items: center; }
-  .dropdown.without-min-width, .without-min-width.select {
-    min-width: 0; }
+.dropdown > .title, .select > .title {
+  display: inline-flex;
+  align-items: center; }
+
+.dropdown.without-min-width, .without-min-width.select {
+  min-width: 0; }
 
 .button-dropdown {
   position: relative;
@@ -1253,6 +1255,9 @@ textarea.input {
   vertical-align: baseline; }
   .button-dropdown.active .menu {
     display: block;
+    transform-origin: center;
+    transition: transform 1s;
+    transform: scaleY(1);
     left: auto; }
 
 .drawer {

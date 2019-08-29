@@ -11,6 +11,7 @@
 
   &.active {
     display: block;
+    transform: scaleY(1);
   }
 }
 
@@ -18,14 +19,13 @@
   @include make-inline-block {
     position: relative;
   }
-;
 
   > .menu {
     @include dp-menu {
       width: calc(100% + 2px);
       @include full-border-radius(0, 0, $dp-border-radius, $dp-border-radius);
-
-      transition: display .5s ease;
+      transform: scaleY(0);
+      transition: transform 1s ease;
     }
   }
 
@@ -103,7 +103,6 @@
 
 .dropdown {
   @extend .dp-base;
-  min-width: $dp-min-width;
 
 
   > .title {
@@ -131,6 +130,10 @@
   &.active {
     .menu {
       display: block;
+
+      transform-origin: center;
+      transition: transform 1s;
+      transform: scaleY(1);
       left: auto;
     }
   }
