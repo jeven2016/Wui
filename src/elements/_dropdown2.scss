@@ -1,0 +1,145 @@
+//dropdown menu
+@mixin dp-menu() {
+  display: none;
+  position: absolute;
+  border: $dp-item-border;
+  z-index: 100;
+  left: -1px;
+  top: 100%;
+  color: $text-color;
+  @content;
+
+  &.active {
+    display: block;
+    transform: scaleY(1);
+  }
+}
+
+.dp-base {
+  @include make-inline-block {
+    position: relative;
+  }
+
+  > .menu {
+    @include dp-menu {
+      width: calc(100% + 2px);
+      @include full-border-radius(0, 0, $dp-border-radius, $dp-border-radius);
+      transform: scaleY(0);
+      transition: transform 1s ease;
+    }
+  }
+
+  @include add-disabled-conf;
+
+  > .info {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    @include make-arrow($default-arrow-border, $default-arrow-active-border);
+  }
+
+  &.active {
+    @extend %active-menu;
+  }
+
+  &.simple {
+    border: 0;
+    padding: 0;
+    min-width: 0;
+
+    & > .info {
+      @include make-inline-block;
+    }
+
+    .menu {
+      @extend %block-menu-style;
+    }
+
+    &.active {
+      > .title {
+        color: $blue;
+
+        svg, .icon {
+          transition: all .3s;
+          transform: rotateX(180deg);
+        }
+      }
+    }
+
+  }
+
+}
+
+%block-menu-style {
+  @include dp-menu {
+    box-shadow: $default-box-shadow;
+    margin-top: $dp-button-dp-menu-margin;
+    @include border-radius($dp-border-radius);
+    width: auto;
+
+    &.top {
+      top: auto;
+      bottom: 100%;
+      margin-bottom: $dp-button-dp-menu-margin;
+    }
+
+
+    &.right {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+%active-menu {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+
+  & > .menu {
+    display: block;
+    border-top-width: 0;
+  }
+}
+
+.dropdown {
+  @extend .dp-base;
+
+
+  > .title {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &.without-min-width {
+    min-width: 0;
+  }
+
+}
+
+.button-dropdown {
+  @include make-inline-block {
+    vertical-align: $dp-vertical-align;
+  }
+
+  &.disabled {
+    > .button {
+      @extend %not-allowed;
+    }
+  }
+
+  &.active {
+    .menu {
+      display: block;
+
+      transform-origin: center;
+      transition: transform 1s;
+      transform: scaleY(1);
+      left: auto;
+    }
+  }
+
+  .menu {
+    @extend %block-menu-style;
+  }
+
+}
