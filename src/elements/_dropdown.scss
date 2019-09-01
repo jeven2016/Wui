@@ -2,27 +2,40 @@
   @include make-inline-block {
     position: relative;
   }
+}
 
-  > .menu {
-    opacity: 0;
-    transition: all .2s ease-out;
-    transform: scaleY(0.6);
-    transform-origin: top;
-    position: absolute;
-    z-index: map_get($z-index, mask);
-    left: -1px;
-    top: 100%;
-    color: $text-color;
-  }
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  transform-origin: top;
+  z-index: map_get($z-index, mask);
+  color: $text-color;
+}
 
-  @include active2 {
-    > .menu {
-      opacity: 1;
-      transform: scaleY(1);
-    }
-  }
+.dropdown-menu-enter {
+  display: inline-block;
+  transform: scaleY(0);
+}
 
-  &.without-min-width {
-    min-width: 0;
-  }
+.dropdown-menu-enter-done {
+  display: inline-block;
+  opacity: 1;
+  transform: scaleY(1);
+  transition: opacity .2s ease-out, transform .2s ease-out;
+}
+
+.dropdown-menu-exit {
+  display: inline-block;
+  opacity: 1;
+}
+
+.dropdown-menu-exit-active {
+  display: inline-block;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: opacity .2s ease-out, transform .2s ease-out;
+}
+.dropdown-menu-exit-done {
+  display:none;
 }

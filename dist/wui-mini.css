@@ -1171,21 +1171,37 @@ textarea.input {
   position: relative;
   display: inline-block;
   position: relative; }
-  .dropdown > .menu, .select > .menu, .button-dropdown > .menu {
-    opacity: 0;
-    transition: all .2s ease-out;
-    transform: scaleY(0.6);
-    transform-origin: top;
-    position: absolute;
-    z-index: 100;
-    left: -1px;
-    top: 100%;
-    color: #333; }
-  .dropdown.active:not(.disabled) > .menu, .active.select:not(.disabled) > .menu, .button-dropdown.active:not(.disabled) > .menu {
-    opacity: 1;
-    transform: scaleY(1); }
-  .dropdown.without-min-width, .without-min-width.select, .button-dropdown.without-min-width {
-    min-width: 0; }
+
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  position: absolute;
+  transform-origin: top;
+  z-index: 100;
+  color: #333; }
+
+.dropdown-menu-enter {
+  display: inline-block;
+  transform: scaleY(0); }
+
+.dropdown-menu-enter-done {
+  display: inline-block;
+  opacity: 1;
+  transform: scaleY(1);
+  transition: opacity .2s ease-out, transform .2s ease-out; }
+
+.dropdown-menu-exit {
+  display: inline-block;
+  opacity: 1; }
+
+.dropdown-menu-exit-active {
+  display: inline-block;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: opacity .2s ease-out, transform .2s ease-out; }
+
+.dropdown-menu-exit-done {
+  display: none; }
 
 .drawer {
   display: none;
