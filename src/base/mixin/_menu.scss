@@ -13,6 +13,11 @@
     transition: $menu-item-transition;
   }
 
+  @include active3 {
+    color: $white !important;
+    background-color: $primary;
+  }
+
   @include focus-active2 {
     color: $menu-item-hove-text-color;
 

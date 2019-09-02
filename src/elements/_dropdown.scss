@@ -2,40 +2,53 @@
   @include make-inline-block {
     position: relative;
   }
+
+  > .title {;
+    cursor: pointer;
+  }
 }
 
 .dropdown-menu {
   display: none;
   opacity: 0;
   position: absolute;
-  transform-origin: top;
+  transform-origin: center;
   z-index: map_get($z-index, mask);
   color: $text-color;
-}
 
-.dropdown-menu-enter {
-  display: inline-block;
-  transform: scaleY(0);
-}
+  > .menu {
+    background-color: $white;
+  }
 
-.dropdown-menu-enter-done {
-  display: inline-block;
-  opacity: 1;
-  transform: scaleY(1);
-  transition: opacity .2s ease-out, transform .2s ease-out;
-}
+  &-enter {
+    display: inline-block;
+    transform: scaleY(0);
+  }
 
-.dropdown-menu-exit {
-  display: inline-block;
-  opacity: 1;
-}
+  &-enter-done {
+    display: inline-block;
+    opacity: 1;
+    transform: scaleY(1);
+    transition: opacity .2s ease-out, transform .2s ease-out;
+  }
 
-.dropdown-menu-exit-active {
-  display: inline-block;
-  transform: scaleY(0);
-  opacity: 0;
-  transition: opacity .2s ease-out, transform .2s ease-out;
-}
-.dropdown-menu-exit-done {
-  display:none;
+  &-exit {
+    display: inline-block;
+    opacity: 1;
+  }
+
+  &-exit-active {
+    display: inline-block;
+    transform: scaleY(0);
+    opacity: 0;
+    transition: opacity .2s ease-out, transform .2s ease-out;
+  }
+
+  &-exit-done {
+    display: none;
+  }
+
+  .menu-item:not(.disabled)::selection {
+    background: $primary;
+  }
 }

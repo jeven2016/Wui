@@ -22,7 +22,14 @@
 
 //without :active
 @mixin active2() {
-  &.active:not(.disabled) {
+  &:not(.disabled).active {
+    @content;
+  }
+}
+
+//only :active
+@mixin active3() {
+  &:not(.disabled):active {
     @content;
   }
 }
