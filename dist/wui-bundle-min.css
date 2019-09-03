@@ -1171,12 +1171,13 @@ textarea.input {
       -webkit-flex-grow: 1;
       flex-grow: 1; }
 
-.dropdown, .select, .button-dropdown {
+.dropdown, .select {
   position: relative;
   display: inline-block;
   position: relative; }
-  .dropdown > .title, .select > .title, .button-dropdown > .title {
-    cursor: pointer; }
+  .dropdown > .title, .select > .title {
+    cursor: pointer;
+    color: #007aff; }
 
 .dropdown-menu {
   display: none;

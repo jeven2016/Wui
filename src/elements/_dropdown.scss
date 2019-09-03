@@ -1,10 +1,11 @@
-.dropdown, .button-dropdown {
+.dropdown {
   @include make-inline-block {
     position: relative;
   }
 
-  > .title {;
+  > .title {
     cursor: pointer;
+    color: $primary;
   }
 }
 
