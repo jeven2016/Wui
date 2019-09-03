@@ -7,6 +7,12 @@
     cursor: pointer;
     color: $primary;
   }
+
+  &.disabled {
+    > .title {
+      @extend %not-allowed;
+    }
+  }
 }
 
 .dropdown-menu {
@@ -14,7 +20,7 @@
   opacity: 0;
   position: absolute;
   transform-origin: center;
-  z-index: map_get($z-index, mask);
+  z-index: map_get($z-index, pop);
   color: $text-color;
 
   > .menu {
