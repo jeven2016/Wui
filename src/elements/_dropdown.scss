@@ -25,6 +25,13 @@
 
   > .menu {
     background-color: $white;
+
+    .menu-item {
+      @include active3 {
+        color: $white !important;
+        background-color: $primary;
+      }
+    }
   }
 
   &-enter {
@@ -53,9 +60,5 @@
 
   &-exit-done {
     display: none;
-  }
-
-  .menu-item:not(.disabled)::selection {
-    background: $primary;
   }
 }

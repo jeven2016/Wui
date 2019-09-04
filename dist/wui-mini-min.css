@@ -1184,6 +1184,9 @@ textarea.input {
   color: #333; }
   .dropdown-menu > .menu {
     background-color: #fff; }
+    .dropdown-menu > .menu .menu-item:not(.disabled):active {
+      color: #fff !important;
+      background-color: #007aff; }
   .dropdown-menu-enter {
     display: inline-block;
     transform: scaleY(0); }
@@ -1202,8 +1205,6 @@ textarea.input {
     transition: opacity .2s ease-out, transform .2s ease-out; }
   .dropdown-menu-exit-done {
     display: none; }
-  .dropdown-menu .menu-item:not(.disabled)::selection {
-    background: #007aff; }
 
 .drawer {
   display: none;
@@ -2829,6 +2830,7 @@ textarea.input {
       display: -webkit-flex;
       display: flex;
       align-items: center;
+      position: relative;
       line-height: 1.5rem;
       padding: 0.5rem 1rem 0.5rem 1rem;
       white-space: nowrap;
@@ -2836,9 +2838,6 @@ textarea.input {
       border: none;
       min-width: 8rem;
       transition: transition; }
-      .submenu > .menu-list > .menu-item:not(.disabled):active, .menu > .menu-list > .menu-item:not(.disabled):active {
-        color: #fff !important;
-        background-color: #007aff; }
       .submenu > .menu-list > .menu-item:not(.disabled):focus, .menu > .menu-list > .menu-item:not(.disabled):focus, .submenu > .menu-list > .menu-item:not(.disabled):hover, .menu > .menu-list > .menu-item:not(.disabled):hover {
         color: #007aff; }
         .submenu > .menu-list > .menu-item:not(.disabled):focus.with-box, .menu > .menu-list > .menu-item:not(.disabled):focus.with-box, .submenu > .menu-list > .menu-item:not(.disabled):hover.with-box, .menu > .menu-list > .menu-item:not(.disabled):hover.with-box {

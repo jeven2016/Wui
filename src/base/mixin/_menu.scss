@@ -1,6 +1,7 @@
 //normal menu
 @mixin make-menu-item() {
   @include make-flex-vertical-center {
+    position: relative;
     line-height: $menu-item-line-height;
     padding: $menu-item-padding;
     //todo: the dropdown list failed to represent this due to the overflow is set for menu-item
@@ -11,11 +12,6 @@
     border: $menu-item-border;
     min-width: $dp-min-width;
     transition: $menu-item-transition;
-  }
-
-  @include active3 {
-    color: $white !important;
-    background-color: $primary;
   }
 
   @include focus-active2 {
