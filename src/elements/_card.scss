@@ -1,15 +1,14 @@
 .card {
   @include make-inline-flex;
-  flex-direction: column;
+  flex-direction: $card-flex-direction;
   //flex-wrap: wrap;
-  flex-wrap: nowrap; //todo: confirm: 设置成wrap后，会出现card-row高度比子元素的高度高太多的问题
+  flex-wrap: $card-flex-wrap; //todo: confirm: 设置成wrap后，会出现card-row高度比子元素的高度高太多的问题
   width: $card-width;
   border: $card-border;
   @include border-radius($card-border-radius);
   box-shadow: $default-box-shadow;
-  transition: all 0.2s;
-  background-color: $white;
-  //margin: 0.25rem 0.25rem;
+  transition: $card-transition;
+  background-color: $card-background-color;
 
   + .card {
     margin-left: 1rem;
@@ -70,13 +69,6 @@
     }
   }
 
-  /*conflict with other components like dropdown*/
-  /* .menu {
-     width: 100%;
-     display: block;
-     border-width: 0;
-   }*/
-
   .card-row {
     padding: $card-row-padding;
   }
@@ -87,8 +79,6 @@
 
   .card-footer {
     padding: $card-footer-padding;
-    //overflow: auto;
-    //@include full-border-radius(0, 0, $card-border-radius, $card-border-radius);
   }
 
   .card-img {
@@ -99,7 +89,6 @@
 
 
     > .img {
-      //@include border-radius($card-inner-border-radius);
       display: block;
       width: 100%;
     }
@@ -121,11 +110,11 @@
   }
 
   &.block {
-    width: 100%;
     display: flex;
+    width: 100%;
 
     .card-header, .card-body, .card-footer, .card-row {
-      display: block;
+      @include make-block;
     }
   }
 }

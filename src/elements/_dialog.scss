@@ -73,14 +73,16 @@
 
     > .body {
       @extend %content-spacing;
-      border: $dialog-body-border;
+      //border: $dialog-body-border;
       border-left-width: 0;
       border-right-width: 0;
     }
 
     > .footer {
+      @include make-flex {
+        justify-content: flex-end;
+      }
       @extend %content-spacing;
-      background-color: #f5f5f5;
       @include full-border-radius(0, 0, $dialog-inner-border-radius, $dialog-inner-border-radius);
     }
   }

@@ -408,245 +408,245 @@ time, mark, audio, video {
 
 .text.comment {
   color: #818a91 !important; }
-  .text.comment.hover {
+  .text.comment-hover {
     color: inherit !important; }
-    .text.comment.hover:hover, .text.comment.hover:focus {
+    .text.comment-hover:hover, .text.comment-hover:focus {
       color: #818a91 !important; }
-    .text.comment.hover.active {
+    .text.comment-hover.active {
       color: #747d85 !important; }
 
 .text.ok {
   color: #49b847 !important; }
-  .text.ok.hover {
+  .text.ok-hover {
     color: inherit !important; }
-    .text.ok.hover:hover, .text.ok.hover:focus {
+    .text.ok-hover:hover, .text.ok-hover:focus {
       color: #49b847 !important; }
-    .text.ok.hover.active {
+    .text.ok-hover.active {
       color: #42a640 !important; }
 
 .text.error {
   color: #ff350e !important; }
-  .text.error.hover {
+  .text.error-hover {
     color: inherit !important; }
-    .text.error.hover:hover, .text.error.hover:focus {
+    .text.error-hover:hover, .text.error-hover:focus {
       color: #ff350e !important; }
-    .text.error.hover.active {
+    .text.error-hover.active {
       color: #f42700 !important; }
 
 .text.color-primary {
   color: #007aff !important; }
-  .text.color-primary.hover {
+  .text.color-primary-hover {
     color: inherit !important; }
-    .text.color-primary.hover:hover, .text.color-primary.hover:focus {
+    .text.color-primary-hover:hover, .text.color-primary-hover:focus {
       color: #007aff !important; }
-    .text.color-primary.hover.active {
+    .text.color-primary-hover.active {
       color: #006ee6 !important; }
 
 .text.color-secondary {
   color: #ccc !important; }
-  .text.color-secondary.hover {
+  .text.color-secondary-hover {
     color: inherit !important; }
-    .text.color-secondary.hover:hover, .text.color-secondary.hover:focus {
+    .text.color-secondary-hover:hover, .text.color-secondary-hover:focus {
       color: #ccc !important; }
-    .text.color-secondary.hover.active {
+    .text.color-secondary-hover.active {
       color: #bfbfbf !important; }
 
 .text.color-info {
   color: #199cb8 !important; }
-  .text.color-info.hover {
+  .text.color-info-hover {
     color: inherit !important; }
-    .text.color-info.hover:hover, .text.color-info.hover:focus {
+    .text.color-info-hover:hover, .text.color-info-hover:focus {
       color: #199cb8 !important; }
-    .text.color-info.hover.active {
+    .text.color-info-hover.active {
       color: #1689a2 !important; }
 
 .text.color-success {
   color: #49b847 !important; }
-  .text.color-success.hover {
+  .text.color-success-hover {
     color: inherit !important; }
-    .text.color-success.hover:hover, .text.color-success.hover:focus {
+    .text.color-success-hover:hover, .text.color-success-hover:focus {
       color: #49b847 !important; }
-    .text.color-success.hover.active {
+    .text.color-success-hover.active {
       color: #42a640 !important; }
 
 .text.color-warning {
   color: #fbbe11 !important; }
-  .text.color-warning.hover {
+  .text.color-warning-hover {
     color: inherit !important; }
-    .text.color-warning.hover:hover, .text.color-warning.hover:focus {
+    .text.color-warning-hover:hover, .text.color-warning-hover:focus {
       color: #fbbe11 !important; }
-    .text.color-warning.hover.active {
+    .text.color-warning-hover.active {
       color: #eeb104 !important; }
 
 .text.color-danger {
   color: #ff350e !important; }
-  .text.color-danger.hover {
+  .text.color-danger-hover {
     color: inherit !important; }
-    .text.color-danger.hover:hover, .text.color-danger.hover:focus {
+    .text.color-danger-hover:hover, .text.color-danger-hover:focus {
       color: #ff350e !important; }
-    .text.color-danger.hover.active {
+    .text.color-danger-hover.active {
       color: #f42700 !important; }
 
 .text.color-black {
   color: #000000 !important; }
-  .text.color-black.hover {
+  .text.color-black-hover {
     color: inherit !important; }
-    .text.color-black.hover:hover, .text.color-black.hover:focus {
+    .text.color-black-hover:hover, .text.color-black-hover:focus {
       color: #000000 !important; }
-    .text.color-black.hover.active {
+    .text.color-black-hover.active {
       color: black !important; }
 
 .text.color-blue {
   color: #007aff !important; }
-  .text.color-blue.hover {
+  .text.color-blue-hover {
     color: inherit !important; }
-    .text.color-blue.hover:hover, .text.color-blue.hover:focus {
+    .text.color-blue-hover:hover, .text.color-blue-hover:focus {
       color: #007aff !important; }
-    .text.color-blue.hover.active {
+    .text.color-blue-hover.active {
       color: #006ee6 !important; }
 
 .text.color-brown {
   color: #a5742f !important; }
-  .text.color-brown.hover {
+  .text.color-brown-hover {
     color: inherit !important; }
-    .text.color-brown.hover:hover, .text.color-brown.hover:focus {
+    .text.color-brown-hover:hover, .text.color-brown-hover:focus {
       color: #a5742f !important; }
-    .text.color-brown.hover.active {
+    .text.color-brown-hover.active {
       color: #916629 !important; }
 
 .text.color-cyan {
   color: #199cb8 !important; }
-  .text.color-cyan.hover {
+  .text.color-cyan-hover {
     color: inherit !important; }
-    .text.color-cyan.hover:hover, .text.color-cyan.hover:focus {
+    .text.color-cyan-hover:hover, .text.color-cyan-hover:focus {
       color: #199cb8 !important; }
-    .text.color-cyan.hover.active {
+    .text.color-cyan-hover.active {
       color: #1689a2 !important; }
 
 .text.color-dark {
   color: #6c757d !important; }
-  .text.color-dark.hover {
+  .text.color-dark-hover {
     color: inherit !important; }
-    .text.color-dark.hover:hover, .text.color-dark.hover:focus {
+    .text.color-dark-hover:hover, .text.color-dark-hover:focus {
       color: #6c757d !important; }
-    .text.color-dark.hover.active {
+    .text.color-dark-hover.active {
       color: #60686f !important; }
 
 .text.color-green {
   color: #49b847 !important; }
-  .text.color-green.hover {
+  .text.color-green-hover {
     color: inherit !important; }
-    .text.color-green.hover:hover, .text.color-green.hover:focus {
+    .text.color-green-hover:hover, .text.color-green-hover:focus {
       color: #49b847 !important; }
-    .text.color-green.hover.active {
+    .text.color-green-hover.active {
       color: #42a640 !important; }
 
 .text.color-gray {
   color: #ccc !important; }
-  .text.color-gray.hover {
+  .text.color-gray-hover {
     color: inherit !important; }
-    .text.color-gray.hover:hover, .text.color-gray.hover:focus {
+    .text.color-gray-hover:hover, .text.color-gray-hover:focus {
       color: #ccc !important; }
-    .text.color-gray.hover.active {
+    .text.color-gray-hover.active {
       color: #bfbfbf !important; }
 
 .text.color-gray-darker {
   color: #6c757d !important; }
-  .text.color-gray-darker.hover {
+  .text.color-gray-darker-hover {
     color: inherit !important; }
-    .text.color-gray-darker.hover:hover, .text.color-gray-darker.hover:focus {
+    .text.color-gray-darker-hover:hover, .text.color-gray-darker-hover:focus {
       color: #6c757d !important; }
-    .text.color-gray-darker.hover.active {
+    .text.color-gray-darker-hover.active {
       color: #60686f !important; }
 
 .text.color-light {
   color: #f8f9fa !important; }
-  .text.color-light.hover {
+  .text.color-light-hover {
     color: inherit !important; }
-    .text.color-light.hover:hover, .text.color-light.hover:focus {
+    .text.color-light-hover:hover, .text.color-light-hover:focus {
       color: #f8f9fa !important; }
-    .text.color-light.hover.active {
+    .text.color-light-hover.active {
       color: #e9ecef !important; }
 
 .text.color-light-gray {
   color: #f5f5f5 !important; }
-  .text.color-light-gray.hover {
+  .text.color-light-gray-hover {
     color: inherit !important; }
-    .text.color-light-gray.hover:hover, .text.color-light-gray.hover:focus {
+    .text.color-light-gray-hover:hover, .text.color-light-gray-hover:focus {
       color: #f5f5f5 !important; }
-    .text.color-light-gray.hover.active {
+    .text.color-light-gray-hover.active {
       color: #e8e8e8 !important; }
 
 .text.color-orange {
   color: #f2791a !important; }
-  .text.color-orange.hover {
+  .text.color-orange-hover {
     color: inherit !important; }
-    .text.color-orange.hover:hover, .text.color-orange.hover:focus {
+    .text.color-orange-hover:hover, .text.color-orange-hover:focus {
       color: #f2791a !important; }
-    .text.color-orange.hover.active {
+    .text.color-orange-hover.active {
       color: #e56c0d !important; }
 
 .text.color-pink {
   color: #e02c92 !important; }
-  .text.color-pink.hover {
+  .text.color-pink-hover {
     color: inherit !important; }
-    .text.color-pink.hover:hover, .text.color-pink.hover:focus {
+    .text.color-pink-hover:hover, .text.color-pink-hover:focus {
       color: #e02c92 !important; }
-    .text.color-pink.hover.active {
+    .text.color-pink-hover.active {
       color: #d31f85 !important; }
 
 .text.color-purple {
   color: #9935c8 !important; }
-  .text.color-purple.hover {
+  .text.color-purple-hover {
     color: inherit !important; }
-    .text.color-purple.hover:hover, .text.color-purple.hover:focus {
+    .text.color-purple-hover:hover, .text.color-purple-hover:focus {
       color: #9935c8 !important; }
-    .text.color-purple.hover.active {
+    .text.color-purple-hover.active {
       color: #8a30b4 !important; }
 
 .text.color-red {
   color: #ff350e !important; }
-  .text.color-red.hover {
+  .text.color-red-hover {
     color: inherit !important; }
-    .text.color-red.hover:hover, .text.color-red.hover:focus {
+    .text.color-red-hover:hover, .text.color-red-hover:focus {
       color: #ff350e !important; }
-    .text.color-red.hover.active {
+    .text.color-red-hover.active {
       color: #f42700 !important; }
 
 .text.color-yellow {
   color: #fbbe11 !important; }
-  .text.color-yellow.hover {
+  .text.color-yellow-hover {
     color: inherit !important; }
-    .text.color-yellow.hover:hover, .text.color-yellow.hover:focus {
+    .text.color-yellow-hover:hover, .text.color-yellow-hover:focus {
       color: #fbbe11 !important; }
-    .text.color-yellow.hover.active {
+    .text.color-yellow-hover.active {
       color: #eeb104 !important; }
 
 .text.color-teal {
   color: #0d806d !important; }
-  .text.color-teal.hover {
+  .text.color-teal-hover {
     color: inherit !important; }
-    .text.color-teal.hover:hover, .text.color-teal.hover:focus {
+    .text.color-teal-hover:hover, .text.color-teal-hover:focus {
       color: #0d806d !important; }
-    .text.color-teal.hover.active {
+    .text.color-teal-hover.active {
       color: #0b6959 !important; }
 
 .text.color-violet {
   color: #5f33c9 !important; }
-  .text.color-violet.hover {
+  .text.color-violet-hover {
     color: inherit !important; }
-    .text.color-violet.hover:hover, .text.color-violet.hover:focus {
+    .text.color-violet-hover:hover, .text.color-violet-hover:focus {
       color: #5f33c9 !important; }
-    .text.color-violet.hover.active {
+    .text.color-violet-hover.active {
       color: #552eb5 !important; }
 
 .text.color-white {
   color: #fff !important; }
-  .text.color-white.hover {
+  .text.color-white-hover {
     color: inherit !important; }
-    .text.color-white.hover:hover, .text.color-white.hover:focus {
+    .text.color-white-hover:hover, .text.color-white-hover:focus {
       color: #fff !important; }
-    .text.color-white.hover.active {
+    .text.color-white-hover.active {
       color: #f2f2f2 !important; }
 
 .bg-comment {
@@ -2239,13 +2239,7 @@ textarea.input {
   border-radius: 0.25rem;
   box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.12);
   transition: all 0.2s;
-  background-color: #fff;
-  /*conflict with other components like dropdown*/
-  /* .menu {
-     width: 100%;
-     display: block;
-     border-width: 0;
-   }*/ }
+  background-color: #fff; }
   .card + .card {
     margin-left: 1rem; }
   .card.scale:focus, .card.scale:hover {
@@ -2296,9 +2290,10 @@ textarea.input {
       .card .card-img > .overlay-title:focus, .card .card-img > .overlay-title:hover {
         text-shadow: 1px 1px 2px #333, 0 0 25px #fff, 0 0 5px #007aff; }
   .card.block {
-    width: 100%;
-    display: flex; }
+    display: flex;
+    width: 100%; }
     .card.block .card-header, .card.block .card-body, .card.block .card-footer, .card.block .card-row {
+      position: relative;
       display: block; }
 
 .row {
@@ -2633,11 +2628,13 @@ textarea.input {
         .dialog > .content > .header > .icon:hover {
           color: black; }
     .dialog > .content > .body {
-      border: 1px solid #ccc;
       border-left-width: 0;
       border-right-width: 0; }
     .dialog > .content > .footer {
-      background-color: #f5f5f5;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      justify-content: flex-end;
       border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px); }
   .dialog.simple {
     background-color: rgba(0, 0, 0, 0.85); }
