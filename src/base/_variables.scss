@@ -317,6 +317,9 @@ $menu-dark-menu-header-focus-color: $white;
 $menu-dark-disabled-menu-item-color: darken($white, 40%);
 
 //for drop down
+$dp-position: relative;
+$dp-title-cursor: pointer;
+$dp-title-color: $primary;
 $dp-cursor: pointer;
 $dp-outline: 0;
 $dp-text-align: center;
@@ -330,7 +333,27 @@ $dp-min-width: 8rem;
 $dp-background-color: $white;
 $dp-item-border: 1px solid #ccc;
 $dp-border-radius: $default-border-radius;
-$dp-button-dp-menu-margin: 0.2rem;
+$dp-menu-display: none;
+$dp-menu-opacity: 0;
+$dp-menu-position: absolute;
+$dp-menu-transform-origin: center;
+$dp-menu-z-index: map_get($z-index, pop);
+$dp-menu-color: $text-color;
+$dp-menu-item-color: $white !important;
+$dp-menu-item-background-color: $primary;
+$dp-menu-enter-display: inline-block;
+$dp-menu-enter-transform: scaleY(0);
+$dp-menu-enter-done-display: inline-block;
+$dp-menu-enter-done-opacity: 1;
+$dp-menu-enter-done-transform: scaleY(1);
+$dp-menu-enter-done-transition: opacity .2s ease-out, transform .2s ease-out;
+$dp-menu-exit-display: inline-block;
+$dp-menu-exit-opacity: 1;
+$dp-menu-exit-active-display: inline-block;
+$dp-menu-exit-activetransform: scaleY(0);
+$dp-menu-exit-activeopacity: 0;
+$dp-menu-exit-activetransition: opacity .2s ease-out, transform .2s ease-out;
+$dp-menu--exit-done-display: none;
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 

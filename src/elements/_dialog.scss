@@ -13,13 +13,13 @@
     display: block;
 
     > .content {
-      animation: open-dialog 0.6s
+      animation: open-dialog 0.3s
     }
   }
 
   > .content {
     position: relative;
-    margin: $dialog-content-margin;
+    //margin: $dialog-content-margin;
     border: $dialog-content-border;
     width: 95%;
     min-height: 1rem;
@@ -47,6 +47,7 @@
     }
 
     > .header {
+      cursor: move;
       @extend %content-spacing;
       font-size: 1.25rem;
       font-weight: map-get($font-weight, 'normal');
@@ -84,6 +85,16 @@
       }
       @extend %content-spacing;
       @include full-border-radius(0, 0, $dialog-inner-border-radius, $dialog-inner-border-radius);
+    }
+
+    &-enter{
+
+    }
+    &-enter-active{
+
+    }
+    &-enter-done{
+
     }
   }
 

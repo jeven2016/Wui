@@ -1,11 +1,11 @@
 .dropdown {
   @include make-inline-block {
-    position: relative;
+    position: $dp-position;
   }
 
   > .title {
-    cursor: pointer;
-    color: $primary;
+    cursor: $dp-title-cursor;
+    color: $dp-title-color;
   }
 
   &.disabled {
@@ -16,49 +16,49 @@
 }
 
 .dropdown-menu {
-  display: none;
-  opacity: 0;
-  position: absolute;
-  transform-origin: center;
-  z-index: map_get($z-index, pop);
-  color: $text-color;
+  display: $dp-menu-display;
+  opacity: $dp-menu-opacity;
+  position: $dp-menu-position;
+  transform-origin: $dp-menu-transform-origin;
+  z-index: $dp-menu-z-index;
+  color: $dp-menu-color;
 
   > .menu {
     background-color: $white;
 
     .menu-item {
       @include active3 {
-        color: $white !important;
-        background-color: $primary;
+        color: $dp-menu-item-color;
+        background-color: $dp-menu-item-background-color;
       }
     }
   }
 
   &-enter {
-    display: inline-block;
-    transform: scaleY(0);
+    display: $dp-menu-enter-display;
+    transform: $dp-menu-enter-transform;
   }
 
   &-enter-done {
-    display: inline-block;
-    opacity: 1;
-    transform: scaleY(1);
-    transition: opacity .2s ease-out, transform .2s ease-out;
+    display: $dp-menu-enter-done-display;
+    opacity: $dp-menu-enter-done-opacity;
+    transform: $dp-menu-enter-done-transform;
+    transition: $dp-menu-enter-done-transition;
   }
 
   &-exit {
-    display: inline-block;
-    opacity: 1;
+    display: $dp-menu-exit-display;
+    opacity: $dp-menu-exit-opacity;
   }
 
   &-exit-active {
-    display: inline-block;
-    transform: scaleY(0);
-    opacity: 0;
-    transition: opacity .2s ease-out, transform .2s ease-out;
+    display: $dp-menu-exit-active-display;
+    transform: $dp-menu-exit-activetransform;
+    opacity: $dp-menu-exit-activeopacity;
+    transition: $dp-menu-exit-activetransition;
   }
 
   &-exit-done {
-    display: none;
+    display: $dp-menu--exit-done-display;
   }
 }
