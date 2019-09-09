@@ -2602,7 +2602,6 @@ textarea.input {
       animation: open-dialog 0.3s; }
   .dialog > .content {
     position: absolute;
-    margin: 4rem auto;
     border: none;
     width: 95%;
     min-height: 1rem;
@@ -2620,9 +2619,11 @@ textarea.input {
       .dialog > .content {
         width: 55%; } }
     .dialog > .content > .header {
-      cursor: move;
+      cursor: grab;
       font-size: 1.25rem;
       font-weight: 500; }
+      .dialog > .content > .header:active {
+        cursor: grabbing; }
       .dialog > .content > .header > .title {
         float: left; }
       .dialog > .content > .header > .icon {

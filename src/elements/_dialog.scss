@@ -18,7 +18,7 @@
   }
 
   > .content {
-    position: relative;
+    position: absolute;
     //margin: $dialog-content-margin;
     border: $dialog-content-border;
     width: 95%;
@@ -47,10 +47,14 @@
     }
 
     > .header {
-      cursor: move;
+      cursor: grab;
       @extend %content-spacing;
       font-size: 1.25rem;
       font-weight: map-get($font-weight, 'normal');
+
+      &:active {
+        cursor: grabbing;
+      }
 
       > .title {
         @extend %inline-block-style;
@@ -87,13 +91,15 @@
       @include full-border-radius(0, 0, $dialog-inner-border-radius, $dialog-inner-border-radius);
     }
 
-    &-enter{
+    &-enter {
 
     }
-    &-enter-active{
+
+    &-enter-active {
 
     }
-    &-enter-done{
+
+    &-enter-done {
 
     }
   }
