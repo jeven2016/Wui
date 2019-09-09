@@ -22,6 +22,7 @@
     //margin: $dialog-content-margin;
     border: $dialog-content-border;
     width: 95%;
+    transform-origin: center;
     min-height: 1rem;
     z-index: map_get($z-index, 'top');
     background-color: $dialog-content-background-color;

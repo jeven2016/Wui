@@ -346,13 +346,13 @@ $dp-menu-enter-transform: scaleY(0);
 $dp-menu-enter-done-display: inline-block;
 $dp-menu-enter-done-opacity: 1;
 $dp-menu-enter-done-transform: scaleY(1);
-$dp-menu-enter-done-transition: opacity .2s ease-out, transform .2s ease-out;
+$dp-menu-enter-done-transition: opacity .3s ease-out, transform .2s ease-out;
 $dp-menu-exit-display: inline-block;
 $dp-menu-exit-opacity: 1;
 $dp-menu-exit-active-display: inline-block;
 $dp-menu-exit-activetransform: scaleY(0);
 $dp-menu-exit-activeopacity: 0;
-$dp-menu-exit-activetransition: opacity .2s ease-out, transform .2s ease-out;
+$dp-menu-exit-activetransition: opacity .3s ease-out, transform .2s ease-out;
 $dp-menu--exit-done-display: none;
 
 ///////////////////////////////////////////////////////////////////////////////////////////

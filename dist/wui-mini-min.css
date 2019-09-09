@@ -1194,7 +1194,7 @@ textarea.input {
     display: inline-block;
     opacity: 1;
     transform: scaleY(1);
-    transition: opacity 0.2s ease-out, transform 0.2s ease-out; }
+    transition: opacity 0.3s ease-out, transform 0.2s ease-out; }
   .dropdown-menu-exit {
     display: inline-block;
     opacity: 1; }
@@ -1202,7 +1202,7 @@ textarea.input {
     display: inline-block;
     transform: scaleY(0);
     opacity: 0;
-    transition: opacity 0.2s ease-out, transform 0.2s ease-out; }
+    transition: opacity 0.3s ease-out, transform 0.2s ease-out; }
   .dropdown-menu-exit-done {
     display: none; }
 
@@ -2600,6 +2600,7 @@ textarea.input {
     position: absolute;
     border: none;
     width: 95%;
+    transform-origin: center;
     min-height: 1rem;
     z-index: 1000;
     background-color: #fff;
