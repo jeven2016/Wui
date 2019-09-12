@@ -14,7 +14,7 @@
   padding: 0;
   background-color: rgba(0, 0, 0, .5);
   z-index: map_get($z-index, 'mask');
-  transition: display .2s ease-in-out;
+  transition: display .4s ease-in-out;
   overflow: hidden;
 
   &.active {

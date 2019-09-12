@@ -343,7 +343,7 @@ time, mark, audio, video {
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem; }
 
-.dialog > .content > .header > .title, .dialog > .content > .header > .icon {
+.dialog > .dialog-container > .content > .header > .title, .dialog > .dialog-container > .content > .header > .icon {
   position: relative;
   display: inline-block; }
 
@@ -357,7 +357,7 @@ time, mark, audio, video {
   padding: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 100;
-  transition: display .2s ease-in-out;
+  transition: display .4s ease-in-out;
   overflow: hidden; }
   .mask.active, .active.dialog {
     display: block; }
@@ -380,7 +380,7 @@ time, mark, audio, video {
 .clear-radius {
   border-radius: 0 !important; }
 
-.clear-fix::after, .dialog > .content > .header::after {
+.clear-fix::after, .dialog > .dialog-container > .content > .header::after {
   content: '';
   display: table;
   clear: both; }
@@ -2584,77 +2584,94 @@ textarea.input {
   .row .order-12 {
     order: 12; }
 
-.dialog > .content > .header, .dialog > .content > .body, .dialog > .content > .footer {
+.dialog > .dialog-container > .content > .header, .dialog > .dialog-container > .content > .body, .dialog > .dialog-container > .content > .footer {
   min-height: 1rem;
   padding: 1rem; }
 
 .dialog {
-  display: none;
-  z-index: 1000;
-  transition: all .4s; }
-  .dialog.show {
-    display: block; }
-    .dialog.show > .content {
-      animation: open-dialog 0.3s; }
-  .dialog > .content {
-    position: absolute;
-    border: none;
-    width: 95%;
-    transform-origin: center;
-    min-height: 1rem;
-    z-index: 1000;
-    background-color: #fff;
-    border-radius: 0.25rem;
-    box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.12); }
-    @media (min-width: 576px) {
-      .dialog > .content {
-        width: 75%; } }
-    @media (min-width: 768px) {
-      .dialog > .content {
-        width: 65%; } }
-    @media (min-width: 992px) {
-      .dialog > .content {
-        width: 55%; } }
-    .dialog > .content > .header {
-      cursor: grab;
-      font-size: 1.25rem;
-      font-weight: 500; }
-      .dialog > .content > .header:active {
-        cursor: grabbing; }
-      .dialog > .content > .header > .title {
-        float: left; }
-      .dialog > .content > .header > .icon {
-        float: right;
-        font-size: 1.5rem;
-        color: rgba(0, 0, 0, 0.4);
-        cursor: pointer; }
-        .dialog > .content > .header > .icon:hover {
-          color: black; }
-    .dialog > .content > .body {
-      border-left-width: 0;
-      border-right-width: 0; }
-    .dialog > .content > .footer {
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      justify-content: flex-end;
-      border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px); }
-  .dialog.simple {
-    background-color: rgba(0, 0, 0, 0.85); }
-    .dialog.simple > .content {
-      border-width: 0;
-      box-shadow: none;
-      color: #fff;
-      background-color: transparent; }
-      .dialog.simple > .content > .header, .dialog.simple > .content > .body, .dialog.simple > .content > .footer {
-        border-width: 0;
-        border-radius: 0;
-        color: inherit; }
-      .dialog.simple > .content > .footer {
-        background: transparent; }
-  .dialog.primary > .content > .header {
-    background-color: #007aff;
-    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0; }
+  background: transparent;
+  z-index: 1000; }
+  .dialog > .dialog-container {
+    position: absolute; }
+    .dialog > .dialog-container > .content {
+      position: relative;
+      margin: 1rem auto;
+      border: none;
+      width: 90%;
+      transform-origin: center;
+      min-height: 1rem;
+      z-index: 1000;
+      background-color: #fff;
+      border-radius: 0.25rem;
+      box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.12); }
+      @media (min-width: 576px) {
+        .dialog > .dialog-container > .content {
+          width: 75%; } }
+      @media (min-width: 768px) {
+        .dialog > .dialog-container > .content {
+          width: 65%; } }
+      @media (min-width: 992px) {
+        .dialog > .dialog-container > .content {
+          width: 55%; } }
+      .dialog > .dialog-container > .content > .header {
+        cursor: grab;
+        font-size: 1.25rem;
+        font-weight: 500; }
+        .dialog > .dialog-container > .content > .header:active {
+          cursor: grabbing; }
+        .dialog > .dialog-container > .content > .header > .title {
+          float: left; }
+        .dialog > .dialog-container > .content > .header > .icon {
+          float: right;
+          font-size: 1.5rem;
+          color: rgba(0, 0, 0, 0.4);
+          cursor: pointer; }
+          .dialog > .dialog-container > .content > .header > .icon:hover {
+            color: black; }
+      .dialog > .dialog-container > .content > .body {
+        border-left-width: 0;
+        border-right-width: 0; }
+      .dialog > .dialog-container > .content > .footer {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: flex-end;
+        border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px); }
+  .dialog.normal > .dialog-container-enter {
+    transform: translateY(-100%);
+    opacity: 0; }
+  .dialog.normal > .dialog-container-enter-active {
+    opacity: 1;
+    transform: translateY(5vw);
+    transition: opacity .2s, transform .2s; }
+  .dialog.normal > .dialog-container-enter-done {
+    transform: translateY(5vw); }
+  .dialog.normal > .dialog-container-exit {
+    opacity: 1;
+    transform: translateY(10vw); }
+  .dialog.normal > .dialog-container-exit-active {
+    opacity: 1;
+    transform: translateY(-20rem);
+    transition: opacity .2s, transform .2s; }
+  .dialog.align-center {
+    display: flex;
+    align-items: center; }
+    .dialog.align-center > .dialog-container-enter {
+      transform: scale(0);
+      opacity: 0; }
+    .dialog.align-center > .dialog-container-enter-active {
+      transform: scale(1);
+      opacity: 1;
+      transition: opacity .2s, transform .2s; }
+    .dialog.align-center > .dialog-container-enter-done {
+      transform: scale(1); }
+    .dialog.align-center > .dialog-container-exit {
+      transform: scale(1);
+      opacity: 1; }
+    .dialog.align-center > .dialog-container-exit-active {
+      transform: scale(0.3);
+      opacity: 0;
+      transition: opacity .2s, transform .2s; }
 
 .navbar {
   display: -ms-flexbox;

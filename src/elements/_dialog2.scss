@@ -5,12 +5,85 @@
 
 .dialog {
   @extend .mask;
-  background: transparent;
+  display: none;
   z-index: map_get($z-index, 'top');
+
+  &.normal {
+    > .dialog-container {
+      &-exit {
+        opacity: 1;
+        transform: translateY(10vw);
+      }
+
+      &-exit-active {
+        opacity: 1;
+        transform: translateY(-20rem);
+        transition: opacity .2s, transform .2s;
+      }
+    }
+  }
+
+
+  &.align-center {
+    > .dialog-container {
+      &-exit {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      &-exit-active {
+        transform: scale(0.3);
+        opacity: 0;
+        transition: opacity .2s, transform .2s;
+      }
+    }
+  }
+
+  &.show {
+    display: block;
+    opacity: 1;
+
+    &.normal {
+      > .dialog-container {
+        &-enter {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+
+        &-enter-active {
+          opacity: 1;
+          transform: translateY(5vw);
+          transition: opacity .2s, transform .2s;
+        }
+
+        &-enter-done {
+          transform: translateY(5vw);
+        }
+      }
+    }
+
+    &.align-center {
+      > .dialog-container {
+        &-enter {
+          transform: scale(0);
+          opacity: 0;
+        }
+
+        &-enter-active {
+          transform: scale(1);
+          opacity: 1;
+          transition: opacity .2s, transform .2s;
+        }
+
+        &-enter-done {
+          transform: scale(1);
+        }
+      }
+    }
+  }
 
   > .dialog-container {
     position: absolute;
-
 
     > .content {
       position: relative;
@@ -89,68 +162,33 @@
     }
   }
 
-  &.normal {
+
+  &.simple {
+    background-color: rgba(0, 0, 0, .85);
+
     > .dialog-container {
-      &-enter {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
+      > .content {
+        border-width: 0;
+        box-shadow: none;
+        color: $white;
+        background-color: transparent;
 
-      &-enter-active {
-        opacity: 1;
-        transform: translateY(5vw);
-        transition: opacity .2s, transform .2s;
-      }
+        > .header, > .body, > .footer {
+          border-width: 0;
+          border-radius: 0;
+          color: inherit;
+        }
 
-      &-enter-done {
-        transform: translateY(5vw);
+        > .footer {
+          background: transparent;
+        }
       }
-
-      &-exit {
-        opacity: 1;
-        transform: translateY(10vw);
-      }
-
-      &-exit-active {
-        opacity: 1;
-        transform: translateY(-20rem);
-        transition: opacity .2s, transform .2s;
-      }
-
     }
   }
 
-  &.align-center {
-    display: flex;
-    align-items: center;
-
-    > .dialog-container {
-      &-enter {
-        transform: scale(0);
-        opacity: 0;
-      }
-
-      &-enter-active {
-        transform: scale(1);
-        opacity: 1;
-        transition: opacity .2s, transform .2s;
-      }
-
-      &-enter-done {
-        transform: scale(1);
-      }
-
-      &-exit {
-        transform: scale(1);
-        opacity: 1;
-      }
-
-      &-exit-active {
-        transform: scale(0.3);
-        opacity: 0;
-        transition: opacity .2s, transform .2s;
-      }
-    }
+  &.primary > .dialog-container > .content > .header {
+    background-color: $dialog-header-primary-background-color;
+    @include full-border-radius($dialog-inner-border-radius, $dialog-inner-border-radius, 0, 0);
   }
 
 }
