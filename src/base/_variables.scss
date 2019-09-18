@@ -458,13 +458,29 @@ $card-overlay-title-width: 100%;
 $card-overlay-title-background-color: rgba(0, 0, 0, .4);
 
 // For dialog
+$dialog-background: transparent;
+$dialog-z-index: map_get($z-index, 'top');
+$dialog-container-position: absolute;
+$dialog-container-width: 100%;
+$dialog-content-width: 90%;
+$dialog-content-transform-origin: center;
+$dialog-content-min-height: 1rem;
+$dialog-content-z-index: map_get($z-index, 'top');
+$dialog-content-width-sm: 75%;
+$dialog-content-width-md: 65%;
+$dialog-content-width-lg: 55%;
+$dialog-content-position: relative;
 $dialog-content-background-color: #fff;
-$dialog-border-width: 1px;
+$dialog-border-width: $default-border-width;
 $dialog-content-border: none;
 $dialog-content-margin: 1rem auto;
+
+$dialog-header-cursor: grab;
+$dialog-header-active-cursor: grabbing;
+$dialog-header-font-size: 1.25rem;
+$dialog-header-font-weight: map-get($font-weight, 'normal');
 $dialog-header-primary-background-color: $blue;
 $dialog-border-radius: $default-border-radius;
-$dialog-body-border: $dialog-border-width solid $default-border-color;
 $dialog-icon-color: rgba(0, 0, 0, .4);
 $dialog-icon-color-hover: rgb(0, 0, 0);
 $dialog-inner-border-radius: calc(#{$dialog-border-radius} - #{$dialog-border-width});

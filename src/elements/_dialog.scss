@@ -5,51 +5,52 @@
 
 .dialog {
   @extend .mask;
-  background: transparent;
-  z-index: map_get($z-index, 'top');
+  background: $dialog-background;
+  z-index: $dialog-z-index;
 
   > .dialog-container {
-    position: absolute;
+    position: $dialog-container-position;
+    width: $dialog-container-width;
 
 
     > .content {
-      position: relative;
+      position: $dialog-content-position;
       margin: $dialog-content-margin;
       border: $dialog-content-border;
-      width: 90%;
-      transform-origin: center;
-      min-height: 1rem;
-      z-index: map_get($z-index, 'top');
+      width: $dialog-content-width;
+      transform-origin: $dialog-content-transform-origin;
+      min-height: $dialog-content-min-height;
+      z-index: $dialog-content-z-index;
       background-color: $dialog-content-background-color;
       @include border-radius($dialog-border-radius);
       box-shadow: $default-box-shadow;
 
       @include adapter-width('min-width', map-get($bs-layout, 'sm')) {
         & {
-          width: 75%;
+          width: $dialog-content-width-sm;
         }
       }
 
       @include adapter-width('min-width', map-get($bs-layout, 'md')) {
         & {
-          width: 65%;
+          width: $dialog-content-width-md;
         }
       }
 
       @include adapter-width('min-width', map-get($bs-layout, 'lg')) {
         & {
-          width: 55%;
+          width: $dialog-content-width-lg;
         }
       }
 
       > .header {
-        cursor: grab;
+        cursor: $dialog-header-cursor;
         @extend %content-spacing;
-        font-size: 1.25rem;
-        font-weight: map-get($font-weight, 'normal');
+        font-size: $dialog-header-font-size;
+        font-weight: $dialog-header-font-weight;
 
         &:active {
-          cursor: grabbing;
+          cursor: $dialog-header-active-cursor;
         }
 
         > .title {
@@ -150,6 +151,46 @@
         opacity: 0;
         transition: opacity .2s, transform .2s;
       }
+    }
+  }
+
+  &.simple {
+    background-color: rgba(0, 0, 0, .5);
+
+    > .dialog-container {
+      > .content {
+        border-width: 0;
+        box-shadow: none;
+        color: $white;
+        background-color: transparent;
+
+        > .header, > .body, > .footer {
+          border-width: 0;
+          border-radius: 0;
+          color: inherit;
+        }
+
+        > .footer {
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  &.primary > .dialog-container > .content {
+    > .header {
+      background-color: $dialog-header-primary-background-color;
+      color: $white;
+      @include full-border-radius($dialog-inner-border-radius, $dialog-inner-border-radius, 0, 0);
+    }
+
+    > .body {
+      border-top: $default-border;
+      border-bottom: $default-border;
+    }
+
+    > .footer {
+      background-color: $light-gray;
     }
   }
 

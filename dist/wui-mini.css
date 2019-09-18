@@ -2592,7 +2592,8 @@ textarea.input {
   background: transparent;
   z-index: 1000; }
   .dialog > .dialog-container {
-    position: absolute; }
+    position: absolute;
+    width: 100%; }
     .dialog > .dialog-container > .content {
       position: relative;
       margin: 1rem auto;
@@ -2672,6 +2673,28 @@ textarea.input {
       transform: scale(0.3);
       opacity: 0;
       transition: opacity .2s, transform .2s; }
+  .dialog.simple {
+    background-color: rgba(0, 0, 0, 0.5); }
+    .dialog.simple > .dialog-container > .content {
+      border-width: 0;
+      box-shadow: none;
+      color: #fff;
+      background-color: transparent; }
+      .dialog.simple > .dialog-container > .content > .header, .dialog.simple > .dialog-container > .content > .body, .dialog.simple > .dialog-container > .content > .footer {
+        border-width: 0;
+        border-radius: 0;
+        color: inherit; }
+      .dialog.simple > .dialog-container > .content > .footer {
+        background: transparent; }
+  .dialog.primary > .dialog-container > .content > .header {
+    background-color: #007aff;
+    color: #fff;
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0; }
+  .dialog.primary > .dialog-container > .content > .body {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; }
+  .dialog.primary > .dialog-container > .content > .footer {
+    background-color: #f5f5f5; }
 
 .navbar {
   display: -ms-flexbox;
