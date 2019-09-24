@@ -51,3 +51,15 @@
     @content;
   }
 }
+
+@mixin make-visible() {
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.inactive {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

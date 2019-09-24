@@ -4,7 +4,7 @@
   display: inline-block;
 }
 
-.mask {
+%mask-content {
   position: fixed;
   top: 0;
   left: 0;
@@ -14,16 +14,14 @@
   padding: 0;
   background-color: rgba(0, 0, 0, .5);
   z-index: map_get($z-index, 'mask');
-  transition: display .4s ease-in-out;
+
   overflow: hidden;
+}
 
-  &.active {
-    display: block;
-  }
-
-  &.inactive {
-    display: none;
-  }
+.mask {
+  @extend %mask-content;
+  transition: opacity .3s ease-in-out;
+  @include make-visible;
 }
 
 .pull-left {

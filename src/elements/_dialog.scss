@@ -1,12 +1,21 @@
 %content-spacing {
   min-height: 1rem;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
 }
+
+%body-spacing {
+  min-height: 1rem;
+  padding: 1rem 1rem;
+}
+
+$animation-timeout: .3s;
 
 .dialog {
   @extend .mask;
   background: $dialog-background;
   z-index: $dialog-z-index;
+  visibility: hidden;
+  opacity: 0;
 
   > .dialog-container {
     position: $dialog-container-position;
@@ -24,24 +33,6 @@
       background-color: $dialog-content-background-color;
       @include border-radius($dialog-border-radius);
       box-shadow: $default-box-shadow;
-
-      @include adapter-width('min-width', map-get($bs-layout, 'sm')) {
-        & {
-          width: $dialog-content-width-sm;
-        }
-      }
-
-      @include adapter-width('min-width', map-get($bs-layout, 'md')) {
-        & {
-          width: $dialog-content-width-md;
-        }
-      }
-
-      @include adapter-width('min-width', map-get($bs-layout, 'lg')) {
-        & {
-          width: $dialog-content-width-lg;
-        }
-      }
 
       > .header {
         cursor: $dialog-header-cursor;
@@ -65,7 +56,7 @@
           color: $dialog-icon-color;
           cursor: pointer;
 
-          &:hover {
+          &:hover, &:focus {
             color: $dialog-icon-color-hover;
           }
         }
@@ -74,7 +65,7 @@
       }
 
       > .body {
-        @extend %content-spacing;
+        @extend %body-spacing;
         //border: $dialog-body-border;
         border-left-width: 0;
         border-right-width: 0;
@@ -90,72 +81,79 @@
     }
   }
 
-  &.normal {
+  //non-centered
+  &.align-top {
     > .dialog-container {
       &-enter {
-        transform: translateY(-100%);
+        visibility: visible;
         opacity: 0;
+        transform: translateY(-100%);
       }
 
       &-enter-active {
         opacity: 1;
-        transform: translateY(5vw);
-        transition: opacity .2s, transform .2s;
+        transform: translateY(8vw);
+        transition: opacity $animation-timeout, transform $animation-timeout;
       }
 
       &-enter-done {
-        transform: translateY(5vw);
+        opacity: 1;
+        transform: translateY(8vw);
       }
 
       &-exit {
+        visibility: visible;
         opacity: 1;
-        transform: translateY(10vw);
+        transform: translateY(8vw);
       }
 
       &-exit-active {
-        opacity: 1;
-        transform: translateY(-20rem);
-        transition: opacity .2s, transform .2s;
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: opacity $animation-timeout, transform $animation-timeout;
       }
-
     }
   }
 
+  //centered
   &.align-center {
     display: flex;
     align-items: center;
 
     > .dialog-container {
       &-enter {
-        transform: scale(0);
+        visibility: visible;
         opacity: 0;
+        transform: scale(0);
       }
 
       &-enter-active {
-        transform: scale(1);
         opacity: 1;
-        transition: opacity .2s, transform .2s;
+        transform: scale(1);
+        transition: opacity $animation-timeout, transform $animation-timeout;
       }
 
       &-enter-done {
+        opacity: 1;
         transform: scale(1);
       }
 
       &-exit {
-        transform: scale(1);
+        visibility: visible;
         opacity: 1;
+        transform: scale(1);
       }
 
       &-exit-active {
-        transform: scale(0.3);
         opacity: 0;
-        transition: opacity .2s, transform .2s;
+        transform: scale(0.5);
+        transition: opacity $animation-timeout, transform $animation-timeout;
       }
     }
   }
 
   &.simple {
-    background-color: rgba(0, 0, 0, .5);
+    background-color: rgba(0, 0, 0, .7);
 
     > .dialog-container {
       > .content {
@@ -170,6 +168,23 @@
           color: inherit;
         }
 
+        > .header {
+          > .title {
+            &:hover, &:focus {
+              text-shadow: $text-shadow;
+            }
+          }
+
+          > .icon {
+            color: $white;
+
+            &:hover, &:focus {
+              color: $white;
+              text-shadow: $text-shadow;
+            }
+          }
+        }
+
         > .footer {
           background: transparent;
         }
@@ -182,6 +197,23 @@
       background-color: $dialog-header-primary-background-color;
       color: $white;
       @include full-border-radius($dialog-inner-border-radius, $dialog-inner-border-radius, 0, 0);
+
+      > .title {
+        &:hover, &:focus {
+          text-shadow: $text-shadow;
+        }
+      }
+
+      > .icon {
+        color: $white;
+
+        &:hover, &:focus {
+          color: $white;
+          text-shadow: $text-shadow;
+        }
+      }
+
+
     }
 
     > .body {
@@ -195,3 +227,26 @@
   }
 
 }
+
+
+@include adapter-width('min-width', map-get($bs-layout, 'sm')) {
+  .width-sm {
+    max-width: $dialog-content-width-sm;
+  }
+}
+
+@include adapter-width('min-width', map-get($bs-layout, 'sm')) {
+  .width-md {
+    max-width: $dialog-content-width-md;
+  }
+
+  .width-lg {
+    max-width: 850px;
+  }
+
+  .width-xl {
+    max-width: 1100px;
+  }
+}
+
+

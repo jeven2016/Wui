@@ -33,6 +33,7 @@ $text-light: $white;
 $text-ok-color: $green;
 $text-warning-color: $yellow;
 $text-error-color: $red;
+$text-shadow: 1px 1px 2px #333, 0 0 25px $white, 0 0 5px $blue;
 
 //there will be corresponding buttons generated if the property starts with "color-primary"
 $colors: (
@@ -264,7 +265,7 @@ $menu-item-line-height: 1.5rem;
 $menu-item-hove-text-color: $blue;
 $menu-item-font-weight: map_get($font-weight, 'normal');
 $menu-icon-margin-right: 0.5rem;
-$menu-item-hover-text-shadow: 1px 1px 2px #333, 0 0 25px $white, 0 0 5px $blue;
+$menu-item-hover-text-shadow: $text-shadow;
 $menu-float-flex-direction: row;
 $menu-float-padding: 0;
 $menu-float-submenu-menu-header-flex: 0 0 auto;
@@ -466,8 +467,8 @@ $dialog-content-width: 90%;
 $dialog-content-transform-origin: center;
 $dialog-content-min-height: 1rem;
 $dialog-content-z-index: map_get($z-index, 'top');
-$dialog-content-width-sm: 75%;
-$dialog-content-width-md: 65%;
+$dialog-content-width-sm: 22.5rem;
+$dialog-content-width-md: 34.375rem;
 $dialog-content-width-lg: 55%;
 $dialog-content-position: relative;
 $dialog-content-background-color: #fff;

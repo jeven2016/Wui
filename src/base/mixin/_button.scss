@@ -26,7 +26,6 @@
 
 
   &:not(:disabled):not(.disabled):focus, &.active:not(:disabled):not(.disabled) {
-    text-shadow: 0 0 5rem #fff;
     box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
     z-index: map_get($z-index, "pop");
     position: relative;
