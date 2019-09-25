@@ -52,6 +52,12 @@
   }
 }
 
+@mixin only-focus-active(){
+  &:focus, &:hover {
+    @content;
+  }
+}
+
 @mixin make-visible() {
   &.active {
     visibility: visible;

@@ -2543,6 +2543,44 @@ textarea.input {
   min-height: 1rem;
   padding: 1rem 1rem; }
 
+@keyframes show-dialog-align-center {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    transform: scale(0); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
+@keyframes hide-dialog-align-center {
+  0% {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1); }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.2); } }
+
+@keyframes show-dialog-align-top {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(-100%); }
+  100% {
+    opacity: 1;
+    transform: translateY(8vw); } }
+
+@keyframes hide-dialog-align-top {
+  0% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(8vw); }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%); } }
+
 .dialog {
   background: transparent;
   z-index: 1000;
@@ -2586,47 +2624,23 @@ textarea.input {
         display: flex;
         justify-content: flex-end;
         border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px); }
-  .dialog.align-top > .dialog-container-enter {
-    visibility: visible;
-    opacity: 0;
-    transform: translateY(-100%); }
-  .dialog.align-top > .dialog-container-enter-active {
-    opacity: 1;
-    transform: translateY(8vw);
-    transition: opacity 0.3s, transform 0.3s; }
-  .dialog.align-top > .dialog-container-enter-done {
-    opacity: 1;
+  .dialog.align-top > .dialog-container {
     transform: translateY(8vw); }
-  .dialog.align-top > .dialog-container-exit {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(8vw); }
-  .dialog.align-top > .dialog-container-exit-active {
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: opacity 0.3s, transform 0.3s; }
+  .dialog.align-top.active > .dialog-container {
+    animation: show-dialog-align-top 0.4s;
+    transition: all 0.4s; }
+  .dialog.align-top.inactive > .dialog-container {
+    animation: hide-dialog-align-top 0.4s;
+    transition: all 0.4s; }
   .dialog.align-center {
     display: flex;
     align-items: center; }
-    .dialog.align-center > .dialog-container-enter {
-      visibility: visible;
-      opacity: 0;
-      transform: scale(0); }
-    .dialog.align-center > .dialog-container-enter-active {
-      opacity: 1;
-      transform: scale(1);
-      transition: opacity 0.3s, transform 0.3s; }
-    .dialog.align-center > .dialog-container-enter-done {
-      opacity: 1;
-      transform: scale(1); }
-    .dialog.align-center > .dialog-container-exit {
-      visibility: visible;
-      opacity: 1;
-      transform: scale(1); }
-    .dialog.align-center > .dialog-container-exit-active {
-      opacity: 0;
-      transform: scale(0.5);
-      transition: opacity 0.3s, transform 0.3s; }
+    .dialog.align-center.active > .dialog-container > .content {
+      animation: show-dialog-align-center 0.4s;
+      transition: all 0.4s; }
+    .dialog.align-center.inactive > .dialog-container > .content {
+      animation: hide-dialog-align-center 0.4s;
+      transition: all 0.4s; }
   .dialog.simple {
     background-color: rgba(0, 0, 0, 0.7); }
     .dialog.simple > .dialog-container > .content {
@@ -3712,7 +3726,9 @@ textarea.input {
   .alert > .alert-close > .close-btn:focus, .alert > .alert-close > .close-btn:hover {
     opacity: 1;
     transform: scale(1.2, 1.2);
-    transform-origin: center; }
+    transform-origin: center;
+    background-color: transparent;
+    box-shadow: unset; }
 
 .alert {
   display: -ms-flexbox;
@@ -3748,7 +3764,7 @@ textarea.input {
     min-width: 20rem; }
   .alert.block {
     display: flex;
-    flex-basis: 100%; }
+    flex: 1 1 100%; }
   .alert.with-title > .alert-close {
     align-items: flex-start; }
   .alert > .alert-content {

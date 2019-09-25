@@ -5,10 +5,12 @@
   background-color: transparent;
 
 
-  &:focus, &:hover {
+  @include only-focus-active {
     opacity: 1;
     transform: scale(1.2, 1.2);
     transform-origin: center;
+    background-color: transparent;
+    box-shadow: unset;
   }
 }
 
@@ -62,7 +64,7 @@
 
   &.block {
     display: flex;
-    flex-basis: 100%;
+    flex: 1 1 100%;
   }
 
   &.with-title {

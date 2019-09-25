@@ -8,7 +8,60 @@
   padding: 1rem 1rem;
 }
 
-$animation-timeout: .3s;
+$animation-timeout: .4s;
+
+@keyframes show-dialog-align-center {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hide-dialog-align-center {
+  0% {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+
+@keyframes show-dialog-align-top {
+  0% {
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(8vw);
+  }
+}
+
+@keyframes hide-dialog-align-top {
+  0% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(8vw);
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
 
 .dialog {
   @extend .mask;
@@ -84,33 +137,20 @@ $animation-timeout: .3s;
   //non-centered
   &.align-top {
     > .dialog-container {
-      &-enter {
-        visibility: visible;
-        opacity: 0;
-        transform: translateY(-100%);
-      }
+      transform: translateY(8vw);
+    }
 
-      &-enter-active {
-        opacity: 1;
-        transform: translateY(8vw);
-        transition: opacity $animation-timeout, transform $animation-timeout;
+    &.active {
+      > .dialog-container {
+        animation: show-dialog-align-top $animation-timeout;
+        transition: all $animation-timeout;
       }
+    }
 
-      &-enter-done {
-        opacity: 1;
-        transform: translateY(8vw);
-      }
-
-      &-exit {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(8vw);
-      }
-
-      &-exit-active {
-        opacity: 0;
-        transform: translateY(-100%);
-        transition: opacity $animation-timeout, transform $animation-timeout;
+    &.inactive {
+      > .dialog-container {
+        animation: hide-dialog-align-top $animation-timeout;
+        transition: all $animation-timeout;
       }
     }
   }
@@ -120,34 +160,17 @@ $animation-timeout: .3s;
     display: flex;
     align-items: center;
 
-    > .dialog-container {
-      &-enter {
-        visibility: visible;
-        opacity: 0;
-        transform: scale(0);
+    &.active {
+      > .dialog-container > .content {
+        animation: show-dialog-align-center $animation-timeout;
+        transition: all $animation-timeout;
       }
+    }
 
-      &-enter-active {
-        opacity: 1;
-        transform: scale(1);
-        transition: opacity $animation-timeout, transform $animation-timeout;
-      }
-
-      &-enter-done {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      &-exit {
-        visibility: visible;
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      &-exit-active {
-        opacity: 0;
-        transform: scale(0.5);
-        transition: opacity $animation-timeout, transform $animation-timeout;
+    &.inactive {
+      > .dialog-container > .content {
+        animation: hide-dialog-align-center $animation-timeout;
+        transition: all $animation-timeout;
       }
     }
   }
@@ -213,7 +236,6 @@ $animation-timeout: .3s;
         }
       }
 
-
     }
 
     > .body {
@@ -224,28 +246,6 @@ $animation-timeout: .3s;
     > .footer {
       background-color: $light-gray;
     }
-  }
-
-}
-
-
-@include adapter-width('min-width', map-get($bs-layout, 'sm')) {
-  .width-sm {
-    max-width: $dialog-content-width-sm;
-  }
-}
-
-@include adapter-width('min-width', map-get($bs-layout, 'sm')) {
-  .width-md {
-    max-width: $dialog-content-width-md;
-  }
-
-  .width-lg {
-    max-width: 850px;
-  }
-
-  .width-xl {
-    max-width: 1100px;
   }
 }
 
