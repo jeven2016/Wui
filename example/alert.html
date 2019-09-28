@@ -13,16 +13,16 @@
 
   <script language="JavaScript">
     function closeFirst(div) {
-      $("#first").toggleClass("leave")
+      $('#first').toggleClass('leave');
     }
   </script>
 </head>
 <body>
 
 <button onclick="closeFirst()">Leave</button>
-<div class="alert-container" >
+<div class="alert-container">
 
-  <div  id="first" class="alert normal alert-error with-title">
+  <div id="first" class="alert normal alert-error with-title">
     <div class="alert-icon" onclick="closeFirst(this)">
       <svg viewBox="64 64 896 896" class="" data-icon="close-circle" width="1em" height="1em" fill="currentColor"
            aria-hidden="true" focusable="false">
@@ -48,7 +48,7 @@
   </div>
 
 
-  <div  class="alert normal alert-simple with-title">
+  <div class="alert normal alert-simple with-title">
     <div class="alert-icon" onclick="closeFirst(this)">
       <svg viewBox="64 64 896 896" class="" data-icon="close-circle" width="1em" height="1em" fill="currentColor"
            aria-hidden="true" focusable="false">
@@ -119,6 +119,11 @@
 
   </div>
 </div>
+
+<div class="alert-container bottom-left">
+  container
+</div>
+
 
 </body>
 </html>

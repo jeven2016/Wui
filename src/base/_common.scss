@@ -75,10 +75,10 @@
   }
 
   .width-lg {
-    max-width: 850px;
+    max-width: $dialog-content-width-lg;
   }
 
   .width-xl {
-    max-width: 1100px;
+    max-width: $dialog-content-width-xg;
   }
 }

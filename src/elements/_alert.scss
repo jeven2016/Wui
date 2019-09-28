@@ -1,3 +1,5 @@
+$animation-timeout: .2s;
+
 %close-btn {
   border-width: 0;
   padding: 0;
@@ -14,6 +16,31 @@
   }
 }
 
+@keyframes active-alert {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@keyframes inactive-alert {
+  from {
+    visibility: visible;
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+    transform: scaleY(0);
+    height: 0 !important;
+  }
+}
+
 .alert {
   @include make-flex {
     position: relative;
@@ -24,37 +51,15 @@
     margin-bottom: 0.5rem;
   }
 
-  &.enter {
-    opacity: 0;
-    transform: scaleY(0);
+  &.active {
+    visibility: visible;
+    animation: active-alert $animation-timeout ease-in-out;
   }
 
-  &.enter-active {
-    opacity: 1;
-    transform: scaleY(1);
-    transition: all .3s;
-  }
 
-  &.leave {
-    transform: scaleY(1);
-    max-height: 200px;
-    opacity: 1;
-    //animation: alert-leave .5s ease-in-out;
-  }
-
-  &.leave-active {
-    max-height: 0;
-    opacity: 0;
-    //transform: scaleY(0);
-    transition: all .3s;
-    //animation: alert-leave .5s ease-in-out;
-  }
-
-  &.leave-done {
-    display: none;
-    opacity: 0;
-    //transform: scaleY(0);
-    max-height: 0;
+  &.inactive {
+    animation: inactive-alert $animation-timeout ease-in-out;
+    animation-fill-mode: forwards;
   }
 
   &.normal {
@@ -164,15 +169,15 @@
 
   &.alert-warning {
     background-color: darken(#fff3cd, 10%);
-    border: 1px solid darken(#fff3cd, 20%);
+    border: 1px solid darken(#fff3cd, 30%);
 
     border-left-width: 0.5rem;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
-    border-left-color: $yellow;
+    border-left-color: $brown;
 
     > .alert-icon {
-      color: $yellow;
+      color: lighten($brown, 10%);
     }
 
     &:focus, &:hover {
@@ -188,10 +193,10 @@
     border-left-width: 0.5rem;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
-    border-left-color: $red;
+    border-left-color: darken(#e8818a, 20%);
 
     > .alert-icon {
-      color: $red;
+      color: darken(#e8818a, 20%);
     }
 
     &:focus, &:hover {
@@ -200,32 +205,112 @@
   }
 }
 
+//------------------------------- Container ---------------------------------
+
+$container-offset: 2vw;
+
+@keyframes tl-active-alert {
+  from {
+    left: calc(-100% + 2vw);
+  }
+  to {
+    left: $container-offset;
+  }
+}
+
+@keyframes tl-inactive-alert {
+  from {
+    left: $container-offset;
+  }
+  to {
+    left: calc(-100% + 2vw);
+  }
+}
+
+@keyframes tr-active-alert {
+  from {
+    right: calc(-100%);
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes tr-inactive-alert {
+  from {
+    right: 0;
+  }
+  to {
+    right: calc(-100%);
+  }
+}
+
+%r-movement {
+  > .alert.active {
+    animation: tr-active-alert $animation-timeout linear;
+    animation-fill-mode: forwards;
+  }
+
+  > .alert.inactive {
+    animation: tr-inactive-alert $animation-timeout linear;
+    animation-fill-mode: forwards;
+  }
+}
+
+%l-movement {
+  > .alert.active {
+    animation: tl-active-alert $animation-timeout linear;
+    animation-fill-mode: forwards;
+  }
+
+  > .alert.inactive {
+    animation: tl-inactive-alert $animation-timeout linear;
+    animation-fill-mode: forwards;
+  }
+}
+
 .alert-container {
+  position: fixed;
   display: flex;
   flex-flow: row wrap;
-  top: 1rem;
-  position: fixed;
-  width: 90%;
   z-index: map_get($z-index, 'top');
+  width: 97%;
 
   @include adapter-width('min-width', map-get($bs-layout, 'sm')) {
-    & {
-      width: 90%;
+    &.alert-container-width-sm {
+
+      width: 22.5rem;
     }
   }
 
-  @include adapter-width('min-width', map-get($bs-layout, 'md')) {
-    & {
-      width: 60%;
-    }
+  &.top-left {
+    top: $container-offset;
+    left: $container-offset;
+
+    @extend %l-movement;
   }
 
+  &.top-right {
+    top: $container-offset;
+    right: $container-offset;
 
-  @include adapter-width('min-width', map-get($bs-layout, 'xl')) {
-    & {
-      width: 50%;
-    }
+    @extend %r-movement;
   }
+
+  &.bottom-left {
+    bottom: $container-offset;
+    left: $container-offset;
+
+    @extend %l-movement;
+  }
+
+  &.bottom-right {
+    bottom: $container-offset;
+    right: $container-offset;
+
+    @extend %r-movement;
+  }
+
 }
 
 
