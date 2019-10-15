@@ -6,6 +6,7 @@ $cyan: #199cb8;
 $green: #49b847;
 $gray: #ccc;
 $gray-darker: #6c757d;
+$gray-deep: #484848;
 $dark: $gray-darker;
 $light: #f8f9fa;
 $light-gray: #f5f5f5;
@@ -105,7 +106,8 @@ $btn-colors: (
 //Global
 //$default-box-shadow: 0 .25rem .75rem -1px darken($light-gray, 10%);
 //$default-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.12);
-$default-box-shadow: 0 3px 10px rgba(0,0,0,0.14);;
+$default-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.14);
+;
 $default-border-radius: 0.25rem;
 $default-border-width: 1px;
 $default-border-color: #ccc;
@@ -319,9 +321,6 @@ $menu-dark-menu-header-focus-color: $white;
 $menu-dark-disabled-menu-item-color: darken($white, 40%);
 
 //for drop down
-$dp-position: relative;
-$dp-title-cursor: pointer;
-$dp-title-color: $primary;
 $dp-cursor: pointer;
 $dp-outline: 0;
 $dp-text-align: center;
@@ -348,13 +347,13 @@ $dp-menu-enter-transform: scaleY(0);
 $dp-menu-enter-done-display: inline-block;
 $dp-menu-enter-done-opacity: 1;
 $dp-menu-enter-done-transform: scaleY(1);
-$dp-menu-enter-done-transition: opacity .3s ease-out, transform .2s ease-out;
+$dp-menu-enter-done-transition: opacity .2s ease-out, transform .2s ease-out;
 $dp-menu-exit-display: inline-block;
 $dp-menu-exit-opacity: 1;
 $dp-menu-exit-active-display: inline-block;
 $dp-menu-exit-activetransform: scaleY(0);
 $dp-menu-exit-activeopacity: 0;
-$dp-menu-exit-activetransition: opacity .3s ease-out, transform .2s ease-out;
+$dp-menu-exit-activetransition: opacity .2s ease-out, transform .2s ease-out;
 $dp-menu--exit-done-display: none;
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -397,7 +396,7 @@ $bq-border-radius: 0.5rem;
 
 //for Navbar
 $navbar-border-radius: $default-border-radius;
-$navbar-title-padding: 0 0.5rem;
+$navbar-title-padding: 0 .5rem 0 1rem;
 $navbar-background-color: #f5f5f5;
 $navbar-fixed-box-shadow: $default-box-shadow;
 $navbar-margin-bottom: 0;
@@ -540,7 +539,7 @@ $tab-margin-bottom: 0.5rem;
 //for drawer
 $drawer-box-shadown: 0 2px 7px 0 rgba(0, 0, 0, 0.4);
 $drawer-normal-length: 30%;
-$drawer-animation-duration: 0.5s;
+$drawer-animation-duration: 0.3s;
 
 
 //for breadcrumb

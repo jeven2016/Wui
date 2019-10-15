@@ -1,28 +1,4 @@
-.dropdown {
-  @include make-inline-block {
-    position: $dp-position;
-  }
-
-  > .title {
-    cursor: $dp-title-cursor;
-    color: $dp-title-color;
-  }
-
-  &.disabled {
-    > .title {
-      @extend %not-allowed;
-    }
-  }
-}
-
 .dropdown-menu {
-  display: $dp-menu-display;
-  opacity: $dp-menu-opacity;
-  position: $dp-menu-position;
-  transform-origin: $dp-menu-transform-origin;
-  z-index: $dp-menu-z-index;
-  color: $dp-menu-color;
-
   > .menu {
     background-color: $white;
 
@@ -32,33 +8,5 @@
         background-color: $dp-menu-item-background-color;
       }
     }
-  }
-
-  &-enter {
-    display: $dp-menu-enter-display;
-    transform: $dp-menu-enter-transform;
-  }
-
-  &-enter-done {
-    display: $dp-menu-enter-done-display;
-    opacity: $dp-menu-enter-done-opacity;
-    transform: $dp-menu-enter-done-transform;
-    transition: $dp-menu-enter-done-transition;
-  }
-
-  &-exit {
-    display: $dp-menu-exit-display;
-    opacity: $dp-menu-exit-opacity;
-  }
-
-  &-exit-active {
-    display: $dp-menu-exit-active-display;
-    transform: $dp-menu-exit-activetransform;
-    opacity: $dp-menu-exit-activeopacity;
-    transition: $dp-menu-exit-activetransition;
-  }
-
-  &-exit-done {
-    display: $dp-menu--exit-done-display;
   }
 }

@@ -1,4 +1,4 @@
-.checkbox, .radio{
+.checkbox, .radio {
   display: inline-flex;
   position: relative;
   align-items: center;
@@ -34,8 +34,17 @@
 
   > .icon {
     font-size: 1.5rem;
+    vertical-align: -0.15rem;
     width: 1em;
     height: 1em;
-
+    position: relative;
+    cursor: pointer;
   }
+
+  > .label {
+    font-size: 1em;
+    padding: 0 0.25rem;
+  }
+
+  @include add-disabled-conf;
 }

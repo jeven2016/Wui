@@ -8,18 +8,16 @@
 }
 
 .popover {
-  @include make-inline-block;
-  position: absolute;
-  z-index: $po-z-index;
-  display: none;
+  position: relative;
   background-color: $white;
-
-  &.active {
-    display: inline-block;
-  }
+  border-radius: $default-border-radius;
 
   > .card {
     position: relative;
+
+    >.card-body{
+      min-height: 1rem;
+    }
   }
 
   .popover-arrow {

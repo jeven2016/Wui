@@ -1,47 +1,69 @@
+@mixin drawer-animation($position) {
+
+  &.drawer-enter {
+    #{$position}: -100%;
+    visibility: visible;
+    opacity: 1;
+  }
+  &.drawer-enter-active {
+    #{$position}: 0;
+    transition: #{$position} $drawer-animation-duration;
+  }
+
+  &.drawer-enter-done {
+    #{$position}: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.drawer-exit {
+    #{$position}: 0;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &.drawer-exit-active {
+    #{$position}: -100%;
+    transition: #{$position} $drawer-animation-duration linear;
+  }
+}
+
 
 .drawer {
-  display: none;
+  overflow: auto;
+  visibility: hidden;
+  opacity: 0;
   position: fixed;
   z-index: map_get($z-index, 'top');
   height: 100%;
   box-shadow: $drawer-box-shadown;
   background-color: $white;
-
+  width: $drawer-normal-length;
 
   &.normal {
     width: $drawer-normal-length;
   }
 
   &.left {
-    left: 0;
     top: 0;
-    animation-name: drawer-animation;
-    animation-duration: $drawer-animation-duration;
-  }
+    @include drawer-animation('left');
 
-  &.active {
-    display: inline-block;
-    width: $drawer-normal-length;
   }
-
 
   &.top {
     width: 100%;
     height: $drawer-normal-length;
-    animation-name: drawer-animation-top;
-    animation-duration: $drawer-animation-duration;
     left: 0;
-    top: 0;
+    @include drawer-animation('top');
   }
 
   &.right {
     top: 0;
     right: 0;
-    top: 0;
     width: $drawer-normal-length;
     height: 100%;
-    animation-name: drawer-animation-right;
-    animation-duration: $drawer-animation-duration;
+
+    @include drawer-animation('right');
 
   }
 
@@ -50,8 +72,8 @@
     bottom: 0;
     height: $drawer-normal-length;
     width: 100%;
-    animation-name: drawer-animation-bottom;
-    animation-duration: $drawer-animation-duration;
+
+    @include drawer-animation('bottom');
   }
 
 }

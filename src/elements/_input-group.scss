@@ -19,6 +19,12 @@
       width: 1%;
     }
 
+    &.popup-ctrl {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     &:first-child:not(:last-child) {
       @include full-border-radius($default-border-radius, 0, $default-border-radius, 0);
       margin-right: $input-group-element-margin-right;

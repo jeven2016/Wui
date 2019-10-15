@@ -14,7 +14,6 @@
   > .menu {
     color: $black;
 
-
     > .menu-list {
       > .menu-item {
         //text-shadow: none;
@@ -40,6 +39,12 @@
     .dropdown, .button-dropdown {
       @include update-dropdown;
     }
+
+    > .title-text {
+      //&:first-child {
+      margin-left: .5rem;
+      //}
+    }
   }
 
   .navbar-switch {
@@ -47,10 +52,6 @@
     background: transparent;
     font-size: 1.5rem;
     padding: 0.5rem;
-
-    &:not(last-child) {
-      margin-right: 0.5rem;
-    }
 
     &:focus, &:hover {
       box-shadow: $navbar-switch-box-shadow;
@@ -185,7 +186,7 @@
 
 }
 
-@include media-query((key:'min-width', value: map-get($bs-layout, 'sm'))) {
+@include media-query((key:'min-width', value: map-get($bs-layout, 'md'))) {
   .navbar {
     .navbar-switch {
       display: none;
@@ -201,7 +202,7 @@
 }
 
 //change the list in column style
-@include media-query((key:'max-width', value: map-get($bs-layout, 'sm'))) {
+@include media-query((key:'max-width', value: map-get($bs-layout, 'md'))) {
   &.navbar {
     flex-direction: column;
 

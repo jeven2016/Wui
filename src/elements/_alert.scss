@@ -43,7 +43,7 @@ $animation-timeout: .2s;
 
 .alert {
   @include make-flex {
-    position: relative;
+    position: relative; //在alert-container(fixed)下出现位置偏移，因此移除
     flex: 1 0 100%;
     flex-flow: row nowrap;
     padding: 0.5rem 1rem;
@@ -207,11 +207,11 @@ $animation-timeout: .2s;
 
 //------------------------------- Container ---------------------------------
 
-$container-offset: 2vw;
+$container-offset: 1.5vw;
 
 @keyframes tl-active-alert {
   from {
-    left: calc(-100% + 2vw);
+    left: calc(-100% + 1.5vw);
   }
   to {
     left: $container-offset;
@@ -223,7 +223,7 @@ $container-offset: 2vw;
     left: $container-offset;
   }
   to {
-    left: calc(-100% + 2vw);
+    left: calc(-100% + 1.5vw);
   }
 }
 

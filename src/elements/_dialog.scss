@@ -146,6 +146,7 @@ $animation-timeout: .4s;
     &.active {
       > .dialog-container {
         animation: show-dialog-align-top $animation-timeout;
+        -ms-transform: show-dialog-align-top $animation-timeout;
         transition: all $animation-timeout;
       }
     }
@@ -153,6 +154,7 @@ $animation-timeout: .4s;
     &.inactive {
       > .dialog-container {
         animation: hide-dialog-align-top $animation-timeout;
+        -ms-transform: hide-dialog-align-top $animation-timeout;
         transition: all $animation-timeout;
       }
     }

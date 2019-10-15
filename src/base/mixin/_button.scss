@@ -31,9 +31,9 @@
     position: relative;
   }
 
-  &:not(:disabled):not(.disabled):active {
+  /*&:not(:disabled):not(.disabled):active {
     transform: scale(0.95);
-  }
+  }*/
 }
 
 /**
