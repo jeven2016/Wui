@@ -30,6 +30,7 @@
     height: 100%;
     opacity: 0;
     cursor: pointer;
+    z-index: 1; //使input获得点击事件，避免svg获取到点击事件
   }
 
   > .icon {

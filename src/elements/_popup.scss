@@ -34,3 +34,8 @@
     display: $dp-menu--exit-done-display;
   }
 }
+
+.popup-ctrl {
+  display: inline-flex;
+  flex-wrap: wrap;
+}

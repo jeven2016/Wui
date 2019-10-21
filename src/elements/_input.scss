@@ -178,3 +178,7 @@ textarea.input {
     }
   }
 }
+
+@include make-special-input('ok', $text-ok-color);
+@include make-special-input('warning', $text-warning-color);
+@include make-special-input('error', $text-error-color);

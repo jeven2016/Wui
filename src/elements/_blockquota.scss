@@ -5,10 +5,6 @@ blockquote {
   padding: $bq-default-padding;
   @include border-radius($bq-border-radius);
 
-  &.with-box {
-    box-shadow: $default-box-shadow;
-  }
-
   &.border {
     border-top: $bq-other-border;
     border-right: $bq-other-border;

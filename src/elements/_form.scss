@@ -1,10 +1,6 @@
 .form {
   @include make-block;
 
-  @include make-special-input('ok', $text-ok-color);
-  @include make-special-input('warning', $text-warning-color);
-  @include make-special-input('error', $text-error-color);
-
   .form-item {
     margin-bottom: $form-form-item-margin-bottom;
 

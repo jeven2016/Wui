@@ -47,9 +47,20 @@
     > .menu-item {
       @include make-menu-item;
 
-      > .icon {
-        @include child-margin($menu-icon-margin-right);
+      > .left, > .right {
+        flex: 0 1 1em;
+        @include make-flex-center;
       }
+
+      > .center {
+        flex: 1 0 auto;
+        padding: 0 0.25rem;
+      }
+
+      /*
+            > .icon {
+              @include child-margin($menu-icon-margin-right);
+            }*/
     }
   }
 

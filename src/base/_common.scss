@@ -44,6 +44,14 @@
   border-radius: 0 !important;
 }
 
+.global-with-border {
+  border: $menu-border;
+}
+
+.global-with-box {
+  box-shadow: $default-box-shadow;
+}
+
 .clear-fix {
   &::after {
     content: '';
