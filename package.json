@@ -28,6 +28,16 @@
   "homepage": "https://github.com/jeven2016/wheel-ui#readme",
   "devDependencies": {
     "analyze-css": "^0.12.4",
-    "node-sass": "^4.11.0"
+    "autoprefixer": "^9.7.2",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-header": "^2.0.9",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-util": "^3.0.8",
+    "node-sass": "^4.13.0",
+    "run-sequence": "^2.2.1"
   }
 }
