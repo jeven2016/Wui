@@ -14,6 +14,34 @@
   }
 }
 
+@mixin popup-list {
+
+  > .menu-list {
+    border-radius: $default-border-radius;
+    background: $white;
+    z-index: $menu-float-submenu-menu-z-index;
+    flex-direction: $menu-float-submenu-menu-list-flex-direction;
+    //max-height: 0;
+    position: absolute;
+    left: calc(100% + 5px);
+    top: 0;
+  }
+
+  &.show {
+    > .menu-list {
+      //overflow: visible; //to show submenus correctly
+      //max-height: $menu-menu-list-max-height;
+      animation: $menu-float-submenu-active-vertical-menu-list-animation;
+    }
+  }
+
+  &.close {
+    > .menu-list {
+      animation: $menu-float-submenu-close-vertical-menu-list-animation;
+    }
+  }
+}
+
 .submenu {
   @include border-radius($menu-border-radius);
   @include make-flex;
@@ -22,23 +50,6 @@
   align-items: $menu-align-items;
   position: $menu-position;
 
-  &.with-box {
-    box-shadow: $default-box-shadow;
-  }
-
-  &.close {
-    > .menu-header:after {
-      transform: $menu-close-menu-header-icon-transform;
-      transform-origin: $menu-close-menu-header-icon-transform-origin;
-    }
-
-    > .menu-list {
-      display: $menu-menu-list-display;
-      //transition: display 2s linear, height 2s linear;
-      //animation: close-menu .5s ease-in-out;
-      //animation-fill-mode: forwards; //keep the last state
-    }
-  }
 
   > .menu-list {
     transition: $menu-menu-list-transition;
@@ -56,12 +67,9 @@
         flex: 1 0 auto;
         padding: 0 0.25rem;
       }
-
-      /*
-            > .icon {
-              @include child-margin($menu-icon-margin-right);
-            }*/
     }
+
+    @include justify;
   }
 
   .menu-header {
@@ -78,11 +86,8 @@
       color: $text-color;
       background-color: transparent;
     }
-  }
 
-  //add a arrow icon for non-float menu
-  &:not(.float) {
-    .menu-header {
+    &.with-arrow {
       @include make-arrow($default-arrow-border, $default-arrow-active-border, null, 'after', map_get($arrow-direction, 'down')) {
         position: $menu-header-arrow-position;
         right: $menu-header-arrow-right;
@@ -92,17 +97,42 @@
   }
 
   &.block {
-    display: $menu-block-display;
+    width: 100%;
+
+    > .menu-list {
+      width: 100%;
+    }
   }
+
+  &.normal {
+    > .menu-list {
+      transition: $menu-menu-list-transition;
+    }
+
+    &.show {
+      > .menu-list {
+        max-height: $menu-menu-list-max-height;
+      }
+    }
+
+    &.close {
+      > .menu-list {
+        max-height: 0;
+        overflow: hidden;
+      }
+
+      > .menu-header:after {
+        transform: rotate(90deg);
+        transition: transform .2s;
+      }
+    }
+  }
+
 }
 
 .menu {
   @extend .submenu;
   @include make-inline-flex;
-
-  &.with-border {
-    border: $menu-border;
-  }
 
   /**
   当menu中的嵌套不确定时,如何设置border-radius将会会相当地复杂，
@@ -110,102 +140,13 @@
    */
   padding: $menu-padding;
 
-
-  &.simple {
-
-    > .divider {
-      display: none;
-    }
-  }
-
-
-  &.float {
-    flex-direction: $menu-float-flex-direction;
-    padding: $menu-float-padding;
-
-    // set border-radius for the first & last child
-    //only two types supported
-    //1.  menu > menu-list > menu-item , .....
-    //2. menu > submenu > menu-header
-    //                  > menu-list > menu-item ......
-
-
-    > .submenu {
-
-      .menu-header {
-        flex: $menu-float-submenu-menu-header-flex;
-        align-items: $menu-float-submenu-menu-header-align-items;
-        flex-direction: $menu-float-submenu-menu-header-flex-direction;
-        transition: $menu-float-submenu-menu-header-transition;
-
-        //remove arrow
-        &:after {
-          content: $menu-float-submenu-menu-header-after-content;
-          border: $menu-float-submenu-menu-header-after-border;
-        }
-      }
-
-      > .menu-list {
-        display: $menu-float-submenu-menu-list-display;
-        flex-direction: $menu-float-submenu-menu-list-flex-direction;
-        position: $menu-float-submenu-menu-position;
-        z-index: $menu-float-submenu-menu-z-index;
-        left: $menu-float-submenu-menu-left;
-        top: $menu-float-submenu-menu-top;
-        background-color: $menu-float-submenu-menu-background-color;
-        box-shadow: $menu-float-submenu-menu-box-shadow;
-      }
-
-      &.active {
-
-        //create the bottom border
-        > .menu-header {
-          @include bottom-bar;
-          color: $blue;
-        }
-
-        > .menu-list {
-          display: $menu-float-submenu-active-menu-list-display;
-          animation: $menu-float-submenu-active-menu-list-animation;
-        }
-      }
-    }
-
-    > .menu-list {
-      @include make-flex ;
-      flex: $menu-float-menu-list-flex;
-      border-radius: $menu-float-menu-list-border-radius;
-
-      > .menu-item {
-        min-width: $menu-float-menu-item-mix-width;
-
-        &:first-child {
-          border-top-left-radius: $menu-float-menu-item-child-border-radius;
-          border-bottom-left-radius: $menu-float-menu-item-child-border-radius;
-        }
-
-        &:last-child {
-          border-top-right-radius: $menu-float-menu-item-child-border-radius;
-          border-bottom-right-radius: $menu-float-menu-item-child-border-radius;
-        }
-
-        &.right {
-          flex-grow: $menu-float-menu-item-right-flex-grow;
-          text-align: $menu-float-menu-item-right-text-align;
-          justify-content: $menu-float-menu-item-right-justify-content;
-        }
-
-        &.left {
-          flex-grow: $menu-float-menu-item-left-flex-grow;
-        }
-      }
-    }
-
-    > .divider {
-      display: $menu-float-divider-display;
-
-      & + .menu-list > .menu-item {
-        border-left: $menu-float-divider-menu-item-border-left;
+  //add a arrow icon for non-float menu
+  &:not(.menu-row):not(.popup-menu) {
+    .menu-header {
+      @include make-arrow($default-arrow-border, $default-arrow-active-border, null, 'after', map_get($arrow-direction, 'down')) {
+        position: $menu-header-arrow-position;
+        right: $menu-header-arrow-right;
+        top: $menu-header-arrow-top;
       }
     }
   }
@@ -234,7 +175,6 @@
       background-color: $menu-dark-menu-list-background;
     }
 
-
     .menu-header {
       background-color: $menu-dark-menu-header-background-color;
       color: $menu-dark-menu-header-color;
@@ -259,5 +199,124 @@
         text-shadow: $menu-item-hover-text-shadow;
       }
     }
+  }
+
+  &.menu-row {
+    flex-direction: row;
+    //no sub-menu but only menu-list exists
+    //float
+    > .menu-list {
+      display: flex;
+      flex-direction: $menu-float-flex-direction;
+      position: relative;
+
+      > .menu-item {
+        min-width: $menu-float-menu-item-mix-width;
+
+        &:first-child {
+          border-top-left-radius: $menu-float-menu-item-child-border-radius;
+          border-bottom-left-radius: $menu-float-menu-item-child-border-radius;
+        }
+
+        &:last-child {
+          border-top-right-radius: $menu-float-menu-item-child-border-radius;
+          border-bottom-right-radius: $menu-float-menu-item-child-border-radius;
+        }
+
+        &.right {
+          flex-grow: $menu-float-menu-item-right-flex-grow;
+          text-align: $menu-float-menu-item-right-text-align;
+          justify-content: $menu-float-menu-item-right-justify-content;
+        }
+
+        &.left {
+          flex-grow: $menu-float-menu-item-left-flex-grow;
+        }
+      }
+    }
+
+    > .direct-child {
+      > .menu-list {
+        border-radius: $default-border-radius;
+        background: $white;
+        z-index: $menu-float-submenu-menu-z-index;
+        flex-direction: $menu-float-submenu-menu-list-flex-direction;
+        position: absolute;
+        left: 0;
+      }
+
+      &.show {
+        > .menu-list {
+          animation: $menu-float-submenu-active-menu-list-animation;
+        }
+      }
+
+      &.close {
+        > .menu-list {
+          animation: $menu-float-submenu-close-menu-list-animation;
+        }
+      }
+    }
+
+    &.popup-menu {
+      &.global-with-border {
+        .menu-list {
+          border: $default-border;
+        }
+      }
+
+      &.global-with-box {
+        .menu-list {
+          box-shadow: $default-box-shadow;
+        }
+      }
+
+      .non-direct-child {
+        @include popup-list;
+      }
+
+
+      &.dark {
+        .menu-list {
+          background: $menu-dark-background-color !important;
+        }
+      }
+    }
+
+  }
+
+  &.menu-column {
+    flex-direction: column;
+
+    &.popup-menu {
+      &.global-with-border {
+        .menu-list {
+          border: $default-border;
+        }
+      }
+
+      &.global-with-box {
+        .menu-list {
+          box-shadow: $default-box-shadow;
+        }
+      }
+
+
+      &.dark {
+        .menu-list {
+          background: $menu-dark-background-color !important;
+        }
+      }
+    }
+
+    .direct-child, .non-direct-child {
+      @include popup-list;
+    }
+  }
+}
+
+.popup-menu {
+  .menu-item {
+    min-width: 8rem;
   }
 }

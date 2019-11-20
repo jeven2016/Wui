@@ -10,16 +10,12 @@
     white-space: $menu-item-white-space;
     cursor: $menu-item-cursor;
     border: $menu-item-border;
-    min-width: $dp-min-width;
+    //min-width: $dp-min-width;
     transition: $menu-item-transition;
   }
 
   @include focus-active2 {
     color: $menu-item-hove-text-color;
-
-    &.with-box {
-      font-weight: $menu-item-font-weight;
-    }
 
     &.with-bg {
       background-color: $menu-item-background-color;

@@ -4,8 +4,6 @@
   overflow-x: hidden;
 
   > .menu {
-    background-color: $white;
-
     .menu-item {
       @include active3 {
         color: $dp-menu-item-color;
@@ -13,4 +11,9 @@
       }
     }
   }
+}
+
+.dropdown-title{
+  display: inline-flex;
+  flex-wrap: wrap;
 }

@@ -52,11 +52,18 @@
   }
 }
 
-@mixin only-focus-active(){
-  &:focus, &:hover {
+@mixin only-focus(){
+  &:hover {
     @content;
   }
 }
+
+@mixin only-active(){
+  &:active, &.active{
+    @content;
+  }
+}
+
 
 @mixin make-visible() {
   &.active {

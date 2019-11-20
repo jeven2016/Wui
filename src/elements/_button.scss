@@ -4,23 +4,30 @@
 
   //default button
   @include add-simple-button-content($btn-default-background-color, $btn-default-text-color, $btn-border-color,
-      lighten($btn-border-color, 5%));
+          lighten($btn-border-color, 5%));
 
 
   //other buttons
   @each $name, $color in $btn-colors {
     &.#{$name} {
       @include add-simple-button-content($color, $white, darken($color, $default-color-increase-ratio),
-          lighten($color, 30%));
+              lighten($color, 30%));
+    }
+  }
+
+  @mixin generate-outline-button($className,$btn-bg-color,$btn-color, $btn-boxshadow-color) {
+    &.#{$className} {
+      @include generate-local($btn-bg-color, $btn-color, $btn-color);
+      @include generate-active($btn-color, $white, $btn-color, $btn-boxshadow-color);
     }
   }
 
   &.outline {
     @each $name, $color in $btn-colors {
-      @include generate-outline-button($name, transparent, $color, lighten($color, 30%));
-      /*@if str-index($name, "color-") {
-        @include generate-outline-button(str-replace($name, "color-"), transparent, $color);
-      }*/
+      &.#{$name} {
+        @include generate-local(transparent, $color, $color);
+        @include generate-active($color, $white, $color, lighten($color, 30%));
+      }
     }
   }
 

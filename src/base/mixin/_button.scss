@@ -3,13 +3,6 @@
   @include generate-active($btn-bg-color, $btn-color, $btn-bdr-color, $btn-boxshadow-color);
 }
 
-@mixin generate-outline-button($className,$btn-bg-color,$btn-color, $btn-boxshadow-color) {
-  &.#{$className} {
-    @include generate-local($btn-bg-color, $btn-color, $btn-color);
-    @include generate-active($btn-color, $white, $btn-color, $btn-boxshadow-color);
-  }
-}
-
 @mixin generate-local($bg-color,$color,$bdr-color) {
   background-color: $bg-color;
   color: $color;
@@ -31,9 +24,14 @@
     position: relative;
   }
 
-  /*&:not(:disabled):not(.disabled):active {
-    transform: scale(0.95);
-  }*/
+  &:not(.disabled):active {
+    transform: scale(0.97);
+  }
+
+  &.active:not(.disabled) {
+    color: $btn-text-color;
+    background-color: lighten($active-bg-color, $default-bg-color-increase-ratio);
+  }
 }
 
 /**

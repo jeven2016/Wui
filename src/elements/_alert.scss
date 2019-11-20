@@ -7,7 +7,7 @@ $animation-timeout: .2s;
   background-color: transparent;
 
 
-  @include only-focus-active {
+  @include only-focus {
     opacity: 1;
     transform: scale(1.2, 1.2);
     transform-origin: center;

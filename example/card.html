@@ -30,8 +30,20 @@
 
 
   </style>
+  <script lang="javascript">
+
+    document.addEventListener('click', function(ev) {
+      console.log('document.click');
+    });
+
+    function clickBtn() {
+      console.log('click btn');
+      window.event.stopPropagation();
+    }
+  </script>
 </head>
 <body>
+<button onclick="clickBtn()">btn</button>
 <div>
   <div class="title">
     Card示例:

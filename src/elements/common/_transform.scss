@@ -36,21 +36,64 @@
 }
 
 @keyframes show-menu-list {
-  from {
+  0% {
     top: 6rem;
+    opacity: 0;
+  }
+  100% {
+    top: calc(100% + 3px);
+    //opacity: 1;
+  }
+}
+
+@keyframes close-menu-list {
+  0% {
+    top: calc(100% + 3px);
+    opacity: 1;
+  }
+  98% {
+    top: 6rem;
+    opacity: 0;
+  }
+  100% {
+    border-width: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
+}
+
+@keyframes scale-menu-list {
+  from {
+    transform: scaleY(0.2);
   }
   to {
-    top: 2.625rem;
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale2-menu-list {
+  0% {
+    max-height: none;
+    transform: scaleY(1);
+  }
+  99% {
+    transform: scaleY(0.2);
+  }
+  100% {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
   }
 }
 
 @keyframes close-menu {
   from {
-    max-height: 20rem;
+    transform: scaleY(1);
   }
   to {
-    max-height: 0;
-    opacity: 0;
+    transform: scaleY(0);
+    opacity: 1;
   }
 }
 

@@ -1,0 +1,236 @@
+@mixin bottom-bar() {
+  &:after {
+    @include make-block(absolute) {
+      border-radius: 50%;
+      left: $menu-float-submenu-active-menu-header-after-left;
+      top: $menu-float-submenu-active-menu-header-after-top;
+      content: $menu-float-submenu-active-menu-header-after-content;
+      height: $menu-float-submenu-active-menu-header-after-height;
+      width: $menu-float-submenu-active-menu-header-after-width;
+      background-color: $menu-float-submenu-active-menu-header-after-background-color;
+      transition: $menu-float-submenu-active-menu-header-after-transition;
+      animation: $menu-float-submenu-active-menu-header-after-animation;
+    }
+  }
+}
+
+.submenu {
+  @include border-radius($menu-border-radius);
+  @include make-flex;
+  list-style: $menu-list-style;
+  flex-direction: $menu-flex-direction;
+  align-items: $menu-align-items;
+  position: $menu-position;
+
+  &.with-box {
+    box-shadow: $default-box-shadow;
+  }
+
+  > .menu-list {
+    display: flex;
+    flex-direction: column;
+    transition: $menu-menu-list-transition;
+    background: $menu-menu-list-background;
+    max-height: $menu-menu-list-max-height;
+
+    > .menu-item {
+      @include make-menu-item;
+
+      > .left, > .right {
+        flex: 0 1 1em;
+        @include make-flex-center;
+      }
+
+      > .center {
+        flex: 1 0 auto;
+        padding: 0 0.25rem;
+      }
+    }
+  }
+
+  .menu-header {
+    cursor: $menu-item-cursor;
+    padding: $menu-header-padding;
+    font-weight: map_get($font-weight, 'normal');
+    position: $menu-header-position;
+
+    > .icon {
+      @include child-margin($menu-icon-margin-right);
+    }
+
+    @include add-disabled-conf(false) {
+      color: $text-color;
+      background-color: transparent;
+    }
+  }
+
+  //add a arrow icon for non-float menu
+  &:not(.float) {
+    .menu-header {
+      @include make-arrow($default-arrow-border, $default-arrow-active-border, null, 'after', map_get($arrow-direction, 'down')) {
+        position: $menu-header-arrow-position;
+        right: $menu-header-arrow-right;
+        top: $menu-header-arrow-top;
+      }
+    }
+  }
+
+  &.block {
+    display: $menu-block-display;
+    width: 100%;
+  }
+
+  &.show {
+    > .menu-list {
+      max-height: $menu-menu-list-max-height;
+    }
+  }
+
+  &.close {
+    > .menu-list {
+      max-height: 0;
+    }
+  }
+}
+
+.menu {
+  @extend .submenu;
+  @include make-inline-flex;
+
+  &.with-border {
+    border: $menu-border;
+  }
+
+  /**
+  当menu中的嵌套不确定时,如何设置border-radius将会会相当地复杂，
+  通常的做法就是menu上下留白，不在子item中设置border-radius,如此可以极大地简化实现难度
+   */
+  padding: $menu-padding;
+
+
+  &.simple {
+
+    > .divider {
+      display: none;
+    }
+  }
+
+  &.primary {
+    .menu-list > .menu-item {
+
+      @include focus2 {
+        color: $menu-primary-menu-item-focus-color;
+      }
+
+      &.active {
+        background-color: $menu-primary-menu-item-active-background-color;
+        border-right: $menu-primary-menu-item-active-border-right;
+        margin-right: $menu-primary-menu-item-active-margin-right;
+      }
+    }
+  }
+
+  &.dark, &.dark .submenu {
+    background-color: $menu-dark-background-color;
+    color: $menu-dark-color;
+    border: $menu-dark-border;
+
+    > .menu-list {
+      background-color: $menu-dark-menu-list-background;
+    }
+
+
+    .menu-header {
+      background-color: $menu-dark-menu-header-background-color;
+      color: $menu-dark-menu-header-color;
+      transition: $menu-dark-menu-header-transition;
+
+
+    }
+
+    > .menu-list > .menu-item {
+      &.disabled {
+        color: $menu-dark-disabled-menu-item-color;
+      }
+
+      &:not(.disabled):focus, &:not(.disabled):hover {
+        color: $white;
+        text-shadow: $menu-item-hover-text-shadow;
+      }
+
+      &.show {
+        background-color: $blue;
+        color: $white;
+        text-shadow: $menu-item-hover-text-shadow;
+      }
+    }
+  }
+
+
+  &.menu-row {
+
+    /**
+        Menu ----- Header
+               |-- List
+               |-------Items
+               |-------SubMenu
+               |------------List
+               |----------------Items
+               |----------------Submenus2
+               |.........................
+      */
+    //the first list should list in a row
+    > .menu-list {
+      flex-direction: $menu-float-flex-direction;
+      position: relative;
+
+      // the direct sub menu-list should list in different rows(the grandsons excluded)
+      // invisible by default
+      > .submenu {
+        > .menu-list {
+          flex-direction: $menu-float-submenu-menu-list-flex-direction;
+          max-height: 0;
+          overflow: hidden;
+          position: absolute;
+          left: 0;
+          top: 100%;
+        }
+
+        &.show {
+          > .menu-list {
+            max-height: $menu-menu-list-max-height;
+            animation: $menu-float-submenu-active-menu-list-animation;
+          }
+        }
+      }
+    }
+  }
+
+  &.menu-column {
+    flex-direction: $menu-float-submenu-menu-list-flex-direction;
+
+    .menu-list {
+      flex-direction: $menu-float-submenu-menu-list-flex-direction;
+    }
+  }
+
+
+  &.close {
+    > .menu-header:after {
+      transform: $menu-close-menu-header-icon-transform;
+      transform-origin: $menu-close-menu-header-icon-transform-origin;
+    }
+
+    > .menu-list {
+      max-height: 0;
+      overflow: $menu-menu-list-overflow;
+    }
+  }
+
+  &.show {
+    > .menu-list {
+      max-height: $menu-menu-list-max-height;
+    }
+  }
+
+}

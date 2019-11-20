@@ -6,10 +6,10 @@ $ss-tag-background-color: #eee;
 
 //for datepicker
 $datapicker-box-shadown: 0 2px 7px 0 rgba(0, 0, 0, 0.24);
-$datapicker-title-backgournd-color: #0097A7;
+$datapicker-title-backgournd-color: $blue;
 $datapicker-title-year-text-color: $white;
-$datapicker-day-selected-background-color: darken(#0097A7, 10%);
-$datapicker-day-hover-background-color: lighten(#0097A7, 50%);
+$datapicker-day-selected-background-color: darken($datapicker-title-backgournd-color, 10%);
+$datapicker-day-hover-background-color: #73AFFF;
 $datepicker-default-background-color: #ffffff;
 
 
