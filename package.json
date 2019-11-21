@@ -8,6 +8,7 @@
     "test": "test"
   },
   "scripts": {
+    "build": "node_modules/gulp/bin/gulp.js",
     "lint": "analyze-css --file dist/wui-bundle.css",
     "bs": "analyze-css --file example/bootstrap.css",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,13 +30,17 @@
   "devDependencies": {
     "analyze-css": "^0.12.4",
     "autoprefixer": "^9.7.2",
+    "better-console": "^1.0.1",
     "cssnano": "^4.1.10",
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-header": "^2.0.9",
     "gulp-postcss": "^8.0.0",
+    "gulp-print": "^5.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
     "gulp-util": "^3.0.8",
     "node-sass": "^4.13.0",
     "run-sequence": "^2.2.1"

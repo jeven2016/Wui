@@ -16,11 +16,3 @@
     @content;
   }
 }
-
-@mixin button-group-disabled() {
-  &:disabled, &.disabled {
-    > .button {
-      @extend .button.disabled;
-    }
-  }
-}

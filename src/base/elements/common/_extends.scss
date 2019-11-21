@@ -7,7 +7,7 @@
   text-align: $btn-text-align;
   text-decoration: $btn-text-decoration;
   @include border-radius($btn-border-radius);
-  overflow: $btn-overflow;
+  //overflow: $btn-overflow;
   -webkit-tap-highlight-color: transparent;
   //-webkit-appearance: button; //issue: Border-Radius doesn't work in link button on Chrome
   -webkit-appearance: none;
