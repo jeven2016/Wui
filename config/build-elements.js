@@ -1,5 +1,4 @@
 module.exports = {
-  buildAll: true,
 
   elements: {
     blockquota: true,
