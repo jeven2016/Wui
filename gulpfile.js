@@ -1,4 +1,3 @@
-var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 var fs = require('fs');
 var gulp = require('gulp');
@@ -11,13 +10,13 @@ sass.compiler = require('node-sass');
 
 // plugins
 var concat = require('gulp-concat');
-var gutil = require('gulp-util');
 var header = require('gulp-header');
 var postcss = require('gulp-postcss');
 var rename = require('gulp-rename');
 var runSequence = require('run-sequence');
 var sassGlob = require('gulp-sass-glob');
 var merge = require('merge-stream');
+var wait = require('gulp-wait');
 
 var buildElemsConfig = require('./config/build-elements');
 var pkg = require('./package.json');
@@ -36,9 +35,10 @@ var global = {
 };
 
 var scssDirs = {
+  variableFile: '_variables.scss',
   base: {
     path: 'src/',
-    file: ['_base-index.scss'],
+    file: ['_normalize.scss', '_variables.scss', '_base-index.scss'],
   },
   common: {
     path: 'src/',
@@ -61,7 +61,7 @@ function invalidFile(file) {
   throw new Error('The file is invalid: ' + file);
 }
 
-function getFileName(file) {
+function getFileNames(prefix, file) {
   if (typeof file === 'string') {
     return solveFileName(file);
   }
@@ -70,7 +70,7 @@ function getFileName(file) {
     if (file.length === 0) {
       invalidFile(file);
     }
-    return solveFileName(file[0]);
+    return file.map(function(item) { return prefix + item;});
   }
   invalidFile(file);
 }
@@ -88,8 +88,8 @@ function getFiles(dirConfig) {
   if (dirConfig.hasOwnProperty('file')) {
     var dirPath = dirConfig.path;
     dirPath = dirPath.endsWith('/') ? dirPath : dirPath.concat('/');
-    var file = [dirPath + getFileName(dirConfig.file)];
-    return file;
+    var files = getFileNames(dirPath, dirConfig.file);
+    return files;
   }
 
   var elemConfig = dirConfig.config;
@@ -131,6 +131,7 @@ gulp.task('addDefaultHeader', function() {
 });
 
 gulp.task('buildDefault', function() {
+  console.info('>>>>  Begin to compile the default theme................');
   var scssFiles = getFiles(scssDirs.base).
       concat(getFiles(scssDirs.common)).
       concat(getFiles(scssDirs.elems));
@@ -156,10 +157,13 @@ function getFolders(dir) {
 }
 
 gulp.task('buildThemes', function() {
-  getFolders(scssDirs.themes.path).map(function(dirName) {
+  console.info('>>>>  Begin to compile themes................');
+  var tskArray = getFolders(scssDirs.themes.path).map(function(dirName) {
+    var variableFile = path.join(scssDirs.themes.path, dirName,
+        scssDirs.variableFile).toString();
 
     var scssFiles = getFiles(scssDirs.base).
-        concat(getFiles(path.join(scssDirs.themes.path, dirName))).
+        concat(variableFile).
         concat(getFiles(scssDirs.common)).
         concat(getFiles(scssDirs.elems));
 
@@ -167,32 +171,18 @@ gulp.task('buildThemes', function() {
     console.info(scssFiles);
 
     return gulp.src(scssFiles).
+        pipe(wait(500)).
         pipe(sassGlob()).
         pipe(concat(global.name + '-' + pkg.version + '.css')).
         pipe(sass.sync().on('error', sass.logError)).
         pipe(gulp.dest(global.dist + dirName)).
         pipe(postcss([cssnano({reduceIdents: {keyframes: false}})])).
         pipe(rename(global.name + '-' + pkg.version + '.min.css')).
-        pipe(gulp.dest(global.dist + 'dirName'));
+        pipe(gulp.dest(global.dist + dirName));
   });
 
-  var scssFiles = getFiles(scssDirs.base).
-      concat(getFiles(scssDirs.common)).
-      concat(getFiles(scssDirs.elems));
-
-  console.info('The following files will be compiled:');
-  console.info(scssFiles);
-
-  return gulp.src(scssFiles).
-      pipe(sassGlob()).
-      pipe(concat(global.name + '-' + pkg.version + '.css')).
-      pipe(sass.sync().on('error', sass.logError)).
-      pipe(gulp.dest(global.dist + 'default')).
-      pipe(postcss([cssnano({reduceIdents: {keyframes: false}})])).
-      pipe(rename(global.name + '-' + pkg.version + '.min.css')).
-      pipe(gulp.dest(global.dist + 'default'));
-
+  return merge(tskArray);
 });
 
-gulp.task('default', gulp.series('clean', 'buildDefault', 'addDefaultHeader'));
-gulp.task('themes', gulp.series('buildThemes', 'addDefaultHeader'));
+gulp.task('default',
+    gulp.series('clean', 'buildDefault', 'buildThemes', 'addDefaultHeader'));

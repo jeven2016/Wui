@@ -4,7 +4,7 @@
   "description": "A new web UI framework built on CSS3.",
   "scripts": {
     "build": "node_modules/gulp/bin/gulp.js",
-    "themes": "node_modules/gulp/bin/gulp.js themes",
+    "clean": "node_modules/gulp/bin/gulp.js clean",
     "lint": "analyze-css --file dist/wui-bundle.css",
     "bs": "analyze-css --file example/bootstrap.css",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,7 +26,6 @@
   "homepage": "https://github.com/jeven2016/wheel-ui#readme",
   "devDependencies": {
     "analyze-css": "^0.12.4",
-    "autoprefixer": "^9.7.2",
     "better-console": "^1.0.1",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
@@ -38,7 +37,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.1.0",
-    "gulp-util": "^3.0.8",
+    "gulp-wait": "0.0.2",
     "merge-stream": "^2.0.0",
     "node-sass": "^4.13.0",
     "run-sequence": "^2.2.1"
