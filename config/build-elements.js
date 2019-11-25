@@ -29,6 +29,7 @@ module.exports = {
     accordion: true,
     toggle: true,
     alert: true,
-    progress: true
+    progress: true,
+    select: true
   }
 };

@@ -83,6 +83,7 @@
         position: $navbar-item-position;
         @include make-navbar-item($navbar-inactive-text-color);
         transition: all 0.2s;
+        height: 100%;
       }
 
       .dropdown, .button-dropdown {
@@ -139,6 +140,7 @@
 
   &.fixed {
     @include fixed(map_get($z-index, 'mask'), false, null);
+    border-radius: 0;
 
     &.top {
       top: 0;
@@ -219,6 +221,7 @@
       > .item {
         align-items: flex-start;
         justify-content: flex-start;
+        align-items: center;
         width: 100%;
         //line-height: $navbar-item-height - 1rem;
       }

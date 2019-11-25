@@ -185,4 +185,4 @@ gulp.task('buildThemes', function() {
 });
 
 gulp.task('default',
-    gulp.series('clean', 'buildDefault', 'buildThemes', 'addDefaultHeader'));
+    gulp.series('clean', 'buildDefault'));

@@ -37,6 +37,9 @@ $types: ('sm', 'md', 'lg', 'xl');
   }
 }
 
+.layout {
+  height: 100%;
+}
 
 .layout, .layout-content, .layout-footer {
   @include make-flex {
@@ -84,6 +87,7 @@ $types: ('sm', 'md', 'lg', 'xl');
 
 .layout-slider {
   @include make-flex {
+    height: 100%;
     width: 20%;
     flex-direction: column;
   }
