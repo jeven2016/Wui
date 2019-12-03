@@ -3812,6 +3812,9 @@ textarea.input {
   .popup-exit-done {
     display: none; }
 
+.popup-ctrl {
+  display: inline-flex; }
+
 .progress {
   display: flex;
   height: 1rem; }
