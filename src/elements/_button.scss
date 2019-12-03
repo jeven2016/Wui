@@ -43,9 +43,9 @@
   }
 
   //同级的button但不是block button的，默认margin-left:0.5rem
-  + .button:not(.block), + .button-dropdown, + .dropdown {
+ /* + .button:not(.block), + .button-dropdown, + .dropdown {
     margin-left: $btn-margin-left-button;
-  }
+  }*/
 
   &.circle {
     @include flex-center(inline-flex);

@@ -11,24 +11,24 @@
 
 @mixin generate-active($active-bg-color,$btn-text-color,$active-bdr-color, $btn-boxshadow-color) {
 
-  &:not(:disabled):not(.disabled):focus, &:not(:disabled):not(.disabled):hover {
+  //once the button is disabled, focus and active won't be triggered, only hover needs to be handled
+  &:focus, &:not(:disabled):hover {
     background-color: lighten($active-bg-color, $default-bg-color-increase-ratio);
     color: $btn-text-color;
     border-color: darken($active-bdr-color, $default-color-increase-ratio);
   }
 
-
-  &:not(:disabled):not(.disabled):focus, &.active:not(:disabled):not(.disabled) {
+  &:focus, &.active {
     box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
     z-index: map_get($z-index, "pop");
     position: relative;
   }
 
-  &:not(.disabled):active {
+  &:active {
     transform: scale(0.97);
   }
 
-  &.active:not(.disabled) {
+  &.active {
     color: $btn-text-color;
     background-color: lighten($active-bg-color, $default-bg-color-increase-ratio);
   }
