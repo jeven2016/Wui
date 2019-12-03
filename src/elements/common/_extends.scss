@@ -1,5 +1,5 @@
 .base-btn {
-  @include make-inline-block();
+  @include make-inline-flex-center();
   padding: $btn-default-padding;
   cursor: $btn-cursor;
   outline: $btn-outline;

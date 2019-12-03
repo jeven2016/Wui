@@ -13,6 +13,15 @@
   }
 }
 
+//without :disabled
+@mixin focus2_no_active() {
+  &:not(.disabled):not(.active):focus,
+  &:not(.disabled):not(.active):hover {
+    @content;
+  }
+}
+
+
 @mixin active() {
   &:not(:disabled):not(.disabled):active,
   &.active:not(:disabled):not(.disabled) {
