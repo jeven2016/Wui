@@ -3,24 +3,28 @@
   flex-wrap: $btn-group-flex-wrap;
 
   > .button {
-    margin: $btn-group-buttons-margin;
     @include group-border-radius($btn-group-border-radius);
 
-    &:first-child {
-      @include first-button;
+    &:not(:first-child) {
+      margin-left: $btn-group-buttons-margin-left;
     }
 
-    &:last-child {
-      @include last-button;
-    }
+    /*
+        &:first-child {
+          @include first-button;
+        }
 
-    &:not(:first-child):not(:last-child) {
-      @include middle-button;
-    }
+        &:last-child {
+          @include last-button;
+        }
+
+        &:not(:first-child):not(:last-child) {
+          @include middle-button;
+        }*/
   }
 
   > .popup-ctrl {
-    margin: $btn-group-buttons-margin;
+    margin: 0 !important;
 
     &:first-child {
       > .button, > .title > .button {

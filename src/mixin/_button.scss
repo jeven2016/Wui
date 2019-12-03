@@ -20,8 +20,8 @@
 
   &:focus, &.active {
     box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
-    z-index: map_get($z-index, "pop");
-    position: relative;
+    z-index: map_get($z-index, "widget");
+    //position: relative;
   }
 
   &:active {
@@ -38,18 +38,14 @@
 * set the group's border radius property
  */
 @mixin group-border-radius($dr-radius:0) {
-  &:first-child {
-    @include full-border-radius($dr-radius, 0, $dr-radius, 0);
+  &:not(:first-child) {
+    @include border-radius-variable(top, left, 0);
+    @include border-radius-variable(bottom, left, 0);
   }
 
-  &:last-child {
-    @include full-border-radius(0, $dr-radius, 0, $dr-radius);
-    border-left-width: 0;
-  }
-
-  &:not(:first-child):not(:last-child) {
-    border-left-width: 0;
-    @include border-radius(0);
+  &:not(:last-child) {
+    @include border-radius-variable(top, right, 0);
+    @include border-radius-variable(bottom, right, 0);
   }
 }
 

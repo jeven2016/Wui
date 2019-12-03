@@ -138,7 +138,9 @@ $elem-small-padding: 0.25rem 0.5rem;
 
 //z-index
 $z-index: (
-        pop: 10,
+    widget: 10,
+
+        pop: 20,
         mask: 100,
         overlay: 110,
         top:1000
@@ -186,7 +188,7 @@ $btn-cicle-vertical-align: middle;
 
 //for button group
 $btn-group-border-radius: $default-border-radius;
-$btn-group-buttons-margin: 0 !important;
+$btn-group-buttons-margin-left: -1px;
 $btn-group-border-width: 1px;
 $btn-group-flex-wrap: wrap;
 
