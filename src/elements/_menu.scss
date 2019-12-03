@@ -53,7 +53,7 @@
 
   > .menu-list {
     transition: $menu-menu-list-transition;
-    background: $menu-menu-list-background;
+    //background: $menu-menu-list-background;
 
     > .menu-item {
       @include make-menu-item;
@@ -154,7 +154,7 @@
   &.primary {
     .menu-list > .menu-item {
 
-      @include focus2 {
+      @include focus2_no_active {
         color: $menu-primary-menu-item-focus-color;
       }
 
