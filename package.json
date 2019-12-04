@@ -5,8 +5,7 @@
   "scripts": {
     "build": "node_modules/gulp/bin/gulp.js",
     "clean": "node_modules/gulp/bin/gulp.js clean",
-    "lint": "analyze-css --file dist/wui-bundle.css",
-    "bs": "analyze-css --file example/bootstrap.css",
+    "lint": "analyze-css --file dist/default/wui-bundle.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -40,6 +39,7 @@
     "gulp-wait": "0.0.2",
     "merge-stream": "^2.0.0",
     "node-sass": "^4.13.0",
-    "run-sequence": "^2.2.1"
+    "run-sequence": "^2.2.1",
+    "copy-and-watch": "^0.1.4"
   }
 }
