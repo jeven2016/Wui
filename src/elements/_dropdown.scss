@@ -4,10 +4,11 @@
   overflow-x: hidden;
 
   > .menu {
-    >.menu-list{
+    > .menu-list {
       background-color: $white;
       min-width: 8rem;
     }
+
     .menu-item {
       @include active3 {
         color: $dp-menu-item-color;
@@ -17,7 +18,12 @@
   }
 }
 
-.dropdown-title{
+.dropdown-title {
   display: inline-flex;
   flex-wrap: wrap;
+
+  &.block {
+    width: 100%;
+  }
+
 }

@@ -62,14 +62,14 @@
     @extend %input-active-base;
   }
 
-  &:not(:disabled):not(.disabled):active {
-    transform: $input-active-scale;
+/*  &:not(:disabled):not(.disabled):active {
+    //transform: $input-active-scale;
 
     + .icon {
       //transform: $icon-input-icon-scale;
 
     }
-  }
+  }*/
 
 }
 

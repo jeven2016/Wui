@@ -6,6 +6,7 @@
   line-height: $btn-line-height;
   text-align: $btn-text-align;
   text-decoration: $btn-text-decoration;
+  vertical-align: $btn-cicle-vertical-align;
   @include border-radius($btn-border-radius);
   //overflow: $btn-overflow;
   -webkit-tap-highlight-color: transparent;

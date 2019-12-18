@@ -49,7 +49,6 @@
 
   &.circle {
     @include flex-center(inline-flex);
-    vertical-align: $btn-cicle-vertical-align;
     width: $btn-cicle-width;
     height: $btn-cicle-height;
     padding: 0;

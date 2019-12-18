@@ -1,5 +1,5 @@
 .popup {
-  display: $dp-menu-display;
+  //display: $dp-menu-display;
   opacity: $dp-menu-opacity;
   position: $dp-menu-position;
   transform-origin: $dp-menu-transform-origin;
@@ -31,6 +31,8 @@
   }
 
   &-exit-done {
-    display: $dp-menu--exit-done-display;
+    height: $dp-menu-exit-done-height;
+    max-height: $dp-menu-exit-done-max-height;
+    overflow: $dp-menu-exit-done-overflow;
   }
 }
