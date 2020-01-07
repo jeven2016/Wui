@@ -77,6 +77,7 @@
     padding: $menu-header-padding;
     font-weight: map_get($font-weight, 'normal');
     position: $menu-header-position;
+    @include make-flex;
 
     > .icon {
       @include child-margin($menu-icon-margin-right);
@@ -315,8 +316,35 @@
   }
 }
 
+@keyframes hide-cnt-animation {
+  0%{
+    opacity: 1;
+  }
+  90%{
+    opacity: 0!important;
+  }
+  100%{
+    display: none!important;
+  }
+}
+
+%hide-content {
+  justify-content: center;
+
+  > *:not(.icon) {
+   animation: hide-cnt-animation .2s forwards;
+  }
+}
+
 .popup-menu {
   .menu-item {
     min-width: 8rem;
+  }
+
+  &.collapse {
+    > .menu-list > .menu-item, .menu-header {
+      @extend %hide-content;
+
+    }
   }
 }

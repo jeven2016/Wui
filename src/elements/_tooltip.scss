@@ -4,6 +4,7 @@
   background-color: $black;
   color: $white;
   font-size: 0.8rem;
+  font-weight: map_get($font-weight, "normal");
   padding: 0.5rem 0.5rem;
   border-radius: 0.25rem;
   min-width: 3rem;

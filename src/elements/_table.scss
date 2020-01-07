@@ -49,7 +49,8 @@
 
   th {
     @include make-cell;
-    font-weight: map_get($font-weight, 'normal');
+    color: $gray-darker;
+    font-weight: map_get($font-weight, 'bold');
     background-color: $table-th-background-color;
   }
 

@@ -1,38 +1,9 @@
 .popup {
-  //display: $dp-menu-display;
+  //display: $dp-menu-display;\
+  visibility: hidden;
   opacity: $dp-menu-opacity;
   position: $dp-menu-position;
   transform-origin: $dp-menu-transform-origin;
   z-index: $dp-menu-z-index;
   color: $dp-menu-color;
-
-  &-enter {
-    display: $dp-menu-enter-display;
-    transform: $dp-menu-enter-transform;
-  }
-
-  &-enter-done {
-    display: $dp-menu-enter-done-display;
-    opacity: $dp-menu-enter-done-opacity;
-    transform: $dp-menu-enter-done-transform;
-    transition: $dp-menu-enter-done-transition;
-  }
-
-  &-exit {
-    display: $dp-menu-exit-display;
-    opacity: $dp-menu-exit-opacity;
-  }
-
-  &-exit-active {
-    display: $dp-menu-exit-active-display;
-    transform: $dp-menu-exit-activetransform;
-    opacity: $dp-menu-exit-activeopacity;
-    transition: $dp-menu-exit-activetransition;
-  }
-
-  &-exit-done {
-    height: $dp-menu-exit-done-height;
-    max-height: $dp-menu-exit-done-max-height;
-    overflow: $dp-menu-exit-done-overflow;
-  }
 }

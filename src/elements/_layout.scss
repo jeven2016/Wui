@@ -95,18 +95,4 @@ $types: ('sm', 'md', 'lg', 'xl');
   .menu {
     border-radius: 0;
   }
-
-  &.collapsed {
-    width: 5rem;
-    max-width: 5rem;
-    transition: all .3s;
-
-    .menu {
-      .icon + span {
-        opacity: 0;
-        max-width: 0;
-      }
-    }
-
-  }
 }

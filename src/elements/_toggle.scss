@@ -1,7 +1,15 @@
 
+.toggle-button {
+  background: transparent;
+  outline: none;
+  border: none;
+  vertical-align: middle;
+}
+
 .toggle {
   position: relative;
-  @include make-inline-flex();
+  @include make-flex();
+  width: 100%;
   font-size: 0.75rem;
   color: $white;
   font-weight: map_get($font-weight, 'bold');
@@ -9,10 +17,6 @@
   vertical-align: middle;
   min-width: 3.5rem;
   cursor: pointer;
-
-  + .toggle {
-    margin-left: 0.5rem;
-  }
 
   &.disabled {
     pointer-events: none !important;
@@ -33,6 +37,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    @include make-inline-flex-center;
     height: 1.5rem;
     width: 1.5rem;
     @include border-radius(50%);
@@ -43,24 +48,25 @@
 
   &.on {
     .bar {
-      background-color: #98BFD0;
+      background-color: #70a3e1
     }
 
     .ball {
-      background-color: #277ED0;
+      background-color: $blue;
       color: $text-color;
     }
   }
 
   &.off {
     .bar {
-      background-color: $gray;
+      background-color: rgba(0, 0, 0, .5);
     }
 
     .ball {
-      background-color: $light-gray;
-      left: 0;
-      color: $gray;
+      border: 1px solid rgba(0, 0, 0, .5);
+      box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+      background-color: $white;
+      color: rgba(0, 0, 0, .5);
     }
   }
 
@@ -70,42 +76,41 @@
     @include make-inline-flex;
     align-items: center;
     font-size: 0.75rem;
-    min-height: 2rem;
-    line-height: 2rem;
-    min-width: 3.5rem;
+    line-height: 1.5rem;
 
     &.on {
-      background-color: #277ED0;
+      background-color: $blue;
+      box-shadow: 0 1px 3px 1px #007affba;
+      justify-content: flex-start;
     }
 
     &.off {
-      background-color: $gray;
-      flex-flow: row-reverse;
+      background-color: rgba(0, 0, 0, .45);
+      box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+      justify-content: flex-end;
     }
 
-    .bar {
-      @include make-flex-center;
-      margin: 0;
-      padding: 0 0.5rem;
-      background-color: inherit;
-      flex: 0 1 auto;
+
+    > .info {
+      line-height: 1.5rem;
+      margin: 0 0.5rem;
     }
 
     .ball {
-      position: relative;
+      position: absolute;
       width: 1.5rem;
       height: 1.5rem;
       line-height: 1.5rem;
+      top: 0.25rem;
+      border: none;
       background-color: $white;
       @include border-radius;
       box-shadow: none;
-      flex: 0 0 auto;
     }
   }
 
   &.primary {
     border-radius: 1.5rem;
-    min-width: 4.5rem;
 
     > .ball {
       border-radius: 50%;

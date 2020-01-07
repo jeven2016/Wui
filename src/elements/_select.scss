@@ -76,6 +76,14 @@
 
       > .content {
         border: $default-border;
+
+        > .remove-icon {
+          margin-left: 0.25rem;
+
+          @include focus2 {
+            color: $red;
+          }
+        }
       }
     }
 

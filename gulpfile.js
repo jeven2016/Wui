@@ -171,7 +171,7 @@ gulp.task('buildThemes', function() {
     console.info(scssFiles);
 
     return gulp.src(scssFiles).
-        pipe(wait(500)).
+        pipe(wait(2000)).
         pipe(sassGlob()).
         pipe(concat(global.name + '-' + pkg.version + '.css')).
         pipe(sass.sync().on('error', sass.logError)).

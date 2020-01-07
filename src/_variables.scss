@@ -107,7 +107,7 @@ $btn-colors: (
 //Global
 //$default-box-shadow: 0 .25rem .75rem -1px darken($light-gray, 10%);
 //$default-box-shadow: 0px 0px 3px 2px rgba(0, 0, 0, 0.12);
-$default-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.14);
+$default-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 ;
 $default-border-radius: 0.25rem;
 $default-border-width: 1px;
@@ -210,7 +210,7 @@ $input-block-width: 100%;
 $input-default-padding: $elem-default-padding;
 $input-label-background-color: #eceeef;
 $input-box-shadow: 0 0 0 0.2rem lighten($blue, 40%);
-$input-active-scale: scale(0.97);
+//$input-active-scale: scale(0.97);
 
 $input-simple-border-left: none;
 $input-simple-border-top: none;
@@ -274,7 +274,7 @@ $menu-menu-list-overflow: hidden;
 $menu-menu-list-background: $white;
 $menu-item-cursor: pointer;
 $menu-item-border: none;
-$menu-item-transition: transition;
+$menu-item-transition: background .5s;
 $menu-item-background-color: lighten($gray, 18%);
 $menu-item-padding: 0.5rem 1rem 0.5rem 1rem;
 $menu-item-overflow: hidden;
@@ -353,7 +353,7 @@ $dp-min-width: 8rem;
 $dp-background-color: $white;
 $dp-item-border: 1px solid #ccc;
 $dp-border-radius: $default-border-radius;
-$dp-menu-display: none;
+//$dp-menu-display: none;
 $dp-menu-opacity: 0;
 $dp-menu-position: absolute;
 $dp-menu-transform-origin: center;
@@ -373,7 +373,11 @@ $dp-menu-exit-active-display: inline-block;
 $dp-menu-exit-activetransform: scaleY(0);
 $dp-menu-exit-activeopacity: 0;
 $dp-menu-exit-activetransition: opacity .2s ease-out, transform .2s ease-out;
-$dp-menu--exit-done-display: none;
+$dp-menu-exit-done-height: 0;
+$dp-menu-exit-done-max-height: 0;
+$dp-menu-exit-done-overflow: hidden;
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
@@ -450,8 +454,8 @@ $navbar-primary-switch-box-shadow: 0px 0px 2px 0 $white;
 $po-z-index: 100;
 $popover-arrow-border-color: $default-border-color;
 $popover-arrow-overlap-background-color: #fff;
-$popover-margin: -0.5rem;
-$popover-arrow-border-width: 0.5rem;
+$popover-margin: -0.25rem;
+$popover-arrow-border-width: 0.25rem;
 
 
 //For Card

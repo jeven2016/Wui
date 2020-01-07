@@ -26,6 +26,7 @@
   "devDependencies": {
     "analyze-css": "^0.12.4",
     "better-console": "^1.0.1",
+    "copy-and-watch": "^0.1.4",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
@@ -39,7 +40,6 @@
     "gulp-wait": "0.0.2",
     "merge-stream": "^2.0.0",
     "node-sass": "^4.13.0",
-    "run-sequence": "^2.2.1",
-    "copy-and-watch": "^0.1.4"
+    "run-sequence": "^2.2.1"
   }
 }
