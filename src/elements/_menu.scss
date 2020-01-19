@@ -79,13 +79,13 @@
     position: $menu-header-position;
     @include make-flex;
 
-    > .icon {
-      @include child-margin($menu-icon-margin-right);
-    }
-
     @include add-disabled-conf(false) {
       color: $text-color;
       background-color: transparent;
+    }
+
+    > .icon {
+      margin-right: 1rem;
     }
 
     &.with-arrow {
@@ -176,12 +176,16 @@
       background-color: $menu-dark-menu-list-background;
     }
 
-    .menu-header {
-      background-color: $menu-dark-menu-header-background-color;
-      color: $menu-dark-menu-header-color;
-      transition: $menu-dark-menu-header-transition;
+    &.collapse {
+      .menu-header {
+        background-color: $menu-dark-menu-header-background-color;
+        color: $menu-dark-menu-header-color;
+        transition: $menu-dark-menu-header-transition;
 
-
+        @include focus2 {
+          box-shadow: $default-primary-box-shadow;
+        }
+      }
     }
 
     > .menu-list > .menu-item {
@@ -290,6 +294,17 @@
     flex-direction: column;
 
     &.popup-menu {
+
+      //垂直弹出submenu，可以在左侧或右侧显示,默认在右侧
+      &.left {
+        .submenu {
+          > .menu-list {
+            right: calc(100% + 5px);
+            left: unset;
+          }
+        }
+      }
+
       &.global-with-border {
         .menu-list {
           border: $default-border;
@@ -316,23 +331,18 @@
   }
 }
 
-@keyframes hide-cnt-animation {
-  0%{
-    opacity: 1;
-  }
-  90%{
-    opacity: 0!important;
-  }
-  100%{
-    display: none!important;
-  }
-}
-
 %hide-content {
+  min-width: unset !important;
+  min-height: 3rem;
+  align-items: center;
   justify-content: center;
+  box-shadow: $default-box-shadow;
 
   > *:not(.icon) {
-   animation: hide-cnt-animation .2s forwards;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    transition: all .5s;
   }
 }
 
@@ -342,9 +352,22 @@
   }
 
   &.collapse {
-    > .menu-list > .menu-item, .menu-header {
+    > .menu-list > .menu-item {
       @extend %hide-content;
 
+      > .icon {
+        margin-right: unset;
+      }
+    }
+
+    > .submenu.direct-child {
+      > .menu-header {
+        @extend %hide-content;
+
+        > .icon {
+          margin-right: unset;
+        }
+      }
     }
   }
 }

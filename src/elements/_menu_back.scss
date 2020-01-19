@@ -62,10 +62,9 @@
         padding: 0 0.25rem;
       }
 
-      /*
-            > .icon {
-              @include child-margin($menu-icon-margin-right);
-            }*/
+      > .icon {
+        @include child-margin($menu-icon-margin-right);
+      }
     }
   }
 

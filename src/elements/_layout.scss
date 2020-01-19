@@ -90,6 +90,8 @@ $types: ('sm', 'md', 'lg', 'xl');
     height: 100%;
     width: 20%;
     flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
   }
 
   .menu {
