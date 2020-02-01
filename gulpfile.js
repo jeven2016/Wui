@@ -5,8 +5,7 @@ var console = require('better-console');
 var sass = require('gulp-sass');
 var path = require('path');
 var del = require('del');
-
-sass.compiler = require('node-sass');
+var notify = require('gulp-notify');
 
 // plugins
 var concat = require('gulp-concat');
@@ -17,8 +16,9 @@ var runSequence = require('run-sequence');
 var sassGlob = require('gulp-sass-glob');
 var merge = require('merge-stream');
 var wait = require('gulp-wait');
+var watch = require('gulp-watch');
 
-var buildElemsConfig = require('./config/build-elements');
+var buildConfig = require('./config/build-elements');
 var pkg = require('./package.json');
 
 var global = {
@@ -34,24 +34,7 @@ var global = {
   ].join('\n'),
 };
 
-var scssDirs = {
-  variableFile: '_variables.scss',
-  base: {
-    path: 'src/',
-    file: ['_normalize.scss', '_variables.scss', '_base-index.scss'],
-  },
-  common: {
-    path: 'src/',
-    file: ['_elements-common-index.scss'],
-  },
-  elems: {
-    path: 'src/elements',
-    config: buildElemsConfig,
-  },
-  themes: {
-    path: 'src/themes',
-  },
-};
+var scssDirs = buildConfig.scssFile;
 
 function solveFileName(file) {
   return file.startsWith('/') ? path.substring(1, file.length) : file;
@@ -106,11 +89,11 @@ function getFiles(dirConfig) {
     }
 
     var pureName = fileName.replace('_', '').replace('.scss', '');
-    if (!elemConfig.elements.hasOwnProperty(pureName)) {
-      console.warn('The file (' + fileName
+    if (!elemConfig.hasOwnProperty(pureName)) {
+      console.warn(fileName
           + ') is ignored because it isn\'t enabled in config file.');
     }
-    var enabled = elemConfig.elements[pureName];
+    var enabled = elemConfig[pureName];
     if (enabled) {
       fileList.push(dirConfig.path + '/' + fileName);
     }
@@ -120,7 +103,6 @@ function getFiles(dirConfig) {
 }
 
 gulp.task('clean', function() {
-  console.log('cleaning the dist directory...');
   return del([global.dist + '**']);
 });
 
@@ -133,6 +115,7 @@ gulp.task('addDefaultHeader', function() {
 gulp.task('buildDefault', function() {
   console.info('>>>>  Begin to compile the default theme................');
   var scssFiles = getFiles(scssDirs.base).
+      concat(getFiles(scssDirs.mixin)).
       concat(getFiles(scssDirs.common)).
       concat(getFiles(scssDirs.elems));
 
@@ -141,12 +124,13 @@ gulp.task('buildDefault', function() {
 
   return gulp.src(scssFiles).
       pipe(sassGlob()).
-      pipe(concat(global.name + '-' + pkg.version + '.css')).
+      pipe(concat(global.name + '-' + pkg.version + '.scss')).
       pipe(sass.sync().on('error', sass.logError)).
       pipe(gulp.dest(global.dist + 'default')).
       pipe(postcss([cssnano({reduceIdents: {keyframes: false}})])).
       pipe(rename(global.name + '-' + pkg.version + '.min.css')).
-      pipe(gulp.dest(global.dist + 'default'));
+      pipe(gulp.dest(global.dist + 'default')).
+      pipe(notify({message: 'Task completed'}));
 
 });
 
@@ -163,6 +147,7 @@ gulp.task('buildThemes', function() {
         scssDirs.variableFile).toString();
 
     var scssFiles = getFiles(scssDirs.base).
+        concat(getFiles(scssDirs.mixin)).
         concat(variableFile).
         concat(getFiles(scssDirs.common)).
         concat(getFiles(scssDirs.elems));
@@ -178,10 +163,17 @@ gulp.task('buildThemes', function() {
         pipe(gulp.dest(global.dist + dirName)).
         pipe(postcss([cssnano({reduceIdents: {keyframes: false}})])).
         pipe(rename(global.name + '-' + pkg.version + '.min.css')).
-        pipe(gulp.dest(global.dist + dirName));
+        pipe(gulp.dest(global.dist + dirName)).
+        pipe(notify({message: 'Task completed'}));
   });
 
   return merge(tskArray);
+});
+
+gulp.task('watch-default', function() {
+  return watch('src/**/*.scss', function() {
+    gulp.series('default')(); //run the default task while detecting any changes made fro scss files
+  });
 });
 
 gulp.task('default',

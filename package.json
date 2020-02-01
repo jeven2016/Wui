@@ -4,6 +4,8 @@
   "description": "A new web UI framework built on CSS3.",
   "scripts": {
     "build": "node_modules/gulp/bin/gulp.js",
+    "buildThemes": "node_modules/gulp/bin/gulp.js buildThemes",
+    "watch": "node_modules/gulp/bin/gulp.js watch-default",
     "clean": "node_modules/gulp/bin/gulp.js clean",
     "lint": "analyze-css --file dist/default/wui-bundle.css",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -32,14 +34,16 @@
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-header": "^2.0.9",
+    "gulp-notify": "^3.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-print": "^5.0.2",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
     "gulp-sass-glob": "^1.1.0",
     "gulp-wait": "0.0.2",
+    "gulp-watch": "^5.0.1",
     "merge-stream": "^2.0.0",
-    "node-sass": "^4.13.0",
     "run-sequence": "^2.2.1"
-  }
+  },
+  "dependencies": {}
 }

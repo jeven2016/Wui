@@ -29,6 +29,7 @@
 
   &.show {
     > .menu-list {
+      opacity: 1;
       //overflow: visible; //to show submenus correctly
       //max-height: $menu-menu-list-max-height;
       animation: $menu-float-submenu-active-vertical-menu-list-animation;
@@ -349,6 +350,10 @@
 .popup-menu {
   .menu-item {
     min-width: 8rem;
+  }
+
+  >.submenu .menu-list{
+    opacity: 0;
   }
 
   &.collapse {

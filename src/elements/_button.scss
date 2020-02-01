@@ -51,6 +51,8 @@
     @include flex-center(inline-flex);
     width: $btn-cicle-width;
     height: $btn-cicle-height;
+    flex-grow: 0;
+    flex-shrink: 0;
     padding: 0;
     @include border-radius($btn-cicle-border-radius);
   }

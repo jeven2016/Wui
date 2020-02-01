@@ -1,0 +1,94 @@
+%tab-ctrl {
+  @include make-inline-flex-center;
+  color: $gray;
+  height: 100%;
+  width: 2rem;
+  position: absolute;
+  cursor: pointer;
+}
+
+.tab {
+  @include make-flex;
+  position: relative;
+
+  .tab-pre {
+    @extend %tab-ctrl;
+
+    &.horizontal {
+      left: 0;
+      top: 0;
+    }
+
+    &.vertical {
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .tab-next {
+    @extend %tab-ctrl;
+
+    &.horizontal {
+      right: 0;
+      top: 0;
+    }
+
+    &.vertical {
+      bottom: 0;
+      left: 0;
+    }
+
+  }
+
+  .tab-container {
+    padding: 0 2rem;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .tab-scroll {
+    @include make-flex;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &.scrollable {
+
+  }
+
+  &.horizontal {
+    flex-direction: row;
+
+    &.with-border {
+      border-bottom: $default-border;
+    }
+  }
+
+
+  &.vertical {
+    flex-direction: column;
+    min-width: 4rem;
+  }
+
+
+  .tab-item {
+    @include make-menu-item();
+    min-width: 2rem;
+    flex-shrink: 0;
+  }
+
+  .tab-panel {
+
+  }
+
+  > .tab-bar {
+    border-radius: $default-border-radius;
+    position: absolute;
+
+    &.horizontal {
+      bottom: -1px;
+      border-bottom: 2px solid $primary;
+    }
+  }
+}
