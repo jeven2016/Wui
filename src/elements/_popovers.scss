@@ -7,6 +7,44 @@
   z-index: 101;
 }
 
+%top-arrow{
+  @extend %popover-arrow-common;
+  left: 50%;
+  top: 100%;
+  margin-left: $popover-margin;
+  border-bottom-width: 0;
+  border-top-color: $popover-arrow-border-color;
+
+  &::after {
+    content: '';
+    left: 50%;
+    top: $popover-margin;
+    margin-left: $popover-margin;
+    @extend %popover-arrow-common;
+    margin-top: -1px;
+    border-bottom-width: 0;
+    border-top-color: $popover-arrow-overlap-background-color;
+  }
+}
+
+%bottom-arrow{
+  @extend %popover-arrow-common;
+  left: 50%;
+  top: $popover-margin;
+  margin-left: $popover-margin;
+  border-top-width: 0;
+  border-bottom-color: $popover-arrow-border-color;
+
+  &::after {
+    content: '';
+    @extend %popover-arrow-common;
+    top: 1px;
+    left: $popover-margin;
+    border-top-width: 0;
+    border-bottom-color: $popover-arrow-overlap-background-color;
+  }
+}
+
 .popover {
   position: relative;
   background-color: $white;
@@ -20,64 +58,34 @@
     }
   }
 
-  .popover-arrow {
+  >.popover-arrow {
     &.top {
-      @extend %popover-arrow-common;
-      left: 50%;
-      top: 100%;
-      margin-left: $popover-margin;
-      border-bottom-width: 0;
-      border-top-color: $popover-arrow-border-color;
-
-      &::after {
-        content: '';
-        left: 50%;
-        top: $popover-margin;
-        margin-left: $popover-margin;
-        @extend %popover-arrow-common;
-        margin-top: -1px;
-        border-bottom-width: 0;
-        border-top-color: $popover-arrow-overlap-background-color;
-      }
+      @extend %top-arrow;
     }
 
     &.top-left {
-      @extend .top;
+      @extend %top-arrow;
 
       left: 2rem;
     }
 
     &.top-right {
-      @extend .top;
+      @extend %top-arrow;
 
       left: calc(100% - 2rem);
     }
 
     &.bottom {
-      @extend %popover-arrow-common;
-      left: 50%;
-      top: $popover-margin;
-      margin-left: $popover-margin;
-      border-top-width: 0;
-      border-bottom-color: $popover-arrow-border-color;
-
-      &::after {
-        content: '';
-        @extend %popover-arrow-common;
-        top: 1px;
-        left: $popover-margin;
-        border-top-width: 0;
-        border-bottom-color: $popover-arrow-overlap-background-color;
-      }
+      @extend %bottom-arrow;
     }
 
     &.bottom-left {
-      @extend .bottom;
+      @extend %bottom-arrow;
       left: 2rem;
     }
 
     &.bottom-right {
-      @extend .bottom;
+      @extend %bottom-arrow;
       left: calc(100% - 2rem);
     }
 

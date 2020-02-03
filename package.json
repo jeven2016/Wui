@@ -6,8 +6,9 @@
     "build": "node_modules/gulp/bin/gulp.js",
     "buildThemes": "node_modules/gulp/bin/gulp.js buildThemes",
     "watch": "node_modules/gulp/bin/gulp.js watch-default",
+    "watch-copy-default": "node_modules/gulp/bin/gulp.js watch-copy-default  ",
     "clean": "node_modules/gulp/bin/gulp.js clean",
-    "lint": "analyze-css --file dist/default/wui-bundle.css",
+    "analyze": "analyze-css --file dist/default/wui-modern-0.5.1.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,14 +27,14 @@
   },
   "homepage": "https://github.com/jeven2016/wheel-ui#readme",
   "devDependencies": {
-    "analyze-css": "^0.12.4",
+    "analyze-css": "^0.12.8",
     "better-console": "^1.0.1",
-    "copy-and-watch": "^0.1.4",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-header": "^2.0.9",
+    "gulp-if": "^3.0.0",
     "gulp-notify": "^3.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-print": "^5.0.2",
@@ -43,7 +44,7 @@
     "gulp-wait": "0.0.2",
     "gulp-watch": "^5.0.1",
     "merge-stream": "^2.0.0",
-    "run-sequence": "^2.2.1"
+    "minimist": "^1.2.0"
   },
   "dependencies": {}
 }

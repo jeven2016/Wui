@@ -1,6 +1,7 @@
 var cssnano = require('cssnano');
 var fs = require('fs');
 var gulp = require('gulp');
+var gulpIf = require('gulp-if');
 var console = require('better-console');
 var sass = require('gulp-sass');
 var path = require('path');
@@ -12,11 +13,11 @@ var concat = require('gulp-concat');
 var header = require('gulp-header');
 var postcss = require('gulp-postcss');
 var rename = require('gulp-rename');
-var runSequence = require('run-sequence');
 var sassGlob = require('gulp-sass-glob');
 var merge = require('merge-stream');
 var wait = require('gulp-wait');
 var watch = require('gulp-watch');
+var minimist = require('minimist');//parse the command line parameters
 
 var buildConfig = require('./config/build-elements');
 var pkg = require('./package.json');
@@ -35,6 +36,10 @@ var global = {
 };
 
 var scssDirs = buildConfig.scssFile;
+
+//the params passed through gulp command line
+var params = minimist(process.argv.slice(2),
+    {string: ['copyTo'], boolean: [], default: {copyTo: null}});
 
 function solveFileName(file) {
   return file.startsWith('/') ? path.substring(1, file.length) : file;
@@ -71,8 +76,7 @@ function getFiles(dirConfig) {
   if (dirConfig.hasOwnProperty('file')) {
     var dirPath = dirConfig.path;
     dirPath = dirPath.endsWith('/') ? dirPath : dirPath.concat('/');
-    var files = getFileNames(dirPath, dirConfig.file);
-    return files;
+    return getFileNames(dirPath, dirConfig.file);
   }
 
   var elemConfig = dirConfig.config;
@@ -173,6 +177,30 @@ gulp.task('buildThemes', function() {
 gulp.task('watch-default', function() {
   return watch('src/**/*.scss', function() {
     gulp.series('default')(); //run the default task while detecting any changes made fro scss files
+  });
+});
+
+gulp.task('copy-default-theme-file', function() {
+  console.info(
+      'begin to copy =' + './dist/default/' + global.name + '-' + pkg.version +
+      '.min.css ' + 'to ' + params.copyTo);
+
+  return gulp.src(
+      'dist/default/' + global.name + '-' + pkg.version + '.min.css').
+      pipe(wait(1000)).
+      pipe(gulp.dest(params.copyTo)).
+      pipe(notify({message: 'Task copy-default-theme-file completed'}));
+  ;
+});
+
+gulp.task('watch-copy-default', function() {
+  if (!params.copyTo) {
+    console.error('The \'--copyTo\' parameter is required.');
+    return null;
+  }
+
+  return watch('src/**/*.scss', function() {
+    gulp.series('default', 'copy-default-theme-file')(); //run the default task while detecting any changes made fro scss files
   });
 });
 

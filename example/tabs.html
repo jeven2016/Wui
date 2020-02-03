@@ -9,7 +9,7 @@
   <script src="jquery-3.1.0.js" type="application/javascript"></script>
   <style type="text/css">
     body {
-      /*background-color: #ccc;*/
+      /*background-color: #f7f5f5;*/
     }
 
     .area-example {
@@ -25,35 +25,86 @@
 </head>
 <body>
 <div class="area-example">
-
-  <div class="tab horizontal with-border">
-    <div class="tab-item active">
-      Item 1
+  <!-- todo marginBottom=-1px-->
+  <div class="tab horizontal with-border top">
+    <div class="tab-container">
+      <div class="tab-scroll horizontal">
+        <div class="tab-item active">
+          Item 1
+        </div>
+        <div class="tab-item">
+          <div class="item-label">Item 2</div>
+          <div class="item-icon">X</div>
+        </div>
+        <div class="tab-item">
+          Item 3
+        </div>
+      </div>
     </div>
-    <div class="tab-item">
-      Item 2
-    </div>
-    <div class="tab-item">
-      Item 3
-    </div>
-    <div class="tab-bar horizontal" style="width:5rem"></div>
+    <div class="tab-bar horizontal bottom" style="width:5rem"></div>
   </div>
 
-  <div class="tab vertical with-border">
-    <div class="tab-item active">
-      Item 1
+  <div style="margin-top:1rem">&nbsp;</div>
+
+  <div class="tab horizontal with-border bottom">
+    <div class="tab-container">
+      <div class="tab-scroll horizontal">
+        <div class="tab-item active">
+          Item 1
+        </div>
+        <div class="tab-item">
+          Item 2
+        </div>
+        <div class="tab-item">
+          Item 3
+        </div>
+      </div>
     </div>
-    <div class="tab-item">
-      Item 2
-    </div>
-    <div class="tab-item">
-      Item 3
-    </div>
-    <div class="tab-bar vertical" style="width:5rem"></div>
+    <div class="tab-bar horizontal top" style="width:5rem"></div>
   </div>
 
-  <div class="tab horizontal with-border scrollable">
+  <div style="margin-top:1rem">&nbsp;</div>
+  <div class="tab vertical with-border left">
+    <div class="tab-container">
+      <div class="tab-scroll vertical">
+        <div class="tab-item active">
+          Item 1
+        </div>
+        <div class="tab-item">
+          Item 2
+        </div>
+        <il class="tab-item">
+          Item 3
+        </il>
+      </div>
+    </div>
+    <div class="tab-bar vertical right"></div>
+  </div>
+
+
+  <div class="tab vertical with-border right" style="margin-left: 1rem">
+    <div class="tab-container">
+      <div class="tab-scroll vertical">
+        <div class="tab-item active">
+          Item 1
+        </div>
+        <div class="tab-item">
+          Item 2
+        </div>
+        <il class="tab-item">
+          Item 3
+        </il>
+      </div>
+    </div>
+    <div class="tab-bar vertical left"></div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+
+  <div class="tab horizontal with-border top scrollable">
+    <div class="tab-bar horizontal bottom" style="width:3rem"></div>
     <div class="tab-pre horizontal">&lt;</div>
+    <div class="tab-next horizontal">&gt;</div>
     <div class="tab-container">
       <div class="tab-scroll">
         <div class="tab-item active">
@@ -71,59 +122,395 @@
         <div class="tab-item">
           Item 2
         </div>
-        <div class="tab-item">
-          Item 3
-        </div>
-        <div class="tab-item active">
-          Item 1
-        </div>
-        <div class="tab-item">
-          Item 2
-        </div>
-        <div class="tab-item">
-          Item 3
-        </div>
-        <div class="tab-item active">
-          Item 1
-        </div>
-        <div class="tab-item">
-          Item 2
-        </div>
-        <div class="tab-item">
-          Item 3
-        </div>
-        <div class="tab-item active">
-          Item 1
-        </div>
-        <div class="tab-item">
-          Item 2
-        </div>
-        <div class="tab-item">
-          Item 3
-        </div>
-        <div class="tab-item active">
-          Item 1
-        </div>
-        <div class="tab-item">
-          Item 2
-        </div>
-        <div class="tab-item">
-          Item 3
-        </div>
-        <div class="tab-item active">
-          Item 1
-        </div>
-        <div class="tab-item">
-          Item 2
-        </div>
-        <div class="tab-item">
-          Item 3
-        </div>
-        <div class="tab-bar horizontal" style="width:5rem"></div>
       </div>
     </div>
-    <div class="tab-next horizontal">&gt;</div>
+
   </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+  <div class="tab vertical with-border left scrollable">
+    <div class="tab-bar vertical right"></div>
+    <div class="tab-pre vertical">&lt;</div>
+    <div class="tab-container">
+      <div class="tab-scroll vertical">
+        <div class="tab-item active">
+          Item 1
+        </div>
+        <div class="tab-item">
+          Item 2
+        </div>
+        <div class="tab-item">
+          Item 3
+        </div>
+        <div class="tab-item active">
+          Item 1
+        </div>
+        <div class="tab-item">
+          Item 2
+        </div>
+      </div>
+    </div>
+    <div class="tab-next vertical">&gt;</div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+  Tab card
+  <div style="margin-top:1rem">&nbsp;</div>
+
+  <div class="tab tab-bar horizontal with-border top">
+    <div class="tab-container">
+      <div class="tab-scroll">
+        <div class="tab-item active">
+          Item 1
+        </div>
+        <div class="tab-item">
+          <div class="item-label">Item 2</div>
+          <div class="item-icon">X</div>
+        </div>
+        <div class="tab-item">
+          Item 3
+        </div>
+      </div>
+    </div>
+    <div class="tab-bar horizontal top with-border tab-card " style="width:5rem;height: 2rem"></div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+  <div style="background: #f7f5f5; padding: 0 1rem">
+    <div class="tab tab-bar horizontal top" style="background: #f7f5f5">
+      <div class="tab-container">
+        <div class="tab-scroll">
+          <div class="tab-item active">
+            Item TT
+          </div>
+          <div class="tab-item">
+            <div class="item-label">Item 2</div>
+            <div class="item-icon">X</div>
+          </div>
+          <div class="tab-item">
+            Item 3
+          </div>
+        </div>
+      </div>
+      <div class="tab-bar horizontal top  tab-card " style="width:5rem;height: 2rem"></div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+  <div style="background: #f7f5f5; padding: 0 1rem">
+    <div class="tab tab-bar horizontal top" style="background: #f7f5f5">
+      <div class="tab-container">
+        <div class="tab-scroll">
+          <div class="tab-item active">
+            Item TT2
+          </div>
+          <div class="tab-item">
+            <div class="item-label">Item 2</div>
+            <div class="item-icon">X</div>
+          </div>
+          <div class="tab-item">
+            Item 3
+          </div>
+        </div>
+      </div>
+      <div class="tab-bar horizontal top one-border  tab-card " style="width:5rem;height: 2rem"></div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+
+  <div class="tab tab-bar horizontal with-border bottom">
+    <div class="tab-container">
+      <div class="tab-scroll">
+        <div class="tab-item active">
+          Item 1
+        </div>
+        <div class="tab-item">
+          <div class="item-label">Item 2</div>
+          <div class="item-icon">X</div>
+        </div>
+        <div class="tab-item">
+          Item 3
+        </div>
+      </div>
+    </div>
+    <div class="tab-bar horizontal bottom with-border tab-card " style="width:5rem;height: 2rem"></div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+
+  <div style="background: #f7f5f5; padding: 0 1rem">
+    <div class="tab tab-bar horizontal  bottom">
+      <div class="tab-container">
+        <div class="tab-scroll">
+          <div class="tab-item active">
+            Item 1
+          </div>
+          <div class="tab-item">
+            <div class="item-label">Item 2</div>
+            <div class="item-icon">X</div>
+          </div>
+          <div class="tab-item">
+            Item 3
+          </div>
+        </div>
+      </div>
+      <div class="tab-bar horizontal bottom  tab-card " style="width:5rem;height: 2rem"></div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+
+  <div style="background: #f7f5f5; padding: 0 1rem">
+    <div class="tab tab-bar horizontal  bottom">
+      <div class="tab-container">
+        <div class="tab-scroll">
+          <div class="tab-item active">
+            Item bg
+          </div>
+          <div class="tab-item">
+            <div class="item-label">Item 2</div>
+            <div class="item-icon">X</div>
+          </div>
+          <div class="tab-item">
+            Item 3
+          </div>
+        </div>
+      </div>
+      <div class="tab-bar horizontal bottom  one-border tab-card " style="width:5rem;height: 2rem"></div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+
+  <div class="tab tab-bar vertical with-border left">
+    <div class="tab-container">
+      <div class="tab-scroll vertical">
+        <div class="tab-item active">
+          vertical
+        </div>
+        <div class="tab-item">
+          <div class="item-label">Item 2</div>
+          <div class="item-icon">X</div>
+        </div>
+        <div class="tab-item">
+          Item 3
+        </div>
+      </div>
+    </div>
+    <div class="tab-bar vertical left with-border tab-card " style="width:5rem;height: 2rem"></div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+
+  <div class="tab tab-bar vertical with-border right">
+    <div class="tab-container">
+      <div class="tab-scroll vertical">
+        <div class="tab-item active">
+          Item 1
+        </div>
+        <div class="tab-item">
+          <div class="item-label">Item 2</div>
+          <div class="item-icon">X</div>
+        </div>
+        <div class="tab-item">
+          Item 3
+        </div>
+      </div>
+    </div>
+    <div class="tab-bar vertical right with-border tab-card " style="width:5rem;height: 2rem"></div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+
+  <div style="background: #f7f5f5; padding: 0.5rem 1rem">
+    <div class="tab tab-bar vertical  right">
+      <div class="tab-container">
+        <div class="tab-scroll vertical">
+          <div class="tab-item active">
+            Item 1
+          </div>
+          <div class="tab-item">
+            <div class="item-label">Item 2</div>
+            <div class="item-icon">X</div>
+          </div>
+          <div class="tab-item">
+            Item 3
+          </div>
+        </div>
+      </div>
+      <div class="tab-bar vertical right tab-card " style="width:5rem;height: 2rem"></div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+  <div style="background: #f7f5f5; padding: 0.5rem 1rem">
+    <div class="tab tab-bar vertical right">
+      <div class="tab-container">
+        <div class="tab-scroll vertical">
+          <div class="tab-item active">
+            Item 1
+          </div>
+          <div class="tab-item">
+            <div class="item-label">Item 2</div>
+            <div class="item-icon">X</div>
+          </div>
+          <div class="tab-item">
+            Item 3
+          </div>
+        </div>
+      </div>
+      <div class="tab-bar vertical right tab-card one-border " style="width:5rem;height: 2rem"></div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+  <div style="padding: 0.5rem 1rem">
+    <div class="tab tab-bar horizontal top with-border secondary-card">
+      <div class="tab-container">
+        <div class="tab-scroll horizontal">
+          <div class="card-wrapper">
+            <div class="tab-item active">
+              secondary
+            </div>
+            <div class="tab-item">
+              <div class="item-label">Item 2</div>
+              <div class="item-icon">X</div>
+            </div>
+            <div class="tab-item">
+              Item 3
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+  <div style="padding: 0.5rem 1rem">
+    <div class="tab tab-bar horizontal bottom with-border secondary-card">
+      <div class="tab-container">
+        <div class="tab-scroll">
+          <div class="tab-item active">
+            Item 1
+          </div>
+          <div class="tab-item">
+            <div class="item-label">Item 2</div>
+            <div class="item-icon">X</div>
+          </div>
+          <div class="tab-item">
+            Item 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+  <div style="padding: 0.5rem 1rem">
+    <div class="tab tab-bar horizontal bottom with-border secondary-card scrollable">
+      <div class="tab-pre horizontal">&lt;</div>
+      <div class="tab-next horizontal">&gt;</div>
+      <div class="tab-container">
+        <div class="tab-scroll">
+          <div class="tab-item active">
+            Item 1
+          </div>
+          <div class="tab-item">
+            <div class="item-label">Item 2</div>
+            <div class="item-icon">X</div>
+          </div>
+          <div class="tab-item">
+            Item 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+  <div style="padding: 0.5rem 1rem">
+    <div class="tab tab-bar vertical left with-border secondary-card">
+      <div class="tab-container">
+        <div class="tab-scroll vertical">
+          <div class="tab-item active">
+            Item 1
+          </div>
+          <div class="tab-item">
+            <div class="item-label">Item 2</div>
+            <div class="item-icon">X</div>
+          </div>
+          <div class="tab-item">
+            Item 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+  <div style="padding: 0.5rem 1rem">
+    <div class="tab tab-bar vertical left with-border secondary-card">
+      <div class="tab-container">
+        <div class="tab-scroll vertical">
+          <div class="tab-item active">
+            Item 1
+          </div>
+          <div class="tab-item">
+            <div class="item-label">Item 2</div>
+            <div class="item-icon">X</div>
+          </div>
+          <div class="tab-item">
+            Item 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="margin-top:1rem">&nbsp;</div>
+  <div style="padding: 0.5rem 1rem">
+    <div class="tab tab-bar vertical right with-border secondary-card">
+      <div class="tab-container">
+        <div class="tab-scroll vertical">
+          <div class="tab-item active">
+            Item 1
+          </div>
+          <div class="tab-item">
+            <div class="item-label">Item 2</div>
+            <div class="item-icon">X</div>
+          </div>
+          <div class="tab-item">
+            Item 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:1rem">&nbsp;</div>
+  <div style="padding: 0.5rem 1rem">
+    <div class="tab tab-bar vertical right with-border secondary-card scrollable">
+      <div class="tab-pre vertical">&lt;</div>
+      <div class="tab-next vertical">&gt;</div>
+      <div class="tab-container">
+        <div class="tab-scroll vertical">
+          <div class="tab-item active">
+            Item 1
+          </div>
+          <div class="tab-item">
+            <div class="item-label">Item 2</div>
+            <div class="item-icon">X</div>
+          </div>
+          <div class="tab-item">
+            Item 3
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 </div>
 
