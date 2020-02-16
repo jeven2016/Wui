@@ -1,5 +1,5 @@
 //normal menu
-@mixin make-menu-item($display-flex:true) {
+@mixin make-menu-item($display-flex:true, $item-padding: $menu-item-padding) {
   @if $display-flex {
     @include make-flex-vertical-center ;
   } @else {
@@ -7,7 +7,7 @@
   }
   position: relative;
   line-height: $menu-item-line-height;
-  padding: $menu-item-padding;
+  padding: $item-padding;
   //todo: the dropdown list failed to represent this due to the overflow is set for menu-item
   //overflow: $menu-item-overflow;
   //text-overflow: $menu-item-text-overflow;

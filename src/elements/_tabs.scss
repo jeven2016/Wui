@@ -1,10 +1,18 @@
 %tab-ctrl {
   @include make-inline-flex-center;
   color: $gray;
+  font-size: 1.5em;
+  font-width: map_get($font-weight, 'normal');
   height: 2rem;
   width: 2rem;
   position: absolute;
   cursor: pointer;
+
+  @include focus2 {
+    color: $blue;
+  }
+
+  @include add-disabled-conf;
 }
 
 @mixin secondary-card-item($l-tab-item-radius) {
@@ -13,9 +21,56 @@
   background: $light-gray;
 }
 
+.tabs {
+  display: flex;
+
+  &.top {
+    flex-direction: column;
+  }
+
+  &.bottom {
+    flex-direction: column-reverse;
+  }
+
+  &.left {
+    flex-direction: row;
+  }
+
+  &.right {
+    flex-direction: row-reverse;
+  }
+
+  &.left, &.right {
+    > .tab {
+      flex: 0 0;
+    }
+
+    > .tab-panel {
+      flex: 1;
+    }
+  }
+
+}
+
 .tab {
   @include make-flex;
   position: relative;
+
+  &.top {
+    margin-bottom: 1rem;
+  }
+
+  &.bottom {
+    margin-top: 1rem;
+  }
+
+  &.left {
+    margin-right: 1rem;
+  }
+
+  &.right {
+    margin-left: 1rem;
+  }
 
   .card-wrapper {
     display: flex;
@@ -23,6 +78,16 @@
 
   &.horizontal {
     flex-direction: row;
+
+    &.scrollable {
+      &.with-btn {
+        padding: 0 2rem;
+      }
+    }
+
+    > .tab-pre, > .tab-next {
+      height: 100%;
+    }
 
     &.with-border {
       &.top {
@@ -67,11 +132,23 @@
     .tab-item {
       margin-right: 2px;
     }
+
+
   }
 
   &.vertical {
     flex-direction: column;
     display: inline-flex;
+
+    &.scrollable {
+      &.with-btn {
+        padding: 2rem 0;
+      }
+    }
+
+    > .tab-pre, > .tab-next {
+      width: 100%;
+    }
 
     &.with-border {
 
@@ -121,7 +198,7 @@
   }
 
 
-  &.tab-bar {
+  &.tab-card {
     .tab-item {
       z-index: 2;
     }
@@ -163,9 +240,26 @@
   > .tab-container {
     overflow: hidden;
     white-space: nowrap;
+    flex: 1;
+
+    &.top {
+      margin-bottom: -1px;
+    }
+
+    &.bottom {
+      margin-top: -1px;
+    }
+
+    &.left {
+      margin-right: -1px;
+    }
+
+    &.right {
+      margin-left: -1px;
+    }
 
     > .tab-scroll {
-      @include make-flex;
+      @include make-inline-flex;
       position: relative;
       overflow: hidden;
       white-space: nowrap;
@@ -176,23 +270,8 @@
     }
   }
 
-
-  &.scrollable {
-    &.vertical {
-      > .tab-container {
-        margin: 2rem 0;
-      }
-    }
-
-    &.horizontal {
-      > .tab-container {
-        margin: 0 2rem;
-      }
-    }
-  }
-
   .tab-item {
-    @include make-menu-item(true);
+    @include make-menu-item(true, 0.5rem 0.5rem);
     min-width: 2rem;
     flex-shrink: 0;
 
@@ -205,17 +284,23 @@
       display: inline-flex;
       padding-left: 0.75rem;
       flex: 0 0 1em;
+
+      @include focus2 {
+        color: $red;
+        text-shadow: 0 3px 10px lighten($red, 20%);
+      }
+
+      @include add-disabled-conf;
     }
   }
 
-  > .tab-bar {
-    border-radius: $default-border-radius;
+  .tab-bar {
     position: absolute;
 
     &.horizontal {
       &.top {
         top: -1px;
-        border-top: 2px solid $primary;
+        border-top: 3px solid $primary;
 
         &.tab-card {
           background: $white;
@@ -226,7 +311,7 @@
           border-top: none;
 
           &.with-border {
-            border-top: 2px solid $primary;
+            border-top: 3px solid $primary;
             border-left: $default-border;
             border-right: $default-border;
           }
@@ -235,14 +320,14 @@
             border-left: none;
             border-right: none;
             border-radius: 0;
-            border-top: 2px solid $primary;
+            border-top: 3px solid $primary;
           }
         }
       }
 
       &.bottom {
         bottom: -1px;
-        border-bottom: 2px solid $primary;
+        border-bottom: 3px solid $primary;
 
         &.tab-card {
           border-bottom: none;
@@ -252,7 +337,7 @@
           border-top-right-radius: 0;
 
           &.with-border {
-            border-bottom: 2px solid $primary;
+            border-bottom: 3px solid $primary;
             border-left: $default-border;
             border-right: $default-border;
           }
@@ -261,7 +346,7 @@
             border-left: none;
             border-right: none;
             border-radius: 0;
-            border-bottom: 2px solid $primary;
+            border-bottom: 3px solid $primary;
           }
         }
       }
@@ -270,11 +355,11 @@
 
     &.vertical {
       width: 2px;
-      height: 4rem;
 
       &.right {
         left: calc(100% - 1px);
-        border-left: 2px solid $primary;
+        border-left: 3px solid $primary;
+        margin-left: -1px;
 
         &.tab-card {
           background: $white;
@@ -287,11 +372,11 @@
           &.with-border {
             border-top: $default-border;
             border-bottom: $default-border;
-            border-right: 2px solid $primary;
+            border-right: 3px solid $primary;
           }
 
           &.one-border {
-            border-right: 2px solid $primary;
+            border-right: 3px solid $primary;
             border-top: none;
             border-bottom: none;
             border-radius: 0;
@@ -301,7 +386,8 @@
 
       &.left {
         left: -1px;
-        border-left: 2px solid $primary;
+        border-left: 3px solid $primary;
+        margin-right: -1px;
 
         &.tab-card {
           background: $white;

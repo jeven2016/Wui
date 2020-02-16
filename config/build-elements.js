@@ -34,6 +34,8 @@ var config = {
         alert: true,
         progress: true,
         select: true,
+        carousel: true,
+        affix: true
 
       },
     },
