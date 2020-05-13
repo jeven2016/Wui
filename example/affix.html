@@ -21,16 +21,38 @@
   </style>
 
   <script language="javascript">
+    $(function() {
+      window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+          window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 
+      var start = null;
+      var ele = document.getElementById('test');
+      var progress = 0;
+
+      function step(timestamp) {
+        progress += 1;
+        ele.style.width = progress + '%';
+        ele.innerHTML = progress + '%';
+        if (progress < 100) {
+          requestAnimationFrame(step);
+        }
+      }
+
+      requestAnimationFrame(step);
+      document.getElementById('run').addEventListener('click', function() {
+        ele.style.width = '1px';
+        progress = 0;
+        requestAnimationFrame(step);
+      }, false);
+    });
   </script>
 </head>
 <body>
 <div class="area-example">
-  <div style="margin: 100px 50px;display: inline-block">
-    <div class="affix">
-    <button class="button green">Fix at top</button>
-    </div>
-  </div>
+  <button id="run">Run</button>
+  <br/>
+
+  <span id="test" style="background: red">&nbsp;</span>
 
 </div>
 

@@ -30,17 +30,26 @@
 @mixin input-variant-size() {
   &.large {
     @extend %large;
-    height: $input-large-height;
+
+    &:not(.textarea):not(within-group) {
+      height: $input-large-height;
+    }
   }
 
   &.medium {
     @extend %medium;
-    height: $input-height;
+
+    &:not(.textarea):not(within-group) {
+      height: $input-height;
+    }
   }
 
   &.small {
     @extend %small;
-    height: $input-small-height;
+
+    &:not(.textarea):not(within-group) {
+      height: $input-small-height;
+    }
   }
 }
 

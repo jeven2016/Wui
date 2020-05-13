@@ -14,187 +14,157 @@
   }
 }
 
-@mixin popup-list {
-
-  > .menu-list {
-    border-radius: $default-border-radius;
-    background: $white;
-    z-index: $menu-float-submenu-menu-z-index;
-    flex-direction: $menu-float-submenu-menu-list-flex-direction;
-    //max-height: 0;
-    position: absolute;
-    left: calc(100% + 5px);
-    top: 0;
-  }
-
-  &.show {
-    > .menu-list {
-      opacity: 1;
-      //overflow: visible; //to show submenus correctly
-      //max-height: $menu-menu-list-max-height;
-      animation: $menu-float-submenu-active-vertical-menu-list-animation;
-    }
-  }
-
-  &.close {
-    > .menu-list {
-      animation: $menu-float-submenu-close-vertical-menu-list-animation;
+@mixin right-bar() {
+  &:after {
+    @include make-block(absolute) {
+      right: 0;
+      top: 0;
+      content: $menu-float-submenu-active-menu-header-after-content;
+      height: 100%;
+      width: 0.1875rem;;
+      background-color: $menu-float-submenu-active-menu-header-after-background-color;
+      transition: height .3s;
+      //animation: $menu-float-submenu-active-menu-header-after-animation;
     }
   }
 }
 
-.submenu {
-  @include border-radius($menu-border-radius);
-  @include make-flex;
-  list-style: $menu-list-style;
-  flex-direction: $menu-flex-direction;
-  align-items: $menu-align-items;
-  position: $menu-position;
-
-
-  > .menu-list {
-    transition: $menu-menu-list-transition;
-    //background: $menu-menu-list-background;
-
-    > .menu-item {
-      @include make-menu-item;
-
-      > .left, > .right {
-        flex: 0 1 1em;
-        @include make-flex-center;
-      }
-
-      > .center {
-        flex: 1 0 auto;
-        padding: 0 0.25rem;
-      }
-    }
-
-    @include justify;
-  }
-
-  .menu-header {
-    cursor: $menu-item-cursor;
-    padding: $menu-header-padding;
-    font-weight: map_get($font-weight, 'normal');
-    position: $menu-header-position;
-    @include make-flex;
-
-    @include add-disabled-conf(false) {
-      color: $text-color;
-      background-color: transparent;
-    }
+@mixin create-line($prefix) {
+  > .#{$prefix}-icon {
+    display: flex;
+    flex: 0 0 1.5rem;
+    height: 1.5rem;
+    transform-origin: center;
+    @include make-flex-center;
 
     > .icon {
-      margin-right: 1rem;
+      color: inherit;
     }
 
-    &.with-arrow {
-      @include make-arrow($default-arrow-border, $default-arrow-active-border, null, 'after', map_get($arrow-direction, 'down')) {
-        position: $menu-header-arrow-position;
-        right: $menu-header-arrow-right;
-        top: $menu-header-arrow-top;
-      }
+    + .#{$prefix}-info {
+      padding: 0 0.5rem;
+      transform-origin: left;
+      overflow: hidden;
     }
   }
-
-  &.block {
-    width: 100%;
-
-    > .menu-list {
-      width: 100%;
-    }
-  }
-
-  &.normal {
-    > .menu-list {
-      transition: $menu-menu-list-transition;
-    }
-
-    &.show {
-      > .menu-list {
-        max-height: $menu-menu-list-max-height;
-      }
-    }
-
-    &.close {
-      > .menu-list {
-        max-height: 0;
-        overflow: hidden;
-      }
-
-      > .menu-header:after {
-        transform: rotate(90deg);
-        transition: transform .2s;
-      }
-    }
-  }
-
 }
 
-.menu {
-  @extend .submenu;
-  @include make-inline-flex;
+//normal menu
+@mixin make-menu-item2($display-flex:true, $item-padding: $menu-item-padding) {
+  @if $display-flex {
+    @include make-flex-vertical-center ;
+  } @else {
+    @include make-inline-flex-center ;
+  }
+  position: relative;
+  line-height: $menu-item-line-height;
+  padding: $item-padding;
+  //todo: the dropdown list failed to represent this due to the overflow is set for menu-item
+  //overflow: $menu-item-overflow;
+  //text-overflow: $menu-item-text-overflow;
+  white-space: $menu-item-white-space;
+  cursor: $menu-item-cursor;
+  border: $menu-item-border;
+  //min-width: $dp-min-width;
+  transition: $menu-item-transition;
 
-  /**
-  当menu中的嵌套不确定时,如何设置border-radius将会会相当地复杂，
-  通常的做法就是menu上下留白，不在子item中设置border-radius,如此可以极大地简化实现难度
-   */
-  padding: $menu-padding;
+  > .icon {
+    margin-right: .5rem;
+  }
 
-  //add a arrow icon for non-float menu
-  &:not(.menu-row):not(.popup-menu) {
-    .menu-header {
-      @include make-arrow($default-arrow-border, $default-arrow-active-border, null, 'after', map_get($arrow-direction, 'down')) {
-        position: $menu-header-arrow-position;
-        right: $menu-header-arrow-right;
-        top: $menu-header-arrow-top;
-      }
+  @include focus-active2 {
+    color: $menu-item-hove-text-color;
+
+    &.with-bg {
+      background-color: $menu-item-background-color;
     }
   }
 
-  &.primary {
-    .menu-list > .menu-item {
+  @include active2 {
+    &.with-bottom-bar {
+      @include bottom-bar;
+    }
+  }
 
+  @include add-disabled-conf(false) {
+    color: $text-color;
+    background-color: transparent;
+  }
+
+  @content;
+}
+
+
+.base-menu {
+  @include make-inline-flex;
+  position: $menu-position;
+  @include justify;
+  display: flex;
+  flex: 1;
+
+  &.with-border-radius {
+    @include border-radius($menu-border-radius);
+  }
+
+  &.compact {
+    .menu-item {
+      min-width: 10rem;
+    }
+  }
+
+  //two types: the submenu's position will be absolute
+  &.menu-row {
+    flex-direction: row;
+    align-items: $menu-align-items;
+  }
+
+  &.menu-column {
+    flex-direction: $menu-flex-direction;
+  }
+
+  //&.popup-menu
+
+  .menu-item {
+    @include make-menu-item2 {
+      //white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+      //flex: 1 0 calc(100% - 1rem);
+      &.equitable {
+        flex-grow: 1;
+      }
+
+      &.left {
+        justify-content: flex-start;
+        flex-grow: 1;
+      }
+      &.right {
+        justify-content: flex-end;
+        flex-grow: 1;
+      }
+
+      @include create-line('item');
+    }
+
+    &.primary {
       @include focus2_no_active {
         color: $menu-primary-menu-item-focus-color;
       }
 
       &.active {
         background-color: $menu-primary-menu-item-active-background-color;
-        border-right: $menu-primary-menu-item-active-border-right;
-        margin-right: $menu-primary-menu-item-active-margin-right;
-      }
-    }
-  }
+        //border-right: $menu-primary-menu-item-active-border-right;
+        //margin-right: $menu-primary-menu-item-active-margin-right;
+        text-shadow: 0 0 1px lighten($primary, 20%);
 
-  &.dark, &.dark .submenu {
-    background-color: $menu-dark-background-color;
-    color: $menu-dark-color;
-    border: $menu-dark-border;
-
-    > .menu-list {
-      background-color: $menu-dark-menu-list-background;
-    }
-
-    &.collapse {
-      .menu-header {
-        background-color: $menu-dark-menu-header-background-color;
-        color: $menu-dark-menu-header-color;
-        transition: $menu-dark-menu-header-transition;
-
-        @include focus2 {
-          box-shadow: $default-primary-box-shadow;
-        }
+        @include right-bar;
       }
     }
 
-    > .menu-list > .menu-item {
+    &.dark {
       &.disabled {
         color: $menu-dark-disabled-menu-item-color;
       }
 
-      &:not(.disabled):focus, &:not(.disabled):hover {
+      @include focus2_no_active {
         color: $white;
         text-shadow: $menu-item-hover-text-shadow;
       }
@@ -205,174 +175,197 @@
         text-shadow: $menu-item-hover-text-shadow;
       }
     }
+
+    > .left, > .right {
+      flex: 0 1 1em;
+      @include make-flex-center;
+    }
+
+    > .center {
+      flex: 1 0 auto;
+      padding: 0 0.25rem;
+    }
+
+    @include justify;
   }
 
-  &.menu-row {
-    flex-direction: row;
-    //no sub-menu but only menu-list exists
-    //float
-    > .menu-list {
+
+  .menu-header {
+    cursor: $menu-item-cursor;
+    line-height: $menu-item-line-height;
+    font-weight: map_get($font-weight, 'light');
+    position: $menu-header-position;
+    @include make-flex;
+    //width: 100%;
+    transform-origin: center;
+    transition: transform .3s linear;
+    padding: .5rem .5rem .5rem 2rem;
+    white-space: nowrap;
+
+    @include add-disabled-conf(false) {
+      color: $text-color;
+      background-color: transparent;
+    }
+
+    &.normal {
+      @include focus2 {
+        color: lighten($primary, 10%);
+      }
+
+      &.active {
+        color: $primary
+      }
+    }
+
+    &.dark {
+      @include focus2 {
+        color: lighten($white, 10%);
+      }
+
+      &.active {
+        color: $white;
+        text-shadow: $menu-item-hover-text-shadow;
+      }
+    }
+
+    > .header-info {
       display: flex;
-      flex-direction: $menu-float-flex-direction;
-      position: relative;
-
-      > .menu-item {
-        min-width: $menu-float-menu-item-mix-width;
-
-        &:first-child {
-          border-top-left-radius: $menu-float-menu-item-child-border-radius;
-          border-bottom-left-radius: $menu-float-menu-item-child-border-radius;
-        }
-
-        &:last-child {
-          border-top-right-radius: $menu-float-menu-item-child-border-radius;
-          border-bottom-right-radius: $menu-float-menu-item-child-border-radius;
-        }
-
-        &.right {
-          flex-grow: $menu-float-menu-item-right-flex-grow;
-          text-align: $menu-float-menu-item-right-text-align;
-          justify-content: $menu-float-menu-item-right-justify-content;
-        }
-
-        &.left {
-          flex-grow: $menu-float-menu-item-left-flex-grow;
-        }
-      }
+      flex: 1;
+      justify-content: flex-start;
     }
 
-    > .direct-child {
-      > .menu-list {
-        border-radius: $default-border-radius;
-        background: $white;
-        z-index: $menu-float-submenu-menu-z-index;
-        flex-direction: $menu-float-submenu-menu-list-flex-direction;
-        position: absolute;
-        left: 0;
-      }
+    @include create-line('header');
 
-      &.show {
-        > .menu-list {
-          animation: $menu-float-submenu-active-menu-list-animation;
-        }
-      }
-
-      &.close {
-        > .menu-list {
-          animation: $menu-float-submenu-close-menu-list-animation;
-        }
-      }
-    }
-
-    &.popup-menu {
-      &.global-with-border {
-        .menu-list {
-          border: $default-border;
-        }
-      }
-
-      &.global-with-box {
-        .menu-list {
-          box-shadow: $default-box-shadow;
-        }
-      }
-
-      .non-direct-child {
-        @include popup-list;
-      }
-
+    &.compact {
+      padding: 0.5rem 0;
+      display: inline-flex;
+      justify-content: center;
 
       &.dark {
-        .menu-list {
-          background: $menu-dark-background-color !important;
+        @include focus2 {
+          box-shadow: $default-primary-box-shadow;
+        }
+      }
+
+      > .header-info {
+
+        + .header-icon {
+          display: none;
         }
       }
     }
 
+    &.non-compact {
+      > .header-info {
+        transform-origin: left;
+        overflow: hidden;
+
+      }
+    }
   }
 
-  &.menu-column {
+  .menu-group {
+    > .group-header {
+      color: #a5b2bb;
+    }
+
+  }
+
+  .popup-panel {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    box-shadow: $menu-float-submenu-menu-box-shadow;
+
+    &.normal {
+      background: $white;
+    }
+
+    &.dark {
+      background: $menu-dark-background-color;
+    }
+  }
+
+  .item-list {
+    display: flex;
+    flex: 1 0 auto;
     flex-direction: column;
 
-    &.popup-menu {
+    &.popup-list {
+      box-shadow: $default-box-shadow;
+      position: absolute;
+      background: $white;
+      @include border-radius;
+      z-index: map_get($z-index, 'pop');
+      opacity: 0; //initially hidden
 
-      //垂直弹出submenu，可以在左侧或右侧显示,默认在右侧
-      &.left {
-        .submenu {
-          > .menu-list {
-            right: calc(100% + 5px);
-            left: unset;
-          }
-        }
+      &.block {
+        width: 100%;
       }
-
-      &.global-with-border {
-        .menu-list {
-          border: $default-border;
-        }
-      }
-
-      &.global-with-box {
-        .menu-list {
-          box-shadow: $default-box-shadow;
-        }
-      }
-
 
       &.dark {
-        .menu-list {
-          background: $menu-dark-background-color !important;
+        background: $menu-dark-background-color;
+      }
+
+      &.right {
+        left: calc(100% + 0.375rem);
+        top: 0;
+
+        &:before {
+          position: absolute;
+          content: '';
+          display: flex;
+          flex: 1 0 auto;
+          left: -.5rem;
+          width: 50%;
+          height: 50%;
         }
       }
-    }
 
-    .direct-child, .non-direct-child {
-      @include popup-list;
+      &.bottom {
+        top: calc(100% + 0.375rem);
+        left: 0;
+
+        &:before {
+          position: absolute;
+          content: '';
+          display: flex;
+          flex: 1 0 auto;
+          top: -.5rem;
+          width: 100%;
+          height: 50%;
+        }
+      }
     }
   }
 }
 
-%hide-content {
-  min-width: unset !important;
-  min-height: 3rem;
-  align-items: center;
-  justify-content: center;
-  box-shadow: $default-box-shadow;
+.menu {
+  @extend .base-menu;
 
-  > *:not(.icon) {
-    width: 0;
-    height: 0;
-    opacity: 0;
-    transition: all .5s;
-  }
-}
-
-.popup-menu {
-  .menu-item {
-    min-width: 8rem;
+  &.dark {
+    background-color: $menu-dark-background-color;
+    color: $menu-dark-color;
+    border: $menu-dark-border;
   }
 
-  >.submenu .menu-list{
-    opacity: 0;
-  }
+  /**
+     当menu中的嵌套不确定时,如何设置border-radius将会会相当地复杂，
+     通常的做法就是menu上下留白，不在子item中设置border-radius,如此可以极大地简化实现难度
+   */
+  padding: $menu-padding;
+  flex-wrap: wrap;
+  transition: width .3s;
 
-  &.collapse {
-    > .menu-list > .menu-item {
-      @extend %hide-content;
+  &.compact {
+    width: 5.5rem;
 
-      > .icon {
-        margin-right: unset;
-      }
+    > .menu-item {
+      min-width: unset;
     }
+  }
 
-    > .submenu.direct-child {
-      > .menu-header {
-        @extend %hide-content;
-
-        > .icon {
-          margin-right: unset;
-        }
-      }
-    }
+  &.non-compact {
+    width: 100%;
   }
 }

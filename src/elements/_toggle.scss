@@ -4,6 +4,9 @@
   outline: none;
   border: none;
   vertical-align: middle;
+  cursor: pointer;
+
+  @include add-disabled-conf;
 }
 
 .toggle {
@@ -16,11 +19,6 @@
   transition: all .4s;
   vertical-align: middle;
   min-width: 3.5rem;
-  cursor: pointer;
-
-  &.disabled {
-    pointer-events: none !important;
-  }
 
   .bar {
     display: inline-flex;
@@ -45,7 +43,6 @@
     text-align: center;
   }
 
-
   &.on {
     .bar {
       background-color: #70a3e1
@@ -53,6 +50,7 @@
 
     .ball {
       background-color: $blue;
+      box-shadow: 0 3px 10px rgba(12, 160, 255, 0.3);
       color: $text-color;
     }
   }
@@ -64,7 +62,7 @@
 
     .ball {
       border: 1px solid rgba(0, 0, 0, .5);
-      box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.4);
       background-color: $white;
       color: rgba(0, 0, 0, .5);
     }
@@ -77,16 +75,17 @@
     align-items: center;
     font-size: 0.75rem;
     line-height: 1.5rem;
+    overflow: hidden;
 
     &.on {
       background-color: $blue;
-      box-shadow: 0 1px 3px 1px #007affba;
+      box-shadow: 0 1px 2px 1px #007affba;
       justify-content: flex-start;
     }
 
     &.off {
       background-color: rgba(0, 0, 0, .45);
-      box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.4);
       justify-content: flex-end;
     }
 
@@ -94,6 +93,8 @@
     > .info {
       line-height: 1.5rem;
       margin: 0 0.5rem;
+      display: flex;
+      align-items: center;
     }
 
     .ball {
@@ -117,4 +118,14 @@
     }
   }
 
+}
+
+.toggle-label {
+  margin-left: 0.5rem;
+  font-weight: map_get($font-weight, 'normal');
+  transition: color .3s;
+
+  &.on {
+    color: $primary;
+  }
 }

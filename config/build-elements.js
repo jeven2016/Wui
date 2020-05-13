@@ -35,15 +35,17 @@ var config = {
         progress: true,
         select: true,
         carousel: true,
-        affix: true
-
+        affix: true,
+        collapse: true,
+        tree: true,
+        stepper: true,
       },
     },
 
     variableFile: '_variables.scss',
     base: {
       path: 'src/',
-      file: ['_normalize.scss', '_variables.scss'],
+      file: ['_normalize.scss', '_reset.scss', '_variables.scss'],
     },
     mixin: {
       path: 'src/mixin',

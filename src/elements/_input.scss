@@ -10,13 +10,11 @@
   border: $input-border;
   @include border-radius($input-border-radius);
   outline: $input-outline;
-  height: $input-height; //to make the text/placeholder vertically align middle since the line-height is set
   line-height: $input-line-height;
   -webkit-appearance: none;
   transition: $default-transition;
   font-size: $input-font-size;
   outline: $input-outline;
-
 
   // it's better to set the width and height to 0px. Otherwise,
   // IE10 ignores the padding defined on the field -- padding-right --
@@ -93,7 +91,10 @@ textarea.input {
     > .input {
       font-size: map-get($font-size, 'large');
       padding: $icon-input-large-padding;
-      height: $input-large-height;
+
+      &:not(.textarea){
+        height: $input-large-height;
+      }
     }
 
     > .icon {
@@ -110,7 +111,9 @@ textarea.input {
     > .input {
       font-size: map-get($font-size, 'small');
       padding: $icon-input-small-padding;
-      height: $input-small-height;
+      &:not(.textarea){
+        height: $input-small-height;
+      }
     }
 
     > .icon {

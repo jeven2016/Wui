@@ -4,15 +4,9 @@
   //flex-wrap: wrap;
   flex-wrap: $card-flex-wrap; //todo: confirm: 设置成wrap后，会出现card-row高度比子元素的高度高太多的问题
   width: $card-width;
-  border: $card-border;
   @include border-radius($card-border-radius);
-  box-shadow: $default-box-shadow;
   transition: $card-transition;
   background-color: $card-background-color;
-
-  + .card {
-    margin-left: 1rem;
-  }
 
   &.scale {
     &:focus, &:hover {

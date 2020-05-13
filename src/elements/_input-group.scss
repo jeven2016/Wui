@@ -10,6 +10,8 @@
     border: $input-border;
     background-color: $input-label-background-color;
 
+    @include input-variant-size();
+
     @include border-radius($default-border-radius);
   }
 

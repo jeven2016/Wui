@@ -34,7 +34,7 @@ $text-light: $white;
 $text-ok-color: $green;
 $text-warning-color: $yellow;
 $text-error-color: $red;
-$text-shadow: 1px 1px 2px #333, 0 0 25px $white, 0 0 5px $blue;
+$text-shadow: 1px 1px 2px #333, 0 0 15px $white, 0 0 5px $blue;
 $default-primary-background: linear-gradient(135deg, lighten($blue, 5%), lighten($blue, 10%), $blue);
 
 //there will be corresponding buttons generated if the property starts with "color-primary"
@@ -70,6 +70,7 @@ $colors: (
 
 //text
 $font-weight: (
+        'light': 400,
         'normal': 500,
         'bold': 700
 );
@@ -121,9 +122,9 @@ $border-color: #ccc;
 $default-color-increase-ratio: 3%;
 $default-bg-color-increase-ratio: 5%;
 
-$elem-default-padding: 0.5rem 1rem;
-$elem-large-padding: 0.75rem 1.5rem;
-$elem-small-padding: 0.25rem 0.5rem;
+$elem-default-padding: 0.375rem .75rem;
+$elem-large-padding: .5rem 1rem;
+$elem-small-padding: .25rem .5rem;
 
 //dp-down: 100
 //fixed: 120
@@ -138,18 +139,19 @@ $elem-small-padding: 0.25rem 0.5rem;
 //z-index
 $z-index: (
         one: 1,
-        widget: 10,
-        pop: 20,
-        mask: 100,
-        overlay: 110,
-        top:1000
+        widget: 100,
+        popMask: 150,
+        pop: 200,
+        mask: 1000,
+        overlay: 2000,
+        top:5000
 );
 
 //text
 $font-size: (
-        'large':1.5rem,
+        'large':1.25rem,
         'normal': 1rem,
-        'small':0.75rem
+        'small':0.875rem
 );
 
 
@@ -191,14 +193,13 @@ $btn-group-buttons-margin-left: -1px;
 $btn-group-border-width: 1px;
 $btn-group-flex-wrap: wrap;
 
-
 //For input
 $input-font-size: 1rem;
 $input-placeholder-color: $text-comment-color;
 $input-placeholder-opacity: 1;
 $input-line-height: $btn-line-height;
-$input-height: calc(#{$input-line-height}em + 1rem + 2px);
-$input-large-height: calc(#{$input-line-height}em + 1.5rem + 2px);
+$input-height: calc(#{$input-line-height}em + 0.75rem + 2px);
+$input-large-height: calc(#{$input-line-height}em + 1rem + 2px);
 $input-small-height: calc(#{$input-line-height}em + 0.5rem + 2px);
 $input-outline: 0;
 $input-border-width: 1px;
@@ -223,7 +224,7 @@ $icon-input-icon-scale: scale(0.8);
 $icon-input-icon-right: 0.5rem;
 $icon-input-icon-left: $icon-input-icon-right;
 $icon-input-icon-small-position: 0.375rem;
-$icon-input-icon-z-index: map_get($z-index, "pop");
+$icon-input-icon-z-index: map_get($z-index, "widget");
 $icon-input-icon-text-color: $gray;
 $icon-input-icon-position: absolute;
 $icon-input-left-icon-width: 1rem;
@@ -260,7 +261,7 @@ $menu-position: relative;
 $menu-border: $default-border;
 $menu-border-radius: $default-border-radius;
 $menu-header-position: relative;
-$menu-header-padding: 0.5rem 1rem;
+$menu-header-padding: 0.5rem 1.5rem 0.5rem 2rem;
 ;
 $menu-header-arrow-position: absolute;
 $menu-header-arrow-right: 0.5rem;
@@ -274,7 +275,7 @@ $menu-menu-list-overflow: hidden;
 $menu-menu-list-background: $white;
 $menu-item-cursor: pointer;
 $menu-item-border: none;
-$menu-item-transition: background .5s;
+$menu-item-transition: background .3s;
 $menu-item-background-color: lighten($gray, 18%);
 $menu-item-padding: $menu-header-padding;
 $menu-item-overflow: hidden;
@@ -329,7 +330,7 @@ $menu-primary-menu-item-focus-color: lighten($blue, 10%);
 $menu-primary-menu-item-active-background-color: lighten($blue, 40%);
 $menu-primary-menu-item-active-border-right: 3px solid $blue;
 $menu-primary-menu-item-active-margin-right: -1px;
-$menu-dark-background-color: #000c17;
+$menu-dark-background-color: #131415;
 $menu-dark-color: darken($white, 30%);
 $menu-dark-border: none;
 $menu-dark-menu-list-background: inherit;
@@ -349,7 +350,7 @@ $dp-border-radius: $default-border-radius;
 $dp-padding: 0.5rem 1rem;
 $dp-border-width: 1px;
 $dp-border: $dp-border-width solid $btn-border-color;
-$dp-min-width: 8rem;
+$dp-min-width: 10rem;
 $dp-background-color: $white;
 $dp-item-border: 1px solid #ccc;
 $dp-border-radius: $default-border-radius;
@@ -550,7 +551,7 @@ $table-row-hover-background-color: lighten($gray, 15%);
 //for loader
 $loader-size-large: 5rem;
 $loader-size-normal: 3rem;
-$loader-size-small: 1.25rem;
+$loader-size-small: 1rem;
 $border-default-color: #ccc;
 
 //for tab
