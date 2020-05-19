@@ -138,6 +138,7 @@ $elem-small-padding: .25rem .5rem;
 
 //z-index
 $z-index: (
+        bottom: -999,
         one: 1,
         widget: 100,
         popMask: 150,

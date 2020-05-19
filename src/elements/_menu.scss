@@ -10,6 +10,7 @@
       background-color: $menu-float-submenu-active-menu-header-after-background-color;
       transition: $menu-float-submenu-active-menu-header-after-transition;
       animation: $menu-float-submenu-active-menu-header-after-animation;
+      z-index: 1;
     }
   }
 }
@@ -207,9 +208,20 @@
       background-color: transparent;
     }
 
+    &.with-bottom-bar {
+      @include focus2 {
+        @include bottom-bar;
+      }
+
+      &.active-bar {
+        @include bottom-bar;
+      }
+    }
+
+
     &.normal {
       @include focus2 {
-        color: lighten($primary, 10%);
+        color: $primary;
       }
 
       &.active {
@@ -290,6 +302,7 @@
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
+    padding: $menu-padding;
 
     &.popup-list {
       box-shadow: $default-box-shadow;
@@ -298,10 +311,6 @@
       @include border-radius;
       z-index: map_get($z-index, 'pop');
       opacity: 0; //initially hidden
-
-      &.block {
-        width: 100%;
-      }
 
       &.dark {
         background: $menu-dark-background-color;
@@ -362,6 +371,10 @@
 
     > .menu-item {
       min-width: unset;
+    }
+
+    > div {
+      margin: 0.25rem 0;
     }
   }
 

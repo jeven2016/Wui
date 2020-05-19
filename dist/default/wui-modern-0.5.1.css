@@ -316,7 +316,7 @@ h1, h2, h3, h4, h5, h6 {
 /**
 * set the group's border radius property
  */
-.base-btn:disabled, .button:disabled, .base-btn.disabled, .disabled.button, .checkbox:disabled, .checkbox.disabled, .radio:disabled, .radio.disabled, .collapse .collapse-header > .header-row > .inner > .icon-column:disabled, .collapse .collapse-header > .header-row > .inner > .icon-column.disabled, .collapse .collapse-header > .header-row > .inner > .header-info:disabled, .collapse .collapse-header > .header-row > .inner > .header-info.disabled, .collapse .collapse-header > .header-row > .header-more:disabled, .collapse .collapse-header > .header-row > .header-more.disabled, .input:disabled, .input.disabled, .icon-input:disabled, .icon-input.disabled, .base-menu .menu-item:disabled, .menu .menu-item:disabled, .base-menu .menu-item.disabled, .menu .menu-item.disabled, .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled, .tab > .tab-pre:disabled, .tab > .tab-next:disabled, .tab > .disabled.tab-pre, .tab > .disabled.tab-next, .tab .tab-item:disabled, .tab .tab-item.disabled, .tab .tab-item > .item-icon:disabled, .tab .tab-item > .item-icon.disabled, .toggle-button:disabled, .toggle-button.disabled, .tree .tree-item > .tree-title > .title-row > .inner > .icon-column:disabled, .tree .tree-item > .tree-title > .title-row > .inner > .icon-column.disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info:disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info.disabled, .tree .tree-item > .tree-title > .title-row > .title-more:disabled, .tree .tree-item > .tree-title > .title-row > .title-more.disabled {
+.base-btn:disabled, .button:disabled, .base-btn.disabled, .disabled.button, .checkbox:disabled, .checkbox.disabled, .radio:disabled, .radio.disabled, .collapse .collapse-header > .header-row > .inner > .icon-column:disabled, .collapse .collapse-header > .header-row > .inner > .icon-column.disabled, .collapse .collapse-header > .header-row > .inner > .header-info:disabled, .collapse .collapse-header > .header-row > .inner > .header-info.disabled, .collapse .collapse-header > .header-row > .header-more:disabled, .collapse .collapse-header > .header-row > .header-more.disabled, .input:disabled, .input.disabled, .icon-input:disabled, .icon-input.disabled, .base-menu .menu-item:disabled, .menu .menu-item:disabled, .base-menu .menu-item.disabled, .menu .menu-item.disabled, .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled, .popup-title:disabled, .popup-title.disabled, .tab > .tab-pre:disabled, .tab > .tab-next:disabled, .tab > .disabled.tab-pre, .tab > .disabled.tab-next, .tab .tab-item:disabled, .tab .tab-item.disabled, .tab .tab-item > .item-icon:disabled, .tab .tab-item > .item-icon.disabled, .toggle-button:disabled, .toggle-button.disabled, .tree .tree-item > .tree-title > .title-row > .inner > .icon-column:disabled, .tree .tree-item > .tree-title > .title-row > .inner > .icon-column.disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info:disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info.disabled, .tree .tree-item > .tree-title > .title-row > .title-more:disabled, .tree .tree-item > .tree-title > .title-row > .title-more.disabled {
   cursor: not-allowed;
   opacity: 0.7; }
 
@@ -3554,7 +3554,8 @@ textarea.input {
       width: 100%;
       background-color: #0ca0ff;
       transition: width 0.3s;
-      animation: change-width-smoothly 0.3s; }
+      animation: change-width-smoothly 0.3s;
+      z-index: 1; }
     .base-menu .menu-item:disabled, .menu .menu-item:disabled, .base-menu .menu-item.disabled, .menu .menu-item.disabled {
       color: #333;
       background-color: transparent; }
@@ -3649,8 +3650,34 @@ textarea.input {
     .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled {
       color: #333;
       background-color: transparent; }
+    .base-menu .menu-header.with-bottom-bar:not(.disabled):focus:after, .menu .menu-header.with-bottom-bar:not(.disabled):focus:after, .base-menu .menu-header.with-bottom-bar:not(.disabled):hover:after, .menu .menu-header.with-bottom-bar:not(.disabled):hover:after {
+      position: absolute;
+      display: block;
+      border-radius: 50%;
+      left: 0;
+      top: calc(100%);
+      content: "";
+      height: 0.1875rem;
+      width: 100%;
+      background-color: #0ca0ff;
+      transition: width 0.3s;
+      animation: change-width-smoothly 0.3s;
+      z-index: 1; }
+    .base-menu .menu-header.with-bottom-bar.active-bar:after, .menu .menu-header.with-bottom-bar.active-bar:after {
+      position: absolute;
+      display: block;
+      border-radius: 50%;
+      left: 0;
+      top: calc(100%);
+      content: "";
+      height: 0.1875rem;
+      width: 100%;
+      background-color: #0ca0ff;
+      transition: width 0.3s;
+      animation: change-width-smoothly 0.3s;
+      z-index: 1; }
     .base-menu .menu-header.normal:not(.disabled):focus, .menu .menu-header.normal:not(.disabled):focus, .base-menu .menu-header.normal:not(.disabled):hover, .menu .menu-header.normal:not(.disabled):hover {
-      color: #3fb4ff; }
+      color: #0ca0ff; }
     .base-menu .menu-header.normal.active, .menu .menu-header.normal.active {
       color: #0ca0ff; }
     .base-menu .menu-header.dark:not(.disabled):focus, .menu .menu-header.dark:not(.disabled):focus, .base-menu .menu-header.dark:not(.disabled):hover, .menu .menu-header.dark:not(.disabled):hover {
@@ -3703,7 +3730,8 @@ textarea.input {
   .base-menu .item-list, .menu .item-list {
     display: flex;
     flex: 1 0 auto;
-    flex-direction: column; }
+    flex-direction: column;
+    padding: 1px 0; }
     .base-menu .item-list.popup-list, .menu .item-list.popup-list {
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
       position: absolute;
@@ -3711,8 +3739,6 @@ textarea.input {
       border-radius: 0.25rem;
       z-index: 200;
       opacity: 0; }
-      .base-menu .item-list.popup-list.block, .menu .item-list.popup-list.block {
-        width: 100%; }
       .base-menu .item-list.popup-list.dark, .menu .item-list.popup-list.dark {
         background: #131415; }
       .base-menu .item-list.popup-list.right, .menu .item-list.popup-list.right {
@@ -3754,6 +3780,8 @@ textarea.input {
     width: 5.5rem; }
     .menu.compact > .menu-item {
       min-width: unset; }
+    .menu.compact > div {
+      margin: 0.25rem 0; }
   .menu.non-compact {
     width: 100%; }
 
@@ -3992,13 +4020,53 @@ textarea.input {
       border-left-width: 0;
       border-right-color: #fff; }
 
+.popup-title {
+  display: inline-block;
+  padding: 5px 10px 6px 7px;
+  cursor: pointer; }
+  .popup-title:not(.disabled):focus, .popup-title:not(.disabled):hover {
+    color: #0ca0ff; }
+  .popup-title:not(.disabled).active {
+    color: #0ca0ff; }
+
 .popup {
-  visibility: hidden;
-  opacity: 0;
   position: absolute;
-  transform-origin: center;
-  z-index: 200;
-  color: #333; }
+  border-radius: 0.25rem;
+  z-index: 200; }
+  .popup > .popup-mask {
+    position: absolute;
+    content: '';
+    display: flex;
+    flex: 1 0 auto;
+    width: 100%;
+    height: 50px;
+    z-index: -999; }
+  .popup > .popup-content {
+    background: #fff;
+    padding: 0.25rem;
+    border-radius: 0.25rem; }
+  .popup.right {
+    left: calc(100% + 0.375rem);
+    top: 0; }
+    .popup.right:before {
+      position: absolute;
+      content: '';
+      display: flex;
+      flex: 1 0 auto;
+      left: -.5rem;
+      width: 50%;
+      height: 50%; }
+  .popup.bottom {
+    top: calc(100% + 0.375rem);
+    left: 0; }
+    .popup.bottom:before {
+      position: absolute;
+      content: '';
+      display: flex;
+      flex: 1 0 auto;
+      top: -.5rem;
+      width: 100%;
+      height: 50%; }
 
 .progress {
   display: flex;
@@ -4353,7 +4421,8 @@ textarea.input {
       width: 100%;
       background-color: #0ca0ff;
       transition: width 0.3s;
-      animation: change-width-smoothly 0.3s; }
+      animation: change-width-smoothly 0.3s;
+      z-index: 1; }
     .tab .tab-item:disabled, .tab .tab-item.disabled {
       color: #333;
       background-color: transparent; }
