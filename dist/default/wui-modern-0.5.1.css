@@ -532,10 +532,10 @@ a {
   border: 1px solid #ccc; }
 
 .global-with-box {
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12); }
 
 .with-box {
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12); }
 
 .clear-fix::after, .dialog > .dialog-container > .content > .header::after {
   content: '';
@@ -1046,7 +1046,7 @@ a {
       box-shadow: 1px 1px 6px 0 #a3d0ff; }
   .alert.alert-simple, .alert.alert-mini {
     border: 1px solid #ccc;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12);
     background: #fff; }
     .alert.alert-simple > .alert-close, .alert.alert-mini > .alert-close {
       align-items: flex-start; }
@@ -1197,7 +1197,7 @@ a {
   .badge.with-box {
     box-shadow: none; }
     .badge.with-box > .content {
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); }
+      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12); }
 
 blockquote, .blockquote {
   display: block;
@@ -2499,7 +2499,7 @@ blockquote, .blockquote {
       z-index: 5000;
       background-color: #fff;
       border-radius: 0.25rem;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); }
+      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12); }
       .dialog > .dialog-container > .content > .header {
         cursor: grab;
         font-size: 1.25rem;
@@ -2695,22 +2695,9 @@ blockquote, .blockquote {
       bottom: -100%;
       transition: bottom 0.3s linear; }
 
-.dropdown-menu {
-  max-height: 20rem;
-  overflow-y: auto;
-  overflow-x: hidden; }
-  .dropdown-menu > .menu > .menu-list {
-    background-color: #fff;
-    min-width: 8rem; }
-  .dropdown-menu > .menu .menu-item:not(.disabled):active {
-    color: #fff !important;
-    background-color: #0ca0ff; }
-
-.dropdown-title {
-  display: inline-flex;
-  flex-wrap: wrap; }
-  .dropdown-title.block {
-    width: 100%; }
+.dropdown-menu > .popup-content > .menu .menu-item:not(.disabled):active {
+  color: #fff !important;
+  background-color: #0ca0ff; }
 
 .form {
   position: relative;
@@ -3292,7 +3279,7 @@ textarea.input {
   position: fixed;
   z-index: 1000;
   border-radius: 0;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12);
   width: 100%; }
   .layout-header.fixed.top, .layout-footer.fixed.top {
     top: 0; }
@@ -3528,7 +3515,7 @@ textarea.input {
     align-items: center;
     position: relative;
     line-height: 1.5rem;
-    padding: 0.5rem 1.5rem 0.5rem 2rem;
+    padding: 0.5rem 2rem;
     white-space: nowrap;
     cursor: pointer;
     border: none;
@@ -3722,7 +3709,7 @@ textarea.input {
     position: absolute;
     left: 100%;
     top: 0;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3); }
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12); }
     .base-menu .popup-panel.normal, .menu .popup-panel.normal {
       background: #fff; }
     .base-menu .popup-panel.dark, .menu .popup-panel.dark {
@@ -3733,7 +3720,7 @@ textarea.input {
     flex-direction: column;
     padding: 1px 0; }
     .base-menu .item-list.popup-list, .menu .item-list.popup-list {
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12);
       position: absolute;
       background: #fff;
       border-radius: 0.25rem;
@@ -3888,7 +3875,7 @@ textarea.input {
     position: fixed;
     z-index: 1000;
     border-radius: 0;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12);
     border-radius: 0; }
     .navbar.fixed.top {
       top: 0; }
@@ -3941,84 +3928,71 @@ textarea.input {
   position: relative;
   display: inline-block; }
 
-.popover > .popover-arrow.top, .tooltip > .popover-arrow.top, .popover > .popover-arrow.top-left, .tooltip > .popover-arrow.top-left, .popover > .popover-arrow.top-right, .tooltip > .popover-arrow.top-right, .popover > .popover-arrow.top::after, .tooltip > .popover-arrow.top::after, .popover > .popover-arrow.top-left::after, .tooltip > .popover-arrow.top-left::after, .popover > .popover-arrow.top-right::after, .tooltip > .popover-arrow.top-right::after, .popover > .popover-arrow.bottom, .tooltip > .popover-arrow.bottom, .popover > .popover-arrow.bottom-left, .tooltip > .popover-arrow.bottom-left, .popover > .popover-arrow.bottom-right, .tooltip > .popover-arrow.bottom-right, .popover > .popover-arrow.bottom::after, .tooltip > .popover-arrow.bottom::after, .popover > .popover-arrow.bottom-left::after, .tooltip > .popover-arrow.bottom-left::after, .popover > .popover-arrow.bottom-right::after, .tooltip > .popover-arrow.bottom-right::after, .popover > .popover-arrow.left, .tooltip > .popover-arrow.left, .popover > .popover-arrow.left::after, .tooltip > .popover-arrow.left::after, .popover > .popover-arrow.right, .tooltip > .popover-arrow.right, .popover > .popover-arrow.right::after, .tooltip > .popover-arrow.right::after {
+.popover > .popover-arrow.top, .tooltip > .popover-arrow.top, .popover > .popover-arrow.top-left, .tooltip > .popover-arrow.top-left, .popover > .popover-arrow.top-right, .tooltip > .popover-arrow.top-right, .popover > .popover-arrow.bottom-left, .tooltip > .popover-arrow.bottom-left, .popover > .popover-arrow.bottom-right, .tooltip > .popover-arrow.bottom-right, .popover > .popover-arrow.left, .tooltip > .popover-arrow.left, .popover > .popover-arrow.right, .tooltip > .popover-arrow.right {
   position: absolute;
   display: inline-block;
-  width: 0;
-  height: 0;
-  border: 0.25rem solid transparent;
-  z-index: 101; }
+  width: .5rem;
+  height: .5rem;
+  border-width: .25rem; }
 
 .popover > .popover-arrow.top, .tooltip > .popover-arrow.top, .popover > .popover-arrow.top-left, .tooltip > .popover-arrow.top-left, .popover > .popover-arrow.top-right, .tooltip > .popover-arrow.top-right {
   left: 50%;
   top: 100%;
+  transform: rotate(45deg);
   margin-left: -0.25rem;
-  border-bottom-width: 0;
-  border-top-color: #ccc; }
-  .popover > .popover-arrow.top::after, .tooltip > .popover-arrow.top::after, .popover > .popover-arrow.top-left::after, .tooltip > .popover-arrow.top-left::after, .popover > .popover-arrow.top-right::after, .tooltip > .popover-arrow.top-right::after {
-    content: '';
-    left: 50%;
-    top: -0.25rem;
-    margin-left: -0.25rem;
-    margin-top: -1px;
-    border-bottom-width: 0;
-    border-top-color: #fff; }
+  border-bottom-color: #fff;
+  border-left-color: #fff;
+  border-right-color: transparent;
+  border-top-color: transparent; }
 
-.popover > .popover-arrow.bottom, .tooltip > .popover-arrow.bottom, .popover > .popover-arrow.bottom-left, .tooltip > .popover-arrow.bottom-left, .popover > .popover-arrow.bottom-right, .tooltip > .popover-arrow.bottom-right {
+.popover > .popover-arrow.bottom-left, .tooltip > .popover-arrow.bottom-left, .popover > .popover-arrow.bottom-right, .tooltip > .popover-arrow.bottom-right {
   left: 50%;
   top: -0.25rem;
   margin-left: -0.25rem;
-  border-top-width: 0;
-  border-bottom-color: #ccc; }
-  .popover > .popover-arrow.bottom::after, .tooltip > .popover-arrow.bottom::after, .popover > .popover-arrow.bottom-left::after, .tooltip > .popover-arrow.bottom-left::after, .popover > .popover-arrow.bottom-right::after, .tooltip > .popover-arrow.bottom-right::after {
-    content: '';
-    top: 1px;
-    left: -0.25rem;
-    border-top-width: 0;
-    border-bottom-color: #fff; }
+  border-top-color: #fff;
+  border-left-color: #fff;
+  border-right-color: transparent;
+  border-bottom-color: transparent; }
 
 .popover, .tooltip {
   position: relative;
-  background-color: #fff;
   border-radius: 0.25rem; }
   .popover > .card, .tooltip > .card {
     position: relative; }
     .popover > .card > .card-body, .tooltip > .card > .card-body {
       min-height: 1rem; }
-  .popover > .popover-arrow.top-left, .tooltip > .popover-arrow.top-left {
-    left: 2rem; }
-  .popover > .popover-arrow.top-right, .tooltip > .popover-arrow.top-right {
-    left: calc(100% - 2rem); }
-  .popover > .popover-arrow.bottom-left, .tooltip > .popover-arrow.bottom-left {
-    left: 2rem; }
-  .popover > .popover-arrow.bottom-right, .tooltip > .popover-arrow.bottom-right {
-    left: calc(100% - 2rem); }
-  .popover > .popover-arrow.left, .tooltip > .popover-arrow.left {
-    left: 100%;
-    top: 50%;
-    margin-top: -0.25rem;
-    border-right-width: 0;
-    border-left-color: #ccc; }
-    .popover > .popover-arrow.left::after, .tooltip > .popover-arrow.left::after {
-      content: '';
-      top: -0.25rem;
+  .popover > .popover-arrow, .tooltip > .popover-arrow {
+    position: absolute;
+    display: inline-block;
+    width: .5rem;
+    height: .5rem;
+    border-style: solid;
+    border-width: .25rem;
+    transform: rotate(45deg);
+    z-index: 1; }
+    .popover > .popover-arrow.top-left, .tooltip > .popover-arrow.top-left {
+      left: 2rem; }
+    .popover > .popover-arrow.top-right, .tooltip > .popover-arrow.top-right {
+      left: calc(100% - 2rem); }
+    .popover > .popover-arrow.bottom, .tooltip > .popover-arrow.bottom {
+      left: 50%;
+      top: -0.25rem; }
+      .popover > .popover-arrow.bottom.with-box, .tooltip > .popover-arrow.bottom.with-box {
+        border-top-color: #fff;
+        border-left-color: #fff;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        box-shadow: 0px -2px 1px 1px rgba(0, 0, 0, 0.01), -2px 0px 1px 0px rgba(0, 0, 0, 0.01); }
+    .popover > .popover-arrow.bottom-left, .tooltip > .popover-arrow.bottom-left {
+      left: 2rem; }
+    .popover > .popover-arrow.bottom-right, .tooltip > .popover-arrow.bottom-right {
+      left: calc(100% - 2rem); }
+    .popover > .popover-arrow.left, .tooltip > .popover-arrow.left {
+      left: 100%;
+      top: 50%; }
+    .popover > .popover-arrow.right, .tooltip > .popover-arrow.right {
       left: -0.25rem;
-      margin-left: -1px;
-      border-right-width: 0;
-      border-left-color: #fff; }
-  .popover > .popover-arrow.right, .tooltip > .popover-arrow.right {
-    left: -0.25rem;
-    top: 50%;
-    margin-top: -0.25rem;
-    border-left-width: 0;
-    border-right-color: #ccc; }
-    .popover > .popover-arrow.right::after, .tooltip > .popover-arrow.right::after {
-      content: '';
-      left: 1px;
-      top: 50%;
-      margin-top: -0.25rem;
-      border-left-width: 0;
-      border-right-color: #fff; }
+      top: 50%; }
 
 .popup-title {
   display: inline-block;
@@ -4033,18 +4007,11 @@ textarea.input {
   position: absolute;
   border-radius: 0.25rem;
   z-index: 200; }
-  .popup > .popup-mask {
-    position: absolute;
-    content: '';
-    display: flex;
-    flex: 1 0 auto;
-    width: 100%;
-    height: 50px;
-    z-index: -999; }
   .popup > .popup-content {
     background: #fff;
-    padding: 0.25rem;
-    border-radius: 0.25rem; }
+    border-radius: 0.25rem;
+    min-width: 8rem;
+    min-height: 2rem; }
   .popup.right {
     left: calc(100% + 0.375rem);
     top: 0; }
@@ -4139,7 +4106,7 @@ textarea.input {
     width: 100%; }
 
 .select-menu {
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12);
   border-radius: 0.25rem;
   background: #fff; }
   .select-menu > .no-data {
@@ -4554,7 +4521,7 @@ textarea.input {
     height: 1.5rem;
     width: 1.5rem;
     border-radius: 50%;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12);
     text-align: center; }
   .toggle.on .bar {
     background-color: #70a3e1; }

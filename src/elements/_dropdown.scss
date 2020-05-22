@@ -1,29 +1,13 @@
 .dropdown-menu {
-  max-height: 20rem;
-  overflow-y: auto;
-  overflow-x: hidden;
 
-  > .menu {
-    > .menu-list {
-      background-color: $white;
-      min-width: 8rem;
-    }
-
-    .menu-item {
-      @include active3 {
-        color: $dp-menu-item-color;
-        background-color: $dp-menu-item-background-color;
+  > .popup-content {
+    > .menu {
+      .menu-item {
+        @include active3 {
+          color: $dp-menu-item-color;
+          background-color: $dp-menu-item-background-color;
+        }
       }
     }
   }
-}
-
-.dropdown-title {
-  display: inline-flex;
-  flex-wrap: wrap;
-
-  &.block {
-    width: 100%;
-  }
-
 }

@@ -1,64 +1,60 @@
 %popover-arrow-common {
   position: absolute;
   display: inline-block;
-  width: 0;
-  height: 0;
-  border: $popover-arrow-border-width solid transparent;
-  z-index: 101;
+  width: .5rem;
+  height: .5rem;
+  border-width: .25rem;
 }
 
-%top-arrow{
+%top-arrow {
   @extend %popover-arrow-common;
   left: 50%;
   top: 100%;
+  transform: rotate(45deg);
   margin-left: $popover-margin;
-  border-bottom-width: 0;
-  border-top-color: $popover-arrow-border-color;
 
-  &::after {
-    content: '';
-    left: 50%;
-    top: $popover-margin;
-    margin-left: $popover-margin;
-    @extend %popover-arrow-common;
-    margin-top: -1px;
-    border-bottom-width: 0;
-    border-top-color: $popover-arrow-overlap-background-color;
-  }
+  border-bottom-color: $white;
+  border-left-color: $white;
+  border-right-color: transparent;
+  border-top-color: transparent;
+
 }
 
-%bottom-arrow{
+%bottom-arrow {
   @extend %popover-arrow-common;
   left: 50%;
   top: $popover-margin;
   margin-left: $popover-margin;
-  border-top-width: 0;
-  border-bottom-color: $popover-arrow-border-color;
 
-  &::after {
-    content: '';
-    @extend %popover-arrow-common;
-    top: 1px;
-    left: $popover-margin;
-    border-top-width: 0;
-    border-bottom-color: $popover-arrow-overlap-background-color;
-  }
+  border-top-color: $white;
+  border-left-color: $white;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+
 }
 
 .popover {
   position: relative;
-  background-color: $white;
   border-radius: $default-border-radius;
 
   > .card {
     position: relative;
 
-    >.card-body{
+    > .card-body {
       min-height: 1rem;
     }
   }
 
-  >.popover-arrow {
+  > .popover-arrow {
+    position: absolute;
+    display: inline-block;
+    width: .5rem;
+    height: .5rem;
+    border-style: solid;
+    border-width: .25rem;
+    transform: rotate(45deg);
+    z-index: map_get($z-index, 'one');
+
     &.top {
       @extend %top-arrow;
     }
@@ -76,7 +72,17 @@
     }
 
     &.bottom {
-      @extend %bottom-arrow;
+      left: 50%;
+      top: $popover-margin;
+
+      &.with-box {
+        border-top-color: $white;
+        border-left-color: $white;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        box-shadow: 0px -2px 1px 1px rgba(0, 0, 0, .01), -2px 0px 1px 0px rgba(0, 0, 0, .01);
+      }
+
     }
 
     &.bottom-left {
@@ -93,19 +99,6 @@
       @extend %popover-arrow-common;
       left: 100%;
       top: 50%;
-      margin-top: $popover-margin;
-      border-right-width: 0;
-      border-left-color: $popover-arrow-border-color;
-
-      &::after {
-        content: '';
-        top: $popover-margin;
-        left: $popover-margin;
-        @extend %popover-arrow-common;
-        margin-left: -1px;
-        border-right-width: 0;
-        border-left-color: $popover-arrow-overlap-background-color;
-      }
     }
 
 
@@ -113,19 +106,7 @@
       @extend %popover-arrow-common;
       left: $popover-margin;
       top: 50%;
-      margin-top: $popover-margin;
-      border-left-width: 0;
-      border-right-color: $popover-arrow-border-color;
 
-      &::after {
-        content: '';
-        @extend %popover-arrow-common;
-        left: 1px;
-        top: 50%;
-        margin-top: $popover-margin;
-        border-left-width: 0;
-        border-right-color: $popover-arrow-overlap-background-color;
-      }
     }
 
   }
