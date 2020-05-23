@@ -57,6 +57,10 @@
 
     &.top {
       @extend %top-arrow;
+
+      &:after {
+        @extend %top-arrow;
+      }
     }
 
     &.top-left {
@@ -81,6 +85,30 @@
         border-right-color: transparent;
         border-bottom-color: transparent;
         box-shadow: 0px -2px 1px 1px rgba(0, 0, 0, .01), -2px 0px 1px 0px rgba(0, 0, 0, .01);
+      }
+
+      &.with-border {
+        border-top-color: $default-border-color;
+        border-left-color: $default-border-color;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+
+
+        &:after {
+          top: $popover-margin;
+          content: '';
+          position: absolute;
+          display: inline-block;
+          width: .5rem;
+          height: .5rem;
+          border-style: solid;
+          border-width: .25rem;
+          transform: rotate(45deg);
+          border-top-color: $white;
+          border-left-color: $white;
+          border-right-color: transparent;
+          border-bottom-color: transparent;
+        }
       }
 
     }
