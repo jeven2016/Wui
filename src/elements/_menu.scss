@@ -101,7 +101,7 @@
   position: $menu-position;
   @include justify;
   display: flex;
-  flex: 1;
+  flex: 1 1 auto;
 
   &.with-border-radius {
     @include border-radius($menu-border-radius);
@@ -242,7 +242,7 @@
 
     > .header-info {
       display: flex;
-      flex: 1;
+      flex: 1 1 auto;
       justify-content: flex-start;
     }
 

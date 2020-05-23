@@ -1,48 +1,104 @@
-.tooltip {
-  @extend .popover;
+$tooltip-arrow-width: .5rem;
+$tooltip-arrow-height: .5rem;
+$tooltip-half-height: $tooltip-arrow-height /2;
+$tooltip-arrow-spacing: 1rem;
 
-  background-color: $black;
+.tooltip {
+  position: relative;
+  border-radius: $default-border-radius;
+  background: $black;
   color: $white;
   font-size: 0.8rem;
   font-weight: map_get($font-weight, "normal");
   padding: 0.5rem 0.5rem;
-  border-radius: 0.25rem;
-  min-width: 3rem;
+  min-width: 2rem;
   min-height: 1.5rem;
 
+  > .tooltip-arrow {
+    position: absolute;
+    display: inline-block;
+    width: $tooltip-arrow-width;
+    height: $tooltip-arrow-height;
 
-  .popover-arrow {
+    z-index: map_get($z-index, 'one');
+    background: $black;
+
+    &.with-box {
+      box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.07);
+    }
+
     &.top {
-      border-top-color: $black;
+      bottom: -$tooltip-half-height;
+      transform: rotate(-135deg);
 
-      &::after {
-        border-top-color: $black;
+      &.center {
+        left: 50%;
+        margin-left: -$tooltip-half-height;
+      }
+
+      &.top-left {
+        left: 1rem;
+      }
+
+      &.top-right {
+        right: 1rem;
       }
     }
 
     &.bottom {
-      border-bottom-color: $black;
+      top: -$tooltip-half-height;
+      transform: rotate(45deg);
 
-      &::after {
-        border-bottom-color: $black;
+      &.center {
+        left: 50%;
+        margin-left: -$tooltip-half-height;
+      }
+
+      &.bottom-left {
+        left: 1rem;
+      }
+
+      &.bottom-right {
+        right: $tooltip-arrow-spacing;
       }
     }
 
     &.left {
-      border-left-color: $black;
+      right: -$tooltip-half-height;
+      transform: rotate(135deg);
 
-      &::after {
-        border-left-color: $black;
+      &.center {
+        top: 50%;
+        margin-top: -$tooltip-half-height;
+      }
+
+      &.left-bottom {
+        top: $tooltip-arrow-spacing;
+      }
+
+      &.left-top {
+        bottom: $tooltip-arrow-spacing;
       }
     }
+
 
     &.right {
-      border-right-color: $black;
+      left: -$tooltip-half-height;
+      transform: rotate(-45deg);
 
-      &::after {
-        border-right-color: $black;
+      &.center {
+        top: 50%;
+        margin-top: -$tooltip-half-height;
+      }
+
+      &.right-bottom {
+        top: $tooltip-arrow-spacing;
+      }
+
+      &.right-top {
+        bottom: $tooltip-arrow-spacing;
       }
     }
-  }
 
+  }
 }

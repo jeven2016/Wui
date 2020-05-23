@@ -1,37 +1,7 @@
-%popover-arrow-common {
-  position: absolute;
-  display: inline-block;
-  width: .5rem;
-  height: .5rem;
-  border-width: .25rem;
-}
+$popover-arrow-width: .75rem;
+$popover-arrow-height: .75rem;
+$popover-half-height: $popover-arrow-height /2;
 
-%top-arrow {
-  @extend %popover-arrow-common;
-  left: 50%;
-  top: 100%;
-  transform: rotate(45deg);
-  margin-left: $popover-margin;
-
-  border-bottom-color: $white;
-  border-left-color: $white;
-  border-right-color: transparent;
-  border-top-color: transparent;
-
-}
-
-%bottom-arrow {
-  @extend %popover-arrow-common;
-  left: 50%;
-  top: $popover-margin;
-  margin-left: $popover-margin;
-
-  border-top-color: $white;
-  border-left-color: $white;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-
-}
 
 .popover {
   position: relative;
@@ -48,93 +18,107 @@
   > .popover-arrow {
     position: absolute;
     display: inline-block;
-    width: .5rem;
-    height: .5rem;
-    border-style: solid;
-    border-width: .25rem;
-    transform: rotate(45deg);
+    width: $popover-arrow-width;
+    height: $popover-arrow-height;
+
     z-index: map_get($z-index, 'one');
+    background: $white;
+
+    &.with-box {
+      box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.07);
+    }
 
     &.top {
-      @extend %top-arrow;
+      bottom: -$popover-half-height;
+      transform: rotate(-135deg);
 
-      &:after {
-        @extend %top-arrow;
+      &.with-border {
+        border-left: $default-border;
+        border-top: $default-border;
       }
-    }
 
-    &.top-left {
-      @extend %top-arrow;
+      &.center {
+        left: 50%;
+        margin-left: -$popover-half-height;
+      }
 
-      left: 2rem;
-    }
+      &.top-left {
+        left: 1rem;
+      }
 
-    &.top-right {
-      @extend %top-arrow;
-
-      left: calc(100% - 2rem);
+      &.top-right {
+        right: 1rem;
+      }
     }
 
     &.bottom {
-      left: 50%;
-      top: $popover-margin;
-
-      &.with-box {
-        border-top-color: $white;
-        border-left-color: $white;
-        border-right-color: transparent;
-        border-bottom-color: transparent;
-        box-shadow: 0px -2px 1px 1px rgba(0, 0, 0, .01), -2px 0px 1px 0px rgba(0, 0, 0, .01);
-      }
+      top: -$popover-half-height;
+      transform: rotate(45deg);
 
       &.with-border {
-        border-top-color: $default-border-color;
-        border-left-color: $default-border-color;
-        border-right-color: transparent;
-        border-bottom-color: transparent;
-
-
-        &:after {
-          top: $popover-margin;
-          content: '';
-          position: absolute;
-          display: inline-block;
-          width: .5rem;
-          height: .5rem;
-          border-style: solid;
-          border-width: .25rem;
-          transform: rotate(45deg);
-          border-top-color: $white;
-          border-left-color: $white;
-          border-right-color: transparent;
-          border-bottom-color: transparent;
-        }
+        border-left: $default-border;
+        border-top: $default-border;
       }
 
-    }
+      &.center {
+        left: 50%;
+        margin-left: -$popover-half-height;
+      }
 
-    &.bottom-left {
-      @extend %bottom-arrow;
-      left: 2rem;
-    }
+      &.bottom-left {
+        left: 1rem;
+      }
 
-    &.bottom-right {
-      @extend %bottom-arrow;
-      left: calc(100% - 2rem);
+      &.bottom-right {
+        right: 1rem;
+      }
     }
 
     &.left {
-      @extend %popover-arrow-common;
-      left: 100%;
-      top: 50%;
+      right: -$popover-half-height;
+      transform: rotate(135deg);
+
+      &.with-border {
+        border-left: $default-border;
+        border-top: $default-border;
+      }
+
+      &.center {
+        top: 50%;
+        margin-top: -$popover-half-height;
+      }
+
+      &.left-bottom {
+        top: 1rem;
+      }
+
+      &.left-top {
+        bottom: 1rem;
+      }
     }
 
 
     &.right {
-      @extend %popover-arrow-common;
-      left: $popover-margin;
-      top: 50%;
+      left: -$popover-half-height;
+      transform: rotate(-45deg);
 
+      &.with-border {
+        border-left: $default-border;
+        border-top: $default-border;
+      }
+
+      &.center {
+        top: 50%;
+        margin-top: -$popover-half-height;
+      }
+
+      &.right-bottom {
+        top: 1rem;
+      }
+
+      &.right-top {
+        bottom: 1rem;
+      }
     }
 
   }
