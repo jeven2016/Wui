@@ -1,7 +1,7 @@
 %input-active-base {
   border-color: $input-border-active-color;
   box-shadow: $input-box-shadow;
-  z-index: map_get($z-index, "pop");
+  z-index: map_get($z-index, "one");
   position: relative;
 }
 
@@ -162,17 +162,18 @@ textarea.input {
     padding-right: $icon-input-right-icon-input-padding-right;
   }
 
-  & > .icon {
+  & > .icon, &>.icon-column {
     position: $icon-input-icon-position;
     color: $icon-input-icon-text-color;
     line-height: $icon-input-icon-line-height;
     cursor: $icon-input-icon-cursor;
     width: $icon-input-left-icon-width;
+    height: $icon-input-left-icon-height;
     right: $icon-input-icon-right;
     z-index: $icon-input-icon-z-index;
     top: 50%; //it works for non-IE browsers
     transform: translateY(-50%); //it works for IE
-
+    transform-origin: center;
 
     &:hover, &:focus {
       color: $input-border-active-color;
@@ -181,11 +182,6 @@ textarea.input {
 
   @include add-disabled-conf;
 
-  @include focus-active {
-    > .input {
-      @extend %input-active-base;
-    }
-  }
 }
 
 @include make-special-input('ok', $text-ok-color);
