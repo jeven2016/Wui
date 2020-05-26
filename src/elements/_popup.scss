@@ -27,10 +27,12 @@
   position: absolute;
   @include border-radius;
   z-index: map_get($z-index, 'pop');
-  //opacity: 0; //initially hidden
+
+  .menu {
+    background: $white;
+  }
 
   > .popup-content {
-    background: $white;
     @include border-radius;
     min-height: 2rem;
   }

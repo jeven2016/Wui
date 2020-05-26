@@ -16,6 +16,11 @@
   font-size: $input-font-size;
   outline: $input-outline;
 
+  &.read-only {
+    cursor: pointer;
+    caret-color: transparent; //don't show caret in input since it's always blinking
+  }
+
   // it's better to set the width and height to 0px. Otherwise,
   // IE10 ignores the padding defined on the field -- padding-right --
   // which was intended to keep the text from typing over the 'X' icon
@@ -60,14 +65,14 @@
     @extend %input-active-base;
   }
 
-/*  &:not(:disabled):not(.disabled):active {
-    //transform: $input-active-scale;
+  /*  &:not(:disabled):not(.disabled):active {
+      //transform: $input-active-scale;
 
-    + .icon {
-      //transform: $icon-input-icon-scale;
+      + .icon {
+        //transform: $icon-input-icon-scale;
 
-    }
-  }*/
+      }
+    }*/
 
 }
 
@@ -92,7 +97,7 @@ textarea.input {
       font-size: map-get($font-size, 'large');
       padding: $icon-input-large-padding;
 
-      &:not(.textarea){
+      &:not(.textarea) {
         height: $input-large-height;
       }
     }
@@ -111,7 +116,8 @@ textarea.input {
     > .input {
       font-size: map-get($font-size, 'small');
       padding: $icon-input-small-padding;
-      &:not(.textarea){
+
+      &:not(.textarea) {
         height: $input-small-height;
       }
     }

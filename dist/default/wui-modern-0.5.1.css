@@ -2725,13 +2725,16 @@ h1, h2, h3, h4, h5, h6 {
   * Simple input
    */
   /*  &:not(:disabled):not(.disabled):active {
-    //transform: $input-active-scale;
+      //transform: $input-active-scale;
 
-    + .icon {
-      //transform: $icon-input-icon-scale;
+      + .icon {
+        //transform: $icon-input-icon-scale;
 
-    }
-  }*/ }
+      }
+    }*/ }
+  .input.read-only {
+    cursor: pointer;
+    caret-color: transparent; }
   .input::-ms-clear {
     width: 0;
     height: 0; }
@@ -3904,8 +3907,9 @@ textarea.input {
   position: absolute;
   border-radius: 0.25rem;
   z-index: 200; }
+  .popup .menu {
+    background: #fff; }
   .popup > .popup-content {
-    background: #fff;
     border-radius: 0.25rem;
     min-height: 2rem; }
   .popup.right {
@@ -4001,20 +4005,37 @@ textarea.input {
     left: 0;
     width: 100%; }
 
-.select-menu {
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12);
+.select-menu .menu .menu-item {
+  padding: 0.5rem 1rem !important; }
+
+.select-menu .no-data {
+  background: white;
+  flex-direction: column;
+  padding: 1rem;
   border-radius: 0.25rem;
-  background: #fff; }
-  .select-menu > .no-data {
-    margin-top: 1rem;
-    height: 6rem;
-    align-items: center; }
-    .select-menu > .no-data .no-data-icon {
-      font-size: 2em;
-      color: #ccc; }
-    .select-menu > .no-data .no-data-label {
-      font-size: 1.3em;
-      color: #ccc; }
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .select-menu .no-data > .no-data-icon {
+    font-size: 2em;
+    color: #ccc; }
+  .select-menu .no-data > .no-data-label {
+    font-size: 1em;
+    color: #ccc; }
+
+.select-menu .item-row > .left, .select-menu .item-row > .right {
+  flex: 0 1 1em;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.select-menu .item-row > .center {
+  flex: 1 0 auto;
+  padding: 0 0.25rem; }
 
 .select-multiple {
   display: -ms-inline-flexbox;
