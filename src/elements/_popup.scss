@@ -28,13 +28,10 @@
   @include border-radius;
   z-index: map_get($z-index, 'pop');
 
-  .menu {
-    background: $white;
-  }
-
   > .popup-content {
     @include border-radius;
     min-height: 2rem;
+    background: $white;
   }
 
   &.right {

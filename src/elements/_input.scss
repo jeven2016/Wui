@@ -162,7 +162,7 @@ textarea.input {
     padding-right: $icon-input-right-icon-input-padding-right;
   }
 
-  & > .icon, &>.icon-column {
+  & > .icon, > .icon-column {
     position: $icon-input-icon-position;
     color: $icon-input-icon-text-color;
     line-height: $icon-input-icon-line-height;

@@ -3427,11 +3427,11 @@ textarea.input {
     .base-menu .menu-item:not(.disabled):focus, .menu .menu-item:not(.disabled):focus, .base-menu .menu-item:not(.disabled):hover, .menu .menu-item:not(.disabled):hover {
       color: #0ca0ff; }
       .base-menu .menu-item:not(.disabled):focus.with-bg, .menu .menu-item:not(.disabled):focus.with-bg, .base-menu .menu-item:not(.disabled):hover.with-bg, .menu .menu-item:not(.disabled):hover.with-bg {
-        background-color: #fafafa; }
+        background-color: #F7F6F6; }
     .base-menu .menu-item:not(.disabled).active, .menu .menu-item:not(.disabled).active {
       color: #0ca0ff; }
       .base-menu .menu-item:not(.disabled).active.with-bg, .menu .menu-item:not(.disabled).active.with-bg {
-        background-color: #fafafa; }
+        background-color: #F7F6F6; }
     .base-menu .menu-item:not(.disabled).active.with-bottom-bar:after, .menu .menu-item:not(.disabled).active.with-bottom-bar:after {
       position: absolute;
       display: block;
@@ -3450,11 +3450,7 @@ textarea.input {
       background-color: transparent; }
     .base-menu .menu-item.equitable, .menu .menu-item.equitable {
       flex-grow: 1; }
-    .base-menu .menu-item.left, .menu .menu-item.left {
-      justify-content: flex-start;
-      flex-grow: 1; }
-    .base-menu .menu-item.right, .menu .menu-item.right {
-      justify-content: flex-end;
+    .base-menu .menu-item > .right, .menu .menu-item > .right {
       flex-grow: 1; }
     .base-menu .menu-item > .item-icon, .menu .menu-item > .item-icon {
       display: flex;
@@ -3468,10 +3464,12 @@ textarea.input {
       justify-content: center; }
       .base-menu .menu-item > .item-icon > .icon, .menu .menu-item > .item-icon > .icon {
         color: inherit; }
-      .base-menu .menu-item > .item-icon + .item-info, .menu .menu-item > .item-icon + .item-info {
-        padding: 0 0.5rem;
-        transform-origin: left;
-        overflow: hidden; }
+    .base-menu .menu-item > .item-info, .menu .menu-item > .item-info {
+      padding: 0 0.5rem;
+      transform-origin: left;
+      overflow: hidden;
+      display: flex;
+      flex: 1 1 auto; }
     .base-menu .menu-item.primary:not(.disabled):not(.active):focus, .menu .menu-item.primary:not(.disabled):not(.active):focus, .base-menu .menu-item.primary:not(.disabled):not(.active):hover, .menu .menu-item.primary:not(.disabled):not(.active):hover {
       color: #3fb4ff; }
     .base-menu .menu-item.primary.active, .menu .menu-item.primary.active {
@@ -3590,10 +3588,12 @@ textarea.input {
       justify-content: center; }
       .base-menu .menu-header > .header-icon > .icon, .menu .menu-header > .header-icon > .icon {
         color: inherit; }
-      .base-menu .menu-header > .header-icon + .header-info, .menu .menu-header > .header-icon + .header-info {
-        padding: 0 0.5rem;
-        transform-origin: left;
-        overflow: hidden; }
+    .base-menu .menu-header > .header-info, .menu .menu-header > .header-info {
+      padding: 0 0.5rem;
+      transform-origin: left;
+      overflow: hidden;
+      display: flex;
+      flex: 1 1 auto; }
     .base-menu .menu-header.compact, .menu .menu-header.compact {
       padding: 0.5rem 0;
       display: inline-flex;
@@ -3912,11 +3912,10 @@ textarea.input {
   position: absolute;
   border-radius: 0.25rem;
   z-index: 200; }
-  .popup .menu {
-    background: #fff; }
   .popup > .popup-content {
     border-radius: 0.25rem;
-    min-height: 2rem; }
+    min-height: 2rem;
+    background: #fff; }
   .popup.right {
     left: calc(100% + 0.375rem);
     top: 0; }
@@ -4294,11 +4293,11 @@ textarea.input {
     .tab .tab-item:not(.disabled):focus, .tab .tab-item:not(.disabled):hover {
       color: #0ca0ff; }
       .tab .tab-item:not(.disabled):focus.with-bg, .tab .tab-item:not(.disabled):hover.with-bg {
-        background-color: #fafafa; }
+        background-color: #F7F6F6; }
     .tab .tab-item:not(.disabled).active {
       color: #0ca0ff; }
       .tab .tab-item:not(.disabled).active.with-bg {
-        background-color: #fafafa; }
+        background-color: #F7F6F6; }
     .tab .tab-item:not(.disabled).active.with-bottom-bar:after {
       position: absolute;
       display: block;
