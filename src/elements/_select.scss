@@ -47,7 +47,6 @@
     width: 15.6525rem;
     border: $default-border;
     position: relative;
-    padding: 0 0.5rem;
     border-radius: $default-border-radius;
   }
   @include focus-active {
@@ -55,9 +54,12 @@
   }
 
   > .select-multiple-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 
     > .badge {
-      margin: 0 0.15rem;
+      margin: 0.25rem;
 
       > .content {
         border: $default-border;
@@ -70,12 +72,17 @@
           }
         }
       }
+
+      + .input {
+        margin-right: 0.25rem;
+      }
     }
 
     > .input {
       padding-left: 0;
       padding-right: 0;
-      width: .8em;
+      width: 1em;
+      min-width: 0.5rem;
       max-width: 100%;
       font-size: .8rem;
       border: none;

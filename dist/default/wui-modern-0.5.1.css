@@ -4052,30 +4052,36 @@ textarea.input {
   width: 15.6525rem;
   border: 1px solid #ccc;
   position: relative;
-  padding: 0 0.5rem;
   border-radius: 0.25rem; }
-  .select-multiple > .select-multiple-content > .badge {
-    margin: 0 0.15rem; }
-    .select-multiple > .select-multiple-content > .badge > .content {
-      border: 1px solid #ccc; }
-      .select-multiple > .select-multiple-content > .badge > .content > .remove-icon {
-        margin-left: 0.25rem; }
-        .select-multiple > .select-multiple-content > .badge > .content > .remove-icon:not(.disabled):focus, .select-multiple > .select-multiple-content > .badge > .content > .remove-icon:not(.disabled):hover {
-          color: #ff350e; }
-  .select-multiple > .select-multiple-content > .input {
-    padding-left: 0;
-    padding-right: 0;
-    width: .8em;
-    max-width: 100%;
-    font-size: .8rem;
-    border: none;
-    box-shadow: none !important;
-    outline: 0; }
-  .select-multiple > .select-multiple-content > .search-text-detector {
-    position: absolute;
-    opacity: 0;
-    left: 0;
-    top: 0; }
+  .select-multiple > .select-multiple-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; }
+    .select-multiple > .select-multiple-content > .badge {
+      margin: 0.25rem; }
+      .select-multiple > .select-multiple-content > .badge > .content {
+        border: 1px solid #ccc; }
+        .select-multiple > .select-multiple-content > .badge > .content > .remove-icon {
+          margin-left: 0.25rem; }
+          .select-multiple > .select-multiple-content > .badge > .content > .remove-icon:not(.disabled):focus, .select-multiple > .select-multiple-content > .badge > .content > .remove-icon:not(.disabled):hover {
+            color: #ff350e; }
+      .select-multiple > .select-multiple-content > .badge + .input {
+        margin-right: 0.25rem; }
+    .select-multiple > .select-multiple-content > .input {
+      padding-left: 0;
+      padding-right: 0;
+      width: 1em;
+      min-width: 0.5rem;
+      max-width: 100%;
+      font-size: .8rem;
+      border: none;
+      box-shadow: none !important;
+      outline: 0; }
+    .select-multiple > .select-multiple-content > .search-text-detector {
+      position: absolute;
+      opacity: 0;
+      left: 0;
+      top: 0; }
 
 .table {
   width: 100%;
