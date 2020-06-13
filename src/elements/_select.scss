@@ -58,23 +58,21 @@
     flex-wrap: wrap;
     width: 100%;
 
-    > .badge {
+    > .multi-item {
       margin: 0.25rem;
 
-      > .content {
-        border: $default-border;
+      > .badge {
+        > .content {
+          border: $default-border;
 
-        > .remove-icon {
-          margin-left: 0.25rem;
+          > .remove-icon {
+            margin-left: 0.25rem;
 
-          @include focus2 {
-            color: $red;
+            @include focus2 {
+              color: $red;
+            }
           }
         }
-      }
-
-      + .input {
-        margin-right: 0.25rem;
       }
     }
 
@@ -88,6 +86,7 @@
       border: none;
       box-shadow: none !important;
       outline: 0;
+      margin: 0 0.25rem;
     }
 
     > .search-text-detector {

@@ -3417,10 +3417,11 @@ textarea.input {
     align-items: center;
     position: relative;
     line-height: 1.5rem;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1.5rem;
     white-space: nowrap;
     cursor: pointer;
     border: none;
+    min-width: 10rem;
     transition: background 0.3s; }
     .base-menu .menu-item > .icon, .menu .menu-item > .icon {
       margin-right: .5rem; }
@@ -3450,12 +3451,18 @@ textarea.input {
       background-color: transparent; }
     .base-menu .menu-item.equitable, .menu .menu-item.equitable {
       flex-grow: 1; }
-    .base-menu .menu-item > .right, .menu .menu-item > .right {
-      flex-grow: 1; }
+    .base-menu .menu-item.left, .menu .menu-item.left {
+      flex: 1 1 auto;
+      justify-content: flex-start; }
+    .base-menu .menu-item.right, .menu .menu-item.right {
+      flex: 1 1 auto;
+      justify-content: flex-end; }
+      .base-menu .menu-item.right > .item-info, .menu .menu-item.right > .item-info {
+        justify-content: flex-end; }
     .base-menu .menu-item > .item-icon, .menu .menu-item > .item-icon {
       display: flex;
-      flex: 0 0 1.5rem;
-      height: 1.5rem;
+      flex: 0 0 1em;
+      height: 1em;
       transform-origin: center;
       display: -ms-flexbox;
       display: -webkit-flex;
@@ -3490,10 +3497,13 @@ textarea.input {
     .base-menu .menu-item.dark:not(.disabled):not(.active):focus, .menu .menu-item.dark:not(.disabled):not(.active):focus, .base-menu .menu-item.dark:not(.disabled):not(.active):hover, .menu .menu-item.dark:not(.disabled):not(.active):hover {
       color: #fff;
       text-shadow: 1px 1px 2px #333, 0 0 15px #fff, 0 0 5px #0ca0ff; }
+      .base-menu .menu-item.dark:not(.disabled):not(.active):focus.with-bg, .menu .menu-item.dark:not(.disabled):not(.active):focus.with-bg, .base-menu .menu-item.dark:not(.disabled):not(.active):hover.with-bg, .menu .menu-item.dark:not(.disabled):not(.active):hover.with-bg {
+        background-color: #0ca0ff; }
     .base-menu .menu-item.dark.active, .menu .menu-item.dark.active {
       background-color: #0ca0ff;
-      color: #fff;
-      text-shadow: 1px 1px 2px #333, 0 0 15px #fff, 0 0 5px #0ca0ff; }
+      color: #fff; }
+      .base-menu .menu-item.dark.active.with-bg, .menu .menu-item.dark.active.with-bg {
+        background-color: #0ca0ff; }
     .base-menu .menu-item > .left, .menu .menu-item > .left, .base-menu .menu-item > .right, .menu .menu-item > .right {
       flex: 0 1 1em;
       display: -ms-flexbox;
@@ -3530,9 +3540,10 @@ textarea.input {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    align-items: center;
     transform-origin: center;
     transition: transform .3s linear;
-    padding: .5rem .5rem .5rem 2rem;
+    padding: .5rem .5rem .5rem 1.5rem;
     white-space: nowrap; }
     .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled {
       color: #333;
@@ -3576,10 +3587,12 @@ textarea.input {
       display: flex;
       flex: 1 1 auto;
       justify-content: flex-start; }
+      .base-menu .menu-header > .header-info > .header-icon + .header-info, .menu .menu-header > .header-info > .header-icon + .header-info {
+        padding-left: 0.5rem; }
     .base-menu .menu-header > .header-icon, .menu .menu-header > .header-icon {
       display: flex;
-      flex: 0 0 1.5rem;
-      height: 1.5rem;
+      flex: 0 0 1em;
+      height: 1em;
       transform-origin: center;
       display: -ms-flexbox;
       display: -webkit-flex;
@@ -3606,7 +3619,8 @@ textarea.input {
       transform-origin: left;
       overflow: hidden; }
   .base-menu .menu-group > .group-header, .menu .menu-group > .group-header {
-    color: #a5b2bb; }
+    color: #a5b2bb;
+    padding: .5rem 1.5rem .5rem 1rem; }
   .base-menu .popup-panel, .menu .popup-panel {
     position: absolute;
     left: 100%;
@@ -3620,7 +3634,7 @@ textarea.input {
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
-    padding: 1px 0; }
+    padding: 0.25rem 0; }
     .base-menu .item-list.popup-list, .menu .item-list.popup-list {
       box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12);
       position: absolute;
@@ -3654,21 +3668,29 @@ textarea.input {
           height: 50%; }
 
 .menu {
+  flex-wrap: wrap;
+  transition: width .3s;
   /**
      当menu中的嵌套不确定时,如何设置border-radius将会会相当地复杂，
      通常的做法就是menu上下留白，不在子item中设置border-radius,如此可以极大地简化实现难度
-   */
-  padding: 1px 0;
-  flex-wrap: wrap;
-  transition: width .3s; }
+   */ }
+  .menu > .base-menu > .menu-header > div:first-child.header-info, .menu > .menu > .menu-header > div:first-child.header-info {
+    padding-left: 0; }
   .menu.dark {
     background-color: #131415;
     color: #b3b3b3;
     border: none; }
+  .menu.menu-row {
+    padding: 0 0.25rem; }
+    .menu.menu-row > .popup-menu > .popup-list {
+      width: 100%; }
+  .menu.menu-column {
+    padding: 0.25rem 0; }
   .menu.compact {
     width: 5.5rem; }
     .menu.compact > .menu-item {
-      min-width: unset; }
+      min-width: unset;
+      justify-content: center; }
     .menu.compact > div {
       margin: 0.25rem 0; }
   .menu.non-compact {
@@ -4057,16 +4079,14 @@ textarea.input {
     display: flex;
     flex-wrap: wrap;
     width: 100%; }
-    .select-multiple > .select-multiple-content > .badge {
+    .select-multiple > .select-multiple-content > .multi-item {
       margin: 0.25rem; }
-      .select-multiple > .select-multiple-content > .badge > .content {
+      .select-multiple > .select-multiple-content > .multi-item > .badge > .content {
         border: 1px solid #ccc; }
-        .select-multiple > .select-multiple-content > .badge > .content > .remove-icon {
+        .select-multiple > .select-multiple-content > .multi-item > .badge > .content > .remove-icon {
           margin-left: 0.25rem; }
-          .select-multiple > .select-multiple-content > .badge > .content > .remove-icon:not(.disabled):focus, .select-multiple > .select-multiple-content > .badge > .content > .remove-icon:not(.disabled):hover {
+          .select-multiple > .select-multiple-content > .multi-item > .badge > .content > .remove-icon:not(.disabled):focus, .select-multiple > .select-multiple-content > .multi-item > .badge > .content > .remove-icon:not(.disabled):hover {
             color: #ff350e; }
-      .select-multiple > .select-multiple-content > .badge + .input {
-        margin-right: 0.25rem; }
     .select-multiple > .select-multiple-content > .input {
       padding-left: 0;
       padding-right: 0;
@@ -4076,7 +4096,8 @@ textarea.input {
       font-size: .8rem;
       border: none;
       box-shadow: none !important;
-      outline: 0; }
+      outline: 0;
+      margin: 0 0.25rem; }
     .select-multiple > .select-multiple-content > .search-text-detector {
       position: absolute;
       opacity: 0;

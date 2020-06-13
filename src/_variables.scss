@@ -257,7 +257,8 @@ $input-group-element-margin-right: -1px;
 
 
 //For menu
-$menu-padding: 1px 0;
+$menu-padding-column: 0.25rem 0;
+$menu-padding-row: 0 0.25rem;
 $menu-block-display: flex;
 $menu-list-style: none;
 $menu-flex-direction: column;
@@ -282,7 +283,7 @@ $menu-item-cursor: pointer;
 $menu-item-border: none;
 $menu-item-transition: background .3s;
 $menu-item-background-color: #F7F6F6;
-$menu-item-padding: 0.5rem 2rem;
+$menu-item-padding: 0.5rem 1.5rem;
 $menu-item-overflow: hidden;
 $menu-item-text-overflow: ellipsis;
 $menu-item-white-space: nowrap;

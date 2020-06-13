@@ -33,8 +33,8 @@
 @mixin create-line($prefix) {
   > .#{$prefix}-icon {
     display: flex;
-    flex: 0 0 1.5rem;
-    height: 1.5rem;
+    flex: 0 0 1em;
+    height: 1em;
     transform-origin: center;
     @include make-flex-center;
 
@@ -68,7 +68,7 @@
   white-space: $menu-item-white-space;
   cursor: $menu-item-cursor;
   border: $menu-item-border;
-  //min-width: $dp-min-width;
+  min-width: 10rem;
   transition: $menu-item-transition;
 
   > .icon {
@@ -125,8 +125,6 @@
     flex-direction: $menu-flex-direction;
   }
 
-  //&.popup-menu
-
   .menu-item {
     @include make-menu-item2 {
       //white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
@@ -135,9 +133,20 @@
         flex-grow: 1;
       }
 
-      > .right {
-        flex-grow: 1;
+      &.left {
+        flex: 1 1 auto;
+        justify-content: flex-start;
       }
+
+      &.right {
+        flex: 1 1 auto;
+        justify-content: flex-end;
+
+        > .item-info {
+          justify-content: flex-end;
+        }
+      }
+
 
       @include create-line('item');
     }
@@ -165,12 +174,21 @@
       @include focus2_no_active {
         color: $white;
         text-shadow: $menu-item-hover-text-shadow;
+
+        &.with-bg {
+          background-color: $blue;
+        }
       }
 
       &.active {
         background-color: $blue;
         color: $white;
-        text-shadow: $menu-item-hover-text-shadow;
+        //text-shadow: $menu-item-hover-text-shadow;
+
+
+        &.with-bg {
+          background-color: $blue;
+        }
       }
     }
 
@@ -194,10 +212,10 @@
     font-weight: map_get($font-weight, 'light');
     position: $menu-header-position;
     @include make-flex;
-    //width: 100%;
+    align-items: center;
     transform-origin: center;
     transition: transform .3s linear;
-    padding: .5rem .5rem .5rem 2rem;
+    padding: .5rem .5rem .5rem 1.5rem;
     white-space: nowrap;
 
     @include add-disabled-conf(false) {
@@ -241,6 +259,12 @@
       display: flex;
       flex: 1 1 auto;
       justify-content: flex-start;
+
+      > .header-icon {
+        + .header-info {
+          padding-left: 0.5rem;
+        }
+      }
     }
 
     @include create-line('header');
@@ -276,6 +300,7 @@
   .menu-group {
     > .group-header {
       color: #a5b2bb;
+      padding: .5rem 1.5rem .5rem 1rem;
     }
 
   }
@@ -299,7 +324,7 @@
     display: flex;
     flex: 1 0 auto;
     flex-direction: column;
-    padding: $menu-padding;
+    padding: $menu-padding-column;
 
     &.popup-list {
       box-shadow: $default-box-shadow;
@@ -348,6 +373,18 @@
 
 .menu {
   @extend .base-menu;
+  flex-wrap: wrap;
+  transition: width .3s;
+
+  > .base-menu {
+    > .menu-header {
+      > div:first-child {
+        &.header-info {
+          padding-left: 0;
+        }
+      }
+    }
+  }
 
   &.dark {
     background-color: $menu-dark-background-color;
@@ -359,15 +396,26 @@
      当menu中的嵌套不确定时,如何设置border-radius将会会相当地复杂，
      通常的做法就是menu上下留白，不在子item中设置border-radius,如此可以极大地简化实现难度
    */
-  padding: $menu-padding;
-  flex-wrap: wrap;
-  transition: width .3s;
+  &.menu-row {
+    padding: $menu-padding-row;
+
+    > .popup-menu {
+      > .popup-list {
+        width: 100%;
+      }
+    }
+  }
+
+  &.menu-column {
+    padding: $menu-padding-column;
+  }
 
   &.compact {
     width: 5.5rem;
 
     > .menu-item {
       min-width: unset;
+      justify-content: center;
     }
 
     > div {
