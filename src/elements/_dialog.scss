@@ -1,226 +1,121 @@
-%content-spacing {
-  min-height: 1rem;
-  padding: 0.5rem 1rem;
-}
 
 %body-spacing {
   min-height: 1rem;
   padding: 1rem 1rem;
 }
 
-$animation-timeout: .4s;
-
-@keyframes show-dialog-align-center {
-  0% {
-    visibility: visible;
-    opacity: 0;
-    transform: scale(0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes hide-dialog-align-center {
-  0% {
-    visibility: visible;
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    visibility: hidden;
-    opacity: 0;
-    transform: scale(0.2);
-  }
-}
-
-@keyframes show-dialog-align-top {
-  0% {
-    visibility: visible;
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(8vw);
-  }
-}
-
-@keyframes hide-dialog-align-top {
-  0% {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(8vw);
-  }
-
-  100% {
-    visibility: hidden;
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-}
-
 .dialog {
-  @extend .mask;
-  background: $dialog-background;
+  position: fixed;
   z-index: $dialog-z-index;
-  visibility: hidden;
-  opacity: 0;
+  //visibility: hidden;
+  //opacity: 0;
+  display: none;
+  left: 50%;
+  width: 90%;
+  flex-direction: column;
 
-  > .dialog-container {
-    position: $dialog-container-position;
-    width: $dialog-container-width;
+  border: $dialog-content-border;
+  min-height: $dialog-content-min-height;
+  background-color: $dialog-content-background-color;
+  @include border-radius($dialog-border-radius);
+  box-shadow: $default-box-shadow;
 
+  @include limit-width("max-width", $dialog-content-width-sm, $dialog-content-width-md,
+          $dialog-content-width-lg, $dialog-content-width-xg);
 
-    > .content {
-      position: $dialog-content-position;
-      margin: $dialog-content-margin;
-      border: $dialog-content-border;
-      width: $dialog-content-width;
-      transform-origin: $dialog-content-transform-origin;
-      min-height: $dialog-content-min-height;
-      z-index: $dialog-content-z-index;
-      background-color: $dialog-content-background-color;
-      @include border-radius($dialog-border-radius);
-      box-shadow: $default-box-shadow;
+  > .header {
+    //cursor: $dialog-header-cursor;
+    padding: .75rem 1rem;
+    font-size: $dialog-header-font-size;
+    font-weight: $dialog-header-font-weight;
 
-      @include limit-width("max-width", $dialog-content-width-sm, $dialog-content-width-md,
-              $dialog-content-width-lg, $dialog-content-width-xg);
+    &:active {
+      cursor: $dialog-header-active-cursor;
+    }
 
-      > .header {
-        cursor: $dialog-header-cursor;
-        @extend %content-spacing;
-        font-size: $dialog-header-font-size;
-        font-weight: $dialog-header-font-weight;
+    > .title {
+      @extend %inline-block-style;
+      float: left;
+    }
 
-        &:active {
-          cursor: $dialog-header-active-cursor;
-        }
+    > .icon {
+      @extend %inline-block-style;
+      float: right;
+      font-size: map-get($font-size, 'large');
+      color: $dialog-icon-color;
+      cursor: pointer;
 
-        > .title {
-          @extend %inline-block-style;
-          float: left;
-        }
-
-        > .icon {
-          @extend %inline-block-style;
-          float: right;
-          font-size: map-get($font-size, 'large');
-          color: $dialog-icon-color;
-          cursor: pointer;
-
-          &:hover, &:focus {
-            color: $dialog-icon-color-hover;
-          }
-        }
-
-        @extend .clear-fix;
+      &:hover, &:focus {
+        color: $dialog-icon-color-hover;
       }
+    }
 
-      > .body {
-        @extend %body-spacing;
-        //border: $dialog-body-border;
-        border-left-width: 0;
-        border-right-width: 0;
-      }
+    @extend .clear-fix;
+  }
 
-      > .footer {
-        @include make-flex {
-          justify-content: flex-end;
-        }
-        @extend %content-spacing;
-        @include full-border-radius(0, 0, $dialog-inner-border-radius, $dialog-inner-border-radius);
+  > .body {
+    @extend %body-spacing;
+    //border: $dialog-body-border;
+    border-left-width: 0;
+    border-right-width: 0;
+    flex: 1 1 auto;
+
+    &.overflow {
+      overflow-y: auto;
+    }
+  }
+
+  > .footer {
+    @include make-flex {
+      justify-content: flex-end;
+    }
+    padding: .5rem 1rem;
+    @include full-border-radius(0, 0, $dialog-inner-border-radius, $dialog-inner-border-radius);
+
+    > .button {
+      &:not(:first-child) {
+        margin-left: 1rem;
       }
     }
   }
 
-  //non-centered
-  &.align-top {
-    > .dialog-container {
-      transform: translateY(8vw);
-    }
-
-    &.active {
-      > .dialog-container {
-        animation: show-dialog-align-top $animation-timeout;
-        -ms-transform: show-dialog-align-top $animation-timeout;
-        transition: all $animation-timeout;
-      }
-    }
-
-    &.inactive {
-      > .dialog-container {
-        animation: hide-dialog-align-top $animation-timeout;
-        -ms-transform: hide-dialog-align-top $animation-timeout;
-        transition: all $animation-timeout;
-      }
-    }
-  }
-
-  //centered
-  &.align-center {
-    display: flex;
-    align-items: center;
-
-    &.active {
-      > .dialog-container > .content {
-        animation: show-dialog-align-center $animation-timeout;
-        transition: all $animation-timeout;
-      }
-    }
-
-    &.inactive {
-      > .dialog-container > .content {
-        animation: hide-dialog-align-center $animation-timeout;
-        transition: all $animation-timeout;
-      }
-    }
-  }
 
   &.simple {
-    background-color: rgba(0, 0, 0, .7);
+    border-width: 0;
+    box-shadow: none;
+    color: $white;
+    background-color: transparent;
 
-    > .dialog-container {
-      > .content {
-        border-width: 0;
-        box-shadow: none;
+    > .header, > .body, > .footer {
+      border-width: 0;
+      border-radius: 0;
+      color: inherit;
+    }
+
+    > .header {
+      > .title {
+        &:hover, &:focus {
+          text-shadow: $text-shadow;
+        }
+      }
+
+      > .icon {
         color: $white;
-        background-color: transparent;
 
-        > .header, > .body, > .footer {
-          border-width: 0;
-          border-radius: 0;
-          color: inherit;
-        }
-
-        > .header {
-          > .title {
-            &:hover, &:focus {
-              text-shadow: $text-shadow;
-            }
-          }
-
-          > .icon {
-            color: $white;
-
-            &:hover, &:focus {
-              color: $white;
-              text-shadow: $text-shadow;
-            }
-          }
-        }
-
-        > .footer {
-          background: transparent;
+        &:hover, &:focus {
+          color: $white;
+          text-shadow: $text-shadow;
         }
       }
     }
+
+    > .footer {
+      background: transparent;
+    }
+
   }
 
-  &.primary > .dialog-container > .content {
+  &.primary {
     > .header {
       background-color: $dialog-header-primary-background-color;
       color: $white;

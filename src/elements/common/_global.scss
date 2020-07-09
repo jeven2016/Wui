@@ -61,7 +61,7 @@ a {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: rgba(0, 0, 0, .5);
+  background: rgba(0, 0, 0, .5);
   z-index: map_get($z-index, 'mask');
 
   overflow: hidden;
@@ -69,9 +69,12 @@ a {
 
 .mask {
   @extend %mask-content;
-  transition: opacity .3s ease-in-out;
-  @include make-visible;
+
+  &.dark{
+    background: rgba(0, 0, 0, .9);
+  }
 }
+
 
 .pull-left {
   float: left !important;

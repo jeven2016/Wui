@@ -2,7 +2,7 @@
 
   &.affix-fixed {
     position: fixed;
-    z-index: map_get($z-index, 'mask');
+    z-index: map_get($z-index, 'overlay');
   }
 
   &.block {

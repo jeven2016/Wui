@@ -1,66 +1,52 @@
 $animation-timeout: .2s;
 
-%close-btn {
-  border-width: 0;
-  padding: 0;
-  opacity: .6;
-  background-color: transparent;
-
-
-  @include only-focus {
-    opacity: 1;
-    transform: scale(1.2, 1.2);
-    transform-origin: center;
-    background-color: transparent;
-    box-shadow: unset;
-  }
-}
-
-@keyframes active-alert {
-  from {
-    opacity: 0;
-    transform: scaleY(0);
-  }
-  to {
-    opacity: 1;
-    transform: scaleY(1);
-  }
-}
-
-@keyframes inactive-alert {
-  from {
-    visibility: visible;
-    opacity: 1;
-    transform: scaleY(1);
-  }
-  to {
-    visibility: hidden;
-    opacity: 0;
-    transform: scaleY(0);
-    height: 0 !important;
-  }
-}
+//@keyframes active-alert {
+//  from {
+//    opacity: 0;
+//    transform: scaleY(0);
+//  }
+//  to {
+//    opacity: 1;
+//    transform: scaleY(1);
+//  }
+//}
+//
+//
+//@keyframes inactive-alert {
+//  from {
+//    visibility: visible;
+//    opacity: 1;
+//    transform: scaleY(1);
+//  }
+//  to {
+//    visibility: hidden;
+//    opacity: 0;
+//    transform: scaleY(0);
+//    height: 0 !important;
+//  }
+//}
 
 .alert {
   @include make-flex {
     position: relative; //在alert-container(fixed)下出现位置偏移，因此移除
     flex: 1 0 100%;
     flex-flow: row nowrap;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1rem;
     border-radius: $default-border-radius;
     margin-bottom: 0.5rem;
+    box-shadow: $default-card-shadow;
   }
-
-  &.active {
-    visibility: visible;
-    animation: active-alert $animation-timeout ease-in-out;
-  }
-
-
-  &.inactive {
-    animation: inactive-alert $animation-timeout ease-in-out;
-    animation-fill-mode: forwards;
-  }
+  //
+  //&.active {
+  //  visibility: visible;
+  //  animation: active-alert $animation-timeout ease-in-out;
+  //}
+  //
+  //
+  //&.inactive {
+  //  animation: inactive-alert $animation-timeout ease-in-out;
+  //  animation-fill-mode: forwards;
+  //}
 
   &.normal {
     display: inline-flex;
@@ -102,14 +88,20 @@ $animation-timeout: .2s;
     justify-content: flex-end;
     align-items: center;
     flex: 0 0 auto;
+    border-width: 0;
+    padding: 0;
+    opacity: .6;
+    background: transparent !important;
 
-    > .close-btn {
-      @extend %close-btn;
+    @include only-focus {
+      opacity: 1;
+      background: transparent;
+      box-shadow: unset;
     }
   }
 
   &.alert-info {
-    background-color: #d6eaff;
+    background-color: lighten($primary, 45%);
     border: 1px solid darken(#d6eaff, 10%);
 
     border-left-width: 0.5rem;
@@ -129,7 +121,7 @@ $animation-timeout: .2s;
 
   &.alert-simple, &.alert-mini {
     border: 1px solid $default-border-color;
-    box-shadow: $default-box-shadow;
+    box-shadow: $default-card-shadow;
     background: $white;
 
     > .alert-close {
@@ -150,7 +142,7 @@ $animation-timeout: .2s;
   }
 
   &.alert-ok {
-    background-color: darken(#f6ffed, 10%);
+    background-color: lighten($green, 45%);
     border: 1px solid darken(#36e73c70, 20%);
     border-left-width: 0.5rem;
     border-top-left-radius: 0.5rem;
@@ -168,7 +160,7 @@ $animation-timeout: .2s;
 
 
   &.alert-warning {
-    background-color: darken(#fff3cd, 10%);
+    background-color: lighten($yellow, 40%);
     border: 1px solid darken(#fff3cd, 30%);
 
     border-left-width: 0.5rem;
@@ -187,7 +179,7 @@ $animation-timeout: .2s;
 
 
   &.alert-error {
-    background-color: #ffd9d7;
+    background-color: lighten($red, 43%);
     border: 1px solid #e8818a;
 
     border-left-width: 0.5rem;
@@ -207,7 +199,8 @@ $animation-timeout: .2s;
 
 //------------------------------- Container ---------------------------------
 
-$container-offset: 1.5vw;
+/*
+$container-offset: 1.5rem;
 
 @keyframes tl-active-alert {
   from {
@@ -245,6 +238,7 @@ $container-offset: 1.5vw;
   }
 }
 
+
 %r-movement {
   > .alert.active {
     animation: tr-active-alert $animation-timeout linear;
@@ -267,7 +261,7 @@ $container-offset: 1.5vw;
     animation: tl-inactive-alert $animation-timeout linear;
     animation-fill-mode: forwards;
   }
-}
+}*/
 
 .alert-container {
   position: fixed;
@@ -283,33 +277,39 @@ $container-offset: 1.5vw;
     }
   }
 
-  &.top-left {
-    top: $container-offset;
-    left: $container-offset;
-
-    @extend %l-movement;
+  &.top-center {
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
   }
 
-  &.top-right {
-    top: $container-offset;
-    right: $container-offset;
+  /*
+    &.top-left {
+      top: $container-offset;
+      left: $container-offset;
 
-    @extend %r-movement;
-  }
+      @extend %l-movement;
+    }
 
-  &.bottom-left {
-    bottom: $container-offset;
-    left: $container-offset;
+    &.top-right {
+      top: $container-offset;
+      right: $container-offset;
 
-    @extend %l-movement;
-  }
+      @extend %r-movement;
+    }
 
-  &.bottom-right {
-    bottom: $container-offset;
-    right: $container-offset;
+    &.bottom-left {
+      bottom: $container-offset;
+      left: $container-offset;
 
-    @extend %r-movement;
-  }
+      @extend %l-movement;
+    }
+
+    &.bottom-right {
+      bottom: $container-offset;
+      right: $container-offset;
+
+      @extend %r-movement;
+    }*/
 
 }
 

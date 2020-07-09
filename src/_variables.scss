@@ -137,17 +137,14 @@ $elem-small-padding: .25rem .5rem;
 //select: 320
 //tooltip: 400
 
-//box-shadow:
-
 //z-index
 $z-index: (
         bottom: -999,
         one: 1,
         widget: 100,
-        popMask: 150,
-        pop: 200,
+        overlay: 500,
         mask: 1000,
-        overlay: 2000,
+        pop: 1200,
         top:5000
 );
 
@@ -489,24 +486,17 @@ $card-overlay-title-background-color: rgba(0, 0, 0, .4);
 
 // For dialog
 $dialog-background: transparent;
-$dialog-z-index: map_get($z-index, 'top');
-$dialog-container-position: absolute;
-$dialog-container-width: 100%;
-$dialog-content-width: 90%;
-$dialog-content-transform-origin: center;
+$dialog-z-index: map_get($z-index, 'mask');
 $dialog-content-min-height: 1rem;
-$dialog-content-z-index: map_get($z-index, 'top');
 $dialog-content-width-sm: 22.5rem;
 $dialog-content-width-md: 34.375rem;
 $dialog-content-width-lg: 53.125rem;
 $dialog-content-width-xg: 68.75rem;
-$dialog-content-position: relative;
 $dialog-content-background-color: #fff;
 $dialog-border-width: $default-border-width;
 $dialog-content-border: none;
-$dialog-content-margin: 1rem auto;
 
-$dialog-header-cursor: grab;
+//$dialog-header-cursor: grab;
 $dialog-header-active-cursor: grabbing;
 $dialog-header-font-size: 1.25rem;
 $dialog-header-font-weight: map-get($font-weight, 'normal');
