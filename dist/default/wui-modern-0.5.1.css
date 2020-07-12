@@ -499,12 +499,10 @@ a {
   width: 100%;
   margin: 0;
   padding: 0;
-  background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
   overflow: hidden; }
-
-.mask.dark {
-  background: rgba(0, 0, 0, 0.9); }
+  .mask.dark {
+    background: rgba(0, 0, 0, 0.7); }
 
 .pull-left {
   float: left !important;
@@ -2349,13 +2347,14 @@ blockquote, .blockquote {
   z-index: 1000;
   display: none;
   left: 50%;
-  width: 90%;
   flex-direction: column;
   border: none;
   min-height: 1rem;
   background-color: #fff;
   border-radius: 0.25rem;
   box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12); }
+  .dialog.with-width {
+    width: 90%; }
   .dialog > .header {
     padding: .75rem 1rem;
     font-size: 1.25rem;
@@ -3152,7 +3151,17 @@ textarea.input {
 .loader {
   display: inline-flex;
   align-items: center;
-  flex-direction: column; }
+  flex-direction: column;
+  color: #0ca0ff; }
+  .loader.loader-column {
+    flex-direction: column; }
+    .loader.loader-column > .info {
+      margin-top: .5rem; }
+  .loader.loader-row {
+    flex-direction: row;
+    align-items: center; }
+    .loader.loader-row > .info {
+      margin-left: 1rem; }
   .loader.block {
     display: flex; }
     .loader.block.active {
@@ -3265,9 +3274,8 @@ textarea.input {
     height: 30%; }
   .loader > .info {
     display: inline-flex;
-    color: #0ca0ff;
-    padding-top: 0.5rem; }
-  .loader.normal > .content {
+    color: inherit; }
+  .loader.medium > .content {
     width: 3rem;
     height: 3rem; }
   .loader.small > .content {
@@ -3279,14 +3287,29 @@ textarea.input {
     height: 5rem; }
   .loader.active {
     display: inline-flex; }
-  .loader.white.primary > .content {
-    border-right-color: #fff; }
-  .loader.white.primary > .info {
+  .loader.white {
     color: #fff; }
-  .loader.white.secondary > .content .item, .loader.white.third > .content .item, .loader.white.third > .content .item {
-    background: #fff; }
-  .loader.white.secondary > .info, .loader.white.third > .info, .loader.white.third > .info {
-    color: #fff; }
+    .loader.white.secondary > .content .item, .loader.white.third > .content .item, .loader.white.third > .content .item {
+      background: #fff; }
+
+.loader-wrapper {
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; }
+  .loader-wrapper > .loader {
+    position: absolute;
+    z-index: 100; }
+  .loader-wrapper > .mask {
+    border-radius: 0.25rem;
+    position: absolute;
+    z-index: 100; }
+  .loader-wrapper.with-opacity.active {
+    opacity: .5; }
+  .loader-wrapper.block {
+    display: flex; }
 
 .base-menu, .menu {
   display: -ms-inline-flexbox;
@@ -3939,6 +3962,7 @@ textarea.input {
   .progress.top {
     position: fixed;
     height: 0.1875rem;
+    z-index: 500;
     top: 0;
     left: 0;
     width: 100%; }

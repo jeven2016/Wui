@@ -11,7 +11,7 @@
   //opacity: 0;
   display: none;
   left: 50%;
-  width: 90%;
+
   flex-direction: column;
 
   border: $dialog-content-border;
@@ -22,6 +22,11 @@
 
   @include limit-width("max-width", $dialog-content-width-sm, $dialog-content-width-md,
           $dialog-content-width-lg, $dialog-content-width-xg);
+
+
+  &.with-width {
+    width: 90%;
+  }
 
   > .header {
     //cursor: $dialog-header-cursor;

@@ -190,7 +190,6 @@ gulp.task('copy-default-theme-file', function() {
       pipe(wait(1000)).
       pipe(gulp.dest(params.copyTo)).
       pipe(notify({message: 'Task copy-default-theme-file completed'}));
-  ;
 });
 
 gulp.task('watch-copy-default', function() {

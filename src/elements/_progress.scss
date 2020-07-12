@@ -127,6 +127,7 @@
   &.top {
     position: fixed;
     height: 0.1875rem;
+    z-index: map-get($z-index, 'overlay');
     top: 0;
     left: 0;
     width: 100%;
