@@ -26,24 +26,29 @@
   @include make-navbar;
   flex-wrap: wrap;
   line-height: $navbar-item-height;
+  color: $navbar-title-color;
+  padding: 0 1rem;
 
-  > .title {
-    @include make-flex {
-      align-items: center;
-      //line-height: $navbar-item-height;
-      color: $navbar-title-color;
-      padding: $navbar-title-padding;
-      font-weight: map_get($font-weight, 'normal');
-    }
 
-    .dropdown, .button-dropdown {
-      @include update-dropdown;
-    }
+  &.with-box {
+    box-shadow: $default-box-shadow;
+  }
 
-    > .title-text {
-      //&:first-child {
-      margin-left: .5rem;
-      //}
+  &.with-border {
+    border: $default-border;
+  }
+
+  > .left-bar {
+    display: flex;
+
+    > .title {
+      @include make-flex {
+        align-items: center;
+        color: inherit;
+        padding: $navbar-title-padding;
+        font-weight: map_get($font-weight, 'bold');
+        font-size: 1.25rem;
+      }
     }
   }
 
@@ -51,10 +56,18 @@
     border-width: 0;
     background: transparent;
     font-size: 1.5rem;
-    padding: 0.5rem;
+    //padding: 0.5rem;
 
     &:focus, &:hover {
       box-shadow: $navbar-switch-box-shadow;
+    }
+
+    &:first-child {
+      margin-right: .5rem;
+    }
+
+    &:last-child {
+      margin-left: .5rem;
     }
   }
 
@@ -62,7 +75,6 @@
     @include make-flex {
       align-items: center;
       flex: 1 1 auto;
-      padding: 0 1rem 0 1rem;
     }
 
     &.align-right {
@@ -76,62 +88,59 @@
     &.align-center {
       justify-content: center;
     }
+  }
 
-    > .item {
-      @include make-flex {
-        justify-content: center;
-        position: $navbar-item-position;
-        @include make-navbar-item($navbar-inactive-text-color);
-        transition: all 0.2s;
-        height: 100%;
-      }
+  .navbar-item {
+    @include make-flex {
+      @include make-flex-center;
+      position: $navbar-item-position;
+      @include make-navbar-item($navbar-inactive-text-color);
+      transition: all 0.2s;
+      height: 100%;
+    }
 
-      .dropdown, .button-dropdown {
-        @include update-dropdown;
-      }
+    .dropdown, .button-dropdown {
+      //@include update-dropdown;
+    }
 
-      &.with-bar {
-        &.active, &:focus, &:hover {
-          //create the bottom border
-          &:after {
-            @include make-block(absolute) {
-              left: 0;
-              bottom: 0;
-              content: '';
-              height: $navbar-simple-item-link-border-height;
-              width: $navbar-simple-item-link-border-width;
-              background-color: $navbar-simple-item-link-background-colorh;
-              transition: all 0.5s;
-              animation: change-width-smoothly 0.3s;
-            }
+    &.with-bar {
+      &.active, &:focus, &:hover {
+        //create the bottom border
+        &:after {
+          @include make-block(absolute) {
+            left: 0;
+            bottom: 0;
+            content: '';
+            border-radius: 20%;
+            height: $navbar-simple-item-link-border-height;
+            width: $navbar-simple-item-link-border-width;
+            background-color: $navbar-simple-item-link-background-colorh;
+            transition: all 0.5s;
+            animation: change-width-smoothly 0.3s;
           }
         }
       }
-
-      //occupy the whole column
-      &.block {
-        height: 100%;
-      }
-
-      &.with-bg {
-        &.active {
-          background-color: darken($navbar-background-color, 10%);
-        }
-
-        &:focus, &:hover {
-          background-color: darken($navbar-background-color, 5%);
-        }
-      }
-
-      &.active, &:focus, &:hover {
-        color: $navbar-item-active-color;
-        //text-shadow: $navbar-item-active-box-shadown;
-      }
-
     }
+
+    &.with-bg {
+      &.active {
+        background: darken($navbar-background-color, 5%);
+      }
+
+      &:focus, &:hover {
+        background: darken($navbar-background-color, 3%);
+      }
+    }
+
+    &.active, &:focus, &:hover {
+      color: $navbar-item-active-color;
+      //text-shadow: $navbar-item-active-box-shadown;
+    }
+
   }
 
-  &.expand {
+
+  &.auto-hide.expand {
     > .list {
       display: flex;
       transition: all 0.2s ease-in-out;
@@ -144,19 +153,40 @@
 
     &.top {
       top: 0;
+
+      > .list {
+        //padding-bottom: 1rem;
+      }
     }
 
     &.bottom {
       bottom: 0;
+
+      > .left-bar {
+        order: 2;
+      }
+
+
+      > .list {
+        order: 1;
+        //padding-top: 1rem;
+      }
     }
   }
 
   &.primary {
     background-color: $navbar-background-color-primary;
+    color: $navbar-primary-active-color;
 
-    > .title {
-      color: $navbar-primary-active-color;
+    .input {
+      background: rgba(255, 255, 255, 0.2);
+      color: $white;
+
+      @include make-placeholder {
+        color: $white;
+      }
     }
+
 
     .navbar-switch {
       color: $navbar-primary-active-color;
@@ -167,7 +197,7 @@
       }
     }
 
-    > .list > .item {
+    .navbar-item {
       color: $navbar-primary-item-color;
 
       &.active, &:hover {
@@ -189,7 +219,7 @@
 }
 
 @include media-query((key:'min-width', value: map-get($bs-layout, 'md'))) {
-  .navbar {
+  .navbar.auto-hide {
     .navbar-switch {
       display: none;
     }
@@ -205,7 +235,7 @@
 
 //change the list in column style
 @include media-query((key:'max-width', value: map-get($bs-layout, 'md'))) {
-  &.navbar {
+  &.navbar.auto-hide {
     flex-direction: column;
 
     .navbar-switch {
@@ -216,15 +246,14 @@
       display: none;
       flex-direction: column;
       align-items: flex-start;
-      padding: 0;
+    }
 
-      > .item {
-        align-items: flex-start;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
-        //line-height: $navbar-item-height - 1rem;
-      }
+    .navbar-item {
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      padding-left: 1.5rem;
+      line-height: $navbar-item-height - 1rem;
     }
   }
 }

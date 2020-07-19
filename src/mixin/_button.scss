@@ -12,10 +12,12 @@
 @mixin generate-active($active-bg-color,$btn-text-color,$active-bdr-color, $btn-boxshadow-color) {
 
   //once the button is disabled, focus and active won't be triggered, only hover needs to be handled
-  &:focus, &:not(:disabled):hover {
-    background-color: lighten($active-bg-color, $default-bg-color-increase-ratio);
-    color: $btn-text-color;
-    border-color: darken($active-bdr-color, $default-color-increase-ratio);
+  &:focus, &:hover {
+    &:not(:disabled) {
+      background-color: darken($active-bg-color, $default-bg-color-increase-ratio);
+      color: $btn-text-color;
+      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
+    }
   }
 
   &:focus, &.active {
@@ -24,11 +26,12 @@
     //position: relative;
   }
 
-  &:active {
+  &:active:not(:disabled) {
     //transform: scale(0.97); //cause dropdown's menu shaking
+    background-color: darken($active-bg-color, $default-bg-color-increase-ratio-active);
   }
 
-  &.active {
+  &.active:not(:disabled) {
     color: $btn-text-color;
     background-color: lighten($active-bg-color, $default-bg-color-increase-ratio);
   }

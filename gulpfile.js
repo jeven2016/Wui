@@ -182,7 +182,7 @@ gulp.task('watch-default', function() {
 
 gulp.task('copy-default-theme-file', function() {
   console.info(
-      'begin to copy =' + './dist/default/' + global.name + '-' + pkg.version +
+      'Copying =' + './dist/default/' + global.name + '-' + pkg.version +
       '.min.css ' + 'to ' + params.copyTo);
 
   return gulp.src(

@@ -2,6 +2,7 @@
 .progress {
   display: flex;
   height: 1rem;
+  align-items: center;
 
   > .loader {
     position: absolute;
@@ -11,12 +12,13 @@
 
   > .bar {
     display: inline-flex;
-    flex: 1 0 calc(100% - 2.5rem);
+    flex: 1 1 calc(100% - 2.5rem);
     height: 100%;
     background: $gray;
     border-radius: 2rem;
 
     > .bg {
+      overflow: hidden;
       display: flex;
       height: 100%;
       border-radius: 2rem;
@@ -26,7 +28,7 @@
       font-weight: bold;
       align-items: center;
       justify-content: center;
-      transition: width .3s ease;
+      transition: width .3s ease, opacity .3s ease;
     }
   }
 
@@ -36,6 +38,7 @@
     align-items: center;
     padding-left: 0.5rem;
     font-size: 0.75rem;
+    font-weight: map-get($font-weight, 'normal');
   }
 
   &.animation {
@@ -133,3 +136,11 @@
     width: 100%;
   }
 }
+
+//.circle-progress {
+//  stroke-dasharray: 52.2px, 252.2px;
+//  stroke-dashoffset: 0px;
+//  transition: stroke-dashoffset 0.6s ease 0s, stroke 0.6s ease 0s;
+//  transform: rotateZ(90deg);
+//  transform-origin: 50% 50%;
+//}
