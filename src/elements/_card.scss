@@ -10,7 +10,7 @@
 
   &.scale {
     &:focus, &:hover {
-      transform: scale(1.2, 1.2);
+      transform: scale(1.1);
       transform-origin: center;
       //z-index only work on position relative, absolute & fixed.
       z-index: 100;
@@ -85,6 +85,16 @@
     > .img {
       display: block;
       width: 100%;
+      transition: transform .3s;
+    }
+
+    &.with-scale {
+      overflow: hidden;
+      &:hover {
+        > .img {
+          transform: scale(1.2);
+        }
+      }
     }
 
     > .overlay-title {

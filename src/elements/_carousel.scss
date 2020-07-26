@@ -26,6 +26,12 @@
       top: 50%;
       transform: translateY(-50%);
       left: 1.5rem;
+
+      >.bar{
+        height: 1.5rem;
+        width: 0.1875rem;
+      }
+
     }
 
     &.right {
@@ -33,6 +39,11 @@
       top: 50%;
       transform: translateY(-50%);
       right: 1.5rem;
+
+      >.bar{
+        height: 1.5rem;
+        width: 0.1875rem;
+      }
     }
 
     > .circle, > .bar {

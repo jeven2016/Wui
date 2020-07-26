@@ -10,17 +10,27 @@ $types: ('sm', 'md', 'lg', 'xl');
     flex-grow: 1;
   }
 
-  @include justify;
-
   > [class^=col-] {
     @include make-block {
       padding: $grid-column-padding;
-      width: 100%;
+    }
+  }
+
+  > .col {
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  @for $i from 1 through $grid-column-count {
+    & > .col-#{$i} {
+      flex: 0 0 percentage($i / ($grid-column-count));
+      max-width: percentage($i / ($grid-column-count));
     }
   }
 
   //generate for xs
-  @include generate-grid-columns($grid-column-count, '-');
+  @include generate-grid-columns($grid-column-count, '-xs-');
 
   //generate for others
   @each $col-type in $types {

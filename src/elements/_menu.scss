@@ -101,7 +101,6 @@
 .base-menu {
   @include make-inline-flex;
   position: $menu-position;
-  @include justify;
   display: flex;
   flex: 1 1 auto;
 
@@ -201,8 +200,6 @@
       flex: 1 0 auto;
       padding: 0 0.25rem;
     }
-
-    @include justify;
   }
 
 

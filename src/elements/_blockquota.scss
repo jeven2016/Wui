@@ -1,9 +1,10 @@
-blockquote {
+.blockquote {
   display: block;
   border-left: $bq-left-border;
   margin: $bq-margin;
   padding: $bq-default-padding;
   @include border-radius($bq-border-radius);
+  font-size: .9rem;
 
   &.border {
     border-top: $bq-other-border;
@@ -12,7 +13,21 @@ blockquote {
   }
 
   &.with-bg {
-    background: #f8f5f5;
+    background: lighten(#f8f5f5, 2%);
+  }
+
+  > .header {
+    font-weight: map-get($font-weight, 'normal');
+    font-size: 1rem;
+    margin: 0 0 .5rem 0;
+  }
+
+  > .footer {
+    display: flex;
+    color: #727b84;
+    font-size: 1rem;
+    margin: .5rem 0 0;
+    font-style: italic;
   }
 
   &.primary {
@@ -25,7 +40,11 @@ blockquote {
     }
 
     &.with-bg {
-      background: #adcfef;
+      background: lighten(#adcfef, 15%);
+    }
+
+    > .header {
+      color: $blue;
     }
   }
 
@@ -41,12 +60,8 @@ blockquote {
     }
 
     &.with-bg {
-      background: #adcfef;
+      background: lighten(#adcfef, 15%);
     }
   }
 
-}
-
-.blockquote {
-  @extend blockquote;
 }

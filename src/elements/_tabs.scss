@@ -2,7 +2,7 @@
   @include make-inline-flex-center;
   color: $gray;
   font-size: 1.5em;
-  font-width: map_get($font-weight, 'normal');
+  font-weight: map_get($font-weight, 'normal');
   height: 2rem;
   width: 2rem;
   position: absolute;
@@ -267,11 +267,27 @@
       &.vertical {
         flex-direction: column;
       }
+
+      &.equal-width {
+        display: flex;
+
+        &.vertical{
+          height: 100%;
+        }
+
+        > .tab-item {
+          flex: 1 1 auto;
+
+          > .item-label {
+            justify-content: center;
+          }
+        }
+      }
     }
   }
 
   .tab-item {
-    @include make-menu-item(true, 0.5rem 0.5rem);
+    @include make-menu-item(true, 0.5rem 1rem);
     min-width: 2rem;
     flex-shrink: 0;
 
@@ -386,7 +402,7 @@
 
       &.left {
         left: -1px;
-        border-left: 3px solid $primary;
+        border-left: none;
         margin-right: -1px;
 
         &.tab-card {
@@ -399,12 +415,14 @@
           &.with-border {
             border-top: $default-border;
             border-bottom: $default-border;
+            border-left: 3px solid $primary;
           }
 
           &.one-border {
             border-top: none;
             border-bottom: none;
             border-radius: 0;
+            border-left: 3px solid $primary;
           }
         }
       }
