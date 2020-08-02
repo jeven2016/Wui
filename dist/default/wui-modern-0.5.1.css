@@ -2348,6 +2348,10 @@ $container-offset: 1.5rem;
   .checkbox > .label, .radio > .label {
     font-size: 1em;
     padding: 0 0.25rem; }
+  .checkbox:not(.disabled):focus > .icon, .checkbox:not(.disabled):hover > .icon, .radio:not(.disabled):focus > .icon, .radio:not(.disabled):hover > .icon {
+    color: #3fb4ff; }
+  .checkbox:not(.disabled).active > .icon, .radio:not(.disabled).active > .icon {
+    color: #3fb4ff; }
 
 .icon-column {
   margin-right: 0.25rem;
@@ -3242,9 +3246,6 @@ textarea.input {
   .row .order-12 {
     order: 12; }
 
-.layout {
-  height: 100%; }
-
 .layout, .layout-content, .layout-footer {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -3262,7 +3263,8 @@ textarea.input {
   justify-content: center;
   color: #6c757d;
   font-size: 0.8em;
-  flex: 0 1 3rem; }
+  flex: 0 1 3rem;
+  padding: 1.5rem 1rem; }
 
 .layout-header.fixed, .layout-footer.fixed {
   position: fixed;
@@ -3286,11 +3288,12 @@ textarea.input {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  height: 100%;
   width: 20%;
   flex-direction: column;
   flex-grow: 0;
   flex-shrink: 0; }
+  .layout-slider > .slider-inner {
+    height: 100%; }
   .layout-slider .menu {
     border-radius: 0; }
 
@@ -3578,13 +3581,16 @@ textarea.input {
       .base-menu .menu-item.primary.active:after, .menu .menu-item.primary.active:after {
         position: absolute;
         display: block;
-        right: 0;
         top: 0;
         content: "";
         height: 100%;
         width: 0.1875rem;
         background-color: #0ca0ff;
         transition: height .3s; }
+      .base-menu .menu-item.primary.active.left-bar:after, .menu .menu-item.primary.active.left-bar:after {
+        left: 0; }
+      .base-menu .menu-item.primary.active.right-bar:after, .menu .menu-item.primary.active.right-bar:after {
+        right: 0; }
     .base-menu .menu-item.dark.disabled, .menu .menu-item.dark.disabled {
       color: #999999; }
     .base-menu .menu-item.dark:not(.disabled):not(.active):focus, .menu .menu-item.dark:not(.disabled):not(.active):focus, .base-menu .menu-item.dark:not(.disabled):not(.active):hover, .menu .menu-item.dark:not(.disabled):not(.active):hover {
@@ -3620,6 +3626,8 @@ textarea.input {
     transition: transform .3s linear;
     padding: .5rem .5rem .5rem 1.5rem;
     white-space: nowrap; }
+    .base-menu .menu-header > .header-icon.icon-arrow > .svg.icon, .menu .menu-header > .header-icon.icon-arrow > .svg.icon {
+      font-size: 1em; }
     .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled {
       color: #333;
       background-color: transparent; }
@@ -4194,10 +4202,18 @@ textarea.input {
   margin-bottom: 1rem; }
   .table.clear-border {
     border-width: 0 !important; }
-    .table.clear-border row, .table.clear-border th, .table.clear-border td {
+    .table.clear-border tr, .table.clear-border th, .table.clear-border td {
       border-width: 0 !important; }
   .table th {
     white-space: nowrap; }
+  .table .col-check {
+    width: 4rem; }
+  .table .cell-check {
+    text-align: center !important; }
+    .table .cell-check > .checkbox.indeterminate > .icon {
+      color: #0ca0ff; }
+  .table .hl-tr {
+    background: #f2faff !important; }
   .table.responsive {
     display: block;
     width: 100%;
@@ -4221,7 +4237,7 @@ textarea.input {
       border-bottom-width: 1px;
       background-color: transparent; }
     .table.simple tbody tr:nth-of-type(even) {
-      background: #f2f2f2; }
+      background: #fcfcfc; }
   .table th {
     text-align: left;
     border: 1px solid #ccc;
@@ -4233,6 +4249,10 @@ textarea.input {
     text-align: left;
     border: 1px solid #ccc;
     padding: 0.5rem; }
+    .table td.ellipsis {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
   .table.hover tbody tr:focus, .table.hover tbody tr:hover {
     background-color: #f2f2f2; }
 

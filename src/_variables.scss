@@ -542,7 +542,8 @@ $table-layout: fixed;
 $table-margin-bottom: 1rem;
 $table-white-space: nowrap;
 $table-border-width: 1px;
-$table-row-hover-background-color: lighten($gray, 15%);
+$table-row-hover-background-color: lighten($gray, 19%);
+$table-row-hover-bg: lighten($gray, 15%);
 
 //for loader
 $loader-size-large: 5rem;

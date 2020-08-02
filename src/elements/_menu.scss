@@ -18,7 +18,7 @@
 @mixin right-bar() {
   &:after {
     @include make-block(absolute) {
-      right: 0;
+      //right: 0;
       top: 0;
       content: $menu-float-submenu-active-menu-header-after-content;
       height: 100%;
@@ -26,6 +26,18 @@
       background-color: $menu-float-submenu-active-menu-header-after-background-color;
       transition: height .3s;
       //animation: $menu-float-submenu-active-menu-header-after-animation;
+    }
+  }
+
+  &.left-bar {
+    &:after {
+      left: 0;
+    }
+
+  }
+  &.right-bar {
+    &:after {
+      right: 0;
     }
   }
 }
@@ -214,6 +226,12 @@
     transition: transform .3s linear;
     padding: .5rem .5rem .5rem 1.5rem;
     white-space: nowrap;
+
+    > .header-icon.icon-arrow {
+      > .svg.icon {
+        font-size: 1em;
+      }
+    }
 
     @include add-disabled-conf(false) {
       color: $text-color;

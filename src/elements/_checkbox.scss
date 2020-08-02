@@ -64,4 +64,10 @@
   }
 
   @include add-disabled-conf;
+
+  @include focus-active2 {
+    > .icon {
+      color: lighten($blue, 10%);
+    }
+  }
 }

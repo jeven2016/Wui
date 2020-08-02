@@ -9,13 +9,29 @@
   &.clear-border {
     border-width: 0 !important;
 
-    row, th, td {
+    tr, th, td {
       border-width: 0 !important;
     }
   }
 
   th {
     white-space: $table-white-space;
+  }
+
+  .col-check {
+    width: 4rem;
+  }
+
+  .cell-check {
+    text-align: center !important;
+
+    > .checkbox.indeterminate > .icon {
+      color: $blue;
+    }
+  }
+
+  .hl-tr {
+    background: lighten($blue, 45%)!important;
   }
 
   &.responsive {
@@ -56,12 +72,18 @@
 
   td {
     @include make-cell;
+
+    &.ellipsis {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   &.hover {
     tbody tr {
       &:focus, &:hover {
-        background-color: $table-row-hover-background-color;
+        background-color: $table-row-hover-bg;
       }
     }
   }
