@@ -31,7 +31,7 @@
   }
 
   .hl-tr {
-    background: lighten($blue, 45%)!important;
+    background: lighten($blue, 45%) !important;
   }
 
   &.responsive {
@@ -68,6 +68,43 @@
     color: $gray-darker;
     font-weight: map_get($font-weight, 'bold');
     background-color: $table-th-background-color;
+
+    > .td-content {
+      display: flex;
+      flex: 1 1 auto;
+
+      > .sort-column {
+        margin-left: .5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        > .arrow-icon {
+          border-left: .35em solid transparent;
+          border-right: .35em solid transparent;
+          width: .35em;
+          color: $gray;
+
+          &.active {
+            color: $blue;
+          }
+
+          &.up-arrow {
+            border-bottom: .35em solid;
+            border-top: 0;
+          }
+
+          &.down-arrow {
+            margin-top: .2rem;
+            border-top: .35em solid;
+            border-bottom: 0;
+          }
+        }
+
+
+      }
+    }
+
   }
 
   td {
@@ -78,6 +115,7 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
   }
 
   &.hover {

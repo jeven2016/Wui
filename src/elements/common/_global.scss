@@ -38,9 +38,26 @@ a {
   fill: currentColor;
   width: 1em;
   height: 1em;
+  line-height: 1;
   flex-shrink: 0;
   user-select: none;
   font-size: 1.5rem;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
 
   &.larg {
     font-size: 1.5rem;
