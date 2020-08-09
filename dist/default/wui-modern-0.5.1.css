@@ -2210,10 +2210,11 @@ $container-offset: 1.5rem;
   display: inline-flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  width: 20rem;
   border-radius: 0.25rem;
   transition: all 0.2s;
   background-color: #fff; }
+  .card.with-width {
+    width: 20rem; }
   .card.scale:focus, .card.scale:hover {
     transform: scale(1.1);
     transform-origin: center;
@@ -2234,16 +2235,28 @@ $container-offset: 1.5rem;
   .card > div:not(:first-child):not(:last-child) {
     border-radius: 0; }
   .card .card-header {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
     padding: 0.5rem 1rem; }
     .card .card-header .title {
       font-weight: 500; }
     .card .card-header.gray {
       background-color: #f5f5f5; }
   .card .card-row {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
     padding: 0.5rem 1rem; }
   .card .card-body {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
     padding: 0.5rem 1rem; }
   .card .card-footer {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
     padding: 0.5rem 1rem; }
   .card .card-img {
     position: relative;
@@ -4228,7 +4241,8 @@ textarea.input {
     .table .cell-check > .checkbox.indeterminate > .icon {
       color: #0ca0ff; }
   .table .hl-tr {
-    background: #f2faff !important; }
+    background: #f2faff !important;
+    transition: background .3s; }
   .table.responsive {
     display: block;
     width: 100%;
@@ -4260,28 +4274,52 @@ textarea.input {
     color: #6c757d;
     font-weight: 700;
     background-color: #f5f5f5; }
-    .table th > .td-content {
+    .table th.with-wrapper {
+      padding: 0; }
+    .table th > .content-wrapper {
       display: flex;
-      flex: 1 1 auto; }
-      .table th > .td-content > .sort-column {
-        margin-left: .5rem;
+      align-items: stretch; }
+      .table th > .content-wrapper > .td-content {
         display: flex;
-        flex-direction: column;
-        justify-content: center; }
-        .table th > .td-content > .sort-column > .arrow-icon {
-          border-left: .35em solid transparent;
-          border-right: .35em solid transparent;
-          width: .35em;
-          color: #ccc; }
-          .table th > .td-content > .sort-column > .arrow-icon.active {
-            color: #0ca0ff; }
-          .table th > .td-content > .sort-column > .arrow-icon.up-arrow {
-            border-bottom: .35em solid;
-            border-top: 0; }
-          .table th > .td-content > .sort-column > .arrow-icon.down-arrow {
-            margin-top: .2rem;
-            border-top: .35em solid;
-            border-bottom: 0; }
+        flex: 1 1 auto;
+        padding: .5rem; }
+        .table th > .content-wrapper > .td-content.sort-td {
+          cursor: pointer; }
+        .table th > .content-wrapper > .td-content > .sort-column {
+          margin-left: .5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center; }
+          .table th > .content-wrapper > .td-content > .sort-column > .arrow-icon {
+            border-left: .35em solid transparent;
+            border-right: .35em solid transparent;
+            width: .35em;
+            color: #ccc; }
+            .table th > .content-wrapper > .td-content > .sort-column > .arrow-icon.active {
+              color: #0ca0ff; }
+            .table th > .content-wrapper > .td-content > .sort-column > .arrow-icon.up-arrow {
+              border-bottom: .35em solid;
+              border-top: 0; }
+            .table th > .content-wrapper > .td-content > .sort-column > .arrow-icon.down-arrow {
+              margin-top: .2rem;
+              border-top: .35em solid;
+              border-bottom: 0; }
+      .table th > .content-wrapper > .filter, .table th > .content-wrapper > .head-elem {
+        display: flex;
+        flex: 0 0 1em;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: .25rem; }
+        .table th > .content-wrapper > .filter .icon, .table th > .content-wrapper > .head-elem .icon {
+          font-size: 1em; }
+        .table th > .content-wrapper > .filter:not(.disabled):focus, .table th > .content-wrapper > .filter:not(.disabled):hover, .table th > .content-wrapper > .head-elem:not(.disabled):focus, .table th > .content-wrapper > .head-elem:not(.disabled):hover {
+          background: #ccc; }
+        .table th > .content-wrapper > .filter:not(.disabled).active, .table th > .content-wrapper > .head-elem:not(.disabled).active {
+          background: #ccc;
+          color: #0ca0ff; }
+        .table th > .content-wrapper > .filter.with-items, .table th > .content-wrapper > .head-elem.with-items {
+          color: #0ca0ff; }
   .table td {
     text-align: left;
     border: 1px solid #ccc;
@@ -4292,6 +4330,9 @@ textarea.input {
       text-overflow: ellipsis; }
   .table.hover tbody tr:focus, .table.hover tbody tr:hover {
     background-color: #f2f2f2; }
+
+.table-filter > .card > .card-body {
+  padding: 0; }
 
 .tab > .tab-pre, .tab > .tab-next {
   display: -ms-inline-flexbox;

@@ -32,6 +32,7 @@
 
   .hl-tr {
     background: lighten($blue, 45%) !important;
+    transition: background .3s;
   }
 
   &.responsive {
@@ -69,42 +70,83 @@
     font-weight: map_get($font-weight, 'bold');
     background-color: $table-th-background-color;
 
-    > .td-content {
-      display: flex;
-      flex: 1 1 auto;
 
-      > .sort-column {
-        margin-left: .5rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
-        > .arrow-icon {
-          border-left: .35em solid transparent;
-          border-right: .35em solid transparent;
-          width: .35em;
-          color: $gray;
-
-          &.active {
-            color: $blue;
-          }
-
-          &.up-arrow {
-            border-bottom: .35em solid;
-            border-top: 0;
-          }
-
-          &.down-arrow {
-            margin-top: .2rem;
-            border-top: .35em solid;
-            border-bottom: 0;
-          }
-        }
-
-
-      }
+    &.with-wrapper {
+      padding: 0;
     }
 
+    > .content-wrapper {
+      display: flex;
+      align-items: stretch;
+      //padding: 0 .5rem;
+
+      > .td-content {
+        display: flex;
+        flex: 1 1 auto;
+        padding: .5rem;
+
+        &.sort-td {
+          cursor: pointer;
+        }
+
+        > .sort-column {
+          margin-left: .5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          > .arrow-icon {
+            border-left: .35em solid transparent;
+            border-right: .35em solid transparent;
+            width: .35em;
+            color: $gray;
+
+            &.active {
+              color: $blue;
+            }
+
+            &.up-arrow {
+              border-bottom: .35em solid;
+              border-top: 0;
+            }
+
+            &.down-arrow {
+              margin-top: .2rem;
+              border-top: .35em solid;
+              border-bottom: 0;
+            }
+          }
+
+
+        }
+      }
+
+      > .filter, > .head-elem {
+        display: flex;
+        flex: 0 0 1em;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        padding: .25rem;
+
+        .icon {
+          font-size: 1em;
+        }
+
+        @include focus2 {
+          background: $gray;
+        }
+
+        @include active2 {
+          background: $gray;
+          color: $blue;
+        }
+
+        &.with-items {
+          color: $blue
+        }
+      }
+    }
   }
 
   td {
@@ -125,4 +167,8 @@
       }
     }
   }
+}
+
+.table-filter > .card > .card-body {
+  padding: 0;
 }
