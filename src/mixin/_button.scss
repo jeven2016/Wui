@@ -3,10 +3,19 @@
   @include generate-active($btn-bg-color, $btn-color, $btn-bdr-color, $btn-boxshadow-color);
 }
 
+@mixin add-simple-invented-button($btn-bg-color, $btn-color, $btn-bdr-color,  $btn-boxshadow-color,
+   $active-btn-bg-color, $active-btn-color, $active-btn-bdr-color,  $active-btn-boxshadow-color) {
+  @include generate-local($btn-bg-color, $btn-color, $btn-bdr-color);
+  @include generate-active($active-btn-bg-color, $active-btn-color, $active-btn-bdr-color, $active-btn-boxshadow-color);
+}
+
 @mixin generate-local($bg-color,$color,$bdr-color) {
   background-color: $bg-color;
   color: $color;
-  border: 1px solid $bdr-color;
+  border: $default-border-width solid $bdr-color;
+
+  //box-shadow: 0 0 0 2px $bdr-color inset; //using box-shadow to replace the border
+  //border: none;
 }
 
 @mixin generate-active($active-bg-color,$btn-text-color,$active-bdr-color, $btn-boxshadow-color) {
@@ -21,7 +30,9 @@
   }
 
   &:focus, &.active {
-    box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
+    @if $btn-boxshadow-color {
+      box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
+    }
     z-index: map_get($z-index, "widget");
     //position: relative;
   }
