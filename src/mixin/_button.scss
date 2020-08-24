@@ -1,6 +1,10 @@
 @mixin add-simple-button-content($btn-bg-color, $btn-color, $btn-bdr-color,  $btn-boxshadow-color) {
   @include generate-local($btn-bg-color, $btn-color, $btn-bdr-color);
   @include generate-active($btn-bg-color, $btn-color, $btn-bdr-color, $btn-boxshadow-color);
+
+  &.inverted {
+    border: 1px solid transparent;
+  }
 }
 
 @mixin add-simple-invented-button($btn-bg-color, $btn-color, $btn-bdr-color,  $btn-boxshadow-color,
@@ -9,13 +13,26 @@
   @include generate-active($active-btn-bg-color, $active-btn-color, $active-btn-bdr-color, $active-btn-boxshadow-color);
 }
 
-@mixin generate-local($bg-color,$color,$bdr-color) {
-  background-color: $bg-color;
-  color: $color;
-  border: $default-border-width solid $bdr-color;
+@mixin generate-local($bg-color,$color,$bdr-color, $has-box-shadow: false) {
 
-  //box-shadow: 0 0 0 2px $bdr-color inset; //using box-shadow to replace the border
-  //border: none;
+  &.with-bg {
+    background: $bg-color;
+  }
+
+  &.with-default-color {
+    color: $btn-default-text-color;
+    border: $default-border;
+  }
+
+  &:not(.with-default-color) {
+    color: $color;
+    border: $default-border-width solid $bdr-color;
+
+    @if $has-box-shadow {
+      box-shadow: 0 0 0 1px $bdr-color inset; //using box-shadow to replace the border
+      //border: none;
+    }
+  }
 }
 
 @mixin generate-active($active-bg-color,$btn-text-color,$active-bdr-color, $btn-boxshadow-color) {
@@ -23,28 +40,32 @@
   //once the button is disabled, focus and active won't be triggered, only hover needs to be handled
   &:focus, &:hover {
     &:not(:disabled) {
-      background-color: darken($active-bg-color, $default-bg-color-increase-ratio);
+      &.with-bg {
+        background: darken($active-bg-color, $default-bg-color-increase-ratio);
+      }
+
       color: $btn-text-color;
-      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
+      border: $default-border-width solid $active-bdr-color;
+      @if $btn-boxshadow-color {
+        box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
+      }
+      z-index: map_get($z-index, "widget");
     }
   }
 
-  &:focus, &.active {
-    @if $btn-boxshadow-color {
-      box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
-    }
-    z-index: map_get($z-index, "widget");
-    //position: relative;
-  }
 
   &:active:not(:disabled) {
-    //transform: scale(0.97); //cause dropdown's menu shaking
-    background-color: darken($active-bg-color, $default-bg-color-increase-ratio-active);
+    &.with-bg {
+      background: darken($active-bg-color, $default-bg-color-increase-ratio-active);
+    }
+
+    border: $default-border-width solid $active-bdr-color;
   }
 
   &.active:not(:disabled) {
     color: $btn-text-color;
-    background-color: lighten($active-bg-color, $default-bg-color-increase-ratio);
+    background: lighten($active-bg-color, $default-bg-color-increase-ratio);
+    border: $default-border-width solid $active-bdr-color;
   }
 }
 

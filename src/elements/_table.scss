@@ -1,3 +1,17 @@
+@mixin after() {
+  &:after {
+    position: absolute;
+    width: 1rem;
+    top: 0;
+    right: 0;
+    bottom: -1px;
+    transition: box-shadow .3s;
+    content: '';
+
+    @content;
+  }
+}
+
 .table {
   width: $table-width;
   border-collapse: $table-border-collapse;
@@ -5,6 +19,10 @@
   border: $table-default-border;
   table-layout: $table-layout;
   margin-bottom: $table-margin-bottom;
+
+  &.scroll-head {
+
+  }
 
   &.clear-border {
     border-width: 0 !important;
@@ -16,6 +34,22 @@
 
   th {
     white-space: $table-white-space;
+
+    &.scroll-th {
+      //width: 17px;
+      border-left: none;
+      position: sticky;
+      right: 0;
+      z-index: map-get($z-index, 'one');
+    }
+
+    &.last-head-th {
+      border-right: none;
+    }
+
+    &.title {
+      text-align: center;
+    }
   }
 
   .col-check {
@@ -35,16 +69,8 @@
     transition: background .3s;
   }
 
-  &.responsive {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-  }
-
   &.striped {
-    @include set-border-width(0, null, 0, null);
-    border-left-width: 0;
-    border-right-width: 0;
+    @include set-border-width(0, 0, 0, 0);
 
     th, td {
       @include set-border-width(0, 0, 0, $table-border-width);
@@ -78,19 +104,18 @@
     > .content-wrapper {
       display: flex;
       align-items: stretch;
-      //padding: 0 .5rem;
 
       > .td-content {
         display: flex;
         flex: 1 1 auto;
-        padding: .5rem;
+        padding: .75rem;
 
         &.sort-td {
           cursor: pointer;
         }
 
         > .sort-column {
-          margin-left: .5rem;
+          margin-left: .75rem;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -152,23 +177,72 @@
   td {
     @include make-cell;
 
-    &.ellipsis {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
   }
 
   &.hover {
-    tbody tr {
+    tbody > tr {
       &:focus, &:hover {
         background-color: $table-row-hover-bg;
+
+        > td.fixed-cell {
+          background-color: $table-row-hover-bg;
+        }
       }
     }
   }
 }
 
+.table-wrapper {
+  margin-bottom: 1rem;
+
+  > .head-wrapper > .table {
+    margin-bottom: 0;
+  }
+}
+
 .table-filter > .card > .card-body {
   padding: 0;
+}
+
+.scroll-wrapper {
+  overflow-y: scroll;
+
+  > .table {
+    margin-bottom: 0;
+  }
+}
+
+.head-wrapper {
+  overflow: hidden;
+}
+
+.fixed-cell {
+  position: sticky !important;
+  background: $white;
+  z-index: map-get($z-index, one);
+
+  &.right {
+
+    @include after {
+      left: 0;
+      transform: translateX(-100%);
+    }
+  }
+
+  &.left {
+    @include after {
+      right: 0;
+      transform: translateX(100%);
+    }
+  }
+
+  &.with-cell-box {
+    &.left:after {
+      box-shadow: inset 11px 0 9px -9px rgba(0, 0, 0, .2);
+    }
+
+    &.right:after {
+      box-shadow: inset -11px 0 9px -9px rgba(0, 0, 0, .2);
+    }
+  }
 }

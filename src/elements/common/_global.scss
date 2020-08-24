@@ -157,3 +157,11 @@ a {
     max-width: $dialog-content-width-xg;
   }
 }
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}

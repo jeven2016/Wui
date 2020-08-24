@@ -92,6 +92,8 @@
     > .button {
       @extend .button.outline;
       @include group-border-radius($btn-group-border-radius);
+
+      box-shadow: unset;
     }
   }
 

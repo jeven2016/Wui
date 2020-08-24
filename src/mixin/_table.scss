@@ -1,7 +1,7 @@
 @mixin make-cell {
   text-align: left;
   border: $table-default-border;
-  padding: 0.5rem;
+  padding: 0.75rem;
 }
 
 @mixin set-border-width($left-bd-width,$top-bd-width,$right-bd-width,$bottom-bd-width) {

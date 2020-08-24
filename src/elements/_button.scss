@@ -2,9 +2,22 @@
 .button {
   @extend .base-btn;
 
+  &.with-bg {
+
+  }
+
+  //specify the initial color -> default color but can be changed later
+  &.with-default-color {
+
+  }
+
+  + .button {
+    margin-left: .5rem;
+  }
+
   //default button
   @include add-simple-button-content($btn-default-background-color, $btn-default-text-color, $btn-border-color,
-      darken($btn-border-color, 5%));
+          darken($btn-border-color, 5%));
 
   //other buttons
   @each $name, $color in $btn-colors {
@@ -12,19 +25,20 @@
 
       &.normal {
         @include add-simple-button-content($color, $white, darken($color, $default-color-increase-ratio),
-            lighten($color, 30%));
+                lighten($color, 30%));
       }
 
       &.inverted {
-        @include add-simple-invented-button(transparent, $btn-default-text-color, transparent,
-            null, $color, $white, darken($color, $default-color-increase-ratio), lighten($color, 30%));
+        @include add-simple-invented-button(transparent, inherit, transparent,
+                null, $color, $white, darken($color, $default-color-increase-ratio), lighten($color, 30%));
       }
     }
   }
 
+
   @mixin generate-outline-button($name,$btn-bg-color,$btn-color, $btn-boxshadow-color) {
     &.#{$name} {
-      @include generate-local($btn-bg-color, $btn-color, $btn-color);
+      @include generate-local($btn-bg-color, $btn-color, $btn-color, true);
       @include generate-active($btn-color, $white, $btn-color, $btn-boxshadow-color);
     }
   }
@@ -32,7 +46,7 @@
   &.outline {
     @each $name, $color in $btn-colors {
       &.#{$name} {
-        @include generate-local(transparent, $color, $color);
+        @include generate-local(transparent, $color, $color, true);
         @include generate-active($color, $white, $color, lighten($color, 30%));
       }
     }
@@ -40,7 +54,7 @@
 
   //同级的block button，margin-top:0.5rem
   &.block {
-    @include make-block {
+    @include make-flex {
       width: 100%
     }
 
