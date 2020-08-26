@@ -2,13 +2,15 @@
 .button {
   @extend .base-btn;
 
-  &.with-bg {
+
+  &.with-outline-bg {
 
   }
 
   //specify the initial color -> default color but can be changed later
   &.with-default-color {
-
+    color: $btn-default-text-color;
+    border: $default-border;
   }
 
   + .button {

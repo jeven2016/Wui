@@ -14,14 +14,8 @@
 }
 
 @mixin generate-local($bg-color,$color,$bdr-color, $has-box-shadow: false) {
-
-  &.with-bg {
+  &:not(.with-outline-bg) {
     background: $bg-color;
-  }
-
-  &.with-default-color {
-    color: $btn-default-text-color;
-    border: $default-border;
   }
 
   &:not(.with-default-color) {
@@ -40,32 +34,49 @@
   //once the button is disabled, focus and active won't be triggered, only hover needs to be handled
   &:focus, &:hover {
     &:not(:disabled) {
-      &.with-bg {
-        background: darken($active-bg-color, $default-bg-color-increase-ratio);
+
+      &.with-outline-bg {
+        background-color: darken($active-bg-color, $default-bg-color-increase-ratio);
+        color: $btn-text-color;
       }
 
-      color: $btn-text-color;
-      border: $default-border-width solid $active-bdr-color;
-      @if $btn-boxshadow-color {
-        box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
+      &:not(.with-outline-bg) {
+        color: $active-bg-color;
+        border-color: darken($active-bg-color, $default-bg-color-increase-ratio);
       }
-      z-index: map_get($z-index, "widget");
+
+      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
     }
   }
 
+  &:focus, &.active {
+    @if $btn-boxshadow-color {
+      box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
+    }
+    z-index: map_get($z-index, "widget");
+    //position: relative;
+  }
 
   &:active:not(:disabled) {
-    &.with-bg {
-      background: darken($active-bg-color, $default-bg-color-increase-ratio-active);
+    //transform: scale(0.97); //cause dropdown's menu shaking
+    &.with-outline-bg {
+      background-color: darken($active-bg-color, $default-bg-color-increase-ratio-active);
     }
 
-    border: $default-border-width solid $active-bdr-color;
+    &:not(.with-outline-bg) {
+      color: darken($active-bg-color, $default-bg-color-increase-ratio-active);
+    }
   }
 
   &.active:not(:disabled) {
-    color: $btn-text-color;
-    background: lighten($active-bg-color, $default-bg-color-increase-ratio);
-    border: $default-border-width solid $active-bdr-color;
+    &.with-outline-bg {
+      background-color: lighten($active-bg-color, $default-bg-color-increase-ratio);
+      color: $btn-text-color;
+    }
+
+    &:not(.with-outline-bg) {
+      color: lighten($active-bg-color, $default-bg-color-increase-ratio);
+    }
   }
 }
 
@@ -101,3 +112,4 @@
   border-right-width: 1px !important;
   border-left-width: 0;
 }
+
