@@ -2,24 +2,24 @@
 .button {
   @extend .base-btn;
 
-
   &.with-outline-bg {
 
-  }
-
-  //specify the initial color -> default color but can be changed later
-  &.with-default-color {
-    color: $btn-default-text-color;
-    border: $default-border;
   }
 
   + .button {
     margin-left: .5rem;
   }
 
-  //default button
-  @include add-simple-button-content($btn-default-background-color, $btn-default-text-color, $btn-border-color,
-          darken($btn-border-color, 5%));
+
+  &.default {
+    //default button
+    @include add-simple-button-content($btn-default-background-color, $btn-default-text-color, $btn-border-color,
+            lighten($btn-border-color, 8%));
+
+    // button can be disabled
+    @include add-disabled-conf;
+  }
+
 
   //other buttons
   @each $name, $color in $btn-colors {

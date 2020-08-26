@@ -14,69 +14,81 @@
 }
 
 @mixin generate-local($bg-color,$color,$bdr-color, $has-box-shadow: false) {
-  &:not(.with-outline-bg) {
-    background: $bg-color;
+  background: $bg-color;
+  color: $color;
+  border: $default-border-width solid $bdr-color;
+
+  &.with-outline-bg {
+    //background: transparent;
+    box-shadow: 0 0 0 1px $bdr-color inset; //using box-shadow to enhance the border
   }
 
-  &:not(.with-default-color) {
-    color: $color;
-    border: $default-border-width solid $bdr-color;
-
-    @if $has-box-shadow {
-      box-shadow: 0 0 0 1px $bdr-color inset; //using box-shadow to replace the border
-      //border: none;
-    }
+  &.with-default-color {
+    color: $btn-default-text-color;
+    border-color: $default-border-color;
+    box-shadow: none;
   }
 }
 
 @mixin generate-active($active-bg-color,$btn-text-color,$active-bdr-color, $btn-boxshadow-color) {
 
   //once the button is disabled, focus and active won't be triggered, only hover needs to be handled
-  &:focus, &:hover {
-    &:not(:disabled) {
+  &:not(:disabled) {
+    &:focus, &:hover {
+      color: $btn-text-color;
+      border-color: darken($active-bdr-color, $default-color-increase-ratio);
+      background: darken($active-bg-color, $default-bg-color-increase-ratio);
 
       &.with-outline-bg {
-        background-color: darken($active-bg-color, $default-bg-color-increase-ratio);
+        background: darken($active-bg-color, $default-bg-color-increase-ratio);
+        color: $btn-text-color;
+        //box-shadow: 0 0 0 1px darken($active-bdr-color, $default-color-increase-ratio) inset; //using box-shadow to enhance the border
+      }
+
+      &.no-outline-bg{
+        background: transparent;
+        color: $active-bg-color;
+      }
+    }
+
+    &:focus, &.active {
+      border-color: darken($active-bdr-color, $default-color-increase-ratio);
+      @if $btn-boxshadow-color {
+        box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
+      }
+      z-index: map_get($z-index, "widget");
+      //position: relative;
+    }
+
+    &:active {
+      border-color: darken($active-bdr-color, $default-color-increase-ratio);
+      background: darken($active-bg-color, $default-bg-color-increase-ratio-active);
+
+      &.no-outline-bg{
+        background: transparent;
+        color: $active-bg-color;
+      }
+    }
+
+    &.active {
+      color: $btn-text-color;
+      background-color: lighten($active-bg-color, $default-bg-color-increase-ratio);
+
+      &.with-outline-bg {
+        background-color: lighten($active-bg-color, $default-bg-color-increase-ratio);
         color: $btn-text-color;
       }
 
-      &:not(.with-outline-bg) {
-        color: $active-bg-color;
-        border-color: darken($active-bg-color, $default-bg-color-increase-ratio);
+      &.with-default-color {
+        border-color: darken($active-bdr-color, $default-color-increase-ratio);
       }
 
-      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
-    }
-  }
-
-  &:focus, &.active {
-    @if $btn-boxshadow-color {
-      box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
-    }
-    z-index: map_get($z-index, "widget");
-    //position: relative;
-  }
-
-  &:active:not(:disabled) {
-    //transform: scale(0.97); //cause dropdown's menu shaking
-    &.with-outline-bg {
-      background-color: darken($active-bg-color, $default-bg-color-increase-ratio-active);
+      &.no-outline-bg{
+        background: transparent;
+        color: $active-bg-color;
+      }
     }
 
-    &:not(.with-outline-bg) {
-      color: darken($active-bg-color, $default-bg-color-increase-ratio-active);
-    }
-  }
-
-  &.active:not(:disabled) {
-    &.with-outline-bg {
-      background-color: lighten($active-bg-color, $default-bg-color-increase-ratio);
-      color: $btn-text-color;
-    }
-
-    &:not(.with-outline-bg) {
-      color: lighten($active-bg-color, $default-bg-color-increase-ratio);
-    }
   }
 }
 

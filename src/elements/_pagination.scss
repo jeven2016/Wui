@@ -24,9 +24,11 @@
 
   > .icon-input {
     width: 8rem;
+    height: 2rem;
 
     > .input {
       text-align: center;
+      height: 100%!important;
     }
   }
 }
