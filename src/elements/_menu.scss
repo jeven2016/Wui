@@ -7,7 +7,7 @@
       content: $menu-float-submenu-active-menu-header-after-content;
       height: $menu-float-submenu-active-menu-header-after-height;
       width: $menu-float-submenu-active-menu-header-after-width;
-      background-color: $menu-float-submenu-active-menu-header-after-background-color;
+      background: $menu-float-submenu-active-menu-header-after-background-color;
       transition: $menu-float-submenu-active-menu-header-after-transition;
       animation: $menu-float-submenu-active-menu-header-after-animation;
       z-index: 1;
@@ -23,7 +23,7 @@
       content: $menu-float-submenu-active-menu-header-after-content;
       height: 100%;
       width: 0.1875rem;;
-      background-color: $menu-float-submenu-active-menu-header-after-background-color;
+      background: $menu-float-submenu-active-menu-header-after-background-color;
       transition: height .3s;
       //animation: $menu-float-submenu-active-menu-header-after-animation;
     }
@@ -87,23 +87,27 @@
     margin-right: .5rem;
   }
 
-  @include focus-active2 {
-    color: $menu-item-hove-text-color;
+  @include focus2 {
+    color: lighten($menu-item-hove-text-color, 5%);
 
     &.with-bg {
-      background-color: $menu-item-background-color;
+      background: $menu-item-background-color;
     }
   }
 
   @include active2 {
+    color: $menu-item-hove-text-color;
     &.with-bottom-bar {
       @include bottom-bar;
+    }
+    &.with-bg {
+      background: darken($menu-item-background-color, 3%);
     }
   }
 
   @include add-disabled-conf(false) {
     color: $text-color;
-    background-color: transparent;
+    background: transparent;
   }
 
   @content;
@@ -168,7 +172,7 @@
       }
 
       &.active {
-        background-color: $menu-primary-menu-item-active-background-color;
+        background: $menu-primary-menu-item-active-background-color;
         //border-right: $menu-primary-menu-item-active-border-right;
         //margin-right: $menu-primary-menu-item-active-margin-right;
         text-shadow: 0 0 1px lighten($primary, 20%);
@@ -187,18 +191,18 @@
         text-shadow: $menu-item-hover-text-shadow;
 
         &.with-bg {
-          background-color: $blue;
+          background: $blue;
         }
       }
 
       &.active {
-        background-color: $blue;
+        background: $blue;
         color: $white;
         //text-shadow: $menu-item-hover-text-shadow;
 
 
         &.with-bg {
-          background-color: $blue;
+          background: $blue;
         }
       }
     }
@@ -235,7 +239,7 @@
 
     @include add-disabled-conf(false) {
       color: $text-color;
-      background-color: transparent;
+      background: transparent;
     }
 
     &.with-bottom-bar {
@@ -402,7 +406,7 @@
   }
 
   &.dark {
-    background-color: $menu-dark-background-color;
+    background: $menu-dark-background-color;
     color: $menu-dark-color;
     border: $menu-dark-border;
   }

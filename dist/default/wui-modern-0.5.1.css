@@ -4669,29 +4669,29 @@ textarea.input {
     .base-menu .menu-item > .icon, .menu .menu-item > .icon {
       margin-right: .5rem; }
     .base-menu .menu-item:not(.disabled):focus, .menu .menu-item:not(.disabled):focus, .base-menu .menu-item:not(.disabled):hover, .menu .menu-item:not(.disabled):hover {
-      color: #0ca0ff; }
+      color: #26aaff; }
       .base-menu .menu-item:not(.disabled):focus.with-bg, .menu .menu-item:not(.disabled):focus.with-bg, .base-menu .menu-item:not(.disabled):hover.with-bg, .menu .menu-item:not(.disabled):hover.with-bg {
-        background-color: #F7F6F6; }
+        background: #F7F6F6; }
     .base-menu .menu-item:not(.disabled).active, .menu .menu-item:not(.disabled).active {
       color: #0ca0ff; }
+      .base-menu .menu-item:not(.disabled).active.with-bottom-bar:after, .menu .menu-item:not(.disabled).active.with-bottom-bar:after {
+        position: absolute;
+        display: block;
+        border-radius: 50%;
+        left: 0;
+        top: calc(100%);
+        content: "";
+        height: 0.1875rem;
+        width: 100%;
+        background: #0ca0ff;
+        transition: width 0.3s;
+        animation: change-width-smoothly 0.3s;
+        z-index: 1; }
       .base-menu .menu-item:not(.disabled).active.with-bg, .menu .menu-item:not(.disabled).active.with-bg {
-        background-color: #F7F6F6; }
-    .base-menu .menu-item:not(.disabled).active.with-bottom-bar:after, .menu .menu-item:not(.disabled).active.with-bottom-bar:after {
-      position: absolute;
-      display: block;
-      border-radius: 50%;
-      left: 0;
-      top: calc(100%);
-      content: "";
-      height: 0.1875rem;
-      width: 100%;
-      background-color: #0ca0ff;
-      transition: width 0.3s;
-      animation: change-width-smoothly 0.3s;
-      z-index: 1; }
+        background: #f0eeee; }
     .base-menu .menu-item:disabled, .menu .menu-item:disabled, .base-menu .menu-item.disabled, .menu .menu-item.disabled {
       color: #333;
-      background-color: transparent; }
+      background: transparent; }
     .base-menu .menu-item.equitable, .menu .menu-item.equitable {
       flex-grow: 1; }
     .base-menu .menu-item.left, .menu .menu-item.left {
@@ -4723,7 +4723,7 @@ textarea.input {
     .base-menu .menu-item.primary:not(.disabled):not(.active):focus, .menu .menu-item.primary:not(.disabled):not(.active):focus, .base-menu .menu-item.primary:not(.disabled):not(.active):hover, .menu .menu-item.primary:not(.disabled):not(.active):hover {
       color: #3fb4ff; }
     .base-menu .menu-item.primary.active, .menu .menu-item.primary.active {
-      background-color: #d8f0ff;
+      background: #d8f0ff;
       text-shadow: 0 0 1px #72c8ff; }
       .base-menu .menu-item.primary.active:after, .menu .menu-item.primary.active:after {
         position: absolute;
@@ -4732,7 +4732,7 @@ textarea.input {
         content: "";
         height: 100%;
         width: 0.1875rem;
-        background-color: #0ca0ff;
+        background: #0ca0ff;
         transition: height .3s; }
       .base-menu .menu-item.primary.active.left-bar:after, .menu .menu-item.primary.active.left-bar:after {
         left: 0; }
@@ -4744,12 +4744,12 @@ textarea.input {
       color: #fff;
       text-shadow: 1px 1px 2px #333, 0 0 15px #fff, 0 0 5px #0ca0ff; }
       .base-menu .menu-item.dark:not(.disabled):not(.active):focus.with-bg, .menu .menu-item.dark:not(.disabled):not(.active):focus.with-bg, .base-menu .menu-item.dark:not(.disabled):not(.active):hover.with-bg, .menu .menu-item.dark:not(.disabled):not(.active):hover.with-bg {
-        background-color: #0ca0ff; }
+        background: #0ca0ff; }
     .base-menu .menu-item.dark.active, .menu .menu-item.dark.active {
-      background-color: #0ca0ff;
+      background: #0ca0ff;
       color: #fff; }
       .base-menu .menu-item.dark.active.with-bg, .menu .menu-item.dark.active.with-bg {
-        background-color: #0ca0ff; }
+        background: #0ca0ff; }
     .base-menu .menu-item > .left, .menu .menu-item > .left, .base-menu .menu-item > .right, .menu .menu-item > .right {
       flex: 0 1 1em;
       display: -ms-flexbox;
@@ -4777,7 +4777,7 @@ textarea.input {
       font-size: 1em; }
     .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled {
       color: #333;
-      background-color: transparent; }
+      background: transparent; }
     .base-menu .menu-header.with-bottom-bar:not(.disabled):focus:after, .menu .menu-header.with-bottom-bar:not(.disabled):focus:after, .base-menu .menu-header.with-bottom-bar:not(.disabled):hover:after, .menu .menu-header.with-bottom-bar:not(.disabled):hover:after {
       position: absolute;
       display: block;
@@ -4787,7 +4787,7 @@ textarea.input {
       content: "";
       height: 0.1875rem;
       width: 100%;
-      background-color: #0ca0ff;
+      background: #0ca0ff;
       transition: width 0.3s;
       animation: change-width-smoothly 0.3s;
       z-index: 1; }
@@ -4800,7 +4800,7 @@ textarea.input {
       content: "";
       height: 0.1875rem;
       width: 100%;
-      background-color: #0ca0ff;
+      background: #0ca0ff;
       transition: width 0.3s;
       animation: change-width-smoothly 0.3s;
       z-index: 1; }
@@ -4907,7 +4907,7 @@ textarea.input {
   .menu > .base-menu > .menu-header > div:first-child.header-info, .menu > .menu > .menu-header > div:first-child.header-info {
     padding-left: 0; }
   .menu.dark {
-    background-color: #131415;
+    background: #131415;
     color: #b3b3b3;
     border: none; }
   .menu.menu-row {
@@ -5081,8 +5081,11 @@ textarea.input {
       line-height: 3rem; } }
 
 .pagination {
-  position: relative;
-  display: inline-block; }
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  color: #c1bdbd; }
   .pagination > .item {
     display: inline-flex;
     min-width: 2rem;
@@ -5090,13 +5093,16 @@ textarea.input {
     align-items: center;
     justify-content: center; }
     .pagination > .item:not(:last-child) {
-      margin-right: .25rem; }
+      margin-right: .5rem; }
     .pagination > .item > .button {
       width: 100%;
       height: 100%;
       padding: 0;
-      color: #333;
-      border-color: #333; }
+      border-color: #d5d2d2; }
+  .pagination > .icon-input {
+    width: 8rem; }
+    .pagination > .icon-input > .input {
+      text-align: center; }
 
 .popover {
   position: relative;
@@ -5282,7 +5288,8 @@ textarea.input {
     width: 100%; }
 
 .select-menu .menu .menu-item {
-  padding: 0.5rem 1rem !important; }
+  padding: 0.5rem 1rem !important;
+  min-width: unset; }
 
 .select-menu .no-data {
   background: white;
@@ -5699,7 +5706,7 @@ textarea.input {
       content: "";
       height: 0.1875rem;
       width: 100%;
-      background-color: #0ca0ff;
+      background: #0ca0ff;
       transition: width 0.3s;
       animation: change-width-smoothly 0.3s;
       z-index: 1; }
