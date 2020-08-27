@@ -6478,11 +6478,12 @@ textarea.input {
   display: -webkit-flex;
   display: flex;
   align-items: center;
-  color: #c1bdbd; }
+  color: #c1bdbd;
+  height: 2rem; }
   .pagination > .item {
     display: inline-flex;
     min-width: 2rem;
-    height: 2rem;
+    height: 100%;
     align-items: center;
     justify-content: center; }
     .pagination > .item:not(:last-child) {

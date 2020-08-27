@@ -1,12 +1,13 @@
 .pagination {
   @include make-flex-vertical-center {
     color: darken(#d5d2d2, 8%);
+    height: 2rem;
   }
 
   > .item {
     display: inline-flex;
     min-width: 2rem;
-    height: 2rem;
+    height: 100%;
     align-items: center;
     justify-content: center;
 
