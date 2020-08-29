@@ -1391,6 +1391,10 @@ $container-offset: 1.5rem;
   /* + .button:not(.block), + .button-dropdown, + .dropdown {
      margin-left: $btn-margin-left-button;
    }*/ }
+  .button.without-border {
+    border-color: transparent !important; }
+  .button.without-box {
+    box-shadow: none !important; }
   .button + .button {
     margin-left: .5rem; }
   .button.default {
@@ -6479,26 +6483,55 @@ textarea.input {
   display: flex;
   align-items: center;
   color: #c1bdbd;
-  height: 2rem; }
+  height: 2rem;
+  flex-wrap: wrap; }
   .pagination > .item {
     display: inline-flex;
     min-width: 2rem;
     height: 100%;
     align-items: center;
     justify-content: center; }
-    .pagination > .item:not(:last-child) {
+    .pagination > .item:not(:last-child), .pagination > .item + .icon-input, .pagination > .item + .go-item, .pagination > .item + .simple-content {
       margin-right: .5rem; }
     .pagination > .item > .button {
       width: 100%;
       height: 100%;
       padding: 0;
       border-color: #d5d2d2; }
+      .pagination > .item > .button > .page-text {
+        padding: 0 .25rem; }
   .pagination > .icon-input {
-    width: 8rem;
-    height: 2rem; }
+    width: 7rem;
+    height: 100%; }
     .pagination > .icon-input > .input {
       text-align: center;
       height: 100% !important; }
+  .pagination > .go-item {
+    margin-left: .5rem;
+    width: 7rem;
+    height: 100%;
+    color: #333; }
+    .pagination > .go-item > .input-group, .pagination > .go-item .input {
+      height: 100% !important; }
+    .pagination > .go-item .input {
+      border-radius: .25rem; }
+  .pagination > .simple-content {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto; }
+    .pagination > .simple-content.compact {
+      flex: unset; }
+    .pagination > .simple-content > .input {
+      height: 100% !important;
+      width: 3rem;
+      margin-right: .25rem; }
+    .pagination > .simple-content > .label {
+      font-size: 1.25rem;
+      color: #333;
+      margin: 0 .25rem; }
 
 .popover {
   position: relative;

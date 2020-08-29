@@ -2,6 +2,7 @@
   @include make-flex-vertical-center {
     color: darken(#d5d2d2, 8%);
     height: 2rem;
+    flex-wrap: wrap;
   }
 
   > .item {
@@ -11,7 +12,7 @@
     align-items: center;
     justify-content: center;
 
-    &:not(:last-child) {
+    &:not(:last-child), + .icon-input, + .go-item, + .simple-content {
       margin-right: .5rem;
     }
 
@@ -20,16 +21,60 @@
       height: 100%;
       padding: 0;
       border-color: #d5d2d2;
+
+      > .page-text {
+        padding: 0 .25rem;
+      }
     }
   }
 
   > .icon-input {
-    width: 8rem;
-    height: 2rem;
+    width: 7rem;
+    height: 100%;
 
     > .input {
       text-align: center;
-      height: 100%!important;
+      height: 100% !important;
+    }
+  }
+
+  > .go-item {
+    margin-left: .5rem;
+    width: 7rem;
+    height: 100%;
+    color: $text-color;
+
+    > .input-group, .input {
+      height: 100% !important;
+    }
+
+    .input {
+      //padding-left: .25rem;
+      //padding-r
+      // ght: .25rem;
+      border-radius: .25rem;
+    }
+  }
+
+  > .simple-content {
+    @include make-flex-center {
+      flex: 1 1 auto;
+    }
+
+    &.compact {
+      flex: unset;
+    }
+
+    > .input {
+      height: 100% !important;
+      width: 3rem;
+      margin-right: .25rem;
+    }
+
+    > .label {
+      font-size: 1.25rem;
+      color: $text-color;
+      margin: 0 .25rem;
     }
   }
 }
