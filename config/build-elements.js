@@ -39,6 +39,7 @@ var config = {
         collapse: true,
         tree: true,
         stepper: true,
+        datepicker: true,
       },
     },
 

@@ -85,7 +85,18 @@
     flex-grow: 0;
     flex-shrink: 0;
     padding: 0;
+    overflow: hidden;
     @include border-radius($btn-cicle-border-radius);
+
+    &.small {
+      width: 1.925rem;
+      height: 1.925rem;
+    }
+
+    &.large {
+      width: 2.475rem;
+      height: 2.475rem;
+    }
   }
 
   @include variant-size();
@@ -113,6 +124,7 @@
       margin-left: 0.5rem;
     }
   }
+
 
 
 }
