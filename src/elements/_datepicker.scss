@@ -1,12 +1,10 @@
 //calendar widget depends on dialog
 .date-picker {
-  display: inline-block;
-  position: absolute;
+  display: flex;
+  position: relative;
   width: 20rem;
   z-index: 100;
   box-shadow: $default-box-shadow;
-  left: 0;
-  top: 100%;
   background-color: white;
   border-radius: .25rem;
 
@@ -81,5 +79,13 @@
     }
   }
 
+
+  &.dp-row {
+    flex-direction: row;
+  }
+
+  &.dp-column {
+    flex-direction: column;
+  }
 
 }
