@@ -4988,56 +4988,66 @@ $container-offset: 1.5rem;
 .collapse-panel {
   overflow: hidden; }
 
+.date-picker-header {
+  background: #0ca0ff; }
+
+.date-picker-title {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column; }
+  .date-picker-title > .year-info {
+    color: #fff;
+    font-size: 1.5rem; }
+  .date-picker-title > .detail-info {
+    color: #fff;
+    font-size: 2rem; }
+
+.date-picker-info {
+  display: flex;
+  flex: 1 1 100%; }
+  .date-picker-info > .previous {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 0 0 auto; }
+  .date-picker-info > .content {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto; }
+  .date-picker-info > .next {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 0 0 auto; }
+
+.date-picker-table {
+  width: 100%;
+  color: #818a91; }
+  .date-picker-table td {
+    text-align: center;
+    vertical-align: middle; }
+  .date-picker-table .button.day {
+    color: #333; }
+
+.date-picker-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .25rem; }
+  .date-picker-footer > .left {
+    display: flex; }
+  .date-picker-footer > .right {
+    display: flex; }
+
 .date-picker {
-  display: inline-block;
-  position: absolute;
   width: 20rem;
-  z-index: 100;
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12);
-  left: 0;
-  top: 100%;
-  background-color: white;
-  border-radius: .25rem; }
-  .date-picker > .title {
-    padding: 0.5rem 1rem;
-    background-color: #0ca0ff; }
-    .date-picker > .title > .year-info {
-      color: white;
-      font-size: 1.5rem; }
-    .date-picker > .title > .detail-info {
-      color: #fff;
-      font-size: 2rem; }
-  .date-picker > .body {
-    padding: .5rem 1rem;
-    color: #818a91; }
-    .date-picker > .body > .info {
-      padding: 0.25rem 0.25rem;
-      font-size: 1rem;
-      text-align: center; }
-      .date-picker > .body > .info > .previous {
-        width: 20%; }
-      .date-picker > .body > .info > .content {
-        width: 60%; }
-      .date-picker > .body > .info > .next {
-        width: 20%; }
-      .date-picker > .body > .info > .previous .button, .date-picker > .body > .info > .content .button, .date-picker > .body > .info > .next .button {
-        border: 0; }
-    .date-picker > .body > .date-picker-table {
-      width: 100%; }
-      .date-picker > .body > .date-picker-table td {
-        text-align: center;
-        vertical-align: middle; }
-      .date-picker > .body > .date-picker-table button.day {
-        color: #333; }
-    .date-picker > .body > .footer {
-      display: flex;
-      justify-content: space-between;
-      margin-top: .25rem;
-      margin-bottom: .5rem; }
-      .date-picker > .body > .footer > .left {
-        display: flex; }
-      .date-picker > .body > .footer > .right {
-        display: flex; }
+  background-color: #fff; }
 
 .dialog > .body {
   min-height: 1rem;

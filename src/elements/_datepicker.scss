@@ -1,85 +1,78 @@
 //calendar widget depends on dialog
+.date-picker-header {
+  background: $blue;
+}
+
+.date-picker-title {
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+
+  > .year-info {
+    color: $white;
+    font-size: 1.5rem;
+  }
+
+  > .detail-info {
+    color: $white;
+    font-size: 2rem;
+  }
+}
+
+.date-picker-info {
+  display: flex;
+  flex: 1 1 100%;
+
+  > .previous {
+    @include make-flex-vertical-center {
+      justify-content: flex-end;
+      flex: 0 0 auto;
+    }
+  }
+
+  > .content {
+    @include make-flex-center {
+      flex: 1 1 auto;
+    }
+  }
+
+  > .next {
+    @include make-flex-vertical-center {
+      justify-content: flex-start;
+      flex: 0 0 auto;
+    }
+  }
+}
+
+.date-picker-table {
+  width: 100%;
+  color: $text-comment-color;
+
+  td {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .button.day {
+    color: $text-color;
+  }
+}
+
+.date-picker-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .25rem;
+
+  > .left {
+    display: flex;
+  }
+
+  > .right {
+    display: flex;
+  }
+}
+
 .date-picker {
-  display: inline-block;
-  position: absolute;
   width: 20rem;
-  z-index: 100;
-  box-shadow: $default-box-shadow;
-  left: 0;
-  top: 100%;
-  background-color: white;
-  border-radius: .25rem;
-
-  > .title {
-    padding: 0.5rem 1rem;
-    background-color: $blue;
-
-    > .year-info {
-      color: white;
-      font-size: 1.5rem;
-    }
-
-    > .detail-info {
-      color: $white;
-      font-size: 2rem;
-    }
-  }
-
-
-  > .body {
-    padding: .5rem 1rem;
-    color: $text-comment-color;
-
-    > .info {
-      padding: 0.25rem 0.25rem;
-      font-size: 1rem;
-      text-align: center;
-
-      > .previous {
-        width: 20%;
-      }
-
-      > .content {
-        width: 60%;
-      }
-
-      > .next {
-        width: 20%;
-      }
-
-      > .previous .button, > .content .button, > .next .button {
-        border: 0;
-      }
-    }
-
-    > .date-picker-table {
-      width: 100%;
-
-      td {
-        text-align: center;
-        vertical-align: middle;
-      }
-
-      button.day {
-        color: $text-color;
-      }
-    }
-
-    > .footer {
-      display: flex;
-      justify-content: space-between;
-      margin-top: .25rem;
-      margin-bottom: .5rem;
-
-      > .left {
-        display: flex;
-      }
-
-      > .right {
-        display: flex;
-      }
-    }
-  }
-
-
+  background-color: $white;
 }
