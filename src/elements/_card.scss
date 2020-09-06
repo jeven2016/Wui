@@ -7,9 +7,10 @@
   transition: $card-transition;
   background-color: $card-background-color;
 
-  &.with-width{
+  &.with-width {
     width: $card-width;
   }
+
   &.scale {
     &:focus, &:hover {
       transform: scale(1.1);
@@ -96,6 +97,7 @@
 
     &.with-scale {
       overflow: hidden;
+
       &:hover {
         > .img {
           transform: scale(1.2);

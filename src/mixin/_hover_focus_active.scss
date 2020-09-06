@@ -61,14 +61,14 @@
   }
 }
 
-@mixin only-focus(){
-  &:hover {
+@mixin only-focus() {
+  &:focus, &:hover {
     @content;
   }
 }
 
-@mixin only-active(){
-  &:active, &.active{
+@mixin only-active() {
+  &:active, &.active {
     @content;
   }
 }
