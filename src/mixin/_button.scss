@@ -1,3 +1,82 @@
+@mixin add-btn-content($bg-color, $font-color) {
+  @include generate-btn($bg-color, $font-color);
+  @include enable-active($bg-color, $font-color);
+  transition: background .3s, box-shadow .3s;
+}
+
+@mixin generate-btn($bg-color, $font-color) {
+  background: $bg-color;
+  color: $font-color;
+
+  &.with-outline-bg {
+    box-shadow: 0 0 0 2px darken($bg-color, $default-color-increase-ratio) inset;
+  }
+
+  &.with-default-color {
+    color: $btn-default-text-color;
+    box-shadow: none;
+  }
+}
+
+@mixin enable-active($bg-color, $font-color) {
+  //once the button is disabled, focus and active won't be triggered, only hover needs to be handled
+  $darken-color-1: darken($bg-color, $default-bg-color-increase-ratio);
+  $active-color: darken($bg-color, $default-bg-color-increase-ratio-active);
+
+  &:not(:disabled) {
+    &:focus, &:hover {
+      color: $font-color;
+      background: $darken-color-1;
+
+      &.with-outline-bg {
+        background: $darken-color-1;
+        color: $font-color;
+      }
+
+      &.no-outline-bg {
+        background: transparent;
+        color: $font-color;
+      }
+    }
+
+    &:focus, &.active {
+      box-shadow: 0 0 0 0.2rem lighten($bg-color, $default-box-shadow-color-increase-ratio-active);
+      z-index: map_get($z-index, "widget");
+    }
+
+    &:active {
+      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
+      background: $active-color;
+
+      &.no-outline-bg {
+        background: transparent;
+        color: $font-color;
+      }
+    }
+
+    &.active {
+      color: $font-color;
+      background-color: lighten($bg-color, $default-bg-color-increase-ratio);
+
+      &.with-outline-bg {
+        background-color: lighten($bg-color, $default-bg-color-increase-ratio);
+        color: $font-color;
+      }
+
+      &.with-default-color {
+        //border-color: darken($active-bdr-color, $default-color-increase-ratio);
+      }
+
+      &.no-outline-bg {
+        background: transparent;
+        color: $font-color;
+      }
+    }
+
+  }
+}
+
+
 @mixin add-simple-button-content($btn-bg-color, $btn-color, $btn-bdr-color,  $btn-boxshadow-color) {
   @include generate-local($btn-bg-color, $btn-color, $btn-bdr-color);
   @include generate-active($btn-bg-color, $btn-color, $btn-bdr-color, $btn-boxshadow-color);
@@ -13,19 +92,19 @@
   @include generate-active($active-btn-bg-color, $active-btn-color, $active-btn-bdr-color, $active-btn-boxshadow-color);
 }
 
-@mixin generate-local($bg-color,$color,$bdr-color, $has-box-shadow: false) {
+@mixin generate-local($bg-color,$color,$bdr-color, $has-border: false) {
   background: $bg-color;
   color: $color;
-  border: $default-border-width solid $bdr-color;
 
   &.with-outline-bg {
     //background: transparent;
-    box-shadow: 0 0 0 1px $bdr-color inset; //using box-shadow to enhance the border
+    box-shadow: 0 0 0 2px darken($bdr-color, $default-color-increase-ratio) inset;
+    //box-shadow: 0 0 0 2px $bdr-color inset; //using box-shadow to enhance the border
   }
 
   &.with-default-color {
     color: $btn-default-text-color;
-    border-color: $default-border-color;
+    //border-color: $default-border-color;
     box-shadow: none;
   }
 }
@@ -36,7 +115,7 @@
   &:not(:disabled) {
     &:focus, &:hover {
       color: $btn-text-color;
-      border-color: darken($active-bdr-color, $default-color-increase-ratio);
+      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
       background: darken($active-bg-color, $default-bg-color-increase-ratio);
 
       &.with-outline-bg {
@@ -45,14 +124,14 @@
         //box-shadow: 0 0 0 1px darken($active-bdr-color, $default-color-increase-ratio) inset; //using box-shadow to enhance the border
       }
 
-      &.no-outline-bg{
+      &.no-outline-bg {
         background: transparent;
         color: $active-bg-color;
       }
     }
 
     &:focus, &.active {
-      border-color: darken($active-bdr-color, $default-color-increase-ratio);
+      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
       @if $btn-boxshadow-color {
         box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
       }
@@ -61,10 +140,10 @@
     }
 
     &:active {
-      border-color: darken($active-bdr-color, $default-color-increase-ratio);
+      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
       background: darken($active-bg-color, $default-bg-color-increase-ratio-active);
 
-      &.no-outline-bg{
+      &.no-outline-bg {
         background: transparent;
         color: $active-bg-color;
       }
@@ -80,10 +159,10 @@
       }
 
       &.with-default-color {
-        border-color: darken($active-bdr-color, $default-color-increase-ratio);
+        //border-color: darken($active-bdr-color, $default-color-increase-ratio);
       }
 
-      &.no-outline-bg{
+      &.no-outline-bg {
         background: transparent;
         color: $active-bg-color;
       }
@@ -110,7 +189,7 @@
 @mixin first-button {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
-  border-right-width: 1px !important;
+  //border-right-width: 1px !important;
 }
 
 @mixin last-button {
@@ -121,7 +200,7 @@
 
 @mixin middle-button {
   border-radius: 0;
-  border-right-width: 1px !important;
+  //border-right-width: 1px !important;
   border-left-width: 0;
 }
 

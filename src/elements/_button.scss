@@ -1,6 +1,7 @@
 
 .button {
   @extend .base-btn;
+  border: none;
 
   &.with-outline-bg {
 
@@ -18,29 +19,24 @@
     margin-left: .5rem;
   }
 
-
-  &.default {
-    //default button
-    @include add-simple-button-content($btn-default-background-color, $btn-default-text-color, $btn-border-color,
-            lighten($btn-border-color, 8%));
-
-    // button can be disabled
-    @include add-disabled-conf;
-  }
-
-
   //other buttons
   @each $name, $color in $btn-colors {
     &.#{$name} {
+      $font-color: $white;
+
+      @if (str-index($name+'', 'gray')) {
+        $font-color: $color;
+      }
 
       &.normal {
-        @include add-simple-button-content($color, $white, darken($color, $default-color-increase-ratio),
-                lighten($color, 30%));
+        @include add-btn-content($color, $font-color);
+        //@include add-simple-button-content($color, $font-color, darken($color, $default-color-increase-ratio),
+        //    lighten($color, 30%));
       }
 
       &.inverted {
         @include add-simple-invented-button(transparent, inherit, transparent,
-                null, $color, $white, darken($color, $default-color-increase-ratio), lighten($color, 30%));
+            null, $color, $white, darken($color, $default-color-increase-ratio), lighten($color, 30%));
       }
     }
   }
@@ -124,7 +120,6 @@
       margin-left: 0.5rem;
     }
   }
-
 
 
 }
