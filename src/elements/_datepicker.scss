@@ -95,7 +95,7 @@
   display: flex;
   flex-direction: column;
   flex: 1 1 100%;
-  height: 270px;
+  height: 18.125rem;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -110,6 +110,7 @@
   color: $text-color;
   user-select: none;
 
+
   @include only-focus {
     color: $primary;
   }
@@ -117,5 +118,14 @@
   @include only-active {
     color: $primary;
     font-weight: map-get($font-weight, 'normal');
+  }
+}
+
+.year-cols {
+  @extend .dp-body;
+  color: $text-color;
+
+  .button {
+    align-self: center;
   }
 }

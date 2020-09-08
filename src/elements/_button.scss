@@ -2,6 +2,7 @@
 .button {
   @extend .base-btn;
   border: none;
+  transition: background .3s, box-shadow .3s;
 
   &.with-outline-bg {
 
@@ -19,41 +20,45 @@
     margin-left: .5rem;
   }
 
-  //other buttons
-  @each $name, $color in $btn-colors {
-    &.#{$name} {
-      $font-color: $white;
+  &.default {
+    @include generate-btn($btn-default-background-color, $text-color);
+    @include enable-active($btn-default-background-color, $text-color);
+    border: 1px solid $default-border-color;
 
-      @if (str-index($name+'', 'gray')) {
-        $font-color: $color;
-      }
-
-      &.normal {
-        @include add-btn-content($color, $font-color);
-        //@include add-simple-button-content($color, $font-color, darken($color, $default-color-increase-ratio),
-        //    lighten($color, 30%));
-      }
-
-      &.inverted {
-        @include add-simple-invented-button(transparent, inherit, transparent,
-            null, $color, $white, darken($color, $default-color-increase-ratio), lighten($color, 30%));
-      }
+    &.inverted {
+      border: none;
     }
   }
 
-
-  @mixin generate-outline-button($name,$btn-bg-color,$btn-color, $btn-boxshadow-color) {
+  //other buttons
+  @each $name, $color in $btn-colors {
     &.#{$name} {
-      @include generate-local($btn-bg-color, $btn-color, $btn-color, true);
-      @include generate-active($btn-color, $white, $btn-color, $btn-boxshadow-color);
+      &.normal {
+        @include generate-btn($color, $white);
+        @include enable-active($color, $white);
+      }
+
+      &.inverted {
+        @include generate-btn(transparent, inherit);
+        @include enable-active($color, $white);
+      }
     }
   }
 
   &.outline {
     @each $name, $color in $btn-colors {
       &.#{$name} {
-        @include generate-local(transparent, $color, $color, true);
-        @include generate-active($color, $white, $color, lighten($color, 30%));
+        @include generate-btn(transparent, $color);
+        @include enable-outline-active($color, $white);
+
+        &.with-outline-bg {
+          box-shadow: 0 0 0 2px darken($color, $default-color-increase-ratio) inset;
+        }
+
+        &.with-default-color {
+          color: $btn-default-text-color;
+          box-shadow: 0 0 0 1px darken($default-border-color, $default-color-increase-ratio) inset;
+        }
       }
     }
   }

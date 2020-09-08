@@ -1,24 +1,40 @@
-@mixin add-btn-content($bg-color, $font-color) {
-  @include generate-btn($bg-color, $font-color);
-  @include enable-active($bg-color, $font-color);
-  transition: background .3s, box-shadow .3s;
-}
 
 @mixin generate-btn($bg-color, $font-color) {
   background: $bg-color;
   color: $font-color;
-
-  &.with-outline-bg {
-    box-shadow: 0 0 0 2px darken($bg-color, $default-color-increase-ratio) inset;
-  }
-
-  &.with-default-color {
-    color: $btn-default-text-color;
-    box-shadow: none;
-  }
 }
 
 @mixin enable-active($bg-color, $font-color) {
+  //once the button is disabled, focus and active won't be triggered, only hover needs to be handled
+  $darken-color-1: darken($bg-color, $default-bg-color-increase-ratio);
+  $active-color: darken($bg-color, $default-bg-color-increase-ratio-active);
+
+  &:not(:disabled) {
+    &:focus, &:hover {
+      color: $font-color;
+      background: $darken-color-1;
+    }
+
+    &:focus, &.active {
+      box-shadow: 0 0 0 0.2rem lighten($bg-color, $default-box-shadow-color-increase-ratio-active);
+      z-index: map_get($z-index, "widget");
+    }
+
+    &:active {
+      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
+      background: $active-color;
+    }
+
+    &.active {
+      color: $font-color;
+      background-color: lighten($bg-color, $default-bg-color-increase-ratio);
+    }
+
+  }
+}
+
+
+@mixin enable-outline-active($bg-color, $font-color) {
   //once the button is disabled, focus and active won't be triggered, only hover needs to be handled
   $darken-color-1: darken($bg-color, $default-bg-color-increase-ratio);
   $active-color: darken($bg-color, $default-bg-color-increase-ratio-active);
@@ -35,7 +51,7 @@
 
       &.no-outline-bg {
         background: transparent;
-        color: $font-color;
+        color: $bg-color;
       }
     }
 
@@ -50,7 +66,7 @@
 
       &.no-outline-bg {
         background: transparent;
-        color: $font-color;
+        color: $bg-color;
       }
     }
 
@@ -63,18 +79,16 @@
         color: $font-color;
       }
 
-      &.with-default-color {
-        //border-color: darken($active-bdr-color, $default-color-increase-ratio);
-      }
-
       &.no-outline-bg {
         background: transparent;
-        color: $font-color;
+        color: $bg-color;
       }
     }
 
   }
 }
+
+
 
 
 @mixin add-simple-button-content($btn-bg-color, $btn-color, $btn-bdr-color,  $btn-boxshadow-color) {
