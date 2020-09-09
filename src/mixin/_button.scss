@@ -1,3 +1,6 @@
+@function get-text-color($name){
+  @return if($name == 'gray' or $name== 'gray-darker' or $name=='light-gray', $text-color, $white)
+}
 
 @mixin generate-btn($bg-color, $font-color) {
   background: $bg-color;
@@ -21,168 +24,125 @@
     }
 
     &:active {
-      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
       background: $active-color;
     }
 
     &.active {
       color: $font-color;
-      background-color: lighten($bg-color, $default-bg-color-increase-ratio);
+      background: lighten($bg-color, $default-bg-color-increase-ratio);
     }
 
   }
 }
 
+@mixin generate-hover($bg-color, $font-color, $box-color, $has-box) {
+  color: $font-color;
+  background: $bg-color;
+
+  &.with-outline-bg {
+    background: $bg-color;
+    color: $font-color;
+    box-shadow: 0 0 0 .2rem lighten($bg-color, $default-box-shadow-color-increase-ratio-active), 0 0 0 1px $bg-color inset;
+    z-index: map_get($z-index, "widget");
+  }
+
+  &.no-outline-bg {
+    background: transparent;
+    color: $bg-color;
+    box-shadow: 0 0 0 1px $box-color inset;
+    z-index: map_get($z-index, "widget");
+  }
+}
 
 @mixin enable-outline-active($bg-color, $font-color) {
   //once the button is disabled, focus and active won't be triggered, only hover needs to be handled
   $darken-color-1: darken($bg-color, $default-bg-color-increase-ratio);
   $active-color: darken($bg-color, $default-bg-color-increase-ratio-active);
+  $box-color: lighten($bg-color, $default-box-shadow-color-increase-ratio-active);
 
   &:not(:disabled) {
-    &:focus, &:hover {
+    &:hover {
       color: $font-color;
-      background: $darken-color-1;
+      background: $bg-color;
+      z-index: map_get($z-index, "widget");
 
       &.with-outline-bg {
-        background: $darken-color-1;
+        background: $bg-color;
         color: $font-color;
       }
 
       &.no-outline-bg {
         background: transparent;
         color: $bg-color;
+        box-shadow: 0 0 0 1px $darken-color-1 inset;
+        z-index: map_get($z-index, "widget");
+      }
+
+      &.inverted-outline {
+        box-shadow: 0 0 0 2px $darken-color-1 inset;
       }
     }
 
-    &:focus, &.active {
-      box-shadow: 0 0 0 0.2rem lighten($bg-color, $default-box-shadow-color-increase-ratio-active);
+    &:focus {
+      color: $font-color;
+      background: $bg-color;
       z-index: map_get($z-index, "widget");
+
+      &.with-outline-bg {
+        background: $bg-color;
+        color: $font-color;
+        box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
+      }
+
+      &.no-outline-bg {
+        background: transparent;
+        color: $bg-color;
+        box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
+      }
+
+      &.inverted-outline {
+        box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
+      }
     }
 
     &:active {
-      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
+      box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
+      z-index: map_get($z-index, "widget");
       background: $active-color;
 
       &.no-outline-bg {
         background: transparent;
         color: $bg-color;
+        box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
+      }
+
+      &.inverted-outline {
+        box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
       }
     }
 
     &.active {
       color: $font-color;
-      background-color: lighten($bg-color, $default-bg-color-increase-ratio);
-
-      &.with-outline-bg {
-        background-color: lighten($bg-color, $default-bg-color-increase-ratio);
-        color: $font-color;
-      }
+      background: lighten($bg-color, $default-bg-color-increase-ratio);
+      z-index: map_get($z-index, "widget");
 
       &.no-outline-bg {
         background: transparent;
         color: $bg-color;
+        box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
+
       }
-    }
-
-  }
-}
-
-
-
-
-@mixin add-simple-button-content($btn-bg-color, $btn-color, $btn-bdr-color,  $btn-boxshadow-color) {
-  @include generate-local($btn-bg-color, $btn-color, $btn-bdr-color);
-  @include generate-active($btn-bg-color, $btn-color, $btn-bdr-color, $btn-boxshadow-color);
-
-  &.inverted {
-    border: 1px solid transparent;
-  }
-}
-
-@mixin add-simple-invented-button($btn-bg-color, $btn-color, $btn-bdr-color,  $btn-boxshadow-color,
-   $active-btn-bg-color, $active-btn-color, $active-btn-bdr-color,  $active-btn-boxshadow-color) {
-  @include generate-local($btn-bg-color, $btn-color, $btn-bdr-color);
-  @include generate-active($active-btn-bg-color, $active-btn-color, $active-btn-bdr-color, $active-btn-boxshadow-color);
-}
-
-@mixin generate-local($bg-color,$color,$bdr-color, $has-border: false) {
-  background: $bg-color;
-  color: $color;
-
-  &.with-outline-bg {
-    //background: transparent;
-    box-shadow: 0 0 0 2px darken($bdr-color, $default-color-increase-ratio) inset;
-    //box-shadow: 0 0 0 2px $bdr-color inset; //using box-shadow to enhance the border
-  }
-
-  &.with-default-color {
-    color: $btn-default-text-color;
-    //border-color: $default-border-color;
-    box-shadow: none;
-  }
-}
-
-@mixin generate-active($active-bg-color,$btn-text-color,$active-bdr-color, $btn-boxshadow-color) {
-
-  //once the button is disabled, focus and active won't be triggered, only hover needs to be handled
-  &:not(:disabled) {
-    &:focus, &:hover {
-      color: $btn-text-color;
-      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
-      background: darken($active-bg-color, $default-bg-color-increase-ratio);
 
       &.with-outline-bg {
-        background: darken($active-bg-color, $default-bg-color-increase-ratio);
-        color: $btn-text-color;
-        //box-shadow: 0 0 0 1px darken($active-bdr-color, $default-color-increase-ratio) inset; //using box-shadow to enhance the border
+        box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
       }
 
-      &.no-outline-bg {
-        background: transparent;
-        color: $active-bg-color;
+      &.inverted-outline {
+        box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
       }
     }
-
-    &:focus, &.active {
-      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
-      @if $btn-boxshadow-color {
-        box-shadow: 0 0 0 0.2rem $btn-boxshadow-color;
-      }
-      z-index: map_get($z-index, "widget");
-      //position: relative;
-    }
-
-    &:active {
-      //border-color: darken($active-bdr-color, $default-color-increase-ratio);
-      background: darken($active-bg-color, $default-bg-color-increase-ratio-active);
-
-      &.no-outline-bg {
-        background: transparent;
-        color: $active-bg-color;
-      }
-    }
-
-    &.active {
-      color: $btn-text-color;
-      background-color: lighten($active-bg-color, $default-bg-color-increase-ratio);
-
-      &.with-outline-bg {
-        background-color: lighten($active-bg-color, $default-bg-color-increase-ratio);
-        color: $btn-text-color;
-      }
-
-      &.with-default-color {
-        //border-color: darken($active-bdr-color, $default-color-increase-ratio);
-      }
-
-      &.no-outline-bg {
-        background: transparent;
-        color: $active-bg-color;
-      }
-    }
-
   }
+
 }
 
 /**

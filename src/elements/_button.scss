@@ -34,8 +34,9 @@
   @each $name, $color in $btn-colors {
     &.#{$name} {
       &.normal {
-        @include generate-btn($color, $white);
-        @include enable-active($color, $white);
+        color: get-text-color($name);//todo
+        background: $color;
+        @include enable-active($color, get-text-color($name));
       }
 
       &.inverted {
@@ -49,7 +50,6 @@
     @each $name, $color in $btn-colors {
       &.#{$name} {
         @include generate-btn(transparent, $color);
-        @include enable-outline-active($color, $white);
 
         &.with-outline-bg {
           box-shadow: 0 0 0 2px darken($color, $default-color-increase-ratio) inset;
@@ -59,6 +59,13 @@
           color: $btn-default-text-color;
           box-shadow: 0 0 0 1px darken($default-border-color, $default-color-increase-ratio) inset;
         }
+
+        &.inverted-outline {
+          color: $white;
+          box-shadow: 0 0 0 2px darken($white, $default-color-increase-ratio) inset;
+        }
+
+        @include enable-outline-active($color, $white);
       }
     }
   }
@@ -73,11 +80,6 @@
       margin-top: $btn-margin-top-button;
     }
   }
-
-  //同级的button但不是block button的，默认margin-left:0.5rem
-  /* + .button:not(.block), + .button-dropdown, + .dropdown {
-     margin-left: $btn-margin-left-button;
-   }*/
 
   &.circle {
     @include flex-center(inline-flex);
