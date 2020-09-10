@@ -36,6 +36,7 @@ $text-ok-color: $green;
 $text-warning-color: $yellow;
 $text-error-color: $red;
 $text-shadow: 1px 1px 2px #333, 0 0 15px $white, 0 0 5px $blue;
+$text-shadow-light: 0 0 20px $white;
 $default-primary-background: linear-gradient(135deg, lighten($blue, 5%), lighten($blue, 10%), $blue);
 
 //there will be corresponding buttons generated if the property starts with "color-primary"
