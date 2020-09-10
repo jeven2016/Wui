@@ -1,38 +1,46 @@
+@mixin justify($position) {
+  justify-content: #{$position} !important;
+}
+
+@mixin align($position) {
+  align-items: #{$position} !important;
+}
+
 
 .flex-adjust {
   &.justify-start {
-    justify-content: flex-start;
+    @include justify(flex-start);
   }
 
   &.justify-end {
-    justify-content: flex-end;
+    @include justify(flex-end);
   }
 
   &.justify-center {
-    justify-content: center;
+    @include justify(center);
   }
 
   &.justify-around {
-    justify-content: space-around;
+    @include justify(space-around);
   }
 
   &.justify-between {
-    justify-content: space-between;
+    @include justify(space-between);
   }
 
   &.justify-evenly {
-    justify-content: space-evenly;
+    @include justify(space-evenly);
   }
 
   &.align-start {
-    align-items: flex-start;
+    @include align(flex-start);
   }
 
   &.align-end {
-    align-items: flex-end;
+    @include align(flex-end);
   }
 
   &.align-center {
-    align-items: center;
+    @include align(center);
   }
 }
