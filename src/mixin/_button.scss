@@ -1,4 +1,4 @@
-@function get-text-color($name){
+@function get-text-color($name) {
   @return if($name == 'gray' or $name== 'gray-darker' or $name=='light-gray', $text-color, $white)
 }
 
@@ -118,6 +118,7 @@
 
       &.inverted-outline {
         box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
+        text-shadow: $text-shadow-light;
       }
     }
 
@@ -139,6 +140,7 @@
 
       &.inverted-outline {
         box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
+        text-shadow: $text-shadow-light;
       }
     }
   }

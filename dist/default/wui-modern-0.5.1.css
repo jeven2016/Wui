@@ -2188,7 +2188,8 @@ $container-offset: 1.5rem;
         color: #49b847;
         box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset; }
       .button.outline.ok:not(:disabled):active.inverted-outline, .button-group.outline > .ok.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset; }
+        box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.ok:not(:disabled).active, .button-group.outline > .ok.button:not(:disabled).active {
       color: #fff;
       background: #5bbf59;
@@ -2200,7 +2201,8 @@ $container-offset: 1.5rem;
       .button.outline.ok:not(:disabled).active.with-outline-bg, .button-group.outline > .ok.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset; }
       .button.outline.ok:not(:disabled).active.inverted-outline, .button-group.outline > .ok.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset; }
+        box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.error, .button-group.outline > .error.button {
     background: transparent;
     color: #ff350e; }
@@ -2249,7 +2251,8 @@ $container-offset: 1.5rem;
         color: #ff350e;
         box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset; }
       .button.outline.error:not(:disabled):active.inverted-outline, .button-group.outline > .error.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset; }
+        box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.error:not(:disabled).active, .button-group.outline > .error.button:not(:disabled).active {
       color: #fff;
       background: #ff4a28;
@@ -2261,7 +2264,8 @@ $container-offset: 1.5rem;
       .button.outline.error:not(:disabled).active.with-outline-bg, .button-group.outline > .error.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset; }
       .button.outline.error:not(:disabled).active.inverted-outline, .button-group.outline > .error.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset; }
+        box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.primary, .button-group.outline > .primary.button {
     background: transparent;
     color: #0ca0ff; }
@@ -2310,7 +2314,8 @@ $container-offset: 1.5rem;
         color: #0ca0ff;
         box-shadow: 0 0 0 0.2rem #72c8ff, 0 0 0 1px #0ca0ff inset; }
       .button.outline.primary:not(:disabled):active.inverted-outline, .button-group.outline > .primary.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #72c8ff, 0 0 0 1px #0ca0ff inset; }
+        box-shadow: 0 0 0 0.2rem #72c8ff, 0 0 0 1px #0ca0ff inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.primary:not(:disabled).active, .button-group.outline > .primary.button:not(:disabled).active {
       color: #fff;
       background: #26aaff;
@@ -2322,7 +2327,8 @@ $container-offset: 1.5rem;
       .button.outline.primary:not(:disabled).active.with-outline-bg, .button-group.outline > .primary.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #72c8ff, 0 0 0 1px #0ca0ff inset; }
       .button.outline.primary:not(:disabled).active.inverted-outline, .button-group.outline > .primary.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #72c8ff, 0 0 0 1px #0ca0ff inset; }
+        box-shadow: 0 0 0 0.2rem #72c8ff, 0 0 0 1px #0ca0ff inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.secondary, .button-group.outline > .secondary.button, .button-group.outline > .button.loader.third, .button.outline.loader.third {
     background: transparent;
     color: #6c757d; }
@@ -2371,7 +2377,8 @@ $container-offset: 1.5rem;
         color: #6c757d;
         box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset; }
       .button.outline.secondary:not(:disabled):active.inverted-outline, .button-group.outline > .secondary.button:not(:disabled):active.inverted-outline, .button-group.outline > .button.loader.third:not(:disabled):active.inverted-outline, .button.outline.loader.third:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset; }
+        box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.secondary:not(:disabled).active, .button-group.outline > .secondary.button:not(:disabled).active, .button-group.outline > .button.loader.third:not(:disabled).active, .button.outline.loader.third:not(:disabled).active {
       color: #fff;
       background: #78828a;
@@ -2383,7 +2390,8 @@ $container-offset: 1.5rem;
       .button.outline.secondary:not(:disabled).active.with-outline-bg, .button-group.outline > .secondary.button:not(:disabled).active.with-outline-bg, .button-group.outline > .button.loader.third:not(:disabled).active.with-outline-bg, .button.outline.loader.third:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset; }
       .button.outline.secondary:not(:disabled).active.inverted-outline, .button-group.outline > .secondary.button:not(:disabled).active.inverted-outline, .button-group.outline > .button.loader.third:not(:disabled).active.inverted-outline, .button.outline.loader.third:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset; }
+        box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.info, .button-group.outline > .info.button {
     background: transparent;
     color: #199cb8; }
@@ -2432,7 +2440,8 @@ $container-offset: 1.5rem;
         color: #199cb8;
         box-shadow: 0 0 0 0.2rem #50cde7, 0 0 0 1px #199cb8 inset; }
       .button.outline.info:not(:disabled):active.inverted-outline, .button-group.outline > .info.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #50cde7, 0 0 0 1px #199cb8 inset; }
+        box-shadow: 0 0 0 0.2rem #50cde7, 0 0 0 1px #199cb8 inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.info:not(:disabled).active, .button-group.outline > .info.button:not(:disabled).active {
       color: #fff;
       background: #1cafce;
@@ -2444,7 +2453,8 @@ $container-offset: 1.5rem;
       .button.outline.info:not(:disabled).active.with-outline-bg, .button-group.outline > .info.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #50cde7, 0 0 0 1px #199cb8 inset; }
       .button.outline.info:not(:disabled).active.inverted-outline, .button-group.outline > .info.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #50cde7, 0 0 0 1px #199cb8 inset; }
+        box-shadow: 0 0 0 0.2rem #50cde7, 0 0 0 1px #199cb8 inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.success, .button-group.outline > .success.button {
     background: transparent;
     color: #49b847; }
@@ -2493,7 +2503,8 @@ $container-offset: 1.5rem;
         color: #49b847;
         box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset; }
       .button.outline.success:not(:disabled):active.inverted-outline, .button-group.outline > .success.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset; }
+        box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.success:not(:disabled).active, .button-group.outline > .success.button:not(:disabled).active {
       color: #fff;
       background: #5bbf59;
@@ -2505,7 +2516,8 @@ $container-offset: 1.5rem;
       .button.outline.success:not(:disabled).active.with-outline-bg, .button-group.outline > .success.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset; }
       .button.outline.success:not(:disabled).active.inverted-outline, .button-group.outline > .success.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset; }
+        box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.warning, .button-group.outline > .warning.button {
     background: transparent;
     color: #fbbe11; }
@@ -2554,7 +2566,8 @@ $container-offset: 1.5rem;
         color: #fbbe11;
         box-shadow: 0 0 0 0.2rem #fdd975, 0 0 0 1px #fbbe11 inset; }
       .button.outline.warning:not(:disabled):active.inverted-outline, .button-group.outline > .warning.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #fdd975, 0 0 0 1px #fbbe11 inset; }
+        box-shadow: 0 0 0 0.2rem #fdd975, 0 0 0 1px #fbbe11 inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.warning:not(:disabled).active, .button-group.outline > .warning.button:not(:disabled).active {
       color: #fff;
       background: #fbc52a;
@@ -2566,7 +2579,8 @@ $container-offset: 1.5rem;
       .button.outline.warning:not(:disabled).active.with-outline-bg, .button-group.outline > .warning.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #fdd975, 0 0 0 1px #fbbe11 inset; }
       .button.outline.warning:not(:disabled).active.inverted-outline, .button-group.outline > .warning.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #fdd975, 0 0 0 1px #fbbe11 inset; }
+        box-shadow: 0 0 0 0.2rem #fdd975, 0 0 0 1px #fbbe11 inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.danger, .button-group.outline > .danger.button {
     background: transparent;
     color: #ff350e; }
@@ -2615,7 +2629,8 @@ $container-offset: 1.5rem;
         color: #ff350e;
         box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset; }
       .button.outline.danger:not(:disabled):active.inverted-outline, .button-group.outline > .danger.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset; }
+        box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.danger:not(:disabled).active, .button-group.outline > .danger.button:not(:disabled).active {
       color: #fff;
       background: #ff4a28;
@@ -2627,7 +2642,8 @@ $container-offset: 1.5rem;
       .button.outline.danger:not(:disabled).active.with-outline-bg, .button-group.outline > .danger.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset; }
       .button.outline.danger:not(:disabled).active.inverted-outline, .button-group.outline > .danger.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset; }
+        box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.black, .button-group.outline > .black.button {
     background: transparent;
     color: #000000; }
@@ -2676,7 +2692,8 @@ $container-offset: 1.5rem;
         color: #000000;
         box-shadow: 0 0 0 0.2rem #333333, 0 0 0 1px #000000 inset; }
       .button.outline.black:not(:disabled):active.inverted-outline, .button-group.outline > .black.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #333333, 0 0 0 1px #000000 inset; }
+        box-shadow: 0 0 0 0.2rem #333333, 0 0 0 1px #000000 inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.black:not(:disabled).active, .button-group.outline > .black.button:not(:disabled).active {
       color: #fff;
       background: #0d0d0d;
@@ -2688,7 +2705,8 @@ $container-offset: 1.5rem;
       .button.outline.black:not(:disabled).active.with-outline-bg, .button-group.outline > .black.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #333333, 0 0 0 1px #000000 inset; }
       .button.outline.black:not(:disabled).active.inverted-outline, .button-group.outline > .black.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #333333, 0 0 0 1px #000000 inset; }
+        box-shadow: 0 0 0 0.2rem #333333, 0 0 0 1px #000000 inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.blue, .button-group.outline > .blue.button {
     background: transparent;
     color: #0ca0ff; }
@@ -2737,7 +2755,8 @@ $container-offset: 1.5rem;
         color: #0ca0ff;
         box-shadow: 0 0 0 0.2rem #72c8ff, 0 0 0 1px #0ca0ff inset; }
       .button.outline.blue:not(:disabled):active.inverted-outline, .button-group.outline > .blue.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #72c8ff, 0 0 0 1px #0ca0ff inset; }
+        box-shadow: 0 0 0 0.2rem #72c8ff, 0 0 0 1px #0ca0ff inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.blue:not(:disabled).active, .button-group.outline > .blue.button:not(:disabled).active {
       color: #fff;
       background: #26aaff;
@@ -2749,7 +2768,8 @@ $container-offset: 1.5rem;
       .button.outline.blue:not(:disabled).active.with-outline-bg, .button-group.outline > .blue.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #72c8ff, 0 0 0 1px #0ca0ff inset; }
       .button.outline.blue:not(:disabled).active.inverted-outline, .button-group.outline > .blue.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #72c8ff, 0 0 0 1px #0ca0ff inset; }
+        box-shadow: 0 0 0 0.2rem #72c8ff, 0 0 0 1px #0ca0ff inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.brown, .button-group.outline > .brown.button {
     background: transparent;
     color: #a5742f; }
@@ -2798,7 +2818,8 @@ $container-offset: 1.5rem;
         color: #a5742f;
         box-shadow: 0 0 0 0.2rem #d4a666, 0 0 0 1px #a5742f inset; }
       .button.outline.brown:not(:disabled):active.inverted-outline, .button-group.outline > .brown.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #d4a666, 0 0 0 1px #a5742f inset; }
+        box-shadow: 0 0 0 0.2rem #d4a666, 0 0 0 1px #a5742f inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.brown:not(:disabled).active, .button-group.outline > .brown.button:not(:disabled).active {
       color: #fff;
       background: #b98235;
@@ -2810,7 +2831,8 @@ $container-offset: 1.5rem;
       .button.outline.brown:not(:disabled).active.with-outline-bg, .button-group.outline > .brown.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #d4a666, 0 0 0 1px #a5742f inset; }
       .button.outline.brown:not(:disabled).active.inverted-outline, .button-group.outline > .brown.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #d4a666, 0 0 0 1px #a5742f inset; }
+        box-shadow: 0 0 0 0.2rem #d4a666, 0 0 0 1px #a5742f inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.cyan, .button-group.outline > .cyan.button {
     background: transparent;
     color: #199cb8; }
@@ -2859,7 +2881,8 @@ $container-offset: 1.5rem;
         color: #199cb8;
         box-shadow: 0 0 0 0.2rem #50cde7, 0 0 0 1px #199cb8 inset; }
       .button.outline.cyan:not(:disabled):active.inverted-outline, .button-group.outline > .cyan.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #50cde7, 0 0 0 1px #199cb8 inset; }
+        box-shadow: 0 0 0 0.2rem #50cde7, 0 0 0 1px #199cb8 inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.cyan:not(:disabled).active, .button-group.outline > .cyan.button:not(:disabled).active {
       color: #fff;
       background: #1cafce;
@@ -2871,7 +2894,8 @@ $container-offset: 1.5rem;
       .button.outline.cyan:not(:disabled).active.with-outline-bg, .button-group.outline > .cyan.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #50cde7, 0 0 0 1px #199cb8 inset; }
       .button.outline.cyan:not(:disabled).active.inverted-outline, .button-group.outline > .cyan.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #50cde7, 0 0 0 1px #199cb8 inset; }
+        box-shadow: 0 0 0 0.2rem #50cde7, 0 0 0 1px #199cb8 inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.dark, .button-group.outline > .dark.button {
     background: transparent;
     color: #6c757d; }
@@ -2920,7 +2944,8 @@ $container-offset: 1.5rem;
         color: #6c757d;
         box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset; }
       .button.outline.dark:not(:disabled):active.inverted-outline, .button-group.outline > .dark.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset; }
+        box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.dark:not(:disabled).active, .button-group.outline > .dark.button:not(:disabled).active {
       color: #fff;
       background: #78828a;
@@ -2932,7 +2957,8 @@ $container-offset: 1.5rem;
       .button.outline.dark:not(:disabled).active.with-outline-bg, .button-group.outline > .dark.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset; }
       .button.outline.dark:not(:disabled).active.inverted-outline, .button-group.outline > .dark.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset; }
+        box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.green, .button-group.outline > .green.button {
     background: transparent;
     color: #49b847; }
@@ -2981,7 +3007,8 @@ $container-offset: 1.5rem;
         color: #49b847;
         box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset; }
       .button.outline.green:not(:disabled):active.inverted-outline, .button-group.outline > .green.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset; }
+        box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.green:not(:disabled).active, .button-group.outline > .green.button:not(:disabled).active {
       color: #fff;
       background: #5bbf59;
@@ -2993,7 +3020,8 @@ $container-offset: 1.5rem;
       .button.outline.green:not(:disabled).active.with-outline-bg, .button-group.outline > .green.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset; }
       .button.outline.green:not(:disabled).active.inverted-outline, .button-group.outline > .green.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset; }
+        box-shadow: 0 0 0 0.2rem #92d491, 0 0 0 1px #49b847 inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.gray, .button-group.outline > .gray.button {
     background: transparent;
     color: #ccc; }
@@ -3042,7 +3070,8 @@ $container-offset: 1.5rem;
         color: #ccc;
         box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #ccc inset; }
       .button.outline.gray:not(:disabled):active.inverted-outline, .button-group.outline > .gray.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #ccc inset; }
+        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #ccc inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.gray:not(:disabled).active, .button-group.outline > .gray.button:not(:disabled).active {
       color: #fff;
       background: #d9d9d9;
@@ -3054,7 +3083,8 @@ $container-offset: 1.5rem;
       .button.outline.gray:not(:disabled).active.with-outline-bg, .button-group.outline > .gray.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #ccc inset; }
       .button.outline.gray:not(:disabled).active.inverted-outline, .button-group.outline > .gray.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #ccc inset; }
+        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #ccc inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.gray-darker, .button-group.outline > .gray-darker.button {
     background: transparent;
     color: #6c757d; }
@@ -3103,7 +3133,8 @@ $container-offset: 1.5rem;
         color: #6c757d;
         box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset; }
       .button.outline.gray-darker:not(:disabled):active.inverted-outline, .button-group.outline > .gray-darker.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset; }
+        box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.gray-darker:not(:disabled).active, .button-group.outline > .gray-darker.button:not(:disabled).active {
       color: #fff;
       background: #78828a;
@@ -3115,7 +3146,8 @@ $container-offset: 1.5rem;
       .button.outline.gray-darker:not(:disabled).active.with-outline-bg, .button-group.outline > .gray-darker.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset; }
       .button.outline.gray-darker:not(:disabled).active.inverted-outline, .button-group.outline > .gray-darker.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset; }
+        box-shadow: 0 0 0 0.2rem #a1a8ae, 0 0 0 1px #6c757d inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.light, .button-group.outline > .light.button {
     background: transparent;
     color: #f8f9fa; }
@@ -3164,7 +3196,8 @@ $container-offset: 1.5rem;
         color: #f8f9fa;
         box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #f8f9fa inset; }
       .button.outline.light:not(:disabled):active.inverted-outline, .button-group.outline > .light.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #f8f9fa inset; }
+        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #f8f9fa inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.light:not(:disabled).active, .button-group.outline > .light.button:not(:disabled).active {
       color: #fff;
       background: white;
@@ -3176,7 +3209,8 @@ $container-offset: 1.5rem;
       .button.outline.light:not(:disabled).active.with-outline-bg, .button-group.outline > .light.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #f8f9fa inset; }
       .button.outline.light:not(:disabled).active.inverted-outline, .button-group.outline > .light.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #f8f9fa inset; }
+        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #f8f9fa inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.light-gray, .button-group.outline > .light-gray.button {
     background: transparent;
     color: #f5f5f5; }
@@ -3225,7 +3259,8 @@ $container-offset: 1.5rem;
         color: #f5f5f5;
         box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #f5f5f5 inset; }
       .button.outline.light-gray:not(:disabled):active.inverted-outline, .button-group.outline > .light-gray.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #f5f5f5 inset; }
+        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #f5f5f5 inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.light-gray:not(:disabled).active, .button-group.outline > .light-gray.button:not(:disabled).active {
       color: #fff;
       background: white;
@@ -3237,7 +3272,8 @@ $container-offset: 1.5rem;
       .button.outline.light-gray:not(:disabled).active.with-outline-bg, .button-group.outline > .light-gray.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #f5f5f5 inset; }
       .button.outline.light-gray:not(:disabled).active.inverted-outline, .button-group.outline > .light-gray.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #f5f5f5 inset; }
+        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #f5f5f5 inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.orange, .button-group.outline > .orange.button {
     background: transparent;
     color: #f2791a; }
@@ -3286,7 +3322,8 @@ $container-offset: 1.5rem;
         color: #f2791a;
         box-shadow: 0 0 0 0.2rem #f7b17b, 0 0 0 1px #f2791a inset; }
       .button.outline.orange:not(:disabled):active.inverted-outline, .button-group.outline > .orange.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #f7b17b, 0 0 0 1px #f2791a inset; }
+        box-shadow: 0 0 0 0.2rem #f7b17b, 0 0 0 1px #f2791a inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.orange:not(:disabled).active, .button-group.outline > .orange.button:not(:disabled).active {
       color: #fff;
       background: #f38732;
@@ -3298,7 +3335,8 @@ $container-offset: 1.5rem;
       .button.outline.orange:not(:disabled).active.with-outline-bg, .button-group.outline > .orange.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #f7b17b, 0 0 0 1px #f2791a inset; }
       .button.outline.orange:not(:disabled).active.inverted-outline, .button-group.outline > .orange.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #f7b17b, 0 0 0 1px #f2791a inset; }
+        box-shadow: 0 0 0 0.2rem #f7b17b, 0 0 0 1px #f2791a inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.pink, .button-group.outline > .pink.button {
     background: transparent;
     color: #e02c92; }
@@ -3347,7 +3385,8 @@ $container-offset: 1.5rem;
         color: #e02c92;
         box-shadow: 0 0 0 0.2rem #ed85c0, 0 0 0 1px #e02c92 inset; }
       .button.outline.pink:not(:disabled):active.inverted-outline, .button-group.outline > .pink.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #ed85c0, 0 0 0 1px #e02c92 inset; }
+        box-shadow: 0 0 0 0.2rem #ed85c0, 0 0 0 1px #e02c92 inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.pink:not(:disabled).active, .button-group.outline > .pink.button:not(:disabled).active {
       color: #fff;
       background: #e3429d;
@@ -3359,7 +3398,8 @@ $container-offset: 1.5rem;
       .button.outline.pink:not(:disabled).active.with-outline-bg, .button-group.outline > .pink.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #ed85c0, 0 0 0 1px #e02c92 inset; }
       .button.outline.pink:not(:disabled).active.inverted-outline, .button-group.outline > .pink.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #ed85c0, 0 0 0 1px #e02c92 inset; }
+        box-shadow: 0 0 0 0.2rem #ed85c0, 0 0 0 1px #e02c92 inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.purple, .button-group.outline > .purple.button {
     background: transparent;
     color: #af3ce5; }
@@ -3408,7 +3448,8 @@ $container-offset: 1.5rem;
         color: #af3ce5;
         box-shadow: 0 0 0 0.2rem #d496f1, 0 0 0 1px #af3ce5 inset; }
       .button.outline.purple:not(:disabled):active.inverted-outline, .button-group.outline > .purple.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #d496f1, 0 0 0 1px #af3ce5 inset; }
+        box-shadow: 0 0 0 0.2rem #d496f1, 0 0 0 1px #af3ce5 inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.purple:not(:disabled).active, .button-group.outline > .purple.button:not(:disabled).active {
       color: #fff;
       background: #b853e8;
@@ -3420,7 +3461,8 @@ $container-offset: 1.5rem;
       .button.outline.purple:not(:disabled).active.with-outline-bg, .button-group.outline > .purple.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #d496f1, 0 0 0 1px #af3ce5 inset; }
       .button.outline.purple:not(:disabled).active.inverted-outline, .button-group.outline > .purple.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #d496f1, 0 0 0 1px #af3ce5 inset; }
+        box-shadow: 0 0 0 0.2rem #d496f1, 0 0 0 1px #af3ce5 inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.red, .button-group.outline > .red.button {
     background: transparent;
     color: #ff350e; }
@@ -3469,7 +3511,8 @@ $container-offset: 1.5rem;
         color: #ff350e;
         box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset; }
       .button.outline.red:not(:disabled):active.inverted-outline, .button-group.outline > .red.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset; }
+        box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.red:not(:disabled).active, .button-group.outline > .red.button:not(:disabled).active {
       color: #fff;
       background: #ff4a28;
@@ -3481,7 +3524,8 @@ $container-offset: 1.5rem;
       .button.outline.red:not(:disabled).active.with-outline-bg, .button-group.outline > .red.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset; }
       .button.outline.red:not(:disabled).active.inverted-outline, .button-group.outline > .red.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset; }
+        box-shadow: 0 0 0 0.2rem #ff8a74, 0 0 0 1px #ff350e inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.yellow, .button-group.outline > .yellow.button {
     background: transparent;
     color: #fbbe11; }
@@ -3530,7 +3574,8 @@ $container-offset: 1.5rem;
         color: #fbbe11;
         box-shadow: 0 0 0 0.2rem #fdd975, 0 0 0 1px #fbbe11 inset; }
       .button.outline.yellow:not(:disabled):active.inverted-outline, .button-group.outline > .yellow.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #fdd975, 0 0 0 1px #fbbe11 inset; }
+        box-shadow: 0 0 0 0.2rem #fdd975, 0 0 0 1px #fbbe11 inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.yellow:not(:disabled).active, .button-group.outline > .yellow.button:not(:disabled).active {
       color: #fff;
       background: #fbc52a;
@@ -3542,7 +3587,8 @@ $container-offset: 1.5rem;
       .button.outline.yellow:not(:disabled).active.with-outline-bg, .button-group.outline > .yellow.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #fdd975, 0 0 0 1px #fbbe11 inset; }
       .button.outline.yellow:not(:disabled).active.inverted-outline, .button-group.outline > .yellow.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #fdd975, 0 0 0 1px #fbbe11 inset; }
+        box-shadow: 0 0 0 0.2rem #fdd975, 0 0 0 1px #fbbe11 inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.teal, .button-group.outline > .teal.button {
     background: transparent;
     color: #0d806d; }
@@ -3591,7 +3637,8 @@ $container-offset: 1.5rem;
         color: #0d806d;
         box-shadow: 0 0 0 0.2rem #16ddbc, 0 0 0 1px #0d806d inset; }
       .button.outline.teal:not(:disabled):active.inverted-outline, .button-group.outline > .teal.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #16ddbc, 0 0 0 1px #0d806d inset; }
+        box-shadow: 0 0 0 0.2rem #16ddbc, 0 0 0 1px #0d806d inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.teal:not(:disabled).active, .button-group.outline > .teal.button:not(:disabled).active {
       color: #fff;
       background: #0f9781;
@@ -3603,7 +3650,8 @@ $container-offset: 1.5rem;
       .button.outline.teal:not(:disabled).active.with-outline-bg, .button-group.outline > .teal.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #16ddbc, 0 0 0 1px #0d806d inset; }
       .button.outline.teal:not(:disabled).active.inverted-outline, .button-group.outline > .teal.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #16ddbc, 0 0 0 1px #0d806d inset; }
+        box-shadow: 0 0 0 0.2rem #16ddbc, 0 0 0 1px #0d806d inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.violet, .button-group.outline > .violet.button {
     background: transparent;
     color: #5f33c9; }
@@ -3652,7 +3700,8 @@ $container-offset: 1.5rem;
         color: #5f33c9;
         box-shadow: 0 0 0 0.2rem #9e83df, 0 0 0 1px #5f33c9 inset; }
       .button.outline.violet:not(:disabled):active.inverted-outline, .button-group.outline > .violet.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #9e83df, 0 0 0 1px #5f33c9 inset; }
+        box-shadow: 0 0 0 0.2rem #9e83df, 0 0 0 1px #5f33c9 inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.violet:not(:disabled).active, .button-group.outline > .violet.button:not(:disabled).active {
       color: #fff;
       background: #6e46d0;
@@ -3664,7 +3713,8 @@ $container-offset: 1.5rem;
       .button.outline.violet:not(:disabled).active.with-outline-bg, .button-group.outline > .violet.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem #9e83df, 0 0 0 1px #5f33c9 inset; }
       .button.outline.violet:not(:disabled).active.inverted-outline, .button-group.outline > .violet.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem #9e83df, 0 0 0 1px #5f33c9 inset; }
+        box-shadow: 0 0 0 0.2rem #9e83df, 0 0 0 1px #5f33c9 inset;
+        text-shadow: 0 0 20px #fff; }
   .button.outline.white, .button-group.outline > .white.button {
     background: transparent;
     color: #fff; }
@@ -3713,7 +3763,8 @@ $container-offset: 1.5rem;
         color: #fff;
         box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #fff inset; }
       .button.outline.white:not(:disabled):active.inverted-outline, .button-group.outline > .white.button:not(:disabled):active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #fff inset; }
+        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #fff inset;
+        text-shadow: 0 0 20px #fff; }
     .button.outline.white:not(:disabled).active, .button-group.outline > .white.button:not(:disabled).active {
       color: #fff;
       background: white;
@@ -3725,7 +3776,8 @@ $container-offset: 1.5rem;
       .button.outline.white:not(:disabled).active.with-outline-bg, .button-group.outline > .white.button:not(:disabled).active.with-outline-bg {
         box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #fff inset; }
       .button.outline.white:not(:disabled).active.inverted-outline, .button-group.outline > .white.button:not(:disabled).active.inverted-outline {
-        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #fff inset; }
+        box-shadow: 0 0 0 0.2rem white, 0 0 0 1px #fff inset;
+        text-shadow: 0 0 20px #fff; }
   .button.block {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -4043,7 +4095,6 @@ $container-offset: 1.5rem;
 
 .date-picker-info {
   display: flex;
-  flex: 1 1 100%;
   padding-bottom: .5rem; }
   .date-picker-info > .previous {
     display: -ms-flexbox;
@@ -4095,11 +4146,11 @@ $container-offset: 1.5rem;
   width: 20rem;
   background-color: #fff; }
 
-.dp-body, .year-cols {
+.dp-body {
   display: flex;
   flex-direction: column;
   flex: 1 1 100%;
-  height: 18.125rem;
+  height: 18rem;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; }
 
@@ -4119,9 +4170,20 @@ $container-offset: 1.5rem;
     font-weight: 500; }
 
 .year-cols {
-  color: rgba(0, 0, 0, 0.8); }
+  color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 100%; }
   .year-cols .button {
     align-self: center; }
+
+.year-range {
+  font-weight: 500;
+  cursor: pointer;
+  color: #0ca0ff; }
+
+.other-year {
+  color: #818a91; }
 
 .dialog > .body {
   min-height: 1rem;
