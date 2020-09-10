@@ -40,6 +40,7 @@ var config = {
         tree: true,
         stepper: true,
         datepicker: true,
+        popconfirm: true
       },
     },
 
