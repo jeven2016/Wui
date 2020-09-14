@@ -34,8 +34,9 @@ $animation-timeout: .2s;
     padding: 0.75rem 1rem;
     border-radius: $default-border-radius;
     margin-bottom: 0.5rem;
-    box-shadow: $default-card-shadow;
+    box-shadow: $alert-shadow;
   }
+
   //
   //&.active {
   //  visibility: visible;
@@ -121,7 +122,7 @@ $animation-timeout: .2s;
 
   &.alert-simple, &.alert-mini {
     border: 1px solid $default-border-color;
-    box-shadow: $default-card-shadow;
+    box-shadow: $alert-shadow;
     background: $white;
 
     > .alert-close {
