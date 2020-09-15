@@ -56,6 +56,7 @@
 
   th {
     font-weight: map-get($font-weight, 'light');
+    color: $text-color;
   }
 
   td {
@@ -73,7 +74,7 @@
   display: flex !important;
   justify-content: space-between;
   padding-bottom: .5rem;
-  color: $text-color;
+  color: lighten($text-color, 10%);
 
   > .left {
     display: flex;
@@ -132,7 +133,6 @@
 }
 
 
-
 .year-range {
   font-weight: map-get($font-weight, 'normal');
   cursor: pointer;
@@ -141,4 +141,8 @@
 
 .other-year {
   color: $text-comment-color;
+}
+
+.range-btn {
+  padding: .3rem .4rem;
 }

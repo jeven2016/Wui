@@ -4123,7 +4123,8 @@ $container-offset: 1.5rem;
   width: 100%;
   color: #818a91; }
   .date-picker-table th {
-    font-weight: 400; }
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.8); }
   .date-picker-table td {
     text-align: center;
     vertical-align: middle;
@@ -4135,7 +4136,7 @@ $container-offset: 1.5rem;
   display: flex !important;
   justify-content: space-between;
   padding-bottom: .5rem;
-  color: rgba(0, 0, 0, 0.8); }
+  color: rgba(26, 26, 26, 0.8); }
   .date-picker-footer > .left {
     display: flex;
     color: #0ca0ff; }
@@ -4184,6 +4185,9 @@ $container-offset: 1.5rem;
 
 .other-year {
   color: #818a91; }
+
+.range-btn {
+  padding: .3rem .4rem; }
 
 .dialog > .body {
   min-height: 1rem;
