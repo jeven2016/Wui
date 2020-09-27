@@ -236,10 +236,10 @@ $icon-input-left-icon-input-padding-left: 2rem;
 $icon-input-left-icon-input-large-input-padding: 0.75rem 1rem 0.75rem 2.5rem;
 $icon-input-left-icon-input-small-input-padding: 0.25rem 0.75rem 0.25rem 1.5rem;
 $icon-input-right-icon-input-padding-right: 2rem;
-$icon-input-large-padding: 0.75rem 0 0.75rem 1rem;
+$icon-input-large-padding: 0.75rem 0.25rem 0.75rem 1rem;
 $icon-input-large-icon-line-height: 1.5rem;
 $icon-input-large-icon-width: 1.5rem;
-$icon-input-small-padding: 0.25rem 0 0.25rem 0.75rem;
+$icon-input-small-padding: 0.25rem 0.25 0.25rem 0.75rem;
 $icon-input-small-icon-line-height: map-get($font-size, ' small ');
 $icon-input-small-icon-width: 0.75rem;
 
@@ -529,7 +529,7 @@ $form-form-item-label-col-margin-bottom: 0.5rem;
 $form-form-item-form-line-width: 100%;
 $form-form-item-info-line-height: 1rem;
 $form-form-item-info-margin: 0.25rem 0;
-$form-form-item-inline-margin-right: 0.5rem;
+$form-form-item-inline-margin-right: 0.75rem;
 
 //for table
 $table-width: 100%;

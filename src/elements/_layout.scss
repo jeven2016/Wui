@@ -10,9 +10,9 @@ $types: ('sm', 'md', 'lg', 'xl');
     flex-grow: 1;
   }
 
-  > [class^=col-] {
+/*  > [class^=col-] {
     padding: $grid-column-padding;
-  }
+  }*/
 
   > .col {
     display: flex;
