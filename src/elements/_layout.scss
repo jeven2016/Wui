@@ -11,9 +11,7 @@ $types: ('sm', 'md', 'lg', 'xl');
   }
 
   > [class^=col-] {
-    @include make-block {
-      padding: $grid-column-padding;
-    }
+    padding: $grid-column-padding;
   }
 
   > .col {

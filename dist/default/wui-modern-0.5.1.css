@@ -4360,7 +4360,7 @@ $container-offset: 1.5rem;
   position: relative;
   display: block; }
   .form .form-item {
-    margin-bottom: 0.75rem; }
+    margin-bottom: 1rem; }
     .form .form-item label {
       position: relative;
       display: block;
@@ -4631,8 +4631,6 @@ textarea.input {
   flex-wrap: wrap;
   flex-grow: 1; }
   .row > [class^=col-] {
-    position: relative;
-    display: block;
     padding: 0 0.25rem; }
   .row > .col {
     display: flex;
