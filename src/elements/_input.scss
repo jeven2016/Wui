@@ -93,11 +93,7 @@ textarea.input {
   border: $default-border;
   border-radius: $default-border-radius;
 
-  @include focus-active {
-    @extend %input-active-base;
-  }
-
-  &.active {
+  @include focus-active2 {
     @extend %input-active-base;
   }
 

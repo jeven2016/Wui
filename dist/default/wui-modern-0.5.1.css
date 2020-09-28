@@ -416,6 +416,27 @@ h1, h2, h3, h4, h5, h6 {
 .bg-transparent {
   background: transparent !important; }
 
+.border-info.ok, .border-info.success {
+  border-color: #49b847 !important; }
+  .border-info.ok.icon-input:not(.disabled):focus, .border-info.ok.icon-input:not(.disabled):hover, .border-info.success.icon-input:not(.disabled):focus, .border-info.success.icon-input:not(.disabled):hover {
+    box-shadow: 0 0 0 0.2rem #dbf1da; }
+  .border-info.ok.icon-input:not(.disabled).active, .border-info.success.icon-input:not(.disabled).active {
+    box-shadow: 0 0 0 0.2rem #dbf1da; }
+
+.border-info.warning {
+  border-color: #fbbe11 !important; }
+  .border-info.warning.icon-input:not(.disabled):focus, .border-info.warning.icon-input:not(.disabled):hover {
+    box-shadow: 0 0 0 0.2rem #fef5da; }
+  .border-info.warning.icon-input:not(.disabled).active {
+    box-shadow: 0 0 0 0.2rem #fef5da; }
+
+.border-info.error {
+  border-color: #ff350e !important; }
+  .border-info.error.icon-input:not(.disabled):focus, .border-info.error.icon-input:not(.disabled):hover {
+    box-shadow: 0 0 0 0.2rem #ffe0da; }
+  .border-info.error.icon-input:not(.disabled).active {
+    box-shadow: 0 0 0 0.2rem #ffe0da; }
+
 .base-btn, .button {
   display: -ms-inline-flexbox;
   display: -webkit-inline-flex;
@@ -603,6 +624,18 @@ a {
 
 .text.align-right {
   text-align: right !important; }
+
+.text.comment {
+  color: #818a91 !important; }
+
+.text.ok {
+  color: #49b847 !important; }
+
+.text.warning {
+  color: #fbbe11 !important; }
+
+.text.error {
+  color: #ff350e !important; }
 
 .text.comment {
   color: #818a91 !important; }
@@ -4359,22 +4392,27 @@ $container-offset: 1.5rem;
 .form {
   position: relative;
   display: block; }
-  .form .form-item {
+  .form .form-item.with-msg {
+    min-height: 4.25rem;
+    margin-bottom: .25rem; }
+  .form .form-item.normal {
     margin-bottom: 1rem; }
-    .form .form-item label {
-      position: relative;
-      display: block;
-      margin-bottom: 0.25rem; }
-    .form .form-item .label-col {
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem; }
-    .form .form-item .form-line {
-      width: 100%; }
-    .form .form-item .info {
-      position: relative;
-      display: block;
-      line-height: 1rem;
-      margin: 0.25rem 0; }
+  .form .form-item label {
+    position: relative;
+    display: block;
+    margin-bottom: 0.25rem; }
+  .form .form-item .label-col {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; }
+  .form .form-item .form-line {
+    width: 100%; }
+  .form .form-item .info {
+    position: relative;
+    display: block;
+    line-height: 1rem;
+    margin: 0.25rem 0; }
+  .form .form-item.inline {
+    min-height: unset; }
     .form .form-item.inline > * {
       position: relative;
       display: inline-block;
@@ -4383,6 +4421,8 @@ $container-offset: 1.5rem;
       width: auto; }
     .form .form-item.inline > .button {
       vertical-align: top; }
+  .form .form-msg {
+    margin-top: .25rem; }
 
 h1 {
   font-size: 2em; }
@@ -4476,7 +4516,7 @@ h1, h2, h3, h4, h5, h6 {
       -webkit-flex-grow: 1;
       flex-grow: 1; }
 
-.input.with-focus:not(:disabled):not(.disabled):focus, .input.with-focus:not(:disabled):not(.disabled):hover, .input.with-focus:not(:disabled):not(.disabled):active, .input.with-focus.active:not(:disabled):not(.disabled), .icon-input:not(:disabled):not(.disabled):focus, .icon-input:not(:disabled):not(.disabled):hover, .icon-input:not(:disabled):not(.disabled):active, .icon-input.active:not(:disabled):not(.disabled), .icon-input.active, .select-multiple:not(:disabled):not(.disabled):focus, .select-multiple:not(:disabled):not(.disabled):hover, .select-multiple:not(:disabled):not(.disabled):active, .select-multiple.active:not(:disabled):not(.disabled) {
+.input.with-focus:not(:disabled):not(.disabled):focus, .input.with-focus:not(:disabled):not(.disabled):hover, .input.with-focus:not(:disabled):not(.disabled):active, .input.with-focus.active:not(:disabled):not(.disabled), .icon-input:not(.disabled):focus, .icon-input:not(.disabled):hover, .icon-input.active:not(.disabled), .select-multiple:not(:disabled):not(.disabled):focus, .select-multiple:not(:disabled):not(.disabled):hover, .select-multiple:not(:disabled):not(.disabled):active, .select-multiple.active:not(:disabled):not(.disabled) {
   border-color: #0ca0ff;
   box-shadow: 0 0 0 0.2rem #d8f0ff;
   z-index: 1;

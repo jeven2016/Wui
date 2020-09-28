@@ -1,0 +1,31 @@
+.border-info {
+  &.ok, &.success {
+    border-color: $success !important;
+
+    &.icon-input {
+      @include focus-active2 {
+        box-shadow: 0 0 0 0.2rem lighten($success, 40%);
+      }
+    }
+  }
+
+  &.warning {
+    border-color: $warning !important;
+
+    &.icon-input {
+      @include focus-active2 {
+        box-shadow: 0 0 0 0.2rem lighten($warning, 40%);
+      }
+    }
+  }
+
+  &.error {
+    border-color: $danger !important;
+
+    &.icon-input {
+      @include focus-active2 {
+        box-shadow: 0 0 0 0.2rem lighten($danger, 40%);
+      }
+    }
+  }
+}
