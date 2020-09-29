@@ -4421,6 +4421,8 @@ $container-offset: 1.5rem;
       width: auto; }
     .form .form-item.inline > .button {
       vertical-align: top; }
+    .form .form-item.inline > .label {
+      margin-bottom: unset; }
   .form .form-msg {
     margin-top: .25rem; }
 

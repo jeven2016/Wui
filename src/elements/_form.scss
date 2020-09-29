@@ -3,6 +3,11 @@
 
   .form-item {
 
+    //todo: if errors appear, change the input components(Input/InputGroup/Select/...), the color, border-color, box-shadow....
+    &.with-error {
+      
+    }
+
     &.with-msg {
       min-height: 4.25rem;
       margin-bottom: .25rem;
@@ -46,6 +51,10 @@
 
       > .button {
         vertical-align: top;
+      }
+
+      > .label {
+        margin-bottom: unset;
       }
 
     }
