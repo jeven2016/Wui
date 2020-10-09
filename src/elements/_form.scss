@@ -1,16 +1,25 @@
 .form {
   @include make-block;
 
+  &.inline {
+    display: flex;
+    align-items: center;
+  }
+
   .form-item {
+
+    .button.block + .block {
+      margin-top: 0;
+    }
 
     //todo: if errors appear, change the input components(Input/InputGroup/Select/...), the color, border-color, box-shadow....
     &.with-error {
-      
+
     }
 
     &.with-msg {
       min-height: 4.25rem;
-      margin-bottom: .25rem;
+      margin-bottom: .5rem;
     }
 
     &.normal {
@@ -23,7 +32,7 @@
     }
 
     .label-col {
-      margin-top: $form-form-item-label-col-margin-top;
+      display: flex;
       margin-bottom: $form-form-item-label-col-margin-bottom;
     }
 
@@ -37,8 +46,21 @@
       margin: $form-form-item-info-margin;
     }
 
+    &.horizontal {
+      display: flex;
+      width: 100%;
+    }
+
+
+    &.vertical {
+      display: flex;
+      flex-direction: column;
+    }
+
     &.inline {
+      display: inline-flex;
       min-height: unset;
+      align-items: center;
 
       > * {
         @include make-inline-block;
@@ -53,14 +75,13 @@
         vertical-align: top;
       }
 
-      > .label {
-        margin-bottom: unset;
+      > .label-col {
+        margin-bottom: 0;
       }
-
     }
   }
 
   .form-msg {
-    margin-top: .25rem;
+    margin-top: .5rem;
   }
 }

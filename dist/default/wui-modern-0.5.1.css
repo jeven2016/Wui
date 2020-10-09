@@ -4392,9 +4392,14 @@ $container-offset: 1.5rem;
 .form {
   position: relative;
   display: block; }
+  .form.inline {
+    display: flex;
+    align-items: center; }
+  .form .form-item .button.block + .block {
+    margin-top: 0; }
   .form .form-item.with-msg {
     min-height: 4.25rem;
-    margin-bottom: .25rem; }
+    margin-bottom: .5rem; }
   .form .form-item.normal {
     margin-bottom: 1rem; }
   .form .form-item label {
@@ -4402,7 +4407,7 @@ $container-offset: 1.5rem;
     display: block;
     margin-bottom: 0.25rem; }
   .form .form-item .label-col {
-    margin-top: 0.5rem;
+    display: flex;
     margin-bottom: 0.5rem; }
   .form .form-item .form-line {
     width: 100%; }
@@ -4411,8 +4416,16 @@ $container-offset: 1.5rem;
     display: block;
     line-height: 1rem;
     margin: 0.25rem 0; }
+  .form .form-item.horizontal {
+    display: flex;
+    width: 100%; }
+  .form .form-item.vertical {
+    display: flex;
+    flex-direction: column; }
   .form .form-item.inline {
-    min-height: unset; }
+    display: inline-flex;
+    min-height: unset;
+    align-items: center; }
     .form .form-item.inline > * {
       position: relative;
       display: inline-block;
@@ -4421,10 +4434,10 @@ $container-offset: 1.5rem;
       width: auto; }
     .form .form-item.inline > .button {
       vertical-align: top; }
-    .form .form-item.inline > .label {
-      margin-bottom: unset; }
+    .form .form-item.inline > .label-col {
+      margin-bottom: 0; }
   .form .form-msg {
-    margin-top: .25rem; }
+    margin-top: .5rem; }
 
 h1 {
   font-size: 2em; }
