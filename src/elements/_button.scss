@@ -73,7 +73,8 @@
   //同级的block button，margin-top:0.5rem
   &.block {
     @include make-flex {
-      width: 100%
+      flex: 1 1 100%;
+      width: 100%;
     }
 
     + .block {

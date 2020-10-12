@@ -3815,6 +3815,7 @@ $container-offset: 1.5rem;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    flex: 1 1 100%;
     width: 100%; }
     .button.block + .block {
       margin-top: 0.5rem; }
@@ -4394,18 +4395,25 @@ $container-offset: 1.5rem;
   display: block; }
   .form.inline {
     display: flex;
-    align-items: center; }
+    align-items: center;
+    flex-wrap: wrap; }
   .form .form-item .button.block + .block {
     margin-top: 0; }
-  .form .form-item.with-msg {
-    min-height: 4.25rem;
-    margin-bottom: .5rem; }
-  .form .form-item.normal {
-    margin-bottom: 1rem; }
-  .form .form-item label {
-    position: relative;
-    display: block;
-    margin-bottom: 0.25rem; }
+  .form .form-item .item-label {
+    display: flex;
+    align-items: center; }
+    .form .form-item .item-label > .label-col {
+      margin-bottom: 0; }
+      .form .form-item .item-label > .label-col > .required-left-col {
+        color: #ff350e;
+        font-size: inherit;
+        margin-right: .25rem; }
+      .form .form-item .item-label > .label-col > .required-right-col {
+        color: #ff350e;
+        font-size: inherit;
+        margin-left: .25rem; }
+  .form .form-item.non-compact {
+    margin-bottom: 1.8125rem; }
   .form .form-item .label-col {
     display: flex;
     margin-bottom: 0.5rem; }
@@ -4437,7 +4445,9 @@ $container-offset: 1.5rem;
     .form .form-item.inline > .label-col {
       margin-bottom: 0; }
   .form .form-msg {
-    margin-top: .5rem; }
+    margin: .25rem 0 .25rem;
+    font-size: .9em;
+    font-weight: 500; }
 
 h1 {
   font-size: 2em; }
