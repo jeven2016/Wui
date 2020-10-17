@@ -4402,16 +4402,16 @@ $container-offset: 1.5rem;
   .form .form-item .item-label {
     display: flex;
     align-items: center; }
-    .form .form-item .item-label > .label-col {
-      margin-bottom: 0; }
-      .form .form-item .item-label > .label-col > .required-left-col {
-        color: #ff350e;
-        font-size: inherit;
-        margin-right: .25rem; }
-      .form .form-item .item-label > .label-col > .required-right-col {
-        color: #ff350e;
-        font-size: inherit;
-        margin-left: .25rem; }
+  .form .form-item .label-col {
+    margin-bottom: 0; }
+    .form .form-item .label-col > .required-left-col {
+      color: #ff350e;
+      font-size: inherit;
+      margin-right: .25rem; }
+    .form .form-item .label-col > .required-right-col {
+      color: #ff350e;
+      font-size: inherit;
+      margin-left: .25rem; }
   .form .form-item.non-compact {
     margin-bottom: 1.8125rem; }
   .form .form-item .label-col {

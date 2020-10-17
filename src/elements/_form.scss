@@ -16,23 +16,24 @@
     .item-label {
       display: flex;
       align-items: center;
+    }
 
-      > .label-col {
-        margin-bottom: 0;
+    .label-col {
+      margin-bottom: 0;
 
-        > .required-left-col {
-          color: $red;
-          font-size: inherit;
-          margin-right: .25rem;
-        }
+      > .required-left-col {
+        color: $red;
+        font-size: inherit;
+        margin-right: .25rem;
+      }
 
-        > .required-right-col {
-          color: $red;
-          font-size: inherit;
-          margin-left: .25rem;
-        }
+      > .required-right-col {
+        color: $red;
+        font-size: inherit;
+        margin-left: .25rem;
       }
     }
+
 
     &.with-msg {
       //min-height: 4.25rem;
