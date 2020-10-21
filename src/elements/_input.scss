@@ -6,14 +6,14 @@
 }
 
 .input {
-  padding: $input-default-padding;
+  //padding: $input-default-padding;
   border: $input-border;
   @include border-radius($input-border-radius);
   outline: $input-outline;
   line-height: $input-line-height;
   -webkit-appearance: none;
   transition: $default-transition;
-  font-size: $input-font-size;
+  //font-size: $input-font-size;
   outline: $input-outline;
 
   &.read-only {
@@ -102,6 +102,7 @@ textarea.input {
   }
 
   & > .input {
+    padding: 0;
     border: none;
     flex: 1 1 auto;
   }
@@ -113,88 +114,56 @@ textarea.input {
     &:hover, &:focus {
       color: $input-border-active-color;
     }
+
+    &.right {
+      margin: 0 0 0 .25rem!important;
+    }
   }
 
   //input in left, icon in right
   &.large {
-    > .input {
-      font-size: map-get($font-size, 'large');
-      padding: 0.75rem 0.25rem 0.75rem 1rem;
-
-      /*      &:not(.textarea) {
-              height: $input-large-height;
-            }*/
-    }
+    padding: $elem-large-padding;
 
     > .icon-column {
-      margin: 0 1rem 0 0;
+      margin: 0 0 0 .25rem;
     }
   }
 
   &.medium {
-    > .input {
-      padding: .375rem 0.25rem .375rem .75rem;
-    }
+    padding: $elem-default-padding;
 
     > .icon-column {
-      margin-right: .75rem;
+      margin: 0 0 0 .25rem;
     }
   }
 
   &.small {
-    > .input {
-      font-size: map-get($font-size, 'small');
-      padding: 0.25rem 0.25rem 0.25rem 0.5rem;
-
-      /*     &:not(.textarea) {
-             height: $input-small-height;
-           }*/
-    }
+    padding: $elem-small-padding;
 
     > .icon-column {
-      margin: 0 .5rem 0 0;
+      margin: 0 0 0 .25rem;
     }
   }
 
   &.left-icon {
     flex-direction: row-reverse;
 
-   /* & > .input {
-      padding: .375rem .25rem .375rem 0.375rem;
-    }
-*/
-    > .icon-column {
-      margin: 0 0 0 .75rem;
-    }
-
     &.large {
-      > .input {
-        padding: .7rem 1rem .7rem 0.25rem;
-      }
-
       > .icon-column {
-        margin: 0 0 0 1rem;
+        margin: 0 .25rem 0 0;
       }
     }
 
     &.medium {
-      > .input {
-        padding: .375rem .375rem .375rem 0.25rem;
+      > .icon-column {
+        margin: 0 .25rem 0 0;
       }
     }
 
 
     &.small {
-      > .input {
-        padding: .25rem .75rem .25rem 0.25rem;
-      }
-
       > .icon-column {
-        margin: 0 0 0 .5rem;
-      }
-
-      > .icon {
-        left: $icon-input-icon-small-position;
+        margin: 0 .25rem 0 0;
       }
     }
   }
