@@ -61,7 +61,13 @@
 
     &.horizontal {
       display: flex;
+      flex-direction: column;
       width: 100%;
+
+      .label-col {
+        margin-bottom: 0;
+        padding-right: .5rem;
+      }
     }
 
 
