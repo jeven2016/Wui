@@ -1,6 +1,10 @@
 .form {
   @include make-block;
 
+  .message-row{
+    min-height: 1.8125rem;
+  }
+
   &.inline {
     display: flex;
     align-items: center;

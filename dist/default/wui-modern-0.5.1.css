@@ -4393,6 +4393,8 @@ $container-offset: 1.5rem;
 .form {
   position: relative;
   display: block; }
+  .form .message-row {
+    min-height: 1.8125rem; }
   .form.inline {
     display: flex;
     align-items: center;
