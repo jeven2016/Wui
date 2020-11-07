@@ -1,8 +1,6 @@
 .form {
-  @include make-block;
-
-  .message-row{
-    min-height: 1.8125rem;
+  .message-row {
+    height: 2rem;
   }
 
   &.inline {
@@ -12,6 +10,9 @@
   }
 
   .form-item {
+    display: flex;
+    margin-bottom: .5rem;
+    min-height: 2rem;
 
     .button.block + .block {
       margin-top: 0;
@@ -38,16 +39,6 @@
       }
     }
 
-
-    &.with-msg {
-      //min-height: 4.25rem;
-      //margin-bottom: .5rem;
-    }
-
-    &.non-compact {
-      margin-bottom: 1.8125rem;
-    }
-
     .label-col {
       display: flex;
       margin-bottom: $form-form-item-label-col-margin-bottom;
@@ -64,13 +55,16 @@
     }
 
     &.horizontal {
-      display: flex;
+      flex: 1 1 100%;
       flex-direction: column;
-      width: 100%;
 
       .label-col {
         margin-bottom: 0;
         padding-right: .5rem;
+      }
+
+      .widget-col {
+        flex-direction: column;
       }
     }
 
@@ -102,6 +96,7 @@
         margin-bottom: 0;
       }
     }
+
   }
 
   .form-msg {

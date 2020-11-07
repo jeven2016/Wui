@@ -4390,15 +4390,18 @@ $container-offset: 1.5rem;
   color: #fff !important;
   background-color: #0ca0ff; }
 
-.form {
-  position: relative;
-  display: block; }
-  .form .message-row {
-    min-height: 1.8125rem; }
-  .form.inline {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap; }
+.form .message-row {
+  height: 2rem; }
+
+.form.inline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; }
+
+.form .form-item {
+  display: flex;
+  margin-bottom: .5rem;
+  min-height: 2rem; }
   .form .form-item .button.block + .block {
     margin-top: 0; }
   .form .form-item .item-label {
@@ -4414,8 +4417,6 @@ $container-offset: 1.5rem;
       color: #ff350e;
       font-size: inherit;
       margin-left: .25rem; }
-  .form .form-item.non-compact {
-    margin-bottom: 1.8125rem; }
   .form .form-item .label-col {
     display: flex;
     margin-bottom: 0.5rem; }
@@ -4427,12 +4428,13 @@ $container-offset: 1.5rem;
     line-height: 1rem;
     margin: 0.25rem 0; }
   .form .form-item.horizontal {
-    display: flex;
-    flex-direction: column;
-    width: 100%; }
+    flex: 1 1 100%;
+    flex-direction: column; }
     .form .form-item.horizontal .label-col {
       margin-bottom: 0;
       padding-right: .5rem; }
+    .form .form-item.horizontal .widget-col {
+      flex-direction: column; }
   .form .form-item.vertical {
     display: flex;
     flex-direction: column; }
@@ -4450,10 +4452,11 @@ $container-offset: 1.5rem;
       vertical-align: top; }
     .form .form-item.inline > .label-col {
       margin-bottom: 0; }
-  .form .form-msg {
-    margin: .25rem 0 .25rem;
-    font-size: .9em;
-    font-weight: 500; }
+
+.form .form-msg {
+  margin: .25rem 0 .25rem;
+  font-size: .9em;
+  font-weight: 500; }
 
 h1 {
   font-size: 2em; }
