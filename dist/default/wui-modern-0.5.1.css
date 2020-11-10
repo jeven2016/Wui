@@ -4401,7 +4401,8 @@ $container-offset: 1.5rem;
 .form .form-item {
   display: flex;
   margin-bottom: .5rem;
-  min-height: 2rem; }
+  min-height: 2rem;
+  width: 100%; }
   .form .form-item .button.block + .block {
     margin-top: 0; }
   .form .form-item .item-label {
