@@ -40,12 +40,12 @@
 }
 
 .select-multiple {
-  @include make-inline-flex {
+  @include make-flex {
     justify-content: start;
+    flex: 1 1 100%;
     align-items: start;
     flex-wrap: wrap;
     cursor: pointer;
-    width: 15.6525rem;
     border: $default-border;
     position: relative;
     border-radius: $default-border-radius;

@@ -40,7 +40,7 @@ var config = {
         tree: true,
         stepper: true,
         datepicker: true,
-        popconfirm: true
+        popconfirm: true,
       },
     },
 
@@ -68,7 +68,8 @@ var config = {
         '_hover_focus_active.scss',
         '_flex.scss',
         '_child-margin.scss',
-        '_width.scss'],
+        '_width.scss',
+        '_checkbox.scss'],
     },
 
     themes: {

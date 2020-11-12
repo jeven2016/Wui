@@ -71,4 +71,8 @@
       color: lighten($blue, 10%);
     }
   }
+
+  @include make-special-check('ok', $text-ok-color);
+  @include make-special-check('warning', $text-warning-color);
+  @include make-special-check('error', $text-error-color);
 }

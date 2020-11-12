@@ -59,8 +59,11 @@
     padding: 0 0.5rem;
     transform-origin: left;
     overflow: hidden;
-    display: flex;
+    display: block;
     flex: 1 1 auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 
@@ -80,7 +83,7 @@
   white-space: $menu-item-white-space;
   cursor: $menu-item-cursor;
   border: $menu-item-border;
-  min-width: 10rem;
+  //min-width: 10rem;
   transition: $menu-item-transition;
 
   > .icon {
@@ -115,10 +118,11 @@
 
 
 .base-menu {
-  @include make-inline-flex;
-  position: $menu-position;
-  display: flex;
-  flex: 1 1 auto;
+  //@include make-inline-flex;
+  //position: $menu-position;
+  //display: flex;
+  //flex: 1 1 auto;
+  display: block;
 
   &.with-border-radius {
     @include border-radius($menu-border-radius);
@@ -126,7 +130,7 @@
 
   &.compact {
     .menu-item {
-      min-width: 10rem;
+      //min-width: 10rem;
     }
   }
 
@@ -142,7 +146,6 @@
 
   .menu-item {
     @include make-menu-item2 {
-      //white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
       //flex: 1 0 calc(100% - 1rem);
       &.equitable {
         flex-grow: 1;
@@ -392,7 +395,7 @@
 
 .menu {
   @extend .base-menu;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
   transition: width .3s;
 
   > .base-menu {
