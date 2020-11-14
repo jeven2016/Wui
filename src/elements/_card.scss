@@ -1,8 +1,10 @@
+
+
 .card {
   @include make-inline-flex;
   flex-direction: $card-flex-direction;
   //flex-wrap: wrap;
-  flex-wrap: $card-flex-wrap; //todo: confirm: 设置成wrap后，会出现card-row高度比子元素的高度高太多的问题
+  //flex-wrap: $card-flex-wrap; //todo: confirm: 设置成wrap后，会出现card-row高度比子元素的高度高太多的问题
   @include border-radius($card-border-radius);
   transition: $card-transition;
   background-color: $card-background-color;
@@ -54,7 +56,6 @@
 
 
   .card-header {
-    @include make-flex;
     padding: $card-header-padding;
     //@include border-radius($card-inner-border-radius $card-inner-border-radius 0 0);
 
@@ -68,17 +69,14 @@
   }
 
   .card-row {
-    @include make-flex;
     padding: $card-row-padding;
   }
 
   .card-body {
-    @include make-flex;
     padding: $card-body-padding;
   }
 
   .card-footer {
-    @include make-flex;
     padding: $card-footer-padding;
   }
 
@@ -123,10 +121,11 @@
 
   &.block {
     display: flex;
-    width: 100%;
+    flex: 1 1 auto;
 
-    .card-header, .card-body, .card-footer, .card-row {
-      @include make-block;
+    .card-body, {
+      flex: 1 1 auto;
+      flex-wrap: wrap;
     }
   }
 }

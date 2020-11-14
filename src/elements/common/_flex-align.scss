@@ -8,6 +8,8 @@
 
 
 .flex-adjust {
+  @include make-flex;
+
   &.justify-start {
     @include justify(flex-start);
   }

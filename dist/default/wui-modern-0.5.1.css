@@ -461,32 +461,28 @@ h1, h2, h3, h4, h5, h6 {
   .base-btn.bold, .bold.button {
     font-weight: bold; }
 
-.flex-adjust.justify-start {
-  justify-content: flex-start !important; }
-
-.flex-adjust.justify-end {
-  justify-content: flex-end !important; }
-
-.flex-adjust.justify-center {
-  justify-content: center !important; }
-
-.flex-adjust.justify-around {
-  justify-content: space-around !important; }
-
-.flex-adjust.justify-between {
-  justify-content: space-between !important; }
-
-.flex-adjust.justify-evenly {
-  justify-content: space-evenly !important; }
-
-.flex-adjust.align-start {
-  align-items: flex-start !important; }
-
-.flex-adjust.align-end {
-  align-items: flex-end !important; }
-
-.flex-adjust.align-center {
-  align-items: center !important; }
+.flex-adjust {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; }
+  .flex-adjust.justify-start {
+    justify-content: flex-start !important; }
+  .flex-adjust.justify-end {
+    justify-content: flex-end !important; }
+  .flex-adjust.justify-center {
+    justify-content: center !important; }
+  .flex-adjust.justify-around {
+    justify-content: space-around !important; }
+  .flex-adjust.justify-between {
+    justify-content: space-between !important; }
+  .flex-adjust.justify-evenly {
+    justify-content: space-evenly !important; }
+  .flex-adjust.align-start {
+    align-items: flex-start !important; }
+  .flex-adjust.align-end {
+    align-items: flex-end !important; }
+  .flex-adjust.align-center {
+    align-items: center !important; }
 
 html {
   line-height: 1.15;
@@ -3854,7 +3850,6 @@ $container-offset: 1.5rem;
   display: -webkit-inline-flex;
   display: inline-flex;
   flex-direction: column;
-  flex-wrap: nowrap;
   border-radius: 0.25rem;
   transition: all 0.2s;
   background-color: #fff; }
@@ -3880,29 +3875,17 @@ $container-offset: 1.5rem;
   .card > div:not(:first-child):not(:last-child) {
     border-radius: 0; }
   .card .card-header {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    padding: 0.5rem 1rem; }
+    padding: 0.75rem 1.25rem; }
     .card .card-header .title {
       font-weight: 500; }
     .card .card-header.gray {
       background-color: #f5f5f5; }
   .card .card-row {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    padding: 0.5rem 1rem; }
+    padding: 0.75rem 1.25rem; }
   .card .card-body {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    padding: 0.5rem 1rem; }
+    padding: 1.25rem; }
   .card .card-footer {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    padding: 0.5rem 1rem; }
+    padding: 0.75rem 1.25rem; }
   .card .card-img {
     position: relative;
     min-height: 1px; }
@@ -3916,7 +3899,7 @@ $container-offset: 1.5rem;
         transform: scale(1.2); }
     .card .card-img > .overlay-title {
       display: block;
-      padding: 0.5rem 1rem;
+      padding: 1.25rem;
       position: absolute;
       color: #fff;
       bottom: 0;
@@ -3926,10 +3909,10 @@ $container-offset: 1.5rem;
         text-shadow: 1px 1px 2px #333, 0 0 25px #fff, 0 0 5px #0ca0ff; }
   .card.block {
     display: flex;
-    width: 100%; }
-    .card.block .card-header, .card.block .card-body, .card.block .card-footer, .card.block .card-row {
-      position: relative;
-      display: block; }
+    flex: 1 1 auto; }
+    .card.block .card-body {
+      flex: 1 1 auto;
+      flex-wrap: wrap; }
 
 .carousel {
   position: relative;
@@ -4756,10 +4739,12 @@ textarea.input {
   flex-wrap: wrap;
   flex-grow: 1;
   /*  > [class^=col-] {
-    padding: $grid-column-padding;
-  }*/ }
+      padding: $grid-column-padding;
+    }*/ }
+  .row > .col-base {
+    width: 100%;
+    position: relative; }
   .row > .col {
-    display: flex;
     flex-grow: 1;
     flex-basis: 0; }
   .row > .col-1 {

@@ -10,12 +10,17 @@ $types: ('sm', 'md', 'lg', 'xl');
     flex-grow: 1;
   }
 
-/*  > [class^=col-] {
-    padding: $grid-column-padding;
-  }*/
+  /*  > [class^=col-] {
+      padding: $grid-column-padding;
+    }*/
+
+  > .col-base {
+    width: 100%;
+    position: relative;
+  }
 
   > .col {
-    display: flex;
+    //display: flex;
     flex-grow: 1;
     flex-basis: 0;
   }
@@ -102,7 +107,7 @@ $types: ('sm', 'md', 'lg', 'xl');
     flex-grow: 0;
     flex-shrink: 0;
 
-    >.slider-inner{
+    > .slider-inner {
       height: 100%;
     }
   }
