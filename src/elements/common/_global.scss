@@ -166,3 +166,11 @@ a {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
+
+.ripple{
+  position: absolute;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%;
+}

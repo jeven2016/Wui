@@ -455,7 +455,9 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-appearance: none;
   appearance: none;
   transition: box-shadow ease 0.2s, border-color ease 0.2s, transform ease 0.4s, background ease 0.2s;
-  background: transparent; }
+  background: transparent;
+  position: relative;
+  overflow: hidden; }
   .base-btn.min-width, .min-width.button {
     min-width: 5rem; }
   .base-btn.bold, .bold.button {
@@ -608,6 +610,13 @@ a {
   text-overflow: ellipsis;
   word-break: keep-all;
   overflow-wrap: break-word; }
+
+.ripple {
+  position: absolute;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: 50%; }
 
 .text.bold {
   font-weight: 700; }
