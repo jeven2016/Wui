@@ -4,6 +4,21 @@
   border: none;
   transition: background .3s, box-shadow .3s;
 
+  > .content-root {
+
+    @include make-flex-center {
+      flex: 1 1 100%;
+    }
+
+    > .left-content {
+      margin-right: .5rem;
+    }
+
+    > .right-content {
+      margin-left: .5rem;
+    }
+  }
+
   &.with-outline-bg {
 
   }
@@ -13,7 +28,9 @@
   }
 
   &.without-box {
-    box-shadow: none !important;
+    &:not(.outline) {
+      box-shadow: none !important;
+    }
   }
 
   + .button {
@@ -22,7 +39,7 @@
 
   &.default {
     @include generate-btn($btn-default-background-color, $text-color);
-    @include enable-active($btn-default-background-color, $text-color);
+    @include enable-active($btn-default-background-color, $text-color, lighten($default-border-color, 10%));
     border: 1px solid $default-border-color;
 
     &.inverted {
@@ -34,7 +51,7 @@
   @each $name, $color in $btn-colors {
     &.#{$name} {
       &.normal {
-        color: get-text-color($name);//todo
+        color: get-text-color($name); //todo
         background: $color;
         @include enable-active($color, get-text-color($name));
       }
@@ -116,18 +133,18 @@
     }
   }
 
-  > .svg, > svg, > .icon {
-    vertical-align: -0.15em;
+  /* > .svg, > svg, > .icon {
+     vertical-align: -0.15em;
 
-    //todo: not working as expected
-    &:first-child:not(:last-child) {
-      margin-right: 0.5rem;
-    }
+     //todo: not working as expected
+     &:first-child:not(:last-child) {
+       margin-right: 0.5rem;
+     }
 
-    &:last-child:not(:first-child) {
-      margin-left: 0.5rem;
-    }
-  }
+     &:last-child:not(:first-child) {
+       margin-left: 0.5rem;
+     }
+   }*/
 
 
 }

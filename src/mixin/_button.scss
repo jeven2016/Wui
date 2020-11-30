@@ -7,7 +7,7 @@
   color: $font-color;
 }
 
-@mixin enable-active($bg-color, $font-color) {
+@mixin enable-active($bg-color, $font-color, $box-shadow-color: lighten($bg-color, $default-box-shadow-color-increase-ratio-active)) {
   //once the button is disabled, focus and active won't be triggered, only hover needs to be handled
   $darken-color-1: darken($bg-color, $default-bg-color-increase-ratio);
   $active-color: darken($bg-color, $default-bg-color-increase-ratio-active);
@@ -19,8 +19,8 @@
     }
 
     &:focus, &.active {
-      box-shadow: 0 0 0 0.2rem lighten($bg-color, $default-box-shadow-color-increase-ratio-active);
-      z-index: map_get($z-index, "widget");
+      box-shadow: 0 0 0 0.2rem $box-shadow-color;
+      z-index: map_get($z-index, "one");
     }
 
     &:active {
@@ -103,6 +103,10 @@
       &.inverted-outline {
         box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
       }
+
+      &.without-box {
+        box-shadow: 0 0 0 1px $bg-color inset;
+      }
     }
 
     &:active {
@@ -120,6 +124,11 @@
         box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
         text-shadow: $text-shadow-light;
       }
+
+      &.without-box {
+        box-shadow: 0 0 0 1px $bg-color inset;
+      }
+
     }
 
     &.active {
@@ -141,6 +150,10 @@
       &.inverted-outline {
         box-shadow: 0 0 0 .2rem $box-color, 0 0 0 1px $bg-color inset;
         text-shadow: $text-shadow-light;
+      }
+
+      &.without-box {
+        box-shadow: 0 0 0 1px $bg-color inset;
       }
     }
   }
