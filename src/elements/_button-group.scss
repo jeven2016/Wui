@@ -5,9 +5,8 @@
   > .button {
     @include group-border-radius($btn-group-border-radius);
 
-    &:not(:first-child) {
-      margin-left: $btn-group-buttons-margin-left;
-      border-left: none !important;
+    + .button {
+      margin-left: 0;
     }
 
     /*
@@ -22,6 +21,13 @@
         &:not(:first-child):not(:last-child) {
           @include middle-button;
         }*/
+  }
+
+  &.horizontal {
+    > .button:not(:first-child) {
+      margin-left: $btn-group-buttons-margin-left;
+      border-left: none !important;
+    }
   }
 
   > .popup-ctrl {
@@ -69,6 +75,7 @@
       &:first-child {
         @include full-border-radius($btn-group-border-radius, $btn-group-border-radius, 0, 0);
         border-bottom-width: 0;
+        margin-top: -1px;
       }
 
       &:last-child {
@@ -86,15 +93,6 @@
           border-right-width: $btn-group-border-width;
         }
       }
-    }
-  }
-
-  &.outline {
-    > .button {
-      @extend .button.outline;
-      @include group-border-radius($btn-group-border-radius);
-
-      box-shadow: unset;
     }
   }
 

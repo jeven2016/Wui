@@ -1,8 +1,31 @@
 %input-active-base {
-  border-color: $input-border-active-color;
-  box-shadow: $input-box-shadow;
   z-index: map_get($z-index, "one");
   position: relative;
+
+  &:not(.simple-input) {
+    border-color: $input-border-active-color;
+
+    &.with-input-box {
+      box-shadow: $input-box-shadow;
+    }
+  }
+
+  &.simple-input {
+    &:after {
+      @include make-block(absolute) {
+        border-radius: 50%;
+        left: 0;
+        top: calc(100%);
+        content: '';
+        height: 0.1875rem;;
+        width: 100%;;
+        background: $input-border-active-color;
+        transition: width 0.3s;;
+        animation: change-width-smoothly 0.3s;;
+        z-index: 1;
+      }
+    }
+  }
 }
 
 .input {
@@ -15,6 +38,29 @@
   transition: $default-transition;
   //font-size: $input-font-size;
   outline: $input-outline;
+
+  &.simple-input {
+    position: relative;
+    border: none;
+    border-bottom: $input-border;
+    @include border-radius(0);
+    box-shadow: none;
+
+    &:after {
+      @include make-block(absolute) {
+        //border-radius: 50%;
+        left: 0;
+        top: calc(100% - 1px);
+        content: '';
+        height: 2px;
+        width: 100%;
+        background: $input-border-active-color;
+        transition: width 0.3s;;
+        animation: change-width-smoothly 0.3s forwards;
+        z-index: 1;
+      }
+    }
+  }
 
   &.read-only {
     cursor: pointer;
@@ -56,27 +102,17 @@
     transition: $input-simple-transition;
 
     &:active, &:focus {
-      border-bottom-width: $input-border-width;
+      border-bottom-width: 2px;
       box-shadow: $input-simple-box-shadow;
     }
   }
 
+  //enabled for non-simple input
   &.with-focus {
-    @include focus-active {
+    @include focus-active2 {
       @extend %input-active-base;
     }
   }
-
-
-  /*  &:not(:disabled):not(.disabled):active {
-      //transform: $input-active-scale;
-
-      + .icon {
-        //transform: $icon-input-icon-scale;
-
-      }
-    }*/
-
 }
 
 
@@ -110,13 +146,14 @@ textarea.input {
   > .icon-column {
     color: $icon-input-icon-text-color;
     cursor: $icon-input-icon-cursor;
+    width: auto;
 
     &:hover, &:focus {
       color: $input-border-active-color;
     }
 
     &.right {
-      margin: 0 0 0 .25rem!important;
+      margin: 0 0 0 .5rem !important;
     }
   }
 
@@ -124,24 +161,24 @@ textarea.input {
   &.large {
     padding: $elem-large-padding;
 
-    > .icon-column {
-      margin: 0 0 0 .25rem;
+    > .icon-column:not(.right) {
+      margin: 0 0 0 .5rem;
     }
   }
 
   &.medium {
     padding: $elem-default-padding;
 
-    > .icon-column {
-      margin: 0 0 0 .25rem;
+    > .icon-column:not(.right) {
+      margin: 0 0 0 .5rem;
     }
   }
 
   &.small {
     padding: $elem-small-padding;
 
-    > .icon-column {
-      margin: 0 0 0 .25rem;
+    > .icon-column:not(.right) {
+      margin: 0 0 0 .5rem;
     }
   }
 
@@ -149,25 +186,24 @@ textarea.input {
     flex-direction: row-reverse;
 
     &.large {
-      > .icon-column {
-        margin: 0 .25rem 0 0;
+      > .icon-column:not(.right) {
+        margin: 0 .5rem 0 0;
       }
     }
 
     &.medium {
-      > .icon-column {
-        margin: 0 .25rem 0 0;
+      > .icon-column:not(.right) {
+        margin: 0 .5rem 0 0;
       }
     }
 
 
     &.small {
-      > .icon-column {
-        margin: 0 .25rem 0 0;
+      > .icon-column:not(.right) {
+        margin: 0 .5rem 0 0;
       }
     }
   }
-
 
   @include add-disabled-conf;
 

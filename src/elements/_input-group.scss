@@ -11,7 +11,7 @@
     width: 1%;
   }
 
-  &.no-scale{
+  &.no-scale {
     flex: 0 1 auto;
   }
 }
@@ -87,6 +87,7 @@
     flex: 0 1 auto;
 
     > .content {
+      display: flex;
       border: $input-border;
       align-items: center;
       justify-content: center;
