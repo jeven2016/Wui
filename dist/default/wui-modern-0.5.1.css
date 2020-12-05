@@ -6775,7 +6775,15 @@ textarea.input {
             border-radius: 0;
             border-left: 3px solid #0ca0ff; }
 
+.toggle-container {
+  display: inline-flex;
+  justify-content: center; }
+  .toggle-container.block {
+    display: flex;
+    flex: 1 1 100%; }
+
 .toggle-button {
+  flex-grow: 1;
   background: transparent;
   outline: none;
   border: none;
@@ -6787,7 +6795,7 @@ textarea.input {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  width: 100%;
+  flex: 1 1 100%;
   font-size: 0.75rem;
   color: #fff;
   font-weight: 700;
@@ -6801,6 +6809,7 @@ textarea.input {
     padding: 0 0.5rem 0 1.8rem;
     height: 1rem;
     width: 100%;
+    transition: background .2s ease, box-shadow .2s ease, border .2s ease;
     border-radius: 1.5rem; }
   .toggle .ball {
     position: absolute;
@@ -6815,37 +6824,34 @@ textarea.input {
     width: 1.5rem;
     border-radius: 50%;
     box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12);
-    text-align: center; }
+    text-align: center;
+    transition: background .3s linear, box-shadow .3s linear; }
   .toggle.on .bar {
-    background-color: #70a3e1; }
+    background: #0ca0ff; }
   .toggle.on .ball {
-    background-color: #0ca0ff;
-    box-shadow: 0 3px 10px rgba(12, 160, 255, 0.3);
-    color: rgba(0, 0, 0, 0.8); }
+    background: #fff;
+    border: 1px solid #0ca0ff;
+    box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4); }
   .toggle.off .bar {
-    background-color: rgba(0, 0, 0, 0.5); }
+    background: rgba(0, 0, 0, 0.5); }
   .toggle.off .ball {
     border: 1px solid rgba(0, 0, 0, 0.5);
     box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.4);
-    background-color: #fff;
+    background: #fff;
     color: rgba(0, 0, 0, 0.5); }
   .toggle.secondary, .toggle.loader.third, .toggle.primary {
     border-radius: 0.25rem;
     padding: 0.25rem;
-    display: -ms-inline-flexbox;
-    display: -webkit-inline-flex;
-    display: inline-flex;
     align-items: center;
     font-size: 0.75rem;
     line-height: 1.5rem;
     overflow: hidden; }
     .toggle.secondary.on, .toggle.on.loader.third, .toggle.primary.on {
-      background-color: #0ca0ff;
-      box-shadow: 0 1px 2px 1px #007affba;
+      background: #0ca0ff;
+      box-shadow: 0 0 2px 1px #007affba;
       justify-content: flex-start; }
     .toggle.secondary.off, .toggle.off.loader.third, .toggle.primary.off {
-      background-color: rgba(0, 0, 0, 0.45);
-      box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 0.45);
       justify-content: flex-end; }
     .toggle.secondary > .info, .toggle.loader.third > .info, .toggle.primary > .info {
       line-height: 1.5rem;
@@ -6857,9 +6863,9 @@ textarea.input {
       width: 1.5rem;
       height: 1.5rem;
       line-height: 1.5rem;
-      top: 0.25rem;
+      top: 50%;
       border: none;
-      background-color: #fff;
+      background: #fff;
       border-radius: 0.25rem;
       box-shadow: none; }
   .toggle.primary {
@@ -6868,7 +6874,6 @@ textarea.input {
       border-radius: 50%; }
 
 .toggle-label {
-  margin-left: 0.5rem;
   font-weight: 500;
   transition: color .3s; }
   .toggle-label.on {

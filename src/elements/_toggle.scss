@@ -1,5 +1,16 @@
 
+.toggle-container{
+  display: inline-flex;
+  justify-content: center;
+
+  &.block{
+    display: flex;
+    flex: 1 1 100%;
+  }
+}
+
 .toggle-button {
+  flex-grow: 1;
   background: transparent;
   outline: none;
   border: none;
@@ -12,7 +23,7 @@
 .toggle {
   position: relative;
   @include make-flex();
-  width: 100%;
+  flex: 1 1 100%;
   font-size: 0.75rem;
   color: $white;
   font-weight: map_get($font-weight, 'bold');
@@ -27,9 +38,11 @@
     padding: 0 0.5rem 0 1.8rem;
     height: 1rem;
     width: 100%;
+    transition: background .2s ease, box-shadow .2s ease, border .2s ease;
 
     @include border-radius(1.5rem);
   }
+
 
   .ball {
     position: absolute;
@@ -41,29 +54,30 @@
     @include border-radius(50%);
     box-shadow: $default-box-shadow;
     text-align: center;
+    transition: background .3s linear, box-shadow .3s linear;
   }
 
   &.on {
     .bar {
-      background-color: #70a3e1
+      background: $blue
     }
 
     .ball {
-      background-color: $blue;
-      box-shadow: 0 3px 10px rgba(12, 160, 255, 0.3);
-      color: $text-color;
+      background: $white;
+      border: 1px solid $blue;
+      box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.4);
     }
   }
 
   &.off {
     .bar {
-      background-color: rgba(0, 0, 0, .5);
+      background: rgba(0, 0, 0, .5);
     }
 
     .ball {
       border: 1px solid rgba(0, 0, 0, .5);
       box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.4);
-      background-color: $white;
+      background: $white;
       color: rgba(0, 0, 0, .5);
     }
   }
@@ -71,21 +85,20 @@
   &.secondary, &.primary {
     @include border-radius;
     padding: 0.25rem;
-    @include make-inline-flex;
     align-items: center;
     font-size: 0.75rem;
     line-height: 1.5rem;
     overflow: hidden;
 
     &.on {
-      background-color: $blue;
-      box-shadow: 0 1px 2px 1px #007affba;
+      background: $blue;
+      box-shadow: 0 0 2px 1px #007affba;
       justify-content: flex-start;
     }
 
     &.off {
-      background-color: rgba(0, 0, 0, .45);
-      box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, .45);
+      //box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
       justify-content: flex-end;
     }
 
@@ -102,9 +115,9 @@
       width: 1.5rem;
       height: 1.5rem;
       line-height: 1.5rem;
-      top: 0.25rem;
+      top: 50%;
       border: none;
-      background-color: $white;
+      background: $white;
       @include border-radius;
       box-shadow: none;
     }
@@ -121,7 +134,6 @@
 }
 
 .toggle-label {
-  margin-left: 0.5rem;
   font-weight: map_get($font-weight, 'normal');
   transition: color .3s;
 
