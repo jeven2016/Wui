@@ -1,4 +1,4 @@
-@mixin make-header($prefix) {
+@mixin make-header($prefix, $inner-padding:0.25rem 0.5rem 0.25rem 0 ) {
   cursor: pointer;
 
   > .#{$prefix}-row {
@@ -8,7 +8,7 @@
 
     > .inner {
       @include make-flex-vertical-center ;
-      padding: 0.25rem 0.5rem 0.25rem 0;
+      padding: $inner-padding;
       flex: 1;
 
       &.left-icon-column {
