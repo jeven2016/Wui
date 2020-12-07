@@ -42,6 +42,10 @@
         }
       }
     }
+
+    &.disabled{
+      @include add-disabled-conf;
+    }
   }
 
   &.with-border {

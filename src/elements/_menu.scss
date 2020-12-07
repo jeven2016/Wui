@@ -61,7 +61,6 @@
     overflow: hidden;
     display: block;
     flex: 1 1 auto;
-    overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
   }
@@ -116,13 +115,10 @@
   @content;
 }
 
-
 .base-menu {
-  //@include make-inline-flex;
-  //position: $menu-position;
-  //display: flex;
-  //flex: 1 1 auto;
-  display: block;
+  position: $menu-position;
+  display: flex;
+  flex: 1 1 100%;
 
   &.with-border-radius {
     @include border-radius($menu-border-radius);
