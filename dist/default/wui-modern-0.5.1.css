@@ -536,11 +536,11 @@ a {
   /* Support for IE. */
   font-feature-settings: 'liga'; }
   .svg.large {
-    font-size: 1.25rem; }
+    font-size: 2.25rem; }
   .svg.medium {
-    font-size: 1rem; }
+    font-size: 1.5rem; }
   .svg.small {
-    font-size: 0.875rem; }
+    font-size: 1.25rem; }
 
 .dialog > .header > .title, .dialog > .header > .icon {
   position: relative;
@@ -5621,17 +5621,16 @@ textarea.input {
     .base-menu .menu-item > .item-icon, .menu .menu-item > .item-icon {
       display: flex;
       flex: 0 0 1em;
-      height: 1em;
       transform-origin: center;
       display: -ms-flexbox;
       display: -webkit-flex;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      margin-right: 0.5rem; }
       .base-menu .menu-item > .item-icon > .icon, .menu .menu-item > .item-icon > .icon {
         color: inherit; }
     .base-menu .menu-item > .item-info, .menu .menu-item > .item-info {
-      padding: 0 0.5rem;
       transform-origin: left;
       overflow: hidden;
       display: block;
@@ -5660,12 +5659,13 @@ textarea.input {
       color: #999999; }
     .base-menu .menu-item.dark:not(.disabled):not(.active):focus, .menu .menu-item.dark:not(.disabled):not(.active):focus, .base-menu .menu-item.dark:not(.disabled):not(.active):hover, .menu .menu-item.dark:not(.disabled):not(.active):hover {
       color: #fff;
-      text-shadow: 1px 1px 2px #333, 0 0 15px #fff, 0 0 5px #0ca0ff; }
+      text-shadow: 1px 1px 2px #333; }
       .base-menu .menu-item.dark:not(.disabled):not(.active):focus.with-bg, .menu .menu-item.dark:not(.disabled):not(.active):focus.with-bg, .base-menu .menu-item.dark:not(.disabled):not(.active):hover.with-bg, .menu .menu-item.dark:not(.disabled):not(.active):hover.with-bg {
         background: #0ca0ff; }
     .base-menu .menu-item.dark.active, .menu .menu-item.dark.active {
       background: #0ca0ff;
-      color: #fff; }
+      color: #fff;
+      text-shadow: 1px 1px 2px #333; }
       .base-menu .menu-item.dark.active.with-bg, .menu .menu-item.dark.active.with-bg {
         background: #0ca0ff; }
     .base-menu .menu-item > .left, .menu .menu-item > .left, .base-menu .menu-item > .right, .menu .menu-item > .right {
@@ -5689,10 +5689,8 @@ textarea.input {
     align-items: center;
     transform-origin: center;
     transition: transform .3s linear;
-    padding: .5rem .5rem .5rem 1.5rem;
+    padding: .5rem 1rem .5rem 0;
     white-space: nowrap; }
-    .base-menu .menu-header > .header-icon.icon-arrow > .svg.icon, .menu .menu-header > .header-icon.icon-arrow > .svg.icon {
-      font-size: 1em; }
     .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled {
       color: rgba(0, 0, 0, 0.8);
       background: transparent; }
@@ -5730,27 +5728,20 @@ textarea.input {
       color: white; }
     .base-menu .menu-header.dark.active, .menu .menu-header.dark.active {
       color: #fff;
-      text-shadow: 1px 1px 2px #333, 0 0 15px #fff, 0 0 5px #0ca0ff; }
-    .base-menu .menu-header > .header-info, .menu .menu-header > .header-info {
-      display: flex;
-      flex: 1 1 auto;
-      justify-content: flex-start; }
-      .base-menu .menu-header > .header-info > .header-icon + .header-info, .menu .menu-header > .header-info > .header-icon + .header-info {
-        padding-left: 0.5rem; }
+      text-shadow: 1px 1px 2px #333; }
     .base-menu .menu-header > .header-icon, .menu .menu-header > .header-icon {
       display: flex;
       flex: 0 0 1em;
-      height: 1em;
       transform-origin: center;
       display: -ms-flexbox;
       display: -webkit-flex;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      margin-right: 0.5rem; }
       .base-menu .menu-header > .header-icon > .icon, .menu .menu-header > .header-icon > .icon {
         color: inherit; }
     .base-menu .menu-header > .header-info, .menu .menu-header > .header-info {
-      padding: 0 0.5rem;
       transform-origin: left;
       overflow: hidden;
       display: block;
@@ -5762,7 +5753,7 @@ textarea.input {
       display: inline-flex;
       justify-content: center; }
       .base-menu .menu-header.compact.dark:not(.disabled):focus, .menu .menu-header.compact.dark:not(.disabled):focus, .base-menu .menu-header.compact.dark:not(.disabled):hover, .menu .menu-header.compact.dark:not(.disabled):hover {
-        box-shadow: inset 0 0 2rem 0 #0ca0ff; }
+        color: #0ca0ff; }
       .base-menu .menu-header.compact > .header-info + .header-icon, .menu .menu-header.compact > .header-info + .header-icon {
         display: none; }
     .base-menu .menu-header.non-compact > .header-info, .menu .menu-header.non-compact > .header-info {
@@ -5840,8 +5831,6 @@ textarea.input {
     .menu.compact > .menu-item {
       min-width: unset;
       justify-content: center; }
-    .menu.compact > div {
-      margin: 0.25rem 0; }
   .menu.non-compact {
     width: 100%; }
 

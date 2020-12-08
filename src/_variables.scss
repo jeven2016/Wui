@@ -158,6 +158,13 @@ $font-size: (
         'small':0.875rem
 );
 
+//icon
+$icon-font-size: (
+        'large': 2.25rem,
+        'normal': 1.5rem,
+        'small': 1.25rem
+);
+
 
 //For buttons
 $btn-default-text-color: $text-color;
@@ -288,7 +295,7 @@ $menu-item-line-height: 1.5rem;
 $menu-item-hove-text-color: $blue;
 $menu-item-font-weight: map_get($font-weight, 'normal');
 $menu-icon-margin-right: 0.5rem;
-$menu-item-hover-text-shadow: $text-shadow;
+$menu-item-hover-text-shadow: 1px 1px 2px #333;
 $menu-float-flex-direction: row;
 $menu-float-padding: 0;
 $menu-float-submenu-menu-header-flex: 0 0 auto;

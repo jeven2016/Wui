@@ -61,17 +61,18 @@ a {
   font-feature-settings: 'liga';
 
   &.large {
-    font-size: map-get($font-size, 'large');
+    font-size: map-get($icon-font-size, 'large');
   }
 
   &.medium {
-    font-size: map-get($font-size, 'normal');
+    font-size: map-get($icon-font-size, 'normal');
   }
 
   &.small {
-    font-size: map-get($font-size, 'small');
+    font-size: map-get($icon-font-size, 'small');
   }
 }
+
 
 //todo:Deprecated
 %inline-block-style {

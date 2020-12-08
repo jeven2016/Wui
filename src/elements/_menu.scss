@@ -46,9 +46,9 @@
   > .#{$prefix}-icon {
     display: flex;
     flex: 0 0 1em;
-    height: 1em;
     transform-origin: center;
     @include make-flex-center;
+    margin-right: 0.5rem;
 
     > .icon {
       color: inherit;
@@ -56,7 +56,7 @@
   }
 
   > .#{$prefix}-info {
-    padding: 0 0.5rem;
+    //padding: 0 0.5rem;
     transform-origin: left;
     overflow: hidden;
     display: block;
@@ -122,12 +122,6 @@
 
   &.with-border-radius {
     @include border-radius($menu-border-radius);
-  }
-
-  &.compact {
-    .menu-item {
-      //min-width: 10rem;
-    }
   }
 
   //two types: the submenu's position will be absolute
@@ -197,8 +191,8 @@
       &.active {
         background: $blue;
         color: $white;
-        //text-shadow: $menu-item-hover-text-shadow;
-
+        //font-weight: map-get($font-weight, 'normal');
+        text-shadow: $menu-item-hover-text-shadow;
 
         &.with-bg {
           background: $blue;
@@ -227,14 +221,9 @@
     align-items: center;
     transform-origin: center;
     transition: transform .3s linear;
-    padding: .5rem .5rem .5rem 1.5rem;
+    padding: .5rem 1rem .5rem 0;
     white-space: nowrap;
 
-    > .header-icon.icon-arrow {
-      > .svg.icon {
-        font-size: 1em;
-      }
-    }
 
     @include add-disabled-conf(false) {
       color: $text-color;
@@ -273,18 +262,6 @@
       }
     }
 
-    > .header-info {
-      display: flex;
-      flex: 1 1 auto;
-      justify-content: flex-start;
-
-      > .header-icon {
-        + .header-info {
-          padding-left: 0.5rem;
-        }
-      }
-    }
-
     @include create-line('header');
 
     &.compact {
@@ -294,7 +271,8 @@
 
       &.dark {
         @include focus2 {
-          box-shadow: $default-primary-box-shadow;
+          color: $blue;
+          //box-shadow: $default-primary-box-shadow;
         }
       }
 
@@ -434,10 +412,6 @@
     > .menu-item {
       min-width: unset;
       justify-content: center;
-    }
-
-    > div {
-      margin: 0.25rem 0;
     }
   }
 
