@@ -6,8 +6,9 @@
 
   > .content-root {
 
-    @include make-flex-center {
-      flex: 1 1 100%;
+    @include make-flex {
+      justify-content: inherit;
+      align-items: inherit;
     }
 
     > .left-content {
@@ -105,36 +106,49 @@
 
   &.circle {
     @include flex-center(inline-flex);
-    width: $btn-cicle-width;
-    height: $btn-cicle-height;
+
     flex-grow: 0;
     flex-shrink: 0;
     padding: 0;
     overflow: hidden;
     @include border-radius($btn-circle-border-radius);
 
-    &.small {
-      width: 1.8125rem;
-      height: 1.8125rem;
+    &:not(.only-icon) {
+      &.medium {
+        width: $btn-cicle-width;
+        height: $btn-cicle-height;
+      }
+
+      &.small {
+        width: 1.8125rem;
+        height: 1.8125rem;
+      }
+
+      &.large {
+        width: 2.875rem;
+        height: 2.875rem;
+      }
     }
 
-    &.large {
-      width: 2.875rem;
-      height: 2.875rem;
-    }
+
   }
 
   &.only-icon {
+
+    &.with-circle-icon {
+      border-radius: 50%;
+    }
+
     &.medium {
-      height: 2.25rem;
+      padding: .5rem;
     }
 
     &.small {
-      height: 1.8125rem;
+      padding: .25rem;
     }
 
     &.large {
-      height: 2.875rem;
+      padding: .75rem;
     }
   }
 

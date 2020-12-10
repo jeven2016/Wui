@@ -48,10 +48,13 @@
     flex: 0 0 1em;
     transform-origin: center;
     @include make-flex-center;
-    margin-right: 0.5rem;
 
-    > .icon {
-      color: inherit;
+    &.icon-arrow {
+      margin: 0;
+    }
+
+    + .header-info, + .item-info {
+      margin-left: 0.5rem;
     }
   }
 
@@ -108,12 +111,13 @@
   }
 
   @include add-disabled-conf(false) {
-    color: $text-color;
+    color: $text-disabled-color;
     background: transparent;
   }
 
   @content;
 }
+
 
 .base-menu {
   position: $menu-position;
@@ -176,7 +180,7 @@
 
     &.dark {
       &.disabled {
-        color: $menu-dark-disabled-menu-item-color;
+        color: $text-disabled-white-color;
       }
 
       @include focus2_no_active {
@@ -221,12 +225,11 @@
     align-items: center;
     transform-origin: center;
     transition: transform .3s linear;
-    padding: .5rem 1rem .5rem 0;
+    padding: .5rem 1rem .5rem 1.5rem;
     white-space: nowrap;
 
-
     @include add-disabled-conf(false) {
-      color: $text-color;
+      color: $text-disabled-white-color;
       background: transparent;
     }
 
@@ -294,11 +297,8 @@
   }
 
   .menu-group {
-    > .group-header {
-      color: #a5b2bb;
-      padding: .5rem 1.5rem .5rem 1rem;
-    }
-
+    color: #a5b2bb;
+    padding: .5rem 1.25rem;
   }
 
   .popup-panel {
@@ -329,6 +329,7 @@
       @include border-radius;
       z-index: map_get($z-index, 'pop');
       opacity: 0; //initially hidden
+      min-width: 10rem;
 
       &.dark {
         background: $menu-dark-background-color;
@@ -386,6 +387,10 @@
     background: $menu-dark-background-color;
     color: $menu-dark-color;
     border: $menu-dark-border;
+
+    .base-menu .inner-container {
+      background: #000;
+    }
   }
 
   /**
