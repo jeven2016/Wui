@@ -1,7 +1,5 @@
 @mixin make-navbar($bd-radius:$default-border-radius) {
   @include make-flex {
-    width: 100%;
-    justify-content: flex-start;
     @include border-radius($bd-radius);
     background-color: $navbar-background-color;
     margin-bottom: $navbar-margin-bottom;

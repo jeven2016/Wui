@@ -1,27 +1,5 @@
 //todo: navar 不能设置height,会导致flex-direction：column时无法撑开高度
 
-@mixin update-dropdown {
-  border: none;
-
-  > .title, > .info {
-    color: $white;
-
-    .button {
-      color: $white;
-      border: none;
-    }
-  }
-  > .menu {
-    color: $black;
-
-    > .menu-list {
-      > .menu-item {
-        //text-shadow: none;
-      }
-    }
-  }
-}
-
 .navbar {
   @include make-navbar;
   flex-wrap: wrap;
@@ -29,12 +7,18 @@
   color: $navbar-title-color;
   padding: 0 1rem;
 
-  .switch-btn{
-
+  &.auto-hide {
+    &.expand {
+      &.small-window {
+        flex-direction: column;
+        padding-bottom: 1rem;
+      }
+    }
   }
 
-  &.with-box {
-    box-shadow: $default-box-shadow;
+
+  .switch-btn {
+
   }
 
   &.with-border {
@@ -51,6 +35,15 @@
         padding: $navbar-title-padding;
         font-weight: map_get($font-weight, 'bold');
         font-size: 1.25rem;
+      }
+
+
+      > .navbar-switch {
+        margin: 0 .5rem 0 -0.5rem;
+      }
+
+      > .title-ifo {
+        margin: 0 0.25rem
       }
     }
   }
@@ -75,10 +68,9 @@
   }
 
   > .list {
-    @include make-flex {
-      align-items: center;
-      flex: 1 1 auto;
-    }
+    align-items: center;
+    flex: 1 1 auto;
+    display: none; //by default, the list is hidden. Because we want to firstly check the size of current window and then decide to show or hide the list
 
     &.align-right {
       justify-content: flex-end;
@@ -91,6 +83,17 @@
     &.align-center {
       justify-content: center;
     }
+
+    &.small-window {
+      flex-direction: column;
+
+      .navbar-item {
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        line-height: $navbar-item-height - 1rem;
+      }
+    }
   }
 
   .navbar-item {
@@ -102,10 +105,6 @@
       height: 100%;
     }
 
-    .dropdown, .button-dropdown {
-      //@include update-dropdown;
-    }
-
     &.with-bar {
       &.active, &:focus, &:hover {
         //create the bottom border
@@ -114,7 +113,7 @@
             left: 0;
             bottom: 0;
             content: '';
-            border-radius: 20%;
+            border-radius: .2rem;
             height: $navbar-simple-item-link-border-height;
             width: $navbar-simple-item-link-border-width;
             background-color: $navbar-simple-item-link-background-colorh;
@@ -127,11 +126,11 @@
 
     &.with-bg {
       &.active {
-        background: darken($navbar-background-color, 5%);
+        background: rgba(0, 0, 0, .13);
       }
 
       &:focus, &:hover {
-        background: darken($navbar-background-color, 3%);
+        background: rgba(0, 0, 0, .1);
       }
     }
 
@@ -140,14 +139,6 @@
       //text-shadow: $navbar-item-active-box-shadown;
     }
 
-  }
-
-
-  &.auto-hide.expand {
-    > .list {
-      display: flex;
-      transition: all 0.2s ease-in-out;
-    }
   }
 
   &.fixed {
@@ -164,6 +155,10 @@
 
     &.bottom {
       bottom: 0;
+
+      &.expand {
+        padding-top: 1rem;
+      }
 
       > .left-bar {
         order: 2;
@@ -190,6 +185,17 @@
       }
     }
 
+    .button {
+      &.default {
+        border: none !important;
+        box-shadow: none !important;
+
+        @include focus-active2 {
+          background: rgba(0, 0, 0, .1);
+          color: $white;
+        }
+      }
+    }
 
     .navbar-switch {
       color: $navbar-primary-active-color;
@@ -209,11 +215,11 @@
 
       &.with-bg {
         &.active {
-          background-color: lighten($navbar-background-color-primary, 8%);
+          background-color: rgba(255, 255, 255, .2);
         }
 
         &:focus, &:hover {
-          background-color: lighten($navbar-background-color-primary, 5%);
+          background-color: rgba(255, 255, 255, .3);;
         }
       }
     }
@@ -221,22 +227,23 @@
 
 }
 
-@include media-query((key:'min-width', value: map-get($bs-layout, 'md'))) {
-  .navbar.auto-hide {
-    .navbar-switch {
-      display: none;
-    }
-
-    flex-direction: row;
-
-    > .list {
-      display: flex;
-      flex-direction: row;
-    }
-  }
-}
+//@include media-query((key:'min-width', value: map-get($bs-layout, 'md'))) {
+//  .navbar.auto-hide {
+//    .navbar-switch {
+//      display: none;
+//    }
+//
+//    flex-direction: row;
+//
+//    > .list {
+//      display: flex;
+//      flex-direction: row;
+//    }
+//  }
+//}
 
 //change the list in column style
+/*
 @include media-query((key:'max-width', value: map-get($bs-layout, 'md'))) {
   &.navbar.auto-hide {
     flex-direction: column;
@@ -259,4 +266,4 @@
       line-height: $navbar-item-height - 1rem;
     }
   }
-}
+}*/

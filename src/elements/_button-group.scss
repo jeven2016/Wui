@@ -4,6 +4,7 @@
 
   > .button {
     @include group-border-radius($btn-group-border-radius);
+    height: auto!important;
 
     + .button {
       margin-left: 0;

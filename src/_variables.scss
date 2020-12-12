@@ -191,7 +191,7 @@ $btn-border-width: 1px;
 $btn-default-padding: $elem-default-padding;
 $btn-large-padding: $elem-large-padding;
 $btn-small-padding: $elem-small-padding;
-$btn-default-background-color: $white;
+$btn-default-background-color: transparent;
 
 
 $btn-cicle-width: 2.25rem;
@@ -431,7 +431,7 @@ $bq-border-radius: 0.5rem;
 
 //for Navbar
 $navbar-border-radius: $default-border-radius;
-$navbar-title-padding: 0 1rem;
+$navbar-title-padding: 0 .5rem;
 $navbar-background-color: #f5f5f5;
 $navbar-fixed-box-shadow: $default-box-shadow;
 $navbar-margin-bottom: 0;

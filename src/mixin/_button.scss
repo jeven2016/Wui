@@ -7,11 +7,13 @@
   color: $font-color;
 }
 
-@mixin enable-active($bg-color, $font-color, $box-shadow-color: lighten($bg-color, $default-box-shadow-color-increase-ratio-active)) {
-  //once the button is disabled, focus and active won't be triggered, only hover needs to be handled
-  $darken-color-1: darken($bg-color, $default-bg-color-increase-ratio);
-  $active-color: darken($bg-color, $default-bg-color-increase-ratio-active);
+@mixin enable-active($bg-color,
+                      $font-color,
+                      $box-shadow-color: lighten($bg-color,$default-box-shadow-color-increase-ratio-active),
+                      $darken-color-1: darken($bg-color, $default-bg-color-increase-ratio),
+                      $active-color: darken($bg-color, $default-bg-color-increase-ratio-active)) {
 
+  //once the button is disabled, focus and active won't be triggered, only hover needs to be handled
   &:not(:disabled) {
     &:focus, &:hover {
       color: $font-color;
