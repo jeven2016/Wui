@@ -8,17 +8,28 @@
   padding: 0 1rem;
 
   &.auto-hide {
-    &.expand {
-      &.small-window {
+    &.small-window {
+      .navbar-switch {
+        display: inline-flex;
+      }
+
+      &.expand {
         flex-direction: column;
         padding-bottom: 1rem;
       }
+
+      > .left-bar {
+        flex: 1 1 100%;
+
+        > .title {
+          flex: 1 1 100%;
+
+          > .title-info {
+            flex: 1 1 100%;
+          }
+        }
+      }
     }
-  }
-
-
-  .switch-btn {
-
   }
 
   &.with-border {
@@ -37,34 +48,22 @@
         font-size: 1.25rem;
       }
 
-
-      > .navbar-switch {
+      > .navbar-switch:first-child {
         margin: 0 .5rem 0 -0.5rem;
       }
 
-      > .title-ifo {
-        margin: 0 0.25rem
+      > .navbar-switch:last-child {
+        margin: 0 -0.5rem 0 .5rem;
+      }
+
+      > .title-info {
+        padding: 0 0.25rem
       }
     }
   }
 
   .navbar-switch {
-    border-width: 0;
-    background: transparent;
-    font-size: 1.5rem;
-    //padding: 0.5rem;
-
-    &:focus, &:hover {
-      box-shadow: $navbar-switch-box-shadow;
-    }
-
-    &:first-child {
-      margin-right: .5rem;
-    }
-
-    &:last-child {
-      margin-left: .5rem;
-    }
+    display: none;
   }
 
   > .list {
@@ -105,6 +104,11 @@
       height: 100%;
     }
 
+    &.compact {
+      padding: 0;
+      min-width: unset;
+    }
+
     &.with-bar {
       &.active, &:focus, &:hover {
         //create the bottom border
@@ -136,7 +140,6 @@
 
     &.active, &:focus, &:hover {
       color: $navbar-item-active-color;
-      //text-shadow: $navbar-item-active-box-shadown;
     }
 
   }
@@ -144,6 +147,7 @@
   &.fixed {
     @include fixed(map_get($z-index, 'mask'), false, null);
     border-radius: 0;
+    width: 100%;
 
     &.top {
       top: 0;
@@ -156,19 +160,21 @@
     &.bottom {
       bottom: 0;
 
-      &.expand {
-        padding-top: 1rem;
+      &.small-window {
+        &.expand {
+          padding-top: 1rem;
+          padding-bottom: 0;
+        }
+
+        > .left-bar {
+          order: 2;
+        }
+
+        > .list {
+          order: 1;
+        }
       }
 
-      > .left-bar {
-        order: 2;
-      }
-
-
-      > .list {
-        order: 1;
-        //padding-top: 1rem;
-      }
     }
   }
 
@@ -176,33 +182,17 @@
     background-color: $navbar-background-color-primary;
     color: $navbar-primary-active-color;
 
-    .input {
-      background: rgba(255, 255, 255, 0.2);
-      color: $white;
-
-      @include make-placeholder {
-        color: $white;
-      }
-    }
-
     .button {
-      &.default {
+      &.default:not(.navbar-switch) {
         border: none !important;
         box-shadow: none !important;
+      }
 
+      &.default {
         @include focus-active2 {
           background: rgba(0, 0, 0, .1);
           color: $white;
         }
-      }
-    }
-
-    .navbar-switch {
-      color: $navbar-primary-active-color;
-      border-color: $navbar-primary-active-color;
-
-      &:focus, &:hover {
-        box-shadow: $navbar-primary-switch-box-shadow;
       }
     }
 
@@ -220,6 +210,38 @@
 
         &:focus, &:hover {
           background-color: rgba(255, 255, 255, .3);;
+        }
+      }
+
+      .input {
+        background: rgba(255, 255, 255, 0.13);
+        color: $white;
+        border: none;
+
+        @include make-placeholder {
+          color: rgba(255, 255, 255, .4);
+        }
+
+        @include focus-active2 {
+          background: rgba(255, 255, 255, 0.30);
+        }
+      }
+
+      .icon-input {
+        @extend .input;
+
+        > .input {
+          background: transparent;
+        }
+
+        .icon-column {
+          color: rgba(255, 255, 255, .7);
+        }
+
+        @include focus-active2 {
+          > .input {
+            background: transparent;
+          }
         }
       }
     }

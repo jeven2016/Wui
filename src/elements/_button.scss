@@ -112,7 +112,7 @@
     flex-grow: 0;
     flex-shrink: 0;
     padding: 0;
-    overflow: hidden;
+    overflow: visible;
     @include border-radius($btn-circle-border-radius);
 
     &:not(.only-icon) {
