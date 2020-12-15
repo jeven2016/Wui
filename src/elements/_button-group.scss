@@ -1,6 +1,7 @@
 .button-group {
   @include make-inline-flex;
   flex-wrap: $btn-group-flex-wrap;
+  vertical-align: middle;// for horizontal alignment, multiple button groups placed in same div
 
   > .button {
     @include group-border-radius($btn-group-border-radius);

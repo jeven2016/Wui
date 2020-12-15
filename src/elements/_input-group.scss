@@ -77,6 +77,7 @@
 
 .input-group {
   @include make-inline-flex-center(stretch);
+  vertical-align: middle;
 
   > .item {
     @extend %item;

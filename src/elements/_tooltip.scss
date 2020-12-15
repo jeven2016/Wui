@@ -10,9 +10,10 @@ $tooltip-arrow-spacing: 1rem;
   color: $white;
   font-size: 0.8rem;
   font-weight: map_get($font-weight, "normal");
-  padding: 0.5rem 0.5rem;
+  padding: 0.25rem 0.5rem;
+  line-height: 1.5;
   min-width: 2rem;
-  min-height: 1.5rem;
+  //min-height: 1.5rem;
 
   > .tooltip-arrow {
     position: absolute;

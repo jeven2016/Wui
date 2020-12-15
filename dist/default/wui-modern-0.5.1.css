@@ -317,8 +317,8 @@ h1, h2, h3, h4, h5, h6 {
 * set the group's border radius property
  */
 .base-btn:disabled, .button:disabled, .base-btn.disabled, .disabled.button, .checkbox:disabled, .checkbox.disabled, .radio:disabled, .radio.disabled, .icon-column:disabled, .icon-column.disabled, .collapse .collapse-header > .header-row > .inner > .header-info:disabled, .collapse .collapse-header > .header-row > .inner > .header-info.disabled, .collapse .collapse-header > .header-row > .header-more:disabled, .collapse .collapse-header > .header-row > .header-more.disabled, .collapse .collapse-header.disabled:disabled, .collapse .collapse-header.disabled, .input:disabled, .navbar.primary .navbar-item .icon-input:disabled, .input.disabled, .navbar.primary .navbar-item .disabled.icon-input, .icon-input:disabled, .icon-input.disabled, .base-menu .menu-item:disabled, .menu .menu-item:disabled, .base-menu .menu-item.disabled, .menu .menu-item.disabled, .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled, .popup-title:disabled, .popup-title.disabled, .tab > .tab-pre:disabled, .tab > .tab-next:disabled, .tab > .disabled.tab-pre, .tab > .disabled.tab-next, .tab .tab-item:disabled, .tab .tab-item.disabled, .tab .tab-item > .item-icon:disabled, .tab .tab-item > .item-icon.disabled, .toggle-button:disabled, .toggle-button.disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info:disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info.disabled, .tree .tree-item > .tree-title > .title-row > .title-more:disabled, .tree .tree-item > .tree-title > .title-row > .title-more.disabled {
-  cursor: not-allowed;
-  opacity: 0.7; }
+  cursor: not-allowed !important;
+  opacity: 0.7 !important; }
 
 .button-group.large > .button, .button.large, .input-group > .large.item, .input-group > .large.label, .input.large, .navbar.primary .navbar-item .large.icon-input {
   font-size: 1.25rem;
@@ -1365,7 +1365,8 @@ $container-offset: 1.5rem;
   display: -ms-inline-flexbox;
   display: -webkit-inline-flex;
   display: inline-flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  vertical-align: middle; }
   .button-group > .button {
     height: auto !important;
     /*
@@ -4759,7 +4760,8 @@ h1, h2, h3, h4, h5, h6 {
   display: -webkit-inline-flex;
   display: inline-flex;
   align-items: stretch;
-  justify-content: center; }
+  justify-content: center;
+  vertical-align: middle; }
   .input-group > .label {
     flex: 0 1 auto; }
     .input-group > .label > .content {
@@ -6940,9 +6942,9 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
   color: #ffffff;
   font-size: 0.8rem;
   font-weight: 500;
-  padding: 0.5rem 0.5rem;
-  min-width: 2rem;
-  min-height: 1.5rem; }
+  padding: 0.25rem 0.5rem;
+  line-height: 1.5;
+  min-width: 2rem; }
   .tooltip > .tooltip-arrow {
     position: absolute;
     display: inline-block;
