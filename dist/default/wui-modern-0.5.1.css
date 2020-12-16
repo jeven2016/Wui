@@ -6103,26 +6103,25 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
       color: rgba(0, 0, 0, 0.8);
       margin: 0 .25rem; }
 
-.pop-confirm {
-  padding: .5rem 0; }
-  .pop-confirm > .pop-row {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    .pop-confirm > .pop-row > .icon-column {
-      padding-right: .5rem;
-      color: #fbbe11; }
-    .pop-confirm > .pop-row > .pop-body {
-      flex: 1 1 auto; }
-  .pop-confirm > .pop-footer {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    flex: 1 1 100%;
-    margin-top: .5rem;
-    justify-content: flex-end; }
+.pop-confirm > .pop-row {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .pop-confirm > .pop-row > .icon-column {
+    padding-right: .5rem;
+    color: #fbbe11; }
+  .pop-confirm > .pop-row > .pop-body {
+    flex: 1 1 auto; }
+
+.pop-confirm > .pop-footer {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex: 1 1 100%;
+  margin-top: .5rem;
+  justify-content: flex-end; }
 
 .popover {
   position: relative;
@@ -6938,7 +6937,7 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
 .tooltip {
   position: relative;
   border-radius: 0.25rem;
-  background: #000000;
+  background: #5b5656;
   color: #ffffff;
   font-size: 0.8rem;
   font-weight: 500;
@@ -6948,48 +6947,48 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
   .tooltip > .tooltip-arrow {
     position: absolute;
     display: inline-block;
-    width: 0.5rem;
-    height: 0.5rem;
+    width: 0.4rem;
+    height: 0.4rem;
     z-index: 1;
-    background: #000000; }
+    background: #5b5656; }
     .tooltip > .tooltip-arrow.with-box {
       box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.07); }
     .tooltip > .tooltip-arrow.top {
-      bottom: -0.25rem;
+      bottom: -0.2rem;
       transform: rotate(-135deg); }
       .tooltip > .tooltip-arrow.top.center {
         left: 50%;
-        margin-left: -0.25rem; }
+        margin-left: -0.2rem; }
       .tooltip > .tooltip-arrow.top.top-left {
         left: 1rem; }
       .tooltip > .tooltip-arrow.top.top-right {
         right: 1rem; }
     .tooltip > .tooltip-arrow.bottom {
-      top: -0.25rem;
+      top: -0.2rem;
       transform: rotate(45deg); }
       .tooltip > .tooltip-arrow.bottom.center {
         left: 50%;
-        margin-left: -0.25rem; }
+        margin-left: -0.2rem; }
       .tooltip > .tooltip-arrow.bottom.bottom-left {
         left: 1rem; }
       .tooltip > .tooltip-arrow.bottom.bottom-right {
         right: 1rem; }
     .tooltip > .tooltip-arrow.left {
-      right: -0.25rem;
+      right: -0.2rem;
       transform: rotate(135deg); }
       .tooltip > .tooltip-arrow.left.center {
         top: 50%;
-        margin-top: -0.25rem; }
+        margin-top: -0.2rem; }
       .tooltip > .tooltip-arrow.left.left-bottom {
         top: 1rem; }
       .tooltip > .tooltip-arrow.left.left-top {
         bottom: 1rem; }
     .tooltip > .tooltip-arrow.right {
-      left: -0.25rem;
+      left: -0.2rem;
       transform: rotate(-45deg); }
       .tooltip > .tooltip-arrow.right.center {
         top: 50%;
-        margin-top: -0.25rem; }
+        margin-top: -0.2rem; }
       .tooltip > .tooltip-arrow.right.right-bottom {
         top: 1rem; }
       .tooltip > .tooltip-arrow.right.right-top {
