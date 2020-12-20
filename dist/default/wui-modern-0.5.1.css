@@ -316,19 +316,19 @@ h1, h2, h3, h4, h5, h6 {
 /**
 * set the group's border radius property
  */
-.base-btn:disabled, .button:disabled, .base-btn.disabled, .disabled.button, .checkbox:disabled, .checkbox.disabled, .radio:disabled, .radio.disabled, .icon-column:disabled, .icon-column.disabled, .collapse .collapse-header > .header-row > .inner > .header-info:disabled, .collapse .collapse-header > .header-row > .inner > .header-info.disabled, .collapse .collapse-header > .header-row > .header-more:disabled, .collapse .collapse-header > .header-row > .header-more.disabled, .collapse .collapse-header.disabled:disabled, .collapse .collapse-header.disabled, .input:disabled, .navbar.primary .navbar-item .icon-input:disabled, .input.disabled, .navbar.primary .navbar-item .disabled.icon-input, .icon-input:disabled, .icon-input.disabled, .base-menu .menu-item:disabled, .menu .menu-item:disabled, .base-menu .menu-item.disabled, .menu .menu-item.disabled, .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled, .popup-title:disabled, .popup-title.disabled, .tab > .tab-pre:disabled, .tab > .tab-next:disabled, .tab > .disabled.tab-pre, .tab > .disabled.tab-next, .tab .tab-item:disabled, .tab .tab-item.disabled, .tab .tab-item > .item-icon:disabled, .tab .tab-item > .item-icon.disabled, .toggle-button:disabled, .toggle-button.disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info:disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info.disabled, .tree .tree-item > .tree-title > .title-row > .title-more:disabled, .tree .tree-item > .tree-title > .title-row > .title-more.disabled {
+.base-btn:disabled, .button:disabled, .base-btn.disabled, .disabled.button, .checkbox:disabled, .checkbox.disabled, .radio:disabled, .radio.disabled, .icon-column:disabled, .icon-column.disabled, .collapse .collapse-header > .header-row > .inner > .header-info:disabled, .collapse .collapse-header > .header-row > .inner > .header-info.disabled, .collapse .collapse-header > .header-row > .header-more:disabled, .collapse .collapse-header > .header-row > .header-more.disabled, .collapse .collapse-header.disabled:disabled, .collapse .collapse-header.disabled, .input:disabled, .navbar.primary .navbar-item .icon-input:disabled, .input.disabled, .navbar.primary .navbar-item .disabled.icon-input, .icon-input:disabled, .icon-input.disabled, .base-menu .menu-item:disabled, .menu .menu-item:disabled, .base-menu .menu-item.disabled, .menu .menu-item.disabled, .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled, .popup-title:disabled, .popup-title.disabled, .select:disabled, .select-multiple:disabled, .disabled.select, .disabled.select-multiple, .tab > .tab-pre:disabled, .tab > .tab-next:disabled, .tab > .disabled.tab-pre, .tab > .disabled.tab-next, .tab .tab-item:disabled, .tab .tab-item.disabled, .tab .tab-item > .item-icon:disabled, .tab .tab-item > .item-icon.disabled, .toggle-button:disabled, .toggle-button.disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info:disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info.disabled, .tree .tree-item > .tree-title > .title-row > .title-more:disabled, .tree .tree-item > .tree-title > .title-row > .title-more.disabled {
   cursor: not-allowed !important;
   opacity: 0.7 !important; }
 
-.button-group.large > .button, .button.large, .input-group > .large.item, .input-group > .large.label, .input.large, .navbar.primary .navbar-item .large.icon-input {
+.button-group.large > .button, .button.large, .input-group > .large.item, .input-group > .large.label, .input.large, .navbar.primary .navbar-item .large.icon-input, .select.large, .select-multiple > .select-multiple-content > .select-input.large {
   font-size: 1.25rem;
   padding: 0.5rem 1rem; }
 
-.button-group.medium > .button, .button.medium, .input-group > .medium.item, .input-group > .medium.label, .input.medium, .navbar.primary .navbar-item .medium.icon-input {
+.button-group.medium > .button, .button.medium, .input-group > .medium.item, .input-group > .medium.label, .input.medium, .navbar.primary .navbar-item .medium.icon-input, .select.medium, .select-multiple > .select-multiple-content > .select-input.medium {
   font-size: 1rem;
   padding: 0.375rem 0.75rem; }
 
-.button-group.small > .button, .button.small, .input-group > .small.item, .input-group > .small.label, .input.small, .navbar.primary .navbar-item .small.icon-input {
+.button-group.small > .button, .button.small, .input-group > .small.item, .input-group > .small.label, .input.small, .navbar.primary .navbar-item .small.icon-input, .select.small, .select-multiple > .select-multiple-content > .select-input.small {
   font-size: 0.875rem;
   padding: 0.25rem 0.5rem; }
 
@@ -4782,14 +4782,14 @@ h1, h2, h3, h4, h5, h6 {
       -webkit-flex-grow: 1;
       flex-grow: 1; }
 
-.input.with-focus:not(.disabled):focus, .navbar.primary .navbar-item .with-focus.icon-input:not(.disabled):focus, .input.with-focus:not(.disabled):hover, .navbar.primary .navbar-item .with-focus.icon-input:not(.disabled):hover, .input.with-focus.active:not(.disabled), .navbar.primary .navbar-item .with-focus.active.icon-input:not(.disabled), .icon-input:not(.disabled):focus, .icon-input:not(.disabled):hover, .icon-input.active:not(.disabled), .select-multiple:not(:disabled):not(.disabled):focus, .select-multiple:not(:disabled):not(.disabled):hover, .select-multiple:not(:disabled):not(.disabled):active, .select-multiple.active:not(:disabled):not(.disabled) {
+.input.with-focus:not(.disabled):focus, .navbar.primary .navbar-item .with-focus.icon-input:not(.disabled):focus, .input.with-focus:not(.disabled):hover, .navbar.primary .navbar-item .with-focus.icon-input:not(.disabled):hover, .input.with-focus.active:not(.disabled), .navbar.primary .navbar-item .with-focus.active.icon-input:not(.disabled), .icon-input:not(.disabled):focus, .icon-input:not(.disabled):hover, .icon-input.active:not(.disabled) {
   z-index: 1;
   position: relative; }
-  .input.with-focus:not(.simple-input):not(.disabled):focus, .input.with-focus:not(.simple-input):not(.disabled):hover, .input.with-focus.active:not(.simple-input):not(.disabled), .icon-input:not(.simple-input):not(.disabled):focus, .icon-input:not(.simple-input):not(.disabled):hover, .icon-input.active:not(.simple-input):not(.disabled), .select-multiple:not(.simple-input):not(:disabled):not(.disabled):focus, .select-multiple:not(.simple-input):not(:disabled):not(.disabled):hover, .select-multiple:not(.simple-input):not(:disabled):not(.disabled):active, .select-multiple.active:not(.simple-input):not(:disabled):not(.disabled) {
+  .input.with-focus:not(.simple-input):not(.disabled):focus, .input.with-focus:not(.simple-input):not(.disabled):hover, .input.with-focus.active:not(.simple-input):not(.disabled), .icon-input:not(.simple-input):not(.disabled):focus, .icon-input:not(.simple-input):not(.disabled):hover, .icon-input.active:not(.simple-input):not(.disabled) {
     border-color: #0ca0ff; }
-    .input.with-focus:not(.simple-input).with-input-box:not(.disabled):focus, .input.with-focus:not(.simple-input).with-input-box:not(.disabled):hover, .input.with-focus.active:not(.simple-input).with-input-box:not(.disabled), .icon-input:not(.simple-input).with-input-box:not(.disabled):focus, .icon-input:not(.simple-input).with-input-box:not(.disabled):hover, .icon-input.active:not(.simple-input).with-input-box:not(.disabled), .select-multiple:not(.simple-input).with-input-box:not(:disabled):not(.disabled):focus, .select-multiple:not(.simple-input).with-input-box:not(:disabled):not(.disabled):hover, .select-multiple:not(.simple-input).with-input-box:not(:disabled):not(.disabled):active, .select-multiple.active:not(.simple-input).with-input-box:not(:disabled):not(.disabled) {
+    .input.with-focus:not(.simple-input).with-input-box:not(.disabled):focus, .input.with-focus:not(.simple-input).with-input-box:not(.disabled):hover, .input.with-focus.active:not(.simple-input).with-input-box:not(.disabled), .icon-input:not(.simple-input).with-input-box:not(.disabled):focus, .icon-input:not(.simple-input).with-input-box:not(.disabled):hover, .icon-input.active:not(.simple-input).with-input-box:not(.disabled) {
       box-shadow: 0 0 0 0.2rem #d8f0ff; }
-  .simple-input.input.with-focus:focus:not(.disabled):after, .simple-input.input.with-focus:hover:not(.disabled):after, .simple-input.input.with-focus.active:not(.disabled):after, .simple-input.icon-input:focus:not(.disabled):after, .simple-input.icon-input:hover:not(.disabled):after, .simple-input.icon-input.active:not(.disabled):after, .simple-input.select-multiple:focus:not(.disabled):not(:disabled):after, .simple-input.select-multiple:hover:not(.disabled):not(:disabled):after, .simple-input.select-multiple:active:not(.disabled):not(:disabled):after, .simple-input.select-multiple.active:not(.disabled):not(:disabled):after {
+  .simple-input.input.with-focus:focus:not(.disabled):after, .simple-input.input.with-focus:hover:not(.disabled):after, .simple-input.input.with-focus.active:not(.disabled):after, .simple-input.icon-input:focus:not(.disabled):after, .simple-input.icon-input:hover:not(.disabled):after, .simple-input.icon-input.active:not(.disabled):after {
     position: absolute;
     display: block;
     border-radius: 50%;
@@ -6306,9 +6306,76 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     left: 0;
     width: 100%; }
 
+.select, .select-multiple {
+  display: inline-flex;
+  align-items: center;
+  flex: 1 1 auto;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  outline: 0;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  transition: all 0.2s ease-in-out;
+  outline: 0;
+  min-height: 1.5em;
+  position: relative;
+  width: 18.625rem; }
+  .block.select, .block.select-multiple {
+    width: 100%; }
+  .select:not(.disabled):focus, .select-multiple:not(.disabled):focus, .select:not(.disabled):hover, .select-multiple:not(.disabled):hover {
+    border: 1px solid #0ca0ff; }
+  .select:not(.disabled).active, .select-multiple:not(.disabled).active {
+    border: 1px solid #0ca0ff; }
+  .active.select, .active.select-multiple {
+    z-index: 1; }
+    .active.with-select-box.select, .active.with-select-box.select-multiple {
+      box-shadow: 0 0 0 0.2rem #d8f0ff;
+      border: 1px solid #0ca0ff; }
+
+.select-input {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  outline: 0;
+  line-height: 1.5;
+  -webkit-appearance: none;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  border: none; }
+
+.select.large {
+  /* &:not(.textarea):not(within-group) {
+      height: $input-large-height;
+    }*/ }
+
+.select.medium {
+  /*  &:not(.textarea):not(within-group) {
+      height: $input-height;
+    }*/ }
+
+.select.small {
+  /* &:not(.textarea):not(within-group) {
+      height: $input-small-height;
+    }*/ }
+
+.select > .select-info {
+  flex: 1 1 auto; }
+  .select > .select-info > .select-content {
+    cursor: pointer;
+    display: flex;
+    align-items: center; }
+    .select > .select-info > .select-content.placeholder {
+      color: #818a91; }
+
+.select > .icon-column {
+  cursor: pointer;
+  margin-right: -.25rem; }
+
 .select-menu .menu .menu-item {
   padding: 0.5rem 1rem !important;
   min-width: unset; }
+  .select-menu .menu .menu-item:not(.disabled).active.with-bg {
+    background: #0ca0ff0f !important; }
 
 .select-menu .no-data {
   background: white;
@@ -6340,40 +6407,64 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
   padding: 0 0.25rem; }
 
 .select-multiple {
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: start;
-  flex: 1 1 100%;
-  align-items: start;
-  flex-wrap: wrap;
-  cursor: pointer;
-  border: 1px solid #ccc;
-  position: relative;
-  border-radius: 0.25rem; }
+  padding: 0 .25rem; }
   .select-multiple > .select-multiple-content {
     display: flex;
     flex-wrap: wrap;
     width: 100%; }
     .select-multiple > .select-multiple-content > .multi-item {
-      margin: 0.25rem; }
-      .select-multiple > .select-multiple-content > .multi-item > .badge > .content {
-        border: 1px solid #ccc; }
-        .select-multiple > .select-multiple-content > .multi-item > .badge > .content > .remove-icon {
-          margin-left: 0.25rem; }
-          .select-multiple > .select-multiple-content > .multi-item > .badge > .content > .remove-icon:not(.disabled):focus, .select-multiple > .select-multiple-content > .multi-item > .badge > .content > .remove-icon:not(.disabled):hover {
-            color: #ff350e; }
-    .select-multiple > .select-multiple-content > .input, .navbar.primary .navbar-item .select-multiple > .select-multiple-content > .icon-input {
+      margin: 0.125rem 0.25rem 0.125rem 0;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center;
+      border-radius: 0.25rem;
+      padding: .25rem;
+      background: #f5f5f5;
+      border: 1px solid #ccc;
+      /* > .badge {
+         > .content {
+           border: $default-border;
+           border-radius: .25rem;
+           line-height: unset;
+
+           > .remove-icon {
+             margin-left: 0.25rem;
+
+             @include focus2 {
+               color: $red;
+             }
+           }
+         }
+       }*/ }
+    .select-multiple > .select-multiple-content > .select-input {
       padding-left: 0;
       padding-right: 0;
-      width: 1em;
+      width: 1.5em;
       min-width: 0.5rem;
       max-width: 100%;
-      font-size: .8rem;
       border: none;
       box-shadow: none !important;
       outline: 0;
       margin: 0 0.25rem; }
+      .select-multiple > .select-multiple-content > .select-input.large {
+        padding-right: 0;
+        padding-left: 0;
+        /* &:not(.textarea):not(within-group) {
+      height: $input-large-height;
+    }*/ }
+      .select-multiple > .select-multiple-content > .select-input.medium {
+        padding-right: 0;
+        padding-left: 0;
+        /*  &:not(.textarea):not(within-group) {
+      height: $input-height;
+    }*/ }
+      .select-multiple > .select-multiple-content > .select-input.small {
+        padding-right: 0;
+        padding-left: 0;
+        /* &:not(.textarea):not(within-group) {
+      height: $input-small-height;
+    }*/ }
     .select-multiple > .select-multiple-content > .search-text-detector {
       position: absolute;
       opacity: 0;

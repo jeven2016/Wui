@@ -1,3 +1,77 @@
+%select-base {
+  display: inline-flex;
+  align-items: center;
+  flex: 1 1 auto;
+  border: $input-border;
+  @include border-radius($input-border-radius);
+  outline: $input-outline;
+  line-height: $input-line-height;
+  -webkit-appearance: none;
+  transition: $default-transition;
+  //font-size: $input-font-size;
+  outline: $input-outline;
+  min-height: 1.5em;
+  position: relative;
+  width: 18.625rem;
+
+  &.block {
+    width: 100%;
+  }
+
+  @include add-disabled-conf;
+
+  @include focus-active2 {
+    border: 1px solid $blue;
+  }
+
+  &.active {
+    z-index: map_get($z-index, "one");
+
+    &.with-select-box {
+      box-shadow: $input-box-shadow;
+      border: 1px solid $blue;
+    }
+  }
+}
+
+.select-input {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  outline: $input-outline;
+  line-height: $input-line-height;
+  -webkit-appearance: none;
+  transition: $default-transition;
+  //font-size: $input-font-size;
+  outline: none;
+  border: none;
+}
+
+.select {
+  @extend %select-base;
+  @include input-variant-size();
+
+  > .select-info {
+    flex: 1 1 auto;
+
+    > .select-content {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &.placeholder {
+        color: $text-comment-color
+      }
+    }
+
+  }
+
+  > .icon-column {
+    cursor: pointer;
+    margin-right: -.25rem;
+  }
+}
+
 
 .select-menu {
 
@@ -5,6 +79,11 @@
     .menu-item {
       padding: 0.5rem 1rem !important;
       min-width: unset;
+
+      &:not(.disabled).active.with-bg {
+        background: #0ca0ff0f !important;
+      }
+
     }
   }
 
@@ -40,19 +119,8 @@
 }
 
 .select-multiple {
-  @include make-flex {
-    justify-content: start;
-    flex: 1 1 100%;
-    align-items: start;
-    flex-wrap: wrap;
-    cursor: pointer;
-    border: $default-border;
-    position: relative;
-    border-radius: $default-border-radius;
-  }
-  @include focus-active {
-    @extend %input-active-base;
-  }
+  @extend %select-base;
+  padding: 0 .25rem;
 
   > .select-multiple-content {
     display: flex;
@@ -60,34 +128,47 @@
     width: 100%;
 
     > .multi-item {
-      margin: 0.25rem;
+      margin: 0.125rem 0.25rem 0.125rem 0;
+      @include make-flex-vertical-center;
+      @include border-radius();
+      padding: .25rem;
+      background: $light-gray;
+      border: $default-border;
 
-      > .badge {
-        > .content {
-          border: $default-border;
 
-          > .remove-icon {
-            margin-left: 0.25rem;
+      /* > .badge {
+         > .content {
+           border: $default-border;
+           border-radius: .25rem;
+           line-height: unset;
 
-            @include focus2 {
-              color: $red;
-            }
-          }
-        }
-      }
+           > .remove-icon {
+             margin-left: 0.25rem;
+
+             @include focus2 {
+               color: $red;
+             }
+           }
+         }
+       }*/
     }
 
-    > .input {
+    > .select-input {
       padding-left: 0;
       padding-right: 0;
-      width: 1em;
+      width: 1.5em;
       min-width: 0.5rem;
       max-width: 100%;
-      font-size: .8rem;
+      //font-size: .8rem;
       border: none;
       box-shadow: none !important;
       outline: 0;
       margin: 0 0.25rem;
+
+      @include input-variant-size {
+        padding-right: 0;
+        padding-left: 0;
+      }
     }
 
     > .search-text-detector {
@@ -95,6 +176,7 @@
       opacity: 0;
       left: 0;
       top: 0;
+      //pointer-events: none;
     }
   }
 

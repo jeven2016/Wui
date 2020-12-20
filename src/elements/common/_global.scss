@@ -190,7 +190,7 @@ a {
 
   > .content {
     position: absolute;
-    pointer-events: none;
+    pointer-events: none; //ensure the content cannlt be clicked
     //z-index: 1;
     border-radius: 50%;
   }
