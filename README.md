@@ -24,7 +24,7 @@ npm run watch
 ```
 ### Watch and copy the files into a specific directory
 ```
-npm run watch-copy-default -- --copyTo=/home/jujucome/Desktop/workspace/projects/react-windy-ui/src/docs/style/
+npm run watch-copy-default -- --copyTo=/home/jujucom/Desktop/workspace/projects/react-windy-ui/src/docs/style/
 ```
 
 ### React-wui-modern

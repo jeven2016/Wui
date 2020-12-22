@@ -1,4 +1,5 @@
 %select-base {
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   flex: 1 1 auto;
@@ -12,7 +13,6 @@
   outline: $input-outline;
   min-height: 1.5em;
   position: relative;
-  width: 18.625rem;
 
   &.block {
     width: 100%;
@@ -55,7 +55,6 @@
     flex: 1 1 auto;
 
     > .select-content {
-      cursor: pointer;
       display: flex;
       align-items: center;
 
@@ -67,7 +66,6 @@
   }
 
   > .icon-column {
-    cursor: pointer;
     margin-right: -.25rem;
   }
 }
@@ -80,10 +78,17 @@
       padding: 0.5rem 1rem !important;
       min-width: unset;
 
-      &:not(.disabled).active.with-bg {
+      &:not(.disabled).active {
         background: #0ca0ff0f !important;
       }
 
+      > .icon-column {
+        margin: 0;
+
+        + .item-info {
+          padding-left: .5rem;
+        }
+      }
     }
   }
 
@@ -126,6 +131,12 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    align-items: center;
+
+    > .placeholder-text {
+      color: $input-placeholder-color;
+      padding: 0 .5rem;
+    }
 
     > .multi-item {
       margin: 0.125rem 0.25rem 0.125rem 0;
@@ -135,22 +146,7 @@
       background: $light-gray;
       border: $default-border;
 
-
-      /* > .badge {
-         > .content {
-           border: $default-border;
-           border-radius: .25rem;
-           line-height: unset;
-
-           > .remove-icon {
-             margin-left: 0.25rem;
-
-             @include focus2 {
-               color: $red;
-             }
-           }
-         }
-       }*/
+      @include input-variant-size;
     }
 
     > .select-input {
@@ -169,6 +165,8 @@
         padding-right: 0;
         padding-left: 0;
       }
+
+      @include add-disabled-conf;
     }
 
     > .search-text-detector {
@@ -176,7 +174,8 @@
       opacity: 0;
       left: 0;
       top: 0;
-      //pointer-events: none;
+
+      @include add-disabled-conf;
     }
   }
 

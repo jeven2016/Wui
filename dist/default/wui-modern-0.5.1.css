@@ -316,19 +316,19 @@ h1, h2, h3, h4, h5, h6 {
 /**
 * set the group's border radius property
  */
-.base-btn:disabled, .button:disabled, .base-btn.disabled, .disabled.button, .checkbox:disabled, .checkbox.disabled, .radio:disabled, .radio.disabled, .icon-column:disabled, .icon-column.disabled, .collapse .collapse-header > .header-row > .inner > .header-info:disabled, .collapse .collapse-header > .header-row > .inner > .header-info.disabled, .collapse .collapse-header > .header-row > .header-more:disabled, .collapse .collapse-header > .header-row > .header-more.disabled, .collapse .collapse-header.disabled:disabled, .collapse .collapse-header.disabled, .input:disabled, .navbar.primary .navbar-item .icon-input:disabled, .input.disabled, .navbar.primary .navbar-item .disabled.icon-input, .icon-input:disabled, .icon-input.disabled, .base-menu .menu-item:disabled, .menu .menu-item:disabled, .base-menu .menu-item.disabled, .menu .menu-item.disabled, .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled, .popup-title:disabled, .popup-title.disabled, .select:disabled, .select-multiple:disabled, .disabled.select, .disabled.select-multiple, .tab > .tab-pre:disabled, .tab > .tab-next:disabled, .tab > .disabled.tab-pre, .tab > .disabled.tab-next, .tab .tab-item:disabled, .tab .tab-item.disabled, .tab .tab-item > .item-icon:disabled, .tab .tab-item > .item-icon.disabled, .toggle-button:disabled, .toggle-button.disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info:disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info.disabled, .tree .tree-item > .tree-title > .title-row > .title-more:disabled, .tree .tree-item > .tree-title > .title-row > .title-more.disabled {
+.base-btn:disabled, .button:disabled, .base-btn.disabled, .disabled.button, .checkbox:disabled, .checkbox.disabled, .radio:disabled, .radio.disabled, .icon-column:disabled, .icon-column.disabled, .collapse .collapse-header > .header-row > .inner > .header-info:disabled, .collapse .collapse-header > .header-row > .inner > .header-info.disabled, .collapse .collapse-header > .header-row > .header-more:disabled, .collapse .collapse-header > .header-row > .header-more.disabled, .collapse .collapse-header.disabled:disabled, .collapse .collapse-header.disabled, .input:disabled, .navbar.primary .navbar-item .icon-input:disabled, .input.disabled, .navbar.primary .navbar-item .disabled.icon-input, .icon-input:disabled, .icon-input.disabled, .base-menu .menu-item:disabled, .menu .menu-item:disabled, .base-menu .menu-item.disabled, .menu .menu-item.disabled, .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled, .popup-title:disabled, .popup-title.disabled, .select:disabled, .select-multiple:disabled, .disabled.select, .disabled.select-multiple, .select-multiple > .select-multiple-content > .select-input:disabled, .select-multiple > .select-multiple-content > .select-input.disabled, .select-multiple > .select-multiple-content > .search-text-detector:disabled, .select-multiple > .select-multiple-content > .search-text-detector.disabled, .tab > .tab-pre:disabled, .tab > .tab-next:disabled, .tab > .disabled.tab-pre, .tab > .disabled.tab-next, .tab .tab-item:disabled, .tab .tab-item.disabled, .tab .tab-item > .item-icon:disabled, .tab .tab-item > .item-icon.disabled, .toggle-button:disabled, .toggle-button.disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info:disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info.disabled, .tree .tree-item > .tree-title > .title-row > .title-more:disabled, .tree .tree-item > .tree-title > .title-row > .title-more.disabled {
   cursor: not-allowed !important;
   opacity: 0.7 !important; }
 
-.button-group.large > .button, .button.large, .input-group > .large.item, .input-group > .large.label, .input.large, .navbar.primary .navbar-item .large.icon-input, .select.large, .select-multiple > .select-multiple-content > .select-input.large {
+.button-group.large > .button, .button.large, .input-group > .large.item, .input-group > .large.label, .input.large, .navbar.primary .navbar-item .large.icon-input, .select.large, .select-multiple > .select-multiple-content > .multi-item.large, .select-multiple > .select-multiple-content > .select-input.large {
   font-size: 1.25rem;
   padding: 0.5rem 1rem; }
 
-.button-group.medium > .button, .button.medium, .input-group > .medium.item, .input-group > .medium.label, .input.medium, .navbar.primary .navbar-item .medium.icon-input, .select.medium, .select-multiple > .select-multiple-content > .select-input.medium {
+.button-group.medium > .button, .button.medium, .input-group > .medium.item, .input-group > .medium.label, .input.medium, .navbar.primary .navbar-item .medium.icon-input, .select.medium, .select-multiple > .select-multiple-content > .multi-item.medium, .select-multiple > .select-multiple-content > .select-input.medium {
   font-size: 1rem;
   padding: 0.375rem 0.75rem; }
 
-.button-group.small > .button, .button.small, .input-group > .small.item, .input-group > .small.label, .input.small, .navbar.primary .navbar-item .small.icon-input, .select.small, .select-multiple > .select-multiple-content > .select-input.small {
+.button-group.small > .button, .button.small, .input-group > .small.item, .input-group > .small.label, .input.small, .navbar.primary .navbar-item .small.icon-input, .select.small, .select-multiple > .select-multiple-content > .multi-item.small, .select-multiple > .select-multiple-content > .select-input.small {
   font-size: 0.875rem;
   padding: 0.25rem 0.5rem; }
 
@@ -5687,16 +5687,6 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
       text-shadow: 1px 1px 2px #333; }
       .base-menu .menu-item.dark.active.with-bg, .menu .menu-item.dark.active.with-bg {
         background: #0ca0ff; }
-    .base-menu .menu-item > .left, .menu .menu-item > .left, .base-menu .menu-item > .right, .menu .menu-item > .right {
-      flex: 0 1 1em;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-    .base-menu .menu-item > .center, .menu .menu-item > .center {
-      flex: 1 0 auto;
-      padding: 0 0.25rem; }
   .base-menu .menu-header, .menu .menu-header {
     cursor: pointer;
     line-height: 1.5rem;
@@ -6307,6 +6297,7 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     width: 100%; }
 
 .select, .select-multiple {
+  cursor: pointer;
   display: inline-flex;
   align-items: center;
   flex: 1 1 auto;
@@ -6318,8 +6309,7 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
   transition: all 0.2s ease-in-out;
   outline: 0;
   min-height: 1.5em;
-  position: relative;
-  width: 18.625rem; }
+  position: relative; }
   .block.select, .block.select-multiple {
     width: 100%; }
   .select:not(.disabled):focus, .select-multiple:not(.disabled):focus, .select:not(.disabled):hover, .select-multiple:not(.disabled):hover {
@@ -6361,21 +6351,23 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
 .select > .select-info {
   flex: 1 1 auto; }
   .select > .select-info > .select-content {
-    cursor: pointer;
     display: flex;
     align-items: center; }
     .select > .select-info > .select-content.placeholder {
       color: #818a91; }
 
 .select > .icon-column {
-  cursor: pointer;
   margin-right: -.25rem; }
 
 .select-menu .menu .menu-item {
   padding: 0.5rem 1rem !important;
   min-width: unset; }
-  .select-menu .menu .menu-item:not(.disabled).active.with-bg {
+  .select-menu .menu .menu-item:not(.disabled).active {
     background: #0ca0ff0f !important; }
+  .select-menu .menu .menu-item > .icon-column {
+    margin: 0; }
+    .select-menu .menu .menu-item > .icon-column + .item-info {
+      padding-left: .5rem; }
 
 .select-menu .no-data {
   background: white;
@@ -6411,7 +6403,11 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
   .select-multiple > .select-multiple-content {
     display: flex;
     flex-wrap: wrap;
-    width: 100%; }
+    width: 100%;
+    align-items: center; }
+    .select-multiple > .select-multiple-content > .placeholder-text {
+      color: #818a91;
+      padding: 0 .5rem; }
     .select-multiple > .select-multiple-content > .multi-item {
       margin: 0.125rem 0.25rem 0.125rem 0;
       display: -ms-flexbox;
@@ -6421,22 +6417,19 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
       border-radius: 0.25rem;
       padding: .25rem;
       background: #f5f5f5;
-      border: 1px solid #ccc;
-      /* > .badge {
-         > .content {
-           border: $default-border;
-           border-radius: .25rem;
-           line-height: unset;
-
-           > .remove-icon {
-             margin-left: 0.25rem;
-
-             @include focus2 {
-               color: $red;
-             }
-           }
-         }
-       }*/ }
+      border: 1px solid #ccc; }
+      .select-multiple > .select-multiple-content > .multi-item.large {
+        /* &:not(.textarea):not(within-group) {
+      height: $input-large-height;
+    }*/ }
+      .select-multiple > .select-multiple-content > .multi-item.medium {
+        /*  &:not(.textarea):not(within-group) {
+      height: $input-height;
+    }*/ }
+      .select-multiple > .select-multiple-content > .multi-item.small {
+        /* &:not(.textarea):not(within-group) {
+      height: $input-small-height;
+    }*/ }
     .select-multiple > .select-multiple-content > .select-input {
       padding-left: 0;
       padding-right: 0;
