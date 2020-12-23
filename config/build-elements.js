@@ -17,7 +17,7 @@ var config = {
         'button-group': true,
         card: true,
         layout: true,
-        dialog: true,
+        modal: true,
         tabs: true,
         navbar: true,
         menu: true,

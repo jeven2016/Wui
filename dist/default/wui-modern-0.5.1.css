@@ -320,15 +320,15 @@ h1, h2, h3, h4, h5, h6 {
   cursor: not-allowed !important;
   opacity: 0.7 !important; }
 
-.button-group.large > .button, .button.large, .input-group > .large.item, .input-group > .large.label, .input.large, .navbar.primary .navbar-item .large.icon-input, .select.large, .select-multiple > .select-multiple-content > .multi-item.large, .select-multiple > .select-multiple-content > .select-input.large {
+.button-group.large > .button, .button.large, .input-group > .large.item, .input-group > .large.label, .input.large, .navbar.primary .navbar-item .large.icon-input, .select.large, .select-multiple > .select-multiple-content > .select-input.large {
   font-size: 1.25rem;
   padding: 0.5rem 1rem; }
 
-.button-group.medium > .button, .button.medium, .input-group > .medium.item, .input-group > .medium.label, .input.medium, .navbar.primary .navbar-item .medium.icon-input, .select.medium, .select-multiple > .select-multiple-content > .multi-item.medium, .select-multiple > .select-multiple-content > .select-input.medium {
+.button-group.medium > .button, .button.medium, .input-group > .medium.item, .input-group > .medium.label, .input.medium, .navbar.primary .navbar-item .medium.icon-input, .select.medium, .select-multiple > .select-multiple-content > .select-input.medium {
   font-size: 1rem;
   padding: 0.375rem 0.75rem; }
 
-.button-group.small > .button, .button.small, .input-group > .small.item, .input-group > .small.label, .input.small, .navbar.primary .navbar-item .small.icon-input, .select.small, .select-multiple > .select-multiple-content > .multi-item.small, .select-multiple > .select-multiple-content > .select-input.small {
+.button-group.small > .button, .button.small, .input-group > .small.item, .input-group > .small.label, .input.small, .navbar.primary .navbar-item .small.icon-input, .select.small, .select-multiple > .select-multiple-content > .select-input.small {
   font-size: 0.875rem;
   padding: 0.25rem 0.5rem; }
 
@@ -541,7 +541,7 @@ a {
   .svg.small {
     font-size: 1.25rem; }
 
-.dialog > .header > .title, .dialog > .header > .icon {
+.modal > .header > .title, .modal > .header > .icon {
   position: relative;
   display: inline-block; }
 
@@ -556,7 +556,7 @@ a {
   z-index: 1000;
   overflow: hidden; }
   .mask.dark {
-    background: rgba(0, 0, 0, 0.7); }
+    background: rgba(0, 0, 0, 0.8); }
 
 .pull-left {
   float: left !important;
@@ -583,7 +583,7 @@ a {
 .with-box {
   box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12); }
 
-.clear-fix::after, .dialog > .header::after {
+.clear-fix::after, .modal > .header::after {
   content: '';
   display: table;
   clear: both; }
@@ -4420,88 +4420,6 @@ $container-offset: 1.5rem;
 .range-btn {
   padding: .2rem .3rem !important; }
 
-.dialog > .body {
-  min-height: 1rem;
-  padding: 1rem 1rem; }
-
-.dialog {
-  position: fixed;
-  z-index: 1000;
-  display: none;
-  left: 50%;
-  flex-direction: column;
-  border: none;
-  min-height: 1rem;
-  background-color: #fff;
-  border-radius: 0.25rem;
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12); }
-  .dialog.with-width {
-    width: 90%; }
-  .dialog > .header {
-    padding: .75rem 1rem;
-    font-size: 1.25rem;
-    font-weight: 500; }
-    .dialog > .header:active {
-      cursor: grabbing; }
-    .dialog > .header > .title {
-      float: left; }
-    .dialog > .header > .icon {
-      float: right;
-      font-size: 1.25rem;
-      color: rgba(0, 0, 0, 0.4);
-      cursor: pointer; }
-      .dialog > .header > .icon:hover, .dialog > .header > .icon:focus {
-        color: black; }
-  .dialog > .body {
-    border-left-width: 0;
-    border-right-width: 0;
-    flex: 1 1 auto; }
-    .dialog > .body.overflow {
-      overflow-y: auto; }
-  .dialog > .footer {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    justify-content: flex-end;
-    padding: .5rem 1rem;
-    border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px); }
-    .dialog > .footer > .button:not(:first-child) {
-      margin-left: 1rem; }
-  .dialog.simple {
-    border-width: 0;
-    box-shadow: none;
-    color: #ffffff;
-    background-color: transparent; }
-    .dialog.simple > .header, .dialog.simple > .body, .dialog.simple > .footer {
-      border-width: 0;
-      border-radius: 0;
-      color: inherit; }
-    .dialog.simple > .header > .title:hover, .dialog.simple > .header > .title:focus {
-      text-shadow: 1px 1px 2px #333, 0 0 15px #ffffff, 0 0 5px #0ca0ff; }
-    .dialog.simple > .header > .icon {
-      color: #ffffff; }
-      .dialog.simple > .header > .icon:hover, .dialog.simple > .header > .icon:focus {
-        color: #ffffff;
-        text-shadow: 1px 1px 2px #333, 0 0 15px #ffffff, 0 0 5px #0ca0ff; }
-    .dialog.simple > .footer {
-      background: transparent; }
-  .dialog.primary > .header {
-    background-color: #0ca0ff;
-    color: #ffffff;
-    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0; }
-    .dialog.primary > .header > .title:hover, .dialog.primary > .header > .title:focus {
-      text-shadow: 1px 1px 2px #333, 0 0 15px #ffffff, 0 0 5px #0ca0ff; }
-    .dialog.primary > .header > .icon {
-      color: #ffffff; }
-      .dialog.primary > .header > .icon:hover, .dialog.primary > .header > .icon:focus {
-        color: #ffffff;
-        text-shadow: 1px 1px 2px #333, 0 0 15px #ffffff, 0 0 5px #0ca0ff; }
-  .dialog.primary > .body {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc; }
-  .dialog.primary > .footer {
-    background-color: #f5f5f5; }
-
 .divider {
   display: block;
   width: 100%;
@@ -5847,6 +5765,94 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
   .menu.non-compact {
     width: 100%; }
 
+.modal > .body {
+  min-height: 1rem;
+  padding: 1rem 1rem; }
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  display: none;
+  left: 50%;
+  top: 50%;
+  flex-direction: column;
+  border: none;
+  min-height: 1rem;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12); }
+  .modal.with-width {
+    width: 90%; }
+  .modal > .header {
+    padding: .75rem 1rem;
+    font-size: 1.25rem;
+    font-weight: 500; }
+    .modal > .header:active {
+      cursor: grabbing; }
+    .modal > .header > .title {
+      float: left; }
+    .modal > .header > .icon {
+      float: right;
+      font-size: 1.25rem;
+      color: rgba(0, 0, 0, 0.4);
+      cursor: pointer; }
+      .modal > .header > .icon:hover, .modal > .header > .icon:focus {
+        color: black; }
+  .modal > .body {
+    border-left-width: 0;
+    border-right-width: 0;
+    flex: 1 1 auto; }
+    .modal > .body.overflow {
+      overflow-y: auto; }
+  .modal > .footer {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-end;
+    padding: .5rem 1rem;
+    border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px); }
+    .modal > .footer > .button:not(:first-child) {
+      margin-left: 1rem; }
+  .modal.simple {
+    border-width: 0;
+    box-shadow: none;
+    color: #ffffff;
+    background-color: transparent; }
+    .modal.simple > .header, .modal.simple > .body, .modal.simple > .footer {
+      border-width: 0;
+      border-radius: 0;
+      color: inherit; }
+    .modal.simple > .header > .title:hover, .modal.simple > .header > .title:focus {
+      text-shadow: 1px 1px 2px #333, 0 0 15px #ffffff, 0 0 5px #0ca0ff; }
+    .modal.simple > .header > .icon {
+      color: #ffffff; }
+      .modal.simple > .header > .icon:hover, .modal.simple > .header > .icon:focus {
+        color: #ffffff;
+        text-shadow: 1px 1px 2px #333, 0 0 15px #ffffff, 0 0 5px #0ca0ff; }
+    .modal.simple > .footer {
+      background: transparent; }
+  .modal.primary > .header {
+    background-color: #0ca0ff;
+    color: #ffffff;
+    border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0; }
+    .modal.primary > .header > .title:hover, .modal.primary > .header > .title:focus {
+      text-shadow: 1px 1px 2px #333, 0 0 15px #ffffff, 0 0 5px #0ca0ff; }
+    .modal.primary > .header > .icon {
+      color: #ffffff; }
+      .modal.primary > .header > .icon:hover, .modal.primary > .header > .icon:focus {
+        color: #ffffff;
+        text-shadow: 1px 1px 2px #333, 0 0 15px #ffffff, 0 0 5px #0ca0ff; }
+  .modal.primary > .body {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; }
+  .modal.primary > .footer {
+    background-color: #f5f5f5; }
+  .modal.full-window {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+
 .navbar {
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -6418,18 +6424,6 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
       padding: .25rem;
       background: #f5f5f5;
       border: 1px solid #ccc; }
-      .select-multiple > .select-multiple-content > .multi-item.large {
-        /* &:not(.textarea):not(within-group) {
-      height: $input-large-height;
-    }*/ }
-      .select-multiple > .select-multiple-content > .multi-item.medium {
-        /*  &:not(.textarea):not(within-group) {
-      height: $input-height;
-    }*/ }
-      .select-multiple > .select-multiple-content > .multi-item.small {
-        /* &:not(.textarea):not(within-group) {
-      height: $input-small-height;
-    }*/ }
     .select-multiple > .select-multiple-content > .select-input {
       padding-left: 0;
       padding-right: 0;

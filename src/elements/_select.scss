@@ -145,8 +145,6 @@
       padding: .25rem;
       background: $light-gray;
       border: $default-border;
-
-      @include input-variant-size;
     }
 
     > .select-input {
