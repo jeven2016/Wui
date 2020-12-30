@@ -21,7 +21,7 @@
   box-shadow: $default-box-shadow;
 
   @include limit-width("max-width", $dialog-content-width-sm, $dialog-content-width-md,
-      $dialog-content-width-lg, $dialog-content-width-xg);
+          $dialog-content-width-lg, $dialog-content-width-xg);
 
 
   &.center {
@@ -33,10 +33,11 @@
   }
 
   > .header {
-    //cursor: $dialog-header-cursor;
+    @include make-flex;
     padding: 1rem 1.5rem;
     font-size: $dialog-header-font-size;
     font-weight: $dialog-header-font-weight;
+    align-items: center;
 
     &:active {
       cursor: $dialog-header-active-cursor;
@@ -44,13 +45,10 @@
 
     > .title {
       @extend %inline-block-style;
-      float: left;
+      flex: 1 1 auto;
     }
 
     > .icon {
-      @extend %inline-block-style;
-      float: right;
-      font-size: map-get($font-size, 'large');
       color: $dialog-icon-color;
       cursor: pointer;
 
@@ -58,8 +56,6 @@
         color: $dialog-icon-color-hover;
       }
     }
-
-    @extend .clear-fix;
   }
 
   > .body {
@@ -71,15 +67,42 @@
 
     &.overflow {
       overflow-y: auto;
+      max-height: calc(90vh - 10em);
+    }
+
+    > .body-content {
+      @include make-flex;
+
+      > .icon-col {
+        flex: 0 1 auto;
+        padding: 0 1rem 0 0;
+      }
+
+      > .content {
+        flex: 1 1 auto;
+
+        > .title {
+          font-size: 1.25em;
+
+          + .details {
+            margin-top: 1rem;
+          }
+        }
+      }
     }
   }
+
 
   > .footer {
     @include make-flex {
       justify-content: flex-end;
     }
-    padding: 1rem 1.5rem;
     @include full-border-radius(0, 0, $dialog-inner-border-radius, $dialog-inner-border-radius);
+    padding: 1rem 1.5rem;
+
+    &.compact-footer{
+      padding: 0 1.5rem 1.5rem;
+    }
   }
 
 
@@ -140,15 +163,16 @@
         }
       }
 
+      border-bottom: $default-border;
     }
 
     > .body {
-      border-top: $default-border;
-      border-bottom: $default-border;
+
     }
 
     > .footer {
       background-color: $light-gray;
+      border-top: $default-border;
     }
   }
 
@@ -157,6 +181,41 @@
     top: 0;
     width: 100%;
     height: 100%;
+    border-radius: 0;
+
+    > .header, > .footer, > .body {
+      border-radius: 0;
+    }
+  }
+
+  &.compact {
+    border-radius: 1.5rem;
+
+    > .header {
+      border-top-left-radius: 1.5rem;
+      border-top-right-radius: 1.5rem;
+    }
+
+    > .footer {
+      border-bottom-left-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+      background: transparent;
+      padding: 0;
+
+      .button {
+        border-radius: 0;
+        border: none;
+      }
+
+      .button:first-child {
+        border-bottom-left-radius: 1.5rem !important;
+      }
+
+      .button:last-child {
+        border-bottom-right-radius: 1.5rem !important;
+      }
+
+    }
   }
 }
 

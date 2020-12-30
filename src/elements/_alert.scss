@@ -34,7 +34,7 @@ $animation-timeout: .2s;
     padding: 0.75rem 1rem;
     border-radius: $default-border-radius;
     margin-bottom: 0.5rem;
-    box-shadow: $alert-shadow;
+    //box-shadow: $alert-shadow;
   }
 
   //
@@ -48,6 +48,15 @@ $animation-timeout: .2s;
   //  animation: inactive-alert $animation-timeout ease-in-out;
   //  animation-fill-mode: forwards;
   //}
+
+  &.filled {
+    color: white;
+    font-weight: 500;
+
+    > .alert-icon {
+      color: $white !important;
+    }
+  }
 
   &.normal {
     display: inline-flex;
@@ -85,33 +94,37 @@ $animation-timeout: .2s;
   }
 
   > .alert-close {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex: 0 0 auto;
-    border-width: 0;
     padding: 0;
     opacity: .6;
     background: transparent !important;
+    border: none !important;
 
     @include only-focus {
       opacity: 1;
       background: transparent;
-      box-shadow: unset;
     }
   }
 
   &.alert-info {
-    background-color: lighten($primary, 45%);
+    background: lighten($primary, 45%);
     border: 1px solid darken(#d6eaff, 10%);
-
-    border-left-width: 0.5rem;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
-    border-left-color: $blue;
+
+    &.with-left-border {
+      border-left-color: $blue;
+      border-left-width: 0.5rem;
+    }
 
     > .alert-icon {
       color: $blue;
+    }
+
+    &.filled {
+      border: none;
+      background: $primary;
+
+
     }
 
     &:focus, &:hover {
@@ -122,7 +135,7 @@ $animation-timeout: .2s;
 
   &.alert-simple, &.alert-mini {
     border: 1px solid $default-border-color;
-    box-shadow: $alert-shadow;
+    //box-shadow: $alert-shadow;
     background: $white;
 
     > .alert-close {
@@ -143,15 +156,23 @@ $animation-timeout: .2s;
   }
 
   &.alert-ok {
-    background-color: lighten($green, 45%);
+    background: lighten($green, 45%);
     border: 1px solid darken(#36e73c70, 20%);
-    border-left-width: 0.5rem;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
-    border-left-color: green;
+
+    &.with-left-border {
+      border-left-color: $green;
+      border-left-width: 0.5rem;
+    }
 
     > .alert-icon {
       color: $green;
+    }
+
+    &.filled {
+      border: none;
+      background: $green;
     }
 
     &:focus, &:hover {
@@ -161,16 +182,24 @@ $animation-timeout: .2s;
 
 
   &.alert-warning {
-    background-color: lighten($yellow, 40%);
+    background: lighten($yellow, 40%);
     border: 1px solid darken(#fff3cd, 30%);
 
-    border-left-width: 0.5rem;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
-    border-left-color: $brown;
+
+    &.with-left-border {
+      border-left-color: $brown;
+      border-left-width: 0.5rem;
+    }
 
     > .alert-icon {
       color: lighten($brown, 10%);
+    }
+
+    &.filled {
+      border: none;
+      background: $brown;
     }
 
     &:focus, &:hover {
@@ -180,17 +209,25 @@ $animation-timeout: .2s;
 
 
   &.alert-error {
-    background-color: lighten($red, 43%);
+    background: lighten($red, 43%);
     border: 1px solid #e8818a;
-
-    border-left-width: 0.5rem;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
-    border-left-color: darken(#e8818a, 20%);
+
+    &.with-left-border {
+      border-left-color: darken(#e8818a, 20%);
+      border-left-width: 0.5rem;
+    }
 
     > .alert-icon {
       color: darken(#e8818a, 20%);
     }
+
+    &.filled {
+      border: none;
+      background: $red;
+    }
+
 
     &:focus, &:hover {
       box-shadow: 1px 1px 6px 0 #e8818a;

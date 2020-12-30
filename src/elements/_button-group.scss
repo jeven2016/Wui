@@ -58,6 +58,7 @@
 
   &.block {
     @include make-flex-center;
+    flex: 1 1 100%;
 
     //display:table-cell 以表格单元格的形式呈现，可看做td标签。
     //table-cell同样会被其他属性破坏，例如float, position:absolute，
