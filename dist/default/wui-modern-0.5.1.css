@@ -1081,7 +1081,8 @@ a {
     padding: 0;
     opacity: .6;
     background: transparent !important;
-    border: none !important; }
+    border: none !important;
+    flex: 0 0 1em; }
     .alert > .alert-close:focus, .alert > .alert-close:hover {
       opacity: 1;
       background: transparent; }
