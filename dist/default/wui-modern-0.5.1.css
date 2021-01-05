@@ -5509,15 +5509,16 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
 
 .base-menu, .menu {
   position: relative;
-  display: flex;
-  flex: 1 1 100%; }
+  display: flex; }
   .base-menu.with-border-radius, .with-border-radius.menu {
     border-radius: 0.25rem; }
   .base-menu.menu-row, .menu-row.menu {
     flex-direction: row;
-    align-items: stretch; }
+    align-items: stretch;
+    flex: 1 1 100%; }
   .base-menu.menu-column, .menu-column.menu {
-    flex-direction: column; }
+    flex-direction: column;
+    flex: 1 0 100%; }
   .base-menu .menu-item, .menu .menu-item {
     display: -ms-flexbox;
     display: -webkit-flex;

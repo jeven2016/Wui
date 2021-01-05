@@ -122,7 +122,6 @@
 .base-menu {
   position: $menu-position;
   display: flex;
-  flex: 1 1 100%;
 
   &.with-border-radius {
     @include border-radius($menu-border-radius);
@@ -132,10 +131,12 @@
   &.menu-row {
     flex-direction: row;
     align-items: $menu-align-items;
+    flex: 1 1 100%;
   }
 
   &.menu-column {
     flex-direction: $menu-flex-direction;
+    flex: 1 0 100%;
   }
 
   .menu-item {
