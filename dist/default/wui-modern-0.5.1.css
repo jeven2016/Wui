@@ -5515,7 +5515,8 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
   .base-menu.menu-row, .menu-row.menu {
     flex-direction: row;
     align-items: stretch;
-    flex: 1 1 100%; }
+    flex: 1 1 100%;
+    flex-wrap: wrap; }
   .base-menu.menu-column, .menu-column.menu {
     flex-direction: column;
     flex: 1 0 100%; }

@@ -132,6 +132,7 @@
     flex-direction: row;
     align-items: $menu-align-items;
     flex: 1 1 100%;
+    flex-wrap: wrap;
   }
 
   &.menu-column {
