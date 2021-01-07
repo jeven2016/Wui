@@ -5519,7 +5519,7 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     flex-wrap: wrap; }
   .base-menu.menu-column, .menu-column.menu {
     flex-direction: column;
-    flex: 1 0 100%; }
+    flex: 1 0 auto; }
   .base-menu .menu-item, .menu .menu-item {
     display: -ms-flexbox;
     display: -webkit-flex;
