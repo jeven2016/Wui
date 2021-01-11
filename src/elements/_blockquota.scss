@@ -3,7 +3,6 @@
   border-left: $bq-left-border;
   margin: $bq-margin;
   padding: $bq-default-padding;
-  @include border-radius($bq-border-radius);
   font-size: .9rem;
 
   &.border {
@@ -14,6 +13,10 @@
 
   &.with-bg {
     background: lighten(#f8f5f5, 2%);
+  }
+
+  &.with-border-radius {
+    @include border-radius($bq-border-radius);
   }
 
   > .header {

@@ -1312,7 +1312,6 @@ $container-offset: 1.5rem;
   border-left: 0.4rem solid #ccc;
   margin: 0 0 1rem 0;
   padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
   font-size: .9rem; }
   .blockquote.border {
     border-top: 1px solid #ccc;
@@ -1320,6 +1319,8 @@ $container-offset: 1.5rem;
     border-bottom: 1px solid #ccc; }
   .blockquote.with-bg {
     background: #fcfbfb; }
+  .blockquote.with-border-radius {
+    border-radius: 0.5rem; }
   .blockquote > .header {
     font-weight: 500;
     font-size: 1rem;
