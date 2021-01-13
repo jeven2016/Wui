@@ -2,7 +2,6 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  flex: 1 1 auto;
   border: $input-border;
   @include border-radius($input-border-radius);
   outline: $input-outline;
@@ -15,6 +14,7 @@
   position: relative;
 
   &.block {
+    flex: 1 1 auto;
     width: 100%;
   }
 
