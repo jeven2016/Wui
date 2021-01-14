@@ -6106,6 +6106,10 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     text-align: center;
     padding-left: .25rem;
     padding-right: .25rem; }
+  .pagination > .select {
+    min-width: 4rem; }
+    .pagination > .select .select-content {
+      justify-content: center; }
   .pagination > .item {
     display: inline-flex;
     min-width: 2rem;

@@ -10,6 +10,14 @@
     padding-right: .25rem;
   }
 
+  > .select {
+    min-width: 4rem;
+
+    .select-content{
+      justify-content: center;
+    }
+  }
+
   > .item {
     display: inline-flex;
     min-width: 2rem;
