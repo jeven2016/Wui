@@ -104,9 +104,11 @@
 
   }
 
-  > .item,
-  > .label {
-    @extend %reset-child;
+  &.normal {
+    > .item,
+    > .label {
+      @extend %reset-child;
+    }
   }
 
   &.block {

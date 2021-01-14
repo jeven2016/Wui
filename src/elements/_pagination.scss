@@ -4,9 +4,16 @@
     flex-wrap: wrap;
   }
 
+  .page-input {
+    text-align: center;
+    padding-left: .25rem;
+    padding-right: .25rem;
+  }
+
   > .item {
     display: inline-flex;
     min-width: 2rem;
+    margin: .25rem 0;
     height: 100%;
     align-items: center;
     justify-content: center;
