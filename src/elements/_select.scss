@@ -75,9 +75,6 @@
 
   .menu {
     .menu-item {
-      padding: 0.5rem 1rem !important;
-      min-width: unset;
-
       &:not(.disabled).active {
         background: #0ca0ff0f !important;
       }
@@ -88,6 +85,24 @@
         + .item-info {
           padding-left: .5rem;
         }
+      }
+    }
+  }
+
+  &.non-compact {
+    .menu {
+      .menu-item {
+        padding: 0.5rem 1rem !important;
+        min-width: unset;
+      }
+    }
+  }
+
+  &.compact {
+    .menu {
+      .menu-item {
+        padding: 0.5rem!important;
+        min-width: unset;
       }
     }
   }

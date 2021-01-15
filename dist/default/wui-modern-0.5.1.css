@@ -6107,13 +6107,14 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     padding-left: .25rem;
     padding-right: .25rem; }
   .pagination > .select {
-    min-width: 4rem; }
+    min-width: 4rem;
+    height: 100%; }
     .pagination > .select .select-content {
       justify-content: center; }
   .pagination > .item {
     display: inline-flex;
     min-width: 2rem;
-    margin: .25rem 0;
+    margin: 0;
     height: 100%;
     align-items: center;
     justify-content: center; }
@@ -6148,12 +6149,12 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     align-items: center;
     justify-content: center;
     flex: 1 1 auto; }
-    .pagination > .simple-content.compact {
-      flex: unset; }
     .pagination > .simple-content > .input, .navbar.primary .navbar-item .pagination > .simple-content > .icon-input {
+      font-size: 1.25rem;
       height: 100% !important;
       width: 3rem;
-      margin-right: .25rem; }
+      margin-right: .25rem;
+      text-align: center; }
     .pagination > .simple-content > .label {
       font-size: 1.25rem;
       color: rgba(0, 0, 0, 0.8);
@@ -6425,15 +6426,21 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
 .select > .icon-column {
   margin-right: -.25rem; }
 
-.select-menu .menu .menu-item {
+.select-menu .menu .menu-item:not(.disabled).active {
+  background: #0ca0ff0f !important; }
+
+.select-menu .menu .menu-item > .icon-column {
+  margin: 0; }
+  .select-menu .menu .menu-item > .icon-column + .item-info {
+    padding-left: .5rem; }
+
+.select-menu.non-compact .menu .menu-item {
   padding: 0.5rem 1rem !important;
   min-width: unset; }
-  .select-menu .menu .menu-item:not(.disabled).active {
-    background: #0ca0ff0f !important; }
-  .select-menu .menu .menu-item > .icon-column {
-    margin: 0; }
-    .select-menu .menu .menu-item > .icon-column + .item-info {
-      padding-left: .5rem; }
+
+.select-menu.compact .menu .menu-item {
+  padding: 0.5rem !important;
+  min-width: unset; }
 
 .select-menu .no-data {
   background: white;

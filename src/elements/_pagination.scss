@@ -12,8 +12,9 @@
 
   > .select {
     min-width: 4rem;
+    height: 100%;
 
-    .select-content{
+    .select-content {
       justify-content: center;
     }
   }
@@ -21,7 +22,7 @@
   > .item {
     display: inline-flex;
     min-width: 2rem;
-    margin: .25rem 0;
+    margin: 0;
     height: 100%;
     align-items: center;
     justify-content: center;
@@ -75,14 +76,12 @@
       flex: 1 1 auto;
     }
 
-    &.compact {
-      flex: unset;
-    }
-
     > .input {
+      font-size: 1.25rem;
       height: 100% !important;
       width: 3rem;
       margin-right: .25rem;
+      text-align: center;
     }
 
     > .label {
