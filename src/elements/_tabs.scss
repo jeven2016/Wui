@@ -85,7 +85,7 @@
       }
     }
 
-    > .tab-pre, > .tab-next {
+    .tab-pre, .tab-next {
       height: 100%;
     }
 
@@ -133,7 +133,6 @@
       margin-right: 2px;
     }
 
-
   }
 
   &.vertical {
@@ -146,7 +145,7 @@
       }
     }
 
-    > .tab-pre, > .tab-next {
+    .tab-pre, .tab-next {
       width: 100%;
     }
 
@@ -204,7 +203,7 @@
     }
   }
 
-  > .tab-pre {
+  .tab-pre {
     @extend %tab-ctrl;
 
     &.horizontal {
@@ -220,7 +219,7 @@
     }
   }
 
-  > .tab-next {
+  .tab-next {
     @extend %tab-ctrl;
 
     &.horizontal {
@@ -237,7 +236,7 @@
 
   }
 
-  > .tab-container {
+  .tab-container {
     overflow: hidden;
     white-space: nowrap;
     flex: 1;
@@ -271,7 +270,7 @@
       &.equal-width {
         display: flex;
 
-        &.vertical{
+        &.vertical {
           height: 100%;
         }
 
@@ -287,7 +286,7 @@
   }
 
   .tab-item {
-    @include make-menu-item(true, 0.5rem 1rem);
+    @include make-menu-item(true, 0.5rem 1rem, false);
     min-width: 2rem;
     flex-shrink: 0;
 

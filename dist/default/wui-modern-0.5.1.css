@@ -316,7 +316,7 @@ h1, h2, h3, h4, h5, h6 {
 /**
 * set the group's border radius property
  */
-.base-btn:disabled, .button:disabled, .base-btn.disabled, .disabled.button, .checkbox:disabled, .checkbox.disabled, .radio:disabled, .radio.disabled, .icon-column:disabled, .icon-column.disabled, .collapse .collapse-header > .header-row > .inner > .header-info:disabled, .collapse .collapse-header > .header-row > .inner > .header-info.disabled, .collapse .collapse-header > .header-row > .header-more:disabled, .collapse .collapse-header > .header-row > .header-more.disabled, .collapse .collapse-header.disabled:disabled, .collapse .collapse-header.disabled, .input:disabled, .navbar.primary .navbar-item .icon-input:disabled, .input.disabled, .navbar.primary .navbar-item .disabled.icon-input, .icon-input:disabled, .icon-input.disabled, .base-menu .menu-item:disabled, .menu .menu-item:disabled, .base-menu .menu-item.disabled, .menu .menu-item.disabled, .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled, .popup-title:disabled, .popup-title.disabled, .select:disabled, .select-multiple:disabled, .disabled.select, .disabled.select-multiple, .select-multiple > .select-multiple-content > .select-input:disabled, .select-multiple > .select-multiple-content > .select-input.disabled, .select-multiple > .select-multiple-content > .search-text-detector:disabled, .select-multiple > .select-multiple-content > .search-text-detector.disabled, .tab > .tab-pre:disabled, .tab > .tab-next:disabled, .tab > .disabled.tab-pre, .tab > .disabled.tab-next, .tab .tab-item:disabled, .tab .tab-item.disabled, .tab .tab-item > .item-icon:disabled, .tab .tab-item > .item-icon.disabled, .toggle-button:disabled, .toggle-button.disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info:disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info.disabled, .tree .tree-item > .tree-title > .title-row > .title-more:disabled, .tree .tree-item > .tree-title > .title-row > .title-more.disabled {
+.base-btn:disabled, .button:disabled, .base-btn.disabled, .disabled.button, .checkbox:disabled, .checkbox.disabled, .radio:disabled, .radio.disabled, .icon-column:disabled, .icon-column.disabled, .collapse .collapse-header > .header-row > .inner > .header-info:disabled, .collapse .collapse-header > .header-row > .inner > .header-info.disabled, .collapse .collapse-header > .header-row > .header-more:disabled, .collapse .collapse-header > .header-row > .header-more.disabled, .collapse .collapse-header.disabled:disabled, .collapse .collapse-header.disabled, .input:disabled, .navbar.primary .navbar-item .icon-input:disabled, .input.disabled, .navbar.primary .navbar-item .disabled.icon-input, .icon-input:disabled, .icon-input.disabled, .base-menu .menu-item:disabled, .menu .menu-item:disabled, .base-menu .menu-item.disabled, .menu .menu-item.disabled, .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled, .popup-title:disabled, .popup-title.disabled, .select:disabled, .select-multiple:disabled, .disabled.select, .disabled.select-multiple, .select-multiple > .select-multiple-content > .select-input:disabled, .select-multiple > .select-multiple-content > .select-input.disabled, .select-multiple > .select-multiple-content > .search-text-detector:disabled, .select-multiple > .select-multiple-content > .search-text-detector.disabled, .tab .tab-pre:disabled, .tab .tab-next:disabled, .tab .disabled.tab-pre, .tab .disabled.tab-next, .tab .tab-item:disabled, .tab .tab-item.disabled, .tab .tab-item > .item-icon:disabled, .tab .tab-item > .item-icon.disabled, .toggle-button:disabled, .toggle-button.disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info:disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info.disabled, .tree .tree-item > .tree-title > .title-row > .title-more:disabled, .tree .tree-item > .tree-title > .title-row > .title-more.disabled {
   cursor: not-allowed !important;
   opacity: 0.7 !important; }
 
@@ -6683,7 +6683,7 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
   .fixed-cell.with-cell-box.right:after {
     box-shadow: inset -11px 0 9px -9px rgba(0, 0, 0, 0.2); }
 
-.tab > .tab-pre, .tab > .tab-next {
+.tab .tab-pre, .tab .tab-next {
   display: -ms-inline-flexbox;
   display: -webkit-inline-flex;
   display: inline-flex;
@@ -6696,7 +6696,7 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
   width: 2rem;
   position: absolute;
   cursor: pointer; }
-  .tab > .tab-pre:not(.disabled):focus, .tab > .tab-next:not(.disabled):focus, .tab > .tab-pre:not(.disabled):hover, .tab > .tab-next:not(.disabled):hover {
+  .tab .tab-pre:not(.disabled):focus, .tab .tab-next:not(.disabled):focus, .tab .tab-pre:not(.disabled):hover, .tab .tab-next:not(.disabled):hover {
     color: #0ca0ff; }
 
 .tabs {
@@ -6733,7 +6733,7 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     flex-direction: row; }
     .tab.horizontal.scrollable.with-btn {
       padding: 0 2rem; }
-    .tab.horizontal > .tab-pre, .tab.horizontal > .tab-next {
+    .tab.horizontal .tab-pre, .tab.horizontal .tab-next {
       height: 100%; }
     .tab.horizontal.with-border.top {
       border-bottom: 1px solid #ccc; }
@@ -6764,7 +6764,7 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     display: inline-flex; }
     .tab.vertical.scrollable.with-btn {
       padding: 2rem 0; }
-    .tab.vertical > .tab-pre, .tab.vertical > .tab-next {
+    .tab.vertical .tab-pre, .tab.vertical .tab-next {
       width: 100%; }
     .tab.vertical.with-border.right {
       border-left: 1px solid #ccc; }
@@ -6792,50 +6792,50 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
       margin-bottom: 3px; }
   .tab.tab-card .tab-item {
     z-index: 2; }
-  .tab > .tab-pre.horizontal {
+  .tab .tab-pre.horizontal {
     left: 0;
     top: 0; }
-  .tab > .tab-pre.vertical {
+  .tab .tab-pre.vertical {
     left: 0;
     top: 0;
     height: 2rem;
     width: 100%; }
-  .tab > .tab-next.horizontal {
+  .tab .tab-next.horizontal {
     right: 0;
     top: 0; }
-  .tab > .tab-next.vertical {
+  .tab .tab-next.vertical {
     bottom: 0;
     left: 0;
     height: 2rem;
     width: 100%; }
-  .tab > .tab-container {
+  .tab .tab-container {
     overflow: hidden;
     white-space: nowrap;
     flex: 1; }
-    .tab > .tab-container.top {
+    .tab .tab-container.top {
       margin-bottom: -1px; }
-    .tab > .tab-container.bottom {
+    .tab .tab-container.bottom {
       margin-top: -1px; }
-    .tab > .tab-container.left {
+    .tab .tab-container.left {
       margin-right: -1px; }
-    .tab > .tab-container.right {
+    .tab .tab-container.right {
       margin-left: -1px; }
-    .tab > .tab-container > .tab-scroll {
+    .tab .tab-container > .tab-scroll {
       display: -ms-inline-flexbox;
       display: -webkit-inline-flex;
       display: inline-flex;
       position: relative;
       overflow: hidden;
       white-space: nowrap; }
-      .tab > .tab-container > .tab-scroll.vertical {
+      .tab .tab-container > .tab-scroll.vertical {
         flex-direction: column; }
-      .tab > .tab-container > .tab-scroll.equal-width {
+      .tab .tab-container > .tab-scroll.equal-width {
         display: flex; }
-        .tab > .tab-container > .tab-scroll.equal-width.vertical {
+        .tab .tab-container > .tab-scroll.equal-width.vertical {
           height: 100%; }
-        .tab > .tab-container > .tab-scroll.equal-width > .tab-item {
+        .tab .tab-container > .tab-scroll.equal-width > .tab-item {
           flex: 1 1 auto; }
-          .tab > .tab-container > .tab-scroll.equal-width > .tab-item > .item-label {
+          .tab .tab-container > .tab-scroll.equal-width > .tab-item > .item-label {
             justify-content: center; }
   .tab .tab-item {
     display: -ms-flexbox;
@@ -6843,7 +6843,6 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     display: flex;
     align-items: center;
     position: relative;
-    line-height: 1.5rem;
     padding: 0.5rem 1rem;
     white-space: nowrap;
     cursor: pointer;
