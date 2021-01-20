@@ -24,6 +24,10 @@
 .tabs {
   display: flex;
 
+  .tab-panel {
+    padding: .75rem 1.25rem;
+  }
+
   &.top {
     flex-direction: column;
   }
@@ -56,21 +60,21 @@
   @include make-flex;
   position: relative;
 
-  &.top {
-    margin-bottom: 1rem;
-  }
+  /* &.top {
+     margin-bottom: 1rem;
+   }
 
-  &.bottom {
-    margin-top: 1rem;
-  }
+   &.bottom {
+     margin-top: 1rem;
+   }
 
-  &.left {
-    margin-right: 1rem;
-  }
+   &.left {
+     margin-right: 1rem;
+   }
 
-  &.right {
-    margin-left: 1rem;
-  }
+   &.right {
+     margin-left: 1rem;
+   }*/
 
   .card-wrapper {
     display: flex;

@@ -6701,6 +6701,8 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
 
 .tabs {
   display: flex; }
+  .tabs .tab-panel {
+    padding: .75rem 1.25rem; }
   .tabs.top {
     flex-direction: column; }
   .tabs.bottom {
@@ -6718,15 +6720,22 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  position: relative; }
-  .tab.top {
-    margin-bottom: 1rem; }
-  .tab.bottom {
-    margin-top: 1rem; }
-  .tab.left {
-    margin-right: 1rem; }
-  .tab.right {
-    margin-left: 1rem; }
+  position: relative;
+  /* &.top {
+     margin-bottom: 1rem;
+   }
+
+   &.bottom {
+     margin-top: 1rem;
+   }
+
+   &.left {
+     margin-right: 1rem;
+   }
+
+   &.right {
+     margin-left: 1rem;
+   }*/ }
   .tab .card-wrapper {
     display: flex; }
   .tab.horizontal {
