@@ -60,22 +60,6 @@
   @include make-flex;
   position: relative;
 
-  /* &.top {
-     margin-bottom: 1rem;
-   }
-
-   &.bottom {
-     margin-top: 1rem;
-   }
-
-   &.left {
-     margin-right: 1rem;
-   }
-
-   &.right {
-     margin-left: 1rem;
-   }*/
-
   .card-wrapper {
     display: flex;
   }
@@ -297,6 +281,15 @@
     > .item-label {
       display: inline-flex;
       flex: 1 0 auto;
+
+      > .item-cnt {
+        @include make-flex-center {
+          flex: 1 1 100%;
+          flex-direction: column;
+          padding: .5rem 0;
+          font-weight: map-get($font-weight, 'normal');
+        }
+      }
     }
 
     > .item-icon {

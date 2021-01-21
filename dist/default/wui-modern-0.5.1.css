@@ -6720,22 +6720,7 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  position: relative;
-  /* &.top {
-     margin-bottom: 1rem;
-   }
-
-   &.bottom {
-     margin-top: 1rem;
-   }
-
-   &.left {
-     margin-right: 1rem;
-   }
-
-   &.right {
-     margin-left: 1rem;
-   }*/ }
+  position: relative; }
   .tab .card-wrapper {
     display: flex; }
   .tab.horizontal {
@@ -6888,6 +6873,16 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     .tab .tab-item > .item-label {
       display: inline-flex;
       flex: 1 0 auto; }
+      .tab .tab-item > .item-label > .item-cnt {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 100%;
+        flex-direction: column;
+        padding: .5rem 0;
+        font-weight: 500; }
     .tab .tab-item > .item-icon {
       display: inline-flex;
       padding-left: 0.75rem;
