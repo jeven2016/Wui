@@ -5,7 +5,7 @@
   list-style: none;
   align-items: center;
   margin-bottom: 1rem;
-
+  color: rgba(0, 0, 0, .5);
 
   &.with-bg {
     background: $light-gray;
@@ -19,10 +19,8 @@
   }
 
   > .item {
-    cursor: pointer;
-    color: rgba(0, 0, 0, .5);
 
-    &:hover, &:focus, &.active {
+    &:hover, &.active {
       color: $blue;
     }
 
@@ -35,6 +33,5 @@
   }
 
   > .bc-divider {
-    color: rgba(0, 0, 0, .5);
   }
 }

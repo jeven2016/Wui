@@ -471,7 +471,7 @@ $popover-arrow-border-width: 0.5rem;
 //For Card
 $card-flex-direction: column;
 $card-flex-wrap: nowrap;
-$card-transition: all .2s;
+$card-transition: transform .2s;
 $card-background-color: $white;
 
 $card-border-width: 1px;
@@ -482,9 +482,9 @@ $card-header-background-color: $light-gray;
 $card-header-background-color-primary: #3d8bea;
 $card-header-padding: .75rem 1.25rem;
 $card-row-padding: .75rem 1.25rem;
-$card-body-padding: 1.25rem;
+$card-body-padding: .75rem 1.25rem;
 $card-footer-padding: .75rem 1.25rem;
-$card-width: 20rem;
+$card-width: 25rem;
 $card-inner-border-radius: calc(#{$card-border-radius} - #{$card-border-width});
 $card-overlay-title-display: block;
 $card-overlay-title-position: absolute;

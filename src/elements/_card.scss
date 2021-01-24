@@ -1,5 +1,4 @@
 
-
 .card {
   @include make-inline-flex;
   flex-direction: $card-flex-direction;
@@ -14,13 +13,21 @@
   }
 
   &.scale {
-    &:focus, &:hover {
+    &:hover {
       transform: scale(1.1);
       transform-origin: center;
       //z-index only work on position relative, absolute & fixed.
-      z-index: 100;
+      z-index: map-get($z-index, 'one');
       position: relative;
+    }
+  }
 
+  &.rise {
+    &:hover {
+      transform: translateY(-1rem);
+      transform-origin: center;
+      z-index: map-get($z-index, 'widget');
+      position: relative;
     }
   }
 
@@ -117,6 +124,34 @@
       }
     }
 
+  }
+
+  .card-curtain {
+    position: relative;
+    flex: 1 1 100%;
+    overflow: hidden;
+
+    &.close {
+      > :not(.curtain-mask) {
+        filter: blur(4px) grayscale(0.6);
+      }
+    }
+
+    .curtain-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      z-index: map_get($z-index, 'mask');
+      overflow: hidden;
+
+      &.dark {
+        background: rgba(0, 0, 0, .6);
+      }
+    }
   }
 
   &.block {

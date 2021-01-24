@@ -310,8 +310,7 @@ p, blockquote, th, td, hr, aside, footer, header, nav, section, span {
   padding: 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  padding: 0;
-  margin: 0; }
+  margin-top: 0; }
 
 /**
 * set the group's border radius property
@@ -1357,7 +1356,8 @@ $container-offset: 1.5rem;
   position: relative;
   list-style: none;
   align-items: center;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.5); }
   .breadcrumb.with-bg {
     background: #f5f5f5;
     border-radius: 0.25rem; }
@@ -1365,15 +1365,10 @@ $container-offset: 1.5rem;
     display: inline-flex;
     align-items: center;
     padding: 0.5rem 0 0.5rem 0.5rem; }
-  .breadcrumb > .item {
-    cursor: pointer;
-    color: rgba(0, 0, 0, 0.5); }
-    .breadcrumb > .item:hover, .breadcrumb > .item:focus, .breadcrumb > .item.active {
-      color: #0ca0ff; }
-    .breadcrumb > .item > .icon:first-child:not(:last-child), .breadcrumb > .item > .icon:not(first-child):not(last-child) {
-      margin-right: 0.25rem; }
-  .breadcrumb > .bc-divider {
-    color: rgba(0, 0, 0, 0.5); }
+  .breadcrumb > .item:hover, .breadcrumb > .item.active {
+    color: #0ca0ff; }
+  .breadcrumb > .item > .icon:first-child:not(:last-child), .breadcrumb > .item > .icon:not(first-child):not(last-child) {
+    margin-right: 0.25rem; }
 
 .button-group {
   display: -ms-inline-flexbox;
@@ -1460,7 +1455,7 @@ $container-offset: 1.5rem;
     .button > .content-root > .left-content {
       margin-right: .5rem; }
     .button > .content-root > .right-content {
-      margin-left: .25rem; }
+      margin-left: .5rem; }
   .button.without-border {
     border-color: transparent !important; }
   .button.without-box:not(.outline) {
@@ -4058,12 +4053,17 @@ $container-offset: 1.5rem;
   display: inline-flex;
   flex-direction: column;
   border-radius: 0.25rem;
-  transition: all 0.2s;
+  transition: transform 0.2s;
   background-color: #ffffff; }
   .card.with-width {
-    width: 20rem; }
-  .card.scale:focus, .card.scale:hover {
+    width: 25rem; }
+  .card.scale:hover {
     transform: scale(1.1);
+    transform-origin: center;
+    z-index: 1;
+    position: relative; }
+  .card.rise:hover {
+    transform: translateY(-1rem);
     transform-origin: center;
     z-index: 100;
     position: relative; }
@@ -4090,7 +4090,7 @@ $container-offset: 1.5rem;
   .card .card-row {
     padding: 0.75rem 1.25rem; }
   .card .card-body {
-    padding: 1.25rem; }
+    padding: 0.75rem 1.25rem; }
   .card .card-footer {
     padding: 0.75rem 1.25rem; }
   .card .card-img {
@@ -4106,7 +4106,7 @@ $container-offset: 1.5rem;
         transform: scale(1.2); }
     .card .card-img > .overlay-title {
       display: block;
-      padding: 1.25rem;
+      padding: 0.75rem 1.25rem;
       position: absolute;
       color: #ffffff;
       bottom: 0;
@@ -4114,6 +4114,24 @@ $container-offset: 1.5rem;
       background-color: rgba(0, 0, 0, 0.4); }
       .card .card-img > .overlay-title:focus, .card .card-img > .overlay-title:hover {
         text-shadow: 1px 1px 2px #333, 0 0 25px #ffffff, 0 0 5px #0ca0ff; }
+  .card .card-curtain {
+    position: relative;
+    flex: 1 1 100%;
+    overflow: hidden; }
+    .card .card-curtain.close > :not(.curtain-mask) {
+      filter: blur(4px) grayscale(0.6); }
+    .card .card-curtain .curtain-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      z-index: 1000;
+      overflow: hidden; }
+      .card .card-curtain .curtain-mask.dark {
+        background: rgba(0, 0, 0, 0.6); }
   .card.block {
     display: flex;
     flex: 1 1 auto; }
@@ -4593,26 +4611,34 @@ $container-offset: 1.5rem;
 .form .form-control.radio-group, .form .form-control.radio, .form .form-control.checkbox {
   line-height: 2.25; }
 
-h1 {
+h1, .h1 {
   font-size: 2em; }
 
-h2 {
+h2, .h2 {
   font-size: 1.5em; }
 
-h3 {
+h3, .h3 {
   font-size: 1.17em; }
 
-h4 {
+h4, .h4 {
   font-size: 1.12em; }
 
-h5 {
+h5, .h5 {
   font-size: .83em; }
 
-h6 {
+h6, .h6 {
   font-size: .75em; }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 500; }
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 500;
+  margin-bottom: .5rem;
+  font-family: inherit;
+  line-height: 1.5;
+  color: inherit; }
+  h1:last-child, h2:last-child, h3:last-child, h4:last-child, h5:last-child, h6:last-child,
+  .h1:last-child, .h2:last-child, .h3:last-child, .h4:last-child, .h5:last-child, .h6:last-child {
+    margin-bottom: 0; }
 
 .input-group > .item, .input-group > .label {
   align-self: stretch;
@@ -5579,7 +5605,8 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
       align-items: center;
       justify-content: center; }
       .base-menu .menu-item > .item-icon.icon-arrow, .menu .menu-item > .item-icon.icon-arrow {
-        margin: 0; }
+        margin: 0;
+        opacity: .5; }
       .base-menu .menu-item > .item-icon + .header-info, .menu .menu-item > .item-icon + .header-info, .base-menu .menu-item > .item-icon + .item-info, .menu .menu-item > .item-icon + .item-info {
         margin-left: 0.5rem; }
     .base-menu .menu-item > .item-info, .menu .menu-item > .item-info {
@@ -5681,7 +5708,8 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
       align-items: center;
       justify-content: center; }
       .base-menu .menu-header > .header-icon.icon-arrow, .menu .menu-header > .header-icon.icon-arrow {
-        margin: 0; }
+        margin: 0;
+        opacity: .5; }
       .base-menu .menu-header > .header-icon + .header-info, .menu .menu-header > .header-icon + .header-info, .base-menu .menu-header > .header-icon + .item-info, .menu .menu-header > .header-icon + .item-info {
         margin-left: 0.5rem; }
     .base-menu .menu-header > .header-info, .menu .menu-header > .header-info {
@@ -6524,6 +6552,20 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
       opacity: 0;
       left: 0;
       top: 0; }
+
+.space-row {
+  display: inline-flex; }
+  .space-row.column {
+    flex-direction: column; }
+    .space-row.column > .space-item {
+      display: flex;
+      flex: 1 1 100%;
+      width: 100%;
+      justify-content: center; }
+  .space-row.wrap {
+    flex-wrap: wrap; }
+  .space-row > .space-item {
+    display: inline-flex; }
 
 .table {
   width: 100%;

@@ -41,6 +41,7 @@ var config = {
         stepper: true,
         datepicker: true,
         popconfirm: true,
+        space: true
       },
     },
 
