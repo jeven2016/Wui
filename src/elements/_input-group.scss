@@ -17,6 +17,15 @@
 }
 
 %reset-child {
+  //for sample From6
+  //for various error, the non-first child should represent all borders in this input group in form
+  &:not(:first-child) {
+    > .border-info {
+      margin-left: -1px;
+      margin-right: 0!important;
+    }
+  }
+
   > * {
     flex: 1 1 auto;
     width: 1%;
