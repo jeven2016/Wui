@@ -4539,7 +4539,9 @@ $container-offset: 1.5rem;
   background-color: #0ca0ff; }
 
 .form .message-row {
-  height: 1.8em; }
+  height: 1.8em;
+  display: flex;
+  align-items: center; }
 
 .form.inline {
   display: flex;
@@ -4555,7 +4557,11 @@ $container-offset: 1.5rem;
     display: flex;
     align-items: center; }
   .form .form-item .label-col {
-    margin-bottom: 0; }
+    display: flex;
+    line-height: 1.5;
+    padding: .375rem .5rem .375rem 0;
+    overflow: hidden;
+    white-space: nowrap; }
     .form .form-item .label-col > .required-left-col {
       color: #ff350e;
       font-size: inherit;
@@ -4564,9 +4570,6 @@ $container-offset: 1.5rem;
       color: #ff350e;
       font-size: inherit;
       margin-left: .25rem; }
-  .form .form-item .label-col {
-    display: flex;
-    margin-bottom: 0.5rem; }
   .form .form-item .form-line {
     width: 100%; }
   .form .form-item .info {
@@ -4577,9 +4580,6 @@ $container-offset: 1.5rem;
   .form .form-item.horizontal {
     flex: 1 1 100%;
     flex-direction: column; }
-    .form .form-item.horizontal .label-col {
-      margin-bottom: 0;
-      padding-right: .5rem; }
     .form .form-item.horizontal .widget-col {
       flex-direction: column; }
   .form .form-item.vertical {
@@ -4599,13 +4599,10 @@ $container-offset: 1.5rem;
       width: auto; }
     .form .form-item.inline > .button {
       vertical-align: top; }
-    .form .form-item.inline > .label-col {
-      padding-right: .5rem;
-      margin-bottom: 0; }
+    .form .form-item.inline .label-col {
+      margin-right: .5rem; }
 
 .form .form-msg {
-  margin: .25em 0 .25em;
-  font-size: .9em;
   font-weight: 500; }
 
 .form .form-control.radio-group, .form .form-control.radio, .form .form-control.checkbox {
