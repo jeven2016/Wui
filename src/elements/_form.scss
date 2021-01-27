@@ -28,9 +28,9 @@
     }
 
     .label-col {
-      display: flex;
-      line-height: 1.5;
-      padding: .375rem .5rem .375rem 0;
+      //display: flex;
+      //line-height: 1.5;
+      //padding: .375rem .5rem .375rem 0;
       overflow: hidden;
       white-space: nowrap;
 
@@ -64,6 +64,10 @@
       .widget-col {
         flex-direction: column;
       }
+
+      .label-col {
+        margin-right: .5rem;
+      }
     }
 
 
@@ -71,6 +75,10 @@
       display: flex;
       flex-direction: column;
       flex: 1 1 100%;
+
+      .label-col {
+        margin-bottom: .5rem;
+      }
     }
 
     &.inline {
@@ -95,7 +103,7 @@
         vertical-align: top;
       }
 
-      .label-col{
+      .label-col {
         margin-right: .5rem;
       }
     }
@@ -112,6 +120,23 @@
     &.radio,
     &.checkbox {
       line-height: 2.25;
+    }
+  }
+}
+
+//todo
+@include adapter-width('max-width', map-get($bs-layout, 'sm')) {
+  .form {
+    > .form-item {
+      background: red;
+      > .row {
+        .item-label {
+          &.col-sm-12 {
+            margin-bottom: .5rem;
+            justify-content: flex-start !important;
+          }
+        }
+      }
     }
   }
 }

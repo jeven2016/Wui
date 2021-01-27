@@ -1252,9 +1252,6 @@ $container-offset: 1.5rem;
 
       @extend %r-movement;
     }*/ }
-  @media (min-width: 576px) {
-    .alert-container.alert-container-width-sm {
-      width: 22.5rem; } }
   .alert-container.top-center {
     left: 50%;
     transform: translate3d(-50%, 0, 0); }
@@ -4557,9 +4554,6 @@ $container-offset: 1.5rem;
     display: flex;
     align-items: center; }
   .form .form-item .label-col {
-    display: flex;
-    line-height: 1.5;
-    padding: .375rem .5rem .375rem 0;
     overflow: hidden;
     white-space: nowrap; }
     .form .form-item .label-col > .required-left-col {
@@ -4582,10 +4576,14 @@ $container-offset: 1.5rem;
     flex-direction: column; }
     .form .form-item.horizontal .widget-col {
       flex-direction: column; }
+    .form .form-item.horizontal .label-col {
+      margin-right: .5rem; }
   .form .form-item.vertical {
     display: flex;
     flex-direction: column;
     flex: 1 1 100%; }
+    .form .form-item.vertical .label-col {
+      margin-bottom: .5rem; }
   .form .form-item.inline {
     display: inline-flex;
     min-height: unset;
@@ -4607,6 +4605,13 @@ $container-offset: 1.5rem;
 
 .form .form-control.radio-group, .form .form-control.radio, .form .form-control.checkbox {
   line-height: 2.25; }
+
+@media (max-width: 576px) {
+  .form > .form-item {
+    background: red; }
+    .form > .form-item > .row .item-label.col-sm-12 {
+      margin-bottom: .5rem;
+      justify-content: flex-start !important; } }
 
 h1, .h1 {
   font-size: 2em; }
