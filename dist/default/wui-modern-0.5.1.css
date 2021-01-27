@@ -606,7 +606,7 @@ a {
   .width-xl {
     max-width: 68.75rem; } }
 
-.ellipsis {
+.ellipsis, .form .form-item .item-label {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -4666,6 +4666,10 @@ h1, h2, h3, h4, h5, h6,
   .input-group > .no-scale.item, .input-group > .no-scale.label {
     flex: 0 1 auto; }
 
+.input-group.normal > .item:not(:first-child) > .border-info, .input-group.normal > .label:not(:first-child) > .border-info {
+  margin-left: -1px;
+  margin-right: 0 !important; }
+
 .input-group.normal > .item > *, .input-group.normal > .label > * {
   flex: 1 1 auto;
   width: 1%;
@@ -6409,8 +6413,20 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     width: 100%; }
   .select:not(.disabled):focus, .select-multiple:not(.disabled):focus, .select:not(.disabled):hover, .select-multiple:not(.disabled):hover {
     border: 1px solid #0ca0ff; }
+    .select:not(.disabled):focus.ok, .select-multiple:not(.disabled):focus.ok, .select:not(.disabled):hover.ok, .select-multiple:not(.disabled):hover.ok {
+      box-shadow: 0 2px 6px 0 rgba(73, 184, 71, 0.24); }
+    .select:not(.disabled):focus.warning, .select-multiple:not(.disabled):focus.warning, .select:not(.disabled):hover.warning, .select-multiple:not(.disabled):hover.warning {
+      box-shadow: 0 2px 6px 0 rgba(251, 190, 17, 0.24); }
+    .select:not(.disabled):focus.error, .select-multiple:not(.disabled):focus.error, .select:not(.disabled):hover.error, .select-multiple:not(.disabled):hover.error {
+      box-shadow: 0 2px 6px 0 rgba(255, 53, 14, 0.24); }
   .select:not(.disabled).active, .select-multiple:not(.disabled).active {
     border: 1px solid #0ca0ff; }
+    .select:not(.disabled).active.ok, .select-multiple:not(.disabled).active.ok {
+      box-shadow: 0 2px 6px 0 rgba(73, 184, 71, 0.24); }
+    .select:not(.disabled).active.warning, .select-multiple:not(.disabled).active.warning {
+      box-shadow: 0 2px 6px 0 rgba(251, 190, 17, 0.24); }
+    .select:not(.disabled).active.error, .select-multiple:not(.disabled).active.error {
+      box-shadow: 0 2px 6px 0 rgba(255, 53, 14, 0.24); }
   .active.select, .active.select-multiple {
     z-index: 1; }
     .active.with-select-box.select, .active.with-select-box.select-multiple {

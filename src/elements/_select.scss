@@ -22,6 +22,18 @@
 
   @include focus-active2 {
     border: 1px solid $blue;
+
+    &.ok {
+      box-shadow: $input-special-active-box-shadow-partial rgba($green, 0.24);
+    }
+
+    &.warning {
+      box-shadow: $input-special-active-box-shadow-partial rgba($yellow, 0.24);
+    }
+
+    &.error {
+      box-shadow: $input-special-active-box-shadow-partial rgba($red, 0.24);
+    }
   }
 
   &.active {
@@ -101,7 +113,7 @@
   &.compact {
     .menu {
       .menu-item {
-        padding: 0.5rem!important;
+        padding: 0.5rem !important;
         min-width: unset;
       }
     }
