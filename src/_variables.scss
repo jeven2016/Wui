@@ -524,7 +524,11 @@ $bs-layout: (
         sm : 576px,
         md : 768px,
         lg : 992px,
-        xg: 1200px
+        xg: 1200px,
+
+        max_sm: 767px,
+        max_md: 991px,
+        max_lg: 1199px,
 );
 $grid-column-count: 12;
 $grid-column-padding: 0 .25rem;

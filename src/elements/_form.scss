@@ -124,19 +124,24 @@
   }
 }
 
-//todo
-@include adapter-width('max-width', map-get($bs-layout, 'sm')) {
-  .form {
-    > .form-item {
-      background: red;
-      > .row {
-        .item-label {
-          &.col-sm-12 {
-            margin-bottom: .5rem;
-            justify-content: flex-start !important;
+
+$label_types: ('sm', 'md', 'lg');
+
+@each $col-type in $label_types {
+
+  @include adapter-width('max-width', map-get($bs-layout, 'max_'+$col-type)) {
+    .form {
+      > .form-item {
+        > .row:not(.message-row) {
+          >.item-label {
+            &.col-#{$col-type}-12 {
+              margin-bottom: .5rem;
+              justify-content: flex-start !important;
+            }
           }
         }
       }
     }
   }
+
 }

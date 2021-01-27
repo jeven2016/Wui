@@ -4606,12 +4606,20 @@ $container-offset: 1.5rem;
 .form .form-control.radio-group, .form .form-control.radio, .form .form-control.checkbox {
   line-height: 2.25; }
 
-@media (max-width: 576px) {
-  .form > .form-item {
-    background: red; }
-    .form > .form-item > .row .item-label.col-sm-12 {
-      margin-bottom: .5rem;
-      justify-content: flex-start !important; } }
+@media (max-width: 767px) {
+  .form > .form-item > .row:not(.message-row) > .item-label.col-sm-12 {
+    margin-bottom: .5rem;
+    justify-content: flex-start !important; } }
+
+@media (max-width: 991px) {
+  .form > .form-item > .row:not(.message-row) > .item-label.col-md-12 {
+    margin-bottom: .5rem;
+    justify-content: flex-start !important; } }
+
+@media (max-width: 1199px) {
+  .form > .form-item > .row:not(.message-row) > .item-label.col-lg-12 {
+    margin-bottom: .5rem;
+    justify-content: flex-start !important; } }
 
 h1, .h1 {
   font-size: 2em; }
