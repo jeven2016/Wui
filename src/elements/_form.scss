@@ -1,6 +1,8 @@
 .form {
   .message-row {
     height: 1.8em;
+    display: flex;
+    align-items: center;
   }
 
   &.inline {
@@ -24,7 +26,11 @@
     }
 
     .label-col {
-      margin-bottom: 0;
+      display: flex;
+      line-height: 1.5;
+      padding: .375rem .5rem .375rem 0;
+      overflow: hidden;
+      white-space: nowrap;
 
       > .required-left-col {
         color: $red;
@@ -37,11 +43,6 @@
         font-size: inherit;
         margin-left: .25rem;
       }
-    }
-
-    .label-col {
-      display: flex;
-      margin-bottom: $form-form-item-label-col-margin-bottom;
     }
 
     .form-line {
@@ -57,11 +58,6 @@
     &.horizontal {
       flex: 1 1 100%;
       flex-direction: column;
-
-      .label-col {
-        margin-bottom: 0;
-        padding-right: .5rem;
-      }
 
       .widget-col {
         flex-direction: column;
@@ -89,11 +85,6 @@
         margin-bottom: .5rem;
       }
 
-      > * {
-        //@include make-inline-block;
-        //margin-right: $form-form-item-inline-margin-right;
-      }
-
       .form-line {
         width: auto;
       }
@@ -102,17 +93,15 @@
         vertical-align: top;
       }
 
-      > .label-col {
-        padding-right: .5rem;
-        margin-bottom: 0;
+      .label-col{
+        margin-right: .5rem;
       }
     }
 
   }
 
   .form-msg {
-    margin: .25em 0 .25em;
-    font-size: .9em;
+    //margin: .25em 0 .25em;
     font-weight: map-get($font-weight, 'normal');
   }
 
