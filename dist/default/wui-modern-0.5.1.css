@@ -4539,6 +4539,8 @@ $container-offset: 1.5rem;
   height: 1.8em;
   display: flex;
   align-items: center; }
+  .form .message-row > .form-msg {
+    font-size: .9em; }
 
 .form.inline {
   display: flex;
@@ -4553,17 +4555,14 @@ $container-offset: 1.5rem;
   .form .form-item .item-label {
     display: flex;
     align-items: center; }
-  .form .form-item .label-col {
-    overflow: hidden;
-    white-space: nowrap; }
-    .form .form-item .label-col > .required-left-col {
-      color: #ff350e;
-      font-size: inherit;
-      margin-right: .25rem; }
-    .form .form-item .label-col > .required-right-col {
-      color: #ff350e;
-      font-size: inherit;
-      margin-left: .25rem; }
+  .form .form-item .label-col > .required-left-col {
+    color: #ff350e;
+    font-size: inherit;
+    margin-right: .25rem; }
+  .form .form-item .label-col > .required-right-col {
+    color: #ff350e;
+    font-size: inherit;
+    margin-left: .25rem; }
   .form .form-item .form-line {
     width: 100%; }
   .form .form-item .info {
@@ -4576,13 +4575,18 @@ $container-offset: 1.5rem;
     flex-direction: column; }
     .form .form-item.horizontal .widget-col {
       flex-direction: column; }
-    .form .form-item.horizontal .label-col {
-      margin-right: .5rem; }
+    .form .form-item.horizontal .item-label {
+      overflow: hidden;
+      white-space: nowrap; }
+      .form .form-item.horizontal .item-label > .label-col {
+        margin-right: .5rem; }
   .form .form-item.vertical {
     display: flex;
     flex-direction: column;
     flex: 1 1 100%; }
-    .form .form-item.vertical .label-col {
+    .form .form-item.vertical > .label-col {
+      overflow: hidden;
+      white-space: nowrap;
       margin-bottom: .5rem; }
   .form .form-item.inline {
     display: inline-flex;
@@ -4597,11 +4601,8 @@ $container-offset: 1.5rem;
       width: auto; }
     .form .form-item.inline > .button {
       vertical-align: top; }
-    .form .form-item.inline .label-col {
+    .form .form-item.inline > .label-col {
       margin-right: .5rem; }
-
-.form .form-msg {
-  font-weight: 500; }
 
 .form .form-control.radio-group, .form .form-control.radio, .form .form-control.checkbox {
   line-height: 2.25; }

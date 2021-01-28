@@ -3,6 +3,10 @@
     height: 1.8em;
     display: flex;
     align-items: center;
+
+    > .form-msg {
+      font-size: .9em;
+    }
   }
 
   &.inline {
@@ -13,7 +17,6 @@
 
   .form-item {
     display: flex;
-    //margin-bottom: .5rem;
     min-height: 2rem;
 
     .button.block + .block {
@@ -28,11 +31,6 @@
     }
 
     .label-col {
-      //display: flex;
-      //line-height: 1.5;
-      //padding: .375rem .5rem .375rem 0;
-      overflow: hidden;
-      white-space: nowrap;
 
       > .required-left-col {
         color: $red;
@@ -65,9 +63,15 @@
         flex-direction: column;
       }
 
-      .label-col {
-        margin-right: .5rem;
+      .item-label {
+        overflow: hidden;
+        white-space: nowrap;
+
+        > .label-col {
+          margin-right: .5rem;
+        }
       }
+
     }
 
 
@@ -76,7 +80,9 @@
       flex-direction: column;
       flex: 1 1 100%;
 
-      .label-col {
+      > .label-col {
+        overflow: hidden;
+        white-space: nowrap;
         margin-bottom: .5rem;
       }
     }
@@ -103,16 +109,11 @@
         vertical-align: top;
       }
 
-      .label-col {
+      > .label-col {
         margin-right: .5rem;
       }
     }
 
-  }
-
-  .form-msg {
-    //margin: .25em 0 .25em;
-    font-weight: map-get($font-weight, 'normal');
   }
 
   .form-control {
@@ -133,7 +134,7 @@ $label_types: ('sm', 'md', 'lg');
     .form {
       > .form-item {
         > .row:not(.message-row) {
-          >.item-label {
+          > .item-label {
             &.col-#{$col-type}-12 {
               margin-bottom: .5rem;
               justify-content: flex-start !important;
