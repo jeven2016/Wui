@@ -4544,7 +4544,7 @@ $container-offset: 1.5rem;
 
 .form.inline {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap; }
 
 .form .form-item {
@@ -4589,9 +4589,7 @@ $container-offset: 1.5rem;
       white-space: nowrap;
       margin-bottom: .5rem; }
   .form .form-item.inline {
-    display: inline-flex;
-    min-height: unset;
-    align-items: center; }
+    align-items: flex-start; }
     .form .form-item.inline:not(:last-child) {
       margin-right: .5rem;
       margin-bottom: .5rem; }
@@ -4602,7 +4600,10 @@ $container-offset: 1.5rem;
     .form .form-item.inline > .button {
       vertical-align: top; }
     .form .form-item.inline > .label-col {
-      margin-right: .5rem; }
+      margin-right: .5rem;
+      display: flex;
+      align-items: center;
+      height: 2.375rem; }
 
 .form .form-control.radio-group, .form .form-control.radio, .form .form-control.checkbox {
   line-height: 2.25; }

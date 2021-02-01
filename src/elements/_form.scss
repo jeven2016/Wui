@@ -11,7 +11,7 @@
 
   &.inline {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
   }
 
@@ -88,9 +88,10 @@
     }
 
     &.inline {
-      display: inline-flex;
-      min-height: unset;
-      align-items: center;
+      //display: inline-flex;
+      //min-height: unset;
+      align-items: flex-start;
+      //flex-direction: column;
 
       &:not(:last-child) {
         margin-right: .5rem;
@@ -111,6 +112,9 @@
 
       > .label-col {
         margin-right: .5rem;
+        display: flex;
+        align-items: center;
+        height: 2.375rem;
       }
     }
 
