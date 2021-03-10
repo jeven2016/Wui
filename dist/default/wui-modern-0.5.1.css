@@ -4536,7 +4536,7 @@ $container-offset: 1.5rem;
   background-color: #0ca0ff; }
 
 .form .message-row {
-  height: 1.8em;
+  min-height: 1.8em;
   display: flex;
   align-items: center; }
   .form .message-row > .form-msg {
