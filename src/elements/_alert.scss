@@ -1,5 +1,6 @@
 $animation-timeout: .2s;
 
+
 //@keyframes active-alert {
 //  from {
 //    opacity: 0;
@@ -308,6 +309,13 @@ $container-offset: 1.5rem;
   flex-flow: row wrap;
   z-index: map_get($z-index, 'top');
   width: 97%;
+
+  @include adapter-width('min-width', map-get($bs-layout, 'sm')) {
+    &.alert-container-width-sm {
+
+      width: 22.5rem;
+    }
+  }
 
   &.top-center {
     left: 50%;

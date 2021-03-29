@@ -1252,6 +1252,9 @@ $container-offset: 1.5rem;
 
       @extend %r-movement;
     }*/ }
+  @media (min-width: 576px) {
+    .alert-container.alert-container-width-sm {
+      width: 22.5rem; } }
   .alert-container.top-center {
     left: 50%;
     transform: translate3d(-50%, 0, 0); }
@@ -4947,7 +4950,8 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     }*/ }
   .row > .col-base {
     width: 100%;
-    position: relative; }
+    position: relative;
+    align-self: stretch; }
   .row > .col {
     flex-grow: 1;
     flex-basis: 0; }
@@ -6583,6 +6587,10 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
 
 .space-row {
   display: inline-flex; }
+  .space-row.block {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100%; }
   .space-row.column {
     flex-direction: column; }
     .space-row.column > .space-item {
@@ -6594,6 +6602,9 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     flex-wrap: wrap; }
   .space-row > .space-item {
     display: inline-flex; }
+    .space-row > .space-item.block {
+      display: flex;
+      flex: 1 1 100%; }
 
 .table {
   width: 100%;
