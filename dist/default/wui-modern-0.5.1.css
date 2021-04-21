@@ -315,7 +315,7 @@ h1, h2, h3, h4, h5, h6 {
 /**
 * set the group's border radius property
  */
-.base-btn:disabled, .button:disabled, .base-btn.disabled, .disabled.button, .checkbox:disabled, .checkbox.disabled, .radio:disabled, .radio.disabled, .icon-column:disabled, .icon-column.disabled, .collapse .collapse-header > .header-row > .inner > .header-info:disabled, .collapse .collapse-header > .header-row > .inner > .header-info.disabled, .collapse .collapse-header > .header-row > .header-more:disabled, .collapse .collapse-header > .header-row > .header-more.disabled, .collapse .collapse-header.disabled:disabled, .collapse .collapse-header.disabled, .input:disabled, .navbar.primary .navbar-item .icon-input:disabled, .input.disabled, .navbar.primary .navbar-item .disabled.icon-input, .icon-input:disabled, .icon-input.disabled, .base-menu .menu-item:disabled, .menu .menu-item:disabled, .base-menu .menu-item.disabled, .menu .menu-item.disabled, .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled, .popup-title:disabled, .popup-title.disabled, .select:disabled, .select-multiple:disabled, .disabled.select, .disabled.select-multiple, .select-multiple > .select-multiple-content > .select-input:disabled, .select-multiple > .select-multiple-content > .select-input.disabled, .select-multiple > .select-multiple-content > .search-text-detector:disabled, .select-multiple > .select-multiple-content > .search-text-detector.disabled, .tab .tab-pre:disabled, .tab .tab-next:disabled, .tab .disabled.tab-pre, .tab .disabled.tab-next, .tab .tab-item:disabled, .tab .tab-item.disabled, .tab .tab-item > .item-icon:disabled, .tab .tab-item > .item-icon.disabled, .toggle-button:disabled, .toggle-button.disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info:disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info.disabled, .tree .tree-item > .tree-title > .title-row > .title-more:disabled, .tree .tree-item > .tree-title > .title-row > .title-more.disabled {
+.base-btn:disabled, .button:disabled, .base-btn.disabled, .disabled.button, .checkbox:disabled, .checkbox.disabled, .radio:disabled, .radio.disabled, .icon-column:disabled, .icon-column.disabled, .collapse .collapse-header > .header-row > .inner > .header-info:disabled, .collapse .collapse-header > .header-row > .inner > .header-info.disabled, .collapse .collapse-header > .header-row > .header-more:disabled, .collapse .collapse-header > .header-row > .header-more.disabled, .collapse .collapse-header.disabled:disabled, .collapse .collapse-header.disabled, .input:disabled, .navbar.primary .navbar-item .icon-input:disabled, .input.disabled, .navbar.primary .navbar-item .disabled.icon-input, .icon-input:disabled, .icon-input.disabled, .base-menu .menu-item:disabled, .menu .menu-item:disabled, .base-menu .menu-item.disabled, .menu .menu-item.disabled, .base-menu .menu-header:disabled, .menu .menu-header:disabled, .base-menu .menu-header.disabled, .menu .menu-header.disabled, .popup-title:disabled, .popup-title.disabled, .select:disabled, .select-multiple:disabled, .disabled.select, .disabled.select-multiple, .select-multiple > .select-multiple-content > .select-input:disabled, .select-multiple > .select-multiple-content > .select-input.disabled, .select-multiple > .select-multiple-content > .search-text-detector:disabled, .select-multiple > .select-multiple-content > .search-text-detector.disabled, .tab .tab-pre:disabled, .tab .tab-next:disabled, .tab .disabled.tab-pre, .tab .disabled.tab-next, .tab .tab-item:disabled, .tab .tab-item.disabled, .tab .tab-item > .item-icon:disabled, .tab .tab-item > .item-icon.disabled, .text-field:disabled, .text-field.disabled, .text-field > .tf-input:disabled, .text-field > .tf-input.disabled, .toggle-button:disabled, .toggle-button.disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info:disabled, .tree .tree-item > .tree-title > .title-row > .inner > .title-info.disabled, .tree .tree-item > .tree-title > .title-row > .title-more:disabled, .tree .tree-item > .tree-title > .title-row > .title-more.disabled {
   cursor: not-allowed !important;
   opacity: 0.7 !important; }
 
@@ -897,6 +897,12 @@ a {
       color: #f2f2f2 !important; }
 
 @keyframes change-width {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+@keyframes simple-change-width-smoothly {
   from {
     width: 0; }
   to {
@@ -4786,7 +4792,6 @@ h1, h2, h3, h4, h5, h6,
   line-height: 1.5;
   -webkit-appearance: none;
   transition: all 0.2s ease-in-out;
-  outline: 0;
   /**
   * Simple input
    */ }
@@ -7051,6 +7056,119 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
             border-bottom: none;
             border-radius: 0;
             border-left: 3px solid #0ca0ff; }
+
+.text-field {
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  position: relative;
+  flex-direction: column;
+  transition: border-color .15s; }
+  .text-field.block {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex; }
+  .text-field > .tf-label {
+    position: absolute;
+    z-index: 1; }
+  .text-field .tf-input {
+    padding: 0 1rem;
+    border: none;
+    height: 100%;
+    width: 100%;
+    outline: 0;
+    line-height: 1.5;
+    -webkit-appearance: none;
+    transition: all 0.2s ease-in-out;
+    background: transparent;
+    font-size: 1rem; }
+  .text-field .tf-input-wrapper {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    align-items: center; }
+    .text-field .tf-input-wrapper .tf-input {
+      height: 100%;
+      flex: 1 1 auto;
+      padding: 0;
+      font-size: inherit; }
+    .text-field .tf-input-wrapper .tf-col.right {
+      padding: 0 0 0 .25rem; }
+    .text-field .tf-input-wrapper .tf-col.left {
+      padding: 0 .25rem 0 0; }
+  .text-field > .tf-label {
+    color: #818a91; }
+
+.text-field.outline {
+  height: 3rem;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  border-color: #ccc; }
+  .text-field.outline > .tf-label {
+    position: absolute;
+    color: #818a91;
+    top: 50%;
+    transform: translate3d(1rem, -50%, 0); }
+  .text-field.outline > .tf-input-wrapper {
+    padding: 0 1rem; }
+  .text-field.outline.show > .tf-label {
+    font-size: .75rem;
+    top: 0;
+    padding: 0 .25rem;
+    background: #ffffff;
+    transform: translate3d(0.75rem, -50%, 0); }
+  .text-field.outline.show.focused {
+    border-color: #0ca0ff;
+    border-width: 2px; }
+    .text-field.outline.show.focused > .tf-label {
+      color: #0ca0ff; }
+  .text-field.outline.small {
+    height: 2.5rem; }
+    .text-field.outline.small > .tf-input, .text-field.outline.small > .tf-input-wrapper {
+      font-size: 1rem; }
+  .text-field.outline.large {
+    height: 4rem; }
+    .text-field.outline.large > .tf-input, .text-field.outline.large > .tf-input-wrapper {
+      font-size: 1.5rem; }
+    .text-field.outline.large.show > .tf-label {
+      font-size: 1rem; }
+
+.text-field.underline {
+  border: none; }
+  .text-field.underline > .tf-label {
+    left: 0;
+    bottom: 0;
+    transform: translate3d(0, -0.25rem, 0); }
+    .text-field.underline > .tf-label + .tf-input, .text-field.underline > .tf-label + .tf-input-wrapper {
+      margin-top: 1rem; }
+  .text-field.underline > .tf-input, .text-field.underline > .tf-input-wrapper {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #ccc; }
+  .text-field.underline.show > .tf-label {
+    font-size: .75rem;
+    top: 0;
+    transform: translate3d(0, 0, 0); }
+  .text-field.underline.show.focused.with-bottom-bar:after {
+    position: absolute;
+    display: block;
+    left: 0;
+    top: calc(100% - 2px);
+    content: "";
+    height: 2px;
+    width: 100%;
+    background: #0ca0ff;
+    transition: width 0.3s;
+    animation: simple-change-width-smoothly .3s;
+    z-index: 1; }
+  .text-field.underline.show.focused > .tf-label {
+    color: #0ca0ff; }
+  .text-field.underline.small > .tf-input, .text-field.underline.small > .tf-input-wrapper {
+    font-size: 1rem; }
+  .text-field.underline.large > .tf-input, .text-field.underline.large > .tf-input-wrapper {
+    font-size: 1.5rem; }
+  .text-field.underline.large.show > .tf-label {
+    font-size: 0.875rem; }
 
 .toggle-container {
   display: inline-flex;

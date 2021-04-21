@@ -76,3 +76,11 @@ new:
   }
 }
 animation: btn-box-shadow .6s;
+
+2021-4-21:
+* normalize.css , set font-size: 100% for input, text.
+this causes text-field's label cannot align with input. So change to rem.
+* enhance
+Never go more then 3 levels deep.
+Ensure the CSS output is clean and reusable.
+Use nesting when it makes sense to, not as a default option.

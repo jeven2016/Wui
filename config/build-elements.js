@@ -9,6 +9,7 @@ var config = {
         checkbox: true,
         headings: true,
         input: true,
+        "text-field": true,
         'input-group': true,
         popup: true,
         dropdown: true,
