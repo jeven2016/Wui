@@ -15,6 +15,22 @@
   }
 }
 
+@mixin simple-bottom-bar() {
+  &:after {
+    @include make-block(absolute) {
+      left: $menu-float-submenu-active-menu-header-after-left;
+      top: calc(100% - 2px);
+      content: $menu-float-submenu-active-menu-header-after-content;
+      height: 2px;
+      width: $menu-float-submenu-active-menu-header-after-width;
+      background: $menu-float-submenu-active-menu-header-after-background-color;
+      transition: $menu-float-submenu-active-menu-header-after-transition;
+      animation: simple-change-width-smoothly .3s;
+      z-index: 1;
+    }
+  }
+}
+
 @mixin right-bar() {
   &:after {
     @include make-block(absolute) {

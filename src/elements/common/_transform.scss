@@ -7,6 +7,15 @@
   }
 }
 
+@keyframes simple-change-width-smoothly {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
 @keyframes change-width-smoothly {
   0% {
     width: 0;
