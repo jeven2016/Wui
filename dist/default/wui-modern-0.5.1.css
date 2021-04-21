@@ -7063,14 +7063,19 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
   display: inline-flex;
   position: relative;
   flex-direction: column;
-  transition: border-color .15s; }
+  transition: box-shadow .15s; }
   .text-field.block {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex; }
   .text-field > .tf-label {
+    pointer-events: none;
     position: absolute;
-    z-index: 1; }
+    z-index: 1;
+    transition: font-size .2s; }
+  .text-field .tf-required {
+    margin-left: .25rem;
+    pointer-events: none; }
   .text-field .tf-input {
     padding: 0 1rem;
     border: none;
@@ -7101,7 +7106,7 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     color: #818a91; }
 
 .text-field.outline {
-  height: 3rem;
+  height: 3.5rem;
   border: 1px solid;
   border-radius: 0.25rem;
   border-color: #ccc; }
@@ -7114,13 +7119,11 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     padding: 0 1rem; }
   .text-field.outline.show > .tf-label {
     font-size: .75rem;
-    top: 0;
     padding: 0 .25rem;
-    background: #ffffff;
-    transform: translate3d(0.75rem, -50%, 0); }
+    background: #ffffff; }
   .text-field.outline.show.focused {
-    border-color: #0ca0ff;
-    border-width: 2px; }
+    border-color: transparent;
+    box-shadow: 0 0 0 2px #0ca0ff inset; }
     .text-field.outline.show.focused > .tf-label {
       color: #0ca0ff; }
   .text-field.outline.small {

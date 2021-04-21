@@ -1,8 +1,9 @@
+
 .text-field {
   @include make-inline-flex {
     position: relative;
     flex-direction: column;
-    transition: border-color .15s;
+    transition: box-shadow .15s;
   }
 
   &.block {
@@ -10,8 +11,15 @@
   }
 
   > .tf-label {
+    pointer-events: none;
     position: absolute;
     z-index: map_get($z-index, 'one');
+    transition: font-size .2s;
+  }
+
+  .tf-required{
+    margin-left: .25rem;
+    pointer-events: none;
   }
 
   .tf-input {
@@ -60,7 +68,7 @@
 }
 
 .text-field.outline {
-  height: 3rem;
+  height: 3.5rem;
   border: 1px solid;
   border-radius: $default-border-radius;
   border-color: $gray;
@@ -80,17 +88,17 @@
   &.show {
     > .tf-label {
       font-size: .75rem;
-      top: 0;
       padding: 0 .25rem;
       background: $white;
 
       //won't be applied in react project
-      transform: translate3d(0.75rem, -50%, 0);
+      //top: 0;
+      //transform: translate3d(0.75rem, -50%, 0);
     }
 
     &.focused {
-      border-color: $blue;
-      border-width: 2px;
+      border-color: transparent;
+      box-shadow: 0 0 0 2px $blue inset;
 
       > .tf-label {
         color: $blue;
