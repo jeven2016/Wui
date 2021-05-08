@@ -3,21 +3,26 @@
   @include make-inline-flex {
     position: relative;
     flex-direction: column;
+    justify-content: center;
     transition: box-shadow .15s;
   }
 
   &.block {
-    @include make-flex
+    @include make-flex {
+      flex: 1 1 auto;
+      width: 100%;
+    }
   }
 
   > .tf-label {
     pointer-events: none;
     position: absolute;
     z-index: map_get($z-index, 'one');
-    transition: font-size .2s;
+    transition: font-size .2s, color .2s;
+    will-change: font-size, color, top, transform;
   }
 
-  .tf-required{
+  .tf-required {
     margin-left: .25rem;
     pointer-events: none;
   }
@@ -48,6 +53,18 @@
       font-size: inherit;
     }
 
+    .tf-col {
+      @include make-flex-vertical-center {
+        &.right {
+          padding: 0 0 0 .25rem;
+        }
+
+        &.left {
+          padding: 0 .25rem 0 0;
+        }
+      }
+    }
+
     .tf-col.right {
       padding: 0 0 0 .25rem;
     }
@@ -65,6 +82,18 @@
       @include add-disabled-conf;
     }
   }
+
+  //override properties of select
+  .select {
+    border: none;
+    box-shadow: none;
+
+    &:focus, &:hover, &.active {
+      border: none;
+      box-shadow: none;
+    }
+  }
+
 }
 
 .text-field.outline {
@@ -98,11 +127,15 @@
 
     &.focused {
       border-color: transparent;
-      box-shadow: 0 0 0 2px $blue inset;
 
-      > .tf-label {
-        color: $blue;
+      &:not(.error-info) {
+        box-shadow: 0 0 0 2px $blue inset;
+
+        > .tf-label {
+          color: $blue;
+        }
       }
+
     }
   }
 
@@ -132,8 +165,9 @@
 
   > .tf-label {
     left: 0;
-    bottom: 0;
-    transform: translate3d(0, -0.25rem, 0);
+    //won't be applied in react project
+    //bottom: 0;
+    //transform: translate3d(0, -0.25rem, 0);
 
     + .tf-input, + .tf-input-wrapper {
       margin-top: 1rem;
@@ -142,27 +176,31 @@
 
   > .tf-input, > .tf-input-wrapper {
     //width: 100%;
-    padding: 0.25rem 0;
+    padding: 0.5rem 0;
     border-bottom: 1px solid $gray;
   }
 
   &.show {
     > .tf-label {
       font-size: .75rem;
-      top: 0;
 
       //won't be applied in react project
-      transform: translate3d(0, 0, 0);
+      //top: 0;
+      //transform: translate3d(0, 0, 0);
     }
 
     &.focused {
-      &.with-bottom-bar {
-        @include simple-bottom-bar;
+
+      &:not(.error-info) {
+        &.with-bottom-bar {
+          @include simple-bottom-bar;
+        }
+
+        > .tf-label {
+          color: $blue;
+        }
       }
 
-      > .tf-label {
-        color: $blue;
-      }
     }
   }
 
@@ -181,4 +219,9 @@
       font-size: map-get($font-size, 'small');
     }
   }
+}
+
+
+.text-field {
+  @include make-special-text-field;
 }

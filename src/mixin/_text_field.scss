@@ -1,0 +1,72 @@
+//for input-ok, input-warning, input-error
+@mixin make-special-text-field() {
+
+  &.error-info {
+    &.ok, &.success {
+      &:not(.underline) {
+        border-color: $success !important;
+
+        &.with-box {
+          @include focus-active2 {
+            box-shadow: 0 0 0 0.2rem lighten($success, 40%) !important;
+          }
+        }
+      }
+
+      &.underline {
+        .tf-input {
+          border-color: $success;
+        }
+      }
+
+      .tf-label {
+        color: $success;
+      }
+    }
+
+    &.warning {
+
+      &:not(.underline) {
+        border-color: $warning !important;
+
+        &.with-box {
+          @include focus-active2 {
+            box-shadow: 0 0 0 0.2rem lighten($warning, 40%) !important;
+          }
+        }
+      }
+
+      &.underline {
+        .tf-input {
+          border-color: $warning;
+        }
+      }
+
+      .tf-label {
+        color: $warning;
+      }
+    }
+
+    &.error {
+      &:not(.underline) {
+        border-color: $danger !important;
+
+        &.with-box {
+          @include focus-active2 {
+            box-shadow: 0 0 0 0.2rem lighten($danger, 40%) !important;
+          }
+        }
+      }
+
+      &.underline {
+        .tf-input {
+          border-color: $danger;
+        }
+      }
+
+      .tf-label {
+        color: $danger;
+      }
+    }
+  }
+}

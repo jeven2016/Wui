@@ -125,10 +125,6 @@ a {
   box-shadow: $default-box-shadow;
 }
 
-.with-box {
-  box-shadow: $default-box-shadow;
-}
-
 .clear-fix {
   &::after {
     content: '';

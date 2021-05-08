@@ -579,9 +579,6 @@ a {
 .global-with-box {
   box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12); }
 
-.with-box {
-  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12); }
-
 .clear-fix::after {
   content: '';
   display: table;
@@ -7063,16 +7060,20 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
   display: inline-flex;
   position: relative;
   flex-direction: column;
+  justify-content: center;
   transition: box-shadow .15s; }
   .text-field.block {
     display: -ms-flexbox;
     display: -webkit-flex;
-    display: flex; }
+    display: flex;
+    flex: 1 1 auto;
+    width: 100%; }
   .text-field > .tf-label {
     pointer-events: none;
     position: absolute;
     z-index: 1;
-    transition: font-size .2s; }
+    transition: font-size .2s, color .2s;
+    will-change: font-size, color, top, transform; }
   .text-field .tf-required {
     margin-left: .25rem;
     pointer-events: none; }
@@ -7098,12 +7099,27 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
       flex: 1 1 auto;
       padding: 0;
       font-size: inherit; }
+    .text-field .tf-input-wrapper .tf-col {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      align-items: center; }
+      .text-field .tf-input-wrapper .tf-col.right {
+        padding: 0 0 0 .25rem; }
+      .text-field .tf-input-wrapper .tf-col.left {
+        padding: 0 .25rem 0 0; }
     .text-field .tf-input-wrapper .tf-col.right {
       padding: 0 0 0 .25rem; }
     .text-field .tf-input-wrapper .tf-col.left {
       padding: 0 .25rem 0 0; }
   .text-field > .tf-label {
     color: #818a91; }
+  .text-field .select {
+    border: none;
+    box-shadow: none; }
+    .text-field .select:focus, .text-field .select:hover, .text-field .select.active {
+      border: none;
+      box-shadow: none; }
 
 .text-field.outline {
   height: 3.5rem;
@@ -7122,10 +7138,11 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     padding: 0 .25rem;
     background: #ffffff; }
   .text-field.outline.show.focused {
-    border-color: transparent;
-    box-shadow: 0 0 0 2px #0ca0ff inset; }
-    .text-field.outline.show.focused > .tf-label {
-      color: #0ca0ff; }
+    border-color: transparent; }
+    .text-field.outline.show.focused:not(.error-info) {
+      box-shadow: 0 0 0 2px #0ca0ff inset; }
+      .text-field.outline.show.focused:not(.error-info) > .tf-label {
+        color: #0ca0ff; }
   .text-field.outline.small {
     height: 2.5rem; }
     .text-field.outline.small > .tf-input, .text-field.outline.small > .tf-input-wrapper {
@@ -7140,19 +7157,15 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
 .text-field.underline {
   border: none; }
   .text-field.underline > .tf-label {
-    left: 0;
-    bottom: 0;
-    transform: translate3d(0, -0.25rem, 0); }
+    left: 0; }
     .text-field.underline > .tf-label + .tf-input, .text-field.underline > .tf-label + .tf-input-wrapper {
       margin-top: 1rem; }
   .text-field.underline > .tf-input, .text-field.underline > .tf-input-wrapper {
-    padding: 0.25rem 0;
+    padding: 0.5rem 0;
     border-bottom: 1px solid #ccc; }
   .text-field.underline.show > .tf-label {
-    font-size: .75rem;
-    top: 0;
-    transform: translate3d(0, 0, 0); }
-  .text-field.underline.show.focused.with-bottom-bar:after {
+    font-size: .75rem; }
+  .text-field.underline.show.focused:not(.error-info).with-bottom-bar:after {
     position: absolute;
     display: block;
     left: 0;
@@ -7164,7 +7177,7 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     transition: width 0.3s;
     animation: simple-change-width-smoothly .3s;
     z-index: 1; }
-  .text-field.underline.show.focused > .tf-label {
+  .text-field.underline.show.focused:not(.error-info) > .tf-label {
     color: #0ca0ff; }
   .text-field.underline.small > .tf-input, .text-field.underline.small > .tf-input-wrapper {
     font-size: 1rem; }
@@ -7172,6 +7185,45 @@ textarea.input, .navbar.primary .navbar-item textarea.icon-input {
     font-size: 1.5rem; }
   .text-field.underline.large.show > .tf-label {
     font-size: 0.875rem; }
+
+.text-field.error-info.ok:not(.underline), .text-field.error-info.success:not(.underline) {
+  border-color: #49b847 !important; }
+  .text-field.error-info.ok:not(.underline).with-box:not(.disabled):focus, .text-field.error-info.ok:not(.underline).with-box:not(.disabled):hover, .text-field.error-info.success:not(.underline).with-box:not(.disabled):focus, .text-field.error-info.success:not(.underline).with-box:not(.disabled):hover {
+    box-shadow: 0 0 0 0.2rem #dbf1da !important; }
+  .text-field.error-info.ok:not(.underline).with-box:not(.disabled).active, .text-field.error-info.success:not(.underline).with-box:not(.disabled).active {
+    box-shadow: 0 0 0 0.2rem #dbf1da !important; }
+
+.text-field.error-info.ok.underline .tf-input, .text-field.error-info.success.underline .tf-input {
+  border-color: #49b847; }
+
+.text-field.error-info.ok .tf-label, .text-field.error-info.success .tf-label {
+  color: #49b847; }
+
+.text-field.error-info.warning:not(.underline) {
+  border-color: #fbbe11 !important; }
+  .text-field.error-info.warning:not(.underline).with-box:not(.disabled):focus, .text-field.error-info.warning:not(.underline).with-box:not(.disabled):hover {
+    box-shadow: 0 0 0 0.2rem #fef5da !important; }
+  .text-field.error-info.warning:not(.underline).with-box:not(.disabled).active {
+    box-shadow: 0 0 0 0.2rem #fef5da !important; }
+
+.text-field.error-info.warning.underline .tf-input {
+  border-color: #fbbe11; }
+
+.text-field.error-info.warning .tf-label {
+  color: #fbbe11; }
+
+.text-field.error-info.error:not(.underline) {
+  border-color: #ff350e !important; }
+  .text-field.error-info.error:not(.underline).with-box:not(.disabled):focus, .text-field.error-info.error:not(.underline).with-box:not(.disabled):hover {
+    box-shadow: 0 0 0 0.2rem #ffe0da !important; }
+  .text-field.error-info.error:not(.underline).with-box:not(.disabled).active {
+    box-shadow: 0 0 0 0.2rem #ffe0da !important; }
+
+.text-field.error-info.error.underline .tf-input {
+  border-color: #ff350e; }
+
+.text-field.error-info.error .tf-label {
+  color: #ff350e; }
 
 .toggle-container {
   display: inline-flex;

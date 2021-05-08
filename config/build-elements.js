@@ -71,7 +71,9 @@ var config = {
         '_flex.scss',
         '_child-margin.scss',
         '_width.scss',
-        '_checkbox.scss'],
+        '_checkbox.scss',
+        '_text_field.scss'
+      ],
     },
 
     themes: {
