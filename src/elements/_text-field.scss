@@ -17,7 +17,7 @@
   > .tf-label {
     pointer-events: none;
     position: absolute;
-    z-index: map_get($z-index, 'one');
+    z-index: map_get($z-index, 'widget');
     transition: font-size .2s, color .2s;
     will-change: font-size, color, top, transform;
   }
