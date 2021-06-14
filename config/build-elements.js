@@ -42,7 +42,8 @@ var config = {
         stepper: true,
         datepicker: true,
         popconfirm: true,
-        space: true
+        space: true,
+        avatar: true
       },
     },
 
@@ -72,7 +73,7 @@ var config = {
         '_child-margin.scss',
         '_width.scss',
         '_checkbox.scss',
-        '_text_field.scss'
+        '_text_field.scss',
       ],
     },
 

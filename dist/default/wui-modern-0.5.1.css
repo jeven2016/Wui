@@ -1262,6 +1262,59 @@ $container-offset: 1.5rem;
     left: 50%;
     transform: translate3d(-50%, 0, 0); }
 
+.avatar {
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 500;
+  overflow: hidden;
+  vertical-align: middle;
+  background: #ccc; }
+  .avatar.medium {
+    width: 2.5rem;
+    height: 2.5rem; }
+  .avatar.large {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem; }
+  .avatar.small {
+    width: 2rem;
+    height: 2rem; }
+  .avatar.square {
+    border-radius: 0; }
+  .avatar.round {
+    border-radius: 0.25rem; }
+  .avatar.circle {
+    border-radius: 50%; }
+  .avatar > .wrapper {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%; }
+    .avatar > .wrapper > .avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+
+.avatar-group {
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex; }
+  .avatar-group.align-left > .avatar {
+    border: 1px solid #ffffff; }
+    .avatar-group.align-left > .avatar:not(:first-child) {
+      margin-left: -0.5rem; }
+  .avatar-group.align-right > .avatar {
+    border: 1px solid #ffffff; }
+    .avatar-group.align-right > .avatar:not(:last-child) {
+      margin-right: 0.5rem; }
+
 .badge {
   position: relative;
   display: inline-flex;
