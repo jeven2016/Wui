@@ -1,7 +1,7 @@
 {
-  "name": "wui-modern",
-  "version": "0.5.1",
-  "description": "A new web UI framework built on CSS3.",
+  "name": "wui",
+  "version": "0.5.3",
+  "description": "A new web UI framework built on CSS3 and SASS.",
   "scripts": {
     "build": "node_modules/gulp/bin/gulp.js",
     "buildThemes": "node_modules/gulp/bin/gulp.js buildThemes",
