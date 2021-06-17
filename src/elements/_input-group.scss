@@ -1,33 +1,39 @@
 //$elements: (">.label", ">.button", ">.button-dropdown", ".dropdown", ".input", ".icon-input");
-
-.input-group {
-  @include make-inline-flex-center(stretch);
-
-  & > .label {
-    @include make-flex-center();
+%item {
+  align-self: stretch;
+  @include make-flex-center {
     line-height: $input-group-label-line-height;
-    padding: $input-group-label-padding;
-    border: $input-border;
-    background-color: $input-label-background-color;
-
     @include input-variant-size();
+  }
 
-    @include border-radius($default-border-radius);
+  &.auto-scale {
+    flex: 1 1 auto;
+    width: 1%;
+  }
+
+  &.no-scale {
+    flex: 0 1 auto;
+  }
+}
+
+%reset-child {
+  //for sample From6
+  //for various error, the non-first child should represent all borders in this input group in form
+  &:not(:first-child) {
+    > .border-info {
+      margin-left: -1px;
+      margin-right: 0!important;
+    }
   }
 
   > * {
-    &.input, &.icon-input {
-      flex: 1 1 auto;
-      width: 1%;
-    }
+    flex: 1 1 auto;
+    width: 1%;
+    align-self: stretch;
+  }
 
-    &.popup-ctrl {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    &:first-child:not(:last-child) {
+  &:first-child:not(:last-child) {
+    > * {
       @include full-border-radius($default-border-radius, 0, $default-border-radius, 0);
       margin-right: $input-group-element-margin-right;
 
@@ -41,8 +47,10 @@
         @include border-radius(0);
       }
     }
+  }
 
-    &:last-child:not(:first-child) {
+  &:last-child:not(:first-child) {
+    > * {
       @include full-border-radius(0, $default-border-radius, 0, $default-border-radius);
 
       &.button-dropdown > .title > .button {
@@ -59,8 +67,10 @@
         @include border-radius(0);
       }
     }
+  }
 
-    &:not(:first-child):not(:last-child) {
+  &:not(:first-child):not(:last-child) {
+    > * {
       @include border-radius(0);
       margin-right: $input-group-element-margin-right;
 
@@ -70,6 +80,43 @@
       &.icon-input > .input {
         @include border-radius(0);
       }
+    }
+  }
+}
+
+.input-group {
+  @include make-inline-flex-center(stretch);
+  vertical-align: middle;
+
+  > .item {
+    @extend %item;
+  }
+
+  & > .label {
+    @extend %item;
+    flex: 0 1 auto;
+
+    > .content {
+      display: flex;
+      border: $input-border;
+      align-items: center;
+      justify-content: center;
+      padding: $input-group-label-padding;
+
+      &.with-bg {
+        background-color: $input-label-background-color;
+      }
+
+      @include border-radius($default-border-radius);
+    }
+
+
+  }
+
+  &.normal {
+    > .item,
+    > .label {
+      @extend %reset-child;
     }
   }
 

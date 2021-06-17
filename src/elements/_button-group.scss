@@ -1,12 +1,14 @@
 .button-group {
   @include make-inline-flex;
   flex-wrap: $btn-group-flex-wrap;
+  vertical-align: middle;// for horizontal alignment, multiple button groups placed in same div
 
   > .button {
     @include group-border-radius($btn-group-border-radius);
+    height: auto!important;
 
-    &:not(:first-child) {
-      margin-left: $btn-group-buttons-margin-left;
+    + .button {
+      margin-left: 0;
     }
 
     /*
@@ -21,6 +23,13 @@
         &:not(:first-child):not(:last-child) {
           @include middle-button;
         }*/
+  }
+
+  &.horizontal {
+    > .button:not(:first-child) {
+      margin-left: $btn-group-buttons-margin-left;
+      border-left: none !important;
+    }
   }
 
   > .popup-ctrl {
@@ -49,6 +58,7 @@
 
   &.block {
     @include make-flex-center;
+    flex: 1 1 100%;
 
     //display:table-cell 以表格单元格的形式呈现，可看做td标签。
     //table-cell同样会被其他属性破坏，例如float, position:absolute，
@@ -68,6 +78,7 @@
       &:first-child {
         @include full-border-radius($btn-group-border-radius, $btn-group-border-radius, 0, 0);
         border-bottom-width: 0;
+        margin-top: -1px;
       }
 
       &:last-child {
@@ -85,13 +96,6 @@
           border-right-width: $btn-group-border-width;
         }
       }
-    }
-  }
-
-  &.outline {
-    > .button {
-      @extend .button.outline;
-      @include group-border-radius($btn-group-border-radius);
     }
   }
 

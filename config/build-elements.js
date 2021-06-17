@@ -9,6 +9,7 @@ var config = {
         checkbox: true,
         headings: true,
         input: true,
+        "text-field": true,
         'input-group': true,
         popup: true,
         dropdown: true,
@@ -17,7 +18,7 @@ var config = {
         'button-group': true,
         card: true,
         layout: true,
-        dialog: true,
+        modal: true,
         tabs: true,
         navbar: true,
         menu: true,
@@ -39,6 +40,10 @@ var config = {
         collapse: true,
         tree: true,
         stepper: true,
+        datepicker: true,
+        popconfirm: true,
+        space: true,
+        avatar: true
       },
     },
 
@@ -66,7 +71,10 @@ var config = {
         '_hover_focus_active.scss',
         '_flex.scss',
         '_child-margin.scss',
-        '_width.scss'],
+        '_width.scss',
+        '_checkbox.scss',
+        '_text_field.scss',
+      ],
     },
 
     themes: {

@@ -1,12 +1,11 @@
 
 body, div, span, ul, li, ol, dd, dt, dl, pre, code, form, fieldset, legend,
-p, input, textarea, blockquote, th, td, button, hr, aside, footer, header, nav, section, span {
+p, blockquote, th, td, hr, aside, footer, header, nav, section, span {
   margin: 0;
   padding: 0;
 }
 
 
 h1, h2, h3, h4, h5, h6 {
-  padding: 0;
-  margin: 0;
+  margin-top: 0;
 }

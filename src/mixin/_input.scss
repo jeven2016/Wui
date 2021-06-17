@@ -1,6 +1,15 @@
 @mixin make-placeholder() {
-  &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
-    @content
+  &::placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
   }
 }
 

@@ -6,7 +6,8 @@ html {
 }
 
 body {
-  font: 1rem/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  //font: 1rem/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font: 1rem/1.5 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   color: $text-color;
   background-color: $body-background-color;
 
@@ -38,14 +39,40 @@ a {
   fill: currentColor;
   width: 1em;
   height: 1em;
+  //line-height: 1;
   flex-shrink: 0;
   user-select: none;
-  font-size: 1.5rem;
+  font-size: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
 
-  &.larg{
-    font-size: 1.5rem;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+
+  &.large {
+    font-size: map-get($icon-font-size, 'large');
+  }
+
+  &.medium {
+    font-size: map-get($icon-font-size, 'normal');
+  }
+
+  &.small {
+    font-size: map-get($icon-font-size, 'small');
   }
 }
+
 
 //todo:Deprecated
 %inline-block-style {
@@ -53,7 +80,7 @@ a {
   display: inline-block;
 }
 
-%mask-content {
+.mask {
   position: fixed;
   top: 0;
   left: 0;
@@ -61,17 +88,14 @@ a {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: rgba(0, 0, 0, .5);
   z-index: map_get($z-index, 'mask');
-
   overflow: hidden;
+
+  &.dark {
+    background: rgba(0, 0, 0, .8);
+  }
 }
 
-.mask {
-  @extend %mask-content;
-  transition: opacity .3s ease-in-out;
-  @include make-visible;
-}
 
 .pull-left {
   float: left !important;
@@ -101,10 +125,6 @@ a {
   box-shadow: $default-box-shadow;
 }
 
-.with-box {
-  box-shadow: $default-box-shadow;
-}
-
 .clear-fix {
   &::after {
     content: '';
@@ -122,7 +142,7 @@ a {
 }
 
 .hide {
-  display: none;
+  display: none!important;
 }
 
 
@@ -141,5 +161,33 @@ a {
 
   .width-xl {
     max-width: $dialog-content-width-xg;
+  }
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+.ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: inherit;
+
+  > .content {
+    position: absolute;
+    pointer-events: none; //ensure the content cannlt be clicked
+    //z-index: 1;
+    border-radius: 50%;
   }
 }

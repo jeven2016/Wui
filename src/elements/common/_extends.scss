@@ -14,6 +14,9 @@
   -webkit-appearance: none;
   appearance: none;
   transition: $btn-transition;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
 
   &.min-width {
     min-width: $btn-min-width;

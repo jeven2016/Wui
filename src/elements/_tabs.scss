@@ -2,7 +2,7 @@
   @include make-inline-flex-center;
   color: $gray;
   font-size: 1.5em;
-  font-width: map_get($font-weight, 'normal');
+  font-weight: map_get($font-weight, 'normal');
   height: 2rem;
   width: 2rem;
   position: absolute;
@@ -23,6 +23,10 @@
 
 .tabs {
   display: flex;
+
+  .tab-panel {
+    padding: .75rem 1.25rem;
+  }
 
   &.top {
     flex-direction: column;
@@ -56,22 +60,6 @@
   @include make-flex;
   position: relative;
 
-  &.top {
-    margin-bottom: 1rem;
-  }
-
-  &.bottom {
-    margin-top: 1rem;
-  }
-
-  &.left {
-    margin-right: 1rem;
-  }
-
-  &.right {
-    margin-left: 1rem;
-  }
-
   .card-wrapper {
     display: flex;
   }
@@ -85,7 +73,7 @@
       }
     }
 
-    > .tab-pre, > .tab-next {
+    .tab-pre, .tab-next {
       height: 100%;
     }
 
@@ -133,7 +121,6 @@
       margin-right: 2px;
     }
 
-
   }
 
   &.vertical {
@@ -146,7 +133,7 @@
       }
     }
 
-    > .tab-pre, > .tab-next {
+    .tab-pre, .tab-next {
       width: 100%;
     }
 
@@ -204,7 +191,7 @@
     }
   }
 
-  > .tab-pre {
+  .tab-pre {
     @extend %tab-ctrl;
 
     &.horizontal {
@@ -220,7 +207,7 @@
     }
   }
 
-  > .tab-next {
+  .tab-next {
     @extend %tab-ctrl;
 
     &.horizontal {
@@ -237,7 +224,7 @@
 
   }
 
-  > .tab-container {
+  .tab-container {
     overflow: hidden;
     white-space: nowrap;
     flex: 1;
@@ -267,17 +254,42 @@
       &.vertical {
         flex-direction: column;
       }
+
+      &.equal-width {
+        display: flex;
+
+        &.vertical {
+          height: 100%;
+        }
+
+        > .tab-item {
+          flex: 1 1 auto;
+
+          > .item-label {
+            justify-content: center;
+          }
+        }
+      }
     }
   }
 
   .tab-item {
-    @include make-menu-item(true, 0.5rem 0.5rem);
+    @include make-menu-item(true, 0.5rem 1rem, false);
     min-width: 2rem;
     flex-shrink: 0;
 
     > .item-label {
       display: inline-flex;
       flex: 1 0 auto;
+
+      > .item-cnt {
+        @include make-flex-center {
+          flex: 1 1 100%;
+          flex-direction: column;
+          padding: .5rem 0;
+          font-weight: map-get($font-weight, 'normal');
+        }
+      }
     }
 
     > .item-icon {
@@ -386,7 +398,7 @@
 
       &.left {
         left: -1px;
-        border-left: 3px solid $primary;
+        border-left: none;
         margin-right: -1px;
 
         &.tab-card {
@@ -399,12 +411,14 @@
           &.with-border {
             border-top: $default-border;
             border-bottom: $default-border;
+            border-left: 3px solid $primary;
           }
 
           &.one-border {
             border-top: none;
             border-bottom: none;
             border-radius: 0;
+            border-left: 3px solid $primary;
           }
         }
       }

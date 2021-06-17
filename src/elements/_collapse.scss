@@ -35,12 +35,16 @@
   }
 
   .collapse-header {
-    @include make-header('header') {
+    @include make-header('header', 0) {
       > .icon-column {
         &.expand {
           transform: rotate(90deg);
         }
       }
+    }
+
+    &.disabled{
+      @include add-disabled-conf;
     }
   }
 

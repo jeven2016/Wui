@@ -1,18 +1,19 @@
-$tooltip-arrow-width: .5rem;
-$tooltip-arrow-height: .5rem;
+$tooltip-arrow-width: .4rem;
+$tooltip-arrow-height: .4rem;
 $tooltip-half-height: $tooltip-arrow-height /2;
 $tooltip-arrow-spacing: 1rem;
 
 .tooltip {
   position: relative;
   border-radius: $default-border-radius;
-  background: $black;
+  background: #5b5656;
   color: $white;
   font-size: 0.8rem;
   font-weight: map_get($font-weight, "normal");
-  padding: 0.5rem 0.5rem;
+  padding: 0.25rem 0.5rem;
+  line-height: 1.5;
   min-width: 2rem;
-  min-height: 1.5rem;
+  //min-height: 1.5rem;
 
   > .tooltip-arrow {
     position: absolute;
@@ -21,7 +22,7 @@ $tooltip-arrow-spacing: 1rem;
     height: $tooltip-arrow-height;
 
     z-index: map_get($z-index, 'one');
-    background: $black;
+    background: #5b5656;
 
     &.with-box {
       box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.07);

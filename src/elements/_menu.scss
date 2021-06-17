@@ -7,9 +7,25 @@
       content: $menu-float-submenu-active-menu-header-after-content;
       height: $menu-float-submenu-active-menu-header-after-height;
       width: $menu-float-submenu-active-menu-header-after-width;
-      background-color: $menu-float-submenu-active-menu-header-after-background-color;
+      background: $menu-float-submenu-active-menu-header-after-background-color;
       transition: $menu-float-submenu-active-menu-header-after-transition;
       animation: $menu-float-submenu-active-menu-header-after-animation;
+      z-index: 1;
+    }
+  }
+}
+
+@mixin simple-bottom-bar() {
+  &:after {
+    @include make-block(absolute) {
+      left: $menu-float-submenu-active-menu-header-after-left;
+      top: calc(100% - 2px);
+      content: $menu-float-submenu-active-menu-header-after-content;
+      height: 2px;
+      width: $menu-float-submenu-active-menu-header-after-width;
+      background: $menu-float-submenu-active-menu-header-after-background-color;
+      transition: $menu-float-submenu-active-menu-header-after-transition;
+      animation: simple-change-width-smoothly .3s;
       z-index: 1;
     }
   }
@@ -18,14 +34,26 @@
 @mixin right-bar() {
   &:after {
     @include make-block(absolute) {
-      right: 0;
+      //right: 0;
       top: 0;
       content: $menu-float-submenu-active-menu-header-after-content;
       height: 100%;
       width: 0.1875rem;;
-      background-color: $menu-float-submenu-active-menu-header-after-background-color;
+      background: $menu-float-submenu-active-menu-header-after-background-color;
       transition: height .3s;
       //animation: $menu-float-submenu-active-menu-header-after-animation;
+    }
+  }
+
+  &.left-bar {
+    &:after {
+      left: 0;
+    }
+
+  }
+  &.right-bar {
+    &:after {
+      right: 0;
     }
   }
 }
@@ -34,21 +62,27 @@
   > .#{$prefix}-icon {
     display: flex;
     flex: 0 0 1em;
-    height: 1em;
     transform-origin: center;
     @include make-flex-center;
 
-    > .icon {
-      color: inherit;
+    &.icon-arrow {
+      margin: 0;
+      opacity: .5;
+    }
+
+    + .header-info, + .item-info {
+      margin-left: 0.5rem;
     }
   }
 
   > .#{$prefix}-info {
-    padding: 0 0.5rem;
+    //padding: 0 0.5rem;
     transform-origin: left;
     overflow: hidden;
-    display: flex;
+    display: block;
     flex: 1 1 auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 }
 
@@ -68,30 +102,34 @@
   white-space: $menu-item-white-space;
   cursor: $menu-item-cursor;
   border: $menu-item-border;
-  min-width: 10rem;
+  //min-width: 10rem;
   transition: $menu-item-transition;
 
   > .icon {
     margin-right: .5rem;
   }
 
-  @include focus-active2 {
-    color: $menu-item-hove-text-color;
+  @include focus2 {
+    color: lighten($menu-item-hove-text-color, 5%);
 
     &.with-bg {
-      background-color: $menu-item-background-color;
+      background: $menu-item-background-color;
     }
   }
 
   @include active2 {
+    color: $menu-item-hove-text-color;
     &.with-bottom-bar {
       @include bottom-bar;
+    }
+    &.with-bg {
+      background: darken($menu-item-background-color, 3%);
     }
   }
 
   @include add-disabled-conf(false) {
-    color: $text-color;
-    background-color: transparent;
+    color: $text-disabled-color;
+    background: transparent;
   }
 
   @content;
@@ -99,35 +137,28 @@
 
 
 .base-menu {
-  @include make-inline-flex;
   position: $menu-position;
-  @include justify;
   display: flex;
-  flex: 1 1 auto;
 
   &.with-border-radius {
     @include border-radius($menu-border-radius);
-  }
-
-  &.compact {
-    .menu-item {
-      min-width: 10rem;
-    }
   }
 
   //two types: the submenu's position will be absolute
   &.menu-row {
     flex-direction: row;
     align-items: $menu-align-items;
+    flex: 1 1 100%;
+    flex-wrap: wrap;
   }
 
   &.menu-column {
     flex-direction: $menu-flex-direction;
+    flex: 1 0 auto;
   }
 
   .menu-item {
     @include make-menu-item2 {
-      //white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
       //flex: 1 0 calc(100% - 1rem);
       &.equitable {
         flex-grow: 1;
@@ -157,7 +188,7 @@
       }
 
       &.active {
-        background-color: $menu-primary-menu-item-active-background-color;
+        background: $menu-primary-menu-item-active-background-color;
         //border-right: $menu-primary-menu-item-active-border-right;
         //margin-right: $menu-primary-menu-item-active-margin-right;
         text-shadow: 0 0 1px lighten($primary, 20%);
@@ -168,7 +199,7 @@
 
     &.dark {
       &.disabled {
-        color: $menu-dark-disabled-menu-item-color;
+        color: $text-disabled-white-color;
       }
 
       @include focus2_no_active {
@@ -176,33 +207,21 @@
         text-shadow: $menu-item-hover-text-shadow;
 
         &.with-bg {
-          background-color: $blue;
+          background: $blue;
         }
       }
 
       &.active {
-        background-color: $blue;
+        background: $blue;
         color: $white;
-        //text-shadow: $menu-item-hover-text-shadow;
-
+        //font-weight: map-get($font-weight, 'normal');
+        text-shadow: $menu-item-hover-text-shadow;
 
         &.with-bg {
-          background-color: $blue;
+          background: $blue;
         }
       }
     }
-
-    > .left, > .right {
-      flex: 0 1 1em;
-      @include make-flex-center;
-    }
-
-    > .center {
-      flex: 1 0 auto;
-      padding: 0 0.25rem;
-    }
-
-    @include justify;
   }
 
 
@@ -215,12 +234,12 @@
     align-items: center;
     transform-origin: center;
     transition: transform .3s linear;
-    padding: .5rem .5rem .5rem 1.5rem;
+    padding: .5rem 1rem .5rem 1.5rem;
     white-space: nowrap;
 
     @include add-disabled-conf(false) {
-      color: $text-color;
-      background-color: transparent;
+      color: $text-disabled-white-color;
+      background: transparent;
     }
 
     &.with-bottom-bar {
@@ -255,18 +274,6 @@
       }
     }
 
-    > .header-info {
-      display: flex;
-      flex: 1 1 auto;
-      justify-content: flex-start;
-
-      > .header-icon {
-        + .header-info {
-          padding-left: 0.5rem;
-        }
-      }
-    }
-
     @include create-line('header');
 
     &.compact {
@@ -276,7 +283,8 @@
 
       &.dark {
         @include focus2 {
-          box-shadow: $default-primary-box-shadow;
+          color: $blue;
+          //box-shadow: $default-primary-box-shadow;
         }
       }
 
@@ -298,11 +306,8 @@
   }
 
   .menu-group {
-    > .group-header {
-      color: #a5b2bb;
-      padding: .5rem 1.5rem .5rem 1rem;
-    }
-
+    color: #a5b2bb;
+    padding: .5rem 1.25rem;
   }
 
   .popup-panel {
@@ -333,6 +338,7 @@
       @include border-radius;
       z-index: map_get($z-index, 'pop');
       opacity: 0; //initially hidden
+      min-width: 10rem;
 
       &.dark {
         background: $menu-dark-background-color;
@@ -373,7 +379,7 @@
 
 .menu {
   @extend .base-menu;
-  flex-wrap: wrap;
+  //flex-wrap: wrap;
   transition: width .3s;
 
   > .base-menu {
@@ -387,9 +393,13 @@
   }
 
   &.dark {
-    background-color: $menu-dark-background-color;
+    background: $menu-dark-background-color;
     color: $menu-dark-color;
     border: $menu-dark-border;
+
+    .base-menu .inner-container {
+      background: #000;
+    }
   }
 
   /**
@@ -416,10 +426,6 @@
     > .menu-item {
       min-width: unset;
       justify-content: center;
-    }
-
-    > div {
-      margin: 0.25rem 0;
     }
   }
 

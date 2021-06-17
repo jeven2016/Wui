@@ -56,6 +56,7 @@
     width: 1em;
     height: 1em;
     position: relative;
+    transition: background .5s;
   }
 
   > .label {
@@ -64,4 +65,14 @@
   }
 
   @include add-disabled-conf;
+
+  @include focus-active2 {
+    > .icon {
+      color: lighten($blue, 10%);
+    }
+  }
+
+  @include make-special-check('ok', $text-ok-color);
+  @include make-special-check('warning', $text-warning-color);
+  @include make-special-check('error', $text-error-color);
 }

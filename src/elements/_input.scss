@@ -1,20 +1,65 @@
 %input-active-base {
-  border-color: $input-border-active-color;
-  box-shadow: $input-box-shadow;
   z-index: map_get($z-index, "one");
   position: relative;
+
+  &:not(.simple-input) {
+    border-color: $input-border-active-color;
+
+    &.with-input-box {
+      box-shadow: $input-box-shadow;
+    }
+  }
+
+  &.simple-input {
+    &:after {
+      @include make-block(absolute) {
+        border-radius: 50%;
+        left: 0;
+        top: calc(100%);
+        content: '';
+        height: 0.1875rem;;
+        width: 100%;;
+        background: $input-border-active-color;
+        transition: width 0.3s;;
+        animation: change-width-smoothly 0.3s;;
+        z-index: 1;
+      }
+    }
+  }
 }
 
 .input {
-  padding: $input-default-padding;
+  //padding: $input-default-padding;
   border: $input-border;
   @include border-radius($input-border-radius);
   outline: $input-outline;
   line-height: $input-line-height;
   -webkit-appearance: none;
   transition: $default-transition;
-  font-size: $input-font-size;
-  outline: $input-outline;
+  //font-size: $input-font-size;
+
+  &.simple-input {
+    position: relative;
+    border: none;
+    border-bottom: $input-border;
+    @include border-radius(0);
+    box-shadow: none;
+
+    &:after {
+      @include make-block(absolute) {
+        //border-radius: 50%;
+        left: 0;
+        top: calc(100% - 1px);
+        content: '';
+        height: 2px;
+        width: 100%;
+        background: $input-border-active-color;
+        transition: width 0.3s;;
+        animation: change-width-smoothly 0.3s forwards;
+        z-index: 1;
+      }
+    }
+  }
 
   &.read-only {
     cursor: pointer;
@@ -42,7 +87,6 @@
 
   @include make-placeholder {
     color: $input-placeholder-color;
-    opacity: $input-placeholder-opacity;
   }
 
   /**
@@ -56,24 +100,17 @@
     transition: $input-simple-transition;
 
     &:active, &:focus {
-      border-bottom-width: $input-border-width;
+      border-bottom-width: 2px;
       box-shadow: $input-simple-box-shadow;
     }
   }
 
-  @include focus-active {
-    @extend %input-active-base;
+  //enabled for non-simple input
+  &.with-focus {
+    @include focus-active2 {
+      @extend %input-active-base;
+    }
   }
-
-  /*  &:not(:disabled):not(.disabled):active {
-      //transform: $input-active-scale;
-
-      + .icon {
-        //transform: $icon-input-icon-scale;
-
-      }
-    }*/
-
 }
 
 
@@ -87,96 +124,82 @@ textarea.input {
 .icon-input {
   @include make-inline-flex-center;
   position: relative;
+  border: $default-border;
+  border-radius: $default-border-radius;
+
+  @include focus-active2 {
+    @extend %input-active-base;
+  }
 
   &.block, & > .input {
     @extend .input.block;
   }
 
-  &.large {
-    > .input {
-      font-size: map-get($font-size, 'large');
-      padding: $icon-input-large-padding;
+  & > .input {
+    padding: 0;
+    border: none;
+    flex: 1 1 auto;
+  }
 
-      &:not(.textarea) {
-        height: $input-large-height;
-      }
+  > .icon-column {
+    color: $icon-input-icon-text-color;
+    cursor: $icon-input-icon-cursor;
+    width: auto;
+
+    &:hover, &:focus {
+      color: $input-border-active-color;
     }
 
-    > .icon {
-      font-size: map-get($font-size, 'large');
-      line-height: $icon-input-large-icon-line-height;
-      width: $icon-input-large-icon-width;
+    &.right {
+      margin: 0 0 0 .5rem !important;
+    }
+  }
+
+  //input in left, icon in right
+  &.large {
+    padding: $elem-large-padding;
+
+    > .icon-column:not(.right) {
+      margin: 0 0 0 .5rem;
     }
   }
 
   &.medium {
+    padding: $elem-default-padding;
+
+    > .icon-column:not(.right) {
+      margin: 0 0 0 .5rem;
+    }
   }
 
   &.small {
-    > .input {
-      font-size: map-get($font-size, 'small');
-      padding: $icon-input-small-padding;
+    padding: $elem-small-padding;
 
-      &:not(.textarea) {
-        height: $input-small-height;
-      }
-    }
-
-    > .icon {
-      font-size: map-get($font-size, 'small');
-      line-height: $icon-input-small-icon-line-height;
-      width: $icon-input-small-icon-width;
-      right: $icon-input-icon-small-position;
+    > .icon-column:not(.right) {
+      margin: 0 0 0 .5rem;
     }
   }
 
   &.left-icon {
-    & > .input {
-      padding-right: $icon-input-left-icon-input-padding-right;
-      padding-left: $icon-input-left-icon-input-padding-left;
-    }
-
-    & > .icon {
-      right: 0;
-      left: $icon-input-icon-left;
-    }
+    flex-direction: row-reverse;
 
     &.large {
-      > .input {
-        padding: $icon-input-left-icon-input-large-input-padding;
+      > .icon-column:not(.right) {
+        margin: 0 .5rem 0 0;
       }
     }
+
+    &.medium {
+      > .icon-column:not(.right) {
+        margin: 0 .5rem 0 0;
+      }
+    }
+
 
     &.small {
-      > .input {
-        padding: $icon-input-left-icon-input-small-input-padding
+      > .icon-column:not(.right) {
+        margin: 0 .5rem 0 0;
       }
-
-      > .icon {
-        left: $icon-input-icon-small-position;
-      }
-    }
-  }
-
-  & > .input {
-    padding-right: $icon-input-right-icon-input-padding-right;
-  }
-
-  & > .icon, > .icon-column {
-    position: $icon-input-icon-position;
-    color: $icon-input-icon-text-color;
-    line-height: $icon-input-icon-line-height;
-    cursor: $icon-input-icon-cursor;
-    width: $icon-input-left-icon-width;
-    height: $icon-input-left-icon-height;
-    right: $icon-input-icon-right;
-    z-index: $icon-input-icon-z-index;
-    top: 50%; //it works for non-IE browsers
-    transform: translateY(-50%); //it works for IE
-    transform-origin: center;
-
-    &:hover, &:focus {
-      color: $input-border-active-color;
     }
   }
 

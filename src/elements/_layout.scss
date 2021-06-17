@@ -10,17 +10,31 @@ $types: ('sm', 'md', 'lg', 'xl');
     flex-grow: 1;
   }
 
-  @include justify;
-
-  > [class^=col-] {
-    @include make-block {
+  /*  > [class^=col-] {
       padding: $grid-column-padding;
-      width: 100%;
+    }*/
+
+  > .col-base {
+    width: 100%;
+    position: relative;
+    align-self: stretch;
+  }
+
+  > .col {
+    //display: flex;
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+
+  @for $i from 1 through $grid-column-count {
+    & > .col-#{$i} {
+      flex: 0 0 percentage($i / ($grid-column-count));
+      max-width: percentage($i / ($grid-column-count));
     }
   }
 
   //generate for xs
-  @include generate-grid-columns($grid-column-count, '-');
+  @include generate-grid-columns($grid-column-count, '-xs-');
 
   //generate for others
   @each $col-type in $types {
@@ -38,7 +52,7 @@ $types: ('sm', 'md', 'lg', 'xl');
 }
 
 .layout {
-  height: 100%;
+  //height: 100%;
 }
 
 .layout, .layout-content, .layout-footer {
@@ -61,6 +75,7 @@ $types: ('sm', 'md', 'lg', 'xl');
     color: $gray-darker;
     font-size: 0.8em;
     flex: 0 1 3rem;
+    padding: 1.5rem 1rem;
   }
 }
 
@@ -87,11 +102,15 @@ $types: ('sm', 'md', 'lg', 'xl');
 
 .layout-slider {
   @include make-flex {
-    height: 100%;
+    //height: 100%;  the chilld cannot set height: 100% while the parent node has set display: flex
     width: 20%;
     flex-direction: column;
     flex-grow: 0;
     flex-shrink: 0;
+
+    > .slider-inner {
+      height: 100%;
+    }
   }
 
   .menu {

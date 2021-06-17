@@ -1,16 +1,48 @@
-.flex-align {
-  display: flex;
-  align-items: center;
+@mixin justify($position) {
+  justify-content: #{$position} !important;
+}
 
-  &.left {
-    justify-content: flex-start;
+@mixin align($position) {
+  align-items: #{$position} !important;
+}
+
+
+.flex-adjust {
+  @include make-flex;
+
+  &.justify-start {
+    @include justify(flex-start);
   }
 
-  &.right {
-    justify-content: flex-end;
+  &.justify-end {
+    @include justify(flex-end);
   }
 
-  &.center {
-    justify-content: center;
+  &.justify-center {
+    @include justify(center);
+  }
+
+  &.justify-around {
+    @include justify(space-around);
+  }
+
+  &.justify-between {
+    @include justify(space-between);
+  }
+
+  &.justify-evenly {
+    @include justify(space-evenly);
+  }
+
+  &.align-start {
+    @include align(flex-start);
+  }
+
+  &.align-end {
+    @include align(flex-end);
+  }
+
+  &.align-center {
+    @include align(center);
   }
 }

@@ -1,0 +1,40 @@
+.border-info {
+  &.ok, &.success {
+    border-color: $success !important;
+
+    &.icon-input,
+    &.input,
+    &.select-input,
+    &.select-multiple {
+      @include focus-active2 {
+        box-shadow: 0 0 0 0.2rem lighten($success, 40%)!important;
+      }
+    }
+  }
+
+  &.warning {
+    border-color: $warning !important;
+
+    &.icon-input,
+    &.input,
+    &.select-input,
+    &.select-multiple {
+      @include focus-active2 {
+        box-shadow: 0 0 0 0.2rem lighten($warning, 40%)!important;
+      }
+    }
+  }
+
+  &.error {
+    border-color: $danger !important;
+
+    &.icon-input,
+    &.input,
+    &.select-input,
+    &.select-multiple {
+      @include focus-active2 {
+        box-shadow: 0 0 0 0.2rem lighten($danger, 40%)!important;
+      }
+    }
+  }
+}
