@@ -3,7 +3,6 @@ Wui web framework
 This is a web UI framework like bootstrap , semantic UI,
 we design it with some personal reasons and hope it looks cool to implement a modern web site.
 
-Current version: 0.7.1
 
 for demo, currently the documentation hasn't finished yet, an alternative is by referring to the following samples:
 
