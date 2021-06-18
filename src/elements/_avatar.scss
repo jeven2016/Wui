@@ -60,7 +60,6 @@
   }
 }
 
-
 .avatar-group {
   @include make-inline-flex;
 
@@ -95,7 +94,6 @@
     right: -5%;
     bottom: -5%;
     font-size: .5em;
-
   }
 
   &.accessory-small {

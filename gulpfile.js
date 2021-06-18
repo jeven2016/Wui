@@ -187,6 +187,7 @@ gulp.task('copy-default-theme-file', function() {
 
   return gulp.src(
       'dist/default/' + global.name + '-' + pkg.version + '.min.css').
+      pipe(rename("wui.css")).
       pipe(wait(1000)).
       pipe(gulp.dest(params.copyTo)).
       pipe(notify({message: 'Task copy-default-theme-file completed'}));
