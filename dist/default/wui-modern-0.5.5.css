@@ -1262,6 +1262,11 @@ $container-offset: 1.5rem;
     left: 50%;
     transform: translate3d(-50%, 0, 0); }
 
+.avatar-root {
+  display: inline-block; }
+  .avatar-root.non-accessory {
+    position: relative; }
+
 .avatar {
   display: -ms-inline-flexbox;
   display: -webkit-inline-flex;
@@ -1273,9 +1278,11 @@ $container-offset: 1.5rem;
   overflow: hidden;
   vertical-align: middle;
   background: #ccc; }
+  .avatar.with-box {
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.18), 0px 8px 10px 1px rgba(0, 0, 0, 0.12), 0px 3px 12px 2px rgba(0, 0, 0, 0.12); }
   .avatar.medium {
-    width: 2.5rem;
-    height: 2.5rem; }
+    width: 3rem;
+    height: 3rem; }
   .avatar.large {
     width: 4rem;
     height: 4rem;
@@ -1307,13 +1314,32 @@ $container-offset: 1.5rem;
   display: -webkit-inline-flex;
   display: inline-flex; }
   .avatar-group.align-left > .avatar {
-    border: 1px solid #ffffff; }
+    border: 2px solid #ffffff; }
     .avatar-group.align-left > .avatar:not(:first-child) {
-      margin-left: -0.5rem; }
-  .avatar-group.align-right > .avatar {
-    border: 1px solid #ffffff; }
-    .avatar-group.align-right > .avatar:not(:last-child) {
-      margin-right: 0.5rem; }
+      margin-left: -5%; }
+
+.avatar-accessory {
+  position: absolute;
+  z-index: 1;
+  border: 2px solid #ffffff; }
+  .avatar-accessory.accessory-large {
+    width: 35%;
+    height: 35%;
+    right: -5%;
+    bottom: -5%;
+    font-size: .75em; }
+  .avatar-accessory.accessory-medium {
+    width: 35%;
+    height: 35%;
+    right: -5%;
+    bottom: -5%;
+    font-size: .5em; }
+  .avatar-accessory.accessory-small {
+    width: 45%;
+    height: 45%;
+    right: -5%;
+    bottom: -5%;
+    font-size: .5rem; }
 
 .badge {
   position: relative;

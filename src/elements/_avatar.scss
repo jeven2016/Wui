@@ -1,3 +1,11 @@
+.avatar-root {
+  display: inline-block;
+
+  &.non-accessory {
+    position: relative;
+  }
+}
+
 .avatar {
   @include make-inline-flex-center;
   color: white;
@@ -6,9 +14,13 @@
   vertical-align: middle;
   background: $gray;
 
+  &.with-box {
+    box-shadow: $default-box-shadow;
+  }
+
   &.medium {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
   }
 
   &.large {
@@ -54,21 +66,43 @@
 
   &.align-left {
     > .avatar {
-      border: 1px solid $white;
+      border: 2px solid $white;
 
       &:not(:first-child) {
-        margin-left: -0.5rem;
+        margin-left: -5%;
       }
     }
   }
+}
 
-  &.align-right {
-    > .avatar {
-      border: 1px solid $white;
+.avatar-accessory {
+  position: absolute;
 
-      &:not(:last-child) {
-        margin-right: 0.5rem;
-      }
-    }
+  z-index: map-get($z-index, 'one');
+  border: 2px solid $white;
+
+  &.accessory-large {
+    width: 35%;
+    height: 35%;
+    right: -5%;
+    bottom: -5%;
+    font-size: .75em;
+  }
+
+  &.accessory-medium {
+    width: 35%;
+    height: 35%;
+    right: -5%;
+    bottom: -5%;
+    font-size: .5em;
+
+  }
+
+  &.accessory-small {
+    width: 45%;
+    height: 45%;
+    right: -5%;
+    bottom: -5%;
+    font-size: .5rem;
   }
 }
