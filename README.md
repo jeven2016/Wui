@@ -7,7 +7,7 @@ we design it with some personal reasons and hope it looks cool to implement a mo
 for demo, currently the documentation hasn't finished yet, an alternative is by referring to the following samples:
 
 ##Wui components<br/>
-[Index](http://htmlpreview.github.io/?https://github.com/jeven2016/wheel-ui/blob/master/example/index.html "Blockquota") 
+[Demo](http://react-windy-ui.super666.cn "Blockquota") 
 
 ### Build the default theme file
 ```
@@ -25,10 +25,6 @@ npm run watch
 ```
 npm run watch-copy-default -- --copyTo=/home/jujucom/Desktop/workspace/projects/react-windy-ui/packages/components/dist/
 ```
-
-### React-wui-modern
-todo:  
-1. button-group disabled -> spread to buttons
 
 ### License
 MIT License
