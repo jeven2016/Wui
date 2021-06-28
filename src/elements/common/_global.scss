@@ -10,11 +10,9 @@ body {
   font: 1rem/1.5 -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   color: $text-color;
   background-color: $body-background-color;
-
   text-rendering: optimizeLegibility;
-
+  
   //for  anti-aliasing
-  font-smooth: antialiased;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -73,13 +71,6 @@ a {
   }
 }
 
-
-//todo:Deprecated
-%inline-block-style {
-  position: relative;
-  display: inline-block;
-}
-
 .mask {
   position: fixed;
   top: 0;
@@ -94,17 +85,6 @@ a {
   &.dark {
     background: rgba(0, 0, 0, .8);
   }
-}
-
-
-.pull-left {
-  float: left !important;
-  margin-right: auto; //for flexbox alignment
-}
-
-.pull-right {
-  float: right !important;
-  margin-left: auto; //for flexbox alignment
 }
 
 .pull-center {
@@ -125,25 +105,23 @@ a {
   box-shadow: $default-box-shadow;
 }
 
-.clear-fix {
+/*.clear-fix {
   &::after {
     content: '';
     display: table;
     clear: both;
   }
-}
+}*/
 
-.clear-border {
-  border-width: 0 !important;
-}
-
+/*
 .clear-min-width {
   min-width: 0 !important;
 }
+*/
 
-.hide {
-  display: none!important;
-}
+/*.hide {
+  display: none !important;
+}*/
 
 
 @include adapter-width('min-width', map-get($bs-layout, 'sm')) {
@@ -189,5 +167,32 @@ a {
     pointer-events: none; //ensure the content cannlt be clicked
     //z-index: 1;
     border-radius: 50%;
+  }
+}
+
+.icon-column {
+  margin-right: 0.25rem;
+  color: $gray-darker;
+
+  width: 1.5em;
+  height: 1.5em;
+
+  @include make-flex-center {
+    flex: 0 0 auto;
+    transition: transform .2s;
+
+    &.expand {
+      transform: rotate(90deg);
+    }
+
+
+    @include focus2 {
+      color: $primary;
+    }
+
+    @include add-disabled-conf(false) {
+      color: $text-disabled-color;
+    }
+
   }
 }

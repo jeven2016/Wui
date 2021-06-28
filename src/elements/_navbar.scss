@@ -69,7 +69,7 @@
   > .list {
     align-items: center;
     flex: 1 1 auto;
-    display: none; //by default, the list is hidden. Because we want to firstly check the size of current window and then decide to show or hide the list
+    display: none; //by default, the list is hidden. Because we want to firstly check the size of current window and then decide whether to show the list
 
     &.align-right {
       justify-content: flex-end;

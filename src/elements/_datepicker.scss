@@ -32,6 +32,7 @@
     @include make-flex-vertical-center {
       justify-content: flex-end;
       flex: 0 0 auto;
+      color: $text-comment-color
     }
   }
 
@@ -46,6 +47,7 @@
     @include make-flex-vertical-center {
       justify-content: flex-start;
       flex: 0 0 auto;
+      color: $text-comment-color;
     }
   }
 }
@@ -130,6 +132,20 @@
 
   .button {
     align-self: center;
+  }
+
+  > .row > .col-base {
+    display: inline-flex;
+    justify-content: center;
+    padding: .25rem 0;
+
+    &:first-child {
+      justify-content: flex-start;
+    }
+
+    &:last-child {
+      justify-content: flex-end;
+    }
   }
 }
 
