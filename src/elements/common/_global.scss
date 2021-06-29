@@ -161,6 +161,7 @@ a {
   z-index: 0;
   overflow: hidden;
   border-radius: inherit;
+  touch-action: manipulation;
 
   > .content {
     position: absolute;

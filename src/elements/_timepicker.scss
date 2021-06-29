@@ -1,0 +1,50 @@
+.timer-picker {
+  width: 20rem;
+  background-color: $white;
+
+  .tp-body {
+    @include make-flex {
+      position: relative;
+      flex-direction: row;
+      cursor: grab;
+      flex: 1 1 100%;
+      height: 12.5rem;
+      overflow: hidden;
+    }
+
+    > .tp-list {
+      flex: 1 1 auto;
+
+      > .tp-item {
+        @include make-flex-center {
+          height: 2.5rem;
+        }
+      }
+    }
+
+    > .tp-mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 80px;
+      background-position: top, bottom;
+      transform: translateZ(0);
+      background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3)), linear-gradient(
+                      0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+    }
+
+    > .tp-indicator {
+      height: 2.5rem;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      transform: translate3d(0, -50%, 0);
+      border-top: $default-border;
+      border-bottom: $default-border;
+    }
+  }
+}
