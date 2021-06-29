@@ -310,6 +310,10 @@ $container-offset: 1.5rem;
   z-index: map_get($z-index, 'top');
   width: 97%;
 
+  >.alert{
+    box-shadow: $default-box-shadow;
+  }
+
   @include adapter-width('min-width', map-get($bs-layout, 'sm')) {
     &.alert-container-width-sm {
 
