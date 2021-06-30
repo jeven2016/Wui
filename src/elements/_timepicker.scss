@@ -1,28 +1,39 @@
-.timer-picker {
+$item-height: 40px;
+$list-height: $item-height * 5;
+
+.time-picker {
   width: 20rem;
   background-color: $white;
+
 
   .tp-body {
     @include make-flex {
       position: relative;
-      flex-direction: row;
       cursor: grab;
-      flex: 1 1 100%;
-      height: 12.5rem;
-      overflow: hidden;
+      flex: 1 1 auto;
     }
 
-    > .tp-list {
+    > .tp-wrapper {
       flex: 1 1 auto;
+      height: $list-height;
+      overflow: hidden;
 
-      > .tp-item {
-        @include make-flex-center {
-          height: 2.5rem;
+      > .tp-list {
+        flex: 1 1 auto;
+        touch-action: none;
+
+        > .tp-item {
+          @include make-flex-center {
+            height: $item-height;
+            user-select: none;
+            width: 100%;
+          }
         }
       }
     }
 
     > .tp-mask {
+      pointer-events: none;
       position: absolute;
       top: 0;
       left: 0;
@@ -37,7 +48,8 @@
     }
 
     > .tp-indicator {
-      height: 2.5rem;
+      pointer-events: none;
+      height: $item-height;
       position: absolute;
       top: 50%;
       left: 0;
