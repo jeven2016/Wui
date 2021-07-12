@@ -25,8 +25,10 @@
 }
 
 .date-picker-info {
-  display: flex;
-  padding-bottom: .5rem;
+  @include make-flex-center {
+    padding-bottom: .5rem;
+    height: 1.875rem;
+  }
 
   > .previous {
     @include make-flex-vertical-center {
@@ -162,4 +164,45 @@
 
 .range-btn {
   padding: .2rem .3rem !important;
+}
+
+.datetime-picker {
+  .time-picker-info {
+    @include make-flex-center {
+      padding-bottom: .5rem;
+      height: 1.875rem;
+      font-weight: 500;
+    }
+  }
+
+  @include make-flex {
+    width: 35rem;
+    justify-content: center;
+    //align-items: flex-start;
+    flex-direction: column;
+  }
+
+  > .picker-panels {
+    display: flex;
+    flex: 1 1 100%;
+
+    > .date-panel {
+      @include make-flex-center {
+        width: 20rem;
+      }
+    }
+
+    > .time-panel {
+      width: 15rem;
+
+      > .time-picker {
+        width: 100%;
+
+        > .card-row {
+          padding-left: 0;
+        }
+      }
+    }
+
+  }
 }

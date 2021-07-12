@@ -5,7 +5,6 @@ $list-height: $item-height * 5;
   width: 20rem;
   background-color: $white;
 
-
   .tp-body {
     @include make-flex {
       position: relative;
