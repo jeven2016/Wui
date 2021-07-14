@@ -147,7 +147,9 @@ textarea.input {
     width: auto;
 
     &:hover, &:focus {
-      color: $input-border-active-color;
+      &:not(.disabled){
+        color: $input-border-active-color;
+      }
     }
 
     &.right {
