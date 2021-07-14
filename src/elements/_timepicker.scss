@@ -4,6 +4,7 @@ $list-height: $item-height * 5;
 .time-picker {
   width: 20rem;
   background-color: $white;
+  color: $text-color;
 
   .tp-body {
     @include make-flex {
