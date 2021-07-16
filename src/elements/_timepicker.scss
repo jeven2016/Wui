@@ -17,6 +17,7 @@ $list-height: $item-height * 5;
       flex: 1 1 auto;
       height: $list-height;
       overflow: hidden;
+      touch-action: none;
 
       > .tp-list {
         flex: 1 1 auto;
