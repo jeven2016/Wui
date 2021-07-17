@@ -1,6 +1,6 @@
 {
   "name": "wui",
-  "version": "0.5.8",
+  "version": "0.6.0",
   "description": "A new web UI framework built on CSS3 and SASS.",
   "scripts": {
     "build": "node_modules/gulp/bin/gulp.js",
