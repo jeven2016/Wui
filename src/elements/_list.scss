@@ -1,12 +1,74 @@
 .common-list {
-  .list-icon {
 
+  .list-header,
+  .list-footer {
+    padding: .5rem 1rem;
+    color: $text-comment-color;
   }
 
+  .list-lines {
+    > .list-item {
+      padding: .5rem 1rem;
+      line-height: 1.5rem;
+    }
+
+    > .list-panel {
+      padding: .5rem 1rem;
+      @include make-flex;
+      flex: 1 1 100%;
+
+      > .list-content {
+        @include make-flex;
+        flex: 1 1 100%;
+
+        &.vertical {
+          flex-direction: column;
+        }
+
+        > .list-panel-info {
+          flex: 1 1 auto;
+          @include make-flex;
+
+          > .list-avatar {
+            min-width: 3.5rem;
+          }
+
+          > .list-text {
+            flex: 1 1 auto;
+
+            > .list-title {
+              font-weight: map-get($font-weight, 'light');
+              margin-bottom: .5rem;
+            }
+
+            > .list-desc {
+              color: $text-comment-color;
+              font-size: .9rem;
+            }
+          }
+        }
+
+        > .list-actions {
+          @include make-flex;
+
+          &.vertical {
+            margin-top: .5rem;
+          }
+
+          > .list-action {
+            padding-left: .5rem;
+            padding-right: .5rem;
+
+            &:first-child {
+              padding-left: 0;
+            }
+          }
+        }
+      }
 
 
-  .list-lines{
-
+    }
   }
+
 
 }
