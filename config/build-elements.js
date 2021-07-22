@@ -44,7 +44,8 @@ var config = {
         timepicker: true,
         popconfirm: true,
         space: true,
-        avatar: true
+        avatar: true,
+        list: true
       },
     },
 
