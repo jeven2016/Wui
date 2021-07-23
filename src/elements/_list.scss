@@ -6,44 +6,61 @@
     color: $text-comment-color;
   }
 
+  .list-avatar {
+    min-width: 3.5rem;
+    @include make-flex;
+  }
+
+  .list-text {
+    flex: 1 1 auto;
+  }
+
+  .list-content {
+    @include make-flex;
+    flex: 1 1 100%;
+  }
+
   .list-lines {
     > .list-item {
+      @include make-flex;
       padding: .5rem 1rem;
       line-height: 1.5rem;
-    }
 
-    > .list-panel {
-      padding: .5rem 1rem;
-      @include make-flex;
-      flex: 1 1 100%;
+      > .list-avatar,
+      > .list-text,
+      > .list-actions {
+        @include make-flex;
+        align-items: center;
+      }
 
       > .list-content {
-        @include make-flex;
-        flex: 1 1 100%;
-
         &.vertical {
           flex-direction: column;
         }
 
-        > .list-panel-info {
+        > .list-details {
           flex: 1 1 auto;
           @include make-flex;
+          flex-direction: column;
 
-          > .list-avatar {
-            min-width: 3.5rem;
-          }
-
-          > .list-text {
+          > .list-line {
             flex: 1 1 auto;
+            @include make-flex;
 
-            > .list-title {
-              font-weight: map-get($font-weight, 'light');
-              margin-bottom: .5rem;
+            + .list-line-content {
+              margin-top: 1rem;
             }
 
-            > .list-desc {
-              color: $text-comment-color;
-              font-size: .9rem;
+            > .list-text {
+              > .list-title {
+                font-weight: map-get($font-weight, 'light');
+                margin-bottom: .5rem;
+              }
+
+              > .list-desc {
+                color: $text-comment-color;
+                font-size: .9rem;
+              }
             }
           }
         }
@@ -65,8 +82,6 @@
           }
         }
       }
-
-
     }
   }
 
