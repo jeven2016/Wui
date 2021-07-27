@@ -45,7 +45,8 @@ var config = {
         popconfirm: true,
         space: true,
         avatar: true,
-        list: true
+        list: true,
+        skeleton: true
       },
     },
 
