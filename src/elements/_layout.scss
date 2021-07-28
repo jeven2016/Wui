@@ -117,3 +117,25 @@ $types: ('sm', 'md', 'lg', 'xl');
     border-radius: 0;
   }
 }
+
+
+.w-container {
+  width: 100%;
+  margin: 0 auto;
+  //padding: 0 1rem;
+
+  .w-container-body {
+    height: 100vh;
+    background-color: rgb(207, 232, 252);
+  }
+
+  @each $col-type in $types {
+    &.w-container-#{$col-type} {
+      @include media-query((key:'min-width', value: map-get($bs-layout, $col-type))) {
+        max-width: map-get($bs-layout, $col-type);
+      }
+    }
+  }
+
+}
+
