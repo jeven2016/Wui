@@ -1,9 +1,67 @@
-.stepper {
-  > .step {
+.w-stepper {
+  @include make-flex {
+    flex: 1 1 100%;
+    overflow: hidden;
+  }
+
+  > .w-step {
+    @include make-flex;
+    justify-content: flex-start;
+    flex: 1 1 auto;
+    overflow: hidden;
+
+    &.horizontal {
+      &:not(:first-child) {
+        padding-left: 1rem;
+      }
+    }
+
+    > .w-step-icon {
+      @include make-flex-center;
+      flex: 0 0 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      color: $blue;
+      border: 1px solid $blue;
+
+      &.horizontal {
+        margin-right: .5rem;
+      }
+    }
+
+    > .w-step-content {
+      @include make-inline-flex;
+      flex-direction: column;
+
+
+      > .w-step-title {
+        line-height: 2rem;
+        position: relative;
+        @include make-inline-flex;
+        padding-right: 1rem;
+        align-self: baseline; //for column, the width is 100% by default, so reset it to baseline for proper width
+
+        > .w-step-connector {
+          position: absolute;
+          left: 100%;
+          top: 50%;
+          transform: translate3d(0, -50%, 0);
+          height: 1px;
+          background: $blue;
+          width: 300px;
+          content: '';
+        }
+      }
+
+      > .w-step-body {
+        font-size: .9em;
+        color: $text-comment-color;
+      }
+
+
+    }
+
 
   }
 
-  > .connector {
-
-  }
 }
