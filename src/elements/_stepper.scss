@@ -4,11 +4,35 @@
     overflow: hidden;
   }
 
+  &.vertical {
+    flex-direction: column;
+
+    > .w-step {
+      padding-left: 0 !important;
+      min-height: 4rem;
+    }
+  }
+
   > .w-step {
     @include make-flex;
     justify-content: flex-start;
-    flex: 1 1 auto;
+    flex: 1 1 0;
     overflow: hidden;
+    position: relative;
+
+    &.stepper-vertical{
+
+    }
+
+    > .w-step-single-connector {
+      position: absolute;
+      left: calc(50% + 1.5rem);
+      top: 1rem;
+      transform: translate3d(0, -50%, 0);
+      height: 1px;
+      background: $gray;
+      width: 300px;
+    }
 
     &.horizontal {
       &:not(:first-child) {
@@ -16,16 +40,54 @@
       }
     }
 
+    &.vertical-step {
+      flex-direction: column;
+      align-items: center;
+    }
+
     > .w-step-icon {
       @include make-flex-center;
-      flex: 0 0 2rem;
+      flex-shrink: 0;
+      flex-grow: 0;
+      width: 2rem;
       height: 2rem;
+      color: $gray;
       border-radius: 50%;
-      color: $blue;
-      border: 1px solid $blue;
+
+      &.w-dot {
+        width: .75rem;
+        height: .75rem;
+        margin-top: 0.625rem;
+
+
+        &.w-gray-dot:not(.active) {
+          background: $gray;
+        }
+      }
+
+      &.with-border {
+        border: 1px solid $gray;
+
+        &.checked {
+          border-color: $blue;
+        }
+
+        &.active {
+          border-color: $blue;
+        }
+      }
 
       &.horizontal {
         margin-right: .5rem;
+      }
+
+      &.checked {
+        color: $blue;
+      }
+
+      &.active {
+        background: $blue;
+        color: $white;
       }
     }
 
@@ -41,27 +103,110 @@
         padding-right: 1rem;
         align-self: baseline; //for column, the width is 100% by default, so reset it to baseline for proper width
 
+        &.vertical-step {
+          padding-right: 0;
+          align-self: center;
+        }
+
+        &.active {
+          > .w-step-connector {
+            background: $blue;
+          }
+
+          > .w-step-title-info {
+            color: $blue;
+          }
+
+          > .w-step-title-info {
+            color: $text-color;
+          }
+
+          > .w-step-subtitle {
+            color: $text-comment-color
+          }
+        }
+
+        &.checked {
+          > .w-step-connector {
+            background: $blue;
+          }
+
+          > .w-step-title-info {
+            color: $text-color;
+          }
+
+          > .w-step-subtitle {
+            color: $text-comment-color
+          }
+        }
+
+        > .w-step-title-info {
+          color: $gray;
+        }
+
+        > .w-step-subtitle {
+          margin-left: .5rem;
+          font-size: .9em;
+          color: $gray;
+        }
+
         > .w-step-connector {
           position: absolute;
           left: 100%;
           top: 50%;
           transform: translate3d(0, -50%, 0);
           height: 1px;
-          background: $blue;
+          background: $gray;
           width: 300px;
-          content: '';
         }
       }
 
       > .w-step-body {
         font-size: .9em;
-        color: $text-comment-color;
-      }
+        color: $gray;
 
+        &.vertical-body {
+          padding-bottom: .5rem;
+        }
+
+        &.checked {
+          color: $text-comment-color;
+        }
+
+
+        &.active {
+          color: $text-color;
+        }
+      }
 
     }
 
+    .w-step-vertical-connector {
+      position: absolute;
+      left: 1rem;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      padding: 2.5rem 0 .5rem;
 
+      &::after {
+        display: inline-block;
+        content: '';
+        width: 1px;
+        height: 100%;
+        background: $gray;
+        margin-bottom: .5rem;
+      }
+
+      &.with-dot {
+        padding: 2rem 0 0;
+        left: .375rem;
+
+        &::after {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
 }

@@ -82,7 +82,7 @@ $loader-item-duration: 1.3s;
       border: $loader-size-normal * 0.1 solid #e5e3e3;
       border-right-color: $blue;
       transform: translate3d(0, 0, 0);
-      animation: default-loader $loader-item-duration linear infinite;
+      animation: default-loader $loader-item-duration ease-in-out infinite;
       @include border-radius(100%);
     }
   }

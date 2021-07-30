@@ -12,7 +12,7 @@
   }
 
   .list-text {
-    flex: 1 1 auto;
+    flex: 1 1 0;
   }
 
   .list-content {
@@ -70,7 +70,7 @@
         }
 
         > .list-details {
-          flex: 1 1 auto;
+          flex: 1 1 0;
           @include make-flex;
           flex-direction: column;
 

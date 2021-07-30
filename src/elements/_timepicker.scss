@@ -10,17 +10,17 @@ $list-height: $item-height * 5;
     @include make-flex {
       position: relative;
       cursor: grab;
-      flex: 1 1 auto;
+      flex: 1 1 0;
     }
 
     > .tp-wrapper {
-      flex: 1 1 auto;
+      flex: 1 1 0;
       height: $list-height;
       overflow: hidden;
       touch-action: none;
 
       > .tp-list {
-        flex: 1 1 auto;
+        flex: 1 1 0;
         touch-action: none;
 
         > .tp-item {
