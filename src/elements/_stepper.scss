@@ -20,18 +20,26 @@
     overflow: hidden;
     position: relative;
 
-    &.stepper-vertical{
-
-    }
-
     > .w-step-single-connector {
       position: absolute;
-      left: calc(50% + 1.5rem);
       top: 1rem;
       transform: translate3d(0, -50%, 0);
       height: 1px;
       background: $gray;
-      width: 300px;
+
+      &.normal {
+        left: calc(-50% + 1.5rem);
+        right: calc(50% + 1.5rem);
+      }
+
+      &.w-dot-connector {
+        left: calc(-50% + 0.75rem);
+        right: calc(50% + 0.75rem);
+      }
+
+      &.active {
+        background: $blue;
+      }
     }
 
     &.horizontal {
@@ -43,6 +51,7 @@
     &.vertical-step {
       flex-direction: column;
       align-items: center;
+      overflow: unset;
     }
 
     > .w-step-icon {
@@ -58,8 +67,7 @@
         width: .75rem;
         height: .75rem;
         margin-top: 0.625rem;
-
-
+        
         &.w-gray-dot:not(.active) {
           background: $gray;
         }
@@ -173,12 +181,10 @@
           color: $text-comment-color;
         }
 
-
         &.active {
           color: $text-color;
         }
       }
-
     }
 
     .w-step-vertical-connector {
