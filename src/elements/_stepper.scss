@@ -67,9 +67,35 @@
         width: .75rem;
         height: .75rem;
         margin-top: 0.625rem;
-        
-        &.w-gray-dot:not(.active) {
-          background: $gray;
+
+        &.w-solid-dot {
+          &:not(.active) {
+            background: $gray;
+          }
+
+          &.checked:not(.gray-dot) {
+            background: $blue;
+          }
+
+          &.with-error {
+            background: $red;
+          }
+
+          &.with-warning {
+            background: $yellow;
+          }
+        }
+      }
+
+      &.without-border {
+        &.with-error {
+          background: transparent;
+          color: $red
+        }
+
+        &.with-warning {
+          background: transparent;
+          color: $yellow;
         }
       }
 
@@ -82,6 +108,18 @@
 
         &.active {
           border-color: $blue;
+        }
+
+        &.with-error {
+          border-color: $red;
+          background: transparent;
+          color: $red
+        }
+
+        &.with-warning {
+          border-color: $yellow;
+          background: transparent;
+          color: $yellow;
         }
       }
 
@@ -126,7 +164,7 @@
           }
 
           > .w-step-title-info {
-            color: $text-color;
+            color: unset;
           }
 
           > .w-step-subtitle {
@@ -140,7 +178,7 @@
           }
 
           > .w-step-title-info {
-            color: $text-color;
+            color: unset;
           }
 
           > .w-step-subtitle {
@@ -182,7 +220,15 @@
         }
 
         &.active {
-          color: $text-color;
+          color: unset;
+        }
+
+        &.with-error {
+          color: $red;
+        }
+
+        &.with-warning {
+          color: $yellow;
         }
       }
     }
@@ -213,6 +259,63 @@
         }
       }
     }
+
+    &.with-error {
+      color: $red;
+    }
+
+    &.with-warning {
+      color: $yellow;
+    }
+
+    &.clickable {
+      cursor: pointer;
+      //opacity: .6;
+
+      &.visible {
+        opacity: 1;
+
+        .w-step-title-info,
+        .w-step-subtitle,
+        .w-step-body {
+          color: $blue !important;
+        }
+
+        .w-step-icon {
+          &.with-border:not(.active) {
+            border-color: $blue !important;
+            color: $blue !important;
+          }
+
+          &.without-border {
+            background: $blue !important;
+            color: $white !important;
+          }
+        }
+      }
+
+      @include focus2_no_active {
+        .w-step-title-info,
+        .w-step-subtitle,
+        .w-step-body {
+          color: $blue;
+        }
+
+        .w-step-icon {
+          &.with-border:not(.active) {
+            border-color: $blue !important;
+            color: $blue !important;
+          }
+
+          &.without-border {
+            background: $blue !important;
+            color: $white !important;
+          }
+        }
+      }
+    }
+
+    @include add-disabled-conf;
   }
 
 }
