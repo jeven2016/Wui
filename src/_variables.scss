@@ -41,9 +41,9 @@ $default-primary-background: linear-gradient(135deg, lighten($blue, 5%), lighten
 
 //there will be corresponding buttons generated if the property starts with "color-primary"
 $colors: (
-        comment:$text-comment-color,
-        ok: $text-ok-color,
-        error: $text-error-color,
+        color-comment:$text-comment-color,
+        color-ok: $text-ok-color,
+        color-error: $text-error-color,
         color-primary: $blue,
         color-secondary: $gray,
         color-info: $cyan,

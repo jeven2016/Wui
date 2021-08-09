@@ -32,16 +32,11 @@
 
     .label-col {
 
-      > .required-left-col {
-        color: $red;
-        font-size: inherit;
-        margin-right: .25rem;
-      }
-
+      > .required-left-col,
       > .required-right-col {
         color: $red;
         font-size: inherit;
-        margin-left: .25rem;
+        margin-right: .25rem;
       }
     }
 

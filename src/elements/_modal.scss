@@ -44,7 +44,7 @@
     }
 
     > .title {
-      @extend %inline-block-style;
+      @include make-inline-block;
       flex: 1 1 auto;
     }
 
@@ -100,7 +100,7 @@
     @include full-border-radius(0, 0, $dialog-inner-border-radius, $dialog-inner-border-radius);
     padding: 1rem 1.5rem;
 
-    &.compact-footer{
+    &.compact-footer {
       padding: 0 1.5rem 1.5rem;
     }
   }
@@ -111,7 +111,6 @@
     box-shadow: none;
     color: $white;
     background-color: transparent;
-    top: 10rem;
 
     > .header, > .body, > .footer {
       border-width: 0;

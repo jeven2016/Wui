@@ -1,19 +1,33 @@
 //Text classes
 .text {
+  &.disabled {
+    @extend %not-allowed;
+  }
+
+  &.underline {
+    text-decoration: underline;
+  }
+
+  &.italic {
+    font-style: italic;
+  }
+
+  &.deleted {
+    text-decoration: line-through;
+  }
+
   &.bold {
     font-weight: map-get($font-weight, 'bold');
   }
 
-  &.align-left {
-    text-align: left !important;
+  &.strong {
+    > strong {
+      font-weight: map-get($font-weight, 'normal');
+    }
   }
 
-  &.align-center {
-    text-align: center !important;;
-  }
-
-  &.align-right {
-    text-align: right !important;;
+  &.ellipsis {
+    display: block;
   }
 
   &.comment {

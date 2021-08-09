@@ -17,7 +17,7 @@ $types: ('sm', 'md', 'lg', 'xl');
   > .col-base {
     width: 100%;
     position: relative;
-    align-self: stretch;
+    //align-self: stretch;
   }
 
   > .col {
@@ -117,3 +117,29 @@ $types: ('sm', 'md', 'lg', 'xl');
     border-radius: 0;
   }
 }
+
+
+.w-container {
+  width: 100%;
+  margin: 0 auto;
+
+  .w-container-body {
+    height: 100vh;
+  }
+
+  @each $col-type in $types {
+    &.w-container-#{$col-type} {
+      @include media-query((key:'min-width', value: map-get($bs-layout, $col-type))) {
+        max-width: map-get($bs-layout, $col-type);
+      }
+    }
+
+    &.w-container-auto{
+      @include media-query((key:'min-width', value: map-get($bs-layout, $col-type))) {
+        max-width: map-get($bs-layout, $col-type);
+      }
+    }
+  }
+
+}
+
