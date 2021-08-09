@@ -5,10 +5,10 @@ html {
 }
 
 body {
-  color: $text-color;
-  //background-color: $body-background-color;
+  color: $body-text-color;
+  background: $body-background-color;
   text-rendering: optimizeLegibility;
-  
+
   //for  anti-aliasing
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

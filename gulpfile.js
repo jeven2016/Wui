@@ -23,7 +23,7 @@ var buildConfig = require('./config/build-elements');
 var pkg = require('./package.json');
 
 var global = {
-  name: 'wui-modern',
+  name: 'wui',
   dist: 'dist/',
   banner: [
     '/*!',
@@ -39,7 +39,7 @@ var scssDirs = buildConfig.scssFile;
 
 //the params passed through gulp command line
 var params = minimist(process.argv.slice(2),
-    {string: ['copyTo'], boolean: [], default: {copyTo: null}});
+  {string: ['copyTo'], boolean: [], default: {copyTo: null}});
 
 function solveFileName(file) {
   return file.startsWith('/') ? path.substring(1, file.length) : file;
@@ -58,7 +58,9 @@ function getFileNames(prefix, file) {
     if (file.length === 0) {
       invalidFile(file);
     }
-    return file.map(function(item) { return prefix + item;});
+    return file.map(function (item) {
+      return prefix + item;
+    });
   }
   invalidFile(file);
 }
@@ -81,7 +83,7 @@ function getFiles(dirConfig) {
 
   var elemConfig = dirConfig.config;
   var fileList = [];
-  fs.readdirSync(dirConfig.path).forEach(function(fileName) {
+  fs.readdirSync(dirConfig.path).forEach(function (fileName) {
     if (!fileName.endsWith('.scss')) {
       console.log('The directory is ignored:' + fileName);
       return;
@@ -95,7 +97,7 @@ function getFiles(dirConfig) {
     var pureName = fileName.replace('_', '').replace('.scss', '');
     if (!elemConfig.hasOwnProperty(pureName)) {
       console.warn(fileName
-          + ') is ignored because it isn\'t enabled in config file.');
+        + ') is ignored because it isn\'t enabled in config file.');
     }
     var enabled = elemConfig[pureName];
     if (enabled) {
@@ -106,103 +108,108 @@ function getFiles(dirConfig) {
   return fileList;
 }
 
-gulp.task('clean', function() {
+gulp.task('clean', function () {
   return del([global.dist + '**']);
 });
 
-gulp.task('addDefaultHeader', function() {
-  return gulp.src('dist/default/*.css').
-      pipe(header(global.banner, {pkg: pkg})).
-      pipe(gulp.dest(global.dist + 'default'));
+gulp.task('addDefaultHeader', function () {
+  return gulp.src('dist/*.css')
+    .pipe(header(global.banner, {pkg: pkg}))
+    .pipe(gulp.dest(global.dist + 'default'));
 });
 
-gulp.task('buildDefault', function() {
+gulp.task('buildDefault', function () {
   console.info('>>>>  Begin to compile the default theme................');
-  var scssFiles = getFiles(scssDirs.base).
-      concat(getFiles(scssDirs.mixin)).
-      concat(getFiles(scssDirs.common)).
-      concat(getFiles(scssDirs.elems));
+  var scssFiles = getFiles(scssDirs.base)
+    .concat(getFiles(scssDirs.mixin))
+    .concat(getFiles(scssDirs.common))
+    .concat(getFiles(scssDirs.elems));
 
   console.info('The following files will be compiled:');
   console.info(scssFiles);
 
-  return gulp.src(scssFiles).
-      pipe(sassGlob()).
-      pipe(concat(global.name + '-' + pkg.version + '.scss')).
-      pipe(sass.sync().on('error', sass.logError)).
-      pipe(gulp.dest(global.dist + 'default')).
-      pipe(postcss([cssnano({reduceIdents: {keyframes: false}})])).
-      pipe(rename(global.name + '-' + pkg.version + '.min.css')).
-      pipe(gulp.dest(global.dist + 'default')).
-      pipe(notify({message: 'Task completed'}));
+  return gulp.src(scssFiles)
+    .pipe(sassGlob())
+    .pipe(concat(global.name + '.scss'))
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(gulp.dest(global.dist))
+    .pipe(postcss([cssnano({reduceIdents: {keyframes: false}})]))
+    .pipe(rename(global.name + '.min.css'))
+    .pipe(gulp.dest(global.dist))
+    .pipe(notify({message: 'Task buildDefault completed'}));
 
 });
 
 function getFolders(dir) {
-  return fs.readdirSync(dir).filter(function(file) {
+  return fs.readdirSync(dir).filter(function (file) {
     return fs.statSync(path.join(dir, file)).isDirectory();
   });
 }
 
-gulp.task('buildThemes', function() {
+gulp.task('buildThemes', function () {
   console.info('>>>>  Begin to compile themes................');
-  var tskArray = getFolders(scssDirs.themes.path).map(function(dirName) {
+  var tskArray = getFolders(scssDirs.themes.path).map(function (dirName) {
     var variableFile = path.join(scssDirs.themes.path, dirName,
-        scssDirs.variableFile).toString();
+      scssDirs.variableFile).toString();
 
-    var scssFiles = getFiles(scssDirs.base).
-        concat(getFiles(scssDirs.mixin)).
-        concat(variableFile).
-        concat(getFiles(scssDirs.common)).
-        concat(getFiles(scssDirs.elems));
+    var scssFiles = getFiles(scssDirs.base)
+      .concat(variableFile)
+      .concat(getFiles(scssDirs.mixin))
+      .concat(getFiles(scssDirs.common))
+      .concat(getFiles(scssDirs.elems));
 
-    console.info('The following files will be compiled:');
+    console.info('The following files will be compiled for theme wui-' + dirName + ':');
     console.info(scssFiles);
 
-    return gulp.src(scssFiles).
-        pipe(wait(2000)).
-        pipe(sassGlob()).
-        pipe(concat(global.name + '-' + pkg.version + '.css')).
-        pipe(sass.sync().on('error', sass.logError)).
-        pipe(gulp.dest(global.dist + dirName)).
-        pipe(postcss([cssnano({reduceIdents: {keyframes: false}})])).
-        pipe(rename(global.name + '-' + pkg.version + '.min.css')).
-        pipe(gulp.dest(global.dist + dirName)).
-        pipe(notify({message: 'Task completed'}));
+    return gulp.src(scssFiles)
+      .pipe(wait(2000))
+      .pipe(sassGlob())
+      .pipe(concat(global.name + '-' + dirName + '.css'))
+      .pipe(sass.sync().on('error', sass.logError))
+      .pipe(gulp.dest(global.dist))
+      .pipe(postcss([cssnano({reduceIdents: {keyframes: false}})]))
+      .pipe(rename(global.name + '-' + dirName + '.min.css'))
+      .pipe(gulp.dest(global.dist))
+      .pipe(notify({message: 'Task completed'}));
   });
 
   return merge(tskArray);
 });
 
-gulp.task('watch-default', function() {
-  return watch('src/**/*.scss', function() {
+gulp.task('watch-default', function () {
+  return watch('src/**/*.scss', function () {
     gulp.series('default')(); //run the default task while detecting any changes made fro scss files
   });
 });
 
-gulp.task('copy-default-theme-file', function() {
+gulp.task('copy-default-theme-file', function () {
+  var realName = params.theme === 'default' ? global.name : global.name + '-' + params.theme;
   console.info(
-      'Copying =' + './dist/default/' + global.name + '-' + pkg.version +
-      '.min.css ' + 'to ' + params.copyTo);
+    'Copying =' + './dist/' + realName +
+    '.min.css ' + 'to ' + params.copyTo);
 
-  return gulp.src(
-      'dist/default/' + global.name + '-' + pkg.version + '.min.css').
-      pipe(rename("wui.css")).
-      pipe(wait(1000)).
-      pipe(gulp.dest(params.copyTo)).
-      pipe(notify({message: 'Task copy-default-theme-file completed'}));
+  return gulp.src('dist/' + realName + '.min.css')
+    .pipe(rename(realName + '.css'))
+    .pipe(wait(1000))
+    .pipe(gulp.dest(params.copyTo))
+    .pipe(notify({message: 'Copy task finished for theme '+ realName}));
 });
 
-gulp.task('watch-copy-default', function() {
+gulp.task('watch-copy-default', function () {
   if (!params.copyTo) {
     console.error('The \'--copyTo\' parameter is required.');
     return null;
   }
 
-  return watch('src/**/*.scss', function() {
+  if (!params.theme) {
+    console.error('The \'--theme\' parameter is required.');
+    return null;
+  }
+
+  return watch('src/**/*.scss', function () {
     gulp.series('default', 'copy-default-theme-file')(); //run the default task while detecting any changes made fro scss files
   });
 });
 
 gulp.task('default',
-    gulp.series('clean', 'buildDefault'));
+  gulp.series('clean', 'buildDefault'));
