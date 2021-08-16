@@ -12,7 +12,7 @@
   }
 
   &.with-bg {
-    background: lighten(#f8f5f5, 2%);
+    background: $bq-with-bg-background;
   }
 
   &.with-border-radius {
@@ -27,7 +27,7 @@
 
   > .footer {
     display: flex;
-    color: #727b84;
+    color: $bq-footer-color;
     font-size: 1rem;
     margin: .5rem 0 0;
     font-style: italic;
@@ -43,7 +43,7 @@
     }
 
     &.with-bg {
-      background: lighten(#adcfef, 15%);
+      background: $bg-primary-with-bg-background;
     }
 
     > .header {
@@ -63,7 +63,7 @@
     }
 
     &.with-bg {
-      background: lighten(#adcfef, 15%);
+      background: $bg-primary-with-bg-background;
     }
   }
 

@@ -3,16 +3,12 @@
   "version": "0.6.4",
   "description": "A new web UI framework built on CSS3 and SASS.",
   "scripts": {
-    "build": "node_modules/gulp/bin/gulp.js",
-    "buildRwui": "../../node_modules/gulp/bin/gulp.js",
-    "buildThemes": "node_modules/gulp/bin/gulp.js buildThemes",
-    "buildRwuiThemes": "../../node_modules/gulp/bin/gulp.js buildThemes",
-    "watch": "../../node_modules/gulp/bin/gulp.js watch-default",
-    "watch-copy-default": "../../node_modules/gulp/bin/gulp.js watch-copy-default  ",
-    "clean": "node_modules/gulp/bin/gulp.js clean",
-    "cleanRwui": "../../node_modules/gulp/bin/gulp.js clean",
-    "analyze": "node_modules/analyze-css/bin/analyze-css.js --file dist/default/wui-modern-0.5.1.css",
-    "analyzeRwui": "../../node_modules/analyze-css/bin/analyze-css.js --file dist/default/wui-modern-0.5.1.css"
+    "build": "../../node_modules/gulp/bin/gulp.js",
+    "copy": "../../node_modules/gulp/bin/gulp.js copy-default-theme-file",
+    "buildThemes": "../../node_modules/gulp/bin/gulp.js buildThemes",
+    "watch": "../../node_modules/gulp/bin/gulp.js watch-copy-default",
+    "clean": "../../node_modules/gulp/bin/gulp.js clean",
+    "analyze": "../../node_modules/analyze-css/bin/analyze-css.js --file dist/default/wui.css"
   },
   "repository": {
     "type": "git",
@@ -21,7 +17,7 @@
   "keywords": [
     "Wui",
     "wui",
-    "wui-modern"
+    "react-windy-ui"
   ],
   "author": "Jeven Wang",
   "license": "MIT",

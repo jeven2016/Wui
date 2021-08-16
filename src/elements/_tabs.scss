@@ -18,7 +18,7 @@
 @mixin secondary-card-item($l-tab-item-radius) {
   border: $default-border;
   border-radius: $l-tab-item-radius;
-  background: $light-gray;
+  background: $tabs-secondary-card-item-background;
 }
 
 .tabs {
@@ -86,8 +86,8 @@
             @include secondary-card-item($default-border-radius $default-border-radius 0 0);
 
             &.active {
-              background: $white;
-              border-bottom: 1px solid $white;
+              background: $tabs-secondary-card-item-background-active;
+              border-bottom: $tabs-secondary-card-item-border-active;
             }
           }
 
@@ -105,8 +105,8 @@
             @include secondary-card-item(0 0 $default-border-radius $default-border-radius);
 
             &.active {
-              background: $white;
-              border-top: 1px solid $white;
+              background: $tabs-secondary-card-item-background-active;
+              border-top: $tabs-secondary-card-item-border-active;
             }
           }
 
@@ -147,8 +147,8 @@
             @include secondary-card-item(0 $default-border-radius $default-border-radius 0);
 
             &.active {
-              background: $white;
-              border-left: 1px solid $white;
+              background: $tabs-secondary-card-item-background-active;
+              border-left: $tabs-secondary-card-item-border-active;
             }
           }
 
@@ -167,8 +167,8 @@
             @include secondary-card-item($default-border-radius 0 0 $default-border-radius);
 
             &.active {
-              background: $white;
-              border-right: 1px solid $white;
+              background: $tabs-secondary-card-item-background-active;
+              border-right: $tabs-secondary-card-item-border-active;
             }
           }
 
@@ -277,6 +277,7 @@
     @include make-menu-item(true, 0.5rem 1rem, false);
     min-width: 2rem;
     flex-shrink: 0;
+    color: $tabs-item-color;
 
     > .item-label {
       display: inline-flex;
@@ -315,7 +316,7 @@
         border-top: 3px solid $primary;
 
         &.tab-card {
-          background: $white;
+          background: $tabs-horizontal-tab-card-background;
           top: unset;
           bottom: -1px;
           border-bottom-left-radius: 0;

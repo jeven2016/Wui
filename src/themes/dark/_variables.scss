@@ -1,5 +1,157 @@
 $body-text-color: #fff;
-$body-background-color: #000000;
+$body-background-color: #121212;
 
+$default-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .7);
+$default-card-shadow: inset 0 0 0 1px rgba(255, 255, 255, .7);
+$default-border-color: rgba(255, 255, 255, .15);
+$default-border: $default-border-width solid $default-border-color;
+//$global-box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+$global-box-border: none;
+$global-disabled-text-color: #999;
+$global-disabled-background: #1d1d1d;
 
+//button
+$btn-default-text-color: rgba(255, 255, 255, .7);
+$menu-primary-menu-item-active-background-color: #232121;
 
+//Menu
+$menu-dark-background-color: #000;
+$menu-dark-color: $white;
+$menu-float-submenu-menu-background-color: rgba(255, 255, 255, .7);
+$menu-dark-background-color: transparent;
+$menu-dark-disabled-menu-item-color: #1d1d1d;
+$menu-inner-container-background: #1d1d1d;
+$menu-popup-list-background: #1d1d1d;
+$menu-popup-list-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.18), 0px 1px 1px 0px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+$menu-item-active-with-bg: #1d1d1d;
+$menu-item-focus-with-bg: #1d1d1d;
+$menu-dark-background-color: #1d1d1d;
+
+//input
+$input-color: $white;
+$input-box-shadow: 0 0 0 0.1rem #0ca0ff;
+$input-label-background-color: transparent;
+
+//text-field
+$tf-label-show: #000;
+$tf-label-color: #fff;
+$tf-input-color: #fff;
+$tf-underline-label-color: #fff;
+$tf-ok-box-shadow: 0 0 0 0.1rem $success !important;
+$tf-warning-box-shadow: 0 0 0 0.1rem $warning !important;
+$tf-error-box-shadow: 0 0 0 0.1rem $danger !important;
+
+//toggle
+$toggle-off-bar-background: rgba(255, 255, 255, .2);
+$toggle-secondary-primary-background: rgba(255, 255, 255, .2);
+
+//popup
+$popup-content-background: #333;
+
+//popover
+$popover-arrow-background: #333;
+
+//divider
+$divider-background: rgba(255, 255, 255, .2);
+
+//dropdown
+//$dp-menu-item-background-color: #1d1d1d;
+
+//select
+$select-menu-no-data-background: #333;
+$select-menu-item-active: #272727 !important;
+
+//date-picker
+$date-picker-background: #333;
+$date-picker-table-color: rgba(255, 255, 255, .5);
+$date-picker-button-day-color: $white;
+$date-picker-th-color: rgba(255, 255, 255, .7);
+$date-picker-range-btn-color: rgba(255, 255, 255, .7) !important;
+
+//modal
+$dialog-content-background-color: #333;
+$dialog-primary-footer-background: #333;
+$dialog-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.18), 0px 1px 1px 0px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+$dialog-header-primary-background-color: #333;
+$dialog-primary-header-border-bottom: 1px solid rgba(255, 255, 255, .15);
+$dialog-primary-header-border-top: 1px solid rgba(255, 255, 255, .15);
+
+//drawer
+$drawer-background: #1d1d1d;
+$drawer-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.4);
+
+//divider
+$divider-background: rgba(255, 255, 255, .15);
+
+//alert
+$alert-simple-background: #1d1d1d;
+$alert-simple-border: 1px solid #333;
+$alert-info-background: darken($primary, 20%);
+$alert-info-border: 1px solid lighten($alert-info-background, 10%);
+$alert-info-border-left-color: lighten($alert-info-background, 10%);
+$alert-info-box-shadow: 1px 1px 6px 0 lighten($alert-info-background, 10%);
+$alert-info-filled-background: darken($primary, 20%);
+$alert-ok-background: darken($green, 20%);
+$alert-ok-border: 1px solid lighten($alert-ok-background, 10%);
+$alert-ok-border-left-color: lighten($alert-ok-background, 10%);
+$alert-ok-box-shadow: 1px 1px 6px 0 lighten($alert-ok-background, 10%);
+$alert-ok-filled-background: darken($green, 20%);
+$alert-warning-background: darken($brown, 20%);
+$alert-warning-border: 1px solid lighten($alert-warning-background, 10%);
+$alert-warning-border-left-color: lighten($alert-warning-background, 10%);
+$alert-warning-box-shadow: 1px 1px 6px 0 lighten($alert-warning-background, 10%);
+$alert-warning-filled-background: darken($brown, 20%);
+$alert-error-background: darken($red, 30%);
+$alert-error-border: 1px solid lighten($alert-error-background, 10%);
+$alert-error-border-left-color: lighten($alert-error-background, 10%);
+$alert-error-box-shadow: 1px 1px 6px 0 lighten($alert-error-background, 10%);
+$alert-error-filled-background: darken($red, 30%);
+$alert-container-box-shadow: $dialog-box-shadow;
+
+//progress
+$progress-bar-background: rgba(255, 255, 255, .2);
+
+//skeleton
+$skeleton-background: linear-gradient(90deg, rgba(80, 80, 80, 80) 23%, rgba(40, 40, 40, 100) 40%, rgba(29, 29, 29, 100) 60%);
+
+//navbar
+$navbar-background-color: #333;
+$navbar-title-color: $body-text-color;
+$navbar-inactive-text-color: rgba(255, 255, 255, .5);
+$navbar-item-active-color: $body-text-color;
+
+//tree
+$tree-item-label-info-active-background: darken($primary, 30%);
+$tree-item-bg-background: darken($primary, 30%);
+
+$bq-with-bg-background: #333;
+$bq-other-border: rgba(255, 255, 255, .15);
+$bq-left-border: 0.4rem solid rgba(255, 255, 255, .12);
+$bg-primary-with-bg-background: darken($blue, 40%);
+$bq-footer-color: rgba(255, 255, 255, .65);
+
+//table
+$table-th-background-color: #333;
+$table-th-color: $body-text-color;
+$table-default-border: 1px solid rgba(255, 255, 255, .15);
+$table-row-hover-background-color: #1d1d1d;
+$table-row-hover-bg: #1d1d1d;
+$table-hl-tr-background: darken($blue, 40%) !important;
+$table-filter-hover-background: #2c2c2c;
+$table-filter-active-background: #1d1d1d;
+$table-filter-active-color: $primary;
+$table-fixed-cell-background: #1d1d1d;
+
+//pagination
+$pagination-go-item-button: $body-text-color;
+$pagination-simple-content-label-color: $body-text-color;
+
+//card
+$card-header-background-color: #333;
+
+//tabs
+$tabs-secondary-card-item-background: #333;
+$tabs-secondary-card-item-background-active: $body-background-color;
+$tabs-secondary-card-item-border-active: 1px solid transparent;
+$tabs-item-color: #ccc;
+$tabs-horizontal-tab-card-background: $body-background-color;

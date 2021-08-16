@@ -30,7 +30,7 @@
             > .label-info {
               //padding: 0.25rem;
               &.active {
-                background: lighten($primary, 32%);
+                background: $tree-item-label-info-active-background;
               }
             }
           }
@@ -51,7 +51,7 @@
 
   .item-bg {
     padding: 0.25rem 0;
-    background: lighten($primary, 32%);
+    background: $tree-item-bg-background;
     line-height: 1.5rem;
     user-select: none;
     width: 100%;

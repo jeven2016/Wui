@@ -16,9 +16,9 @@
 
   border: $dialog-content-border;
   min-height: $dialog-content-min-height;
-  background-color: $dialog-content-background-color;
+  background: $dialog-content-background-color;
   @include border-radius($dialog-border-radius);
-  box-shadow: $default-box-shadow;
+  box-shadow: $dialog-box-shadow;
 
   @include limit-width("max-width", $dialog-content-width-sm, $dialog-content-width-md,
           $dialog-content-width-lg, $dialog-content-width-xg);
@@ -98,7 +98,7 @@
       justify-content: flex-end;
     }
     @include full-border-radius(0, 0, $dialog-inner-border-radius, $dialog-inner-border-radius);
-    padding: 1rem 1.5rem;
+    padding: .75rem 1.5rem;
 
     &.compact-footer {
       padding: 0 1.5rem 1.5rem;
@@ -143,7 +143,7 @@
 
   &.primary {
     > .header {
-      background-color: $dialog-header-primary-background-color;
+      background: $dialog-header-primary-background-color;
       color: $white;
       @include full-border-radius($dialog-inner-border-radius, $dialog-inner-border-radius, 0, 0);
 
@@ -162,7 +162,7 @@
         }
       }
 
-      border-bottom: $default-border;
+      border-bottom: $dialog-primary-header-border-bottom;
     }
 
     > .body {
@@ -170,8 +170,8 @@
     }
 
     > .footer {
-      background-color: $light-gray;
-      border-top: $default-border;
+      background: $dialog-primary-footer-background;
+      border-top: $dialog-primary-header-border-top;
     }
   }
 

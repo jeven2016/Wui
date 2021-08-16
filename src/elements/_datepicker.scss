@@ -56,11 +56,11 @@
 
 .date-picker-table {
   width: 100%;
-  color: $text-comment-color;
+  color: $date-picker-table-color;
 
   th {
     font-weight: map-get($font-weight, 'light');
-    color: $text-color;
+    color: $date-picker-th-color;
   }
 
   td {
@@ -70,7 +70,7 @@
   }
 
   .button.day {
-    color: $text-color;
+    color: $date-picker-button-day-color;
   }
 }
 
@@ -92,7 +92,7 @@
 
 .date-picker {
   width: 20rem;
-  background-color: $white;
+  background-color: $date-picker-background;
 }
 
 .dp-body {
@@ -164,6 +164,7 @@
 
 .range-btn {
   padding: .375rem .3rem !important;
+  color: $date-picker-range-btn-color;
 }
 
 .datetime-picker {

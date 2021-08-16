@@ -170,29 +170,21 @@ gulp.task('buildThemes', function () {
       .pipe(postcss([cssnano({reduceIdents: {keyframes: false}})]))
       .pipe(rename(global.name + '-' + dirName + '.min.css'))
       .pipe(gulp.dest(global.dist))
-      .pipe(notify({message: 'Task completed'}));
+      .pipe(notify({message: 'Build themes task completed'}));
   });
 
   return merge(tskArray);
 });
 
-gulp.task('watch-default', function () {
-  return watch('src/**/*.scss', function () {
-    gulp.series('default')(); //run the default task while detecting any changes made fro scss files
-  });
-});
-
+//copy the theme file to a specific directory with name 'wui.css'
 gulp.task('copy-default-theme-file', function () {
-  var realName = params.theme === 'default' ? global.name : global.name + '-' + params.theme;
-  console.info(
-    'Copying =' + './dist/' + realName +
-    '.min.css ' + 'to ' + params.copyTo);
-
-  return gulp.src('dist/' + realName + '.min.css')
-    .pipe(rename(realName + '.css'))
+  return gulp.src('dist/wui*.min.css')
+    .pipe(rename(function (path) {
+      path.basename = path.basename.replace('.min', '')
+    }))
     .pipe(wait(1000))
     .pipe(gulp.dest(params.copyTo))
-    .pipe(notify({message: 'Copy task finished for theme '+ realName}));
+    .pipe(notify({message: 'Copy task finished'}));
 });
 
 gulp.task('watch-copy-default', function () {
@@ -201,13 +193,15 @@ gulp.task('watch-copy-default', function () {
     return null;
   }
 
-  if (!params.theme) {
-    console.error('The \'--theme\' parameter is required.');
-    return null;
+  console.log(params.buildAll)
+  const tasks = ['default']
+  if (params.buildAll) {
+    tasks.push('buildThemes');
   }
+  tasks.push('copy-default-theme-file');
 
   return watch('src/**/*.scss', function () {
-    gulp.series('default', 'copy-default-theme-file')(); //run the default task while detecting any changes made fro scss files
+    gulp.series(tasks)();
   });
 });
 

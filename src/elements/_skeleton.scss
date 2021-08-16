@@ -2,7 +2,7 @@
 
   .skeleton-item {
     height: 1rem;
-    background: linear-gradient(90deg, rgba(240, 240, 240, 100) 23%, rgba(230, 230, 230, 100) 40%, rgba(240, 240, 240, 100) 60%);
+    background: $skeleton-background;
     background-size: 300% 100%;
     animation: skeleton-animation 1.5s ease infinite;
     border-radius: .25rem;

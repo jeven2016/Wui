@@ -6,7 +6,7 @@
   //flex-wrap: $card-flex-wrap; //todo: confirm: 设置成wrap后，会出现card-row高度比子元素的高度高太多的问题
   @include border-radius($card-border-radius);
   transition: $card-transition;
-  background-color: $card-background-color;
+  //background-color: $card-background-color;
 
   &.with-width {
     width: $card-width;
@@ -71,7 +71,7 @@
     }
 
     &.gray {
-      background-color: $card-header-background-color;
+      background: $card-header-background-color;
     }
   }
 

@@ -29,9 +29,7 @@
           color: $primary;
         }
 
-        @include add-disabled-conf(false) {
-          color: $text-disabled-color;
-        }
+        @include add-disabled-conf(false);
 
       }
 
@@ -52,9 +50,7 @@
         color: $primary;
       }
 
-      @include add-disabled-conf(false) {
-        color: $text-disabled-color;
-      }
+      @include add-disabled-conf(false);
 
       + .#{$prefix}-more {
         margin-left: 0.25rem;

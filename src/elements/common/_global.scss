@@ -94,13 +94,16 @@ a {
   border-radius: 0 !important;
 }
 
+.global-with-box {
+  box-shadow: $global-box-shadow;
+  border: $global-box-border;
+}
+
 .global-with-border {
   border: $menu-border;
 }
 
-.global-with-box {
-  box-shadow: $default-box-shadow;
-}
+
 
 /*.clear-fix {
   &::after {
@@ -188,9 +191,7 @@ a {
       color: $primary;
     }
 
-    @include add-disabled-conf(false) {
-      color: $text-disabled-color;
-    }
+    @include add-disabled-conf(false);
 
   }
 }

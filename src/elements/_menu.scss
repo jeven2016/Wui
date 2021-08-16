@@ -113,7 +113,7 @@
     color: lighten($menu-item-hove-text-color, 5%);
 
     &.with-bg {
-      background: $menu-item-background-color;
+      background: $menu-item-focus-with-bg;
     }
   }
 
@@ -123,13 +123,13 @@
       @include bottom-bar;
     }
     &.with-bg {
-      background: darken($menu-item-background-color, 3%);
+      background: $menu-item-active-with-bg;
     }
   }
 
   @include add-disabled-conf(false) {
-    color: $text-disabled-color;
-    background: transparent;
+    color: $global-disabled-text-color;
+    background: $global-disabled-background;
   }
 
   @content;
@@ -207,18 +207,18 @@
         text-shadow: $menu-item-hover-text-shadow;
 
         &.with-bg {
-          background: $blue;
+          background: $primary;
         }
       }
 
       &.active {
-        background: $blue;
+        background: $primary;
         color: $white;
         //font-weight: map-get($font-weight, 'normal');
         text-shadow: $menu-item-hover-text-shadow;
 
         &.with-bg {
-          background: $blue;
+          background: $primary;
         }
       }
     }
@@ -283,7 +283,7 @@
 
       &.dark {
         @include focus2 {
-          color: $blue;
+          color: $primary;
           //box-shadow: $default-primary-box-shadow;
         }
       }
@@ -317,7 +317,7 @@
     box-shadow: $menu-float-submenu-menu-box-shadow;
 
     &.normal {
-      background: $white;
+      background: $menu-popup-panel-normal-background;
     }
 
     &.dark {
@@ -332,9 +332,9 @@
     padding: $menu-padding-column;
 
     &.popup-list {
-      box-shadow: $default-box-shadow;
+      box-shadow: $menu-popup-list-box-shadow;
       position: absolute;
-      background: $white;
+      background: $menu-popup-list-background;
       @include border-radius;
       z-index: map_get($z-index, 'pop');
       opacity: 0; //initially hidden
@@ -381,6 +381,7 @@
   @extend .base-menu;
   //flex-wrap: wrap;
   transition: width .3s;
+  background: $menu-background;
 
   > .base-menu {
     > .menu-header {
@@ -392,13 +393,16 @@
     }
   }
 
+  .inner-container {
+    background: $menu-inner-container-background;
+  }
+
   &.dark {
     background: $menu-dark-background-color;
     color: $menu-dark-color;
-    border: $menu-dark-border;
 
     .base-menu .inner-container {
-      background: #000;
+      background: $menu-dark-disabled-menu-item-color;
     }
   }
 
