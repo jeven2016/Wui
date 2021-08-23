@@ -1,5 +1,16 @@
+//refer to https://material.io/design/color/dark-theme.html#anatomy
+$red: darken($red, 30%);
+$brown: darken($brown, 20%);
+$green: darken($green, 20%);
+$primary: darken($primary, 20%);
+
 $body-text-color: #fff;
 $body-background-color: #121212;
+
+$top-background: #292929;
+$content-background: #1c1c1c;
+$slider-background: #242424;
+$popup-background: #2d2d2d;
 
 $default-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .7);
 $default-card-shadow: inset 0 0 0 1px rgba(255, 255, 255, .7);
@@ -46,10 +57,10 @@ $toggle-off-bar-background: rgba(255, 255, 255, .2);
 $toggle-secondary-primary-background: rgba(255, 255, 255, .2);
 
 //popup
-$popup-content-background: #333;
+$popup-content-background: $popup-background;
 
 //popover
-$popover-arrow-background: #333;
+$popover-arrow-background: $popup-background;
 
 //divider
 $divider-background: rgba(255, 255, 255, .2);
@@ -69,43 +80,43 @@ $date-picker-th-color: rgba(255, 255, 255, .7);
 $date-picker-range-btn-color: rgba(255, 255, 255, .7) !important;
 
 //modal
-$dialog-content-background-color: #333;
-$dialog-primary-footer-background: #333;
+$dialog-content-background-color: $popup-background;
+$dialog-primary-footer-background: $popup-background;
 $dialog-box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.18), 0px 1px 1px 0px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-$dialog-header-primary-background-color: #333;
+$dialog-header-primary-background-color: $popup-background;
 $dialog-primary-header-border-bottom: 1px solid rgba(255, 255, 255, .15);
 $dialog-primary-header-border-top: 1px solid rgba(255, 255, 255, .15);
 
 //drawer
-$drawer-background: #1d1d1d;
+$drawer-background: $popup-background;
 $drawer-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.4);
 
 //divider
 $divider-background: rgba(255, 255, 255, .15);
 
 //alert
-$alert-simple-background: #1d1d1d;
-$alert-simple-border: 1px solid #333;
-$alert-info-background: darken($primary, 20%);
+$alert-simple-background: $popup-background;
+$alert-simple-border: 1px solid $popup-background;
+$alert-info-background: $primary;
 $alert-info-border: 1px solid lighten($alert-info-background, 10%);
 $alert-info-border-left-color: lighten($alert-info-background, 10%);
 $alert-info-box-shadow: 1px 1px 6px 0 lighten($alert-info-background, 10%);
-$alert-info-filled-background: darken($primary, 20%);
-$alert-ok-background: darken($green, 20%);
+$alert-info-filled-background: $primary;
+$alert-ok-background: $green;
 $alert-ok-border: 1px solid lighten($alert-ok-background, 10%);
 $alert-ok-border-left-color: lighten($alert-ok-background, 10%);
 $alert-ok-box-shadow: 1px 1px 6px 0 lighten($alert-ok-background, 10%);
-$alert-ok-filled-background: darken($green, 20%);
-$alert-warning-background: darken($brown, 20%);
+$alert-ok-filled-background: $green;
+$alert-warning-background: $brown;
 $alert-warning-border: 1px solid lighten($alert-warning-background, 10%);
 $alert-warning-border-left-color: lighten($alert-warning-background, 10%);
 $alert-warning-box-shadow: 1px 1px 6px 0 lighten($alert-warning-background, 10%);
-$alert-warning-filled-background: darken($brown, 20%);
-$alert-error-background: darken($red, 30%);
+$alert-warning-filled-background: $brown;
+$alert-error-background: $red;
 $alert-error-border: 1px solid lighten($alert-error-background, 10%);
 $alert-error-border-left-color: lighten($alert-error-background, 10%);
 $alert-error-box-shadow: 1px 1px 6px 0 lighten($alert-error-background, 10%);
-$alert-error-filled-background: darken($red, 30%);
+$alert-error-filled-background: $red;
 $alert-container-box-shadow: $dialog-box-shadow;
 
 //progress
@@ -115,28 +126,28 @@ $progress-bar-background: rgba(255, 255, 255, .2);
 $skeleton-background: linear-gradient(90deg, rgba(80, 80, 80, 80) 23%, rgba(40, 40, 40, 100) 40%, rgba(29, 29, 29, 100) 60%);
 
 //navbar
-$navbar-background-color: #333;
+$navbar-background-color: $top-background;
 $navbar-title-color: $body-text-color;
 $navbar-inactive-text-color: rgba(255, 255, 255, .5);
 $navbar-item-active-color: $body-text-color;
 
 //tree
-$tree-item-label-info-active-background: darken($primary, 30%);
-$tree-item-bg-background: darken($primary, 30%);
+$tree-item-label-info-active-background: $primary;
+$tree-item-bg-background: $primary;
 
-$bq-with-bg-background: #333;
+$bq-with-bg-background: $content-background;
 $bq-other-border: rgba(255, 255, 255, .15);
 $bq-left-border: 0.4rem solid rgba(255, 255, 255, .12);
-$bg-primary-with-bg-background: darken($blue, 40%);
+$bg-primary-with-bg-background: $primary;
 $bq-footer-color: rgba(255, 255, 255, .65);
 
 //table
-$table-th-background-color: #333;
-$table-th-color: $body-text-color;
+$table-th-background-color: $content-background;
+$table-th-color: darken($body-text-color, 30%);
 $table-default-border: 1px solid rgba(255, 255, 255, .15);
 $table-row-hover-background-color: #1d1d1d;
 $table-row-hover-bg: #1d1d1d;
-$table-hl-tr-background: darken($blue, 40%) !important;
+$table-hl-tr-background: darken($primary, 25%) !important;
 $table-filter-hover-background: #2c2c2c;
 $table-filter-active-background: #1d1d1d;
 $table-filter-active-color: $primary;
@@ -147,11 +158,34 @@ $pagination-go-item-button: $body-text-color;
 $pagination-simple-content-label-color: $body-text-color;
 
 //card
-$card-header-background-color: #333;
+$card-header-background-color: $content-background;
 
 //tabs
-$tabs-secondary-card-item-background: #333;
+$tabs-secondary-card-item-background: $content-background;
 $tabs-secondary-card-item-background-active: $body-background-color;
 $tabs-secondary-card-item-border-active: 1px solid transparent;
 $tabs-item-color: #ccc;
 $tabs-horizontal-tab-card-background: $body-background-color;
+
+//breadcrumb
+$bd-color: rgba(255, 255, 255, .7);
+$bd-with-bg-background: #1d1d1d;
+
+//layout
+$layout-background: unset;
+$layout-content-background: $content-background;
+$layout-footer-background: unset;
+$layout-slider-background: $slider-background;
+
+//loader
+$loader-primary-border: $loader-size-normal * 0.1 solid rgba(255, 255, 255, .38);
+$mask-background: rgba(0, 0, 0, .5);
+
+//time-picker
+$time-picker-background: $popup-background;
+$date-picker-footer-color: darken($body-text-color, 30%);
+$date-picker-day-button-active-color: darken($body-text-color, 30%);
+$date-picker-day-button-active-background: lighten($content-background, 3%);
+
+
+$time-picker-tp-mask-background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3));

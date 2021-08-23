@@ -80,7 +80,7 @@ a {
   overflow: hidden;
 
   &.dark {
-    background: rgba(0, 0, 0, .8);
+    background: $mask-background;
   }
 }
 
@@ -102,7 +102,6 @@ a {
 .global-with-border {
   border: $menu-border;
 }
-
 
 
 /*.clear-fix {

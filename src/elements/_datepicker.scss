@@ -70,7 +70,13 @@
   }
 
   .button.day {
-    color: $date-picker-button-day-color;
+
+    &.gray {
+      &.active {
+        background: $date-picker-day-button-active-background;
+        color: $date-picker-day-button-active-color;
+      }
+    }
   }
 }
 
@@ -78,7 +84,7 @@
   display: flex !important;
   justify-content: space-between;
   padding: .25rem 1.25rem !important;
-  color: lighten($text-color, 10%);
+  color: $date-picker-footer-color;
 
   > .left {
     display: flex;

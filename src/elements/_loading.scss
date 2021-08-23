@@ -79,7 +79,7 @@ $loader-item-duration: 1.3s;
     > .content {
       display: inline-flex;
       position: relative;
-      border: $loader-size-normal * 0.1 solid #e5e3e3;
+      border: $loader-primary-border;
       border-right-color: $primary;
       transform: translate3d(0, 0, 0);
       animation: default-loader $loader-item-duration ease-in-out infinite;
@@ -177,20 +177,19 @@ $loader-item-duration: 1.3s;
   }
 
 
-
   > .loader {
     position: absolute;
-    z-index: map-get($z-index, 'widget') ;
+    z-index: map-get($z-index, 'widget');
   }
 
   > .mask {
     border-radius: 0.25rem;
     position: absolute;
-    z-index: map-get($z-index, 'widget') ;
+    z-index: map-get($z-index, 'widget');
   }
 
   &.with-opacity {
-    &.active{
+    &.active {
       opacity: .5;
     }
   }

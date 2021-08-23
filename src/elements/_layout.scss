@@ -51,14 +51,13 @@ $types: ('sm', 'md', 'lg', 'xl');
   }
 }
 
-.layout {
-  //height: 100%;
-}
 
-.layout, .layout-content, .layout-footer {
+//----------------------------------------------------------------------------------------------
+.layout {
   @include make-flex {
     flex-direction: column;
     flex: auto;
+    background: $layout-background;
   }
 
   > .layout-header {
@@ -68,14 +67,24 @@ $types: ('sm', 'md', 'lg', 'xl');
   }
 }
 
+.layout-content {
+  @include make-flex {
+    flex-direction: column;
+    background: $layout-content-background;
+    flex: auto;
+  }
+}
+
 .layout-footer {
   @include make-flex {
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: $gray-darker;
     font-size: 0.8em;
     flex: 0 1 3rem;
     padding: 1.5rem 1rem;
+    background: $layout-footer-background;
   }
 }
 
@@ -116,6 +125,8 @@ $types: ('sm', 'md', 'lg', 'xl');
   .menu {
     border-radius: 0;
   }
+
+  background: $layout-slider-background;
 }
 
 
@@ -134,7 +145,7 @@ $types: ('sm', 'md', 'lg', 'xl');
       }
     }
 
-    &.w-container-auto{
+    &.w-container-auto {
       @include media-query((key:'min-width', value: map-get($bs-layout, $col-type))) {
         max-width: map-get($bs-layout, $col-type);
       }

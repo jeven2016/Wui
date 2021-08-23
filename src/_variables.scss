@@ -603,7 +603,9 @@ $table-fixed-cell-background: $white;
 $loader-size-large: 5rem;
 $loader-size-normal: 3rem;
 $loader-size-small: 1rem;
+$loader-primary-border: $loader-size-normal * 0.1 solid #e5e3e3;
 $border-default-color: #ccc;
+$mask-background: rgba(0, 0, 0, .8);
 
 //for tab
 $tab-margin-bottom: 0.5rem;
@@ -648,6 +650,8 @@ $drawer-background: $white;
 
 //for breadcrumb
 $bd-wrapper-background-color: #f5f5f5;
+$bd-color: rgba(0, 0, 0, .5);
+$bd-with-bg-background: $light-gray;
 
 
 //toggle
@@ -670,6 +674,10 @@ $date-picker-table-color: $text-comment-color;
 $date-picker-button-day-color: $text-color;
 $date-picker-th-color: $date-picker-table-color;
 $date-picker-range-btn-color: initial;
+$date-picker-footer-color: lighten($text-color, 10%);
+$date-picker-day-button-active-color: $white;
+$date-picker-day-button-active-background: $gray;
+
 
 //progress
 $progress-bar-background: $gray;
@@ -688,6 +696,17 @@ $pagination-simple-content-label-color: inherit;
 //tabs
 $tabs-secondary-card-item-background: $light-gray;
 $tabs-secondary-card-item-background-active: $white;
-$tabs-secondary-card-item-border-active:  1px solid $white;
+$tabs-secondary-card-item-border-active: 1px solid $white;
 $tabs-item-color: inherit;
 $tabs-horizontal-tab-card-background: $white;
+
+//layout
+$layout-background: #f5f6f7;
+$layout-content-background: #fff;
+$layout-footer-background: #f8f9fa;
+$layout-slider-background: initial;
+
+//time-picker
+$time-picker-background: $white;
+$time-picker-color: $time-picker-background;
+$time-picker-tp-mask-background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3)), linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
