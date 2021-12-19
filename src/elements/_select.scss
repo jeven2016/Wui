@@ -172,8 +172,8 @@
       @include make-flex-vertical-center;
       @include border-radius();
       padding: .25rem;
-      background: $light-gray;
-      border: $default-border;
+      background: $select-multi-item-background;
+      border: $select-multi-item-border;
     }
 
     > .select-input {

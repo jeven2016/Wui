@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/jeven2016/wheel-ui#readme",
   "devDependencies": {
-    "analyze-css": "^0.12.8",
     "better-console": "^1.0.1",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
@@ -38,11 +37,12 @@
     "gulp-postcss": "^8.0.0",
     "gulp-print": "^5.0.2",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.0.2",
+    "gulp-sass": "^5.0.0",
     "gulp-sass-glob": "^1.1.0",
     "gulp-wait": "0.0.2",
     "gulp-watch": "^5.0.1",
     "merge-stream": "^2.0.0",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.0",
+    "sass": "^1.45.0"
   }
 }

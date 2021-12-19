@@ -1,6 +1,6 @@
 %tree-focus {
   @include focus2 {
-    color: $primary;
+    color: $tree-hover-color;
   }
   @include add-disabled-conf(false) {
     color: $text-disabled-color;
@@ -31,6 +31,7 @@
               //padding: 0.25rem;
               &.active {
                 background: $tree-item-label-info-active-background;
+                color: $tree-item-label-info-active-color;
               }
             }
           }

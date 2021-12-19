@@ -1,10 +1,6 @@
 //refer to https://material.io/design/color/dark-theme.html#anatomy
-$red: darken($red, 30%);
-$brown: darken($brown, 20%);
-$green: darken($green, 20%);
-$primary: darken($primary, 20%);
-
-$body-text-color: #fff;
+$text-color: rgba(255, 255, 255, .9);
+$body-text-color: $text-color;
 $body-background-color: #121212;
 
 $top-background: #292929;
@@ -12,10 +8,26 @@ $content-background: #1c1c1c;
 $slider-background: #242424;
 $popup-background: #2d2d2d;
 
+$red: darken($red, 20%);
+$brown: darken($brown, 20%);
+$green: darken($green, 20%);
+$primary: darken($primary, 20%);
+
+$info: darken($cyan, 20%);
+$success: $green;
+$warning: darken($yellow, 20%);
+$danger: $red;
+
+$text-ok-color: $success;
+$text-warning-color: $warning;
+$text-error-color: $danger;
+
 $default-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .7);
 $default-card-shadow: inset 0 0 0 1px rgba(255, 255, 255, .7);
-$default-border-color: rgba(255, 255, 255, .15);
+$default-border-color: rgba(255, 255, 255, .25);
 $default-border: $default-border-width solid $default-border-color;
+$global-border: $default-border;
+$input-border: $default-border;
 //$global-box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 $global-box-border: none;
 $global-disabled-text-color: #999;
@@ -51,6 +63,7 @@ $tf-underline-label-color: #fff;
 $tf-ok-box-shadow: 0 0 0 0.1rem $success !important;
 $tf-warning-box-shadow: 0 0 0 0.1rem $warning !important;
 $tf-error-box-shadow: 0 0 0 0.1rem $danger !important;
+$tf-underline-label-color: $text-comment-color;
 
 //toggle
 $toggle-off-bar-background: rgba(255, 255, 255, .2);
@@ -71,13 +84,24 @@ $divider-background: rgba(255, 255, 255, .2);
 //select
 $select-menu-no-data-background: #333;
 $select-menu-item-active: #272727 !important;
+$select-multi-item-background: $content-background;
+$select-multi-item-border: $default-border;
 
 //date-picker
-$date-picker-background: #333;
+$date-picker-background: $popup-background;
 $date-picker-table-color: rgba(255, 255, 255, .5);
 $date-picker-button-day-color: $white;
 $date-picker-th-color: rgba(255, 255, 255, .7);
 $date-picker-range-btn-color: rgba(255, 255, 255, .7) !important;
+$date-picker-year-cols-color: rgba(255, 255, 255, .5);
+$date-picker-footer-color: darken($body-text-color, 30%);
+$date-picker-day-button-active-color: darken($body-text-color, 30%);
+$date-picker-day-button-active-background: lighten($content-background, 3%);
+
+//time-picker
+$time-picker-background: $popup-background;
+$time-picker-tp-mask-background: linear-gradient(180deg, rgba(71, 71, 71, 0.25), rgba(71, 71, 71, 0.3)), linear-gradient(0deg, rgba(71, 71, 71, 0.3), rgba(71, 71, 71, 0.25));
+
 
 //modal
 $dialog-content-background-color: $popup-background;
@@ -134,6 +158,8 @@ $navbar-item-active-color: $body-text-color;
 //tree
 $tree-item-label-info-active-background: $primary;
 $tree-item-bg-background: $primary;
+$tree-item-label-info-active-background: $primary;
+$tree-item-label-info-active-color: #fff;
 
 $bq-with-bg-background: $content-background;
 $bq-other-border: rgba(255, 255, 255, .15);
@@ -152,6 +178,9 @@ $table-filter-hover-background: #2c2c2c;
 $table-filter-active-background: #1d1d1d;
 $table-filter-active-color: $primary;
 $table-fixed-cell-background: #1d1d1d;
+$table-filter-active-background: $popup-background;
+$table-arrow-color: $global-disabled-text-color;
+
 
 //pagination
 $pagination-go-item-button: $body-text-color;
@@ -181,11 +210,11 @@ $layout-slider-background: $slider-background;
 $loader-primary-border: $loader-size-normal * 0.1 solid rgba(255, 255, 255, .38);
 $mask-background: rgba(0, 0, 0, .5);
 
-//time-picker
-$time-picker-background: $popup-background;
-$date-picker-footer-color: darken($body-text-color, 30%);
-$date-picker-day-button-active-color: darken($body-text-color, 30%);
-$date-picker-day-button-active-background: lighten($content-background, 3%);
 
+//avatar
+$avatar-with-box-shadow: none;
 
-$time-picker-tp-mask-background: linear-gradient(180deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3));
+//border-info
+$border-info-ok: 0 0 0 0.1rem lighten($success, 20%) !important;
+$border-info-warning: 0 0 0 0.1rem lighten($warning, 20%) !important;
+$border-info-error: 0 0 0 0.1rem lighten($danger, 20%) !important;

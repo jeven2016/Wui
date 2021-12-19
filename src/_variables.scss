@@ -109,7 +109,7 @@ $btn-colors: (
         yellow: $yellow,
         teal: $teal,
         violet: $violet,
-        white: $white,
+        white: $white
 );
 
 //body
@@ -129,6 +129,7 @@ $default-border-radius: 0.25rem;
 $default-border-width: 1px;
 $default-border-color: #ccc;
 $default-border: $default-border-width solid $default-border-color;
+$global-border: $default-border;
 $default-arrow-border: 4px solid transparent;
 $default-arrow-active-border: #acacac;
 $default-transition: all .2s ease-in-out;
@@ -238,7 +239,7 @@ $input-border-active-color: $blue;
 $input-block-width: 100%;
 $input-default-padding: $elem-default-padding;
 $input-label-background-color: #eceeef;
-$input-box-shadow: 0 0 0 0.2rem lighten($blue, 40%);
+$input-box-shadow: 0 0 0 0.1rem lighten($blue, 40%);
 //$input-active-scale: scale(0.97);
 $input-simple-border-left: none;
 $input-simple-border-top: none;
@@ -256,6 +257,7 @@ $tf-underline-label-color: inherit;
 $tf-ok-box-shadow: 0 0 0 0.2rem lighten($success, 40%) !important;
 $tf-warning-box-shadow: 0 0 0 0.2rem lighten($warning, 40%) !important;
 $tf-error-box-shadow: 0 0 0 0.2rem lighten($danger, 40%) !important;
+$tf-label-placeholder: $text-comment-color;
 
 
 $icon-input-icon-cursor: pointer;
@@ -598,6 +600,7 @@ $table-filter-hover-background: $gray;
 $table-filter-active-background: $gray;
 $table-filter-active-color: $blue;
 $table-fixed-cell-background: $white;
+$table-arrow-color: $gray;
 
 //for loader
 $loader-size-large: 5rem;
@@ -667,6 +670,8 @@ $divider-background: #ccc;
 //select
 $select-menu-no-data-background: $white;
 $select-menu-item-active: #0ca0ff0f !important;
+$select-multi-item-background: $light-gray;
+$select-multi-item-border: $default-border;
 
 //date-picker
 $date-picker-background: $white;
@@ -677,6 +682,7 @@ $date-picker-range-btn-color: initial;
 $date-picker-footer-color: lighten($text-color, 10%);
 $date-picker-day-button-active-color: $white;
 $date-picker-day-button-active-background: $gray;
+$date-picker-year-cols-color: $text-color;
 
 
 //progress
@@ -688,6 +694,8 @@ $skeleton-background: linear-gradient(90deg, rgba(240, 240, 240, 100) 23%, rgba(
 //tree
 $tree-item-label-info-active-background: lighten($primary, 32%);
 $tree-item-bg-background: lighten($primary, 30%);
+$tree-hover-color: $primary;
+$tree-item-label-info-active-color: $primary;
 
 //pagination
 $pagination-go-item-button: $text-color;
@@ -710,3 +718,11 @@ $layout-slider-background: initial;
 $time-picker-background: $white;
 $time-picker-color: $time-picker-background;
 $time-picker-tp-mask-background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3)), linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+
+//avatar
+$avatar-with-box-shadow: $default-box-shadow;
+
+//border-info
+$border-info-ok: 0 0 0 0.1rem lighten($success, 40%) !important;
+$border-info-warning: 0 0 0 0.1rem lighten($warning, 40%) !important;
+$border-info-error: 0 0 0 0.1rem lighten($danger, 40%) !important;
