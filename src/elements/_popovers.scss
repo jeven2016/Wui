@@ -1,6 +1,6 @@
 $popover-arrow-width: .75rem;
 $popover-arrow-height: .75rem;
-$popover-half-height: $popover-arrow-height /2;
+$popover-half-height: math.div($popover-arrow-height , 2);
 
 
 .popover {

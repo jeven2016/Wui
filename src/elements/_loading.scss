@@ -96,12 +96,12 @@ $loader-item-duration: 1.3s;
         > .segment#{$i} {
           @extend %segment-base;
 
-          transform: rotate((360deg / $loader-item-count) * ($i - 1));
+          transform: rotate((math.div(360deg , $loader-item-count)) * ($i - 1));
 
           > .item {
             @extend %segment-item-base;
             animation: item-delay $loader-item-duration infinite ease-in-out both;
-            animation-delay: $loader-item-duration / $loader-item-count * $i - $loader-item-duration;
+            animation-delay: math.div($loader-item-duration, $loader-item-count) * $i - $loader-item-duration;
           }
         }
       }

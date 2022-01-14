@@ -134,7 +134,9 @@ textarea.input {
   }
 
   &.block, & > .input {
-    @extend .input.block;
+    @include make-flex {
+      width: $input-block-width;
+    }
   }
 
   & > .input {

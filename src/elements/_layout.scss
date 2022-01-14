@@ -28,8 +28,8 @@ $types: ('sm', 'md', 'lg', 'xl');
 
   @for $i from 1 through $grid-column-count {
     & > .col-#{$i} {
-      flex: 0 0 percentage($i / ($grid-column-count));
-      max-width: percentage($i / ($grid-column-count));
+      flex: 0 0 percentage(math.div($i, ($grid-column-count)));
+      max-width: percentage(math.div($i, ($grid-column-count)));
     }
   }
 

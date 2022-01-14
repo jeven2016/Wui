@@ -52,7 +52,7 @@
 
   //other buttons
   @each $name, $color in $btn-colors {
-    &.#{$name} {
+    &.#{"" + $name} {
       &.normal {
         color: get-text-color($name); //todo
         background: $color;
@@ -68,7 +68,7 @@
 
   &.outline {
     @each $name, $color in $btn-colors {
-      &.#{$name} {
+      &.#{"" + $name} {
         @include generate-btn(transparent, $color);
 
         &.with-outline-bg {

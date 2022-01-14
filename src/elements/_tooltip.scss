@@ -1,6 +1,6 @@
 $tooltip-arrow-width: .4rem;
 $tooltip-arrow-height: .4rem;
-$tooltip-half-height: $tooltip-arrow-height /2;
+$tooltip-half-height: math.div($tooltip-arrow-height, 2);
 $tooltip-arrow-spacing: 1rem;
 
 .tooltip {
