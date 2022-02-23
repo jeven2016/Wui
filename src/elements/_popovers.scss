@@ -22,7 +22,7 @@ $popover-half-height: $popover-arrow-height /2;
     height: $popover-arrow-height;
 
     z-index: map_get($z-index, 'one');
-    background: $white;
+    background: $popover-arrow-background;
 
     &.with-box {
       box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.07);

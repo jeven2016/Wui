@@ -5,10 +5,10 @@
   list-style: none;
   align-items: center;
   margin-bottom: 1rem;
-  color: rgba(0, 0, 0, .5);
+  color: $bd-color;
 
   &.with-bg {
-    background: $light-gray;
+    background: $bd-with-bg-background;
     border-radius: $default-border-radius;
   }
 

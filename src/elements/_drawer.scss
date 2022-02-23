@@ -5,8 +5,8 @@
   position: fixed;
   z-index: map_get($z-index, 'top');
   height: 100%;
-  box-shadow: $drawer-box-shadown;
-  background-color: $white;
+  box-shadow: $drawer-box-shadow;
+  background-color: $drawer-background;
   width: $drawer-normal-length;
 
   &.left {

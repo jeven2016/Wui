@@ -5,10 +5,10 @@ html {
 }
 
 body {
-  color: $text-color;
-  //background-color: $body-background-color;
+  color: $body-text-color;
+  background: $body-background-color;
   text-rendering: optimizeLegibility;
-  
+
   //for  anti-aliasing
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -80,7 +80,7 @@ a {
   overflow: hidden;
 
   &.dark {
-    background: rgba(0, 0, 0, .8);
+    background: $mask-background;
   }
 }
 
@@ -94,13 +94,15 @@ a {
   border-radius: 0 !important;
 }
 
-.global-with-border {
-  border: $menu-border;
+.global-with-box {
+  box-shadow: $global-box-shadow;
+  border: $global-box-border;
 }
 
-.global-with-box {
-  box-shadow: $default-box-shadow;
+.global-with-border {
+  border: $global-border;
 }
+
 
 /*.clear-fix {
   &::after {
@@ -188,9 +190,7 @@ a {
       color: $primary;
     }
 
-    @include add-disabled-conf(false) {
-      color: $text-disabled-color;
-    }
+    @include add-disabled-conf(false);
 
   }
 }

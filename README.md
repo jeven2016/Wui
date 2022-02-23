@@ -21,9 +21,9 @@ npm run buildThemes
 ```
 npm run watch
 ```
-### Watch and copy the files into a specific directory
+### Watch and copy the default theme file into a specific directory
 ```
-npm run watch-copy-default -- --copyTo=/home/jujucom/Desktop/workspace/projects/react-windy-ui/packages/components/dist/
+npm run watch-copy-default -- --theme=default --copyTo=/home/jujucom/Desktop/workspace/projects/react-windy-ui/packages/components/dist/
 ```
 
 ### License

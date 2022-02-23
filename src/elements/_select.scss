@@ -21,7 +21,7 @@
   @include add-disabled-conf;
 
   @include focus-active2 {
-    border: 1px solid $blue;
+    border: 1px solid $primary;
 
     &.ok {
       box-shadow: $input-special-active-box-shadow-partial rgba($green, 0.24);
@@ -41,7 +41,7 @@
 
     &.with-select-box {
       box-shadow: $input-box-shadow;
-      border: 1px solid $blue;
+      border: 1px solid $primary;
     }
   }
 }
@@ -57,6 +57,8 @@
   //font-size: $input-font-size;
   outline: none;
   border: none;
+  background: $input-background;
+  color: $input-color;
 }
 
 .select {
@@ -88,7 +90,7 @@
   .menu {
     .menu-item {
       &:not(.disabled).active {
-        background: #0ca0ff0f !important;
+        background: $select-menu-item-active;
       }
 
       > .icon-column {
@@ -120,7 +122,7 @@
   }
 
   .no-data {
-    background: white;
+    background: $select-menu-no-data-background;
     flex-direction: column;
     padding: 1rem;
     @include border-radius;
@@ -170,8 +172,8 @@
       @include make-flex-vertical-center;
       @include border-radius();
       padding: .25rem;
-      background: $light-gray;
-      border: $default-border;
+      background: $select-multi-item-background;
+      border: $select-multi-item-border;
     }
 
     > .select-input {

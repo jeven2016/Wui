@@ -26,9 +26,13 @@
 
   .list-action {
     @include make-flex-center;
+
+    //&:not(:first-child) {
+    //  margin-left: .5rem;
+    //}
   }
 
-  .list-title{
+  .list-title {
     width: 100%;
   }
 

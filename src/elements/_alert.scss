@@ -103,18 +103,18 @@ $animation-timeout: .2s;
 
     @include only-focus {
       opacity: 1;
-      background: transparent;
+      //background: transparent!important;
     }
   }
 
   &.alert-info {
-    background: lighten($primary, 45%);
-    border: 1px solid darken(#d6eaff, 10%);
+    background: $alert-info-background;
+    border: $alert-info-border;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
 
     &.with-left-border {
-      border-left-color: $blue;
+      border-left-color: $alert-info-border-left-color;
       border-left-width: 0.5rem;
     }
 
@@ -124,21 +124,19 @@ $animation-timeout: .2s;
 
     &.filled {
       border: none;
-      background: $primary;
-
-
+      background: $alert-info-filled-background;
     }
 
     &:focus, &:hover {
-      box-shadow: 1px 1px 6px 0 darken(#d6eaff, 10%);
+      box-shadow: $alert-info-box-shadow;
     }
   }
 
 
   &.alert-simple, &.alert-mini {
-    border: 1px solid $default-border-color;
+    border: $alert-simple-border;
     //box-shadow: $alert-shadow;
-    background: $white;
+    background: $alert-simple-background;
 
     > .alert-close {
       align-items: flex-start;
@@ -158,13 +156,13 @@ $animation-timeout: .2s;
   }
 
   &.alert-ok {
-    background: lighten($green, 45%);
-    border: 1px solid darken(#36e73c70, 20%);
+    background: $alert-ok-background;
+    border: $alert-ok-border;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
 
     &.with-left-border {
-      border-left-color: $green;
+      border-left-color: $alert-ok-border-left-color;
       border-left-width: 0.5rem;
     }
 
@@ -174,24 +172,24 @@ $animation-timeout: .2s;
 
     &.filled {
       border: none;
-      background: $green;
+      background: $alert-ok-filled-background;
     }
 
     &:focus, &:hover {
-      box-shadow: 1px 1px 6px 0 darken(#36e73c70, 10%);
+      box-shadow: $alert-ok-box-shadow;
     }
   }
 
 
   &.alert-warning {
-    background: lighten($yellow, 40%);
-    border: 1px solid darken(#fff3cd, 30%);
+    background: $alert-warning-background;
+    border: $alert-warning-border;
 
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
 
     &.with-left-border {
-      border-left-color: $brown;
+      border-left-color: $alert-warning-border-left-color;
       border-left-width: 0.5rem;
     }
 
@@ -201,23 +199,23 @@ $animation-timeout: .2s;
 
     &.filled {
       border: none;
-      background: $brown;
+      background: $alert-warning-filled-background;
     }
 
     &:focus, &:hover {
-      box-shadow: 1px 1px 6px 0 darken(#fff3cd, 20%);
+      box-shadow: $alert-warning-box-shadow;
     }
   }
 
 
   &.alert-error {
-    background: lighten($red, 43%);
-    border: 1px solid #e8818a;
+    background: $alert-error-background;
+    border: $alert-error-border;
     border-top-left-radius: 0.5rem;
     border-bottom-left-radius: 0.5rem;
 
     &.with-left-border {
-      border-left-color: darken(#e8818a, 20%);
+      border-left-color: $alert-error-border-left-color;
       border-left-width: 0.5rem;
     }
 
@@ -227,12 +225,12 @@ $animation-timeout: .2s;
 
     &.filled {
       border: none;
-      background: $red;
+      background: $alert-error-filled-background;
     }
 
 
     &:focus, &:hover {
-      box-shadow: 1px 1px 6px 0 #e8818a;
+      box-shadow: $alert-error-box-shadow;
     }
   }
 }
@@ -310,8 +308,8 @@ $container-offset: 1.5rem;
   z-index: map_get($z-index, 'top');
   width: 97%;
 
-  >.alert{
-    box-shadow: $default-box-shadow;
+  > .alert {
+    box-shadow: $alert-container-box-shadow;
   }
 
   @include adapter-width('min-width', map-get($bs-layout, 'sm')) {

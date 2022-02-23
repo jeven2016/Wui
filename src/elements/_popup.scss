@@ -31,7 +31,7 @@
   > .popup-content {
     @include border-radius;
     min-height: 2rem;
-    background: $white;
+    background: $popup-content-background;
   }
 
   &.right {

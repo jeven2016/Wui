@@ -8,7 +8,7 @@
 
         &.with-box {
           @include focus-active2 {
-            box-shadow: 0 0 0 0.2rem lighten($success, 40%) !important;
+            box-shadow: $tf-ok-box-shadow;
           }
         }
       }
@@ -31,7 +31,7 @@
 
         &.with-box {
           @include focus-active2 {
-            box-shadow: 0 0 0 0.2rem lighten($warning, 40%) !important;
+            box-shadow: $tf-warning-box-shadow;
           }
         }
       }
@@ -53,7 +53,7 @@
 
         &.with-box {
           @include focus-active2 {
-            box-shadow: 0 0 0 0.2rem lighten($danger, 40%) !important;
+            box-shadow: $tf-error-box-shadow;
           }
         }
       }

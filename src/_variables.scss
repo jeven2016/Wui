@@ -26,6 +26,11 @@ $success: $green;
 $warning: $yellow;
 $danger: $red;
 
+//for unified theme colors
+$primay-color: $primary;
+$primary-text-color: $primary;
+
+
 //text colors
 $text-color: rgba(0, 0, 0, 0.8);
 $text-disabled-color: rgba(0, 0, 0, 0.4);
@@ -104,8 +109,13 @@ $btn-colors: (
         yellow: $yellow,
         teal: $teal,
         violet: $violet,
-        white: $white,
+        white: $white
 );
+
+//body
+$body-text-color: $text-color;
+$body-background-color: $white;
+
 
 //Global
 //$default-box-shadow: 0 .25rem .75rem -1px darken($light-gray, 10%);
@@ -119,6 +129,7 @@ $default-border-radius: 0.25rem;
 $default-border-width: 1px;
 $default-border-color: #ccc;
 $default-border: $default-border-width solid $default-border-color;
+$global-border: $default-border;
 $default-arrow-border: 4px solid transparent;
 $default-arrow-active-border: #acacac;
 $default-transition: all .2s ease-in-out;
@@ -128,6 +139,10 @@ $default-color-increase-ratio: 8%;
 $default-bg-color-increase-ratio: 5%;
 $default-bg-color-increase-ratio-active: 20%;
 $default-box-shadow-color-increase-ratio-active: 20%;
+$global-box-shadow: $default-box-shadow;
+$global-box-border: none;
+$global-disabled-text-color: $text-color;
+$global-disabled-background: transparent;
 
 $elem-default-padding: 0.375rem .75rem;
 $elem-large-padding: .5rem 1rem;
@@ -208,7 +223,9 @@ $btn-group-border-width: 1px;
 $btn-group-flex-wrap: wrap;
 
 //For input
+$input-background: transparent;
 $input-font-size: 1rem;
+$input-color: rgba(255, 255, 255, 0.7);
 $input-placeholder-color: $text-comment-color;
 $input-line-height: $btn-line-height;
 $input-height: calc(#{$input-line-height}em + 0.75rem + 2px);
@@ -222,15 +239,26 @@ $input-border-active-color: $blue;
 $input-block-width: 100%;
 $input-default-padding: $elem-default-padding;
 $input-label-background-color: #eceeef;
-$input-box-shadow: 0 0 0 0.2rem lighten($blue, 40%);
+$input-box-shadow: 0 0 0 0.1rem lighten($blue, 40%);
 //$input-active-scale: scale(0.97);
-
 $input-simple-border-left: none;
 $input-simple-border-top: none;
 $input-simple-border-right: none;
 $input-simple-transition: all .2s;
 $input-simple-box-shadow: 0 $input-border-width 0 0 rgba(61, 139, 234, 0.24);
 $input-special-active-box-shadow-partial: 0 2px 6px 0;
+
+
+//text-field
+$tf-label-show: $white;
+$tf-label-color: inherit;
+$tf-input-color: inherit;
+$tf-underline-label-color: inherit;
+$tf-ok-box-shadow: 0 0 0 0.2rem lighten($success, 40%) !important;
+$tf-warning-box-shadow: 0 0 0 0.2rem lighten($warning, 40%) !important;
+$tf-error-box-shadow: 0 0 0 0.2rem lighten($danger, 40%) !important;
+$tf-label-placeholder: $text-comment-color;
+
 
 $icon-input-icon-cursor: pointer;
 $icon-input-icon-scale: scale(0.8);
@@ -262,6 +290,7 @@ $input-group-element-margin-right: -1px;
 
 
 //For menu
+$menu-background: initial;
 $menu-padding-column: 0.25rem 0;
 $menu-padding-row: 0 0.25rem;
 $menu-block-display: flex;
@@ -273,7 +302,6 @@ $menu-border: $default-border;
 $menu-border-radius: $default-border-radius;
 $menu-header-position: relative;
 $menu-header-padding: 0.5rem 1.5rem 0.5rem 2rem;
-;
 $menu-header-arrow-position: absolute;
 $menu-header-arrow-right: 0.5rem;
 $menu-header-arrow-top: calc(50% - 2px);
@@ -283,11 +311,12 @@ $menu-menu-list-display: none;
 $menu-menu-list-transition: max-height .2s ease-out;
 $menu-menu-list-max-height: 60rem;
 $menu-menu-list-overflow: hidden;
-$menu-menu-list-background: $white;
 $menu-item-cursor: pointer;
 $menu-item-border: none;
 $menu-item-transition: background .3s;
 $menu-item-background-color: #F7F6F6;
+$menu-item-active-with-bg: darken($menu-item-background-color, 3%);
+$menu-item-focus-with-bg: $menu-item-background-color;
 $menu-item-padding: 0.5rem 1.5rem;
 $menu-item-overflow: hidden;
 $menu-item-text-overflow: ellipsis;
@@ -341,16 +370,20 @@ $menu-primary-menu-item-focus-color: lighten($blue, 10%);
 $menu-primary-menu-item-active-background-color: lighten($blue, 40%);
 $menu-primary-menu-item-active-border-right: 3px solid $blue;
 $menu-primary-menu-item-active-margin-right: -1px;
-//$menu-dark-background-color: #131415;
-$menu-dark-background-color: #011426;
+$menu-dark-background-color: rgba(0, 0, 0, .8);
 $menu-dark-color: darken($white, 30%);
-$menu-dark-border: none;
+//$menu-dark-border: none;
 $menu-dark-menu-list-background: inherit;
 $menu-dark-menu-header-background-color: #00192D;
 $menu-dark-menu-header-color: darken($white, 10%);
 $menu-dark-menu-header-transition: all .2s;
 $menu-dark-menu-header-focus-color: $white;
 $menu-dark-disabled-menu-item-color: darken($white, 40%);
+$menu-popup-panel-normal-background: $white;
+$menu-dark-inner-container-background: #000;
+$menu-popup-list-background: $white;
+$menu-popup-list-box-shadow: $default-box-shadow;
+$menu-inner-container-background: inherit;
 
 //for drop down
 $dp-cursor: pointer;
@@ -427,6 +460,9 @@ $bq-other-border: 1px solid $gray;
 $bq-left-border-primary: 0.4rem solid $blue;
 $bq-other-border-primary: 1px solid $gray;
 $bq-border-radius: 0.5rem;
+$bg-primary-with-bg-background: lighten(#adcfef, 15%);
+$bq-with-bg-background: lighten(#f8f5f5, 2%);
+$bq-footer-color: #727b84;
 
 
 //for Navbar
@@ -467,6 +503,7 @@ $popover-arrow-border-color: $default-border-color;
 $popover-arrow-overlap-background-color: #fff;
 $popover-margin: -0.5rem;
 $popover-arrow-border-width: 0.5rem;
+$popover-arrow-background: $white;
 
 
 //For Card
@@ -513,6 +550,10 @@ $dialog-border-radius: $default-border-radius;
 $dialog-icon-color: rgba(0, 0, 0, .4);
 $dialog-icon-color-hover: rgb(0, 0, 0);
 $dialog-inner-border-radius: calc(#{$dialog-border-radius} - #{$dialog-border-width});
+$dialog-primary-footer-background: $light-gray;
+$dialog-box-shadow: $default-box-shadow;
+$dialog-primary-header-border-bottom: $default-border;
+$dialog-primary-header-border-top: $default-border;
 
 //For responsive layout
 //from bootstrap:
@@ -526,7 +567,6 @@ $bs-layout: (
         md : 768px,
         lg : 992px,
         xg: 1200px,
-
         max_sm: 767px,
         max_md: 991px,
         max_lg: 1199px,
@@ -548,18 +588,27 @@ $table-border-spacing: 0;
 $table-border-collapse: collapse;
 $table-default-border: 1px solid $gray;
 $table-th-background-color: #f5f5f5;
+$table-th-color: $gray-darker;
 $table-layout: fixed;
 $table-margin-bottom: 1rem;
 $table-white-space: nowrap;
 $table-border-width: 1px;
 $table-row-hover-background-color: lighten($gray, 19%);
 $table-row-hover-bg: lighten($gray, 15%);
+$table-hl-tr-background: lighten($blue, 45%) !important;
+$table-filter-hover-background: $gray;
+$table-filter-active-background: $gray;
+$table-filter-active-color: $blue;
+$table-fixed-cell-background: $white;
+$table-arrow-color: $gray;
 
 //for loader
 $loader-size-large: 5rem;
 $loader-size-normal: 3rem;
 $loader-size-small: 1rem;
+$loader-primary-border: $loader-size-normal * 0.1 solid #e5e3e3;
 $border-default-color: #ccc;
+$mask-background: rgba(0, 0, 0, .8);
 
 //for tab
 $tab-margin-bottom: 0.5rem;
@@ -567,16 +616,113 @@ $tab-margin-bottom: 0.5rem;
 
 //Alert
 //$alert-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.28), 0px 1px 1px 0px rgba(0, 0, 0, 0.25), 0px 1px 3px 0px rgba(0, 0, 0, 0.22);
+$alert-simple-background: $white;
+$alert-simple-border: 1px solid $default-border-color;
+$alert-info-background: lighten($primary, 45%);
+$alert-info-border: 1px solid darken(#d6eaff, 10%);
+$alert-info-border-left-color: $primary;
+$alert-info-box-shadow: 1px 1px 6px 0 darken(#d6eaff, 10%);
+$alert-info-filled-background: $primary;
+$alert-ok-background: lighten($green, 45%);
+$alert-ok-border: 1px solid darken(#36e73c70, 20%);
+$alert-ok-border-left-color: $green;
+$alert-ok-box-shadow: 1px 1px 6px 0 darken(#36e73c70, 10%);
+$alert-ok-filled-background: $green;
+$alert-warning-background: lighten($yellow, 40%);
+$alert-warning-border: 1px solid darken(#fff3cd, 30%);
+$alert-warning-border-left-color: $brown;
+$alert-warning-box-shadow: 1px 1px 6px 0 darken(#fff3cd, 20%);
+$alert-warning-filled-background: $brown;
+$alert-error-background: lighten($red, 43%);
+$alert-error-border: 1px solid #e8818a;
+$alert-error-border-left-color: darken(#e8818a, 20%);
+$alert-error-box-shadow: 1px 1px 6px 0 #e8818a;
+$alert-error-filled-background: $red;
+$alert-container-box-shadow: $default-box-shadow;
 
 //for test
 $default-box-shadow-2: rgba(0, 0, 0, 0.14) 0px 16px 24px 2px, rgba(0, 0, 0, 0.12) 0px 6px 30px 5px, rgba(0, 0, 0, 0.4) 0px 8px 10px -5px;
 //=======================================================================
 
 //for drawer
-$drawer-box-shadown: 0 2px 7px 0 rgba(0, 0, 0, 0.4);
+$drawer-box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.4);
 $drawer-normal-length: 30%;
 $drawer-animation-duration: 0.3s;
+$drawer-background: $white;
 
 
 //for breadcrumb
 $bd-wrapper-background-color: #f5f5f5;
+$bd-color: rgba(0, 0, 0, .5);
+$bd-with-bg-background: $light-gray;
+
+
+//toggle
+$toggle-off-bar-background: rgba(0, 0, 0, .5);
+$toggle-secondary-primary-background: rgba(0, 0, 0, .45);
+
+//popup
+$popup-content-background: $white;
+
+//divider
+$divider-background: #ccc;
+
+//select
+$select-menu-no-data-background: $white;
+$select-menu-item-active: #0ca0ff0f !important;
+$select-multi-item-background: $light-gray;
+$select-multi-item-border: $default-border;
+
+//date-picker
+$date-picker-background: $white;
+$date-picker-table-color: $text-comment-color;
+$date-picker-button-day-color: $text-color;
+$date-picker-th-color: $date-picker-table-color;
+$date-picker-range-btn-color: initial;
+$date-picker-footer-color: lighten($text-color, 10%);
+$date-picker-day-button-active-color: $white;
+$date-picker-day-button-active-background: $gray;
+$date-picker-year-cols-color: $text-color;
+
+
+//progress
+$progress-bar-background: $gray;
+
+//skeleton
+$skeleton-background: linear-gradient(90deg, rgba(240, 240, 240, 100) 23%, rgba(230, 230, 230, 100) 40%, rgba(240, 240, 240, 100) 60%);
+
+//tree
+$tree-item-label-info-active-background: lighten($primary, 32%);
+$tree-item-bg-background: lighten($primary, 30%);
+$tree-hover-color: $primary;
+$tree-item-label-info-active-color: $primary;
+
+//pagination
+$pagination-go-item-button: $text-color;
+$pagination-simple-content-label-color: inherit;
+
+//tabs
+$tabs-secondary-card-item-background: $light-gray;
+$tabs-secondary-card-item-background-active: $white;
+$tabs-secondary-card-item-border-active: 1px solid $white;
+$tabs-item-color: inherit;
+$tabs-horizontal-tab-card-background: $white;
+
+//layout
+$layout-background: #f5f6f7;
+$layout-content-background: #fff;
+$layout-footer-background: #f8f9fa;
+$layout-slider-background: initial;
+
+//time-picker
+$time-picker-background: $white;
+$time-picker-color: $time-picker-background;
+$time-picker-tp-mask-background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3)), linear-gradient(0deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+
+//avatar
+$avatar-with-box-shadow: $default-box-shadow;
+
+//border-info
+$border-info-ok: 0 0 0 0.1rem lighten($success, 40%) !important;
+$border-info-warning: 0 0 0 0.1rem lighten($warning, 40%) !important;
+$border-info-error: 0 0 0 0.1rem lighten($danger, 40%) !important;

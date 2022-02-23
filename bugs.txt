@@ -84,3 +84,6 @@ this causes text-field's label cannot align with input. So change to rem.
 Never go more then 3 levels deep.
 Ensure the CSS output is clean and reusable.
 Use nesting when it makes sense to, not as a default option.
+
+2021-12-19:
+* Replace node-sass with dart sass since node-sass hasn't support the latest node version v16

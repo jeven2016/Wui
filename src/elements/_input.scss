@@ -36,6 +36,8 @@
   line-height: $input-line-height;
   -webkit-appearance: none;
   transition: $default-transition;
+  background: $input-background;
+  color: $input-color;
   //font-size: $input-font-size;
 
   &.simple-input {
@@ -147,7 +149,7 @@ textarea.input {
     width: auto;
 
     &:hover, &:focus {
-      &:not(.disabled){
+      &:not(.disabled) {
         color: $input-border-active-color;
       }
     }

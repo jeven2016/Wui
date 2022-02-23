@@ -17,7 +17,7 @@
   vertical-align: middle;
   cursor: pointer;
 
-  &.with-info{
+  &.with-info {
     flex: 0 0 auto;
   }
 
@@ -74,7 +74,7 @@
 
   &.off {
     .bar {
-      background: rgba(0, 0, 0, .5);
+      background: $toggle-off-bar-background;
     }
 
     .ball {
@@ -124,7 +124,7 @@
     }
 
     &.off {
-      background: rgba(0, 0, 0, .45);
+      background: $toggle-secondary-primary-background;
       //box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
       justify-content: flex-end;
 

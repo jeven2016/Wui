@@ -38,6 +38,7 @@
     transition: $default-transition;
     background: transparent;
     font-size: map-get($font-size, 'normal');
+    color: $tf-input-color;
   }
 
   .tf-input-wrapper {
@@ -105,7 +106,7 @@
 
   > .tf-label {
     position: absolute;
-    color: $text-comment-color;
+    color: $tf-label-placeholder;
     top: 50%;
     transform: translate3d(1rem, -50%, 0);
   }
@@ -118,7 +119,8 @@
     > .tf-label {
       font-size: .75rem;
       padding: 0 .25rem;
-      background: $white;
+      background: $tf-label-show;
+      color: $tf-label-color;
 
       //won't be applied in react project
       //top: 0;
@@ -165,9 +167,7 @@
 
   > .tf-label {
     left: 0;
-    //won't be applied in react project
-    //bottom: 0;
-    //transform: translate3d(0, -0.25rem, 0);
+    color: $tf-underline-label-color;
 
     + .tf-input, + .tf-input-wrapper {
       margin-top: 1rem;
@@ -183,10 +183,6 @@
   &.show {
     > .tf-label {
       font-size: .75rem;
-
-      //won't be applied in react project
-      //top: 0;
-      //transform: translate3d(0, 0, 0);
     }
 
     &.focused {
